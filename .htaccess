@@ -1,0 +1,8 @@
+<IfModule mod_headers.c>
+Header set Cache-Control "private"
+</IfModule>
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !web/
+RewriteRule ^(.*)$ /web/$1 [L]
