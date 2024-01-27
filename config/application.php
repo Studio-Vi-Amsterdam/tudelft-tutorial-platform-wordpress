@@ -77,6 +77,13 @@ if (env('DB_SSL')) {
     Config::define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
 }
 
+/**
+ * API Keys
+ */
+if (env('SURF_SHAREKIT_API_KEY')) {
+    Config::define('SURF_SHAREKIT_API_KEY', env('SURF_SHAREKIT_API_KEY'));
+}
+
 Config::define('DB_NAME', env('DB_NAME'));
 Config::define('DB_USER', env('DB_USER'));
 Config::define('DB_PASSWORD', env('DB_PASSWORD'));
