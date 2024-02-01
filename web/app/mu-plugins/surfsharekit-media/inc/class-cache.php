@@ -1,11 +1,11 @@
 <?php
 
-namespace TuDelft\Theme\Common;
+namespace TuDelft\SurfShareKit\Inc;
 
 /**
  * Class Cache
  *
- * Class for handling Caching of TU Delft Teachers' platform, Surf Sharekit and other caching related functions.
+ * Class for handling Caching of Surf Sharekit
  * 
  * 
  * @package     TuDelft\Theme\Common

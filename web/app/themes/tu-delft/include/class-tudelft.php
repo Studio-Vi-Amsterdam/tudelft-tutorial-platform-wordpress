@@ -2,11 +2,6 @@
 
 namespace TuDelft\Theme;
 
-use TuDelft\Theme\Common\Cache;
-use TuDelft\Theme\Common\Media;
-use TuDelft\Theme\Common\Surf_Sharekit;
-
-
 /**
  * Class TuDelft
  *
@@ -68,12 +63,6 @@ class Tu_Delft {
      * @return void
      */
     public function init_classes(): void {
-        new Media();
-        new Surf_Sharekit();
-        new Cache();
-
-        
-        Media::load_surfsharekit_data();
     }
 
 }

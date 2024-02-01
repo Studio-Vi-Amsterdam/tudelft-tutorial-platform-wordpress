@@ -1,6 +1,6 @@
 <?php
 
-namespace TuDelft\Theme\Common;
+namespace TuDelft\SurfShareKit\Inc;
 
 /**
  * Class SurfSharekit
@@ -8,14 +8,13 @@ namespace TuDelft\Theme\Common;
  * Class for handling all communication with Surf Sharekit API. 
  * 
  * 
- * @package     TuDelft\Theme\Common
+ * @package     TuDelft\SurfShareKit\Inc;
  * @author      Aljosa K <https://github.com/AljosaK>
  * @version     1.0.0
  * @link        https://viamsterdam.com
  */
 
- class Surf_Sharekit {
-    
+ class SurfShareKit {
     /**
     * API URL
     * 
@@ -59,6 +58,10 @@ namespace TuDelft\Theme\Common;
     private static function execute_api_request( string $endpoint, string $method = 'GET', array $params = [] ): array {
 
         $api_key = SURF_SHAREKIT_API_KEY ? : '';
+
+        if ( empty( $api_key ) ) {
+            return [];
+        }
 
         $url = self::$api_url . $endpoint;
 
