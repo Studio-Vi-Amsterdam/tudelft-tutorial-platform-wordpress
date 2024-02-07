@@ -1,6 +1,7 @@
 <?php
 
 namespace TuDelft\Theme;
+use TuDelft\Theme\Common\Gutenberg;
 
 /**
  * Class TuDelft
@@ -63,6 +64,7 @@ class Tu_Delft {
      * @return void
      */
     public function init_classes(): void {
+        new Gutenberg();
     }
 
 }

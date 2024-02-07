@@ -10,6 +10,9 @@ const config = (dir = __dirname) => ({
     stats: "summary", // sets console output
     entry: {
         main: "./src/main.js",
+        imageTextBlock: "./src/js/gutenberg/image-text-block/index.js",
+        textImageBlock: "./src/js/gutenberg/text-image-block/index.js",
+        videoTextBlock: "./src/js/gutenberg/video-text-block/index.js",
         // more entry points if you want to manually split JS into chunks
     },
     output: {
