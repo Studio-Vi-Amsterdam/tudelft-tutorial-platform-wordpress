@@ -8,7 +8,7 @@ namespace TuDelft\SurfShareKit\Inc;
  * Class for handling Caching of Surf Sharekit
  * 
  * 
- * @package     TuDelft\Theme\Common
+ * @package     TuDelft\SurfShareKit\Inc
  * @author      Aljosa K <https://github.com/AljosaK>
  * @version     1.0.0
  * @link        https://viamsterdam.com

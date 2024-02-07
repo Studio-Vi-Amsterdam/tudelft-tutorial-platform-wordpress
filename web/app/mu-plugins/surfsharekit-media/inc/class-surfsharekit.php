@@ -40,7 +40,16 @@ namespace TuDelft\SurfShareKit\Inc;
 
         $data = self::execute_api_request( self::$repo_items_endpoint );
 
-        return $data;
+        $next_link = '';
+        
+        if ( self::has_next( $data['links'] ) ) {
+            $next_link = $data['links']['next'];
+        }
+
+        return [
+            'items' => $data['data'],
+            'next_link' => $next_link,
+        ];
     }
 
 
@@ -89,5 +98,21 @@ namespace TuDelft\SurfShareKit\Inc;
         $data = json_decode( $response_body, true );
 
         return $data;
+    }
+
+    /**
+     * Does next URL exist
+     * 
+     * @param array $data
+     * 
+     * @return bool
+     * 
+     * @since 1.0.0
+     */
+    private static function has_next( array $data ): bool {
+        $current = $data['self'] ? : '';
+        $next = $data['next'] ? : '';
+
+        return $current !== $next;
     }
 }

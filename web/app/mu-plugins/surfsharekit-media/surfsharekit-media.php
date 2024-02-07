@@ -22,6 +22,10 @@ namespace SurfShareKit;
 
 use TuDelft\SurfShareKit\Inc\Bootstrap;
 
+define( 'SURFSHAREKIT_MEDIA_VERSION', '1.0.0' );
+define( 'SURFSHAREKIT_MEDIA_PATH', __DIR__ );
+define( 'SURFSHAREKIT_MEDIA_URL', plugin_dir_url( __FILE__ ) );
+
 require_once __DIR__ . '/inc/class-bootstrap.php';
 require_once __DIR__ . '/inc/class-provider.php';
 require_once __DIR__ . '/inc/class-surfsharekit.php';
