@@ -23,6 +23,8 @@ use WP_Block_Editor_Context;
         add_filter( 'enqueue_block_editor_assets', [ $this, 'image_text_block' ], 10, 2 );
         add_filter( 'enqueue_block_editor_assets', [ $this, 'text_image_block' ], 10, 2 );
         add_filter( 'enqueue_block_editor_assets', [ $this, 'video_text_block' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'text_video_block' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'one_column_block' ], 10, 2 );
         // disable all default blocks
         add_filter( 'allowed_block_types_all', [ $this, 'diallow_core_blocks' ], 10, 2 );
     }
@@ -72,6 +74,38 @@ use WP_Block_Editor_Context;
             get_template_directory_uri() . '/dist/videoTextBlock.min.js',
             array( 'wp-blocks', 'wp-element', 'wp-editor' ),
             filemtime( get_template_directory() . '/dist/videoTextBlock.min.js' )
+        );
+    }
+
+    /**
+     * Register custom Gutenberg block with text and video
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function text_video_block(): void {
+        wp_enqueue_script(
+            'text-video-block',
+            get_template_directory_uri() . '/dist/textVideoBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/textVideoBlock.min.js' )
+        );
+    }
+
+    /**
+     * Register custom Gutenberg block with one column
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function one_column_block(): void {
+        wp_enqueue_script(
+            'one-column-block',
+            get_template_directory_uri() . '/dist/oneColumnBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/oneColumnBlock.min.js' )
         );
     }
 

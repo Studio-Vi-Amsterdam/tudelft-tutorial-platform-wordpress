@@ -15,16 +15,28 @@ export default function( props ) {
     return (
         <div style={{ display: 'flex' }}>
             <div style={{ flex: '1 0 50%', marginRight: '10px', width: '100%' }}>
-                <img src={image} alt="Placeholder" style={{ width: '100%', height: 'auto', maxHeight: '500px', objectFit: 'contain' }} />
                 <MediaUploadCheck>
-                    <MediaUpload
+                   <MediaUpload
                         onSelect={onSelectImages}
                         type="image"
                         value={image}
                         render={({ open }) => (
-                            <Button isPrimary onClick={open} style={{ width: '100%', justifyContent: 'center' }}>
-                                {__('Upload Image', 'tu-delft')}
-                            </Button>
+                            <div>
+                                <img 
+                                    src={image} 
+                                    alt="Image-Text Block Image"
+                                    onClick={open}
+                                    style={{
+                                        width: '100%', 
+                                        height: 'auto', 
+                                        maxHeight: '500px', 
+                                        objectFit: 'contain'
+                                    }} 
+                                />
+                                <Button isPrimary onClick={open} style={{ width: '100%', justifyContent: 'center' }}>
+                                    {__('Upload Image', 'tu-delft')}
+                                </Button>
+                            </div>
                         )}
                     />
                 </MediaUploadCheck>

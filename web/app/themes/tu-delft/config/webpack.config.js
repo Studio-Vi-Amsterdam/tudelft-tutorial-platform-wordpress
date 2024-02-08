@@ -13,6 +13,8 @@ const config = (dir = __dirname) => ({
         imageTextBlock: "./src/js/gutenberg/image-text-block/index.js",
         textImageBlock: "./src/js/gutenberg/text-image-block/index.js",
         videoTextBlock: "./src/js/gutenberg/video-text-block/index.js",
+        textVideoBlock: "./src/js/gutenberg/text-video-block/index.js",
+        oneColumnBlock: "./src/js/gutenberg/one-column-block/index.js",
         // more entry points if you want to manually split JS into chunks
     },
     output: {

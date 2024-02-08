@@ -15,6 +15,15 @@ export default function( props ) {
 
     return (
         <div style={{ display: 'flex' }}>
+            <div style={{ flex: '1 0 50%' }}>
+                <RichText
+                    { ...blockProps }
+                    tagName="p"
+                    value={content}
+                    onChange={onChangeContent}
+                    placeholder={__('Richtext Area', 'tu-delft')}
+                />
+            </div>
             <div style={{ flex: '1 0 50%', marginRight: '10px', width: '100%' }}>
                 {
                     // If there is a video, display it
@@ -50,15 +59,6 @@ export default function( props ) {
                         )}
                     />
                 </MediaUploadCheck>
-            </div>
-            <div style={{ flex: '1 0 50%' }}>
-                <RichText
-                    { ...blockProps }
-                    tagName="p"
-                    value={content}
-                    onChange={onChangeContent}
-                    placeholder={__('Richtext Area', 'tu-delft')}
-                />
             </div>
         </div>
     );
