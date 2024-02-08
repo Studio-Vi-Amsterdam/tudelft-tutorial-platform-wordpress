@@ -20,6 +20,7 @@ use WP_Block_Editor_Context;
  class Gutenberg {
 
     public function __construct() {
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'gutenberg_main' ], 10, 2 );
         add_filter( 'enqueue_block_editor_assets', [ $this, 'image_text_block' ], 10, 2 );
         add_filter( 'enqueue_block_editor_assets', [ $this, 'text_image_block' ], 10, 2 );
         add_filter( 'enqueue_block_editor_assets', [ $this, 'video_text_block' ], 10, 2 );
@@ -27,6 +28,22 @@ use WP_Block_Editor_Context;
         add_filter( 'enqueue_block_editor_assets', [ $this, 'one_column_block' ], 10, 2 );
         // disable all default blocks
         add_filter( 'allowed_block_types_all', [ $this, 'diallow_core_blocks' ], 10, 2 );
+    }
+
+    /**
+     * Register main Gutenberg file
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function gutenberg_main(): void {
+        wp_enqueue_script(
+            'gutenberg-main',
+            get_template_directory_uri() . '/dist/gutenberg.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/gutenberg.min.js' )
+        );
     }
 
     /**

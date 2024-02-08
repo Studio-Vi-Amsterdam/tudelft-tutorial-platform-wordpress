@@ -10,6 +10,7 @@ const config = (dir = __dirname) => ({
     stats: "summary", // sets console output
     entry: {
         main: "./src/main.js",
+        gutenberg: "./src/js/gutenberg/index.js",
         imageTextBlock: "./src/js/gutenberg/image-text-block/index.js",
         textImageBlock: "./src/js/gutenberg/text-image-block/index.js",
         videoTextBlock: "./src/js/gutenberg/video-text-block/index.js",

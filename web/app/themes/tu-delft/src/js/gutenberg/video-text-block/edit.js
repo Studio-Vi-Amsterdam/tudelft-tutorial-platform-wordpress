@@ -1,3 +1,5 @@
+import AddElement from "../components/add-element";
+
 const { MediaUpload, MediaUploadCheck, RichText, useBlockProps } = wp.blockEditor;
 const { Button } = wp.components;
 const { __ } = wp.i18n;
@@ -59,6 +61,7 @@ export default function( props ) {
                     onChange={onChangeContent}
                     placeholder={__('Richtext Area', 'tu-delft')}
                 />
+                <AddElement/>
             </div>
         </div>
     );
