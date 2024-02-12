@@ -1,0 +1,22 @@
+.content-card-wrapper {
+    display: flex;
+    gap: 20px;
+    .content-card {
+        width: 50%;
+        max-width: 390px;
+        padding: 32px 40px;
+        background-color: #EFF1F3;
+        color: black;
+        position: relative;
+
+        &::after {
+            content: '→';
+            position: absolute;
+            right: 20px;
+        }
+
+        &:hover {
+            color: #0076C2;
+        }
+    }
+}

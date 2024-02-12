@@ -91,33 +91,33 @@ if( function_exists('acf_add_options_page') ) {
 	Remove default blocks / only show:
 =====================
 */
-add_filter( 'allowed_block_types', 'allowed_block_types', 10, 2 );
+// add_filter( 'allowed_block_types', 'allowed_block_types', 10, 2 );
 
-function allowed_block_types( $allowed_blocks, $post ) {
+// function allowed_block_types( $allowed_blocks, $post ) {
 
-    $all_blocks = [
-      'acf/text-block',
-    ];
-    $article_blocks = [];
-    $services_blocks = [];
-    $work_blocks = [];
-    $vacancy_blocks = [];
+//     $all_blocks = [
+//       'acf/text-block',
+//     ];
+//     $article_blocks = [];
+//     $services_blocks = [];
+//     $work_blocks = [];
+//     $vacancy_blocks = [];
   
-    switch( $post->post_type ) {
-      case 'article':
-          return $article_blocks;
-          break;
-      case 'services':
-          return $services_blocks;
-          break;
-      case 'work':
-          return $work_blocks;
-          break;
-      case 'vacancy':
-          return $vacancy_blocks;
-          break;
-      default:
-          return $all_blocks;
-    }
-  }
+//     switch( $post->post_type ) {
+//       case 'article':
+//           return $article_blocks;
+//           break;
+//       case 'services':
+//           return $services_blocks;
+//           break;
+//       case 'work':
+//           return $work_blocks;
+//           break;
+//       case 'vacancy':
+//           return $vacancy_blocks;
+//           break;
+//       default:
+//           return $all_blocks;
+//     }
+//   }
 

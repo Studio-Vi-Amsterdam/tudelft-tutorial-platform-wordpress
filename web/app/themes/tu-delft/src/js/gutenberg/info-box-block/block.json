@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tu-delft/info-box",
+	"attributes": {
+		"showChapterSubtitle": {
+			"type": "boolean",
+			"default": false
+		},
+		"chapterSubtitle": {
+			"type": "string",
+			"default": ""
+		},
+        "content": {
+            "type": "string",
+            "default": ""
+        }
+	},
+	"version": "1.0.0",
+	"title": "Info Box",
+	"category": "widgets",
+	"icon": "info-outline",
+	"description": "Info Box for TU-Delft",
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "tu-delft",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js"
+}

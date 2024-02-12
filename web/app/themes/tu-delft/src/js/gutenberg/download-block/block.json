@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tu-delft/file",
+	"attributes": {
+        "showChapterSubtitle": {
+			"type": "boolean",
+			"default": false
+		},
+		"chapterSubtitle": {
+			"type": "string",
+			"default": ""
+		},
+		"file": {
+            "type": "object",
+            "default": {}
+        },
+		"preview": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"version": "1.0.0",
+	"title": "File",
+	"category": "widgets",
+	"icon": "download",
+	"description": "File that can be downloaded on frontend",
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "tu-delft",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js"
+}

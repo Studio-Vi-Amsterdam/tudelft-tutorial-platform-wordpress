@@ -10,6 +10,18 @@ const config = (dir = __dirname) => ({
     stats: "summary", // sets console output
     entry: {
         main: "./src/main.js",
+        gutenberg: "./src/js/gutenberg/index.js",
+        imageTextBlock: "./src/js/gutenberg/image-text-block/index.js",
+        textImageBlock: "./src/js/gutenberg/text-image-block/index.js",
+        videoTextBlock: "./src/js/gutenberg/video-text-block/index.js",
+        textVideoBlock: "./src/js/gutenberg/text-video-block/index.js",
+        textBlock: "./src/js/gutenberg/text-block/index.js",
+        infoBoxBlock: "./src/js/gutenberg/info-box-block/index.js",
+        contentCardBlock: "./src/js/gutenberg/content-card-block/index.js",
+        imageBlock: "./src/js/gutenberg/image-block/index.js",
+        videoBlock: "./src/js/gutenberg/video-block/index.js",
+        // h5pBlock: "./src/js/gutenberg/h5p-block/index.js",
+        downloadBlock: "./src/js/gutenberg/download-block/index.js",
         // more entry points if you want to manually split JS into chunks
     },
     output: {
@@ -27,7 +39,12 @@ const config = (dir = __dirname) => ({
         $: "jQuery",
         jquery: "jQuery",
         "window.jQuery": "jQuery",
-        jQuery:"jQuery"
+        jQuery:"jQuery",
+        '@wordpress/blocks': 'wp.blocks',
+        '@wordpress/i18n': 'wp.i18n',
+        '@wordpress/block-editor': 'wp.blockEditor',
+        '@wordpress/components': 'wp.components',
+        'react': 'wp.element',
     },
     performance: {
         hints: false,

@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tu-delft/image",
+	"attributes": {
+		"showChapterSubtitle": {
+			"type": "boolean",
+			"default": false
+		},
+		"chapterSubtitle": {
+			"type": "string",
+			"default": ""
+		},
+		"image": {
+            "type": "string",
+            "default": "/app/themes/tu-delft/src/img/img-placeholder.svg"
+        }
+	},
+	"version": "1.0.0",
+	"title": "Image",
+	"category": "widgets",
+	"icon": "format-image",
+	"description": "Image block for TU Delft",
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "tu-delft",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js"
+}
