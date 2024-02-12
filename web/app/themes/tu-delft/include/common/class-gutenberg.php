@@ -2,13 +2,12 @@
 
 namespace TuDelft\Theme\Common;
 
-use WP_Block_Type_Registry;
-use WP_Block_Editor_Context;
-
 /**
  * Class Gutenberg
  *
  * Class for custom Gutenberg blocks
+ * 
+ * IMPORTANT: Gutenberg blocks are controlled by JavaScript, located at /web/app/themes/tu-delft/src/js/gutenberg/index.js
  * 
  * 
  * @package     TuDelft\Theme\Common
@@ -25,9 +24,13 @@ use WP_Block_Editor_Context;
         add_filter( 'enqueue_block_editor_assets', [ $this, 'text_image_block' ], 10, 2 );
         add_filter( 'enqueue_block_editor_assets', [ $this, 'video_text_block' ], 10, 2 );
         add_filter( 'enqueue_block_editor_assets', [ $this, 'text_video_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'one_column_block' ], 10, 2 );
-        // disable all default blocks
-        add_filter( 'allowed_block_types_all', [ $this, 'diallow_core_blocks' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'text_block' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'info_box_block' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'content_card_block' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'image_block' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'video_block' ], 10, 2 );
+        // add_filter( 'enqueue_block_editor_assets', [ $this, 'h5p_block' ], 10, 2 );
+        add_filter( 'enqueue_block_editor_assets', [ $this, 'download_block' ], 10, 2 );
     }
 
     /**
@@ -111,51 +114,114 @@ use WP_Block_Editor_Context;
     }
 
     /**
-     * Register custom Gutenberg block with one column
+     * Register custom Gutenberg block with text
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function one_column_block(): void {
+    public function text_block(): void {
         wp_enqueue_script(
-            'one-column-block',
-            get_template_directory_uri() . '/dist/oneColumnBlock.min.js',
+            'text-block',
+            get_template_directory_uri() . '/dist/textBlock.min.js',
             array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/oneColumnBlock.min.js' )
+            filemtime( get_template_directory() . '/dist/textBlock.min.js' )
         );
     }
 
     /**
-     * Disable default Gutenberg blocks
-     * 
-     * @param bool|array $allowed_block_types
-     * @param WP_Block_Editor_Context $block_editor_context
+     * Register custom Gutenberg block with info box
      * 
      * @since 1.0.0
      * 
-     * @return array
+     * @return void
      */
-    public function diallow_core_blocks( bool|array $allowed_block_types, WP_Block_Editor_Context $block_editor_context ): array {
-        
-        // Get all registered blocks if $allowed_block_types is not already set.
-		if ( ! is_array( $allowed_block_types ) || empty( $allowed_block_types ) ) {
-			$registered_blocks   = WP_Block_Type_Registry::get_instance()->get_all_registered();
-			$allowed_block_types = array_keys( $registered_blocks );
-		}
-
-        $filtered_blocks = [];
-
-
-        return $registered_blocks;
-
-        foreach ( $allowed_block_types as $block ) {
-            if ( strpos( $block, 'core/' ) !== 0 && strpos( $block, 'yoast/' ) !== 0 ) {
-                $filtered_blocks[] = $block;
-            }
-        }
-
-        return $filtered_blocks;
+    public function info_box_block(): void {
+        wp_enqueue_script(
+            'info-box-block',
+            get_template_directory_uri() . '/dist/infoBoxBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/infoBoxBlock.min.js' )
+        );
     }
-    
- }
+
+    /**
+     * Register custom Gutenberg block with content card
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function content_card_block(): void {
+        wp_enqueue_script(
+            'content-card-block',
+            get_template_directory_uri() . '/dist/contentCardBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/contentCardBlock.min.js' )
+        );
+    }
+
+    /**
+     * Register custom Gutenberg block with image
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function image_block(): void {
+        wp_enqueue_script(
+            'image-block',
+            get_template_directory_uri() . '/dist/imageBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/imageBlock.min.js' )
+        );
+    }
+
+    /**
+     * Register custom Gutenberg block with video
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function video_block(): void {
+        wp_enqueue_script(
+            'video-block',
+            get_template_directory_uri() . '/dist/videoBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/videoBlock.min.js' )
+        );
+    }
+
+    /**
+     * Register custom Gutenberg block with H5P
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function h5p_block(): void {
+        wp_enqueue_script(
+            'h5p-block',
+            get_template_directory_uri() . '/dist/h5pBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/h5pBlock.min.js' )
+        );
+    }
+
+    /**
+     * Register custom Gutenberg block with download
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function download_block(): void {
+        wp_enqueue_script(
+            'download-block',
+            get_template_directory_uri() . '/dist/downloadBlock.min.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/dist/downloadBlock.min.js' )
+        );
+    }
+}

@@ -1,6 +1,7 @@
 /*!****************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[2].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[2].use[2]!./src/scss/index.scss ***!
   \****************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 /*
 =================================================================
     Breakpoints
@@ -1926,6 +1927,82 @@ section:last-child, .section:last-child {
   .ml-120 {
     margin-left: 80px;
   }
+}
+.chapter-subtitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #00A6D6;
+  margin: 15px 0;
+}
+
+.content-card-wrapper {
+  display: flex;
+  gap: 20px;
+}
+.content-card-wrapper .content-card {
+  width: 50%;
+  max-width: 390px;
+  padding: 32px 40px;
+  background-color: #EFF1F3;
+  color: black;
+  position: relative;
+}
+.content-card-wrapper .content-card::after {
+  content: "→";
+  position: absolute;
+  right: 20px;
+}
+.content-card-wrapper .content-card:hover {
+  color: #0076C2;
+}
+
+.download-block {
+  display: flex;
+  padding: 16px 24px;
+  width: 336px;
+  height: 76px;
+}
+.download-block .download-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  width: 72px;
+  background-color: #00A6D6;
+}
+.download-block .download-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  color: black;
+  width: 264px;
+  background-color: rgba(0, 166, 214, 0.2);
+  font-size: 14px;
+}
+.download-block .download-info .text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.download-block .download-info .text-wrapper .info {
+  color: #666666;
+}
+
+.image-block img {
+  width: auto;
+  max-height: 600px;
+  margin: 0 auto;
+}
+
+.info-box-block {
+  display: flex;
+  background-color: rgba(0, 166, 214, 0.1490196078);
+  padding: 24px 80px 24px 40px;
+}
+.info-box-block .exclamation-mark {
+  margin-right: 20px;
 }
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[2].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[2].use[2]!./node_modules/slick-carousel/slick/slick.scss ***!

@@ -1,27 +1,19 @@
-import edit from './edit';
-import save from './save';
+/**
+ * Registers a new block provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+import { registerBlockType } from '@wordpress/blocks';
 
-const placeholderImageUrl = '/app/themes/tu-delft/src/img/video-placeholder.svg';
+/**
+ * Internal dependencies
+ */
+import Edit from './edit';
+import Save from './save';
+import metadata from './block.json';
 
-wp.blocks.registerBlockType('tu-delft/text-video', {
-    title: 'Text-Video',
-    icon: 'align-pull-right',
-    category: 'tu-delft-blocks',
-    keywords: ['video', 'text'],
-    attributes: {
-        video: {
-            type: 'string',
-            default: ''
-        },
-        content: {
-            type: 'string',
-            default: '',
-        },
-        placeholderImage: {
-            type: 'string',
-            default: placeholderImageUrl
-        }
-    }, 
-    edit,
-    save
+registerBlockType(metadata.name, {
+    ...metadata,
+    edit: Edit,
+    save: Save
 });

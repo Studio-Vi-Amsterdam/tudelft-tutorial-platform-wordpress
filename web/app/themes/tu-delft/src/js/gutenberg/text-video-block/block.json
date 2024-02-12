@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tu-delft/text-video",
+	"attributes": {
+		"showChapterSubtitle": {
+			"type": "boolean",
+			"default": false
+		},
+		"chapterSubtitle": {
+			"type": "string",
+			"default": ""
+		},
+		"video": {
+            "type": "string",
+            "default": ""
+        },
+        "content": {
+            "type": "string",
+            "default": ""
+        },
+        "placeholderImage": {
+            "type": "string",
+            "default": "/app/themes/tu-delft/src/img/video-placeholder.svg"
+        }
+	},
+	"version": "1.0.0",
+	"title": "Text-Video",
+	"category": "widgets",
+	"icon": "align-pull-right",
+	"description": "Text-Video Block for TU-Delft",
+	"example": {
+		"attributes": {
+			"preview": true
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "tu-delft",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js"
+}
