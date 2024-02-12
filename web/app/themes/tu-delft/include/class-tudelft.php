@@ -2,6 +2,11 @@
 
 namespace TuDelft\Theme;
 use TuDelft\Theme\Common\Gutenberg;
+use TuDelft\Theme\Modules\Chapter\Chapter;
+use TuDelft\Theme\Modules\Tutorial\Tutorial;
+use TuDelft\Theme\Modules\Subject\Subject;
+use TuDelft\Theme\Modules\Software\Software;
+use TuDelft\Theme\Modules\Course\Course;;
 
 /**
  * Class TuDelft
@@ -54,6 +59,22 @@ class Tu_Delft {
             'TuDelft\Theme\Common', 
             TU_DELFT_THEME_PATH . '/include/common' 
         );
+
+        /**
+         * Load modules
+         */
+        $autoload->addNamespace( 
+            'TuDelft\Theme\Modules', 
+            TU_DELFT_THEME_PATH . '/include/modules'
+        );
+
+        /**
+         * Load abstract classes
+         */
+        $autoload->addNamespace( 
+            'TuDelft\Theme\Abstract', 
+            TU_DELFT_THEME_PATH . '/include/abstract'
+        );
     }
 
     /**
@@ -65,6 +86,11 @@ class Tu_Delft {
      */
     public function init_classes(): void {
         new Gutenberg();
+        new Chapter();
+        new Tutorial();
+        new Subject();
+        new Software();
+        new Course();
     }
 
 }

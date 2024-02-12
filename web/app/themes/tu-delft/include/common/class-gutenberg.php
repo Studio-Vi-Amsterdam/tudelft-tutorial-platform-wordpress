@@ -44,7 +44,7 @@ namespace TuDelft\Theme\Common;
         wp_enqueue_script(
             'gutenberg-main',
             get_template_directory_uri() . '/dist/gutenberg.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            array( 'wp-i18n', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
             filemtime( get_template_directory() . '/dist/gutenberg.min.js' )
         );
     }
