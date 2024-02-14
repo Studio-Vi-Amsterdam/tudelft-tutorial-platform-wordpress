@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Tutorial Template
+ * Template Name: Subject Template
  */
 ?>
 

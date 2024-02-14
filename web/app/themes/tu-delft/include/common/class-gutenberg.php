@@ -18,19 +18,32 @@ namespace TuDelft\Theme\Common;
 
  class Gutenberg {
 
+    const BLOCKS = [
+        'text_block',
+        'image_block',
+        'video_block',
+        'download_block',
+        'info_box_block',
+        'content_card_block',
+        'image_text_block',
+        'text_image_block',
+        'video_text_block',
+        'text_video_block',
+        // 'h5p_block',
+    ];
+
     public function __construct() {
+
+        if (function_exists('acf_register_block_type')) {
+            foreach(self::BLOCKS as $block) {
+                // check does method exist
+                if (method_exists($this, "register_{$block}")) {
+                    add_action('acf/init', [ $this, "register_{$block}" ]);
+                }
+            }
+        }
+
         add_filter( 'enqueue_block_editor_assets', [ $this, 'gutenberg_main' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'image_text_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'text_image_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'video_text_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'text_video_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'text_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'info_box_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'content_card_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'image_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'video_block' ], 10, 2 );
-        // add_filter( 'enqueue_block_editor_assets', [ $this, 'h5p_block' ], 10, 2 );
-        add_filter( 'enqueue_block_editor_assets', [ $this, 'download_block' ], 10, 2 );
     }
 
     /**
@@ -50,178 +63,282 @@ namespace TuDelft\Theme\Common;
     }
 
     /**
-     * Register custom Gutenberg block with image and text
+     * Register Text Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function image_text_block(): void {
-        wp_enqueue_script(
-            'image-text-block',
-            get_template_directory_uri() . '/dist/imageTextBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/imageTextBlock.min.js' )
-        );
+    public function register_text_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/text',
+            'title' => __('Text Block'),
+            'description'   => __('Richtext with a full column width'),
+            'render_template' => 'template-parts/gutenberg/text-block.php',
+            'category' => 'widgets',
+            'icon' => 'editor-textcolor',
+            'keywords' => ['Text Block', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with text and image
+     * Register Image Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function text_image_block(): void {
-        wp_enqueue_script(
-            'text-image-block',
-            get_template_directory_uri() . '/dist/textImageBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/textImageBlock.min.js' )
-        );
+    public function register_image_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/image',
+            'title' => __('Image Block'),
+            'description'   => __('Image with a full column width'),
+            'render_template' => 'template-parts/gutenberg/image-block.php',
+            'category' => 'widgets',
+            'icon' => 'format-image',
+            'keywords' => ['Image Block', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with video and text
+     * Register Video Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function video_text_block(): void {
-        wp_enqueue_script(
-            'video-text-block',
-            get_template_directory_uri() . '/dist/videoTextBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/videoTextBlock.min.js' )
-        );
+    public function register_video_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/video',
+            'title' => __('Video Block'),
+            'description'   => __('Video with a full column width'),
+            'render_template' => 'template-parts/gutenberg/video-block.php',
+            'category' => 'widgets',
+            'icon' => 'format-video',
+            'keywords' => ['Video Block', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with text and video
+     * Register Download Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function text_video_block(): void {
-        wp_enqueue_script(
-            'text-video-block',
-            get_template_directory_uri() . '/dist/textVideoBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/textVideoBlock.min.js' )
-        );
+    public function register_download_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/download',
+            'title' => __('Download Block'),
+            'description'   => __('File that can be downloaded on frontend'),
+            'render_template' => 'template-parts/gutenberg/download-block.php',
+            'category' => 'widgets',
+            'icon' => 'download',
+            'keywords' => ['Download Block', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with text
+     * Register Info Box Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function text_block(): void {
-        wp_enqueue_script(
-            'text-block',
-            get_template_directory_uri() . '/dist/textBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/textBlock.min.js' )
-        );
+    public function register_info_box_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/info-box',
+            'title' => __('Info Box Block'),
+            'description'   => __('Info box with a full column width'),
+            'render_template' => 'template-parts/gutenberg/info-box-block.php',
+            'category' => 'widgets',
+            'icon' => 'info-outline',
+            'keywords' => ['Info', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with info box
+     * Register Content Card Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function info_box_block(): void {
-        wp_enqueue_script(
-            'info-box-block',
-            get_template_directory_uri() . '/dist/infoBoxBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/infoBoxBlock.min.js' )
-        );
+    public function register_content_card_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/content-card',
+            'title' => __('Content Card Block'),
+            'description'   => __('Pair of content cards with a full column width'),
+            'render_template' => 'template-parts/gutenberg/content-card-block.php',
+            'category' => 'widgets',
+            'icon' => 'grid-view',
+            'keywords' => ['Content Card', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with content card
+     * Register Image Text Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function content_card_block(): void {
-        wp_enqueue_script(
-            'content-card-block',
-            get_template_directory_uri() . '/dist/contentCardBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/contentCardBlock.min.js' )
-        );
+    public function register_image_text_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/image-text',
+            'title' => __('Image Text Block'),
+            'description'   => __('Image-Text Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/image-text-block.php',
+            'category' => 'widgets',
+            'icon' => 'align-pull-left',
+            'keywords' => ['Image', 'Text', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with image
+     * Register Text Image Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function image_block(): void {
-        wp_enqueue_script(
-            'image-block',
-            get_template_directory_uri() . '/dist/imageBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/imageBlock.min.js' )
-        );
+    public function register_text_image_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/text-image',
+            'title' => __('Text Image Block'),
+            'description'   => __('Text-Image Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/text-image-block.php',
+            'category' => 'widgets',
+            'icon' => 'align-pull-right',
+            'keywords' => ['Text', 'Image', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with video
+     * Register Video Text Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function video_block(): void {
-        wp_enqueue_script(
-            'video-block',
-            get_template_directory_uri() . '/dist/videoBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/videoBlock.min.js' )
-        );
+    public function register_video_text_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/video-text',
+            'title' => __('Video Text Block'),
+            'description'   => __('Video-Text Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/video-text-block.php',
+            'category' => 'widgets',
+            'icon' => 'align-pull-left',
+            'keywords' => ['Video', 'Text', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 
     /**
-     * Register custom Gutenberg block with H5P
+     * Register Text Video Block
      * 
      * @since 1.0.0
      * 
      * @return void
      */
-    public function h5p_block(): void {
-        wp_enqueue_script(
-            'h5p-block',
-            get_template_directory_uri() . '/dist/h5pBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/h5pBlock.min.js' )
-        );
-    }
-
-    /**
-     * Register custom Gutenberg block with download
-     * 
-     * @since 1.0.0
-     * 
-     * @return void
-     */
-    public function download_block(): void {
-        wp_enqueue_script(
-            'download-block',
-            get_template_directory_uri() . '/dist/downloadBlock.min.js',
-            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-            filemtime( get_template_directory() . '/dist/downloadBlock.min.js' )
-        );
+    public function register_text_video_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/text-video',
+            'title' => __('Text Video Block'),
+            'description'   => __('Text-Video Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/text-video-block.php',
+            'category' => 'widgets',
+            'icon' => 'align-pull-right',
+            'keywords' => ['Text', 'Video', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
     }
 }

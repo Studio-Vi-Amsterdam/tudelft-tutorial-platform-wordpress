@@ -22,7 +22,7 @@ use TuDelft\Theme\Modules\Course\Course;;
 class Tu_Delft {
 
     public function __construct() {
-        add_action( 'init', [ $this, 'load' ] );
+        add_action( 'init', [ $this, 'load' ], 1 );
     }
 
     /**

@@ -84,7 +84,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
+    "description": "Fields related to courses",
     "show_in_rest": 0,
-    "modified": 1707777720
+    "modified": 1707868304
 }
