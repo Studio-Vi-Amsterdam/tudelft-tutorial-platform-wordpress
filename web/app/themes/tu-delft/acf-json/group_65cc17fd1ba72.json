@@ -1,0 +1,73 @@
+{
+    "key": "group_65cc17fd1ba72",
+    "title": "Gutenberg global settings",
+    "fields": [
+        {
+            "key": "field_65cc17fd84ec2",
+            "label": "Show Chapter Subtitle",
+            "name": "show_chapter_subtitle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Should this section have chapter subtitle?",
+            "default_value": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_65cc184984ec3",
+            "label": "Chapter Subtitle",
+            "name": "chapter_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65cc17fd84ec2",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Global settings for all TU Delft Gutenberg blocks",
+    "show_in_rest": 0,
+    "modified": 1707874409
+}
