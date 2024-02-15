@@ -1,0 +1,54 @@
+{
+    "key": "group_65cd5b7a64b69",
+    "title": "Chapter fields",
+    "fields": [
+        {
+            "key": "field_65cd5b7af7fa8",
+            "label": "Belongs to",
+            "name": "belongs_to",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Do not edit manually",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "course",
+                "software",
+                "subject",
+                "tutorial"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "chapter"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields related to chapters",
+    "show_in_rest": 0,
+    "modified": 1707957309
+}
