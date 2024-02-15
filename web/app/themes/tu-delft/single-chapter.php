@@ -31,7 +31,7 @@ $last_updated_array = Chapter::get_last_updated_chapter( $parent_chapters['chapt
                         if ( $is_current ) {
                             echo "<div style='background: red;'>";
                         }
-                        echo "<a href='" . $chapter['permalink'] . "'>" . $chapter['title'] . "</a>";
+                        echo "<a href='" . $chapter['url'] . "'>" . $chapter['title'] . "</a>";
                         if ( $is_current ) {
                             echo "</div>";
                         }
