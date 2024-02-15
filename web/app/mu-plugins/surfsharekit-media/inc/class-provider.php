@@ -114,6 +114,7 @@ class Provider extends BaseProvider {
 				$media->set_title( $file['fileName'] );
 				$media->set_description( $attributes['abstract'] ?? '' );
 				$media->set_date( strtotime( $attributes['publishedAt'] ) );
+				$media->set_filename( $file['fileName'] );
 
 				// make sure the author is set
 				if ( isset( $attributes['authors'] ) && !empty( $attributes['authors'] ) ){
@@ -124,13 +125,19 @@ class Provider extends BaseProvider {
 				if ( strpos( $file['resourceMimeType'], 'image' ) !== false ) {
 					$media->icon = $file['url'];
 				} else if ( strpos( $file['resourceMimeType'], 'pdf' ) !== false ) {
-					$media->icon = SURFSHAREKIT_MEDIA_URL . 'assets/img/pdf-icon.svg';
+					$media->icon = '/wp/wp-includes/images/media/document.png';
 				} else if ( strpos( $file['resourceMimeType'], 'presentation' ) !== false ) {
-					$media->icon = SURFSHAREKIT_MEDIA_URL . 'assets/img/ppt-icon.svg';
+					$media->icon = '/wp/wp-includes/images/media/document.png';
+				} else if ( strpos( $file['resourceMimeType'], 'spreadsheet' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/spreadsheet.png';
+				} else if ( strpos( $file['resourceMimeType'], 'audio' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/audio.png';
 				} else if ( strpos( $file['resourceMimeType'], 'video' ) !== false ) {
-					$media->icon = SURFSHAREKIT_MEDIA_URL . 'assets/img/video-icon.svg';
-				} else {
-					$media->icon = 'https://cdn-icons-png.freepik.com/512/607/607924.png';
+					$media->icon = '/wp/wp-includes/images/media/video.png';
+				} else if ( strpos( $file['resourceMimeType'], 'archive' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/archive.png';
+				} else if ( strpos( $file['resourceMimeType'], 'text' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/text.png';
 				}
 
 				$items[] = $media;
