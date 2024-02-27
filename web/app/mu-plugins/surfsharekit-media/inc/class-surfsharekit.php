@@ -20,7 +20,7 @@ namespace TuDelft\SurfShareKit\Inc;
     * 
     * @var string
     */
-    private static $api_url = 'https://api.acc.surfsharekit.nl/api/';
+    private static $api_url = 'https://api.surfsharekit.nl/api/';
 
     /**
      * Get all repo items endpoint 
@@ -30,15 +30,24 @@ namespace TuDelft\SurfShareKit\Inc;
     private static $repo_items_endpoint = 'jsonapi/channel/v1/tudelft/repoItems/';
 
     /**
+     * Items per page
+     * 
+     * @var int
+     */
+    private static $items_per_page = 15;
+
+    /**
      * Get all repo items from the API
      * 
      * @return array
      * 
      * @since 1.0.0
      */
-    public static function get_items(): array {
+    public static function get_items( int $page_number = 1 ): array {
 
-        $data = self::execute_api_request( self::$repo_items_endpoint );
+        $url = self::$repo_items_endpoint . '?page[number]=' . $page_number . '&page[size]=' . self::$items_per_page;
+
+        $data = self::execute_api_request( $url );
 
         $next_link = '';
         
