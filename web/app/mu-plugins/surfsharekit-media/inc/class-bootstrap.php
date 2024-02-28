@@ -22,7 +22,7 @@ use WP_Scripts;
 
     public function __construct() {
         add_action( 'amf/register_providers', [ $this, 'register_provider' ] );
-        // add_action( 'wp_default_scripts', [ $this, 'override_per_page' ], 100 );
+        add_action( 'wp_default_scripts', [ $this, 'override_per_page' ], 100 );
     }
 
     /**
@@ -50,6 +50,6 @@ use WP_Scripts;
      * 
      */
     function override_per_page( WP_Scripts $scripts ) : void {
-        $scripts->add_inline_script( 'media-models', 'wp.media.model.Query.defaultArgs.posts_per_page = 10' );
+        $scripts->add_inline_script( 'media-models', 'wp.media.model.Query.defaultArgs.posts_per_page = 15' );
     }
 }

@@ -42,13 +42,12 @@ class Provider extends BaseProvider {
 	 * @since 1.0.0
 	 */
 	protected function request( array $args ) : MediaResponse {
-
-		$surf_data = SurfShareKit::get_items();
 		
-		$data = $surf_data['items'];
-		$next_link = $surf_data['next_link'];
-
-		$items = $this->prepare_for_response( $data );
+		$page_number = (int) ( $args['paged'] ?? 1 );
+		
+		$request_data = Provider::request_and_process( $page_number );
+		$items = $request_data['items'];
+		// $next_link = $request_data['next_link'];
 
 		$total_items = count( $items );
 
@@ -82,9 +81,36 @@ class Provider extends BaseProvider {
 
 		return new MediaResponse(
 			new MediaList( ...$items ),
-			count( $items ), // Total number of available results.
-			$total_items // Number of items requested per page.
+			count( $items ) * $page_number, // Total number of available results.
+			$total_items * $page_number // Number of items requested per page.
 		);
+	}
+
+	/**
+	 * Generate response from the SurfShareKit API
+	 * 
+	 * @param array $data
+	 * 
+	 * @return array
+	 * 
+	 * @since 1.0.0
+	 */
+	private function request_and_process( int $page_number = 1 ) : array {
+		$surf_data = SurfShareKit::get_items( $page_number );
+		
+		$data = $surf_data['items'];
+		$next_link = $surf_data['next_link'];
+
+		$items = $this->prepare_for_response( $data );
+
+		$total_items = count( $items );
+
+		return [
+			'items' => $items,
+			'next_link' => $next_link,
+		];
+
+		
 	}
 
 	/**
@@ -100,10 +126,18 @@ class Provider extends BaseProvider {
 		$items = [];
 
 		foreach ( $data as $item ) {
+			
+			if (!empty( $item['meta'] ) && !empty( $item['meta']['status'] ) && $item['meta']['status'] !== 'published') {
+				continue;
+			}
 
 			$attributes = $item['attributes'];
 			
-			foreach ( $item['attributes']['files'] as $file ) {
+			if ( empty( $attributes['files'] ) ) {
+				continue;
+			}
+			
+			foreach ( $attributes['files'] as $file ) {
 				// convert name to slug
 				$slug = sanitize_title( $file['fileName'] );
 				// create new image object with the slug and mime type
@@ -114,6 +148,7 @@ class Provider extends BaseProvider {
 				$media->set_title( $file['fileName'] );
 				$media->set_description( $attributes['abstract'] ?? '' );
 				$media->set_date( strtotime( $attributes['publishedAt'] ) );
+				$media->set_filename( $file['fileName'] );
 
 				// make sure the author is set
 				if ( isset( $attributes['authors'] ) && !empty( $attributes['authors'] ) ){
@@ -124,13 +159,19 @@ class Provider extends BaseProvider {
 				if ( strpos( $file['resourceMimeType'], 'image' ) !== false ) {
 					$media->icon = $file['url'];
 				} else if ( strpos( $file['resourceMimeType'], 'pdf' ) !== false ) {
-					$media->icon = SURFSHAREKIT_MEDIA_URL . 'assets/img/pdf-icon.svg';
+					$media->icon = '/wp/wp-includes/images/media/document.png';
 				} else if ( strpos( $file['resourceMimeType'], 'presentation' ) !== false ) {
-					$media->icon = SURFSHAREKIT_MEDIA_URL . 'assets/img/ppt-icon.svg';
+					$media->icon = '/wp/wp-includes/images/media/document.png';
+				} else if ( strpos( $file['resourceMimeType'], 'spreadsheet' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/spreadsheet.png';
+				} else if ( strpos( $file['resourceMimeType'], 'audio' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/audio.png';
 				} else if ( strpos( $file['resourceMimeType'], 'video' ) !== false ) {
-					$media->icon = SURFSHAREKIT_MEDIA_URL . 'assets/img/video-icon.svg';
-				} else {
-					$media->icon = 'https://cdn-icons-png.freepik.com/512/607/607924.png';
+					$media->icon = '/wp/wp-includes/images/media/video.png';
+				} else if ( strpos( $file['resourceMimeType'], 'archive' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/archive.png';
+				} else if ( strpos( $file['resourceMimeType'], 'text' ) !== false ) {
+					$media->icon = '/wp/wp-includes/images/media/text.png';
 				}
 
 				$items[] = $media;

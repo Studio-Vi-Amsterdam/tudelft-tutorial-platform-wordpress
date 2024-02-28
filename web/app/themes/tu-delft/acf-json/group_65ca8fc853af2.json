@@ -48,8 +48,10 @@
             "min": "",
             "max": "",
             "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_65cd5b7af7fa8"
+            ]
         }
     ],
     "location": [
@@ -91,5 +93,5 @@
     "active": true,
     "description": "Fields that are shown on Tutorials, Subjects, Courses and Softwares",
     "show_in_rest": 0,
-    "modified": 1707778820
+    "modified": 1707957323
 }
