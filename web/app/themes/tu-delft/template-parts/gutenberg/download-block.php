@@ -5,6 +5,8 @@
  */
 
 $file = get_field('file');
+$title = get_field('title') ?: $file['title'];
+$description = get_field('description') ?: $file['mime_type'];
 ?>
 
 <div class="download-block-wrapper">
@@ -21,8 +23,8 @@ $file = get_field('file');
         </div>
         <div class="download-info">
             <div class="text-wrapper">
-                <span>Download <?php echo $file['title']; ?></span>
-                <span class="info"><?php echo $file['mime_type']; ?></span>
+                <span>Download <?php echo $title; ?></span>
+                <span class="info"><?php echo $description; ?></span>
             </div>
         </div>
     </a>
