@@ -30,7 +30,7 @@
                     "name": "card_title",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Leave empty if you want to use title of link",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -50,7 +50,7 @@
                     "label": "Card Link",
                     "name": "card_link",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -59,8 +59,23 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
+                    "post_type": [
+                        "course",
+                        "software",
+                        "subject",
+                        "tutorial",
+                        "chapter"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "object",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
                     "parent_repeater": "field_65cbff6e7213e"
                 }
             ]
@@ -84,5 +99,5 @@
     "active": true,
     "description": "TU Delft Gutenberg Content Card Block",
     "show_in_rest": 0,
-    "modified": 1707874787
+    "modified": 1710160363
 }
