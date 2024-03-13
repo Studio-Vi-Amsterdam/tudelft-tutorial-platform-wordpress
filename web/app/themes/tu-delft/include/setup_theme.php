@@ -40,13 +40,7 @@ function add_taxonomies_to_pages() {
 	$wp_query->set( 'post_type', $my_post_array );
 }
 
-  
-/*
-	=====================
-		Don't scale down large images
-	=====================	
-*/
-add_filter( 'big_image_size_threshold', '__return_false' );
+
 
 
 /*

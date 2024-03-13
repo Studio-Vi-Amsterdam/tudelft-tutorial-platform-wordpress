@@ -44,4 +44,4 @@ function create_posttypes() {
     // register another custom post type...
 
 }
-add_action('init', 'create_posttypes');
+// add_action('init', 'create_posttypes');
