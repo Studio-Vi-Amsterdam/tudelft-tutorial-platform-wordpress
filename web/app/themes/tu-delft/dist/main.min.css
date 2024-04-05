@@ -1721,7 +1721,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .tutorial__item {
-  transition: 0.5s cubic-bezier(0.15, 0, 0, 1);
+  transition: 0.5s cubic-bezier(0.15, 0, 0, 1) !important;
   opacity: 0;
   height: 0;
   max-height: 0;

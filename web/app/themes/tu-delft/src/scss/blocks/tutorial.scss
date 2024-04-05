@@ -149,7 +149,7 @@
     // .tutorial__item
 
     &__item {
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00)!important;
         opacity: 0;
         height: 0;
         max-height: 0;
