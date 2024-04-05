@@ -1,0 +1,148 @@
+.nav {
+    $self: &;
+    position: absolute;
+    top: 7.7rem;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: $white;
+    padding: 2.4rem;
+    box-sizing: border-box;
+    transform: translateY(calc(-100% - 8rem));
+    transition: .2s ease-in-out;
+
+    @media(min-width: $tabletP1) {
+        display: none;
+    }
+
+    ul {
+        @extend .reset-list;
+    }
+
+    // .nav__inner
+    &__inner {
+        position: relative;
+    }
+
+    // .nav--opened
+    &--opened{
+        transform: translate(0);
+    }
+}
+
+.menu-item-has-children {
+    $self: &;
+    position: static;
+
+    a {
+        padding: 2.4rem 0;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        @include adaptiveProperty('font-size', 16, 16);
+    }
+
+    // .menu-item-has-children__title
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.4rem;
+
+
+
+        &.title-prev {
+            justify-content: flex-start;
+        }
+
+        span {
+            padding: 2.4rem 0;
+            @include adaptiveProperty('font-size', 16, 16);
+        }
+    }
+
+    // .menu-item-has-children__trigger
+
+    &__trigger {
+        width: 1.4rem;
+        height: 1.4rem;
+        padding: 1.6rem;
+        box-sizing: content-box;
+
+        svg,
+        use {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .menu-item-has-children__next
+
+    &__next {}
+
+    // .menu-item-has-children__submenu
+
+    &__submenu {
+        position: absolute;
+        // top: 100%;
+        top: 0;
+        width: 100%;
+        background: $white;
+        z-index: 1;
+        height: 100vh;
+        transform: translateX(110%);
+        transition: .2s ease-in-out;
+
+        &.active {
+            transform: translateX(0%);
+
+            #{$self}__title {
+                &:last-of-type {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .title-prev {
+            border-bottom: 1px solid #E5E5E5;
+            gap: 0;
+
+            &:not(:first-of-type) {
+                padding-left: 2.4rem;
+            }
+
+            #{$self}__trigger {
+                padding-right: 2.4rem;
+            }
+        }
+
+        & {
+            ul {
+                a {
+                    padding-left: 5.6rem;
+                }
+
+                ul {
+                    a {
+                        padding-left: 8rem;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    // .menu-item-has-children__prev
+
+    &__prev {
+        padding-left: 0;
+
+        svg {
+            transform: scaleX(-1);
+        }
+    }
+}

@@ -19,6 +19,8 @@ function enqueue_scripts() {
     // add latest jquery
     wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.7.0.min.js', false, null, true );
     wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'lazy-load', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js', array('jquery'), null, true );
+    wp_enqueue_script( 'slick_css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), null, true );
 
     // custom js
     wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/main.min.js', array('jquery'), filemtime( $js_path ) , true);

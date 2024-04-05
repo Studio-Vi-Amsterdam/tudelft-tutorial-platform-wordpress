@@ -1,16 +1,24 @@
-// breakpoint mixin
-@mixin min-screen($size) {
-    @media only screen and (min-width: $size) {
-        @content;
+@mixin adaptiveProperty($propertyName, $deskSize, $mobSize) {
+    $addSize: $deskSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    @media (max-width: numToPx($adaptivePropertyMinViewport)) {
+        #{$propertyName}: numToRem($mobSize);
     }
-}
-@mixin max-screen($size) {
-    @media only screen and (max-width: $size) {
-        @content;
+
+    @media (min-width: numToPx($adaptivePropertyMinViewport + 1)) and (max-width: numToPx($containerMaxWidth)) {
+        #{$propertyName}: calc(#{numToRem($mobSize)} + #{$addSize} * ((100vw - #{numToPx($adaptivePropertyMinViewport)}) / (#{$adaptivePropertyMaxViewport} - #{$adaptivePropertyMinViewport})));
     }
+
+    @media (min-width: numToPx($adaptivePropertyMaxViewport + 1)) and (max-width: numToPx(1920 + 1)) {
+        #{$propertyName}: numToRem($deskSize);
+    }
+
+    // @media (min-width: numToPx(1920 + 1)) {
+    //     #{$propertyName}: calc(#{$deskSize} * ((100vw - #{$containerPaddingXL} * 3.43 - #{numToPx($adaptivePropertyMinViewport)}) / (#{$adaptivePropertyMaxViewport} - #{$adaptivePropertyMinViewport})));
+    // }
 }
 
-// make an absolute image
 @mixin abs-img {
     position: absolute;
     top: 0;
@@ -24,26 +32,44 @@
     }
 }
 
-// Mixin that will truncate text
-@mixin truncate-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-// Font-size mixin, with IE7 & IE8 support, CSS tricks courtesy
-@mixin font-size($size: 16, $line: $size * 1.25) {
-    font-size: $size + px;
-    line-height: ($line * 10) + px;
-    font-size: $size + rem;
-    line-height: $line + rem;
-  }
-
-// add border radius
-@mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    border-radius: $radius;
-    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+@mixin fullWidthBeforeTablet {
+    @media (max-width: $tabletLargeP1) {
+        position: relative;
+        left: -$containerPaddingS;
+        width: 100vw;
+    }
+    @media (min-width: $mobileP1) and (max-width: $tabletLarge) {
+        left: -$containerPaddingM;
+    }
 }
 
+@mixin containerPaddingsBeforeTablet {
+    box-sizing: border-box;
+    @media (max-width: $mobile) {
+        padding-right: $containerPaddingS;
+        padding-left: $containerPaddingS;
+    }
+    @media (min-width: $mobileP1) and (max-width: $tabletLarge) {
+        padding-right: $containerPaddingM;
+        padding-left: $containerPaddingM;
+    }
+}
 
+@mixin marginTop($desktopValue, $mobileValue) {
+    margin-top: numToRem($mobileValue);
+    @media (min-width: $tabletSmallP1) {
+        margin-top: numToRem($desktopValue)
+    }
+}
+
+@mixin marginBottom($desktopValue, $mobileValue, $hideLastMargin: false) {
+    margin-bottom: numToRem($mobileValue);
+    @media (min-width: $tabletSmallP1) {
+        margin-bottom: numToRem($desktopValue)
+    }
+    @if ($hideLastMargin) {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

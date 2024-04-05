@@ -1,9 +1,25 @@
-// @import '_functions';
-// @import '_mixins';
-
+@import '_functions';
 @import '_variables';
-@import '_fonts';
+@import '_mixins';
 @import '_reset';
 @import '_typography';
 @import '_layout';
 @import './gutenberg/index';
+
+@import './components/base/btn';
+@import './components/base/field';
+@import './components/utils.scss';
+
+@import './parts/header.scss';
+@import './blocks/nav.scss';
+@import './components/tutorial/titles.scss';
+@import './components/tutorial/information.scss';
+@import './components/tutorial/responsible.scss';
+@import './components/tutorial/text.scss';
+@import './components/tutorial/download.scss';
+@import './components/tutorial/image.scss';
+@import './components/tutorial/btns.scss';
+@import './blocks/tutorial.scss';
+
+
+@import './parts/footer.scss';

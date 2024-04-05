@@ -1,0 +1,26 @@
+<svg>
+
+        <symbol id="download-icon" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 3v16m6-6l-6 6-6-6M4 23h16" />
+        </symbol>
+
+        <symbol id="arrow-right" fill="none" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#000" fill-rule="evenodd"
+                        d="M3.151 11.153a.488.488 0 010-.707L7.752 6l-4.6-4.447a.488.488 0 010-.707.53.53 0 01.732 0l4.966 4.8a.492.492 0 010 .707l-4.966 4.8a.53.53 0 01-.732 0z"
+                        clip-rule="evenodd" />
+        </symbol>
+
+        <symbol id="tutorial-icon" fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                <path stroke="#000" d="M1 6h15v4H1z" />
+                <rect width="15" height="13" x="1" y="1.5" stroke="#000" rx="1.5" />
+        </symbol>
+
+        <!-- <symbol id="" xmlns="http://www.w3.org/2000/svg">
+                
+        </symbol> -->
+
+
+
+
+</svg>
