@@ -92,31 +92,35 @@ input, textarea, button {
 
 html {
   font-size: 62.5%;
-  font-family: "Arial", "Verdana", sans-serif;
+  font-family: "Arial", "Verdana", sans-serif !important;
   color: #000000;
 }
 
 h1,
-.h1 {
+.h1,
+.text h1 {
   line-height: 1.15;
   font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 300;
 }
 @media (max-width: 375px) {
   h1,
-  .h1 {
+  .h1,
+  .text h1 {
     font-size: 3.6rem;
   }
 }
 @media (min-width: 376px) and (max-width: 1440px) {
   h1,
-  .h1 {
+  .h1,
+  .text h1 {
     font-size: calc(3.6rem + 8 * ((100vw - 375px) / (1440 - 375)));
   }
 }
 @media (min-width: 1441px) and (max-width: 1921px) {
   h1,
-  .h1 {
+  .h1,
+  .text h1 {
     font-size: 4.4rem;
   }
 }

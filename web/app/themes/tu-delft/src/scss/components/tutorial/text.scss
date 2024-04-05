@@ -13,6 +13,8 @@
     }
 
     h1 {
+        @extend .h1;
+
         &+p {
             margin-top: 3.2rem;
 
