@@ -32,19 +32,18 @@
 
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preload" href="app/themes/tu-delft/src/sprite.svg" as="image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
-
     <?php wp_head(); ?>
 
 </head>
 
 <body class="preload">
 
-    <header class="header flex justify-between items-center">
+    <header class="header flex justify-center">
+        <div class="header__container flex justify-between items-center">
         <div class="header__trigger header__icon js-menu-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -52,7 +51,7 @@
             </svg>
         </div>
         <a href="#" class="header__logo">
-            <img width="300" height="74" src="app/themes/tu-delft/src/img/logo.svg" alt="logo">
+            <img width="300" height="74" src="<?= get_template_directory_uri() ?>/src/img/logo.svg" alt="logo">
         </a>
         <div class="header__menu">
             <div class="header__nav">
@@ -66,7 +65,7 @@
                                         <a href="#">Bachelor
                                             <div class="menu-item-has-children__trigger">
                                                 <svg width="20" height="20">
-                                                    <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -84,7 +83,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -102,7 +101,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -129,7 +128,7 @@
                                         <a href="#">Bachelor
                                             <div class="menu-item-has-children__trigger">
                                                 <svg width="20" height="20">
-                                                    <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -147,7 +146,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -165,7 +164,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -192,7 +191,7 @@
                                         <a href="#">Bachelor
                                             <div class="menu-item-has-children__trigger">
                                                 <svg width="20" height="20">
-                                                    <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -210,7 +209,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -228,7 +227,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -255,7 +254,7 @@
                                         <a href="#">Bachelor
                                             <div class="menu-item-has-children__trigger">
                                                 <svg width="20" height="20">
-                                                    <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -273,7 +272,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -291,7 +290,7 @@
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
@@ -337,6 +336,7 @@
                 </svg>
             </div>
         </div>
+        </div>
     </header>
 
     <nav class="nav">
@@ -347,7 +347,7 @@
                         <a href="#">Courses</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
-                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>
@@ -355,7 +355,7 @@
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
-                                    <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                 </svg>
                             </div>
                             <span>Courses</span>
@@ -367,7 +367,7 @@
                                     <a href="#">Bachelor</a>
                                     <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                         <svg width="20" height="20">
-                                            <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                         </svg>
                                     </div>
                                 </div>
@@ -375,7 +375,7 @@
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                         <span>Courses</span>
@@ -383,7 +383,7 @@
                                     <div class="menu-item-has-children__title title-prev">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                         <span>Bachelor</span>
@@ -400,7 +400,7 @@
                                     <a href="#">Master</a>
                                     <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                         <svg width="20" height="20">
-                                            <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                         </svg>
                                     </div>
                                 </div>
@@ -408,7 +408,7 @@
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                         <span>Courses</span>
@@ -416,7 +416,7 @@
                                     <div class="menu-item-has-children__title title-prev">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                         <span>Master</span>
@@ -433,7 +433,7 @@
                                     <a href="#">Other</a>
                                     <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                         <svg width="20" height="20">
-                                            <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                         </svg>
                                     </div>
                                 </div>
@@ -441,7 +441,7 @@
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                         <span>Courses</span>
@@ -449,7 +449,7 @@
                                     <div class="menu-item-has-children__title title-prev">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
-                                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                         <span>Other</span>
@@ -472,7 +472,7 @@
                         <a href="#">Subjects</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
-                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>
@@ -482,7 +482,7 @@
                         <a href="#">Software</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
-                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>
@@ -492,7 +492,7 @@
                         <a href="#">Labs</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
-                                <use href="app/themes/tu-delft/src/sprite.svg#arrow-right"></use>
+                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>

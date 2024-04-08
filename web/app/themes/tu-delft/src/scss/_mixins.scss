@@ -10,13 +10,9 @@
         #{$propertyName}: calc(#{numToRem($mobSize)} + #{$addSize} * ((100vw - #{numToPx($adaptivePropertyMinViewport)}) / (#{$adaptivePropertyMaxViewport} - #{$adaptivePropertyMinViewport})));
     }
 
-    @media (min-width: numToPx($adaptivePropertyMaxViewport + 1)) and (max-width: numToPx(1920 + 1)) {
+    @media (min-width: numToPx($adaptivePropertyMaxViewport + 1)) {
         #{$propertyName}: numToRem($deskSize);
     }
-
-    // @media (min-width: numToPx(1920 + 1)) {
-    //     #{$propertyName}: calc(#{$deskSize} * ((100vw - #{$containerPaddingXL} * 3.43 - #{numToPx($adaptivePropertyMinViewport)}) / (#{$adaptivePropertyMaxViewport} - #{$adaptivePropertyMinViewport})));
-    // }
 }
 
 @mixin abs-img {

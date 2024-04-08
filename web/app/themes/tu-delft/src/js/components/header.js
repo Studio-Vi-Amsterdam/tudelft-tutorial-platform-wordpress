@@ -11,7 +11,7 @@ export function initMenu() {
     const headerMinClassName = 'header--min'
 
     window.addEventListener('scroll', function () {
-      if (document.documentElement.scrollTop > 1) {
+      if (document.documentElement.scrollTop > 0) {
         $header.addClass("header--fixed");
       } else {
         $header.removeClass("header--fixed");

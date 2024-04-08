@@ -3,12 +3,13 @@
     z-index: 10;
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
-    border-bottom: 2px solid $light;
     background-color: $white;
     position: absolute;
     top: 0;
     width: 100%;
-
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
     @media(max-width: $tablet) {
         overflow: hidden;
     }
@@ -17,7 +18,20 @@
         padding-top: 0;
         padding-bottom: 0;
     }
-
+    &:after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $light;
+        z-index: 10;
+    }
+    //.header__container
+    &__container {
+        @extend .padding;
+    }
 
 
     // .header__trigger
@@ -38,10 +52,6 @@
         width: 2.4rem;
         height: 2.4rem;
 
-        @media(min-width: $K2Large) {
-            width: 1.25vw;
-            height: 1.25vw;
-        }
 
         svg,
         use,
@@ -74,7 +84,7 @@
 
         @media(min-width: $tabletP1) {
             display: block;
-            margin-left: 6vw;
+            margin-left: 8.5rem;
             position: relative;
             z-index: 2;
         }
@@ -122,7 +132,6 @@
 
             @media(min-width: $tabletP1) {
                 display: flex;
-                gap: 2.2vw;
             }
 
             a {
@@ -141,26 +150,21 @@
                     padding: 2.8rem 3.2rem;
                 }
 
-                @media(min-width: $K2Large) {
-                    padding: 2vw 2.2vw;
-                }
             }
 
             &>.menu-item-has-children {
                 a {
                     position: relative;
-                    transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+                    transition: 170ms linear;
 
-                    &:before {
+                    &::after {
                         content: '';
-                        width: calc(100% - 4.8rem);
-                        max-width: 0;
+                        width: 0;
                         height: 2px;
                         background-color: $black;
                         position: absolute;
-                        bottom: 2rem;
-                        left: 50%;
-                        transform: translate(-50%);
+                        bottom: 2.2rem;
+                        left: 2.4rem;
                         display: none;
                         transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
                         margin-left: auto;
@@ -170,13 +174,9 @@
                         }
 
                         @media(min-width: $tabletLargeP1) {
-                            width: calc(100% - 6.4rem);
+                            left: 3.2rem;
                         }
 
-                        @media(min-width: $K2Large) {
-                            width: calc(100% - 4.4vw);
-                            border-bottom: 1.5vw;
-                        }
                     }
                 }
 
@@ -184,8 +184,15 @@
                     a {
                         color: $black;
 
-                        &:before {
-                            max-width: 100%;
+                        &:after {
+
+                            @media(min-width: $tabletP1) {
+                                width: calc(100% - 4.8rem);
+                            }
+    
+                            @media(min-width: $tabletLargeP1) {
+                                width: calc(100% - 6.4rem);
+                            }
                         }
                     }
                 }
@@ -196,7 +203,7 @@
     // .header__wrapper
 
     &__wrapper {
-        gap: 3.2vw;
+        gap: 2.4rem;
         position: relative;
         z-index: 2;
 
@@ -209,10 +216,9 @@
     // .header__search
 
     &__search {
-        padding: 1rem;
+        padding: 2.4rem 2.8rem;
         box-sizing: content-box;
         display: block;
-        margin-right: -1rem;
         transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
 
         @media(max-width: $tablet) {
@@ -228,7 +234,7 @@
 
     &__account {
         display: none;
-        padding: 1rem;
+        padding: 2.4rem 2.8rem;
         box-sizing: content-box;
 
         @media(min-width: $tabletP1) {
@@ -329,7 +335,7 @@
                 border-radius: .4rem;
 
                 a {
-                    &:before {
+                    &:after {
                         display: none !important;
                     }
                 }
