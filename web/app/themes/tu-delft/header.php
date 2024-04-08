@@ -90,9 +90,10 @@
                                         
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Master 2</a></li>
-                                                <li><a href="#">Master 2</a></li>
-                                                <li><a href="#">Master 2</a></li>
+                                                <li><a href="#">Architecture</a></li>
+                                                <li><a href="#">Building Technology</a></li>
+                                                <li><a href="#">Urbanism</a></li>
+                                                <li><a href="#">Landscape Architecture</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -108,9 +109,9 @@
                                         
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Other 2</a></li>
-                                                <li><a href="#">Other 2</a></li>
-                                                <li><a href="#">Other 2</a></li>
+                                                <li><a href="#">Something Else</a></li>
+                                                <li><a href="#">Something Else</a></li>
+                                                <li><a href="#">Something Else</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -125,7 +126,7 @@
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
                                     <li class="menu-item-has-children">
-                                        <a href="#">Bachelor
+                                        <a href="#">Computer Aided Design
                                             <div class="menu-item-has-children__trigger">
                                                 <svg width="20" height="20">
                                                     <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -135,14 +136,15 @@
 
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Bachelor 1</a></li>
-                                                <li><a href="#">Bachelor 1</a></li>
-                                                <li><a href="#">Bachelor 1</a></li>
+                                                <li><a href="#">2 Dimensional</a></li>
+                                                <li><a href="#">3 Dimensional</a></li>
+                                                <li><a href="#">Documenting</a></li>
+                                                <li><a href="#">Obtaining Data</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="menu-item-has-children">
-                                        <a href="#">Master
+                                        <a href="#">Visualization
 
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
@@ -153,27 +155,86 @@
                                         
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Master 2</a></li>
-                                                <li><a href="#">Master 2</a></li>
-                                                <li><a href="#">Master 2</a></li>
+                                                <li><a href="#">2 Dimensional</a></li>
+                                                <li><a href="#">3 Dimensional</a></li>
+                                                <li><a href="#">Documenting</a></li>
+                                                <li><a href="#">Obtaining Data</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="menu-item-has-children">
-                                        <a href="#">Other
+                                        <a href="#">Physical Modeling
 
-                                        <div class="menu-item-has-children__trigger">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
+                                            <div class="menu-item-has-children__trigger">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                        </a>
                                         
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Other 2</a></li>
-                                                <li><a href="#">Other 2</a></li>
-                                                <li><a href="#">Other 2</a></li>
+                                                <li><a href="#">2 Dimensional</a></li>
+                                                <li><a href="#">3 Dimensional</a></li>
+                                                <li><a href="#">Documenting</a></li>
+                                                <li><a href="#">Obtaining Data</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Programming
+
+                                            <div class="menu-item-has-children__trigger">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        
+                                        <div class="header__submenu">
+                                            <ul>
+                                                <li><a href="#">2 Dimensional</a></li>
+                                                <li><a href="#">3 Dimensional</a></li>
+                                                <li><a href="#">Documenting</a></li>
+                                                <li><a href="#">Obtaining Data</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Simulation
+
+                                            <div class="menu-item-has-children__trigger">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        
+                                        <div class="header__submenu">
+                                            <ul>
+                                                <li><a href="#">2 Dimensional</a></li>
+                                                <li><a href="#">3 Dimensional</a></li>
+                                                <li><a href="#">Documenting</a></li>
+                                                <li><a href="#">Obtaining Data</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Web Design
+
+                                            <div class="menu-item-has-children__trigger">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        
+                                        <div class="header__submenu">
+                                            <ul>
+                                                <li><a href="#">2 Dimensional</a></li>
+                                                <li><a href="#">3 Dimensional</a></li>
+                                                <li><a href="#">Documenting</a></li>
+                                                <li><a href="#">Obtaining Data</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -250,62 +311,12 @@
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Bachelor
-                                            <div class="menu-item-has-children__trigger">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                        </a>
-
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">Bachelor 1</a></li>
-                                                <li><a href="#">Bachelor 1</a></li>
-                                                <li><a href="#">Bachelor 1</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Master
-
-                                        <div class="menu-item-has-children__trigger">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                        
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">Master 2</a></li>
-                                                <li><a href="#">Master 2</a></li>
-                                                <li><a href="#">Master 2</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Other
-
-                                        <div class="menu-item-has-children__trigger">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                        
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">Other 2</a></li>
-                                                <li><a href="#">Other 2</a></li>
-                                                <li><a href="#">Other 2</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                    <li><a href="#">VR Lab</a></li>
+                                    <li><a href="#">Lama Lab</a></li>
+                                    <li><a href="#">GDMC Lab</a></li>
+                                    <li><a href="#">AiDAPT Lab</a></li>
                                 </ul>
                             </div>
-
                         </div>
                     </li>
 
