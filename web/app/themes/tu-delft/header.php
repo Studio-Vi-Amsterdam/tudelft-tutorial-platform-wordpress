@@ -42,7 +42,8 @@
 
 <body class="preload">
 
-    <header class="header flex justify-between items-center">
+    <header class="header flex justify-center">
+        <div class="header__container flex justify-between items-center">
         <div class="header__trigger header__icon js-menu-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -334,6 +335,7 @@
                         d="M1 1.234l12 12m-12 0l12-12" />
                 </svg>
             </div>
+        </div>
         </div>
     </header>
 

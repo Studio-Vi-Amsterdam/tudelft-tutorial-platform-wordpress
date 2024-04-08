@@ -7,13 +7,9 @@
     @media(min-width: $tabletP1) {
         padding-top: 8rem;
         padding-bottom: 5.2rem;
-        gap: 7vw;
+        gap: 10rem;
     }
 
-    @media(min-width: $K2Large) {
-        padding-top: 4.2vw;
-        padding-bottom: 2.8vw;
-    }
 
     // .footer__vector
 
@@ -62,10 +58,6 @@
             margin-bottom: 4rem;
         }
 
-        @media(min-width: $K2Large) {
-            width: 9vw;
-            margin-bottom: 2.1vw;
-        }
 
         img {
             width: 100%;
@@ -88,10 +80,6 @@
     &__info {
         position: relative;
         z-index: 1;
-
-        @media(min-width: $tabletLargeP1) {
-            margin-right: 5vw;
-        }
 
         h5 {
             @extend .h6;
@@ -122,9 +110,6 @@
             max-width: 40rem;
         }
 
-        @media(min-width: $K2Large) {
-            max-width: 21vw;
-        }
     }
 
     // .footer__list
@@ -143,9 +128,6 @@
                     margin-top: 1.6rem;
                 }
 
-                @media(min-width: $K2Large) {
-                    margin-top: .8vw;
-                }
             }
         }
 
@@ -158,10 +140,6 @@
 
                     @media(min-width: $tabletP1) {
                         margin-top: 1.6rem;
-                    }
-
-                    @media(min-width: $K2Large) {
-                        margin-top: .8vw;
                     }
                 }
             }

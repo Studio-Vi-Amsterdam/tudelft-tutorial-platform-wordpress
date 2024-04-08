@@ -2,6 +2,9 @@
     box-sizing: border-box;
     padding-right: $containerPaddingS;
     padding-left: $containerPaddingS;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
     @media (min-width: $mobileP1) {
         padding-right: $containerPaddingM;
         padding-left: $containerPaddingM;
