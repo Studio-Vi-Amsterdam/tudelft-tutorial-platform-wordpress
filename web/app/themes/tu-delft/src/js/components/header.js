@@ -8,7 +8,9 @@ export function initMenu() {
     $('body').removeClass('preload')
   })
   function initHeader() {
-    const headerMinClassName = 'header--min'
+    if (document.documentElement.scrollTop > 0) {
+      $('.header').addClass("header--fixed");
+    }
 
     window.addEventListener('scroll', function () {
       if (document.documentElement.scrollTop > 0) {
@@ -16,14 +18,19 @@ export function initMenu() {
       } else {
         $header.removeClass("header--fixed");
       }
-      if (window.scrollY > 100) {
-        $header.addClass(headerMinClassName)
-      } else {
-        $header.removeClass(headerMinClassName)
-      }
     })
   }
 
+  // $('.menu-item-has-children__wrapper .menu-item-has-children').on('mousemove', function() {
+  //   setTimeout(() => {
+  //     $header.addClass("hover-effect");
+  //   }, 100);
+  // })
+  // $('.menu-item-has-children__wrapper .menu-item-has-children').on('mouseleave', function() {
+  //   setTimeout(() => {
+  //     $header.removeClass("hover-effect");
+  //   }, 500);
+  // })
 
 
   function initMenuToggle() {
