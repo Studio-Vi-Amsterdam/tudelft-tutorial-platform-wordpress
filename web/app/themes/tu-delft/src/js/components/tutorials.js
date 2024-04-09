@@ -26,7 +26,7 @@ export function tutorials() {
         $('.tutorial__main').removeClass('prev-side')
         $('html, body').animate({
             scrollTop: 0,
-          }, 500)
+          }, 0)
         e.preventDefault();
         setTimeout(() => {
             ++numberOfTab;
@@ -38,7 +38,7 @@ export function tutorials() {
         $('.tutorial__main').addClass('prev-side')
         $('html, body').animate({
             scrollTop: 0,
-          }, 500)
+          }, 0)
         e.preventDefault();
         --numberOfTab;
         addActiveTab(target.slice(0,-1) + (+target[target.length -1] - 1))
@@ -50,9 +50,11 @@ export function tutorials() {
         $(`[data-tab-target="${target}"]`).addClass('active')
         $('[data-tab-content].active').not(`[data-tab-content="${target}"]`).addClass('inactive')
         $(`[data-tab-content="${target}"]`).addClass('active')
+        $(`[data-tab-content="${target}"]`).css('overflow', 'unset')
         tabContents.not(`[data-tab-content="${target}"]`).removeClass('active')
         setTimeout(() => {
             tabContents.not(`[data-tab-content="${target}"]`).removeClass('inactive')
+            tabContents.not(`[data-tab-content="${target}"]`).css('overflow', 'hidden')
         }, 500);
         if($(`[data-tab-target="${target.slice(0,-1) + (+numberOfTab + 1)}"]`).length === 0) {
             nextBtn.addClass('disabled')
@@ -80,6 +82,14 @@ export function tutorials() {
 
     $('.call-tutorial-nav').on('click', function () {
         $(this).closest('.tutorial').toggleClass('tutorial--active')
+    })
+    $(window).on('scroll', function() {
+        if($(document).scrollTop() + $(window).innerHeight() >= $(document).height() - 100) {
+            $('.tutorial__mobile-nav').addClass('hidden')
+
+        } else {
+            $('.tutorial__mobile-nav').removeClass('hidden')
+        }
     })
 
 }

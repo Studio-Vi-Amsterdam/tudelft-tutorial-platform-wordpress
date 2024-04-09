@@ -30,7 +30,10 @@
         @media(min-width: $tabletSmallP1) {
             display: none ;
         }
-
+        &.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
         
         .btn {
             font-size: 1.6rem;
@@ -176,6 +179,7 @@
     &__item {
         height: 0;
         max-height: 0;
+        overflow: hidden;
 
         transform: translateX(120%);
 
@@ -191,6 +195,8 @@
             position: absolute;
             top: 0;
             left: 0;
+            height: unset;
+            max-height: unset;
         }
     }
 

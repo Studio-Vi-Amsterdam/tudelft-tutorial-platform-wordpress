@@ -1928,6 +1928,10 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
 }
+.tutorial__mobile-nav.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 .tutorial__mobile-nav .btn {
   font-size: 1.6rem;
 }
@@ -2045,6 +2049,7 @@ body::-webkit-scrollbar-thumb {
 .tutorial__item {
   height: 0;
   max-height: 0;
+  overflow: hidden;
   transform: translateX(120%);
 }
 .tutorial__item.active {
@@ -2059,6 +2064,8 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 0;
   left: 0;
+  height: unset;
+  max-height: unset;
 }
 .tutorial__content:not(:first-child) {
   margin-top: 3.2rem;
@@ -2162,28 +2169,41 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 375px) {
   .footer__copyright {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 376px) and (max-width: 1440px) {
   .footer__copyright {
-    font-size: calc(1.4rem + 0 * ((100vw - 375px) / (1440 - 375)));
+    font-size: calc(1.2rem + 0 * ((100vw - 375px) / (1440 - 375)));
   }
 }
 @media (min-width: 1441px) {
   .footer__copyright {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 .footer__info {
   position: relative;
   z-index: 1;
 }
+@media (min-width: 1025px) {
+  .footer__info {
+    width: 50%;
+  }
+}
 .footer__info h5 {
   font-weight: 700;
 }
 .footer__info h5 + p {
   margin-top: 1.6rem;
+}
+.footer__info p {
+  max-width: 60rem;
+}
+@media (min-width: 1025px) {
+  .footer__info p {
+    max-width: 31.2rem;
+  }
 }
 .footer__lists {
   position: relative;

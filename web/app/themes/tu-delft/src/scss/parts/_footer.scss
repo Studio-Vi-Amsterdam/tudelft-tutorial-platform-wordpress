@@ -70,7 +70,7 @@
     // .footer__copyright
 
     &__copyright {
-        @include adaptiveProperty('font-size', 14, 14);
+        @include adaptiveProperty('font-size', 12, 12);
         color: $black;
         display: flex;
         gap: 1.6rem;
@@ -81,13 +81,21 @@
     &__info {
         position: relative;
         z-index: 1;
-
+        @media(min-width: $tabletP1) {
+            width: 50%;
+        }
         h5 {
             @extend .h6;
             font-weight: 700;
 
             &+p {
                 margin-top: 1.6rem;
+            }
+        }
+        p {
+            max-width: 60rem;
+            @media(min-width: $tabletP1) {
+                max-width: 31.2rem;
             }
         }
     }
