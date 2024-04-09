@@ -2,8 +2,10 @@
     $self: &;
     padding-top: 12.4rem;
     padding-bottom: 8rem;
-    overflow: hidden;
     position: relative;
+    @media(min-width: $tabletSmallP1) {
+        overflow: hidden;
+    }
 
     @media(min-width: $tabletP1) {
         padding-top: 16rem;
@@ -150,30 +152,45 @@
 
     &__main {
         position: relative;
-        overflow: hidden;
 
         @media(min-width: $tabletSmallP1) {
             width: 66%;
+            overflow: hidden;
+        }
+        &.prev-side {
+            .tutorial__item {
+                transform: translateX(-120%);
+                &.active {
+                    transform: translateX(0%);
+                }
+                &.inactive {
+                    transform: translateX(120%);
+                }
+
+            }
         }
     }
 
     // .tutorial__item
 
     &__item {
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
-        opacity: 0;
         height: 0;
         max-height: 0;
 
-        margin-right: -100%;
-        margin-left: 100%;
+        transform: translateX(120%);
 
         &.active {
-            opacity: 1;
+            transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
             height: unset;
-            margin-right: 0;
-            margin-left: 0;
+            transform: translateX(0%);
             max-height: unset;
+        }
+        &.inactive {
+            transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+            transform: translateX(-120%);
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
 
@@ -198,9 +215,13 @@
 
     &__btns {
         margin-top: 5.6rem  ;
-
+        width: 100%;
+        display: none;
         @media(min-width: $tabletP1) {
             margin-top: 8rem  ;
+        }
+        @media(min-width: $tabletSmallP1) {
+            display: flex ;
         }
     }
 

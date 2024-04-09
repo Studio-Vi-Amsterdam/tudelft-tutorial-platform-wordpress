@@ -21,6 +21,7 @@
     color: $white;
     background-color: $secondary;
     overflow: hidden;
+    transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
     span {
         padding: 1.2rem 4rem;
         position: relative;
@@ -60,5 +61,10 @@
     &--white{
         background-color: $white;
         color: $black;
+    }
+    &.disabled {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 }
