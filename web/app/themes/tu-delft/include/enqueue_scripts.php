@@ -10,6 +10,7 @@ function enqueue_scripts() {
     $style_path = get_stylesheet_directory().'/dist/main.min.css';
 
     // styles
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/tailwind.css', array());
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array());
     wp_enqueue_style( 'mincss', get_template_directory_uri() . '/dist/main.min.css',  array(), filemtime( $style_path ), 'all');
 

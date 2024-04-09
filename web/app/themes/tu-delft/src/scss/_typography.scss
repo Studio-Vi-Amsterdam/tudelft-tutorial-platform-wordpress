@@ -1,7 +1,9 @@
 html {
 	font-size: 62.5%;
-	font-family: $primary-font;
 	color: $black;
+	* {
+		font-family: $primary-font;
+	}
   }
   
   h1,

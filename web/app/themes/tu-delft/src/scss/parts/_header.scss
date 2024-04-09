@@ -1,6 +1,6 @@
 .header {
     $self: &;
-    z-index: 10;
+    z-index: 20;
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
     background-color: $white;
@@ -70,7 +70,9 @@
         max-width: 10rem;
         flex-shrink: 0;
         width: 100%;
-
+        position: relative;
+        z-index: 5;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
         img {
             width: 100%;
             height: 100%;
@@ -94,19 +96,34 @@
     // .header__close
 
     &__close {
-        width: 1.8rem;
-        height: 1.8rem;
-        padding: .6rem;
+        width: 2.4rem;
+        height: 2.4rem;
         box-sizing: content-box;
-
+        position: relative;
+        cursor: pointer;
         @media(min-width: $tabletP1) {
             display: none;
         }
 
         @media(max-width: $tablet) {
             position: absolute;
-            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0);
             transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        }
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 1.7rem;
+            height: 1.5px;
+            border-radius: .1rem;
+            background-color: $black;
+            transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
         }
     }
 
@@ -119,8 +136,9 @@
             @media(min-width: $tabletP1) {
                 content: '';
                 position: absolute;
-                top: 0;
-                left: 0;
+                top: 0%;
+                transform: translateX(-50%);
+                left: 50%;
                 width: 100vw;
                 height: 100%;
                 background-color: $white;
@@ -223,18 +241,6 @@
     // .header__search
 
     &__search {
-        padding: 2.4rem 2.8rem;
-        box-sizing: content-box;
-        display: block;
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
-
-        @media(max-width: $tablet) {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 0;
-            margin: 0;
-        }
     }
 
     // .header__account
@@ -243,9 +249,24 @@
         display: none;
         padding: 2.4rem 2.8rem;
         box-sizing: content-box;
-
+        position: relative;
         @media(min-width: $tabletP1) {
             display: block;
+        }
+        &:after {
+            position: absolute;
+            content: '';
+            bottom: 1.6rem;
+            left: 10px;
+            height: 2px;
+            background-color: $black;
+            width: 0%;
+            transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        }
+        &:hover {
+            &:after {
+                width: calc(100% - 2rem);
+            }
         }
     }
 
@@ -271,9 +292,21 @@
         }
 
         #{$self}__close {
-            opacity: 1;
-            transform: rotate(-90deg);
+            transform: translate(-50%,-50%) scale(1);
+            &::before {
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+            &::after {
+                transform: translate(-50%, -50%) rotate(225deg);
+            }
         }
+    }
+    &.open-search {
+        .header__trigger,
+        .header__logo {
+            transform: translateY(76px);
+        }
+
     }
 
     .menu-item-has-children {
@@ -318,7 +351,7 @@
                 gap: .8rem;
 
                 li {
-                    min-width: 19rem;
+                    min-width: 22.2rem;
                     display: flex;
                     justify-content: space-between;
                     padding: 0 1.6rem;
@@ -349,7 +382,7 @@
                     border-radius: .4rem;
                     transition: .17s linear;
                     &:after {
-                        display: none !important;
+                        display: none  ;
                     }
                 }
 
@@ -372,6 +405,31 @@
                         }
                     }
                 }
+            }
+
+            &--flex {
+                left: -20%;
+                .menu-item-has-children__wrapper {
+                    display: flex;
+                }
+                ul + ul {
+                    position: relative;
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        width: 1px;
+                        background-color: $border-gray;
+                        height: calc(100% + 8px);
+                        transition: 170ms 330ms linear;
+                        z-index: 2;
+                        pointer-events: none;
+
+                    }
+                }
+
             }
 
         }
@@ -403,7 +461,7 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    display: block !important;
+                    display: block  ;
                     background: $white;
                     border-radius: 0 0 4px 4px;
                     pointer-events: none;
@@ -418,7 +476,7 @@
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        display: block !important;
+                        display: block  ;
                         background: $white;
                         border-radius: 0 0 4px 4px;
                         pointer-events: none;
@@ -456,7 +514,7 @@
                 top: 0;
                 left: 0;
                 padding: 2rem 0;
-                height: 100%;
+                min-height: 100%;
                 z-index: -1;
                 transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
                 &:after {
