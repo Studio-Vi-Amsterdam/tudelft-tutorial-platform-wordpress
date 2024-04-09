@@ -8,17 +8,25 @@
 
 <section class="tutorial md:flex md:justify-between">
     <div class="tutorial__mobile-nav flex justify-between">
-        <a href="#" class="btn">Back</a>
+        <a href="#" class="btn">
+            <span>Back</span>
+            <span>Back</span>
+        </a>
         <a href="#" class="btn btn--white call-tutorial-nav">
             <div class="btn__icon">
                 <svg width="20" height="20">
-                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#tutorial-icon"></use>
+                    <use href="<?= $theme_url ?>/src/sprite.svg#tutorial-icon"></use>
                 </svg>
             </div>
+            <span>Index</span>
+            <span>Index</span>
 
-            Index
+            
         </a>
-        <a href="#" class="btn">Next</a>
+        <a href="#" class="btn">
+            <span>Next</span>
+            <span>Next</span>
+        </a>
     </div>
     <div class="tutorial__fader"></div>
     <div class="tutorial__aside">
@@ -161,7 +169,10 @@
                 <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
             </div>
             <div class="tutorial__content tutorial__btns btns">
-                <a href="#" class="btn btn--next">Start</a>
+                <a href="#" class="btn btn--next">
+                    <span>Start</span>
+                    <span>Start</span>
+                </a>
             </div>
         </div>
         <div class="tutorial__item" data-tab-content id="chapter-2">
@@ -196,7 +207,10 @@
                 <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
             </div>
             <div class="tutorial__content tutorial__btns btns">
-                <a href="#" class="btn btn--next">Start</a>
+                <a href="#" class="btn btn--next">
+                    <span>Start</span>
+                    <span>Start</span>
+                </a>
             </div>
         </div>
         <div class="tutorial__item" data-tab-content id="chapter-3">
@@ -223,7 +237,10 @@
                 </div>
             </a>
             <div class="tutorial__content tutorial__btns btns">
-                <a href="#" class="btn btn--next">Start</a>
+                <a href="#" class="btn btn--next">
+                    <span>Start</span>
+                    <span>Start</span>
+                </a>
             </div>
         </div>
         <div class="tutorial__item" data-tab-content id="chapter-4">
@@ -251,7 +268,10 @@
                 <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
             </div>
             <div class="tutorial__content tutorial__btns btns">
-                <a href="#" class="btn btn--next">Start</a>
+                <a href="#" class="btn btn--next">
+                    <span>Start</span>
+                    <span>Start</span>
+                </a>
             </div>
         </div>
         <div class="tutorial__item" data-tab-content id="chapter-5">
@@ -265,7 +285,10 @@
                     interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
             </div>
             <div class="tutorial__content tutorial__btns btns">
-                <a href="#" class="btn btn--next">Start</a>
+                <a href="#" class="btn btn--next">
+                    <span>Start</span>
+                    <span>Start</span>
+                </a>
             </div>
         </div>
     </div>

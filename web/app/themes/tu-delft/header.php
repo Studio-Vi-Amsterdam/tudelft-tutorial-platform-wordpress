@@ -341,10 +341,6 @@
                 </svg>
             </a>
             <div class="header__close header__icon js-menu-close">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M1 1.234l12 12m-12 0l12-12" />
-                </svg>
             </div>
         </div>
         </div>
@@ -512,4 +508,4 @@
         </div>
     </nav>
 
-    <main class="preload">
+    <main>

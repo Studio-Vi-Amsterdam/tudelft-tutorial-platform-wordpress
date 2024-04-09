@@ -32,7 +32,18 @@
         
         .btn {
             font-size: 1.6rem;
-            padding: 1.2rem 2.4rem;
+            span {
+                padding: 1.2rem 2.4rem;
+            }
+            .btn__icon {
+                & + span {
+                    padding: 1.2rem 2.4rem 1.2rem .8rem;
+                    & + span {
+                        padding: 1.2rem 2.4rem 1.2rem .8rem;
+                    }
+                }
+
+            }
         }
     }
 
