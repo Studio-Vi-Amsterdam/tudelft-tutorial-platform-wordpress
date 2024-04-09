@@ -9,6 +9,8 @@
     "build:dev": "webpack --mode=development --config webpack.config.js",
     "watch": "yarn build:dev --watch",
     "build": "webpack --mode=production --config webpack.config.js",
+    "build-tailwind": "npx tailwindcss -i ./src/scss/tailwind.css -o ./dist/tailwind.css --minify",
+    "watch-tailwind": "npx tailwindcss -i ./src/scss/tailwind.css -o ./dist/tailwind.css --watch",
     "lint": "eslint \"**/*.js\" -c config/eslintrc.json"
   },
   "devDependencies": {

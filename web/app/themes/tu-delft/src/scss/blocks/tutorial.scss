@@ -23,10 +23,10 @@
         z-index: 8;
         border-radius: .4rem .4rem 0 0;
         overflow: hidden;
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00)!important;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
 
         @media(min-width: $tabletSmallP1) {
-            display: none!important;
+            display: none ;
         }
 
         
@@ -55,8 +55,8 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        z-index: 15;
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00)!important;
+        z-index: 11;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
 
         opacity: 0;
         visibility: hidden;
@@ -69,7 +69,7 @@
     // .tutorial__aside
 
     &__aside {
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00)!important;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
 
         @media(max-width: $tabletSmall) {
             position: fixed;
@@ -78,12 +78,13 @@
             bottom: 0;
             background-color: $white;
             left: 0;
-            z-index: 20;
+            z-index: 12;
             border-radius: .4rem .4rem 0 0;
             padding: 2.4rem;
             box-sizing: border-box;
-            overflow-y: auto;
             transform: translateY(100%);
+            display: flex;
+            flex-direction: column;
         }
 
         @media(min-width: $tabletSmallP1) {
@@ -112,25 +113,30 @@
 
     }
 
+    //.tutorial__aside-wrapper
+    &__aside-wrapper {
+        @media(max-width: $tabletSmall) {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            padding-right: 2.6rem;
+            box-sizing: border-box;
+        }
+
+    }
+
     // .tutorial__close
     &__close {
         width: 1.2rem;
         height: 1.2rem;
         padding: .6rem;
         box-sizing: content-box;
-        margin: 0 0 0 auto;
+        margin: 0 0 2.4rem auto;
 
         @media(min-width: $tabletSmallP1) {
             display: none;
         }
 
-        &+.tutorial__nav {
-            margin-top: 2.4rem !important;
 
-            @media(min-width: $tabletSmallP1) {
-                margin-top: 0 !important;
-            }
-        }
     }
 
     // .tutorial__nav
@@ -155,7 +161,7 @@
     // .tutorial__item
 
     &__item {
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00)!important;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
         opacity: 0;
         height: 0;
         max-height: 0;
@@ -192,10 +198,10 @@
     // .tutorial__btns
 
     &__btns {
-        margin-top: 5.6rem !important;
+        margin-top: 5.6rem  ;
 
         @media(min-width: $tabletP1) {
-            margin-top: 8rem !important;
+            margin-top: 8rem  ;
         }
     }
 

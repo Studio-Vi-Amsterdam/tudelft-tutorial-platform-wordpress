@@ -21,7 +21,7 @@
         box-sizing: border-box;
         border-radius: .4rem;
         display: block;
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00)!important;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
 
         &:hover {
             background-color: #00A6D6;
@@ -44,21 +44,21 @@
         // .titles__item--opened
         &--opened {
             border-radius: .4rem;
-            background-color: $light-blue!important;
+            background-color: $light-blue ;
             transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
 
             #{$self}__head {
                 font-weight: 700;
-                color: $black!important;
+                color: $black ;
 
                 &:before {
                     transform: rotate(90deg);
-                    border-color: transparent transparent transparent $black!important;
+                    border-color: transparent transparent transparent $black ;
                 }
             }
 
             a{
-                color: $black!important
+                color: $black;
             }
         }
     }
@@ -74,7 +74,7 @@
         align-items: baseline;
         padding: .8rem 1rem;
         cursor: pointer;
-        transition: background-color .5s cubic-bezier(0.15, 0.00, 0.00, 1.00)!important;
+        transition: background-color .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
         border-radius: .4rem;
         overflow: hidden;
 
@@ -109,7 +109,7 @@
 
             a {
                 @include adaptiveProperty('font-size', 14, 14);
-                color: $black!important;
+                color: $black ;
             }
         }
     }
