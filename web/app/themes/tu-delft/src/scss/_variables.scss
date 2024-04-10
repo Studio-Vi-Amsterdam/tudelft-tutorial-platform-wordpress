@@ -15,7 +15,7 @@ $desktop: 1440px;
 $desktopP1: calc($desktop / 1px) + 1px;
 $tabletLarge: 1280px;
 $tabletLargeP1: calc($tabletLarge / 1px) + 1px;
-$tablet: 1024px; // @media (max-width: $tablet) --> 1024px and smaller
+$tablet: 1023px; // @media (max-width: $tablet) --> 1024px and smaller
 $tabletP1: calc($tablet / 1px) + 1px; // @media (min-width: $tabletP1) --> 1025px and bigger
 $tabletSmall: 767px;
 $tabletSmallP1: calc($tabletSmall / 1px) + 1px;

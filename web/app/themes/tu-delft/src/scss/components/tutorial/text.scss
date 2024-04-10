@@ -15,8 +15,23 @@
         }
     }
 
+    h4 {
+        padding-top: 2.4rem;
+        color: #00A6D6;
+        @extend .h6;
+        line-height: 1.2;
+        font-weight: 700;
+        @media(min-width: $tabletSmallP1) {
+            padding-top: 4rem;
+        }
+    }
+
     p {
         @extend .p2;
         color: $txt-gray;
+    }
+    .grid-links {
+        gap: 2.4rem;
+        margin-top: 2.4rem;
     }
 }

@@ -11,8 +11,9 @@ export function smoothScroll() {
 	if($(window).innerWidth() < 768) {
 		tutorialAside.css('top', pagePosition + $(window).innerHeight() - $('.tutorial__aside-height').outerHeight())
 	}
-
-
+	if($(window).innerWidth() >= 1024) {
+		$('.search-bar__field').css('width', $(window).innerWidth() - $('.search-bar__field').offset().left + 'px')
+	}
 	bodyScrollBar.addListener(({ offset }) => {
 		if($('.tutorial--active').length > 0 || $('.header--opened').length > 0 ) {
 			bodyScrollBar.scrollTo(0, pagePosition, 0);
@@ -40,7 +41,7 @@ export function smoothScroll() {
 
 	bodyScrollBar.setPosition(0, 0);
 
-	$('[data-tab-target], [data-next], [data-prev]').on('click', function() {
+	$('[data-next], [data-prev]').on('click', function() {
 		bodyScrollBar.scrollTo(0, 0, 0);
 	})
 
@@ -50,14 +51,14 @@ export function smoothScroll() {
 			anchor = $(`#${$(this).attr('href').split('#')[1]}`)
 		}
 		if (anchor && anchor.length > 0) {
-			bodyScrollBar.scrollTo(0, anchor.offset().top + pagePosition - 100, 1500);
+			bodyScrollBar.scrollTo(0, anchor.offset().top + pagePosition - 100, 1000);
 		}
 	});
 
 	let hash = $(location).attr('hash');
 	if($(`${hash}`).length > 0) {
 		let anchor = $(`${hash}`)
-		bodyScrollBar.scrollTo(0, anchor.offset().top + pagePosition - 100, 1500);
+		bodyScrollBar.scrollTo(0, anchor.offset().top + pagePosition - 100, 1000);
 
 	}
 

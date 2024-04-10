@@ -1,0 +1,30 @@
+.arrow {
+    min-width: 3rem;
+    max-width: 3rem;
+    position: relative;
+    svg {
+        width: 2.4rem;
+        height: 1.6px;
+        height: auto;
+        position: relative;
+        transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        &:first-child {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5px;
+            width: .9rem;
+            height: auto;
+        }
+    }
+    &:hover {
+        svg {
+            &:first-child {
+                right: 0;
+            }
+            &:last-child{
+                width: 3rem;
+            }
+        }
+    }
+}

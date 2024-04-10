@@ -5,9 +5,12 @@
     }
     figcaption {
         display: block;
-        margin-top: 1.6rem;
+        margin-top: .6rem;
         color: #67676B;
         @extend .p-small;
+        @media(min-width: $tabletSmallP1) {
+            margin-top: 1.6rem;
+        }
     }
     img{
         width: 100%;

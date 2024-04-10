@@ -6,9 +6,12 @@
     }
     figcaption {
         display: block;
-        margin-top: 1.6rem;
+        margin-top: .6rem;
         color: #67676B;
         @extend .p-small;
+        @media(min-width: $tabletSmallP1) {
+            margin-top: 1.6rem;
+        }
     }
 
     // .video__preload
@@ -30,13 +33,16 @@
         }
         svg {
             position: absolute;
-            max-width: 12rem;
+            max-width: 15%;
             width: 100%;
             height: auto;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
             z-index: 2;
+            @media(min-width: $tabletSmallP1) {
+                max-width: 15%;
+            }
         }
     }
 }

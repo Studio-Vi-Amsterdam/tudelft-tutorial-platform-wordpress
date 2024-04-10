@@ -8,9 +8,11 @@ import { initMenu } from "./components/header";
 import { tutorials } from "./components/tutorials";
 import { showSearchBar } from "./components/show-search-bar";
 import { smoothScroll } from "./components/smooth-scrolling";
+import { tabOfContent } from "./components/toc";
 
 
 export function runAfterDomLoad() {
+    tabOfContent()
     smoothScroll()
     initMenu()
     tutorials()
