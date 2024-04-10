@@ -202,13 +202,13 @@
             </div>
             <div class="tutorial__content image">
                 <figure>
-                    <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
+                    <img data-image-src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
                     <figcaption>
                         Image From: Murphy, K. P. (2021). Figure 14.4. In Machine Learning: A Probabilistic Perspective. textbook, MIT Press.
                     </figcaption>
                 </figure>
             </div>
-            <div class="tutorial__content video" data-src="">
+            <div class="tutorial__content video" data-video-src="https://www.youtube.com/embed/sjkrrmBnpGE">
                 <figure class="video__wrapper">
                     <div class="video__preload">
                         <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">

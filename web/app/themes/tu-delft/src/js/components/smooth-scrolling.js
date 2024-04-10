@@ -12,14 +12,19 @@ export function smoothScroll() {
 		tutorialAside.css('top', pagePosition + $(window).innerHeight() - $('.tutorial__aside-height').outerHeight())
 	}
 
+
 	bodyScrollBar.addListener(({ offset }) => {
-		if($('.tutorial--active').length > 0) {
+		if($('.tutorial--active').length > 0 || $('.header--opened').length > 0 ) {
 			bodyScrollBar.scrollTo(0, pagePosition, 0);
+			scroller.classList.add('hide-scrollbar')
 		} else {
 			pagePosition = offset.y
+			if(scroller.classList.contains('hide-scrollbar')) {
+				scroller.classList.remove('hide-scrollbar')
+			}
 		}
-		tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
-		tutorialNavFader.css('top', pagePosition)
+		$('.header').css('top', pagePosition)
+		$('.nav').css('top', pagePosition)
 		if(pagePosition + $(window).innerHeight() >= $('.scroll-content').height() - 100) {
             tutorialNav.addClass('hidden')
 
@@ -27,6 +32,8 @@ export function smoothScroll() {
             tutorialNav.removeClass('hidden')
         }
 		if($(window).innerWidth() < 768) {
+			tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
+			tutorialNavFader.css('top', pagePosition)
 			tutorialAside.css('top', pagePosition + $(window).innerHeight() - $('.tutorial__aside-height').outerHeight())
 		}
 	});

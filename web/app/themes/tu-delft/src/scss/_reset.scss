@@ -111,3 +111,12 @@ body, html {
     width: 0px;
     height: 0px;
   }
+
+  .scrollbar-track-x {
+    display: none !important;
+  }
+  .hide-scrollbar {
+    & >  .scrollbar-track-y {
+      display: none !important;
+    }
+  }

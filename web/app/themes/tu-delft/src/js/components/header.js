@@ -1,25 +1,12 @@
 export function initMenu() {
   initMenuToggle()
-  initHeader()
 
   const $header = $('.header')
   $(window).on('load', function (e) {
 
     $('body').removeClass('preload')
   })
-  function initHeader() {
-    if (document.documentElement.scrollTop > 0) {
-      $('.header').addClass("header--fixed");
-    }
 
-    window.addEventListener('scroll', function () {
-      if (document.documentElement.scrollTop > 0) {
-        $header.addClass("header--fixed");
-      } else {
-        $header.removeClass("header--fixed");
-      }
-    })
-  }
 
   $('.menu-item-has-children__wrapper .menu-item-has-children').on('mousemove', function() {
     setTimeout(() => {
@@ -37,25 +24,22 @@ export function initMenu() {
     const $nav = $('.nav')
     const headerMenuActiveClassName = 'header--opened'
     const navMenuActiveClassName = 'nav--opened'
-
+    const scroller = $('#scroll-container')
     $(window).on('click', function (e) {
       if ($(e.target).closest('.js-menu-toggle').length > 0) {
         $nav.toggleClass(navMenuActiveClassName)
         $header.toggleClass(headerMenuActiveClassName)
+        scroller.toggleClass('hide-scrollbar')
       } else if ($(e.target).closest('.js-menu-close').length > 0) {
         $nav.removeClass(navMenuActiveClassName)
         $header.toggleClass(headerMenuActiveClassName)
+        scroller.toggleClass('hide-scrollbar')
       }
 
-      if (document.querySelector('.nav').classList.contains(('nav--opened'))) {
-        document.querySelector('html').style.overflowY = "hidden"
-      } else {
-        document.querySelector('html').style.overflowY = "unset"
-      }
 
       $('a').on('click', function () {
-        $nav.removeClass(headerMenuActiveClassName)
-        document.querySelector('html').style.overflowY = "unset"
+        $nav.removeClass(navMenuActiveClassName)
+        $header.removeClass(headerMenuActiveClassName)
       })
 
     })

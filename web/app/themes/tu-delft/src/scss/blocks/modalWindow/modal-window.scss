@@ -1,0 +1,113 @@
+.modal-window {
+
+    position: fixed;
+    z-index: 18;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 7.6rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 2rem 0rem;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0s 500ms linear;
+
+    @media (min-width: $mobileP1) {
+        padding: 6.4rem 2.4rem;
+    }
+    @media (min-width: $tabletP1) {
+        height: calc(100% - 8rem);
+    }
+
+    // .modal-window--active
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+        transition: 0s 0ms linear;
+        .modal-window__fader {
+            opacity: 1;
+        }
+    }
+
+    // .modal-window__fader
+
+    &__fader {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition:  170ms linear;
+        height: calc(100% - 7.6rem);
+        background: $white;
+        @media (min-width: $tabletP1) {
+            height: calc(100% - 8rem);
+        }
+    }
+
+    // .modal-window__item
+
+    &__item {
+        width: 90%;
+        position: relative;
+        z-index: 5;
+
+        background-color: $white;
+        margin-right: auto;
+        margin-left: auto;
+        iframe, img {
+            transform: scale(0);
+            transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
+
+        }
+        // .modal-window__item--active
+
+        &--active {
+            &.show-video {
+                .modal-video-item__wr-iframe {
+                    pointer-events: all;
+                    .modal-window__close-icon {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                iframe {
+                    transform: scale(1);
+    
+                }
+
+            }
+            &.show-image {
+                .modal-video-item__wr-image {
+                    pointer-events: all;
+                    .modal-window__close-icon {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                img {
+                    transform: scale(1);
+    
+                }
+
+            }
+        }
+    }
+
+
+}
+
+

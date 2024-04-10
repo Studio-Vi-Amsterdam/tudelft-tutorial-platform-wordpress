@@ -45,6 +45,21 @@
 
 </div>
 </main>
+    <div id="modal-window" class="modal-window">
+        <div class="modal-window__fader"></div>
+        <div id="modal-video" class="modal-window__item modal-window__video modal-video-item">
+            <div class="modal-video-item__wr-iframe">
+                <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
+                <iframe src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="modal-video-item__wr-image">
+                <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
+                <img src="" alt="image">
+            </div>
+        </div>
+    </div>
 
 <?php wp_footer(); ?>
 
