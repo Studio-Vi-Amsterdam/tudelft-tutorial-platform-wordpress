@@ -1,6 +1,14 @@
 .image {
     display: block;
-
+    figure {
+        width: 100%;
+    }
+    figcaption {
+        display: block;
+        margin-top: 1.6rem;
+        color: #67676B;
+        @extend .p-small;
+    }
     img{
         width: 100%;
         height: 100%;

@@ -1,0 +1,42 @@
+.video {
+
+    // .video__wrapper
+
+    &__wrapper {
+    }
+    figcaption {
+        display: block;
+        margin-top: 1.6rem;
+        color: #67676B;
+        @extend .p-small;
+    }
+
+    // .video__preload
+
+    &__preload {
+        position: relative;
+        cursor: pointer;
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0C234066;
+        }
+        img {
+            width: 100%;
+        }
+        svg {
+            position: absolute;
+            max-width: 12rem;
+            width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+        }
+    }
+}

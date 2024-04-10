@@ -90,6 +90,27 @@ input, textarea, button {
   font-family: inherit;
 }
 
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100svh;
+  display: block;
+  overflow: hidden;
+}
+
+#scroll-container {
+  width: 100%;
+  height: 100svh;
+}
+#scroll-container .disabled-horizontal-scroll {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
 html {
   font-size: 62.5%;
   color: #000000;
@@ -100,6 +121,7 @@ html * {
 
 h1,
 .h1,
+.tutorial__content h3,
 .text h1 {
   line-height: 1.15;
   font-family: "Roboto Slab", "Times New Roman", serif;
@@ -108,6 +130,7 @@ h1,
 @media (max-width: 375px) {
   h1,
   .h1,
+  .tutorial__content h3,
   .text h1 {
     font-size: 3.6rem;
   }
@@ -115,6 +138,7 @@ h1,
 @media (min-width: 376px) and (max-width: 1440px) {
   h1,
   .h1,
+  .tutorial__content h3,
   .text h1 {
     font-size: calc(3.6rem + 8 * ((100vw - 375px) / (1440 - 375)));
   }
@@ -122,6 +146,7 @@ h1,
 @media (min-width: 1441px) {
   h1,
   .h1,
+  .tutorial__content h3,
   .text h1 {
     font-size: 4.4rem;
   }
@@ -243,6 +268,25 @@ table th {
 @media (min-width: 1025px) {
   .p2, .text p {
     line-height: 1.6;
+  }
+}
+
+.p-small, .infobox__content p, .video figcaption, .image figcaption {
+  line-height: 1.45;
+}
+@media (max-width: 375px) {
+  .p-small, .infobox__content p, .video figcaption, .image figcaption {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 376px) and (max-width: 1440px) {
+  .p-small, .infobox__content p, .video figcaption, .image figcaption {
+    font-size: calc(1.4rem + 0 * ((100vw - 375px) / (1440 - 375)));
+  }
+}
+@media (min-width: 1441px) {
+  .p-small, .infobox__content p, .video figcaption, .image figcaption {
+    font-size: 1.4rem;
   }
 }
 
@@ -1598,29 +1642,6 @@ body::-webkit-scrollbar-thumb {
 .text {
   display: block;
 }
-.text h3 {
-  font-weight: 700;
-  line-height: 1.5;
-  color: #00A6D6;
-}
-@media (max-width: 375px) {
-  .text h3 {
-    font-size: 1.6rem;
-  }
-}
-@media (min-width: 376px) and (max-width: 1440px) {
-  .text h3 {
-    font-size: calc(1.6rem + 0 * ((100vw - 375px) / (1440 - 375)));
-  }
-}
-@media (min-width: 1441px) {
-  .text h3 {
-    font-size: 1.6rem;
-  }
-}
-.text h3 + h1 {
-  margin-top: 1.6rem;
-}
 .text h1 + p {
   margin-top: 3.2rem;
 }
@@ -1705,10 +1726,70 @@ body::-webkit-scrollbar-thumb {
 .image {
   display: block;
 }
+.image figure {
+  width: 100%;
+}
+.image figcaption {
+  display: block;
+  margin-top: 1.6rem;
+  color: #67676B;
+}
 .image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.video figcaption {
+  display: block;
+  margin-top: 1.6rem;
+  color: #67676B;
+}
+.video__preload {
+  position: relative;
+  cursor: pointer;
+}
+.video__preload:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 35, 64, 0.4);
+}
+.video__preload img {
+  width: 100%;
+}
+.video__preload svg {
+  position: absolute;
+  max-width: 12rem;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.infobox {
+  border: 2px solid #00A6D6;
+  background-color: #E0F5FE;
+  padding: 1.6rem 2.4rem;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+}
+.infobox__icon {
+  max-width: 2.4rem;
+  min-width: 2.4rem;
+  height: auto;
+  margin-right: 2.4rem;
+}
+.infobox__content {
+  width: 100%;
+}
+.infobox__content p {
+  color: #000000;
 }
 
 .btns .btn--prev {
@@ -1910,8 +1991,8 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .tutorial__mobile-nav {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   background-color: rgba(12, 35, 64, 0.4);
@@ -1921,7 +2002,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 12;
   border-radius: 0.4rem 0.4rem 0 0;
   overflow: hidden;
-  transition: 0.5s cubic-bezier(0.15, 0, 0, 1);
+  transition: 0.5s cubic-bezier(0.15, 0, 0, 1) all, 0s top;
 }
 @media (min-width: 768px) {
   .tutorial__mobile-nav {
@@ -1962,19 +2043,19 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .tutorial__aside {
-  transition: 0.5s cubic-bezier(0.15, 0, 0, 1);
+  transition: 0.5s cubic-bezier(0.15, 0, 0, 1), 0s top, 0s 0.5s height, 0s 0.5s padding;
 }
 @media (max-width: 767px) {
   .tutorial__aside {
-    position: fixed;
+    position: absolute;
     width: 100%;
-    height: 87vh;
+    height: 0;
+    overflow: hidden;
     bottom: 0;
     background-color: #ffffff;
     left: 0;
     z-index: 32;
     border-radius: 0.4rem 0.4rem 0 0;
-    padding: 2.4rem;
     box-sizing: border-box;
     transform: translateY(100%);
     display: flex;
@@ -2006,11 +2087,29 @@ body::-webkit-scrollbar-thumb {
   background: #E5E5E5;
 }
 @media (max-width: 767px) {
+  .tutorial__aside-height {
+    padding: 2.4rem;
+    height: 87vh;
+  }
+}
+@media (max-width: 767px) {
   .tutorial__aside-wrapper {
     flex: 1 1 auto;
     overflow-y: auto;
     padding-right: 2.6rem;
     box-sizing: border-box;
+    height: calc(100% - 4.8rem);
+  }
+}
+@media (min-width: 768px) {
+  .tutorial__aside-wrapper[data-scrollbar] {
+    overflow: unset !important;
+    outline: unset !important;
+  }
+}
+@media (min-width: 768px) {
+  .tutorial__aside-wrapper[data-scrollbar] .scroll-content {
+    transform: translate(0) !important;
   }
 }
 .tutorial__close {
@@ -2075,6 +2174,38 @@ body::-webkit-scrollbar-thumb {
     margin-top: 4rem;
   }
 }
+.tutorial__content h2 {
+  font-weight: 700;
+  line-height: 1.5;
+  color: #00A6D6;
+  font-family: "Arial", "Verdana", sans-serif;
+}
+@media (max-width: 375px) {
+  .tutorial__content h2 {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 376px) and (max-width: 1440px) {
+  .tutorial__content h2 {
+    font-size: calc(1.6rem + 0 * ((100vw - 375px) / (1440 - 375)));
+  }
+}
+@media (min-width: 1441px) {
+  .tutorial__content h2 {
+    font-size: 1.6rem;
+  }
+}
+.tutorial__content h2 + h3 {
+  margin-top: 1.6rem;
+}
+.tutorial__content h3 + p {
+  margin-top: 3.2rem;
+}
+@media (min-width: 1025px) {
+  .tutorial__content h3 + p {
+    margin-top: 4rem;
+  }
+}
 .tutorial__btns {
   margin-top: 5.6rem;
   width: 100%;
@@ -2096,6 +2227,12 @@ body::-webkit-scrollbar-thumb {
 }
 .tutorial--active .tutorial__aside {
   transform: translateY(0);
+  transition: 0.5s cubic-bezier(0.15, 0, 0, 1), 0s top, 0s 0s height, 0s 0s padding;
+}
+@media (max-width: 767px) {
+  .tutorial--active .tutorial__aside {
+    height: 87vh;
+  }
 }
 .tutorial--active .tutorial__mobile-nav {
   opacity: 1;

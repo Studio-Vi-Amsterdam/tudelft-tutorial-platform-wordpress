@@ -14,8 +14,8 @@
 
     // .tutorial__mobile-nav
     &__mobile-nav {
-        position: fixed;
-        bottom: 0;
+        position: absolute;
+        top: 0;
         left: 0;
         width: 100%;
         background-color: #0C234066;
@@ -25,7 +25,7 @@
         z-index: 12;
         border-radius: .4rem .4rem 0 0;
         overflow: hidden;
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, 0s top;
 
         @media(min-width: $tabletSmallP1) {
             display: none ;
@@ -73,18 +73,18 @@
     // .tutorial__aside
 
     &__aside {
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00), 0s top, 0s .5s height, 0s .5s padding ;
 
         @media(max-width: $tabletSmall) {
-            position: fixed;
+            position: absolute;
             width: 100%;
-            height: 87vh;
+            height: 0;
+            overflow: hidden;
             bottom: 0;
             background-color: $white;
             left: 0;
             z-index: 32;
             border-radius: .4rem .4rem 0 0;
-            padding: 2.4rem;
             box-sizing: border-box;
             transform: translateY(100%);
             display: flex;
@@ -117,6 +117,14 @@
 
     }
 
+    // .tutorial__aside-height
+    &__aside-height {
+        @media(max-width: $tabletSmall) {
+            padding: 2.4rem;
+            height: 87vh;
+        }
+    }
+
     //.tutorial__aside-wrapper
     &__aside-wrapper {
         @media(max-width: $tabletSmall) {
@@ -124,7 +132,21 @@
             overflow-y: auto;
             padding-right: 2.6rem;
             box-sizing: border-box;
+            height: calc(100% - 4.8rem);
         }
+        
+    &[data-scrollbar] {
+         @media (min-width: $tabletSmallP1) {
+            overflow: unset !important; 
+             outline: unset !important;
+         }
+         .scroll-content {
+            @media (min-width: $tabletSmallP1) {
+               transform: translate(0) !important;
+            }
+
+         }
+    }
 
     }
 
@@ -211,6 +233,31 @@
                 margin-top: 4rem;
             }
         }
+        h2 {
+            @include adaptiveProperty('font-size', 16, 16);
+            font-weight: 700;
+            line-height: 1.5;
+            color: $secondary;
+            font-family: $primary-font;
+    
+            &+h3 {
+                margin-top: 1.6rem;
+            }
+
+        }
+        h3 {
+            @extend .h1;
+    
+            &+p {
+                margin-top: 3.2rem;
+    
+                @media(min-width: $tabletP1) {
+                    margin-top: 4rem;
+                }
+    
+            }
+
+        }
     }
 
     // .tutorial__img
@@ -240,6 +287,11 @@
 
         #{$self}__aside {
             transform: translateY(0);
+            transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00), 0s top, 0s 0s height, 0s 0s padding ;
+
+            @media(max-width: $tabletSmall) {
+                height: 87vh;
+            }
         }
 
         #{$self}__mobile-nav{

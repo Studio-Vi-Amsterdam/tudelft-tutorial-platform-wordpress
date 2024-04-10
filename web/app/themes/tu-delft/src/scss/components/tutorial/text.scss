@@ -1,16 +1,6 @@
 .text {
     display: block;
 
-    h3 {
-        @include adaptiveProperty('font-size', 16, 16);
-        font-weight: 700;
-        line-height: 1.5;
-        color: $secondary;
-
-        &+h1 {
-            margin-top: 1.6rem;
-        }
-    }
 
     h1 {
         @extend .h1;
