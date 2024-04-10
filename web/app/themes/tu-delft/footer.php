@@ -55,8 +55,10 @@
                     allowfullscreen></iframe>
             </div>
             <div class="modal-video-item__wr-image">
-                <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
-                <img src="" alt="image">
+                <div class="modal-video-item__image">
+                    <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
+                    <img src="" alt="image">
+                </div>
             </div>
         </div>
     </div>

@@ -16,10 +16,10 @@
         <rect width="15" height="13" x="1" y="1.5" stroke="#000" rx="1.5" />
 </symbol>
 
-<symbol id="play-video"  viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="60" cy="60" r="59" fill="#00A6D6" stroke="white" stroke-width="2"/>
-<path d="M46.5 78.8915V41.1085C46.5 39.5376 48.2279 38.5799 49.56 39.4125L79.7864 58.304C81.0397 59.0873 81.0397 60.9127 79.7864 61.696L49.56 80.5875C48.2279 81.4201 46.5 80.4624 46.5 78.8915Z" fill="white"/>
+<symbol id="play-video" viewBox="0 0 35 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.5 39.8915V2.1085C0.5 0.537624 2.2279 -0.420061 3.56 0.4125L33.7864 19.304C35.0397 20.0873 35.0397 21.9127 33.7864 22.696L3.56 41.5875C2.2279 42.4201 0.5 41.4624 0.5 39.8915Z" fill="white"/>
 </symbol>
+
 <symbol id="infobox"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#00A6D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M11.998 16V11" stroke="#00A6D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

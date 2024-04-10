@@ -32,17 +32,34 @@
             width: 100%;
         }
         svg {
-            position: absolute;
-            max-width: 15%;
-            width: 100%;
+        }
+    }
+
+    //.video__play
+    &__play {
+        position: absolute;
+        width: 100%;
+        max-width: 15%;
+        top: 50%;
+        left: 50%;
+        background-color: #00A6D6;
+        border-radius: 50%;
+        border: 1px solid $white;
+        transform: translate(-50%,-50%);
+        padding-bottom: 14.5%;
+        z-index: 2;
+        @media(min-width: $tabletSmallP1) {
+            border: 2px solid $white;
+        }
+        svg {
+            width: 30%;
             height: auto;
+            margin-left: 5%;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            z-index: 2;
-            @media(min-width: $tabletSmallP1) {
-                max-width: 15%;
-            }
         }
+
     }
 }
