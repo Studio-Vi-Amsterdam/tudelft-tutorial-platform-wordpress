@@ -30,12 +30,13 @@
     </div>
     <div class="tutorial__fader"></div>
     <div class="tutorial__aside">
+        <div class="tutorial__aside-height">
         <div class="tutorial__close call-tutorial-nav">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                 <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1.234l12 12m-12 0l12-12" />
             </svg>
         </div>
-        <div class="tutorial__aside-wrapper">
+        <div class="tutorial__aside-wrapper" data-scrollbar>
         <div class="tutorial__nav titles">
             <h4>Content Page Title</h4>
 
@@ -45,64 +46,52 @@
                         Chapter Title 1
                     </div>
                     <div class="titles__body">
-                        <ul>
-                            <li><a href="#">Subchapter title</a></li>
-                            <li><a href="#">Subchapter title</a></li>
+                        <ul class="js-toc">
                         </ul>
                     </div>
                 </li>
-                <li class="titles__item ">
+                <li class="titles__item " data-toc-wrapper>
                     <div class="titles__head active" data-tab-target="chapter-1">
                         Chapter Title 1
                     </div>
                     <div class="titles__body">
-                        <ul>
-                            <li><a href="#">Subchapter title</a></li>
-                            <li><a href="#">Subchapter title</a></li>
+                        <ul class="js-toc">
                         </ul>
                     </div>
                 </li>
-                <li class="titles__item">
+                <li class="titles__item" data-toc-wrapper>
                     <div class="titles__head" data-tab-target="chapter-2">
                         Chapter Title 2
                     </div>
                     <div class="titles__body">
-                        <ul>
-                            <li><a href="#">Subchapter title</a></li>
-                            <li><a href="#">Subchapter title</a></li>
+                        <ul class="js-toc">
                         </ul>
                     </div>
                 </li>
-                <li class="titles__item">
+                <li class="titles__item" data-toc-wrapper>
                     <div class="titles__head" data-tab-target="chapter-3">
                         Chapter Title 3
                     </div>
                     <div class="titles__body">
-                        <ul>
-                            <li><a href="#">Subchapter title</a></li>
-                            <li><a href="#">Subchapter title</a></li>
+                        <ul class="js-toc">
                         </ul>
                     </div>
                 </li>
-                <li class="titles__item">
+                <li class="titles__item" data-toc-wrapper>
                     <div class="titles__head" data-tab-target="chapter-4">
                         Chapter Title 4
                     </div>
                     <div class="titles__body">
-                        <ul>
-                            <li><a href="#">Subchapter title</a></li>
-                            <li><a href="#">Subchapter title</a></li>
+                        <ul class="js-toc">
                         </ul>
                     </div>
                 </li>
-                <li class="titles__item">
+                <li class="titles__item" data-toc-wrapper>
                     <div class="titles__head" data-tab-target="chapter-5">
                         Chapter Title 5
                     </div>
                     <div class="titles__body">
-                        <ul>
-                            <li><a href="#">Subchapter title</a></li>
-                            <li><a href="#">Subchapter title</a></li>
+                        <ul class="js-toc">
                         </ul>
                     </div>
                 </li>
@@ -153,19 +142,20 @@
             </table>
         </div>
         </div>
+        </div>
     </div>
     <div class="tutorial__main">
-        <div class="tutorial__item active" data-tab-content="chapter-0">
+        <div class="tutorial__item" data-tab-content="chapter-0">
             <div class="tutorial__content text">
-                <h3>CONTENT PAGE TITLE 0/X</h3>
-                <h1>Content Page Title</h1>
+                <h2>CONTENT PAGE TITLE 0/5</h2>
+                <h3>Content Page Title</h3>
                 <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
                     placerat
                     aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
                     volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum
                     interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
             </div>
-            <a href="#" class="tutorial__content download">
+            <a href="#" download class="tutorial__content download">
                 <div class="download__wrapper">
                     <div class="download__icon">
                         <svg width="24" height="24">
@@ -179,7 +169,9 @@
                 </div>
             </a>
             <div class="tutorial__content image">
-                <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
+                <figure>
+                    <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
+                </figure>
             </div>
             <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
                 <a href="#" class="btn" data-next>
@@ -188,31 +180,113 @@
                 </a>
             </div>
         </div>
-        <div class="tutorial__item" data-tab-content="chapter-1">
+        <div class="tutorial__item active" data-tab-content="chapter-1">
             <div class="tutorial__content text">
-                <h3>CONTENT PAGE TITLE 0/X</h3>
-                <h1>1 Content Page Title</h1>
-                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
-                    placerat
-                    aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
-                    volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum
-                    interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
+                <h2>Content Page title 1/5</h2>
+                <h3>Chapter Title 1</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                </p>
             </div>
-            <a href="#" class="tutorial__content download">
-                <div class="download__wrapper">
-                    <div class="download__icon">
-                        <svg width="24" height="24">
-                            <use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="download__inner">
-                    <h5>Download sample files</h5>
-                    <h6>Sample files to practice with (ZIP, 15MB)</h6>
-                </div>
-            </a>
             <div class="tutorial__content image">
-                <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
+                <figure>
+                    <img data-image-src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
+                    <figcaption>
+                        Image From: Murphy, K. P. (2021). Figure 14.4. In Machine Learning: A Probabilistic Perspective. textbook, MIT Press.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="tutorial__content video" data-video-src="https://www.youtube.com/embed/sjkrrmBnpGE">
+                <figure class="video__wrapper">
+                    <div class="video__preload">
+                        <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
+                        <div class="video__play">
+                            <svg width="35" height="42">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#play-video"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <figcaption>
+                        Image From: Murphy, K. P. (2021). Figure 14.4. In Machine Learning: A Probabilistic Perspective. textbook, MIT Press.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="tutorial__content infobox flex items-start">
+                <div class="infobox__icon">
+                    <svg width="24" height="24">
+                            <use href="<?= $theme_url ?>/src/sprite.svg#infobox"></use>
+                    </svg>
+                </div>
+                <div class="infobox__content">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </p>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam </h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                </p>
+                <div class="grid-links grid lg:grid-cols-2 gap-6">
+                    <a href="#" class="link-box flex items-center">
+                        <h6>
+                            Create an Urban Context Model in Rhino and QGIS Create an Urban Context Model in Rhino and QGIS
+                        </h6>
+                        <div class="arrow">
+                            <svg width="9" height="14">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                            </svg>
+                            <svg width="24" height="2">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#" class="link-box flex items-center">
+                        <h6>
+                        Tutorial Title
+                        </h6>
+                        <div class="arrow">
+                            <svg width="9" height="14">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                            </svg>
+                            <svg width="24" height="2">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="grid-links grid lg:grid-cols-2 gap-6">
+                    <a href="#" class="link-box flex items-center">
+                        <h6>
+                        Tutorial Title
+                        </h6>
+                        <div class="arrow">
+                            <svg width="9" height="14">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                            </svg>
+                            <svg width="24" height="2">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#" class="link-box flex items-center">
+                        <h6>
+                        Tutorial Title
+                        </h6>
+                        <div class="arrow">
+                            <svg width="9" height="14">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                            </svg>
+                            <svg width="24" height="2">
+                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
                 <a href="#" class="btn" data-prev>
@@ -227,8 +301,9 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-2">
             <div class="tutorial__content text">
-                <h3>CONTENT PAGE TITLE 0/X</h3>
-                <h1>2 Content Page Title</h1>
+                <h2>CONTENT PAGE TITLE 0/X</h2>
+                <h3>2 Content Page Title</h3>
+                <h4>test</h4>
                 <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
                     placerat
                     aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
@@ -269,8 +344,8 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-3">
             <div class="tutorial__content text">
-                <h3>CONTENT PAGE TITLE 0/X</h3>
-                <h1>3 Content Page Title</h1>
+                <h2>CONTENT PAGE TITLE 0/X</h2>
+                <h3>3 Content Page Title</h3>
                 <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
                     placerat
                     aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
@@ -303,8 +378,8 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-4">
             <div class="tutorial__content text">
-                <h3>CONTENT PAGE TITLE 0/X</h3>
-                <h1>4 Content Page Title</h1>
+                <h2>CONTENT PAGE TITLE 0/X</h2>
+                <h3>4 Content Page Title</h3>
                 <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
                     placerat
                     aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget.</p>
@@ -338,8 +413,8 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-5">
             <div class="tutorial__content text">
-                <h3>CONTENT PAGE TITLE 0/X</h3>
-                <h1>5 Content Page Title</h1>
+                <h2>CONTENT PAGE TITLE 0/X</h2>
+                <h3>5 Content Page Title</h3>
                 <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
                     placerat
                     aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare

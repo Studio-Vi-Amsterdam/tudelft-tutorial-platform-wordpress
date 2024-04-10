@@ -39,6 +39,9 @@
 
 <body class="preload">
 
+
+    <main id="scroll-container" data-barba="container" data-barba-namespace="page">
+      <div class="disabled-horizontal-scroll">
     <header class="header flex justify-center">
         <div class="header__container flex justify-between items-center">
         <div class="header__trigger header__icon js-menu-toggle">
@@ -47,7 +50,7 @@
                     d="M3 6h18M3 12h18M3 18h18" />
             </svg>
         </div>
-        <a href="#" class="header__logo">
+        <a href="#" class="header__logo" aria-label="home-page">
             <img width="300" height="74" src="<?= get_template_directory_uri() ?>/src/img/logo.svg" alt="logo">
         </a>
         <div class="header__menu">
@@ -290,7 +293,7 @@
             <div class="header__search search-bar" data-search>
                 <div class="search-bar__wrapper">
                     <div data-open-search> </div>
-                    <button class="search-bar__btn">
+                    <button class="search-bar__btn" aria-label="search-button">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
                             <path stroke="#000" stroke-width="1.5"
                                 d="M19.64 10.832c0 4.99-4.202 9.082-9.445 9.082-5.242 0-9.445-4.091-9.445-9.082 0-4.99 4.203-9.082 9.445-9.082 5.243 0 9.446 4.092 9.446 9.082z" />
@@ -302,7 +305,7 @@
                     </div>
                 </div>
                 <div class="search-bar__field flex items-center">
-                    <button class="search-bar__btn">
+                    <button class="search-bar__btn" aria-label="search-button">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
                             <path stroke="#000" stroke-width="1.5"
                                 d="M19.64 10.832c0 4.99-4.202 9.082-9.445 9.082-5.242 0-9.445-4.091-9.445-9.082 0-4.99 4.203-9.082 9.445-9.082 5.243 0 9.446 4.092 9.446 9.082z" />
@@ -313,7 +316,7 @@
                     <input type="text" placeholder="Search">
                 </div>
             </div>
-            <a href="#" class="header__account header__icon">
+            <a href="#" class="header__account header__icon" aria-label="account">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25">
                     <circle cx="11.842" cy="6.316" r="5.566" stroke="#000" stroke-width="1.5" />
                     <path stroke="#000" stroke-linecap="round" stroke-width="1.5"
@@ -338,7 +341,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu">
+                    <div class="menu-item-has-children__submenu" data-scrollbar>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -358,7 +361,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -391,7 +394,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -425,7 +428,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -464,7 +467,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu">
+                    <div class="menu-item-has-children__submenu" data-scrollbar>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -484,7 +487,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -518,7 +521,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -552,7 +555,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -586,7 +589,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -620,7 +623,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -654,7 +657,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="menu-item-has-children__submenu">
+                                <div class="menu-item-has-children__submenu" data-scrollbar>
                                     <div class="menu-item-has-children__title title-prev title-start">
                                         <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                             <svg width="20" height="20">
@@ -693,7 +696,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu">
+                    <div class="menu-item-has-children__submenu" data-scrollbar>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -731,7 +734,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu">
+                    <div class="menu-item-has-children__submenu" data-scrollbar>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -758,5 +761,3 @@
             </a>
         </div>
     </nav>
-
-    <main>

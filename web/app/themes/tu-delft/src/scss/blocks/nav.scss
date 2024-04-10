@@ -10,8 +10,8 @@
     padding: 10.1rem 2.4rem 2.4rem;
     box-sizing: border-box;
     transform: translateY(-100%);
-    transition: 500ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
-
+    transition: 500ms cubic-bezier(0.15, 0.00, 0.00, 1.00), 0s top;
+    overflow: hidden;
     @media(min-width: $tabletP1) {
         display: none;
     }
@@ -98,7 +98,7 @@
     // .menu-item-has-children__submenu
 
     &__submenu {
-        position: absolute;
+        position: absolute !important;
         top: 0rem;
         left: 0;
         width: 100%;

@@ -24,9 +24,6 @@ export function tutorials() {
     })
     nextBtn.on('click', function(e) {
         $('.tutorial__main').removeClass('prev-side')
-        $('html, body').animate({
-            scrollTop: 0,
-          }, 0)
         e.preventDefault();
         setTimeout(() => {
             ++numberOfTab;
@@ -36,13 +33,12 @@ export function tutorials() {
     })
     prevBtn.on('click', function(e) {
         $('.tutorial__main').addClass('prev-side')
-        $('html, body').animate({
-            scrollTop: 0,
-          }, 0)
         e.preventDefault();
-        --numberOfTab;
-        addActiveTab(target.slice(0,-1) + (+target[target.length -1] - 1))
-        target = target.slice(0,-1) + (+target[target.length -1] - 1)
+        setTimeout(() => {
+            --numberOfTab;
+            addActiveTab(target.slice(0,-1) + (+target[target.length -1] - 1))
+            target = target.slice(0,-1) + (+target[target.length -1] - 1)
+        }, 50);
     })
     function addActiveTab(target) {
         tabContents.removeClass('inactive')
@@ -82,14 +78,6 @@ export function tutorials() {
 
     $('.call-tutorial-nav').on('click', function () {
         $(this).closest('.tutorial').toggleClass('tutorial--active')
-    })
-    $(window).on('scroll', function() {
-        if($(document).scrollTop() + $(window).innerHeight() >= $(document).height() - 100) {
-            $('.tutorial__mobile-nav').addClass('hidden')
-
-        } else {
-            $('.tutorial__mobile-nav').removeClass('hidden')
-        }
     })
 
 }

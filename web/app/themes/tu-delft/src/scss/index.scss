@@ -18,9 +18,15 @@
 @import './components/tutorial/text.scss';
 @import './components/tutorial/download.scss';
 @import './components/tutorial/image.scss';
+@import './components/tutorial/video.scss';
+@import './components/tutorial/infobox.scss';
 @import './components/tutorial/btns.scss';
 @import './components/search-bar.scss';
+@import './components/tutorial/link-box.scss';
+@import './components/arrow.scss';
 @import './blocks/tutorial.scss';
 
+@import './blocks/modalWindow/modal-video-item.scss';
+@import './blocks/modalWindow/modal-window.scss';
 
 @import './parts/footer.scss';

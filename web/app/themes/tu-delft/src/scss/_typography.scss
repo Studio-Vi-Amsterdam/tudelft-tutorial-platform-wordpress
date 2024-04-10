@@ -51,6 +51,12 @@ html {
 	  line-height: 1.6;
 	}
   }
+
+  .p-small {
+	@include adaptiveProperty('font-size', 14, 14);
+	line-height: 1.45;
+
+  }
   
   
   h1,

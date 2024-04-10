@@ -91,3 +91,33 @@ button {
 input, textarea, button {
     font-family: inherit;
 }
+
+body, html {
+    margin: 0;
+    width: 100%;
+    height: 100svh;
+    display: block;
+    overflow: hidden;
+  }
+  
+  #scroll-container {
+    width: 100%;
+    height: 100svh;
+    .disabled-horizontal-scroll {
+      overflow-x: hidden;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .hide-scrollbar {
+    & >  .scrollbar-track-y {
+      display: none !important;
+    }
+  }
+
+  [data-image-src] {
+    cursor: zoom-in
+  }

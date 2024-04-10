@@ -44,6 +44,7 @@
     "gsap": "^3.6.1",
     "lottie-web": "^5.7.11",
     "slick-carousel": "^1.8.1",
+    "smooth-scrollbar": "^8.8.4",
     "tailwind": "^4.0.0",
     "vanilla-lazyload": "^17.8.3"
   }
