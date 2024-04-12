@@ -29,6 +29,30 @@
     p {
         @extend .p2;
         color: $txt-gray;
+        small {
+            color: $black;
+             @extend  .p1;
+             display: block;
+        }
+        & + p {
+            margin-top: 2.4rem;
+        }
+        mark {
+            background-color: transparent;
+            display: inline-block;
+            position: relative;
+            &:before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: calc(100% + 4px);
+                height: 100%;
+                background-color: #B9EEFE;
+                z-index: -1;
+                transform: skew(-15deg, 0deg);
+            }
+        }
     }
     .grid-links {
         gap: 2.4rem;

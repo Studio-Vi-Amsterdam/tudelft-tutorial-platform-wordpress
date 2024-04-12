@@ -33,6 +33,10 @@ body {
   line-height: 1;
 }
 
+.preload {
+  opacity: 0;
+}
+
 blockquote, q {
   quotes: none;
 }
@@ -220,6 +224,7 @@ p,
 .p1,
 .link-box h6,
 .search-bar__field input,
+.text p small,
 ul li,
 ol li,
 table td,
@@ -231,6 +236,7 @@ table th {
   .p1,
   .link-box h6,
   .search-bar__field input,
+  .text p small,
   ul li,
   ol li,
   table td,
@@ -243,6 +249,7 @@ table th {
   .p1,
   .link-box h6,
   .search-bar__field input,
+  .text p small,
   ul li,
   ol li,
   table td,
@@ -255,6 +262,7 @@ table th {
   .p1,
   .link-box h6,
   .search-bar__field input,
+  .text p small,
   ul li,
   ol li,
   table td,
@@ -1681,6 +1689,29 @@ body::-webkit-scrollbar-thumb {
 .text p {
   color: #666666;
 }
+.text p small {
+  color: #000000;
+  display: block;
+}
+.text p + p {
+  margin-top: 2.4rem;
+}
+.text p mark {
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+.text p mark:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: calc(100% + 4px);
+  height: 100%;
+  background-color: #B9EEFE;
+  z-index: -1;
+  transform: skew(-15deg, 0deg);
+}
 .text .grid-links {
   gap: 2.4rem;
   margin-top: 2.4rem;
@@ -2070,6 +2101,67 @@ body::-webkit-scrollbar-thumb {
   width: 3rem;
 }
 
+.two-column {
+  gap: 2.4rem;
+  margin-top: 2.4rem;
+}
+.two-column__item {
+  width: 100%;
+}
+.two-column__item--image.image figcaption {
+  margin-top: 1.6rem;
+}
+.tooltip {
+  color: #009B77;
+  display: inline-block;
+  position: relative;
+}
+.tooltip:hover span {
+  transform: translateY(calc(-100% - 5px)) scale(1);
+}
+.tooltip span {
+  color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 40rem;
+  max-width: 40rem;
+  background-color: #E5F5F1;
+  border-radius: 4px;
+  border: 1px solid #009B77;
+  padding: 8px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0588235294);
+  transition: 0.5s cubic-bezier(0.15, 0, 0, 1);
+  transform-origin: left bottom;
+  transform: translateY(calc(-100% - 5px)) scale(0);
+}
+.tooltip span:before {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 2.4rem;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 10px 8px 0 8px;
+  border-color: #009B77 transparent transparent transparent;
+  transform: rotate(0deg);
+}
+.tooltip span:after {
+  position: absolute;
+  content: "";
+  top: calc(100% - 1px);
+  left: 2.4rem;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 10px 8px 0 8px;
+  border-color: #E5F5F1 transparent transparent transparent;
+  transform: rotate(0deg);
+  z-index: 2;
+}
+
 .arrow {
   min-width: 3rem;
   max-width: 3rem;
@@ -2101,7 +2193,6 @@ body::-webkit-scrollbar-thumb {
   padding-top: 12.4rem;
   padding-bottom: 8rem;
   position: relative;
-  overflow: hidden;
 }
 @media (min-width: 768px) {
   .tutorial {

@@ -180,7 +180,7 @@
                 </a>
             </div>
         </div>
-        <div class="tutorial__item active" data-tab-content="chapter-1">
+        <div class="tutorial__item" data-tab-content="chapter-1">
             <div class="tutorial__content text">
                 <h2>Content Page title 1/5</h2>
                 <h3>Chapter Title 1</h3>
@@ -301,35 +301,57 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-2">
             <div class="tutorial__content text">
-                <h2>CONTENT PAGE TITLE 0/X</h2>
-                <h3>2 Content Page Title</h3>
-                <h4>test</h4>
-                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
-                    placerat
-                    aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
-                    volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum
-                    interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
-                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
-                    placerat
-                    aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
-                    volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum
-                    interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
+                <h2>Content Page title 2/5</h2>
+                <h3>Chapter Title 2</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                </p>
             </div>
-            <a href="#" class="tutorial__content download">
-                <div class="download__wrapper">
-                    <div class="download__icon">
-                        <svg width="24" height="24">
-                            <use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
-                        </svg>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet  <span class="tooltip">technical term <span>Non-uniform rational basis spline (NURBS) is a mathematical model using basic spline that is commonly used in computer graphics for representing curves and surfaces.</span></span> adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. <mark>Auctor egestas aliquet adipiscing </mark> eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet technical term adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="two-column flex flex-col sm:flex-row items-start justify-between">
+                    <div class="two-column__item two-column__item--image image">
+                        <figure>
+                            <img data-image-src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" width="392" height="320" src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" alt="image">
+                            <figcaption>
+                              Subtitle
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="two-column__item two-column__item--text text">
+                        <p>
+                            <small>
+                                Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                            </small>
+                        </p>
                     </div>
                 </div>
-                <div class="download__inner">
-                    <h5>Download sample files</h5>
-                    <h6>Sample files to practice with (ZIP, 15MB)</h6>
-                </div>
-            </a>
-            <div class="tutorial__content image">
-                <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
             </div>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
                 <a href="#" class="btn" data-prev>

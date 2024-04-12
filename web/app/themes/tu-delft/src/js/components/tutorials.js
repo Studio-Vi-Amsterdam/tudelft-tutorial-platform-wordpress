@@ -1,8 +1,20 @@
 export function tutorials() {
+    const currentUrl = window.location.protocol + '//' + window.location.host + window.location.pathname
+    const searchParams = new URLSearchParams(document.location.search)
+    let tab = searchParams.get("tab")
     const nextBtn = $('[data-next]')
     const prevBtn = $('[data-prev]')
+    const tabs = $('[data-tab-target]')
+    const tabContents = $('[data-tab-content]')
     let numberOfTab = 0
     let target = 'chapter-0'
+    if(tab) {
+        numberOfTab= +tab.slice(-1)
+        target = tab.toString()
+        addActiveTab(tab.toString())
+    } else {
+        addActiveTab('chapter-0')
+    }
     if (document.querySelector('.tutorial')) {
         $('.titles__item').eq(0).addClass('titles__item--opened')
         $('.titles__head').on('click', function (e) {
@@ -12,8 +24,6 @@ export function tutorials() {
     }
 
 
-    const tabs = $('[data-tab-target]')
-    const tabContents = $('[data-tab-content]')
     tabs.on('click', function() {
         $('.tutorial__main').removeClass('prev-side')
         target = $(this).data('tab-target')
@@ -42,11 +52,15 @@ export function tutorials() {
     })
     function addActiveTab(target) {
         tabContents.removeClass('inactive')
+        searchParams.set('tab', target)
+        window.history.replaceState('', '', currentUrl + '?' + searchParams.toString())
         tabs.not(`[data-tab-target="${target}"]`).removeClass('active')
+        tabs.not(`[data-tab-target="${target}"]`).parent().removeClass('titles__item--opened')
         $(`[data-tab-target="${target}"]`).addClass('active')
         $('[data-tab-content].active').not(`[data-tab-content="${target}"]`).addClass('inactive')
         $(`[data-tab-content="${target}"]`).addClass('active')
         $(`[data-tab-content="${target}"]`).css('overflow', 'unset')
+        $(`[data-tab-target="${target}"]`).parent().addClass('titles__item--opened')
         tabContents.not(`[data-tab-content="${target}"]`).removeClass('active')
         setTimeout(() => {
             tabContents.not(`[data-tab-content="${target}"]`).removeClass('inactive')
