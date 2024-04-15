@@ -9,6 +9,8 @@ import { tutorials } from "./components/tutorials";
 import { showSearchBar } from "./components/show-search-bar";
 import { smoothScroll } from "./components/smooth-scrolling";
 import { tabOfContent } from "./components/toc";
+import { changeCategory } from "./components/category-change";
+import { accordion } from "./components/accordion";
 
 
 export function runAfterDomLoad() {
@@ -17,5 +19,7 @@ export function runAfterDomLoad() {
     initMenu()
     tutorials()
     showSearchBar()
+    changeCategory()
+    accordion()
     new ModalWindow(ModalVideoWindow, ModalContentWindow)
 }

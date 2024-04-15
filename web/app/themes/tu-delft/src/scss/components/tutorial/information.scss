@@ -14,8 +14,15 @@
                 background-color: $light-blue;
                 border-radius: .4rem;
                 display: block;
+                transition: .17s linear;
                 @media(max-width: $mobile) {
                     font-size: 1.4rem;
+                }
+            }
+            &:hover {
+                a {
+                    background-color: #00A6D6;
+                    color: $white;
                 }
             }
         }

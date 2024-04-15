@@ -1,0 +1,31 @@
+.cards-with-categories {
+    padding-top: 5.6rem;
+    padding-bottom: 6rem;
+    @media(min-width: $mobileP1) {
+        padding-top: 8rem;
+        padding-bottom: 12rem;
+    }
+    // .cards-with-categories__categories
+
+    &__categories {
+            & + .cards-with-categories__wrapper {
+                margin-top: 8rem;
+            }
+    }   
+
+    // .cards-with-categories__wrapper
+
+    &__wrapper {
+    }
+
+    // .cards-with-categories__item
+
+    &__item {
+        &:last-child {
+            .accordion__content-wrapper {
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+}
+

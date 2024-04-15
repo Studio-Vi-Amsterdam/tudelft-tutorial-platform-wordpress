@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 7.6rem);
+    height: calc(100% - 6.8rem);
 
     display: flex;
     justify-content: center;
@@ -47,7 +47,7 @@
         width: 100%;
         opacity: 0;
         transition:  170ms linear;
-        height: calc(100% - 7.6rem);
+        height: calc(100% - 6.8rem);
         background: $white;
         @media (min-width: $tabletP1) {
             height: calc(100% - 8rem);

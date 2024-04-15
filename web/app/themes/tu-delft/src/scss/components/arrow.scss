@@ -2,9 +2,11 @@
     min-width: 3rem;
     max-width: 3rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
     svg {
         width: 2.4rem;
-        height: 1.6px;
         height: auto;
         position: relative;
         transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
@@ -20,10 +22,14 @@
     &:hover {
         svg {
             &:first-child {
-                right: 0;
+                @media(min-width: $mobileP1) {
+                    right: 0;
+                }
             }
             &:last-child{
-                width: 3rem;
+                @media(min-width: $mobileP1) {
+                    width: 3rem;
+                }
             }
         }
     }

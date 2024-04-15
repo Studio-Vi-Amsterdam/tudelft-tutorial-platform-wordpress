@@ -2,7 +2,7 @@
 module.exports = {
   content: ["*.php", 
   "./templates/*.php", 
-  "./template-parts/*.php,", 
+  "./template-parts/*.php", 
   "./template-parts/*/*.php"
 ],
   theme: {
