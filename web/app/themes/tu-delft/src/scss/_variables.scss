@@ -19,7 +19,7 @@ $tablet: 1023px; // @media (max-width: $tablet) --> 1024px and smaller
 $tabletP1: calc($tablet / 1px) + 1px; // @media (min-width: $tabletP1) --> 1025px and bigger
 $tabletSmall: 767px;
 $tabletSmallP1: calc($tabletSmall / 1px) + 1px;
-$mobile: 575px;
+$mobile: 639px;
 $mobileP1: calc($mobile / 1px) + 1px;
 $mobileSmall: 370px;
 $mobileSmallP1: calc($mobileSmall / 1px) + 1px;

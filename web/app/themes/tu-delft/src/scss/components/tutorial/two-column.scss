@@ -21,4 +21,11 @@
 
     &__item--text {
     }
+
+    //.two-column--reversed
+    &--reversed {
+        @media(min-width: $mobile) {
+            flex-direction: row-reverse;
+        }
+    }
 }

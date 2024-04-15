@@ -1,0 +1,181 @@
+.table-box {
+    $self: &;
+    margin-top: 2.4rem;
+    width: calc(100vw - 2.4rem);
+    @extend .p1;
+    @media(min-width: $mobileP1) {
+        width: 100%;
+    }
+    &:not(:last-child) {
+        margin-bottom: 2.4rem;
+    }
+    // .table-box__left-side
+
+    &__left-side {
+        min-width: 10.4rem;
+        max-width: 10.4rem;
+        display: grid;
+        grid-auto-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        color: #67676B;
+        @media(min-width: $mobileP1) {
+            min-width: 18.4rem;
+            max-width: 18.4rem;
+        }
+        .table-box__row {
+            div{
+                padding: .8rem;
+                background-color: #FAFAFA;
+                min-height: 6.4rem;
+                border-top: 1px solid #E5E5E5;
+                border-right: 4px solid #E0F5FE;
+                position: relative;
+                z-index: 2;
+                @media(min-width: $mobileP1) {
+                    min-height: 8rem;
+                }
+                @media(min-width: $tabletSmallP1) {
+                    padding: 1.6rem;
+                }
+            }
+            &:first-child {
+                div{
+                    background-color: #E0F5FE;
+                    margin-bottom: 8px;
+                    border-top: none;
+                    border-radius: 4px 0 0 4px;
+                    @media(min-width: $mobileP1) {
+                        min-height: unset;
+                    }
+                }
+            }
+            &:last-child {
+                div{
+                    border-radius: 0 0 0 4px;
+                }
+
+            }
+            &:nth-child(2) {
+                div {
+                    border-top: none;
+                    border-radius: 4px 0 0 0;
+                }
+            }
+
+        }
+    }
+
+    // .table-box__body
+
+    &__body {
+        width: 100%;
+        overflow-x: auto;
+        display: grid;
+        grid-auto-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        .table-box__row {
+            div{
+                min-width: 11.2rem;
+                &:last-child {
+                    text-align: end;
+                    padding-right: 1.6rem;
+                }
+            }
+            &:not(:nth-child(2), :first-child) {
+                div {
+                    border-top: 1px solid #E5E5E5;
+                }
+            }
+            &:first-child {
+                div {
+                    @media(min-width: $mobileP1) {
+                        min-height: unset;
+                    }
+                    &:last-child {
+                        @media(min-width: $mobileP1) {
+                            border-radius: 0 4px 4px 0;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    // .table-box__row
+
+    &__row {
+        display: flex;
+        &:first-child {
+            div {
+                margin-bottom: 8px;
+                background-color: #E0F5FE;
+                color: #67676B;
+            }
+        }
+        div{
+            min-height: 6.4rem;
+            width: 100%;
+            padding: .8rem;
+            @media(min-width: $mobileP1) {
+                min-height: 8rem;
+            }
+            @media(min-width: $tabletSmallP1) {
+                padding: 1.6rem;
+            }
+            &:first-child {
+                @media(min-width: $tabletSmallP1) {
+                    padding: 1.6rem 2.4rem;
+                }
+            }
+        }
+    }
+
+    //.table-box--not-fill-title
+    &--not-fill-title {
+        #{$self}__left-side {
+            #{$self}__row {
+                div{
+                    background-color: transparent;
+                    border-right: none;
+                }
+                &:first-child {
+                    div{
+                        background-color: #E0F5FE;
+                    }
+                }
+    
+            }
+        }
+
+    }
+
+    //.table-box--with-summary-price
+    &--with-summary-price {
+        #{$self}__left-side {
+            #{$self}__row {
+                &:last-child {
+                    div {
+                        border-top: 4px solid #E0F5FE;
+                        background-color: transparent;
+                        border-right: none;
+                        @media(min-width: $mobileP1) {
+                            padding-top: 2.4rem;
+                        }
+                    }
+                }
+            }
+        }
+        #{$self}__body {
+            #{$self}__row {
+                &:last-child {
+                    div {
+                        border-top: 4px solid #E0F5FE;
+                        @media(min-width: $mobileP1) {
+                            padding-top: 2.4rem;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

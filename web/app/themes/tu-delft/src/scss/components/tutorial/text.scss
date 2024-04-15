@@ -37,6 +37,9 @@
         & + p {
             margin-top: 2.4rem;
         }
+        &:not(:first-child) {
+            margin-top: 2.4rem;
+        }
         mark {
             background-color: transparent;
             display: inline-block;

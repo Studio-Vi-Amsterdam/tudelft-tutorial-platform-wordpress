@@ -229,30 +229,34 @@
                     Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
                 </p>
                 <div class="grid-links grid lg:grid-cols-2 gap-6">
-                    <a href="#" class="link-box flex items-center">
-                        <h6>
-                            Create an Urban Context Model in Rhino and QGIS Create an Urban Context Model in Rhino and QGIS
-                        </h6>
-                        <div class="arrow">
-                            <svg width="9" height="14">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
-                            </svg>
-                            <svg width="24" height="2">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
-                            </svg>
+                    <a href="#" class="link-box">
+                        <div class="link-box__wrapper flex items-center">
+                            <h6>
+                                Create an Urban Context Model in Rhino and QGIS Create an Urban Context Model in Rhino and QGIS
+                            </h6>
+                            <div class="arrow">
+                                <svg width="9" height="14">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                                </svg>
+                                <svg width="24" height="2">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                                </svg>
+                            </div>
                         </div>
                     </a>
-                    <a href="#" class="link-box flex items-center">
-                        <h6>
-                        Tutorial Title
-                        </h6>
-                        <div class="arrow">
-                            <svg width="9" height="14">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
-                            </svg>
-                            <svg width="24" height="2">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
-                            </svg>
+                    <a href="#" class="link-box">
+                        <div class="link-box__wrapper flex items-center">
+                            <h6>
+                            Tutorial Title
+                            </h6>
+                            <div class="arrow">
+                                <svg width="9" height="14">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                                </svg>
+                                <svg width="24" height="2">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                                </svg>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -260,30 +264,34 @@
             <div class="tutorial__content text">
                 <h4>Subchapter Title</h4>
                 <div class="grid-links grid lg:grid-cols-2 gap-6">
-                    <a href="#" class="link-box flex items-center">
-                        <h6>
-                        Tutorial Title
-                        </h6>
-                        <div class="arrow">
-                            <svg width="9" height="14">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
-                            </svg>
-                            <svg width="24" height="2">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
-                            </svg>
+                    <a href="#" class="link-box">
+                        <div class="link-box__wrapper  flex items-center">
+                            <h6>
+                            Tutorial Title
+                            </h6>
+                            <div class="arrow">
+                                <svg width="9" height="14">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                                </svg>
+                                <svg width="24" height="2">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                                </svg>
+                            </div>
                         </div>
                     </a>
-                    <a href="#" class="link-box flex items-center">
-                        <h6>
-                        Tutorial Title
-                        </h6>
-                        <div class="arrow">
-                            <svg width="9" height="14">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
-                            </svg>
-                            <svg width="24" height="2">
-                                <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
-                            </svg>
+                    <a href="#" class="link-box">
+                        <div class="link-box__wrapper flex items-center">
+                            <h6>
+                            Tutorial Title
+                            </h6>
+                            <div class="arrow">
+                                <svg width="9" height="14">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#arrow"></use>
+                                </svg>
+                                <svg width="24" height="2">
+                                    <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                                </svg>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -353,6 +361,222 @@
                     </div>
                 </div>
             </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="table-box flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="table-box table-box--not-fill-title flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="table-box table-box--with-summary-price flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                            <div></div>
+                            <div>36,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="table-box table-box--not-fill-title table-box--with-summary-price flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                            <div></div>
+                            <div>36,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
                 <a href="#" class="btn" data-prev>
                     <span>Previous chapter</span>
@@ -366,27 +590,104 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-3">
             <div class="tutorial__content text">
-                <h2>CONTENT PAGE TITLE 0/X</h2>
-                <h3>3 Content Page Title</h3>
-                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
-                    placerat
-                    aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
-                    volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum
-                    interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
+                <h2>Content Page title 2/5</h2>
+                <h3>Chapter Title 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
             </div>
-            <a href="#" class="tutorial__content download">
-                <div class="download__wrapper">
-                    <div class="download__icon">
-                        <svg width="24" height="24">
-                            <use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
-                        </svg>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="two-column two-column--reversed flex flex-col sm:flex-row items-start justify-between">
+                    <div class="two-column__item two-column__item--image image">
+                        <figure>
+                            <img data-image-src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" width="392" height="320" src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" alt="image">
+                            <figcaption>
+                              Subtitle
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="two-column__item two-column__item--text text">
+                        <p>
+                            <small>
+                             In the next few steps, we will use the tangents of the curve to define the directions of <br>
+                               the bricks. You can visualize them using the Vector Display component.
+                            </small>
+                        </p>
+                        <p>
+                            <small>
+                            Create a curve from the points 
+                            </small>
+                        </p>
+                        <div class="buttons-combination flex">
+                            <div class="buttons-combination__button flex items-center">
+                                <span>cmd</span>
+                            </div>
+                            <div class="buttons-combination__button flex items-center">
+                                <span>L</span>
+                            </div>
+                        </div>
+                        <p>
+                            <small>
+                            If the Vector arrows are not visible, you can make them larger by right-clicking on the icon and setting a default size in the arrow tab.
+                            </small>
+                        </p>
                     </div>
                 </div>
-                <div class="download__inner">
-                    <h5>Download sample files</h5>
-                    <h6>Sample files to practice with (ZIP, 15MB)</h6>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="two-column two-column--reversed flex flex-col sm:flex-row items-start justify-between">
+                    <div class="two-column__item two-column__item--image image">
+                        <figure>
+                            <img data-image-src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" width="392" height="320" src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" alt="image">
+                            <figcaption>
+                              Subtitle
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="two-column__item two-column__item--text text">
+                        <p>
+                            <small>
+                             In the next few steps, we will use the tangents of the curve to define the directions of <br>
+                               the bricks. You can visualize them using the Vector Display component.
+                            </small>
+                        </p>
+                        <p>
+                            <small>
+                            Create a curve from the points 
+                            </small>
+                        </p>
+                        <div class="buttons-combination buttons-combination--with-arrows flex">
+                            <div class="buttons-combination__button flex items-center">
+                                <span>math</span>
+                            </div>
+                            <div class="buttons-combination__button flex items-center">
+                                <span>domain</span>
+                            </div>
+                            <div class="buttons-combination__button flex items-center">
+                                <span>domain</span>
+                            </div>
+                        </div>
+                        <p>
+                            <small>
+                            If the Vector arrows are not visible, you can make them larger by right-clicking on the icon and setting a default size in the arrow tab.
+                            </small>
+                        </p>
+                    </div>
                 </div>
-            </a>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet technical term adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+            </div>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
                 <a href="#" class="btn" data-prev>
                     <span>Previous chapter</span>
@@ -400,27 +701,69 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-4">
             <div class="tutorial__content text">
-                <h2>CONTENT PAGE TITLE 0/X</h2>
-                <h3>4 Content Page Title</h3>
-                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
-                    placerat
-                    aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget.</p>
+                <h2>Content Page title 4/5</h2>
+                <h3>Chapter Title 4</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
             </div>
-            <a href="#" class="tutorial__content download">
-                <div class="download__wrapper">
-                    <div class="download__icon">
-                        <svg width="24" height="24">
-                            <use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
-                        </svg>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet technical term adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+                <div class="code-block">
+                    <pre>
+1      {
+2         <span class="pink">"collectionName"</span> <span class="orange">:</span>  <span class="green">"jsx_credits"</span>,
+3         <span class="pink">"info"</span><span class="orange">:</span> {
+4            <span class="pink">"displayName"</span> <span class="orange">:</span>  <span class="green">"Credits"</span>,
+5            <span class="pink">"icon"</span> <span class="orange">:</span>  <span class="green">"database"</span>,
+6            <span class="pink">"description"</span> <span class="orange">:</span>  <span class="green">""</span>  
+7         },
+8         <span class="pink">"options"</span> <span class="orange">:</span>  {},
+9         <span class="pink">"attributes"</span> <span class="orange">:</span>  {
+10          <span class="pink">"title"</span> <span class="orange">:</span>  {
+11            <span class="pink">"type"</span> <span class="orange">:</span>  <span class="green">"string"</span>,
+12            <span class="pink">"required"</span> <span class="orange">:</span>  <span class="pink">true</span>
+13          },
+14          <span class="pink">"actionsHeader"</span> <span class="orange">:</span>  {
+15            <span class="pink">"type"</span> <span class="orange">:</span>  <span class="green">"string"</span>,
+16            <span class="pink">"required"</span> <span class="orange">:</span>  <span class="pink">true</span>
+17          },
+18          <span class="pink">"amountsHeader"</span> <span class="orange">:</span>  {
+19            <span class="pink">"type"</span> <span class="orange">:</span>  <span class="green">"string"</span>,
+20            <span class="pink">"required"</span> <span class="orange">:</span>  <span claa="pink">true</span>
+21          },
+22          <span class="pink">"Credits"</span> <span class="orange">:</span>  {
+23            <span class="pink">"type"</span> <span class="orange">:</span>  <span class="green">"component"</span>,
+24            <span class="pink">"repatable"</span> <span class="orange">:</span>  <span class="pink">true</span>,
+25            <span class="pink">"component"</span> <span class="orange">:</span>  <span class="green">"props.credit"</span>
+26            <span class="pink">"required"</span> <span class="orange">:</span>  <span class="pink">true</span>
+27          }
+28        }
+29      }</pre>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="two-column flex flex-col sm:flex-row items-start justify-between">
+                    <div class="two-column__item two-column__item--image image">
+                        <figure>
+                            <img data-image-src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" width="392" height="320" src="<?= $theme_url ?>/src/img/tutorial/img-2.jpg" alt="image">
+                            <figcaption>
+                              Subtitle
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="two-column__item two-column__item--text text">
+                        <p>
+                            <small>
+                            Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                            </small>
+                        </p>
                     </div>
                 </div>
-                <div class="download__inner">
-                    <h5>Download sample files</h5>
-                    <h6>Sample files to practice with (ZIP, 15MB)</h6>
-                </div>
-            </a>
-            <div class="tutorial__content image">
-                <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
             </div>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
                 <a href="#" class="btn" data-prev>

@@ -1,12 +1,19 @@
 .link-box {
-    border-radius: 4px;
-    padding: 1.2rem 1rem 1.2rem 1.6rem;
-    box-sizing: border-box;
-    background-color: #EFF1F3;
-    min-height: 10rem;
-    @media(min-width: $tabletSmallP1) {
-        padding: 1.2rem 1.8rem 1.2rem 2.4rem;
-        min-height: 12rem;
+    position: relative;
+    &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00A6D6;
+        border-radius: 4px;
+        z-index: -1;
+        opacity: 0;
+        transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, .0s .5s opacity;
     }
     h6 {
         @extend .p1;
@@ -17,7 +24,32 @@
         margin-left: 1.6rem;
 
     }
+    //.link-box__wrapper
+    &__wrapper {
+        border-radius: 4px;
+        padding: 1.2rem 1rem 1.2rem 1.6rem;
+        box-sizing: border-box;
+        background-color: #EFF1F3;
+        min-height: 10rem;
+        position: relative;
+        top: 0;
+        left: 0;
+        transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        @media(min-width: $tabletSmallP1) {
+            padding: 1.2rem 1.8rem 1.2rem 2.4rem;
+            min-height: 12rem;
+        }
+
+    }
     &:hover {
+        &:before {
+            opacity: 1;
+            transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, .0s opacity;
+        }
+        .link-box__wrapper {
+            top: -10px;
+            left: -10px;
+        }
         .arrow svg {
             &:first-child {
                 right: 0;
