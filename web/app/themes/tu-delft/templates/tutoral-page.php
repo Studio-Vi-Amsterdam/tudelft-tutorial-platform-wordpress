@@ -778,13 +778,73 @@
         </div>
         <div class="tutorial__item" data-tab-content="chapter-5">
             <div class="tutorial__content text">
-                <h2>CONTENT PAGE TITLE 0/X</h2>
+                <h2>Content Page title 5/5</h2>
                 <h3>5 Content Page Title</h3>
-                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac
-                    placerat
-                    aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare
-                    volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum
-                    interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
+                <p>Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.</p>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet technical term adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+                <div class="math-func">
+                    <img width="149" height="48" src="<?= $theme_url ?>/src/img/tutorial/math.jpg" alt="image">
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Quiz</h4>
+                <div class="quiz">
+                    <p>
+                        <small>
+                        Ipsum facilisi morbi dapibus nullam tortor vestibulum interdum?
+                        </small>
+                    </p>
+                    <div class="quiz__wrapper">
+                        <div class="quiz__item">
+                            <input type="radio" id="quest1" name="quiz1" data-valid="valid">
+                            <label id="quest1">
+                                <small>Answer A</small>
+                                Lorem ipsum dolor sit amet consectetur.
+                            </label>
+                        </div>
+                        <div class="quiz__item">
+                            <input type="radio" id="quest2" name="quiz1" data-valid="invalid">
+                            <label id="quest2">
+                                <small>Answer B</small>
+                                Lorem ipsum dolor sit amet consectetur.
+                            </label>
+                        </div>
+                        <div class="quiz__item">
+                            <input type="radio" id="quest3" name="quiz1" data-valid="invalid">
+                            <label id="quest3">
+                                <small>Answer C</small>
+                                Lorem ipsum dolor sit amet consectetur.
+                            </label>
+                        </div>
+                        <div class="quiz__item">
+                            <input type="radio" id="quest4" name="quiz1" data-valid="invalid">
+                            <label id="quest4">
+                                <small>Answer D</small>
+                                Lorem ipsum dolor sit amet consectetur.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet vtechnical termadipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
+                <p>
+                    <small>
+                    Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+                    </small>
+                </p>
             </div>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
                 <a href="#" class="btn" data-prev>

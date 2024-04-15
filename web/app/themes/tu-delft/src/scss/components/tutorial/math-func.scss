@@ -1,0 +1,9 @@
+.math-func {
+    margin-top: 2.4rem;
+    &:not(:last-child) {
+        margin-bottom: 2.4rem;
+    }
+    img {
+        max-width: 15rem;
+    }
+}
