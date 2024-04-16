@@ -13,6 +13,13 @@
                 @media(min-width: $mobileP1) {
                     margin-top: 8rem;
                 }
+                .grid-links  {
+                    margin-top: 5.6rem;
+                    @media(min-width: $mobileP1) {
+                        margin-top: 0rem;
+                    }
+        
+                }
             }
     }   
 

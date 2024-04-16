@@ -8,7 +8,7 @@
             <span class="categories__text"><span>Category</span></span>
         </a>
         </div>
-        <div class="categories__item categories__item--active">
+        <div class="categories__item categories__item--active transition">
             <a href="#">Category
             <span class="categories__bg"></span>
             <span class="categories__text"><span>Category</span></span>

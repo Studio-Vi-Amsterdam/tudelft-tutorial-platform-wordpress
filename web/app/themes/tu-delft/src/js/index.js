@@ -11,6 +11,7 @@ import { smoothScroll } from "./components/smooth-scrolling";
 import { tabOfContent } from "./components/toc";
 import { changeCategory } from "./components/category-change";
 import { accordion } from "./components/accordion";
+import { paginationAnimation } from "./components/pagination-animation";
 
 
 export function runAfterDomLoad() {
@@ -21,5 +22,6 @@ export function runAfterDomLoad() {
     showSearchBar()
     changeCategory()
     accordion()
+    paginationAnimation()
     new ModalWindow(ModalVideoWindow, ModalContentWindow)
 }

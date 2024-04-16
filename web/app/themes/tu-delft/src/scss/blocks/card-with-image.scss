@@ -61,6 +61,9 @@
         h4 {
             margin-top: 8px;
             @extend .h5;
+            &:first-child {
+                margin-top: 0;
+            }
         }
         p {
             color: #67676B;

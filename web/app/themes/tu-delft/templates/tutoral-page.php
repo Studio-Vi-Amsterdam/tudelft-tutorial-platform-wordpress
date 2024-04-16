@@ -228,7 +228,7 @@
                 <p>
                     Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
                 </p>
-                <div class="grid-links grid lg:grid-cols-2 gap-6">
+                <div class="grid-links grid lg:grid-cols-2">
                     <a href="#" class="link-box">
                         <div class="link-box__wrapper flex items-center">
                             <h6>
@@ -263,7 +263,7 @@
             </div>
             <div class="tutorial__content text">
                 <h4>Subchapter Title</h4>
-                <div class="grid-links grid lg:grid-cols-2 gap-6">
+                <div class="grid-links grid lg:grid-cols-2 ">
                     <a href="#" class="link-box">
                         <div class="link-box__wrapper  flex items-center">
                             <h6>

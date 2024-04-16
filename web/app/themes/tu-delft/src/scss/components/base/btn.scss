@@ -24,6 +24,7 @@
     transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
     span {
         padding: 1.2rem 4rem;
+        min-height: 100%;
         position: relative;
         display: flex;
         align-items: center;

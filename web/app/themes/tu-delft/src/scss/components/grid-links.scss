@@ -1,0 +1,13 @@
+
+.grid-links {
+    gap: 2.4rem;
+    
+    &--three-columns {
+        @media (min-width:$mobileP1) {
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media (min-width:$tabletP1) {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+}

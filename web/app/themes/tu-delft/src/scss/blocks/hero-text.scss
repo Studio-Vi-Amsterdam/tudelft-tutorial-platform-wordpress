@@ -1,0 +1,34 @@
+.hero-text {
+    padding-top: 12.4rem;
+    padding-bottom: 5.6rem;
+    @media(min-width: $mobileP1) {
+        padding-top: 16rem;
+        padding-bottom: 8rem;
+    }
+    // .hero-text__content
+
+    &__content {
+        max-width: 60rem;
+        width: 100%;
+        h1 {
+            @include adaptiveProperty('font-size', 60, 36);
+            font-weight: 700;
+            letter-spacing: -.02em;
+            line-height: 1.05;
+            font-family: $primary-font;
+        }
+        p {
+            margin-top: 3.2rem;
+            @extend .p2;
+            @media(min-width: $mobileP1) {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    // .hero-text__link
+
+    &__link {
+        margin-top: 1.6rem;
+    }
+}

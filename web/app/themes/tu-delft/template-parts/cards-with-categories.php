@@ -7,7 +7,7 @@
                 <span class="categories__bg"></span>
                 <span class="categories__text"><span>Bachelor</span></span></a>
             </div>
-            <div class="categories__item categories__item--active">
+            <div class="categories__item categories__item--active transition">
                 <a href="#">Master
                 <span class="categories__bg"></span>
                 <span class="categories__text"><span>Master</span></span></a>

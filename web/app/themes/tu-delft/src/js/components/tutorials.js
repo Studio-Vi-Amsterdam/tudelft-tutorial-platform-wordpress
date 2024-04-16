@@ -1,4 +1,8 @@
 export function tutorials() {
+    let timer = 670
+    if($(window).width() > 639) {
+        timer = 500
+    }
     if($('[data-tab-target]').length > 0) {
         const currentUrl = window.location.protocol + '//' + window.location.host + window.location.pathname
         const searchParams = new URLSearchParams(document.location.search)
@@ -66,7 +70,7 @@ export function tutorials() {
             setTimeout(() => {
                 tabContents.not(`[data-tab-content="${target}"]`).removeClass('inactive')
                 tabContents.not(`[data-tab-content="${target}"]`).css('overflow', 'hidden')
-            }, 500);
+            }, timer);
             if($(`[data-tab-target="${target.slice(0,-1) + (+numberOfTab + 1)}"]`).length === 0) {
                 nextBtn.addClass('disabled')
             } else {
