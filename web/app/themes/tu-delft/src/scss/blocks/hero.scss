@@ -32,14 +32,32 @@
         @media(min-width: $tabletSmallP1) {
             width: 48%; 
         }
+        @media(min-width: $tabletP1) {
+            width: 48%; 
+            padding-right: 9%;
+        }
         img {
             max-width: 100%;
             width: auto;
-            margin-left: auto;
-            margin-right: auto;
             @media(min-width: $tabletSmallP1) {
-                margin-right: 0;
+                margin-left: auto;
             }
+        }
+    }
+
+    //.hero--center-image-onmobile
+    &--center-image-onmobile {
+        .hero__image {
+            img {
+                max-width: 100%;
+                width: auto;
+                margin-left: auto;
+                margin-right: auto;
+                @media(min-width: $tabletSmallP1) {
+                    margin-right: 0;
+                }
+            }
+
         }
     }
 }

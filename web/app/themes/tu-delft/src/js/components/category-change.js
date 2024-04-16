@@ -1,28 +1,28 @@
 export function changeCategory() {
-    const parentPosition = $('.cards-with-categories__categories').position().left
-    const bg = $('.categories__bg')
-    const text = $('.categories__text')
-    const categories = $('.categories__item')
-    changeClasses($('.categories__item--active'))
-    categories.on('click', function() {
-        categories.not(this).removeClass('categories__item--active')
-        $(this).addClass('categories__item--active')
-        changeClasses($(this))
-    })
-    function changeClasses(active) {
-        bg.each(function() {
-            console.log(active.position().left - $(this).parent().position().left);
-            $(this).css('left', active.position().left -  $(this).parent().position().left  + 'px')
-
+    if($('.cards-with-categories__categories').length > 0) {
+        const bg = $('.categories__bg')
+        const categories = $('.categories__item')
+        changeClasses($('.categories__item--active'))
+        categories.on('click', function() {
+            categories.not(this).removeClass('categories__item--active')
+            $(this).addClass('categories__item--active')
+            changeClasses($(this))
         })
-        categories.not(active).removeClass('prev').removeClass('next')
-        const nextItems = active.nextAll()
-        const prevItems = active.prevAll()
-        if (prevItems) {
-            prevItems.addClass('prev')
+        function changeClasses(active) {
+            bg.each(function() {
+                $(this).css('left', active.position().left -  $(this).parent().position().left  + 'px').css('width', active.width() + 'px')
+    
+            })
+            categories.not(active).removeClass('prev').removeClass('next')
+            const nextItems = active.nextAll()
+            const prevItems = active.prevAll()
+            if (prevItems) {
+                prevItems.addClass('prev')
+            }
+            if (nextItems) {
+                nextItems.addClass('next')
+            }
         }
-        if (nextItems) {
-            nextItems.addClass('next')
-        }
+
     }
 }

@@ -1,6 +1,5 @@
-
 <?php $theme_url = get_template_directory_uri() ?>
-<section class="hero" >
+<section class="hero hero--center-image-onmobile" >
     <div class="hero__container container md:flex items-end justify-between">
         <div class="hero__content">
             <h1>Courses</h1>

@@ -170,7 +170,7 @@
             </a>
             <div class="tutorial__content image">
                 <figure>
-                    <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
+                    <img width="808" height="454" data-image-src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
                 </figure>
             </div>
             <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
