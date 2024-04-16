@@ -14,4 +14,11 @@
         height: 2px;
         background-color: $black;
     }
+
+    &--white {
+        color: $white;
+        &:after {
+            background-color: $white;
+        }
+    }
 }

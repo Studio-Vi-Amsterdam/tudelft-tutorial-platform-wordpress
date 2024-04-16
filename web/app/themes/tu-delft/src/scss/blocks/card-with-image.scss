@@ -1,6 +1,6 @@
 .card-with-image {
     position: relative;
-    display: block;
+    display: flex;
     &:before {
         position: absolute;
         content: '';
@@ -26,6 +26,7 @@
         transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all;
         border-radius: 4px;
         overflow: hidden;
+        min-height: 100%;
     }
 
     // .card-with-image__image
@@ -61,6 +62,7 @@
         h4 {
             margin-top: 8px;
             @extend .h5;
+            font-weight: 500;
             &:first-child {
                 margin-top: 0;
             }
@@ -126,5 +128,33 @@
                 }
             }
         } 
+    }
+
+    //.card-with-image--reverse
+    &--reverse {
+        .card-with-image__wrapper {
+            flex-direction: row-reverse;
+        }
+    }
+    //.card-with-image--not-full-image
+    &--not-full-image {
+        .card-with-image__content {
+            @media(min-width: $mobileP1) {
+                padding: 3.2rem;
+            }
+        }
+        .card-with-image__image {
+            padding: 2.4rem ;
+            max-width: 14rem;
+            padding-bottom: 0;
+            height: unset;
+            @media(min-width: $mobileP1) {
+                padding: 2.4rem ;
+                max-width: 25.6rem;
+            }
+            img {
+                object-fit: contain;
+            }
+        }
     }
 }

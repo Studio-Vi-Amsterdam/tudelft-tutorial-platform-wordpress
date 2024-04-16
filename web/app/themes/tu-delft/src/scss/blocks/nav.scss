@@ -19,6 +19,13 @@
     ul {
         @extend .reset-list;
     }
+    & + .section-wrapper {
+        padding-top: 12.4rem;
+        @media(min-width: $mobileP1) {
+            padding-top: 16rem;
+        }
+
+    }
 
     // .nav__inner
     &__inner {
