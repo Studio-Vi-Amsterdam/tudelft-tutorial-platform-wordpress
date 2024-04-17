@@ -12,6 +12,7 @@ import { tabOfContent } from "./components/toc";
 import { changeCategory } from "./components/category-change";
 import { accordion } from "./components/accordion";
 import { paginationAnimation } from "./components/pagination-animation";
+import { openDropdown } from "./components/open-dropdown";
 
 
 export function runAfterDomLoad() {
@@ -23,5 +24,6 @@ export function runAfterDomLoad() {
     changeCategory()
     accordion()
     paginationAnimation()
+    openDropdown()
     new ModalWindow(ModalVideoWindow, ModalContentWindow)
 }

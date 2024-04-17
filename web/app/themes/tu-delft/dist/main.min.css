@@ -301,6 +301,7 @@ p,
 .text p small,
 .card-with-image__content h3,
 .categories__item,
+.field label,
 .link,
 ul li,
 ol li,
@@ -318,6 +319,7 @@ table th {
   .text p small,
   .card-with-image__content h3,
   .categories__item,
+  .field label,
   .link,
   ul li,
   ol li,
@@ -336,6 +338,7 @@ table th {
   .text p small,
   .card-with-image__content h3,
   .categories__item,
+  .field label,
   .link,
   ul li,
   ol li,
@@ -354,6 +357,7 @@ table th {
   .text p small,
   .card-with-image__content h3,
   .categories__item,
+  .field label,
   .link,
   ul li,
   ol li,
@@ -363,26 +367,31 @@ table th {
   }
 }
 
-.p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p {
+.p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field input,
+.field textarea {
   line-height: 1.55;
 }
 @media (max-width: 375px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p {
+  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field input,
+  .field textarea {
     font-size: 1.8rem;
   }
 }
 @media (min-width: 376px) and (max-width: 1440px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p {
+  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field input,
+  .field textarea {
     font-size: calc(1.8rem + 2 * ((100vw - 375px) / (1440 - 375)));
   }
 }
 @media (min-width: 1441px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p {
+  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field input,
+  .field textarea {
     font-size: 2rem;
   }
 }
 @media (min-width: 1024px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p {
+  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field input,
+  .field textarea {
     line-height: 1.6;
   }
 }
@@ -842,25 +851,118 @@ ol {
   background-color: #ffffff;
 }
 
+.field {
+  position: relative;
+}
 .field input,
 .field textarea {
   outline: none;
   width: 100%;
-  padding: 10px 12px;
+  padding: 48px 24px 24px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 1.4rem;
-  line-height: 1.45;
+  line-height: 1.6;
+  border-radius: 4px;
+  background-color: #EFF1F3;
+  color: #000000;
 }
-.field input {
-  height: 40px;
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #96969B;
 }
 .field textarea {
   resize: none;
   overflow-y: auto;
-  height: 174px;
+  height: 320px;
+}
+.field label {
+  display: block;
+  position: absolute;
+  top: 1.6rem;
+  left: 2.4rem;
+  font-family: "Roboto Slab", "Times New Roman", serif;
+  color: #67676B;
+}
+.field__dropdown {
+  padding: 0 2.4rem;
+  border-radius: 4px;
+  background-color: #EFF1F3;
+}
+.field__dropdown.opened .field__dropdown-head svg {
+  transform: rotate(0);
+}
+.field__dropdown.opened .field__dropdown-content {
+  grid-template-rows: 1fr;
+  border-color: #67676B;
+  padding-bottom: 1.6rem;
+}
+.field__dropdown-head {
+  padding: 4.8rem 0 1.6rem;
+  line-height: 1.6;
+  color: #96969B;
+  cursor: pointer;
+}
+.field__dropdown-head svg {
+  width: 2rem;
+  height: auto;
+  transform: rotate(180deg);
+  transition: 0.5s cubic-bezier(0.15, 0, 0, 1) all;
+}
+.field__dropdown-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  border-top: 1px solid transparent;
+  transition: 0.5s cubic-bezier(0.15, 0, 0, 1) all;
+}
+.field__dropdown-content > div {
+  min-height: 0px;
+}
+.field__dropdown-item {
+  margin-top: 1.6rem;
+}
+.field__dropdown-item input {
+  display: none;
+}
+.field__dropdown-item input:checked + label:before {
+  border-color: #00A6D6;
+}
+.field__dropdown-item input:checked + label:after {
+  opacity: 1;
+}
+.field__dropdown-item label {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-left: 4.8rem;
+  cursor: pointer;
+  font-family: "Arial", "Verdana", sans-serif;
+  line-height: 1.5;
+}
+.field__dropdown-item label:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid #96969B;
+  transition: 0.17s all linear;
+}
+.field__dropdown-item label:after {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #00A6D6;
+  opacity: 0;
+  transition: 0.17s all linear;
 }
 
 .preload * {
@@ -1950,6 +2052,7 @@ body::-webkit-scrollbar-thumb {
   height: 50vw;
   max-width: 100%;
   width: 100%;
+  overflow: hidden;
 }
 @media (min-width: 640px) {
   .card-with-image__image {
@@ -1963,6 +2066,8 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.33s all cubic-bezier(0.15, 0, 0, 1);
+  transform: scale(1);
 }
 .card-with-image__content {
   padding: 2.4rem;
@@ -2023,6 +2128,9 @@ body::-webkit-scrollbar-thumb {
   top: -10px;
   left: -10px;
 }
+.card-with-image:hover .card-with-image__image img {
+  transform: scale(1.1);
+}
 @media (min-width: 640px) {
   .card-with-image:hover .arrow {
     min-width: 4rem;
@@ -2062,6 +2170,9 @@ body::-webkit-scrollbar-thumb {
 }
 .card-with-image--not-full-image .card-with-image__image img {
   object-fit: contain;
+}
+.card-with-image--not-full-image:hover .card-with-image__image img {
+  transform: scale(1);
 }
 
 .hero-text {
@@ -3814,6 +3925,35 @@ body::-webkit-scrollbar-thumb {
 }
 .pagination__list ul li:after {
   display: none;
+}
+
+.form {
+  width: 100%;
+  margin-top: 5.6rem;
+}
+@media (min-width: 768px) {
+  .form {
+    margin-top: 8rem;
+  }
+}
+.form form {
+  width: 100%;
+}
+.form form .field + .field {
+  margin-top: 3.2rem;
+}
+@media (min-width: 768px) {
+  .form form .field + .field {
+    margin-top: 4rem;
+  }
+}
+.form form button {
+  margin-top: 3.2rem;
+}
+@media (min-width: 768px) {
+  .form form button {
+    margin-top: 4rem;
+  }
 }
 
 .modal-video-item {

@@ -1,10 +1,11 @@
 .field {
+    position: relative;
     input,
     textarea {
         outline: none;
 
         width: 100%;
-        padding: 10px 12px;
+        padding: 48px 24px 24px;
         //border: 1px solid $fieldOutline ;
         box-sizing: border-box;
 
@@ -12,18 +13,130 @@
         align-items: center;
         justify-content: flex-start;
 
-        font-size: 1.4rem;
-        line-height: 1.45;
-        //color: $textDark1;
+        @extend .p2;
+        line-height: 1.6;
+        border-radius: 4px;
+        background-color: #EFF1F3;
+        color: $black;
+        &::placeholder {
+            color: #96969B;
+        }
     }
 
-    input {
-        height: 40px;
-    }
 
     textarea {
         resize: none;
         overflow-y: auto;
-        height: 174px;
+        height: 320px;
     }
+    label {
+        display: block;
+        position: absolute;
+        top: 1.6rem;
+        left: 2.4rem;
+        @extend .p1;
+        font-family: $secondary-font;
+        color: #67676B;
+    }
+
+
+		// .field__dropdown
+
+		&__dropdown {
+            padding: 0 2.4rem;
+            border-radius: 4px;
+            background-color: #EFF1F3;
+            &.opened {
+                .field__dropdown-head {
+                    svg {
+                        transform: rotate(0);
+                    }
+                }
+                .field__dropdown-content {
+                    grid-template-rows: 1fr;
+                    border-color: #67676B;
+                    padding-bottom: 1.6rem;
+                }
+            }
+		}
+
+		// .field__dropdown-head
+
+		&__dropdown-head {
+            padding: 4.8rem 0 1.6rem;
+            @extend .p2;
+            line-height: 1.6;
+            color: #96969B;
+            cursor: pointer;
+            svg {
+                width: 2rem;
+                height: auto;
+                transform: rotate(180deg);
+            transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all;
+            }
+		}
+
+		// .field__dropdown-content
+
+		&__dropdown-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            overflow: hidden;
+            border-top: 1px solid transparent;
+            transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all;
+            & > div {
+                min-height: 0px;
+            }
+		}
+
+		// .field__dropdown-item
+
+		&__dropdown-item {
+            margin-top: 1.6rem;
+            input {
+                display: none;
+                &:checked {
+                    & + label {
+                        &:before {
+                            border-color: $secondary;
+                        }
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            label {
+                position: relative;
+                top: 0;
+                left: 0;
+                padding-left: 4.8rem;
+                cursor: pointer;
+                font-family: $primary-font;
+                line-height: 1.5;
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    border-radius: 50%;
+                    border: 1px solid #96969B;
+                    transition: .17s all linear;
+                }
+                &:after {
+                    position: absolute;
+                    content: '';
+                    top: 4px;
+                    left: 4px;
+                    border-radius: 50%;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    background-color: $secondary;
+                    opacity: 0;
+                    transition: .17s all linear;
+                }
+            }
+		}
 }

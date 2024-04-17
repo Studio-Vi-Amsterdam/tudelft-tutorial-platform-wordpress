@@ -39,6 +39,9 @@
 <path d="M1 1.96094H37.0001" stroke="#00A6D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
+<symbol id="select"  viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.5303 14.5303C18.2374 14.8232 17.7626 14.8232 17.4697 14.5303L10 7.06066L2.53033 14.5303C2.23744 14.8232 1.76256 14.8232 1.46967 14.5303C1.17678 14.2374 1.17678 13.7626 1.46967 13.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967L18.5303 13.4697C18.8232 13.7626 18.8232 14.2374 18.5303 14.5303Z" fill="#67676B"/>
+</symbol>
 
 
 
