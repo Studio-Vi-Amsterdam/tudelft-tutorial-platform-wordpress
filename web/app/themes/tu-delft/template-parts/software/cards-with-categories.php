@@ -65,9 +65,9 @@
         </div>
     </div>
     <div class="cards-with-categories__wrapper">
-        <div class="cards-with-categories__content active" data-category-content="chapter-0" data-pages="1">
+        <div class="cards-with-categories__content active" data-category-content="chapter-0" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -227,7 +227,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -267,7 +267,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -287,7 +287,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -307,7 +307,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -327,7 +327,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -347,7 +347,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -367,7 +367,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -387,7 +387,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -407,7 +407,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -427,7 +427,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -447,7 +447,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -467,7 +467,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -487,7 +487,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -507,7 +507,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -527,7 +527,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -559,16 +559,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -576,9 +570,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-1" data-pages="2">
+        <div class="cards-with-categories__content" data-category-content="chapter-1" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -598,7 +592,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -618,7 +612,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -638,7 +632,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -658,7 +652,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -678,7 +672,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -698,7 +692,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -718,7 +712,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -738,7 +732,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -758,7 +752,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -778,7 +772,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -798,7 +792,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -818,7 +812,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -838,7 +832,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -858,7 +852,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -878,7 +872,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -898,7 +892,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -918,7 +912,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -938,7 +932,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -958,7 +952,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -978,7 +972,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -998,7 +992,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1018,7 +1012,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1038,7 +1032,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1070,16 +1064,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -1087,9 +1075,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-2" data-pages="7">
+        <div class="cards-with-categories__content" data-category-content="chapter-2" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1109,7 +1097,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1129,7 +1117,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1149,7 +1137,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1169,7 +1157,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1189,7 +1177,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1209,7 +1197,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1229,7 +1217,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1249,7 +1237,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1269,7 +1257,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1289,7 +1277,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1309,7 +1297,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1329,7 +1317,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1349,7 +1337,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1369,7 +1357,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1389,7 +1377,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1409,7 +1397,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1429,7 +1417,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1449,7 +1437,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1469,7 +1457,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1489,7 +1477,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1509,7 +1497,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1529,7 +1517,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1549,7 +1537,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1581,16 +1569,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -1598,9 +1580,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-3" data-pages="10">
+        <div class="cards-with-categories__content" data-category-content="chapter-3" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1620,7 +1602,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1640,7 +1622,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1660,7 +1642,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1680,7 +1662,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1700,7 +1682,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1720,7 +1702,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1740,7 +1722,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1760,7 +1742,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1780,7 +1762,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1800,7 +1782,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1820,7 +1802,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1840,7 +1822,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1860,7 +1842,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1880,7 +1862,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1900,7 +1882,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1920,7 +1902,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1940,7 +1922,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1960,7 +1942,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -1980,7 +1962,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2000,7 +1982,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2020,7 +2002,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2040,7 +2022,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2060,7 +2042,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2092,16 +2074,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -2109,9 +2085,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-4" data-pages="100">
+        <div class="cards-with-categories__content" data-category-content="chapter-4" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2131,7 +2107,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2151,7 +2127,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2171,7 +2147,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2191,7 +2167,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2211,7 +2187,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2231,7 +2207,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2251,7 +2227,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2271,7 +2247,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2291,7 +2267,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2311,7 +2287,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2331,7 +2307,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2351,7 +2327,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2371,7 +2347,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2391,7 +2367,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2411,7 +2387,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2431,7 +2407,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2451,7 +2427,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2471,7 +2447,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2491,7 +2467,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2511,7 +2487,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2531,7 +2507,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2551,7 +2527,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2571,7 +2547,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2603,16 +2579,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -2620,9 +2590,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-5" data-pages="100">
+        <div class="cards-with-categories__content" data-category-content="chapter-5" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2642,7 +2612,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2662,7 +2632,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2682,7 +2652,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2702,7 +2672,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2722,7 +2692,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2742,7 +2712,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2762,7 +2732,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2782,7 +2752,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2802,7 +2772,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2822,7 +2792,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2842,7 +2812,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2862,7 +2832,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2882,7 +2852,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2902,7 +2872,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2922,7 +2892,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2942,7 +2912,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2962,7 +2932,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -2982,7 +2952,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3002,7 +2972,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3022,7 +2992,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3042,7 +3012,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3062,7 +3032,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3082,7 +3052,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3114,16 +3084,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -3131,9 +3095,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-6" data-pages="100">
+        <div class="cards-with-categories__content" data-category-content="chapter-6" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3153,7 +3117,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3173,7 +3137,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3193,7 +3157,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3213,7 +3177,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3233,7 +3197,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3253,7 +3217,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3273,7 +3237,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3293,7 +3257,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3313,7 +3277,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3333,7 +3297,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3353,7 +3317,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3373,7 +3337,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3393,7 +3357,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3413,7 +3377,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3433,7 +3397,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3453,7 +3417,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3473,7 +3437,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3493,7 +3457,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3513,7 +3477,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3533,7 +3497,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3553,7 +3517,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3573,7 +3537,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3593,7 +3557,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3625,16 +3589,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -3642,9 +3600,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-7" data-pages="100">
+        <div class="cards-with-categories__content" data-category-content="chapter-7" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3664,7 +3622,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3684,7 +3642,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3704,7 +3662,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3724,7 +3682,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3744,7 +3702,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3764,7 +3722,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3784,7 +3742,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3804,7 +3762,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3824,7 +3782,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3844,7 +3802,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3864,7 +3822,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3884,7 +3842,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3904,7 +3862,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3924,7 +3882,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3944,7 +3902,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3964,7 +3922,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -3984,7 +3942,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4004,7 +3962,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4024,7 +3982,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4044,7 +4002,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4064,7 +4022,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4084,7 +4042,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4104,7 +4062,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4136,16 +4094,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -4153,9 +4105,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-8" data-pages="100">
+        <div class="cards-with-categories__content" data-category-content="chapter-8" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4175,7 +4127,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4195,7 +4147,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4215,7 +4167,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4235,7 +4187,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4255,7 +4207,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4275,7 +4227,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4295,7 +4247,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4315,7 +4267,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4335,7 +4287,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4355,7 +4307,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4375,7 +4327,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4395,7 +4347,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4415,7 +4367,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4435,7 +4387,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4455,7 +4407,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4475,7 +4427,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4495,7 +4447,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4515,7 +4467,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4535,7 +4487,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4555,7 +4507,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4575,7 +4527,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4595,7 +4547,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4615,7 +4567,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4647,16 +4599,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>
@@ -4664,9 +4610,9 @@
                 </a>
             </div>
         </div>
-        <div class="cards-with-categories__content" data-category-content="chapter-9" data-pages="100">
+        <div class="cards-with-categories__content" data-category-content="chapter-9" data-pages>
             <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4686,7 +4632,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4706,7 +4652,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4726,7 +4672,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4746,7 +4692,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4766,7 +4712,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4786,7 +4732,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4806,7 +4752,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4826,7 +4772,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4846,7 +4792,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4866,7 +4812,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4886,7 +4832,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4906,7 +4852,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4926,7 +4872,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4946,7 +4892,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4966,7 +4912,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -4986,7 +4932,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5006,7 +4952,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5026,7 +4972,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5046,7 +4992,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5066,7 +5012,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5086,7 +5032,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5106,7 +5052,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5126,7 +5072,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="software-link">
+                <a href="#" class="software-link" data-card>
                     <div class="software-link__wrapper">
                         <div class="software-link__row  flex items-start">
                             <h6>
@@ -5158,16 +5104,10 @@
                 <div class="pagination__list">
                     <div class="pagination__bg"></div>
                     <ul class="flex items-center justify-center">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>...</li>
-                        <li><a href="#">126</a></li>
+
                     </ul>
                 </div>
-                <a href="#" class="pagination__button flex items-center justify-center">
+                <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
                     <svg width="20" height="20">
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                     </svg>

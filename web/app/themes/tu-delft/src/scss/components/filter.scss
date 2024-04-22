@@ -1,0 +1,181 @@
+.filter {
+    position: relative;
+    @extend .p1;
+    padding-right: 2.4rem;
+    margin-right: 2.4rem;
+    border-right: 1px solid #B9EEFE;
+    &:last-child {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: none;
+
+    }
+    & + .filter {
+        .filter__content {
+            left: unset;
+            right: 0;
+        }
+    }
+    &:hover {
+        .filter__head {
+            background-color: #E0F5FE;
+        }
+    }
+    &.opened {
+        .filter__head {
+            background-color: #EFF1F3;
+        }
+        &:hover {
+            .filter__head {
+                background-color: #EFF1F3;
+            }
+        }
+        .filter__content {
+            padding: .8rem 1.6rem 1.6rem;
+            grid-template-rows: 1fr;
+        }
+
+    }
+    // .filter__head
+
+    &__head {
+        padding: .8rem 1.6rem;
+        border-radius: 4px;
+        transition:  .17s linear;
+        cursor: pointer;
+        svg, img {
+            width: 2.4rem;
+            height: auto;
+            margin-left: 2.4rem;
+        }
+
+    }
+
+    // .filter__content
+
+    &__content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        white-space: nowrpa;
+        margin-top: .8rem;
+        min-width: 18.4rem;
+        padding: 0 1.6rem;
+        border-radius: 4px;
+        background-color: #EFF1F3;
+        overflow: hidden;
+        z-index: 3;
+
+        display: grid;
+        grid-template-rows: 0fr;
+        
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+    }
+
+    // .filter__content-wrapper
+
+    &__content-wrapper {
+        min-height: 0;
+        position: relative;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        ul {
+            @extend .reset-list;
+            padding-top: .8rem;
+            li {
+                color: #67676B;
+                white-space: nowrap;
+                transition:  .17s linear;
+                & + li {
+                    margin-top: 1.6rem;
+                }
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    h6 {
+        font-size: 1.4rem;
+        font-family: $primary-font;
+        line-height: 1.5;
+        color: $secondary;
+    }
+
+    // .filter__checkbox
+
+    &__checkbox {
+        margin-top: 1.6rem;
+        & + h6 {
+            margin-top: 2.4rem;
+        }
+        &:first-child {
+            margin-top: 0;
+        }
+        input {
+            display: none;
+            &:checked {
+                & + label {
+                    &:before {
+                        border-color: $secondary;
+                        background-color: $secondary;
+                    }
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        label {
+            position: relative;
+            display: block;
+            padding-left: 4rem;
+            @extend .p1;
+            color: #67676B;
+            transition:  .17s linear;
+            cursor: pointer;
+            &:hover {
+                color: $black;
+            }
+            &:before {
+                position: absolute;
+                content: '';
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                border-radius: 4px;
+                border: 1px solid #96969B;
+                transition: .17s linear;
+            }
+            &:after {
+                position: absolute;
+                content: '';
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                border-radius: 4px;
+                overflow: hidden;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% auto;
+                background-image: url(../src/img/icons/tick.svg);
+                transition: .17s linear;
+                opacity: 0;
+                z-index: 2;
+            }
+        }
+    }
+
+    sup {
+        font-size: 12px;
+        font-weight: 700;
+    }
+}

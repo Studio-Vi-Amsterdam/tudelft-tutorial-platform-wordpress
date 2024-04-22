@@ -12,10 +12,11 @@ import { smoothScroll } from "./components/smooth-scrolling";
 import { tabOfContent } from "./components/toc";
 import { changeCategory } from "./components/category-change";
 import { accordion } from "./components/accordion";
-import { paginationAnimation } from "./components/pagination-animation";
 import { openDropdown } from "./components/open-dropdown";
 import { pagePreloader } from "./components/page-preloader";
 import { delay } from "./components/delay";
+import { initPagination } from "./components/pagination";
+import { openFilter } from "./components/filters";
 
 
 export function runAfterDomLoad() {
@@ -81,8 +82,9 @@ export function runAfterDomLoad() {
                         showSearchBar()
                         changeCategory()
                         accordion()
-                        paginationAnimation()
                         openDropdown()
+                        initPagination()
+                        openFilter()
                         new ModalWindow(ModalVideoWindow, ModalContentWindow)
 
                     }, timeout);

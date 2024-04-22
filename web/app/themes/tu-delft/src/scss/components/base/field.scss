@@ -128,11 +128,11 @@
                 &:after {
                     position: absolute;
                     content: '';
-                    top: 4px;
-                    left: 4px;
+                    top: 6px;
+                    left: 6px;
                     border-radius: 50%;
-                    width: 1.6rem;
-                    height: 1.6rem;
+                    width: 1.2rem;
+                    height: 1.2rem;
                     background-color: $secondary;
                     opacity: 0;
                     transition: .17s all linear;

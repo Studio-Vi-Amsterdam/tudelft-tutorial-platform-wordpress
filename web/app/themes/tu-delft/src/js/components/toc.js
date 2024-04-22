@@ -4,7 +4,6 @@ export function tabOfContent() {
             const TOC = parent.querySelector('.js-toc')
             const data = parent.querySelector('[data-tab-target]').dataset.tabTarget
             const contentForToc = document.querySelector(`[data-tab-content="${data}"]`)
-            console.log(TOC, contentForToc);
             if(contentForToc != null && TOC != null){
                 let headings = contentForToc.querySelectorAll('h4'),
                     parentLevel = 1,
