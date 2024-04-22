@@ -36,8 +36,11 @@
 
 </head>
 
-<body class="preload">
-
+<body data-barba="wrapper">
+    <div class="preloader reloaded">
+        <div class="preloader__yellow"></div>
+        <div class="preloader__blue"></div>
+    </div>
 
     <main id="scroll-container" data-barba="container" data-barba-namespace="page">
       <div class="disabled-horizontal-scroll">
@@ -56,7 +59,7 @@
             <div class="header__nav">
                 <ul>
 
-                    <li class="menu-item-has-children"><a href="#">Courses</a>
+                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/courses">Courses</a>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
@@ -120,7 +123,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-item-has-children"><a href="#">Subjects</a>
+                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/subjects">Subjects</a>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
@@ -243,7 +246,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-item-has-children"><a href="#">Software</a>
+                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/software">Software</a>
                         <div class="header__submenu header__submenu--flex">
                             <div class="menu-item-has-children__wrapper ">
                                 <ul>
@@ -271,7 +274,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-item-has-children"><a href="#">Labs</a>
+                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/labs">Labs</a>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>

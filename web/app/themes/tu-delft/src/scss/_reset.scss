@@ -124,3 +124,16 @@ body, html {
   [data-image-src] {
     cursor: zoom-in
   }
+
+  body {
+    position: relative;
+    top: 480px;
+    &.loaded {
+    top: 0;
+      transition: 630ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
+    }
+    &.reloaded {
+    top: -280px;
+      transition: 630ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
+    }
+  }
