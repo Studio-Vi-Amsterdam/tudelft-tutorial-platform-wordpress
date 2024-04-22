@@ -246,7 +246,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/software">Software</a>
+                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/testing">Software</a>
                         <div class="header__submenu header__submenu--flex">
                             <div class="menu-item-has-children__wrapper ">
                                 <ul>

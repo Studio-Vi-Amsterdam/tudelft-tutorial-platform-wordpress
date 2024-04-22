@@ -26,6 +26,67 @@
     // .cards-with-categories__wrapper
 
     &__wrapper {
+        position: relative;
+        width: 100%;
+        @media(min-width: $mobileP1) {
+            overflow: hidden;
+            margin: -10px;
+        }
+        &.prev-side {
+            .cards-with-categories__content {
+                transform: translateX(calc(-100% - 2.4rem));
+                @media(min-width: $mobileP1) {
+                    transform: translateX(calc(-100% - 10px));
+                }
+                &.active {
+                    transform: translateX(0%);
+                }
+                &.inactive {
+                    transform: translateX(calc(100% + 2.4rem));
+                    @media(min-width: $mobileP1) {
+                        transform: translateX(calc(100% + 10px));
+                    }
+                }
+
+            }
+        }
+    }
+    // .cards-with-categories__content
+
+    &__content {
+        padding: 0px;
+        height: 0;
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        transform: translateX(calc(100% + 2.4rem));
+        @media(min-width: $mobileP1) {
+            transform: translateX(100%);
+        }
+
+        &.active {
+            transition: .67s .08s cubic-bezier(0.15, 0.00, 0.00, 1.00), .0s  padding ;
+            height: unset;
+            transform: translateX(0%);
+            max-height: unset;
+            @media(min-width: $mobileP1) {
+                transition: .5s .17s cubic-bezier(0.15, 0.00, 0.00, 1.00), .0s  padding ;
+                padding: 10px;
+            }
+        }
+        &.inactive {
+            transition: .67s cubic-bezier(0.15, 0.00, 0.00, 1.00), .0s .67s padding ;
+            transform: translateX(calc(-100% - 24px));
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: unset;
+            max-height: unset;
+            @media(min-width: $mobileP1) {
+                transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00), .0s .5s padding ;
+                transform: translateX(calc(-100% - 10px));
+            }
+        }
     }
 
     // .cards-with-categories__item

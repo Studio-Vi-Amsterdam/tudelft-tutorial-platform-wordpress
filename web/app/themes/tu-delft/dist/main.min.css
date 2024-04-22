@@ -1841,6 +1841,75 @@ body::-webkit-scrollbar-thumb {
     margin-top: 0rem;
   }
 }
+.cards-with-categories__wrapper {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .cards-with-categories__wrapper {
+    overflow: hidden;
+    margin: -10px;
+  }
+}
+.cards-with-categories__wrapper.prev-side .cards-with-categories__content {
+  transform: translateX(calc(-100% - 2.4rem));
+}
+@media (min-width: 640px) {
+  .cards-with-categories__wrapper.prev-side .cards-with-categories__content {
+    transform: translateX(calc(-100% - 10px));
+  }
+}
+.cards-with-categories__wrapper.prev-side .cards-with-categories__content.active {
+  transform: translateX(0%);
+}
+.cards-with-categories__wrapper.prev-side .cards-with-categories__content.inactive {
+  transform: translateX(calc(100% + 2.4rem));
+}
+@media (min-width: 640px) {
+  .cards-with-categories__wrapper.prev-side .cards-with-categories__content.inactive {
+    transform: translateX(calc(100% + 10px));
+  }
+}
+.cards-with-categories__content {
+  padding: 0px;
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  transform: translateX(calc(100% + 2.4rem));
+}
+@media (min-width: 640px) {
+  .cards-with-categories__content {
+    transform: translateX(100%);
+  }
+}
+.cards-with-categories__content.active {
+  transition: 0.67s 0.08s cubic-bezier(0.15, 0, 0, 1), 0s padding;
+  height: unset;
+  transform: translateX(0%);
+  max-height: unset;
+}
+@media (min-width: 640px) {
+  .cards-with-categories__content.active {
+    transition: 0.5s 0.17s cubic-bezier(0.15, 0, 0, 1), 0s padding;
+    padding: 10px;
+  }
+}
+.cards-with-categories__content.inactive {
+  transition: 0.67s cubic-bezier(0.15, 0, 0, 1), 0s 0.67s padding;
+  transform: translateX(calc(-100% - 24px));
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: unset;
+  max-height: unset;
+}
+@media (min-width: 640px) {
+  .cards-with-categories__content.inactive {
+    transition: 0.5s cubic-bezier(0.15, 0, 0, 1), 0s 0.5s padding;
+    transform: translateX(calc(-100% - 10px));
+  }
+}
 .cards-with-categories__item:last-child .accordion__content-wrapper {
   padding-bottom: 0 !important;
 }
