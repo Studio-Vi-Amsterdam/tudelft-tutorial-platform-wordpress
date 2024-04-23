@@ -3,6 +3,7 @@
     padding-top: 12.4rem;
     padding-bottom: 5.6rem;
     position: relative;
+    min-height: 100vh;
     @media(min-width: $tabletSmallP1) {
         overflow: hidden;
     }

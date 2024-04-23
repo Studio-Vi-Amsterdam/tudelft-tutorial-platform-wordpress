@@ -320,6 +320,7 @@ h6,
 p,
 .p1,
 .filter__checkbox label,
+.filter__top h5,
 .filter,
 .search-link__col h3,
 .search__search input,
@@ -342,6 +343,7 @@ table th {
   p,
   .p1,
   .filter__checkbox label,
+  .filter__top h5,
   .filter,
   .search-link__col h3,
   .search__search input,
@@ -365,6 +367,7 @@ table th {
   p,
   .p1,
   .filter__checkbox label,
+  .filter__top h5,
   .filter,
   .search-link__col h3,
   .search__search input,
@@ -388,6 +391,7 @@ table th {
   p,
   .p1,
   .filter__checkbox label,
+  .filter__top h5,
   .filter,
   .search-link__col h3,
   .search__search input,
@@ -3726,6 +3730,7 @@ body::-webkit-scrollbar-thumb {
   padding-top: 12.4rem;
   padding-bottom: 5.6rem;
   position: relative;
+  min-height: 100vh;
 }
 @media (min-width: 768px) {
   .tutorial {
@@ -4368,18 +4373,51 @@ body::-webkit-scrollbar-thumb {
   left: unset;
   right: 0;
 }
-.filter:hover .filter__head {
-  background-color: #E0F5FE;
+@media (min-width: 768px) {
+  .filter:hover .filter__head {
+    background-color: #E0F5FE;
+  }
 }
-.filter.opened .filter__head {
-  background-color: #EFF1F3;
+@media (min-width: 768px) {
+  .filter--opened .filter__head {
+    background-color: #EFF1F3;
+  }
 }
-.filter.opened:hover .filter__head {
-  background-color: #EFF1F3;
+@media (min-width: 768px) {
+  .filter--opened:hover .filter__head {
+    background-color: #EFF1F3;
+  }
 }
-.filter.opened .filter__content {
-  padding: 0.8rem 1.6rem 1.6rem;
-  grid-template-rows: 1fr;
+.filter--opened .filter__content {
+  transform: translateY(-100%);
+}
+@media (min-width: 768px) {
+  .filter--opened .filter__content {
+    padding: 0.8rem 1.6rem 1.6rem;
+    grid-template-rows: 1fr;
+    transform: translateY(0%);
+  }
+}
+.filter--opened .filter__fader {
+  opacity: 1;
+  visibility: visible;
+}
+.filter__fader {
+  background-color: rgba(12, 35, 64, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: 170ms linear, 0s top;
+  z-index: 31;
+  opacity: 0;
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+  .filter__fader {
+    display: none;
+  }
 }
 .filter__head {
   padding: 0.8rem 1.6rem;
@@ -4396,25 +4434,68 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 100%;
   left: 0;
-  white-space: nowrpa;
+  white-space: nowrap;
   margin-top: 0.8rem;
   min-width: 18.4rem;
   padding: 0 1.6rem;
   border-radius: 4px;
   background-color: #EFF1F3;
   overflow: hidden;
-  z-index: 3;
-  display: grid;
-  grid-template-rows: 0fr;
+  z-index: 32;
   transition: 0.5s cubic-bezier(0.15, 0, 0, 1);
 }
+@media (min-width: 768px) {
+  .filter__content {
+    display: grid;
+    grid-template-rows: 0fr;
+  }
+}
+@media (max-width: 767px) {
+  .filter__content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 80vh;
+    background-color: #ffffff;
+    border-radius: 4px 4px 0 0;
+    padding: 2.4rem;
+    min-height: 30.6rem;
+    transition: 0.5s transform cubic-bezier(0.15, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+  }
+}
 .filter__content-wrapper {
-  min-height: 0;
   position: relative;
   transition: 0.5s cubic-bezier(0.15, 0, 0, 1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  margin-top: 1.6rem;
+  flex: 1 1 auto;
+}
+@media (min-width: 768px) {
+  .filter__content-wrapper {
+    margin-top: 0;
+    min-height: 0;
+    height: unset;
+    justify-content: flex-end;
+  }
+}
+.filter__content-wrapper[data-scrollbar] {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .filter__content-wrapper .scrollbar-track-x,
+  .filter__content-wrapper .scrollbar-track-y {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .filter__content-wrapper .scroll-content {
+    transform: translate(0) !important;
+  }
 }
 .filter__content-wrapper ul {
   padding-top: 0.8rem;
@@ -4435,6 +4516,23 @@ body::-webkit-scrollbar-thumb {
   font-family: "Arial", "Verdana", sans-serif;
   line-height: 1.5;
   color: #00A6D6;
+}
+.filter__top {
+  padding-bottom: 1.6rem;
+  border-bottom: 2px solid #E5E5E5;
+}
+@media (min-width: 768px) {
+  .filter__top {
+    display: none;
+  }
+}
+.filter__top h5 {
+  font-family: "Arial", "Verdana", sans-serif;
+}
+.filter__top svg {
+  width: 2.4rem;
+  height: auto;
+  cursor: pointer;
 }
 .filter__checkbox {
   margin-top: 1.6rem;

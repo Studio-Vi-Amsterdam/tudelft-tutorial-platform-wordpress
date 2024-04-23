@@ -3,6 +3,8 @@ export function smoothScroll() {
 	let pagePosition = 0
 	const tutorialAside = $('.tutorial__aside')
 	const tutorialNav = $('.tutorial__mobile-nav')
+	const filter = $('.filter__content')
+	const filterFader = $('.filter__fader')
 	const tutorialNavFader = $('.tutorial__fader')
 	tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
 	const scroller = document.querySelector('#scroll-container');
@@ -10,12 +12,13 @@ export function smoothScroll() {
 	Scrollbar.initAll()
 	if($(window).innerWidth() < 768) {
 		tutorialAside.css('top', pagePosition + $(window).innerHeight() - $('.tutorial__aside-height').outerHeight())
+		filter.css('top', pagePosition + $(window).innerHeight())
 	}
 	if($(window).innerWidth() >= 1024) {
 		$('.search-bar__field').css('width', $(window).innerWidth() - $('.search-bar__field').offset().left + 'px')
 	}
 	bodyScrollBar.addListener(({ offset }) => {
-		if($('.tutorial--active').length > 0 || $('.header--opened').length > 0 ) {
+		if($('.tutorial--active').length > 0 || $('.header--opened').length > 0 || $('.filter--opened').length) {
 			bodyScrollBar.scrollTo(0, pagePosition, 0);
 			scroller.classList.add('hide-scrollbar')
 		} else {
@@ -33,6 +36,8 @@ export function smoothScroll() {
             tutorialNav.removeClass('hidden')
         }
 		if($(window).innerWidth() < 768) {
+			filterFader.css('top', pagePosition)
+			filter.css('top', pagePosition + $(window).innerHeight())
 			tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
 			tutorialNavFader.css('top', pagePosition)
 			tutorialAside.css('top', pagePosition + $(window).innerHeight() - $('.tutorial__aside-height').outerHeight())

@@ -25,8 +25,18 @@
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#sort"></use>
                     </svg>
                 </div>
+                <div class="filter__fader filter__close"></div>
                 <div class="filter__content">
-                    <div class="filter__content-wrapper">
+                        <div class="filter__top flex items-center justify-between">
+                            <h5>Sort</h5>
+                            <div class="filter__close">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6.44336L18 18.4434M6 18.4434L18 6.44336" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                        </div>
+                    <div class="filter__content-wrapper" data-scrollbar>
                         <ul>
                             <li><a href="#">Newest first</a></li>
                             <li><a href="#">Oldest first</a></li>
@@ -43,8 +53,17 @@
                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#filter"></use>
                     </svg>
                 </div>
+                <div class="filter__fader filter__close"></div>
                 <div class="filter__content">
-                    <div class="filter__content-wrapper">
+                        <div class="filter__top  flex items-center justify-between">
+                            <h5>Filter</h5>
+                            <div class="filter__close">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6.44336L18 18.4434M6 18.4434L18 6.44336" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    <div class="filter__content-wrapper" data-scrollbar>
                         <h6>Content</h6>
                         <div class="filter__checkbox">
                             <input type="checkbox" id="check1" name="content">

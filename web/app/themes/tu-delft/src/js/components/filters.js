@@ -1,13 +1,13 @@
 export function openFilter() {
     const inputs = $('[data-filter] .filter__checkbox input')
     $(window).on('click', function(e) {
-        if($(e.target).closest('.filter').length === 0) {
-            $('.filter').removeClass('opened')
+        if($(e.target).closest('.filter').length === 0 || $(e.target).closest('.filter__close').length > 0) {
+            $('.filter').removeClass('filter--opened')
         }
     })
     $('.filter__head').on('click', function(e) {
-        $('.filter').not($(this).parent()).removeClass('opened')
-        $(this).parent().toggleClass('opened')
+        $('.filter').not($(this).parent()).removeClass('filter--opened')
+        $(this).parent().toggleClass('filter--opened')
     })
     $('[data-sort] a').on('click', function(e) {
         const parent = $(this).closest('.filter')
