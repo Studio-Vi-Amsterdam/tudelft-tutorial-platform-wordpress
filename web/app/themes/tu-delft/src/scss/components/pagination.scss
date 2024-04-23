@@ -11,6 +11,11 @@
         width: 4rem;
         height: 4rem;
         margin-left: 8px;
+        transition: .17s linear;
+        &.disabled {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 
     // .pagination__button--prev
@@ -86,6 +91,9 @@
                 }
             }
         }
+    }
+    &.hidden {
+        display: none;
     }
 }
 

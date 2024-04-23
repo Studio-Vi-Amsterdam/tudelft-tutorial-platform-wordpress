@@ -74,5 +74,11 @@
         @media(max-width: $mobile) {
             width: 100%;
         }
+        span  {
+            @media(max-width: $mobile) {
+                width: 100%;
+            }
+
+        }
     }
 }

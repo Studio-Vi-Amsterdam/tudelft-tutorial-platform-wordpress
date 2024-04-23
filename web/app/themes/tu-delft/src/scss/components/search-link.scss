@@ -1,8 +1,9 @@
 
 .search-link {
+    padding-top: 2.4rem;
+    margin-top: 2.4rem;
+    border-top: 2px solid transparent;
     & + & {
-        padding-top: 2.4rem;
-        margin-top: 2.4rem;
         border-top: 2px solid #E5E5E5;
     }
     // .search-link__row

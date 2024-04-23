@@ -1,24 +1,17 @@
 .cards-with-categories {
     padding-top: 5.6rem;
-    padding-bottom: 6rem;
+    padding-bottom: 5.6rem;
     @media(min-width: $mobileP1) {
         padding-top: 8rem;
-        padding-bottom: 12rem;
+        padding-bottom: 8rem;
     }
     // .cards-with-categories__categories
 
     &__categories {
             & + .cards-with-categories__wrapper {
-                margin-top: 2rem;
+                margin-top: 5.6rem;
                 @media(min-width: $mobileP1) {
                     margin-top: 8rem;
-                }
-                .grid-links  {
-                    margin-top: 5.6rem;
-                    @media(min-width: $mobileP1) {
-                        margin-top: 0rem;
-                    }
-        
                 }
             }
     }   
@@ -57,14 +50,18 @@
         padding: 0px;
         height: 0;
         max-height: 0;
-        overflow: hidden;
         width: 100%;
         transform: translateX(calc(100% + 2.4rem));
+        position: absolute;
+        top: 0;
+        left: 0;
         @media(min-width: $mobileP1) {
             transform: translateX(100%);
+            overflow: hidden;
         }
 
         &.active {
+            position: static;
             transition: .67s .08s cubic-bezier(0.15, 0.00, 0.00, 1.00), .0s  padding ;
             height: unset;
             transform: translateX(0%);

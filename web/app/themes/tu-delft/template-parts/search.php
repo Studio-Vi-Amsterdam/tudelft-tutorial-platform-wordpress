@@ -17,7 +17,7 @@
         <div class="search__result">
             <h1>17 search results for architecture</h1>
         </div>
-        <div class="search__filters flex max-sm:flex-wrap items-center md:justify-end">
+        <div class="search__filters flex max-sm:flex-wrap items-center justify-start md:justify-end">
             <div class="filter" data-sort>
                 <div class="filter__head flex items-center">
                     <span>Sort</span>
@@ -119,6 +119,211 @@
      <div class="search__content" data-pages>
 
      <div class="search__wrapper">
+        <div class="search-link" data-card>
+            <div class="search-link__row">
+                <a href="#" class="search-link__col">
+                    <h2>Ladybug Light Analysis</h2>
+                </a>
+                <div class="search-link__col">
+                    <h3>Course</h3>
+                </div>
+            </div>
+            <div class="search-link__row">
+                <div class="search-link__col">
+                    <ul>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                    </ul>
+                </div>
+                <div class="search-link__col">
+                    <p>
+                        In this tutorial you will learn how to analyze the sunlight hours of a Rhino model. Using this analysis, you can change your design based on expected performance or optimize it using an algorithm.
+                    </p>
+                </div>
+            </div>
+            <div class="search-link__arrow">
+                <a href="#" class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="search-link" data-card>
+            <div class="search-link__row">
+                <a href="#" class="search-link__col">
+                    <h2>Ladybug Light Analysis</h2>
+                </a>
+                <div class="search-link__col">
+                    <h3>Tutorial</h3>
+                </div>
+            </div>
+            <div class="search-link__row">
+                <div class="search-link__col">
+                    <ul>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                    </ul>
+                </div>
+                <div class="search-link__col">
+                    <p>
+                        In this tutorial you will learn how to analyze the sunlight hours of a Rhino model. Using this analysis, you can change your design based on expected performance or optimize it using an algorithm.
+                    </p>
+                </div>
+            </div>
+            <div class="search-link__arrow">
+                <a href="#" class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="search-link" data-card>
+            <div class="search-link__row">
+                <a href="#" class="search-link__col">
+                    <h2>Ladybug Light Analysis</h2>
+                </a>
+                <div class="search-link__col">
+                    <h3>Subject</h3>
+                </div>
+            </div>
+            <div class="search-link__row">
+                <div class="search-link__col">
+                    <ul>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                    </ul>
+                </div>
+                <div class="search-link__col">
+                    <p>
+                        In this tutorial you will learn how to analyze the sunlight hours of a Rhino model. Using this analysis, you can change your design based on expected performance or optimize it using an algorithm.
+                    </p>
+                </div>
+            </div>
+            <div class="search-link__arrow">
+                <a href="#" class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="search-link" data-card>
+            <div class="search-link__row">
+                <a href="#" class="search-link__col">
+                    <h2>Ladybug Light Analysis</h2>
+                </a>
+                <div class="search-link__col">
+                    <h3>Tutorial</h3>
+                </div>
+            </div>
+            <div class="search-link__row">
+                <div class="search-link__col">
+                    <ul>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                    </ul>
+                </div>
+                <div class="search-link__col">
+                    <p>
+                        In this tutorial you will learn how to analyze the sunlight hours of a Rhino model. Using this analysis, you can change your design based on expected performance or optimize it using an algorithm.
+                    </p>
+                </div>
+            </div>
+            <div class="search-link__arrow">
+                <a href="#" class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="search-link" data-card>
+            <div class="search-link__row">
+                <a href="#" class="search-link__col">
+                    <h2>Ladybug Light Analysis</h2>
+                </a>
+                <div class="search-link__col">
+                    <h3>Tutorial</h3>
+                </div>
+            </div>
+            <div class="search-link__row">
+                <div class="search-link__col">
+                    <ul>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                    </ul>
+                </div>
+                <div class="search-link__col">
+                    <p>
+                        In this tutorial you will learn how to analyze the sunlight hours of a Rhino model. Using this analysis, you can change your design based on expected performance or optimize it using an algorithm.
+                    </p>
+                </div>
+            </div>
+            <div class="search-link__arrow">
+                <a href="#" class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="search-link" data-card>
+            <div class="search-link__row">
+                <a href="#" class="search-link__col">
+                    <h2>Ladybug Light Analysis</h2>
+                </a>
+                <div class="search-link__col">
+                    <h3>Tutorial</h3>
+                </div>
+            </div>
+            <div class="search-link__row">
+                <div class="search-link__col">
+                    <ul>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                        <li><a href="#">Keyword</a></li>
+                    </ul>
+                </div>
+                <div class="search-link__col">
+                    <p>
+                        In this tutorial you will learn how to analyze the sunlight hours of a Rhino model. Using this analysis, you can change your design based on expected performance or optimize it using an algorithm.
+                    </p>
+                </div>
+            </div>
+            <div class="search-link__arrow">
+                <a href="#" class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
         <div class="search-link" data-card>
             <div class="search-link__row">
                 <a href="#" class="search-link__col">

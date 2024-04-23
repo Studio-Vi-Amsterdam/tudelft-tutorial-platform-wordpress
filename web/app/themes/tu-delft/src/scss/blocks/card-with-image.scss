@@ -86,9 +86,9 @@
         .arrow {
             margin-top: 4rem;
             height: 1.6rem;
-            min-width: 3rem;
-            max-width: 3rem;
-
+            min-width: 2.4rem;
+            max-width: 2.4rem;
+            overflow: hidden;
             @media(min-width: $mobileP1) {
                 min-width: 3.4rem;
                 max-width: 3.4rem;
@@ -109,8 +109,11 @@
                 &:first-child {
                     min-width: unset;
                     right: 0px;
-                    width: 1.2rem;
+                    width: 1rem;
                     transform: translateY(-50%);
+                    @media(min-width: $mobileP1) {
+                        width: 1.2rem;
+                    }
                 }
             }
         }

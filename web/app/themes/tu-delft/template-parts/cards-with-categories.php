@@ -320,7 +320,7 @@
             <div class="cards-with-categories__item accordion">
                 <div class="accordion__head flex items-center justify-between">
                     <h2>Bachelor 1</h2>
-                    <button aria-label="open accordion"></button>
+                    <button aria-label="accordion"></button>
                 </div>
                 <div class="accordion__content">
                     <div class="accordion__content-wrapper grid lg:grid-cols-2">

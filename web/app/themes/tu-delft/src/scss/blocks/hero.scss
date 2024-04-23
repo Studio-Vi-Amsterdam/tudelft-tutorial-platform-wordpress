@@ -37,10 +37,11 @@
             padding-right: 9%;
         }
         img {
-            max-width: 100%;
+            max-width: 21rem;
             width: auto;
             @media(min-width: $tabletSmallP1) {
                 margin-left: auto;
+                max-width: 100%;
             }
         }
     }
@@ -49,12 +50,13 @@
     &--center-image-onmobile {
         .hero__image {
             img {
-                max-width: 100%;
+                max-width: 21rem;
                 width: auto;
                 margin-left: auto;
                 margin-right: auto;
                 @media(min-width: $tabletSmallP1) {
                     margin-right: 0;
+                    max-width: 100%;
                 }
             }
 

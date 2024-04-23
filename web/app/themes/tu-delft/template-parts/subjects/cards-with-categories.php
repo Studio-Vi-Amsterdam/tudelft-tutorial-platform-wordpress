@@ -230,7 +230,7 @@
         </div>
         <div class="cards-with-categories__content" data-category-content="chapter-1">
             <div class="cards-with-categories__item accordion">
-                <div class="accordion__head flex items-center justify-between opened">
+                <div class="accordion__head flex items-center justify-between">
                     <h2>3 Dimensional</h2>
                     <button aria-label="open accordion"></button>
                 </div>
@@ -429,7 +429,7 @@
         </div>
         <div class="cards-with-categories__content" data-category-content="chapter-2">
             <div class="cards-with-categories__item accordion">
-                <div class="accordion__head flex items-center justify-between opened">
+                <div class="accordion__head flex items-center justify-between">
                     <h2>3 Dimensional</h2>
                     <button aria-label="open accordion"></button>
                 </div>
@@ -628,7 +628,7 @@
         </div>
         <div class="cards-with-categories__content" data-category-content="chapter-3">
             <div class="cards-with-categories__item accordion">
-                <div class="accordion__head flex items-center justify-between opened">
+                <div class="accordion__head flex items-center justify-between ">
                     <h2>3 Dimensional</h2>
                     <button aria-label="open accordion"></button>
                 </div>
