@@ -1,0 +1,28 @@
+.code-block {
+    background-color: #F5F2F0;
+    padding: 1.2rem;
+    box-sizing: border-box;
+    color: #999999;
+    border-radius: 4px;
+    margin-top: 2.4rem;
+    line-height: 1.8;
+    & + p {
+        margin-top: 2.4rem;
+    }
+    pre {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+        .pink {
+            color: #990055;
+        }
+        .green {
+            color: #669900;
+        }
+        .orange {
+            color: #9A6E3A;
+            background-color: #FAF9F8;
+        }
+    
+}

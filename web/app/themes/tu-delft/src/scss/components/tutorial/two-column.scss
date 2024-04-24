@@ -1,0 +1,31 @@
+.two-column {
+    gap: 2.4rem;
+    margin-top: 2.4rem;
+    // .two-column__item
+
+    &__item {
+        width: 100%;
+    }
+
+    // .two-column__item--image
+
+    &__item--image {
+        &.image {
+            figcaption {
+                margin-top: 1.6rem;
+            }
+        }
+    }
+
+    // .two-column__item--text
+
+    &__item--text {
+    }
+
+    //.two-column--reversed
+    &--reversed {
+        @media(min-width: $mobile) {
+            flex-direction: row-reverse;
+        }
+    }
+}

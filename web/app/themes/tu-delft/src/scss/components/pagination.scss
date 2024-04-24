@@ -1,0 +1,99 @@
+.pagination {
+    margin-top: 8rem;
+    position: relative;
+    z-index: 2;
+    @media (max-width:$mobile) {
+        display: none;
+    }
+    // .pagination__button
+
+    &__button {
+        width: 4rem;
+        height: 4rem;
+        margin-left: 8px;
+        transition: .17s linear;
+        &.disabled {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    // .pagination__button--prev
+
+    &__button--prev {
+        transform: rotate(180deg);
+    }
+
+    //.pagination__bg
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 4px;
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: 4px;
+        background-color: $secondary;
+        z-index: -1;
+        transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+    }
+    //.pagination__list
+    &__list {
+        position: relative;
+        ul {
+            list-style: none;
+            li {
+                width: 4.8rem;
+                height: 4.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @extend .p2;
+                margin: 0 4px;
+                text-align: center;
+                transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+                &.active {
+                    color: $white;
+                }
+                button {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                }
+                span {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 4.8rem;
+                    height: 4.8rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transition:  170ms linear;
+                    &:first-child {
+                        opacity: 1;
+                    }
+                }
+                padding: 0;
+                &:after {
+                    display: none;
+                }
+                &.rebuild {
+                    span {
+                        opacity: 1;
+                        &:first-child {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.hidden {
+        display: none;
+    }
+}
+

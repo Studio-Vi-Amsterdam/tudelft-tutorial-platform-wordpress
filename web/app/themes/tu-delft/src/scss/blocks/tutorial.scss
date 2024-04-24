@@ -1,0 +1,321 @@
+.tutorial {
+    $self: &;
+    padding-top: 12.4rem;
+    padding-bottom: 5.6rem;
+    position: relative;
+    min-height: 100vh;
+    @media(min-width: $tabletSmallP1) {
+        overflow: hidden;
+    }
+
+    @media(min-width: $tabletP1) {
+        padding-top: 16rem;
+        padding-bottom: 16rem;
+    }
+
+    // .tutorial__mobile-nav
+    &__mobile-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0C234066;
+        gap: 1.6rem;
+        padding: 1.6rem 2.4rem;
+        box-sizing: border-box;
+        z-index: 12;
+        border-radius: .4rem .4rem 0 0;
+        overflow: hidden;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, 0s top;
+
+        @media(min-width: $tabletSmallP1) {
+            display: none ;
+        }
+        &.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .btn {
+            font-size: 1.6rem;
+            span {
+                padding: 1.2rem 2.4rem;
+            }
+            .btn__icon {
+                & + span {
+                    padding: 1.2rem 2.4rem 1.2rem .8rem;
+                    & + span {
+                        padding: 1.2rem 2.4rem 1.2rem .8rem;
+                    }
+                }
+
+            }
+        }
+    }
+
+    // .tutorial__fader
+    &__fader {
+        background-color: #0C234066;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transition: 170ms linear ;
+        z-index: 31;
+        opacity: 0;
+        visibility: hidden;
+
+        @media(min-width: $tabletSmallP1) {
+            display: none;
+        }
+    }
+
+    // .tutorial__aside
+
+    &__aside {
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00), 0s top, 0s .5s height, 0s .5s padding ;
+
+        @media(max-width: $tabletSmall) {
+            position: absolute;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            bottom: 0;
+            background-color: $white;
+            left: 0;
+            z-index: 32;
+            border-radius: .4rem .4rem 0 0;
+            box-sizing: border-box;
+            transform: translateY(100%);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media(min-width: $tabletSmallP1) {
+            width: 24%;
+        }
+
+        @media(min-width: $tabletP1) {
+            width: 30%;
+        }
+
+        @media(min-width: $tabletLargeP1) {
+            width: 24%;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $border-gray;
+        }
+
+    }
+
+    // .tutorial__aside-height
+    &__aside-height {
+        @media(max-width: $tabletSmall) {
+            padding: 2.4rem;
+            height: 87vh;
+        }
+    }
+
+    //.tutorial__aside-wrapper
+    &__aside-wrapper {
+        @media(max-width: $tabletSmall) {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            padding-right: 2.6rem;
+            box-sizing: border-box;
+            height: calc(100% - 4.8rem);
+        }
+        
+    &[data-scrollbar] {
+         @media (min-width: $tabletSmallP1) {
+            overflow: unset !important; 
+             outline: unset !important;
+         }
+         .scroll-content {
+            @media (min-width: $tabletSmallP1) {
+               transform: translate(0) !important;
+            }
+
+         }
+    }
+
+    }
+
+    // .tutorial__close
+    &__close {
+        width: 1.2rem;
+        height: 1.2rem;
+        padding: .6rem;
+        box-sizing: content-box;
+        margin: 0 0 2.4rem auto;
+
+        @media(min-width: $tabletSmallP1) {
+            display: none;
+        }
+
+
+    }
+
+    // .tutorial__nav
+
+    &__nav {
+        &:not(:first-of-type) {
+            margin-top: 5.6rem;
+        }
+    }
+
+    // .tutorial__main
+
+    &__main {
+        position: relative;
+        padding-left: 10px;
+        margin-left: -10px;
+
+        @media(min-width: $tabletSmallP1) {
+            width: 66%;
+            overflow: hidden;
+        }
+        &.prev-side {
+            .tutorial__item {
+                transform: translateX(-120%);
+                &.active {
+                    transform: translateX(0%);
+                }
+                &.inactive {
+                    transform: translateX(120%);
+                }
+
+            }
+        }
+    }
+
+    // .tutorial__item
+
+    &__item {
+        height: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateX(calc(100% + 2.4rem));
+        @media(min-width: $mobileP1) {
+            transform: translateX(100%);
+        }
+
+        &.active {
+            transition: .67s .08s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+            height: unset;
+            transform: translateX(0%);
+            max-height: unset;
+            @media(min-width: $mobileP1) {
+                transition: .5s .17s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+            }
+        }
+        &.inactive {
+            transition: .67s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+            transform: translateX(calc(-100% - 24px));
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: unset;
+            max-height: unset;
+            @media(min-width: $mobileP1) {
+                transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+                transform: translateX(calc(-100% - 10px));
+            }
+        }
+    }
+
+    //.tutorial__item-wrapper
+    &__item-wrapper {
+    }
+
+    // .tutorial__content
+
+    &__content {
+        &:not(:first-child) {
+            // display: block;
+            margin-top: 3.2rem;
+
+            @media(min-width: $tabletP1) {
+                margin-top: 4rem;
+            }
+        }
+        h2 {
+            @include adaptiveProperty('font-size', 16, 16);
+            font-weight: 700;
+            line-height: 1.5;
+            color: $secondary;
+            font-family: $primary-font;
+    
+            &+h3 {
+                margin-top: 1.6rem;
+            }
+
+        }
+        h3 {
+            @extend .h1;
+    
+            &+p {
+                margin-top: 3.2rem;
+    
+                @media(min-width: $tabletP1) {
+                    margin-top: 4rem;
+                }
+    
+            }
+
+        }
+    }
+
+    // .tutorial__img
+
+    &__img {}
+
+    // .tutorial__btns
+
+    &__btns {
+        width: 100%;
+        display: none;
+        @media(min-width: $tabletSmallP1) {
+            display: flex ;
+        }
+        &:not(:first-child) {
+            margin-top: 5.6rem ;
+            @media(min-width: $tabletP1) {
+                margin-top: 8rem ;
+            }
+
+        }
+    }
+
+    // .tutorial--active
+    &--active {
+        #{$self}__fader {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #{$self}__aside {
+            transform: translateY(0);
+            transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00), 0s top, 0s 0s height, 0s 0s padding ;
+
+            @media(max-width: $tabletSmall) {
+                height: 87vh;
+            }
+        }
+
+        #{$self}__mobile-nav{
+            opacity: 1;
+            visibility: hidden;
+        }
+    }
+}

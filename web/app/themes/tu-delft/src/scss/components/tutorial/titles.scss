@@ -1,0 +1,147 @@
+.titles {
+    $self: &;
+    border-top: 2px solid $border-gray;
+    padding-top: 1.6rem;
+
+    ul {
+        @extend .reset-list;
+
+
+    }
+
+    h4 {
+        @include adaptiveProperty('font-size', 16, 16);
+        font-weight: 700;
+        margin-bottom: 2.4rem;
+    }
+
+    // .titles__item
+
+    &__item {
+        box-sizing: border-box;
+        border-radius: .4rem;
+        display: block;
+        transition: .17s background linear;
+        
+        &:hover {
+            background-color: #00A6D6;
+            transition: .17s background linear;
+            
+
+            #{$self}__head {
+                color: $white;
+
+                &:before {
+                    border-color: transparent transparent transparent $white;
+                }
+            }
+            a{
+                color: $white;
+            }
+        }
+        &:first-child {
+            display: none;
+        }
+
+        &:not(:first-of-type) {
+            margin-top: 1.2rem;
+        }
+        &:nth-child(2) {
+            margin-top: 0;
+        }
+
+        // .titles__item--opened
+        &--opened {
+            border-radius: .4rem;
+            background-color: $light-blue ;
+            transition: .5s background linear;
+
+            #{$self}__head {
+                text-shadow: 0 0 .8px $black, 0 0 .5px $black;
+                letter-spacing: .02em;
+                color: $black ;
+
+                &:before {
+                    transform: rotate(90deg);
+                    border-color: transparent transparent transparent $black ;
+                }
+            }
+            #{$self}__body {
+                grid-template-rows: 1fr;
+            }
+
+            a{
+                color: $black;
+            }
+
+            &:hover {
+                background-color: $light-blue;
+                
+    
+                #{$self}__head {
+                    color: $black ;
+    
+                    &:before {
+                        border-color: transparent transparent transparent $black;
+                    }
+                }
+                a{
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    // .titles__head
+
+    &__head {
+        @include adaptiveProperty('font-size', 14, 14);
+        line-height: 1.42;
+        color: $black;
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        padding: .8rem 1rem;
+        cursor: pointer;
+        transition: .17s linear;
+        border-radius: .4rem;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 4px 0 4px 4px;
+            border-color: transparent transparent transparent #000000;
+            transform: rotate(0deg);
+            display: block;
+            margin-right: 1.1rem;
+            transition: .17s linear;
+        }
+    }
+
+    // .titles__body
+
+    &__body {
+        margin-left: 2.8rem;
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+
+        ul {
+            min-height: 0;
+            li {
+                padding: .4rem .8rem .8rem;
+                box-sizing: border-box;
+            }
+
+            a {
+                @include adaptiveProperty('font-size', 14, 14);
+                color: $black ;
+                transition: .17s linear;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.arrow {
+    min-width: 3rem;
+    max-width: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
+    svg {
+        width: 2.4rem;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        &:first-child {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: unset;
+            right: 5px;
+            width: .9rem;
+            height: auto;
+        }
+    }
+    &:hover {
+        svg {
+            &:first-child {
+                @media(min-width: $mobileP1) {
+                    right: 0;
+                }
+            }
+            &:last-child{
+                @media(min-width: $mobileP1) {
+                    width: 3rem;
+                }
+            }
+        }
+    }
+}

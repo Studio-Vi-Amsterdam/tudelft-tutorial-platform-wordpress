@@ -1,9 +1,60 @@
-// @import '_functions';
-// @import '_mixins';
-
+@import '_functions';
 @import '_variables';
-@import '_fonts';
+@import '_mixins';
 @import '_reset';
 @import '_typography';
 @import '_layout';
 @import './gutenberg/index';
+
+@import './components/base/btn';
+@import './components/base/link.scss';
+@import './components/base/field';
+@import './components/utils.scss';
+
+@import './parts/header.scss';
+@import './blocks/nav.scss';
+@import './blocks/hero.scss';
+@import './blocks/banner.scss';
+@import './blocks/preloader.scss';
+
+@import './blocks/cards-with-categories.scss';
+@import './blocks/categories.scss';
+@import './blocks/accordion.scss';
+@import './blocks/card-with-image.scss';
+@import './blocks/hero-text.scss';
+@import './blocks/section-wrapper.scss';
+
+@import './components/tutorial/titles.scss';
+@import './components/tutorial/information.scss';
+@import './components/tutorial/responsible.scss';
+@import './components/tutorial/text.scss';
+@import './components/tutorial/download.scss';
+@import './components/tutorial/image.scss';
+@import './components/tutorial/video.scss';
+@import './components/tutorial/infobox.scss';
+@import './components/tutorial/btns.scss';
+@import './components/search-bar.scss';
+@import './components/tutorial/link-box.scss';
+@import './components/tutorial/two-column.scss';
+@import './components/tutorial/tooltip.scss';
+@import './components/tutorial/buttons-combination.scss';
+@import './components/tutorial/code-block.scss';
+@import './components/tutorial/table-box.scss';
+@import './components/tutorial/math-func.scss';
+@import './components/tutorial/quiz.scss';
+@import './components/software-link.scss';
+@import './components/arrow.scss';
+@import './blocks/tutorial.scss';
+@import './components/grid-links.scss';
+@import './components/pagination.scss';
+@import './components/form.scss';
+
+@import './blocks/search.scss';
+@import './components/search-link.scss';
+@import './components/filter.scss';
+
+
+@import './blocks/modalWindow/modal-video-item.scss';
+@import './blocks/modalWindow/modal-window.scss';
+
+@import './parts/footer.scss';
