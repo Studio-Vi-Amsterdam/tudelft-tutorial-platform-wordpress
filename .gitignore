@@ -28,7 +28,6 @@ web/wp
 wp-cli.local.yml
 
 /js/
-style.css
 main.css
 main-rtl.css
 # These are some examples of commonly ignored file patterns.
