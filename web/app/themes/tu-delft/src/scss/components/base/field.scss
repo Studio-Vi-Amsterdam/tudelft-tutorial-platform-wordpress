@@ -27,7 +27,7 @@
     textarea {
         resize: none;
         overflow-y: auto;
-        height: 320px;
+        min-height: 320px;
     }
     label {
         display: block;
@@ -40,8 +40,29 @@
         color: #67676B;
         background-color: #EFF1F3;
         width: 100%;
+        z-index: 2;
     }
+    
 
+    &--textarea {
+        height: 320px;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            @extend .p2;
+            line-height: 1.6;
+            padding: 48px 24px 24px;
+        }
+
+    }
 
 		// .field__dropdown
 

@@ -2,8 +2,21 @@
     padding: 10rem 0 4rem;
     max-width: 100%;
     background-color: #EFF1F3;
+    position: relative;
+    z-index: 2;
     @media(min-width: $mobileP1) {
         padding: 12rem 0 4rem;
+    }
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background-color: $white;
+        z-index: -1;
     }
     // .hero__container
 

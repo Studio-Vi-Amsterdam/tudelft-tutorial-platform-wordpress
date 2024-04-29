@@ -17,6 +17,7 @@ import { pagePreloader } from "./components/page-preloader";
 import { delay } from "./components/delay";
 import { initPagination } from "./components/pagination";
 import { openFilter } from "./components/filters";
+import { textareaScrollBar } from "./components/textarea-scrollbar";
 
 
 export function runAfterDomLoad() {
@@ -87,6 +88,7 @@ export function runAfterDomLoad() {
                     openDropdown()
                     initPagination()
                     openFilter()
+                    textareaScrollBar()
                     new ModalWindow(ModalVideoWindow, ModalContentWindow)
                     setTimeout(() => {
                         $('body').removeClass('preload')
