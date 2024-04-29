@@ -59,7 +59,7 @@
             <div class="header__nav">
                 <ul>
 
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/courses">Courses</a>
+                    <li class="menu-item-has-children"><a href="https://alt.viamsterdam.dev/tudelft-tutorials-staging/courses/">Courses</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
@@ -124,7 +124,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/subjects">Subjects</a>
+                    <li class="menu-item-has-children"><a href="https://alt.viamsterdam.dev/tudelft-tutorials-staging/subjects/">Subjects</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
@@ -248,7 +248,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/testing">Software</a>
+                    <li class="menu-item-has-children"><a href="https://alt.viamsterdam.dev/tudelft-tutorials-staging/testing-software/">Software</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu header__submenu--flex">
                             <div class="menu-item-has-children__wrapper ">
@@ -277,7 +277,7 @@
                         </div>
                     </li>
 
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/labs">Labs</a>
+                    <li class="menu-item-has-children"><a href="https://alt.viamsterdam.dev/tudelft-tutorials-staging/labs/">Labs</a>
 
                         <div class="header__fader"></div>
                         <div class="header__submenu">
