@@ -26,13 +26,16 @@ export default class ModalVideoWindow extends ModalWindowBase {
       url.searchParams.set('autoplay', '1');
       this.$modalVideo.querySelector('iframe')
         .setAttribute('src', url)
+        this.$modalVideo.style.width =document.querySelector('.modal-video-item__wr-iframe').clientWidth + 'px'
+        this.$modalVideo.style.height =document.querySelector('.modal-video-item__wr-iframe').clientHeight + 'px'
 
     }
     if(dataImageSrc) {
       this.$modalVideo.classList.add('show-image')
       this.$modalVideo.querySelector('img')
         .setAttribute('src', dataImageSrc)
-
+        this.$modalVideo.style.width =document.querySelector('.modal-video-item__image').clientWidth + 'px'
+        this.$modalVideo.style.height =document.querySelector('.modal-video-item__image').clientHeight + 'px'
     }
     this.openModal(this.constants.MODAL_VIDEO_ID)
   }
@@ -48,6 +51,8 @@ export default class ModalVideoWindow extends ModalWindowBase {
       this.$modalVideo.classList.remove('show-video')
     }, 500);
     super.closeModal(event)
+    document.querySelector('.modal-window__item').style.width = 0 + 'px'
+    document.querySelector('.modal-window__item').style.height = 0 + 'px'
 
   }
 }
