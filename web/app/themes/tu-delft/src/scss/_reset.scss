@@ -108,6 +108,9 @@ body, html {
     height: 100svh;
     .disabled-horizontal-scroll {
       overflow-x: hidden;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
     }
   }
   ::-webkit-scrollbar {
