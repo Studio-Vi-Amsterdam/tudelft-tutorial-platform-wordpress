@@ -3,14 +3,31 @@
     padding-top: 12.4rem;
     padding-bottom: 5.6rem;
     position: relative;
+    z-index: 2;
     min-height: 100vh;
-    @media(min-width: $tabletSmallP1) {
-        overflow: hidden;
-    }
 
     @media(min-width: $tabletP1) {
         padding-top: 16rem;
         padding-bottom: 16rem;
+    }
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background-color: $white;
+        z-index: -1;
+    }
+
+    //.tutorial__container
+    &__container {
+        @media(min-width: $tabletSmallP1) {
+            overflow: hidden;
+        }
+
     }
 
     // .tutorial__mobile-nav

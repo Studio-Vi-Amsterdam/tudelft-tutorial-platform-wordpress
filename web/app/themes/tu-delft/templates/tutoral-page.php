@@ -6,7 +6,8 @@
 <?php $theme_url = get_template_directory_uri() ?>
 <?php get_header(); ?>
 
-<section class="tutorial md:flex md:justify-between">
+<section class="tutorial">
+    <div class="tutorial__container md:flex md:justify-between">
     <div class="tutorial__mobile-nav flex justify-between">
         <a href="#" class="btn disabled" data-prev>
             <span>Back</span>
@@ -857,6 +858,7 @@
                 </a>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
