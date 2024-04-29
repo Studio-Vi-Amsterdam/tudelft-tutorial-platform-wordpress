@@ -60,6 +60,7 @@
                 <ul>
 
                     <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/courses">Courses</a>
+                        <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
@@ -124,6 +125,7 @@
                     </li>
 
                     <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/subjects">Subjects</a>
+                        <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
@@ -247,6 +249,7 @@
                     </li>
 
                     <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/testing">Software</a>
+                        <div class="header__fader"></div>
                         <div class="header__submenu header__submenu--flex">
                             <div class="menu-item-has-children__wrapper ">
                                 <ul>
@@ -275,6 +278,8 @@
                     </li>
 
                     <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/labs">Labs</a>
+
+                        <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
