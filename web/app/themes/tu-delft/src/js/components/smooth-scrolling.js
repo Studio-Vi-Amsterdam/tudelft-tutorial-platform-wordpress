@@ -9,7 +9,6 @@ export function smoothScroll() {
 	const tutorialNavFader = $('.tutorial__fader')
 	tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
 	const scroller = document.querySelector('#scroll-container');
-	console.log(scroller);
 	const bodyScrollBar = Scrollbar.init(scroller, { damping: 0.1, delegateTo: document, alwaysShowTracks: false, });
 	Scrollbar.initAll()
 	if($(window).innerWidth() >= 767) {
