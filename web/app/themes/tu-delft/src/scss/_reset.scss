@@ -32,9 +32,6 @@ body {
 ol, ul {
 
 }
-.preload {
-    opacity: 0;
-}
 
 blockquote, q {
     quotes: none;
@@ -108,6 +105,9 @@ body, html {
     height: 100svh;
     .disabled-horizontal-scroll {
       overflow-x: hidden;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
     }
   }
   ::-webkit-scrollbar {
@@ -126,15 +126,27 @@ body, html {
   }
 
   body {
-    position: relative;
-    top: 480px;
+    main {
+      position: relative;
+      top: 480px;
+    }
     &.loaded {
-    top: 0;
-      transition: 630ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
+      main {
+        top: 0;
+        transition: 630ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
+      }
     }
     &.reloaded {
-    top: -280px;
-      transition: 630ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
+      main {
+        top: -280px;
+        transition: 630ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        pointer-events: none;
+      }
+    }
+    &.opacity {
+      main {
+        opacity: 0;
+      }
     }
   }
 

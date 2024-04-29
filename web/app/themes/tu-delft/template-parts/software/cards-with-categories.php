@@ -1,6 +1,6 @@
 <?php $theme_url = get_template_directory_uri() ?>
 <section class="cards-with-categories">
-    <div class="cards-with-categories__categories categories categories--without-shadow-arrow">
+    <div class="cards-with-categories__categories categories" data-scrollbar>
         <div class="categories__wrapper flex">
         <div class="categories__item categories__item--active transition" data-category-target="chapter-0">
             <a href="#">All

@@ -32,11 +32,14 @@
     label {
         display: block;
         position: absolute;
-        top: 1.6rem;
-        left: 2.4rem;
+        top: 0rem;
+        padding: 1.6rem 2.4rem 0;
+        left: 0rem;
         @extend .p1;
         font-family: $secondary-font;
         color: #67676B;
+        background-color: #EFF1F3;
+        width: 100%;
     }
 
 

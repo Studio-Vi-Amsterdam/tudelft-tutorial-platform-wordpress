@@ -39,7 +39,7 @@
                 </div>
                 <div class="field">
                     <label for="message">Message</label>
-                    <textarea id="message" placeholder="Message"></textarea>
+                    <textarea id="message" placeholder="Message" data-scrollbar></textarea>
                 </div>
                 <button class="btn">
                     <span>Give feedback</span>
