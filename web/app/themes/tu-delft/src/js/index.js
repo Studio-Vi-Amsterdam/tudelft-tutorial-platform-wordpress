@@ -21,19 +21,23 @@ import { openFilter } from "./components/filters";
 
 export function runAfterDomLoad() {
     $(window).on('load', function () {
+        $('.tutorial__main').removeClass('transition')
         let timeout = 430
-        $('.preloader').addClass('loaded')
-        $('body').addClass('loaded')
+        $('.preloader').removeClass('loaded').addClass('reloaded')
+        setTimeout(() => {
+            $('.preloader').addClass('loaded')
+            $('body').removeClass('reloaded').addClass('loaded').removeClass('opacity')
+        }, 1000);
         setTimeout(() => {
             $('.preloader').removeClass('loaded').removeClass('reloaded')
-            $('body').removeClass('reloaded')
-        }, 750);
+        }, 1620);
         barba.init({
             timeout: 430,
             debug: true,
             transitions: [
                 {
                     leave: async (data) => {
+                        $('.tutorial__main').removeClass('transition')
                         $('.preloader').removeClass('loaded').addClass('reloaded')
                         $('.fixed-navigation').removeClass('animated')
                         $('body').addClass('reloaded').removeClass('loaded')

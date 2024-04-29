@@ -36,8 +36,8 @@
 
 </head>
 
-<body data-barba="wrapper">
-    <div class="preloader reloaded">
+<body data-barba="wrapper" class="opacity">
+    <div class="preloader">
         <div class="preloader__yellow"></div>
         <div class="preloader__blue"></div>
     </div>

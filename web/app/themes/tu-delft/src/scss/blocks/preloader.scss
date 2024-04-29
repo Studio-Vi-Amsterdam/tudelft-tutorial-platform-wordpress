@@ -31,6 +31,7 @@
     }
 
     &.reloaded {
+        pointer-events: all;
         .preloader__yellow,
         .preloader__blue {
             transform: translateY(0%);
@@ -43,6 +44,7 @@
         }
     }
     &.loaded {
+        pointer-events: all;
         
         .preloader__blue {
             transform: translateY(-100%);

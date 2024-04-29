@@ -99,7 +99,6 @@ export function initPagination() {
         }
         const setCurrentPage = (pageNum) => {
             currentPage = pageNum;
-            console.log(currentPage);
 
             handlePageButtonsStatus();
 
@@ -107,7 +106,6 @@ export function initPagination() {
             const currRange = currentPage * paginationLimit;
 
             listItems.each(function(item, index) {
-                console.log(index);
                 if (item >= prevRange && item < currRange) {
                     $(this).removeClass("hidden");
                 } else if (item < prevRange || item >= currRange)  {

@@ -197,6 +197,21 @@
 
             }
         }
+        &.transition {
+            .active {
+                transition: .67s .08s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+                @media(min-width: $mobileP1) {
+                    transition: .5s .17s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+                }
+            }
+            .inactive {
+                transition: .67s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+                @media(min-width: $mobileP1) {
+                    transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
+                }
+            }
+
+        }
     }
 
     // .tutorial__item
@@ -211,16 +226,11 @@
         }
 
         &.active {
-            transition: .67s .08s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
             height: unset;
             transform: translateX(0%);
             max-height: unset;
-            @media(min-width: $mobileP1) {
-                transition: .5s .17s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
-            }
         }
         &.inactive {
-            transition: .67s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
             transform: translateX(calc(-100% - 24px));
             position: absolute;
             top: 0;
@@ -228,7 +238,6 @@
             height: unset;
             max-height: unset;
             @media(min-width: $mobileP1) {
-                transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) ;
                 transform: translateX(calc(-100% - 10px));
             }
         }

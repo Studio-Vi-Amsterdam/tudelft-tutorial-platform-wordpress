@@ -30,7 +30,7 @@ export function tutorials() {
     
     
         tabs.on('click', function() {
-            $('.tutorial__main').removeClass('prev-side')
+            $('.tutorial__main').removeClass('prev-side').addClass('transition')
             target = $(this).data('tab-target')
             numberOfTab = target[target.length -1]
             setTimeout(() => {
@@ -38,7 +38,7 @@ export function tutorials() {
             }, 50);
         })
         nextBtn.on('click', function(e) {
-            $('.tutorial__main').removeClass('prev-side')
+            $('.tutorial__main').removeClass('prev-side').addClass('transition')
             e.preventDefault();
             setTimeout(() => {
                 ++numberOfTab;
@@ -47,7 +47,7 @@ export function tutorials() {
             }, 50);
         })
         prevBtn.on('click', function(e) {
-            $('.tutorial__main').addClass('prev-side')
+            $('.tutorial__main').addClass('prev-side').addClass('transition')
             e.preventDefault();
             setTimeout(() => {
                 --numberOfTab;
