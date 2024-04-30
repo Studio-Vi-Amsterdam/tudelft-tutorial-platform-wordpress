@@ -18,6 +18,7 @@ import { delay } from "./components/delay";
 import { initPagination } from "./components/pagination";
 import { openFilter } from "./components/filters";
 import { textareaScrollBar } from "./components/textarea-scrollbar";
+import ModalImageWindow from "./components/ModalWindow/ModalImageWindow";
 
 
 export function runAfterDomLoad() {
@@ -91,7 +92,7 @@ export function runAfterDomLoad() {
                         initPagination()
                         openFilter()
                         textareaScrollBar()
-                        new ModalWindow(ModalVideoWindow, ModalContentWindow)
+                        new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 
                     }, timeout);
                 }

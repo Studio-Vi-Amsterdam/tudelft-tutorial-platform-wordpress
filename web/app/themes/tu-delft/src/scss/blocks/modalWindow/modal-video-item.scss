@@ -1,17 +1,15 @@
 .modal-video-item {
-    height: 100%;
-    width: 100%;
     position: relative;
     // .modal-video-item__wr-iframe
 
     &__wr-iframe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
         min-width: calc(100vw - 4.8rem);
         pointer-events: none;
         aspect-ratio: 2/1;
+        overflow:hidden;
+        clip-path:polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+        transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
         @media (min-width: $tabletLargeP1) {
             min-width: calc(1224px - 4.8rem);
         }
@@ -75,18 +73,15 @@
     // .modal-video-item__wr-iframe
 
     &__wr-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: calc(100vw - 4.8rem);
-        min-height: 100vh;
         overflow: hidden;
         pointer-events: none;
 
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow:hidden;
+        clip-path:polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+        transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
 
     }
 
