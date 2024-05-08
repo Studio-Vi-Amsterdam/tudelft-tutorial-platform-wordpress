@@ -85,6 +85,31 @@
             "bidirectional": 0,
             "ui": 1,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_663bf9f48dcbe",
+            "label": "Software Versions",
+            "name": "software_versions",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "software-version",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -105,5 +130,5 @@
     "active": true,
     "description": "Fields related to tutorials",
     "show_in_rest": 0,
-    "modified": 1707874829
+    "modified": 1715206689
 }
