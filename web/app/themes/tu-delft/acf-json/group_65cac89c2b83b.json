@@ -3,9 +3,9 @@
     "title": "Image Block",
     "fields": [
         {
-            "key": "field_65cac89cec89c",
+            "key": "tu-delft-image_image",
             "label": "Image",
-            "name": "image",
+            "name": "tu-delft-image_image",
             "aria-label": "",
             "type": "image",
             "instructions": "Select an image from Media Library",

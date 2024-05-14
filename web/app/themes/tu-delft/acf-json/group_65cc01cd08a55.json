@@ -3,9 +3,9 @@
     "title": "Image-Text Block",
     "fields": [
         {
-            "key": "field_65cc01cdb7fd2",
+            "key": "tu-delft-image-text_image",
             "label": "Image",
-            "name": "image",
+            "name": "tu-delft-image-text_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -28,9 +28,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_65cc0217b7fd3",
+            "key": "tu-delft-image-text_content",
             "label": "Content",
-            "name": "content",
+            "name": "tu-delft-image-text_content",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
