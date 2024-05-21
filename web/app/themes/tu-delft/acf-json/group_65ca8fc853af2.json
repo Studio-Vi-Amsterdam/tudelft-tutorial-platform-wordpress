@@ -64,7 +64,7 @@
             "filters": [
                 "search"
             ],
-            "return_format": "object",
+            "return_format": "id",
             "min": "",
             "max": "",
             "elements": "",
@@ -113,5 +113,5 @@
     "active": true,
     "description": "Fields that are shown on Tutorials, Subjects, Courses and Softwares",
     "show_in_rest": 0,
-    "modified": 1715207858
+    "modified": 1716120158
 }

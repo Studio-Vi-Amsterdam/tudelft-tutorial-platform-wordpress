@@ -24,7 +24,7 @@
             ],
             "post_status": "",
             "taxonomy": "",
-            "return_format": "object",
+            "return_format": "id",
             "multiple": 0,
             "allow_null": 0,
             "bidirectional": 0,
@@ -50,5 +50,5 @@
     "active": true,
     "description": "Fields related to chapters",
     "show_in_rest": 0,
-    "modified": 1707957309
+    "modified": 1716119971
 }
