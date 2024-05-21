@@ -3,9 +3,9 @@
     "title": "Content Card Block",
     "fields": [
         {
-            "key": "field_65cbff6e7213e",
+            "key": "tu-delft-content-card_content_card_row",
             "label": "Content Card Row",
-            "name": "content_card_row",
+            "name": "tu-delft-content-card_content_card_row",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -25,9 +25,9 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_65cbffb472140",
+                    "key": "tu-delft-content-card_card_title",
                     "label": "Card title",
-                    "name": "card_title",
+                    "name": "tu-delft-content-card_card_title",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "Leave empty if you want to use title of link",
@@ -43,12 +43,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_65cbff6e7213e"
+                    "parent_repeater": "tu-delft-content-card_content_card_row"
                 },
                 {
-                    "key": "field_65cbffbe72141",
+                    "key": "tu-delft-content-card_card_link",
                     "label": "Card Link",
-                    "name": "card_link",
+                    "name": "tu-delft-content-card_card_link",
                     "aria-label": "",
                     "type": "post_object",
                     "instructions": "",
@@ -76,7 +76,7 @@
                     "bidirectional": 0,
                     "ui": 1,
                     "bidirectional_target": [],
-                    "parent_repeater": "field_65cbff6e7213e"
+                    "parent_repeater": "tu-delft-content-card_content_card_row"
                 }
             ]
         }
