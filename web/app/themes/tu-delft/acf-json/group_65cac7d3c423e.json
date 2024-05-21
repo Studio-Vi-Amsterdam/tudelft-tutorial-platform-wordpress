@@ -3,9 +3,9 @@
     "title": "Text Block",
     "fields": [
         {
-            "key": "field_65cac7d40ca15",
+            "key": "tu-delft-text_content",
             "label": "Content",
-            "name": "content",
+            "name": "tu-delft-text_content",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",

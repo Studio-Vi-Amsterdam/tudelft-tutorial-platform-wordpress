@@ -3,9 +3,9 @@
     "title": "Info Block",
     "fields": [
         {
-            "key": "field_65cbfde1745ca",
+            "key": "tu-delft-info-box_content",
             "label": "Content",
-            "name": "content",
+            "name": "tu-delft-info-box_content",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",

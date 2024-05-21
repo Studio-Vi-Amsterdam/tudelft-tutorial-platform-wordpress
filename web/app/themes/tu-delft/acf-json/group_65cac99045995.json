@@ -3,9 +3,9 @@
     "title": "Video Block",
     "fields": [
         {
-            "key": "field_65cac99017b41",
+            "key": "tu-delft-video_video",
             "label": "Video",
-            "name": "video",
+            "name": "tu-delft-video_video",
             "aria-label": "",
             "type": "file",
             "instructions": "",

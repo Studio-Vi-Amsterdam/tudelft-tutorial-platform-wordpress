@@ -9,7 +9,7 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -21,6 +21,40 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_664a138f1f130",
+            "label": "Study",
+            "name": "study",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bachelor_1": "Bachelor 1",
+                "bachelor_2": "Bachelor 2",
+                "bachelor_3": "Bachelor 3",
+                "msc_architecture": "MSc Architecture",
+                "msc_building_technology": "MSc Building Technology",
+                "msc_urbanism": "MSc Urbanism",
+                "msc_landscape_architecture": "MSc Landscape Architecture",
+                "msc_management_in_the_built_environment": "MSc",
+                "Management in the Built Environment": "Management in the Built Environment",
+                "MSc_geomatics": "MSc Geomatics (GIMA)"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_65ca9e792835a",
@@ -48,20 +82,20 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_65ca9e892835b",
-            "label": "Education Level",
-            "name": "education_level",
+            "key": "field_664a16ae1f131",
+            "label": "Faculty",
+            "name": "faculty",
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "BK",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -86,5 +120,5 @@
     "active": true,
     "description": "Fields related to courses",
     "show_in_rest": 0,
-    "modified": 1707868304
+    "modified": 1716131520
 }

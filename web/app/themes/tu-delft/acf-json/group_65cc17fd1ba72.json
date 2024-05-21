@@ -3,7 +3,7 @@
     "title": "Gutenberg global settings",
     "fields": [
         {
-            "key": "field_65cc17fd84ec2",
+            "key": "show_chapter_subtitle",
             "label": "Show Chapter Subtitle",
             "name": "show_chapter_subtitle",
             "aria-label": "",
@@ -23,7 +23,7 @@
             "ui": 1
         },
         {
-            "key": "field_65cc184984ec3",
+            "key": "chapter_subtitle",
             "label": "Chapter Subtitle",
             "name": "chapter_subtitle",
             "aria-label": "",
@@ -33,7 +33,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_65cc17fd84ec2",
+                        "field": "show_chapter_subtitle",
                         "operator": "==",
                         "value": "1"
                     }

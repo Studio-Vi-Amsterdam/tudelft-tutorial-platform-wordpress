@@ -3,9 +3,9 @@
     "title": "Download Block",
     "fields": [
         {
-            "key": "field_65cbfc5767492",
+            "key": "tu-delft-download_file",
             "label": "File",
-            "name": "file",
+            "name": "tu-delft-download_file",
             "aria-label": "",
             "type": "file",
             "instructions": "",
@@ -23,9 +23,9 @@
             "mime_types": ""
         },
         {
-            "key": "field_65ef33b27ed8a",
+            "key": "tu-delft-download_title",
             "label": "Title",
-            "name": "title",
+            "name": "tu-delft-download_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -43,9 +43,9 @@
             "append": ""
         },
         {
-            "key": "field_65ef33b87ed8b",
+            "key": "tu-delft-download_description",
             "label": "Description",
-            "name": "description",
+            "name": "tu-delft-download_description",
             "aria-label": "",
             "type": "text",
             "instructions": "",

@@ -3,9 +3,9 @@
     "title": "Video-Text Block",
     "fields": [
         {
-            "key": "field_65cc0c32dfab9",
+            "key": "tu-delft-video-text_video",
             "label": "Video",
-            "name": "video",
+            "name": "tu-delft-video-text_video",
             "aria-label": "",
             "type": "file",
             "instructions": "",
@@ -23,9 +23,9 @@
             "mime_types": "mp4,mpeg,webm"
         },
         {
-            "key": "field_65cc0c32dfa7f",
+            "key": "tu-delft-video-text_content",
             "label": "Content",
-            "name": "content",
+            "name": "tu-delft-video-text_content",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
