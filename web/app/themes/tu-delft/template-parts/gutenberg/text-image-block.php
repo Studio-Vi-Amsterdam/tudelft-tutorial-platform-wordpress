@@ -3,7 +3,7 @@
  * Block Name: Text Image Block
  * 
  */
-$image = get_field('image');
+$image = get_field('tu-delft-text-image_image');
 ?>
 <div class="image-text-block-wrapper">
     <?php
@@ -11,7 +11,7 @@ $image = get_field('image');
     ?>
     <div class="two-blocks-wrapper">
         <div class="text-wrapper">
-            <p><?php the_field('content'); ?></p>
+            <p><?php the_field('tu-delft-text-image_content'); ?></p>
         </div>
         <div class="image-wrapper">
             <img src="<?php echo $image['url']; ?>" alt="<?php $image['alt']; ?>">

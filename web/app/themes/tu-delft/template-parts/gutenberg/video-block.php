@@ -10,7 +10,7 @@
     ?>
     <div class="video-block">
         <video controls>
-            <source src="<?php the_field('video_url'); ?>" type="video/mp4">
+            <source src="<?php the_field('tu-delft-video_video'); ?>" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>

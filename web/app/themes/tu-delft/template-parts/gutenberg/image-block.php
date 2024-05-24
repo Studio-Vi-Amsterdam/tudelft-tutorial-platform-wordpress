@@ -4,7 +4,7 @@
  * 
  */
 
-$image = get_field('image');
+$image = get_field('tu-delft-image_image');
 ?>
 
 <div class="image-block">
