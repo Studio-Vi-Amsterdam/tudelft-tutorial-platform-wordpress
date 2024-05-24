@@ -10,6 +10,7 @@ $description = get_field('tu-delft-download_description') ?: $file['mime_type'];
 $filesize = filesize( get_attached_file( $file['id'] ) );
 $filesize = size_format($filesize);
 $ext = pathinfo($file['url'], PATHINFO_EXTENSION);
+$theme_url = get_template_directory_uri();
 ?>
 
 <div class="download-block-wrapper">
@@ -26,20 +27,7 @@ $ext = pathinfo($file['url'], PATHINFO_EXTENSION);
         </div>
         <div class="download__inner">
             <h5>Download <?php echo $title; ?></h5>
-            <h6><?php echo $description; ?> (<?php echo $ext; ?>, <?php echo $filesize; ?>)</h6>
-        </div>
-        <div class='download-icon'>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 3L12 19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M18 13L12 19L6 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4 23H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        <div class="download-info">
-            <div class="text-wrapper">
-                <span>Download <?php echo $title; ?></span>
-                <span class="info"><?php echo $description; ?></span>
-            </div>
+            <h6><?php echo $description; ?> (<?php echo strtoupper($ext); ?>, <?php echo $filesize; ?>)</h6>
         </div>
     </a>
 </div>
