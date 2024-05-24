@@ -50,6 +50,6 @@ use WP_Scripts;
      * 
      */
     function override_per_page( WP_Scripts $scripts ) : void {
-        $scripts->add_inline_script( 'media-models', 'wp.media.model.Query.defaultArgs.posts_per_page = 15' );
+        $scripts->add_inline_script( 'media-models', 'wp.media.model.Query.defaultArgs.posts_per_page = 300' );
     }
 }

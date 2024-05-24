@@ -13,21 +13,20 @@ namespace TuDelft\SurfShareKit\Inc;
  * @version     1.0.0
  * @link        https://viamsterdam.com
  */
-
  class SurfShareKit {
     /**
     * API URL
     * 
     * @var string
     */
-    private static $api_url = 'https://api.surfsharekit.nl/api/';
+    private static $api_url = 'https://api.surfsharekit.nl';
 
     /**
      * Get all repo items endpoint 
      * 
      * @var string
      */
-    private static $repo_items_endpoint = 'jsonapi/channel/v1/tudelft/repoItems/';
+    private static $repo_items_endpoint = '/api/jsonapi/channel/v1/tudelft/repoItems/';
 
     /**
      * Items per page
@@ -45,19 +44,47 @@ namespace TuDelft\SurfShareKit\Inc;
      */
     public static function get_items( int $page_number = 1 ): array {
 
+        $cached_data = Cache::get_surfsharekit_data();
+
+        if ( !empty( $cached_data ) ) {
+            return [
+                'items' => $cached_data,
+                'next_link' => ''
+            ];
+        }
+        
+        $final_data = [];
         $url = self::$repo_items_endpoint . '?page[number]=' . $page_number . '&page[size]=' . self::$items_per_page;
 
-        $data = self::execute_api_request( $url );
+        do {
+            $data = self::execute_api_request( $url );
+            
+            if ( empty( $data['data'] ) ) {
+                return [
+                    'items' => $final_data,
+                    'next_link' => ''
+                ];
+            }
+            $url = '';
+            $final_data = array_merge($final_data, $data['data']);
+            if ( self::has_next( $data['links'] ) ) {
+                $url = isset( $data['links']['next'] ) ? $data['links']['next'] : '';
+            }
 
-        $next_link = '';
-        
-        if ( self::has_next( $data['links'] ) ) {
-            $next_link = $data['links']['next'];
+        } while ( sizeof( $final_data ) < 300 && !empty( $url ) ); 
+
+
+        if ( sizeof( $final_data ) > 300 ) {
+            $final_data = array_slice( $final_data, 0, 299 );
+        }
+
+        if ( sizeof( $final_data ) ) {
+            Cache::set_surfsharekit_data( $final_data );
         }
 
         return [
-            'items' => $data['data'],
-            'next_link' => $next_link,
+            'items' => $final_data,
+            'next_link' => $url,
         ];
     }
 
@@ -73,7 +100,7 @@ namespace TuDelft\SurfShareKit\Inc;
     * 
     * @since 1.0.0
     */
-    private static function execute_api_request( string $endpoint, string $method = 'GET', array $params = [] ): array {
+    private static function execute_api_request( string $endpoint, string $method = 'GET', array $params = [] ): array|null {
 
         $api_key = SURF_SHAREKIT_API_KEY ? : '';
 
@@ -119,8 +146,8 @@ namespace TuDelft\SurfShareKit\Inc;
      * @since 1.0.0
      */
     private static function has_next( array $data ): bool {
-        $current = $data['self'] ? : '';
-        $next = $data['next'] ? : '';
+        $current = isset( $data['self'] ) ? $data['self'] : '';
+        $next = isset( $data['next'] )  ? $data['next'] : '';
 
         return $current !== $next;
     }
