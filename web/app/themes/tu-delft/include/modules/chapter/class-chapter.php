@@ -74,6 +74,7 @@ class Chapter extends Abstract_Cpt {
             return [
                 'id' => $chapter->ID,
                 'title' => $chapter->post_title,
+                'content' => get_the_content( $chapter->ID ),
                 'url' => get_permalink( $chapter->ID )
             ];
         }, $parent_chapters );
