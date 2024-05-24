@@ -121,7 +121,7 @@ $theme_url = get_template_directory_uri();
     <div class="tutorial__main">
         <div class="tutorial__item" data-tab-content="chapter-0">
             <div class="tutorial__content text">
-                <h2>CONTENT PAGE TITLE 0/<?php echo count( $chapters ); ?></h2>
+                <h2><?php the_title(); ?> 0/<?php echo count( $chapters ); ?></h2>
                 <h3><?php the_title(); ?></h3>
                 <p><?php get_field('description'); ?></p>
             </div>
@@ -161,57 +161,5 @@ $theme_url = get_template_directory_uri();
     </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="tutorial-wrapper" style="display: flex;">
-    <div class="info-wrapper" style="width: 35%;">
-        <div class="chapters-list">
-            <h4>Chapters</h4>
-            <ul>
-                <?php
-                    foreach ( $chapters as $chapter ) {
-                        echo '<li><a href="' . $chapter['permalink'] . '">' . $chapter['title'] . '</a></li>';
-                    }
-                ?>
-            </ul>
-        </div>
-        <div class="info-box">
-            <h4>Info</h4>
-            <p>Last updated: <?php echo $last_updated_array['date'] ?? 'N/A' ?></p>
-            <p>Keywords:</p>
-            <div class="keywords-wrapper">
-                <?php
-                    foreach ( $keywords as $keyword ) {
-                        echo '<span class="keyword" style="background: #F9F9F9;">' . $keyword['name'] . '</span>';
-                    }
-                ?>
-            </div>
-        </div>
-    </div>
-    <div class="content-wrapper" style="width: 60%;">
-        <p>CONTENT PAGE 0/<?php echo count( $chapters ); ?></p>
-        <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>
-
-        <?php if ( !empty( $chapters ) ) : ?>
-            <div class="chapters-navigation">
-                <a href="<?php echo $chapters[0]['permalink']; ?>" class="btn">Start</a>
-            </div>
-        <?php endif; ?>
-    </div>
-</div>
 
 <?php get_footer(); ?>
