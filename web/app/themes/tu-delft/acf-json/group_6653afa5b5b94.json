@@ -1,11 +1,31 @@
 {
-    "key": "group_65cbff3316f33",
-    "title": "Content Card Block",
+    "key": "group_6653afa5b5b94",
+    "title": "Quizk Block",
     "fields": [
         {
-            "key": "tu-delft-content-card_content_card_row",
-            "label": "Content Card Row",
-            "name": "tu-delft-content-card_content_card_row",
+            "key": "field_6653afa55610d",
+            "label": "Question",
+            "name": "question",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6653afd35610e",
+            "label": "Answers",
+            "name": "answers",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -16,21 +36,21 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
-            "pagination": 0,
             "min": 0,
             "max": 0,
             "collapsed": "",
             "button_label": "Add Row",
+            "layout": "table",
+            "pagination": 0,
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "tu-delft-content-card_card_title",
-                    "label": "Card title",
-                    "name": "tu-delft-content-card_card_title",
+                    "key": "field_6653afdf5610f",
+                    "label": "test",
+                    "name": "test",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Leave empty if you want to use title of link",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -43,14 +63,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "tu-delft-content-card_content_card_row"
+                    "parent_repeater": "field_6653afd35610e"
                 },
                 {
-                    "key": "tu-delft-content-card_card_link",
-                    "label": "Card Link",
-                    "name": "tu-delft-content-card_card_link",
+                    "key": "field_6653afe556110",
+                    "label": "Is correct",
+                    "name": "is_correct",
                     "aria-label": "",
-                    "type": "post_object",
+                    "type": "true_false",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -59,24 +79,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "course",
-                        "software",
-                        "subject",
-                        "tutorial",
-                        "chapter"
-                    ],
-                    "post_status": [
-                        "publish"
-                    ],
-                    "taxonomy": "",
-                    "return_format": "object",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "bidirectional": 0,
-                    "ui": 1,
-                    "bidirectional_target": [],
-                    "parent_repeater": "tu-delft-content-card_content_card_row"
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "parent_repeater": "field_6653afd35610e"
                 }
             ]
         }
@@ -86,18 +94,18 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/tu-delft-content-card"
+                "value": "acf\/tu-delft-quiz"
             }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "TU Delft Gutenberg Content Card Block",
+    "description": "TU Delft Gutenberg Content for Quiz Block",
     "show_in_rest": 0,
-    "modified": 1710160363
+    "modified": 1716763428
 }

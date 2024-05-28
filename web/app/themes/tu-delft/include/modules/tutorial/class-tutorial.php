@@ -21,7 +21,10 @@ class Tutorial extends Abstract_Cpt {
     const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
     const POST_ICON = 'dashicons-welcome-learn-more';
     const REWRITE = [];
-    const TAXONOMY = [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ];
+    const TAXONOMY = [
+        [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'teachers', 'rewrite' => [ 'slug' => '.' ] ],
+    ];
     const EXTRA_SETTINGS = [
         'public' => true,
         'show_in_rest' => true,

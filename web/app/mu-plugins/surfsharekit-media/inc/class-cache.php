@@ -31,8 +31,12 @@ class Cache {
      */
     public static function get_surfsharekit_data(): array|bool {
         
-        $cache = wp_cache_get( 'surfsharekit_data', 'surfsharekit' ) || get_transient( 'surfsharekit_data' );
+        $cache = wp_cache_get( 'surfsharekit_data', 'surfsharekit' );
 
+        if ( false === $cache ) {
+            $cache = get_transient( 'surfsharekit_data' );
+        }
+        
         return $cache;
     }
 
@@ -47,8 +51,9 @@ class Cache {
      */
     public static function set_surfsharekit_data( array $data ): bool {
 
-        $cache = wp_cache_set( 'surfsharekit_data', $data, 'surfsharekit', self::$surfsharkeit_cache_time ) || set_transient( 'surfsharekit_data', $data, self::$surfsharkeit_cache_time );
+        wp_cache_set( 'surfsharekit_data', $data, 'surfsharekit', self::$surfsharkeit_cache_time );
+        set_transient( 'surfsharekit_data', $data, self::$surfsharkeit_cache_time );
 
-        return $cache;
+        return true;
     }
 }

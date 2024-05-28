@@ -21,7 +21,9 @@ class Software extends Abstract_Cpt {
     const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
     const POST_ICON = 'dashicons-desktop';
     const REWRITE = [];
-    const TAXONOMY = [ 'name' => 'software-version', 'rewrite' => [ 'slug' => '.' ] ];
+    const TAXONOMY = [
+        [ 'name' => 'software-version', 'rewrite' => [ 'slug' => '.' ] ],
+    ];
     const EXTRA_SETTINGS = [
         'public' => true,
         'show_in_rest' => true,

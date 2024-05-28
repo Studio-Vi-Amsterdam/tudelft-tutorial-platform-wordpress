@@ -29,6 +29,7 @@ namespace TuDelft\Theme\Common;
         'text_image_block',
         'video_text_block',
         'text_video_block',
+        'quiz_block',
         // 'h5p_block',
     ];
 
@@ -330,6 +331,34 @@ namespace TuDelft\Theme\Common;
             'category' => 'widgets',
             'icon' => 'align-pull-right',
             'keywords' => ['Text', 'Video', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
+    }
+    
+    /**
+     * Register Quiz Block
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function register_quiz_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/quiz',
+            'title' => __('Quiz Block'),
+            'description'   => __('Quiz Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/quiz-block.php',
+            'category' => 'widgets',
+            'icon' => 'editor-ul',
+            'keywords' => ['Quiz', 'Content'],
             'mode' => 'edit',
             'example'  => [
                 'attributes' => [
