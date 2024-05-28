@@ -3,6 +3,8 @@
  * Block Name: Info Box Block
  * 
  */
+
+$theme_url = get_template_directory_uri();
 ?>
 <div class="tutorial__content infobox flex items-start">
     <div class="infobox__icon">

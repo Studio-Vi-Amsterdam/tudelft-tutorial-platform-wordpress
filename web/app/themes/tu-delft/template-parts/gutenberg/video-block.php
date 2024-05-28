@@ -3,6 +3,8 @@
  * Block Name: Video Block
  * 
  */
+
+$theme_url = get_template_directory_uri();
 ?>
 <div class="tutorial__content video" data-video-src="<?php the_field('tu-delft-video_video'); ?>">
     <figure class="video__wrapper">
