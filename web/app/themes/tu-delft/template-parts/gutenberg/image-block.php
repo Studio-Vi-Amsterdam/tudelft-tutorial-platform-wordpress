@@ -7,9 +7,8 @@
 $image = get_field('tu-delft-image_image');
 ?>
 
-<div class="image-block">
-    <?php
-        get_template_part('template-parts/gutenberg/chapter-subtitle');
-    ?>
-    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="100%" height="auto"/>
+<div class="tutorial__content image">
+    <figure>
+        <img width="<?php echo $image['sizes'][ 'large-width' ]; ?>" height="<?php echo $image['sizes'][ 'large-height' ]; ?>" data-image-src="<?php echo $image['url']; ?>" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+    </figure>
 </div>

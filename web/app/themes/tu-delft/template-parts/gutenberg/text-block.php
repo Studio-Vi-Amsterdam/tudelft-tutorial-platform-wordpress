@@ -4,11 +4,9 @@
  *
  */
 ?>
-<div class="text-block-wrapper">
+<div class="tutorial__content text">
     <?php
         get_template_part('template-parts/gutenberg/chapter-subtitle');
     ?>
-    <div class="text-wrapper">
-        <p><?php the_field('tu-delft-text_content'); ?></p>
-    </div>
+    <?php the_field('tu-delft-text_content'); ?>
 </div>

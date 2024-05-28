@@ -4,19 +4,15 @@
  * 
  */
 ?>
-<div class="info-box-block-wrapper">
-    <?php
-        get_template_part('template-parts/gutenberg/chapter-subtitle');
-    ?>
-   <div class="info-box-block">
-        <div class="exclamation-mark">
-            <img 
-                src="<?php echo get_template_directory_uri(); ?>/src/img/info.png"
-                alt="Info"
-            />
-        </div>
-        <div>
-            <p><?php the_field('tu-delft-info-box_content'); ?></p>
-        </div>
+<div class="tutorial__content infobox flex items-start">
+    <div class="infobox__icon">
+        <svg width="24" height="24">
+                <use href="<?= $theme_url ?>/src/sprite.svg#infobox"></use>
+        </svg>
+    </div>
+    <div class="infobox__content">
+        <p>
+            <?php the_field('tu-delft-info-box_content'); ?>
+        </p>
     </div>
 </div>
