@@ -34,10 +34,10 @@ abstract class Abstract_Cpt {
         // register custom post type
         add_action( 'init', [ $this, 'register_custom_post_type' ], 99 );
         // register custom taxonomy if passed in constructor and make sure it's an array and has the required keys
-        if ( !empty( $taxonomies ) && isset( $taxonomies['name'] ) && isset( $taxonomies['rewrite'] ) ) {
+        if ( !empty( $taxonomies )  ) {
             $this->taxonomies = $taxonomies;
-            add_action( 'init', [ $this, "register_custom_taxonomy" ], 99 );
         }
+        add_action( 'init', [ $this, "register_custom_taxonomy" ], 99 );
     }
 
     /**
@@ -82,41 +82,46 @@ abstract class Abstract_Cpt {
      * @return void
      */
     public function register_custom_taxonomy(): void {
-        $slug = $this->taxonomies['name'];
 
-        $name = str_replace( '-', ' ', $slug );
-        // capitalize first letter of each word
-        $name = ucwords( $name );
+        foreach ( $this->taxonomies as $taxonomy ) {
+            $slug = $taxonomy['name'];
+            
+            $name = str_replace( '-', ' ', $slug );
+            // capitalize first letter of each word
+            $name = ucwords( $name );
+            
+            $rewrite = $taxonomy['rewrite'];
 
-        $rewrite = $this->taxonomies['rewrite'];
-
-        // check if taxonomy already exists
-        if ( taxonomy_exists( $slug ) ) {
-            // if it does assign it to the post type
-            register_taxonomy_for_object_type( $slug, $this->post_type );
-            return;
+            // check if taxonomy already exists
+            if ( taxonomy_exists( $slug ) ) {
+                // if it does assign it to the post type
+                register_taxonomy_for_object_type( $slug, $this->post_type );
+            } 
+            else {
+                // if it doesn't create it
+                register_taxonomy( $slug, [ $this->post_type ], [
+                    'labels' => [
+                        'name' => __( ucfirst($name), 'digitale-gruendung' ),
+                        'singular_name' => __( $name, 'digitale-gruendung'  ),
+                        'search_items' => __( "Search {$name}", 'digitale-gruendung' ),
+                        'all_items' => __( "All {$name}", 'digitale-gruendung' ),
+                        'parent_item' => __( "Parent {$name}", 'digitale-gruendung' ),
+                        'parent_item_colon' => __( "Parent {$name}:", 'digitale-gruendung' ),
+                        'edit_item' => __( "Edit {$name}", 'digitale-gruendung' ),
+                        'update_item' => __( "Update {$name}", 'digitale-gruendung' ),
+                        'add_new_item' => __( "Add New {$name}", 'digitale-gruendung' ),
+                        'new_item_name' => __( "New {$name} Name", 'digitale-gruendung' ),
+                        'menu_name' => __( $name, 'digitale-gruendung' )
+                    ],
+                    'hierarchical' => true,
+                    'show_ui' => true,
+                    'query_var' => true,
+                    'rewrite' => $rewrite,
+                    'public' => true,
+                ] );
+            }
+            
         }
         
-        // if it doesn't create it
-        register_taxonomy( $slug, [ $this->post_type ], [
-            'labels' => [
-                'name' => __( ucfirst($name), 'digitale-gruendung' ),
-                'singular_name' => __( $name, 'digitale-gruendung'  ),
-                'search_items' => __( "Search {$name}", 'digitale-gruendung' ),
-                'all_items' => __( "All {$name}", 'digitale-gruendung' ),
-                'parent_item' => __( "Parent {$name}", 'digitale-gruendung' ),
-                'parent_item_colon' => __( "Parent {$name}:", 'digitale-gruendung' ),
-                'edit_item' => __( "Edit {$name}", 'digitale-gruendung' ),
-                'update_item' => __( "Update {$name}", 'digitale-gruendung' ),
-                'add_new_item' => __( "Add New {$name}", 'digitale-gruendung' ),
-                'new_item_name' => __( "New {$name} Name", 'digitale-gruendung' ),
-                'menu_name' => __( $name, 'digitale-gruendung' )
-            ],
-            'hierarchical' => true,
-            'show_ui' => true,
-            'query_var' => true,
-            'rewrite' => $rewrite,
-            'public' => true,
-        ] );
     }
 }

@@ -4,9 +4,9 @@
  * 
  */
 
-$file = get_field('file');
-$title = get_field('title') ?: $file['title'];
-$description = get_field('description') ?: $file['mime_type'];
+$file = get_field('tu-delft-download_file');
+$title = get_field('tu-delft-download_title') ?: $file['title'];
+$description = get_field('tu-delft-download_description') ?: $file['mime_type'];
 ?>
 
 <div class="download-block-wrapper">

@@ -4,7 +4,7 @@
  * 
  */
 
-$image = get_field('image');
+$image = get_field('tu-delft-image-text_image');
 ?>
 <div class="image-text-block-wrapper">
     <?php
@@ -15,7 +15,7 @@ $image = get_field('image');
             <img src="<?php echo $image['url']; ?>" alt="<?php $image['alt']; ?>">
         </div>
         <div class="text-wrapper">
-            <p><?php the_field('content'); ?></p>
+            <p><?php the_field('tu-delft-image-text_content'); ?></p>
         </div>
     </div>
 </div>

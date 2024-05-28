@@ -16,7 +16,7 @@
             />
         </div>
         <div>
-            <p><?php the_field('content'); ?></p>
+            <p><?php the_field('tu-delft-info-box_content'); ?></p>
         </div>
     </div>
 </div>

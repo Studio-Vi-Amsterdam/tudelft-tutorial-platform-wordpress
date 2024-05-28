@@ -21,9 +21,8 @@ class Subject extends Abstract_Cpt {
     const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
     const POST_ICON = 'dashicons-book';
     const REWRITE = [];
-    const TAXONOMY = [ 
-        'name' => 'keywords', 
-        'rewrite' => [ 'slug' => '.' ] 
+    const TAXONOMY = [
+        [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,

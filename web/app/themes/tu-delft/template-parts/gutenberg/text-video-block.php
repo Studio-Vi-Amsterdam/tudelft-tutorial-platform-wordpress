@@ -10,11 +10,11 @@
     ?>
     <div class="two-blocks-wrapper">
         <div class="text-wrapper">
-            <p><?php the_field('content'); ?></p>
+            <p><?php the_field('tu-delft-text-video_content'); ?></p>
         </div>
         <div class="video-wrapper">
             <video controls>
-                <source src="<?php the_field('video'); ?>" type="video/mp4">
+                <source src="<?php the_field('tu-delft-text-video_video'); ?>" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>

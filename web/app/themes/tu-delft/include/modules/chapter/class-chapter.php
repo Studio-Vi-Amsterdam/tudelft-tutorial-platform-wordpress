@@ -21,7 +21,9 @@ class Chapter extends Abstract_Cpt {
     const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
     const POST_ICON = 'dashicons-media-document';
     const REWRITE = [];
-    const TAXONOMY = [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ];
+    const TAXONOMY = [
+        [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
+    ];
     const EXTRA_SETTINGS = [
         'public' => true,
         'show_in_rest' => true,
@@ -96,7 +98,12 @@ class Chapter extends Abstract_Cpt {
      * 
      * @since 1.0.0
      */
-    public static function get_last_updated_chapter( array $chapters_ids ) : array {
+    public static function get_last_updated_chapter( array|bool $chapters_ids ) : array {
+
+        if ( empty( $chapters_ids ) ) {
+            return [];
+        }
+        
         $last_updated = 0;
         $last_updated_chapter = null;
 
