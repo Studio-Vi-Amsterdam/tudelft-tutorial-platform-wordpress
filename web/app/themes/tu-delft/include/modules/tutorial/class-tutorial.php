@@ -52,12 +52,17 @@ class Tutorial extends Abstract_Cpt {
         if ( empty( $chapters ) ) {
             return false;
         }
-
-        $chapters = array_map( function( $chapter ) {
+        
+        
+        $chapters = array_map( function( $chapter_id ) {
+            
+            $chapter_post = get_post( $chapter_id );
+            
             return [
-                'id' => $chapter->ID,
-                'title' => get_the_title( $chapter->ID ),
-                'permalink' => get_permalink( $chapter->ID ),
+                'id' => $chapter_post->ID,
+                'title' => get_the_title( $chapter_post->ID ),
+                'permalink' => get_permalink( $chapter_post->ID ),
+                'content' => apply_filters( 'the_content', $chapter_post->post_content ),
             ];
         }, $chapters );
 

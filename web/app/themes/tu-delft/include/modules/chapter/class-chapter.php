@@ -122,6 +122,7 @@ class Chapter extends Abstract_Cpt {
             'title' => get_the_title( $last_updated_chapter ),
             'url' => get_permalink( $last_updated_chapter ),
             'date' => $last_updated_chapter ? get_the_modified_date( 'F j, Y', $last_updated_chapter ) : false,
+            'content' => get_the_content( $last_updated_chapter )
         ];
 
     }
