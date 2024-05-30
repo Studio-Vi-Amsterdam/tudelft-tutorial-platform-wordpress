@@ -65,6 +65,9 @@
         @extend .p2;
         color: $txt-gray;
     }
+    ul, ol {
+        margin-top: 2.4rem;
+    }
     .grid-links {
         gap: 2.4rem;
         margin-top: 2.4rem;
