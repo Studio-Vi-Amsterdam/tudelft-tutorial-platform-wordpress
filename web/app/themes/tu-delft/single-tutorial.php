@@ -131,7 +131,7 @@ $theme_url = get_template_directory_uri();
                     <?php echo get_field('description'); ?>
                 <?php endif; ?>
             </div>
-            <?php echo ($key === 0 ? get_the_content(); : $chapter['content']); ?>
+            <?php echo ($key === 0 ? get_the_content() : $chapter['content']); ?>
             <?php if ( $key === 0 ) : ?>
                 <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
                     <a href="#" class="btn" data-next>
