@@ -1,6 +1,6 @@
 <?php
 
-namespace TuDelft\Theme\Modules\Subject;
+namespace TuDelft\Theme\Modules\Lab;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
 

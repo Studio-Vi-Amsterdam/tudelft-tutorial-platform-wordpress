@@ -6,7 +6,8 @@ use TuDelft\Theme\Modules\Chapter\Chapter;
 use TuDelft\Theme\Modules\Tutorial\Tutorial;
 use TuDelft\Theme\Modules\Subject\Subject;
 use TuDelft\Theme\Modules\Software\Software;
-use TuDelft\Theme\Modules\Course\Course;;
+use TuDelft\Theme\Modules\Course\Course;
+use TuDelft\Theme\Modules\Course\Lab;
 
 /**
  * Class TuDelft
