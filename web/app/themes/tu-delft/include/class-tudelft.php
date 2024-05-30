@@ -92,6 +92,7 @@ class Tu_Delft {
         new Subject();
         new Software();
         new Course();
+        new Lab();
     }
 
 }
