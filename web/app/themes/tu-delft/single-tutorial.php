@@ -55,7 +55,7 @@ $theme_url = get_template_directory_uri();
                 ?>
                      <li class="titles__item " data-toc-wrapper>
                         <div class="titles__head active" data-tab-target="chapter-<?= $key ?>">
-                            <?php echo $chapter['title']; ?>
+                            <?php echo ($key === 0 ? "Intro" : $chapter['title']); ?>
                         </div>
                         <div class="titles__body">
                             <ul class="js-toc">
