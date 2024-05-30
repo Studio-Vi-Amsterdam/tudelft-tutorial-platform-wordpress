@@ -53,7 +53,7 @@ $theme_url = get_template_directory_uri();
                 <?php
                     foreach ( $chapters as $key=>$chapter ) : 
                 ?>
-                     <li class="titles__item ">
+                     <li class="titles__item " data-toc-wrapper>
                         <div class="titles__head active" data-tab-target="chapter-<?= $key ?>">
                             <?php echo $chapter['title']; ?>
                         </div>
