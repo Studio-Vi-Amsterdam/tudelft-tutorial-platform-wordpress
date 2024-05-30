@@ -128,14 +128,10 @@ $theme_url = get_template_directory_uri();
                 <h2><?php echo $chapter['title']; ?> <?= $key ?>/<?php echo count( $chapters ); ?></h2>
                 <h3><?php echo $chapter['title']; ?></h3>
                 <?php if ( $key === 0 ) : ?>
-                    <p><?php get_field('description'); ?></p>
+                    <p><?php echo get_field('description'); ?></p>
                 <?php endif; ?>
             </div>
-            <?php if ( $key === 0 ) : ?>
-                <?php the_content(); ?>
-            <?php else : ?>
-                <?php echo $chapter['content']; ?>
-            <?php endif; ?>
+            <?php echo $chapter['content']; ?>
             <?php if ( $key === 0 ) : ?>
                 <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
                     <a href="#" class="btn" data-next>
