@@ -1,28 +1,28 @@
 <?php
 
-namespace TuDelft\Theme\Modules\Software;
+namespace TuDelft\Theme\Modules\Subject;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
 
 /**
- * Class Software
+ * Class Lab
  *
- * Custom post type for softwares.
+ * Custom post type for lab.
  * 
  * 
- * @package     TuDelft\Theme\Modules\Software
+ * @package     TuDelft\Theme\Modules\Lab
  * @author      Aljosa K <https://github.com/AljosaK>
  * @version     1.0.0
  * @link        https://viamsterdam.com
  */
-class Software extends Abstract_Cpt {
+class Lab extends Abstract_Cpt {
 
-    const POST_TYPE = 'software';
+    const POST_TYPE = 'lab';
     const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
-    const POST_ICON = 'dashicons-desktop';
+    const POST_ICON = 'dashicons-color-picker';
     const REWRITE = [];
     const TAXONOMY = [
-        [ 'name' => 'software-version', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'category', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
