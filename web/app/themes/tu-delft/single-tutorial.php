@@ -50,12 +50,21 @@ $theme_url = get_template_directory_uri();
             <h4><?php the_title(); ?></h4>
 
             <ul>
+                <li class="titles__item " data-toc-wrapper>
+                    <div class="titles__head active" data-tab-target="chapter-0>">
+                        Intro
+                    </div>
+                    <div class="titles__body">
+                        <ul class="js-toc">
+                        </ul>
+                    </div>
+                </li>
                 <?php
                     foreach ( $chapters as $key=>$chapter ) : 
                 ?>
                      <li class="titles__item " data-toc-wrapper>
-                        <div class="titles__head active" data-tab-target="chapter-<?= $key ?>">
-                            <?php echo ($key === 0 ? "Intro" : $chapter['title']); ?>
+                        <div class="titles__head active" data-tab-target="chapter-<?= ($key + 1) ?>">
+                            <?php echo $chapter['title']; ?>
                         </div>
                         <div class="titles__body">
                             <ul class="js-toc">
