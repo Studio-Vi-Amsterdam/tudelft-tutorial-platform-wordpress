@@ -43,9 +43,6 @@
         &:not(:first-of-type) {
             margin-top: 1.2rem;
         }
-        &:nth-child(2) {
-            margin-top: 0;
-        }
 
         // .titles__item--opened
         &--opened {

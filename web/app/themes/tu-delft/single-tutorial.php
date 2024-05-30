@@ -51,7 +51,7 @@ $theme_url = get_template_directory_uri();
 
             <ul>
                 <li class="titles__item " data-toc-wrapper>
-                    <div class="titles__head active" data-tab-target="chapter-0>">
+                    <div class="titles__head active" data-tab-target="chapter-0">
                         Intro
                     </div>
                     <div class="titles__body">
@@ -128,38 +128,40 @@ $theme_url = get_template_directory_uri();
         </div>
     </div>
     <div class="tutorial__main">
+        <div class="tutorial__item" data-tab-content="chapter-0">
+            <div class="tutorial__content text intro">
+                <h2><?php the_title(); ?> 0/<?php echo count( $chapters ); ?></h2>
+                <h3><?php the_title(); ?></h3>
+                <?php echo get_field('description'); ?>
+            </div>
+            <?php the_content() ?>
+            <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
+                <a href="#" class="btn" data-next>
+                    <span>Start</span>
+                    <span>Start</span>
+                </a>
+            </div>
+        </div>
         <!-- Get all chapters and display the title and the content -->
         <?php
             foreach ( $chapters as $key=>$chapter ) :
         ?>
-        <div class="tutorial__item" data-tab-content="chapter-<?= $key ?>">
-            <div class="tutorial__content text intro">
+        <div class="tutorial__item" data-tab-content="chapter-<?= ($key+1) ?>">
+            <div class="tutorial__content text">
                 <h2><?php echo $chapter['title']; ?> <?= $key ?>/<?php echo count( $chapters ); ?></h2>
                 <h3><?php echo $chapter['title']; ?></h3>
-                <?php if ( $key === 0 ) : ?>
-                    <?php echo get_field('description'); ?>
-                <?php endif; ?>
             </div>
-            <?php echo ($key === 0 ? get_the_content() : $chapter['content']); ?>
-            <?php if ( $key === 0 ) : ?>
-                <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
-                    <a href="#" class="btn" data-next>
-                        <span>Start</span>
-                        <span>Start</span>
-                    </a>
-                </div>
-            <?php else : ?>
-                <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
-                    <a href="#" class="btn" data-prev>
-                        <span>Previous chapter</span>
-                        <span>Previous chapter</span>
-                    </a>
-                    <a href="#" class="btn" data-next>
-                        <span>Next chapter</span>
-                        <span>Next chapter</span>
-                    </a>
-                </div>
-            <?php endif; ?>
+            <?php echo $chapter['content']; ?>
+            <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
+                <a href="#" class="btn" data-prev>
+                    <span>Previous chapter</span>
+                    <span>Previous chapter</span>
+                </a>
+                <a href="#" class="btn" data-next>
+                    <span>Next chapter</span>
+                    <span>Next chapter</span>
+                </a>
+            </div>
         </div>
         <?php
             endforeach;
