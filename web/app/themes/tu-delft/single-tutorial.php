@@ -124,11 +124,11 @@ $theme_url = get_template_directory_uri();
             foreach ( $chapters as $key=>$chapter ) :
         ?>
         <div class="tutorial__item" data-tab-content="chapter-<?= $key ?>">
-            <div class="tutorial__content text">
+            <div class="tutorial__content text intro">
                 <h2><?php echo $chapter['title']; ?> <?= $key ?>/<?php echo count( $chapters ); ?></h2>
                 <h3><?php echo $chapter['title']; ?></h3>
                 <?php if ( $key === 0 ) : ?>
-                    <p><?php echo get_field('description'); ?></p>
+                    <?php echo get_field('description'); ?>
                 <?php endif; ?>
             </div>
             <?php echo $chapter['content']; ?>
