@@ -35,17 +35,13 @@
     }
 
     p {
-        @extend .p2;
-        color: $txt-gray;
-        small {
-            color: $black;
-             @extend  .p1;
-             display: block;
-        }
+        color: $black;
+        @extend  .p1;
+        display: block;
         & + p {
             margin-top: 2.4rem;
         }
-        &:not(:first-child) {
+        &:not(:first-of-type) {
             margin-top: 2.4rem;
         }
         mark {
@@ -64,6 +60,13 @@
                 transform: skew(-15deg, 0deg);
             }
         }
+    }
+    &.intro p {
+        @extend .p2;
+        color: $txt-gray;
+    }
+    ul, ol {
+        margin-top: 2.4rem;
     }
     .grid-links {
         gap: 2.4rem;

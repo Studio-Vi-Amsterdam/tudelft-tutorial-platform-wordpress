@@ -6,8 +6,7 @@
 
  $answer_labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 ?>
-
-<div class="quiz-block">
+<div class="tutorial__content text">
     <?php
         get_template_part('template-parts/gutenberg/chapter-subtitle');
     ?>
