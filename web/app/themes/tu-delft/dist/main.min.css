@@ -289,6 +289,7 @@ h6,
 .h6,
 .footer__info h5,
 .search-link__col h2,
+.video h4,
 .text h4 {
   line-height: 1.2;
 }
@@ -297,6 +298,7 @@ h6,
   .h6,
   .footer__info h5,
   .search-link__col h2,
+  .video h4,
   .text h4 {
     font-size: 2rem;
   }
@@ -306,6 +308,7 @@ h6,
   .h6,
   .footer__info h5,
   .search-link__col h2,
+  .video h4,
   .text h4 {
     font-size: calc(2rem + 0 * ((100vw - 375px) / (1440 - 375)));
   }
@@ -315,6 +318,7 @@ h6,
   .h6,
   .footer__info h5,
   .search-link__col h2,
+  .video h4,
   .text h4 {
     font-size: 2rem;
   }
@@ -331,7 +335,7 @@ p,
 .table-box,
 .link-box h6,
 .search-bar__field input,
-.text p small,
+.text p,
 .card-with-image__content h3,
 .categories__item,
 .field label,
@@ -354,7 +358,7 @@ table th {
   .table-box,
   .link-box h6,
   .search-bar__field input,
-  .text p small,
+  .text p,
   .card-with-image__content h3,
   .categories__item,
   .field label,
@@ -378,7 +382,7 @@ table th {
   .table-box,
   .link-box h6,
   .search-bar__field input,
-  .text p small,
+  .text p,
   .card-with-image__content h3,
   .categories__item,
   .field label,
@@ -402,7 +406,7 @@ table th {
   .table-box,
   .link-box h6,
   .search-bar__field input,
-  .text p small,
+  .text p,
   .card-with-image__content h3,
   .categories__item,
   .field label,
@@ -415,30 +419,30 @@ table th {
   }
 }
 
-.p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
+.p2, .pagination__list ul li, .text.intro p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
 .field textarea {
   line-height: 1.55;
 }
 @media (max-width: 375px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
+  .p2, .pagination__list ul li, .text.intro p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
   .field textarea {
     font-size: 1.8rem;
   }
 }
 @media (min-width: 376px) and (max-width: 1440px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
+  .p2, .pagination__list ul li, .text.intro p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
   .field textarea {
     font-size: calc(1.8rem + 2 * ((100vw - 375px) / (1440 - 375)));
   }
 }
 @media (min-width: 1441px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
+  .p2, .pagination__list ul li, .text.intro p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
   .field textarea {
     font-size: 2rem;
   }
 }
 @media (min-width: 1024px) {
-  .p2, .pagination__list ul li, .text p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
+  .p2, .pagination__list ul li, .text.intro p, .hero-text__content p, .hero__content p, .field__dropdown-head, .field--textarea span, .field input,
   .field textarea {
     line-height: 1.6;
   }
@@ -794,13 +798,13 @@ ol {
   gap: 10px;
 }
 
-.quiz-block .answers-wrapper {
+.quiz-wrapper .answers-wrapper {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-top: 32px;
 }
-.quiz-block .answers-wrapper .answer-wrapper {
+.quiz-wrapper .answers-wrapper .answer-wrapper {
   border: 1px solid #96969B;
   padding: 16px;
   display: flex;
@@ -809,26 +813,30 @@ ol {
   border-radius: 4px;
   cursor: pointer;
 }
-.quiz-block .answers-wrapper .answer-wrapper.correct-answer {
+.quiz-wrapper .answers-wrapper .answer-wrapper.correct-answer {
   background-color: #E5F5F1;
   border-color: #009B77;
 }
-.quiz-block .answers-wrapper .answer-wrapper.incorrect-answer {
+.quiz-wrapper .answers-wrapper .answer-wrapper.incorrect-answer {
   border-color: #EC4242;
 }
-.quiz-block .answers-wrapper .answer-wrapper .answer-label {
+.quiz-wrapper .answers-wrapper .answer-wrapper .answer-label {
   font-size: 12px;
   color: #96969B;
   cursor: inherit;
 }
-.quiz-block .answers-wrapper .answer-wrapper .answer {
+.quiz-wrapper .answers-wrapper .answer-wrapper .answer {
   font-size: 16px;
   line-height: 24px;
   color: black;
   cursor: inherit;
 }
-.quiz-block .answers-wrapper.answered .answer-wrapper {
+.quiz-wrapper .answers-wrapper.answered .answer-wrapper {
   cursor: not-allowed;
+}
+
+.h5p-block {
+  margin-top: 30px;
 }
 
 .btn {
@@ -2684,14 +2692,8 @@ body::-webkit-scrollbar-thumb {
 .titles__item:hover a {
   color: #ffffff;
 }
-.titles__item:first-child {
-  display: none;
-}
 .titles__item:not(:first-of-type) {
   margin-top: 1.2rem;
-}
-.titles__item:nth-child(2) {
-  margin-top: 0;
 }
 .titles__item--opened {
   border-radius: 0.4rem;
@@ -2972,16 +2974,13 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .text p {
-  color: #666666;
-}
-.text p small {
   color: #000000;
   display: block;
 }
 .text p + p {
   margin-top: 2.4rem;
 }
-.text p:not(:first-child) {
+.text p:not(:first-of-type) {
   margin-top: 2.4rem;
 }
 .text p mark {
@@ -2999,6 +2998,12 @@ body::-webkit-scrollbar-thumb {
   background-color: #B9EEFE;
   z-index: -1;
   transform: skew(-15deg, 0deg);
+}
+.text.intro p {
+  color: #666666;
+}
+.text ul, .text ol {
+  margin-top: 2.4rem;
 }
 .text .grid-links {
   gap: 2.4rem;
@@ -3122,6 +3127,17 @@ body::-webkit-scrollbar-thumb {
 }
 .video:first-child {
   margin-top: 0;
+}
+.video h4 {
+  padding-top: 2.4rem;
+  color: #00A6D6;
+  line-height: 1.2;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .video h4 {
+    padding-top: 4rem;
+  }
 }
 .video figcaption {
   display: block;

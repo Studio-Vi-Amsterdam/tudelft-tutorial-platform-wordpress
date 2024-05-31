@@ -1,10 +1,11 @@
-.quiz-block {
+.quiz-wrapper {
 
     .answers-wrapper {
         display: flex;
         flex-direction: column;
         gap: 16px;
         margin-top: 32px;
+        
         .answer-wrapper {
             border: 1px solid #96969B;
             padding: 16px;
@@ -13,6 +14,7 @@
             flex-direction: column;
             border-radius: 4px;
             cursor: pointer;
+
             &.correct-answer {
                 background-color: #E5F5F1;
                 border-color: #009B77;
@@ -42,5 +44,4 @@
             }
         }
     }
-    
 }

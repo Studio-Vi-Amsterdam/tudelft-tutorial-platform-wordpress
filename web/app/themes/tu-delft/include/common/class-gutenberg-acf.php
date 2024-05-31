@@ -770,6 +770,51 @@ class Gutenberg_ACF {
         'description' => '',
     ];
 
+    private const H5P_BLOCK = [
+        'key' => 'group_6659cbcf91a17',
+        'title' => 'H5P Block',
+        'fields' => array(
+            array(
+                'key' => 'tu-delft-h5p-block_source_key',
+                'label' => 'H5P source',
+                'name' => 'tu-delft-h5p-block_source',
+                'aria-label' => '',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'placeholder' => '',
+                'new_lines' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/tu-delft-h5p',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ];
+
     /**
      * Map block slug to block array
      * 
@@ -792,6 +837,7 @@ class Gutenberg_ACF {
             'info_box_block' => self::INFO_BLOCK,
             'content_card_block' => self::CONTENT_CARD_BLOCK,
             'quiz_block' => self::QUIZ_BLOCK,
+            'h5p_block' => self::H5P_BLOCK,
             // Add new blocks here
         ];
         

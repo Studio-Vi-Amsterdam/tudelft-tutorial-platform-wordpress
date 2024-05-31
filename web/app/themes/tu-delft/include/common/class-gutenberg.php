@@ -30,7 +30,7 @@ namespace TuDelft\Theme\Common;
         'video_text_block',
         'text_video_block',
         'quiz_block',
-        // 'h5p_block',
+        'h5p_block',
     ];
 
     public function __construct() {
@@ -366,6 +366,34 @@ namespace TuDelft\Theme\Common;
             'category' => 'widgets',
             'icon' => 'editor-ul',
             'keywords' => ['Quiz', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
+    }
+
+    /**
+     * Register H5P Block
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function register_h5p_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/h5p',
+            'title' => __('H5P Block'),
+            'description'   => __('H5P Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/h5p-block.php',
+            'category' => 'widgets',
+            'icon' => 'html',
+            'keywords' => ['H5P', 'Content'],
             'mode' => 'edit',
             'example'  => [
                 'attributes' => [
