@@ -798,43 +798,6 @@ ol {
   gap: 10px;
 }
 
-.quiz-wrapper .answers-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 32px;
-}
-.quiz-wrapper .answers-wrapper .answer-wrapper {
-  border: 1px solid #96969B;
-  padding: 16px;
-  display: flex;
-  gap: 4px;
-  flex-direction: column;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.quiz-wrapper .answers-wrapper .answer-wrapper.correct-answer {
-  background-color: #E5F5F1;
-  border-color: #009B77;
-}
-.quiz-wrapper .answers-wrapper .answer-wrapper.incorrect-answer {
-  border-color: #EC4242;
-}
-.quiz-wrapper .answers-wrapper .answer-wrapper .answer-label {
-  font-size: 12px;
-  color: #96969B;
-  cursor: inherit;
-}
-.quiz-wrapper .answers-wrapper .answer-wrapper .answer {
-  font-size: 16px;
-  line-height: 24px;
-  color: black;
-  cursor: inherit;
-}
-.quiz-wrapper .answers-wrapper.answered .answer-wrapper {
-  cursor: not-allowed;
-}
-
 .h5p-block {
   margin-top: 30px;
 }

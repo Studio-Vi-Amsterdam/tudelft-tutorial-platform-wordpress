@@ -19,7 +19,6 @@ import { initPagination } from "./components/pagination";
 import { openFilter } from "./components/filters";
 import { textareaScrollBar } from "./components/textarea-scrollbar";
 import ModalImageWindow from "./components/ModalWindow/ModalImageWindow";
-import quizFunctionality from "./components/quiz";
 
 
 export function runAfterDomLoad() {
@@ -93,7 +92,6 @@ export function runAfterDomLoad() {
                         initPagination()
                         openFilter()
                         textareaScrollBar()
-                        quizFunctionality();
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 
                     }, timeout);
