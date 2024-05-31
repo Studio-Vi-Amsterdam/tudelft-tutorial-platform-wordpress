@@ -39,7 +39,14 @@ namespace TuDelft\Theme\Common;
             foreach(self::BLOCKS as $block) {
                 // check does method exist
                 if (method_exists($this, "register_{$block}")) {
+
+                    // Register block for ACF
                     add_action('acf/init', [ $this, "register_{$block}" ]);
+
+                    // Register ACF blocks for Gutenberg
+                    add_action('acf/include_fields', function() use ($block){
+                        Gutenberg_ACF::register_blocks($block);
+                    } );
                 }
             }
         }
