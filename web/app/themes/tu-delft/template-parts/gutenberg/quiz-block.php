@@ -14,13 +14,13 @@
         <div class="quiz">
             <p>
                 <small>
-                <?php the_field('tu-delft-quiz-block_question'); ?>
+                <?php the_field('tu-delft-quiz_question'); ?>
                 </small>
             </p>
             <div class="quiz__wrapper">
                 <?php 
-                    if (have_rows( 'tu-delft-quiz-block_answers' )):
-                        $answers = get_field('tu-delft-quiz-block_answers');
+                    if (have_rows( 'tu-delft-quiz_answers' )):
+                        $answers = get_field('tu-delft-quiz_answers');
                         shuffle($answers);
                 ?>
                         <?php foreach( $answers as $i => $answer ) : ?>
@@ -28,12 +28,12 @@
                                 <input 
                                     type="radio" 
                                     id="quest<?php echo $i + 1; ?>" 
-                                    name="<?php the_field('tu-delft-quiz-block_question'); ?>" 
-                                    data-valid="<?php echo $answer['tu-delft-quiz-block_is_correct'] ? 'valid' : 'invalid' ?>"
+                                    name="<?php the_field('tu-delft-quiz_question'); ?>" 
+                                    data-valid="<?php echo $answer['tu-delft-quiz_is_correct'] ? 'valid' : 'invalid' ?>"
                                 >
                                 <label id="quest<?php echo $i + 1; ?>">
                                     <small>Answer <?php echo $answer_labels[$i]; ?></small>
-                                    <?php echo $answer['tu-delft-quiz-block_answer']; ?>
+                                    <?php echo $answer['tu-delft-quiz_answer']; ?>
                                 </label>
                             </div>
                         <?php endforeach; ?>

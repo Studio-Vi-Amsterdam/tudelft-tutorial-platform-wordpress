@@ -665,9 +665,9 @@ class Gutenberg_ACF {
         'title' => 'Quiz Block',
         'fields' => array(
             array(
-                'key' => 'tu-delft-quiz-block_question_key',
+                'key' => 'tu-delft-quiz_question_key',
                 'label' => 'Question',
-                'name' => 'tu-delft-quiz-block_question',
+                'name' => 'tu-delft-quiz_question',
                 'aria-label' => '',
                 'type' => 'text',
                 'instructions' => '',
@@ -685,9 +685,9 @@ class Gutenberg_ACF {
                 'append' => '',
             ),
             array(
-                'key' => 'tu-delft-quiz-block_answers_key',
+                'key' => 'tu-delft-quiz_answers_key',
                 'label' => 'Answers',
-                'name' => 'tu-delft-quiz-block_answers',
+                'name' => 'tu-delft-quiz_answers',
                 'aria-label' => '',
                 'type' => 'repeater',
                 'instructions' => '',
@@ -707,9 +707,9 @@ class Gutenberg_ACF {
                 'rows_per_page' => 20,
                 'sub_fields' => array(
                     array(
-                        'key' => 'tu-delft-quiz-block_answer_key',
+                        'key' => 'tu-delft-quiz_answer_key',
                         'label' => 'Answer',
-                        'name' => 'tu-delft-quiz-block_answer',
+                        'name' => 'tu-delft-quiz_answer',
                         'aria-label' => '',
                         'type' => 'text',
                         'instructions' => '',
@@ -725,12 +725,12 @@ class Gutenberg_ACF {
                         'placeholder' => '',
                         'prepend' => '',
                         'append' => '',
-                        'parent_repeater' => 'tu-delft-quiz-block_answers_key',
+                        'parent_repeater' => 'tu-delft-quiz_answers_key',
                     ),
                     array(
-                        'key' => 'tu-delft-quiz-block_is_correct_key',
+                        'key' => 'tu-delft-quiz_is_correct_key',
                         'label' => 'Is Correct',
-                        'name' => 'tu-delft-quiz-block_is_correct',
+                        'name' => 'tu-delft-quiz_is_correct',
                         'aria-label' => '',
                         'type' => 'true_false',
                         'instructions' => '',
@@ -746,7 +746,7 @@ class Gutenberg_ACF {
                         'placeholder' => '',
                         'prepend' => '',
                         'append' => '',
-                        'parent_repeater' => 'tu-delft-quiz-block_answers_key',
+                        'parent_repeater' => 'tu-delft-quiz_answers_key',
                     ),
                 ),
             ),
@@ -775,9 +775,9 @@ class Gutenberg_ACF {
         'title' => 'H5P Block',
         'fields' => array(
             array(
-                'key' => 'tu-delft-h5p-block_source_key',
+                'key' => 'tu-delft-h5p_source_key',
                 'label' => 'H5P source',
-                'name' => 'tu-delft-h5p-block_source',
+                'name' => 'tu-delft-h5p_source',
                 'aria-label' => '',
                 'type' => 'text',
                 'instructions' => '',

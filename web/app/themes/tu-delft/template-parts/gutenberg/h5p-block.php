@@ -4,7 +4,7 @@
  * 
  */
 
-$h5p = get_field('tu-delft-h5p-block_source');
+$h5p = get_field('tu-delft-h5p_source');
 ?>
 
 <div class="h5p-block">
