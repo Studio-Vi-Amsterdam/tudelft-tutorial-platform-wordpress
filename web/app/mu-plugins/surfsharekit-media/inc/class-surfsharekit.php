@@ -29,6 +29,13 @@ namespace TuDelft\SurfShareKit\Inc;
     private static $repo_items_endpoint = '/api/jsonapi/channel/v1/tudelft/repoItems/';
 
     /**
+     * Upload media endpoint
+     * 
+     * @var string
+     */
+    private static $upload_media_endpoint = '/api/repoitemupload/v1/upload/';
+
+    /**
      * Items per page
      * 
      * @var int
@@ -88,6 +95,50 @@ namespace TuDelft\SurfShareKit\Inc;
         ];
     }
 
+    /**
+     * Upload media to Surf Sharekit
+     * 
+     * @param array $data
+     * 
+     * @return array
+     * 
+     * @since 1.0.0
+     */
+    public static function upload_media( array $data ): array {
+        
+        /**
+         * Data example:
+         * Array
+         *   (
+         *       [name] => 3ebb72aa5bb14b9d6acac61f4449acac.png
+         *       [full_path] => 3ebb72aa5bb14b9d6acac61f4449acac.png
+         *       [type] => image/png
+         *       [tmp_name] => /tmp/phpw7OUj1
+         *       [error] => 0
+         *       [size] => 28975
+         *   )
+         */
+
+        // Read the file content
+        $file_contents = file_get_contents( $data['tmp_name'] );
+
+        // Create a boundary string
+        $boundary = wp_generate_password(24);
+
+        // Create the body with multipart data
+        $payload = '--' . $boundary;
+        $payload .= "\r\n";
+        $payload .= 'Content-Disposition: form-data; name="' . $data['name'] . '"; filename="' . basename( $data['full_path'] ) . '"' . "\r\n";
+        $payload .= 'Content-Type: ' . $data['type'] . "\r\n";
+        $payload .= "\r\n";
+        $payload .= $file_contents;
+        $payload .= "\r\n";
+        $payload .= '--' . $boundary . '--';
+
+
+        return self::execute_api_request( self::$upload_media_endpoint, 'POST', $payload, [ 'content-type' => 'multipart/form-data; boundary=' . $boundary, ] );
+    }
+
 
     /**
     * Execute API request
@@ -100,7 +151,7 @@ namespace TuDelft\SurfShareKit\Inc;
     * 
     * @since 1.0.0
     */
-    private static function execute_api_request( string $endpoint, string $method = 'GET', array $params = [] ): array|null {
+    private static function execute_api_request( string $endpoint, string $method = 'GET', array|string $params = [], $extra_headers = [] ): array|null {
 
         $api_key = SURF_SHAREKIT_API_KEY ? : '';
 
@@ -110,12 +161,18 @@ namespace TuDelft\SurfShareKit\Inc;
 
         $url = self::$api_url . $endpoint;
 
+        $headers = [
+            'Authorization' => 'Bearer ' . $api_key,
+        ];
+
+        if ( !empty( $extra_headers ) ) {
+            $headers = array_merge( $headers, $extra_headers );
+        }
+
         $response = wp_remote_request( $url, [
             'method' => $method,
             'body' => $params,
-            'headers' => [
-                'Authorization' => 'Bearer ' . $api_key,
-            ],
+            'headers' => $headers,
         ] ); 
 
         /**
