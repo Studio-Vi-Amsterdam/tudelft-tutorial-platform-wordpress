@@ -3,7 +3,7 @@
 namespace TuDelft\Theme\Modules\Software;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
-
+use WP_Query;
 /**
  * Class Software
  *
@@ -34,5 +34,25 @@ class Software extends Abstract_Cpt {
 
     public function __construct() {
         parent::__construct( self::POST_TYPE, self::POST_SUPPORTS, self::POST_ICON, self::REWRITE, self::TAXONOMY, self::EXTRA_SETTINGS );
+    }
+
+    /**
+     * Get all softwares
+     * 
+     * @since 1.0.0
+     * 
+     * @return array
+     */
+    public static function get_all_softwares(): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+        ];
+
+        $query = new WP_Query( $args );
+
+        return $query->posts;
     }
 }
