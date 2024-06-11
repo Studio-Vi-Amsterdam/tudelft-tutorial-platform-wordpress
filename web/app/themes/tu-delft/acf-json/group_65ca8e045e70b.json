@@ -134,7 +134,7 @@
         {
             "key": "field_664a186e4a6a4",
             "label": "Faculty",
-            "name": "Faculty",
+            "name": "faculty",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -170,5 +170,5 @@
     "active": true,
     "description": "Fields related to tutorials",
     "show_in_rest": 0,
-    "modified": 1717154545
+    "modified": 1717772773
 }

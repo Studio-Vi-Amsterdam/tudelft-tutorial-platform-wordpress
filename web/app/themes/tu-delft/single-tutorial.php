@@ -6,7 +6,6 @@ use TuDelft\Theme\Modules\Tutorial\Tutorial;
 use TuDelft\Theme\Modules\Chapter\Chapter;
 
 $chapters = Tutorial::get_chapters_belonging_to( get_the_ID() );
-$keywords = Tutorial::get_keywords( get_the_ID() );
 $last_updated_array = Chapter::get_last_updated_chapter( $chapters );
 $theme_url = get_template_directory_uri();
 
@@ -88,37 +87,51 @@ $theme_url = get_template_directory_uri();
                     <td><?php echo $last_updated_array['date'] ?? 'N/A' ?></td>
                 </tr>
                 <tr>
-                    <td>Keywords</td>
-                    <td>
-                        <ul>
-                        <?php
-                            foreach ( $keywords as $keyword ) : 
-                        ?>
-                                <li><a href="#"><?php echo $keyword['name']; ?></a></li>
-                        <?php
-                            endforeach; 
-                        ?>
-                        </ul>
-                    </td>
+                    <?php if ( $keywords = Tutorial::get_keywords( get_the_ID() ) ) : ?>
+                        <td>Keywords</td>
+                        <td>
+                            <ul>
+                                <?php
+                                    foreach ( $keywords as $keyword ) : 
+                                ?>
+                                        <li><a href="#"><?php echo $keyword['name']; ?></a></li>
+                                <?php
+                                    endforeach; 
+                                ?>
+                            </ul>
+                        </td>
+                    <?php endif; ?>
                 </tr>
             </table>
         </div>
         <div class="tutorial__nav responsible">
             <h4>Responsible</h4>
             <table>
-                <tr>
-                    <td>Teacher</td>
-                    <td>
-                        <ul>
-                            <li><a href="#">Teacher Name</a></li>
-                        </ul>
-                    </td>
-                </tr>
+                <?php 
+                    if ( $teachers = get_the_terms( get_the_ID(), 'teachers' ) ) : 
+                ?>
+                    <tr>
+                        <td>Teacher<?php echo sizeof( $teachers ) > 1 ? 's' : ''; ?></td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <?php 
+                                        foreach ( $teachers as $i => $teacher ) :
+                                    ?>
+                                        <a href="#"><?php echo $teacher->name; ?></a>
+                                        <?php if ( $i < sizeof( $teachers ) - 1 ) : ?>
+                                            ,
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                            </ul>
+                        </td>
+                    </tr>
+                <?php endif; ?>
                 <tr>
                     <td>Faculty</td>
                     <td>
                         <ul>
-                            <li><a href="#">Faculty name</a></li>
+                            <li><a href="#"><?php echo get_field('faculty', get_the_ID() ) ?: 'BK'; ?></a></li>
                         </ul>
                     </td>
                 </tr>
