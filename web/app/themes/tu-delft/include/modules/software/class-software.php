@@ -55,4 +55,23 @@ class Software extends Abstract_Cpt {
 
         return $query->posts;
     }
+    
+    /**
+     * Group software in matrix (for menu)
+     * 
+     * @since 1.0.0
+     * 
+     * @return array
+     */
+    public static function get_softwares_matrix(int $columns = 3): array {
+        $softwares = self::get_all_softwares();
+
+        $amount = count($softwares);
+
+        $per_column = ceil($amount / $columns);
+
+        $matrix = array_chunk($softwares, $per_column);
+
+        return $matrix;
+    }
 }

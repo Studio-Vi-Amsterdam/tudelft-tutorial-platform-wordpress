@@ -22,7 +22,7 @@ class Lab extends Abstract_Cpt {
     const POST_ICON = 'dashicons-color-picker';
     const REWRITE = [];
     const TAXONOMY = [
-        [ 'name' => 'category', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'lab-type', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
@@ -34,5 +34,22 @@ class Lab extends Abstract_Cpt {
 
     public function __construct() {
         parent::__construct( self::POST_TYPE, self::POST_SUPPORTS, self::POST_ICON, self::REWRITE, self::TAXONOMY, self::EXTRA_SETTINGS );
+    }
+
+    /**
+     * Get lab types
+     * 
+     * @since 1.0.0
+     * 
+     * @return array
+     */
+    public static function get_lab_types(int $per_page = 6): array {
+        $lab_types = get_terms( [
+            'taxonomy' => 'lab-type',
+            'hide_empty' => false,
+            'posts_per_page' => $per_page,
+        ] );
+
+        return $lab_types;
     }
 }

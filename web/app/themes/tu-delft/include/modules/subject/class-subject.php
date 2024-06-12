@@ -36,4 +36,44 @@ class Subject extends Abstract_Cpt {
     public function __construct() {
         parent::__construct( self::POST_TYPE, self::POST_SUPPORTS, self::POST_ICON, self::REWRITE, self::TAXONOMY, self::EXTRA_SETTINGS );
     }
+
+    /**
+     * Get all categories and their sub-categories
+     * 
+     * @since 1.0.0
+     * 
+     * @return array
+     */
+    public static function get_categories(): array {
+        $categories = get_terms( [
+            'taxonomy' => 'category',
+            'hide_empty' => false,
+            'exclude' => '1',
+        ] );
+
+        // order by parents first, so children can be grouped
+        usort( $categories, function( $a, $b ) {
+            return $a->parent - $b->parent;
+        } );
+
+        // group categories by parent
+        $grouped_categories = [];
+
+        foreach ( $categories as $category ) {
+            if ( $category->parent === 0 ) {
+                $grouped_categories[] = [
+                    'category' => $category,
+                    'subcategories' => [],
+                ];
+            } else {
+                foreach ( $grouped_categories as $key => $grouped_category ) {
+                    if ( $grouped_category['category']->term_id === $category->parent ) {
+                        $grouped_categories[ $key ]['subcategories'][] = $category;
+                    }
+                }
+            }
+        }
+        
+        return $grouped_categories;
+    }
 }

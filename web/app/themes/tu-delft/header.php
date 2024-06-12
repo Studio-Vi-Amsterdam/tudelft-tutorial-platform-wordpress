@@ -19,6 +19,27 @@
       Visit Viamsterdam.com for more info
                                                                         
 -->
+<?php
+    use TuDelft\Theme\Modules\Course\Course;
+    use TuDelft\Theme\Modules\Software\Software;
+    use TuDelft\Theme\Modules\Subject\Subject;
+    use TuDelft\Theme\Modules\Lab\Lab;
+
+    //courses
+    $bachelor = Course::get_courses_by_academic_level(['bachelor'], 5);
+    $master = Course::get_courses_by_academic_level(['master'], 5);
+    $other = Course::get_courses_by_academic_level(['bachelor', 'master'], 5, false);
+
+    //subjects
+    $categories = Subject::get_categories();
+
+    // software matrix
+    $softwares_matrix = Software::get_softwares_matrix(3);
+    $softwares = Software::get_all_softwares();
+
+    // labs
+    $labs = Lab::get_lab_types(6);
+?>
 
 
 <!doctype html>
@@ -33,7 +54,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
-
 </head>
 
 <body data-barba="wrapper" class="opacity">
@@ -58,8 +78,7 @@
         <div class="header__menu">
             <div class="header__nav">
                 <ul>
-
-                    <li class="menu-item-has-children"><a href="http://localhost/tudelft-tutorial-platform-wordpress/web/app/themes/tu-delft/testing">Courses</a>
+                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/courses">Courses</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
@@ -72,31 +91,27 @@
                                                 </svg>
                                             </div>
                                         </a>
-
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Bachelor 1</a></li>
-                                                <li><a href="#">Bachelor 1</a></li>
-                                                <li><a href="#">Bachelor 1</a></li>
+                                                <?php foreach($bachelor as $course): ?>
+                                                    <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
+                                                <?php endforeach; ?>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Master
-
                                         <div class="menu-item-has-children__trigger">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </a>
-                                        
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Architecture</a></li>
-                                                <li><a href="#">Building Technology</a></li>
-                                                <li><a href="#">Urbanism</a></li>
-                                                <li><a href="#">Landscape Architecture</a></li>
+                                                <?php foreach($master as $course): ?>
+                                                    <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
+                                                <?php endforeach; ?>
                                             </ul>
                                         </div>
                                     </li>
@@ -109,190 +124,72 @@
                                             </svg>
                                         </div>
                                     </a>
-                                        
                                         <div class="header__submenu">
                                             <ul>
-                                                <li><a href="#">Something Else</a></li>
-                                                <li><a href="#">Something Else</a></li>
-                                                <li><a href="#">Something Else</a></li>
+                                                <?php foreach($other as $course): ?>
+                                                    <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
+                                                <?php endforeach; ?>
                                             </ul>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
                     </li>
-
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/subjects">Subjects</a>
+                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/subjects">Subjects</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Computer Aided Design
-                                            <div class="menu-item-has-children__trigger">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
+                                    <?php foreach ($categories as $category): ?>
+                                        <li class="menu-item-has-children">
+                                            <a href="#"><?php echo $category['category']->name; ?>
+                                                <div class="menu-item-has-children__trigger">
+                                                    <svg width="20" height="20">
+                                                        <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </div>
+                                            </a>
+
+                                            <div class="header__submenu">
+                                                <ul>
+                                                    <?php foreach ($category['subcategories'] as $subcategory): ?>
+                                                        <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                    <?php endforeach; ?>
+                                                </ul>
                                             </div>
-                                        </a>
-
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">2 Dimensional</a></li>
-                                                <li><a href="#">3 Dimensional</a></li>
-                                                <li><a href="#">Documenting</a></li>
-                                                <li><a href="#">Obtaining Data</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Visualization
-
-                                        <div class="menu-item-has-children__trigger">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                        
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">2 Dimensional</a></li>
-                                                <li><a href="#">3 Dimensional</a></li>
-                                                <li><a href="#">Documenting</a></li>
-                                                <li><a href="#">Obtaining Data</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Physical Modeling
-
-                                            <div class="menu-item-has-children__trigger">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                        </a>
-                                        
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">2 Dimensional</a></li>
-                                                <li><a href="#">3 Dimensional</a></li>
-                                                <li><a href="#">Documenting</a></li>
-                                                <li><a href="#">Obtaining Data</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Programming
-
-                                            <div class="menu-item-has-children__trigger">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                        </a>
-                                        
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">2 Dimensional</a></li>
-                                                <li><a href="#">3 Dimensional</a></li>
-                                                <li><a href="#">Documenting</a></li>
-                                                <li><a href="#">Obtaining Data</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Simulation
-
-                                            <div class="menu-item-has-children__trigger">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                        </a>
-                                        
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">2 Dimensional</a></li>
-                                                <li><a href="#">3 Dimensional</a></li>
-                                                <li><a href="#">Documenting</a></li>
-                                                <li><a href="#">Obtaining Data</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Web Design
-
-                                            <div class="menu-item-has-children__trigger">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                        </a>
-                                        
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <li><a href="#">2 Dimensional</a></li>
-                                                <li><a href="#">3 Dimensional</a></li>
-                                                <li><a href="#">Documenting</a></li>
-                                                <li><a href="#">Obtaining Data</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
-
                         </div>
                     </li>
-
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/testing">Software</a>
+                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/software">Software</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu header__submenu--flex">
                             <div class="menu-item-has-children__wrapper ">
-                                <ul>
-                                    <li><a href="#">AutoCAD</a></li>
-                                    <li><a href="#">(Autodesk) BIM360</a></li>
-                                    <li><a href="#">Dreamweaver</a></li>
-                                    <li><a href="#">Grasshopper</a></li>
-                                    <li><a href="#">Grasshopper Optimization Plugins</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#">Honeybee</a></li>
-                                    <li><a href="#">Illustrator</a></li>
-                                    <li><a href="#">InDesign</a></li>
-                                    <li><a href="#">Karamba 3D</a></li>
-                                    <li><a href="#">Maya</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#">Photoshop</a></li>
-                                    <li><a href="#">Premiere</a></li>
-                                    <li><a href="#">Processing</a></li>
-                                    <li><a href="#">QGIS</a></li>
-                                    <li><a href="#">Revit Architecture</a></li>
-                                </ul>
+                                <?php foreach($softwares_matrix as $column): ?>
+                                    <ul>
+                                        <?php foreach($column as $software): ?>
+                                            <li><a href="<?php echo get_permalink($software->ID); ?>"><?php echo $software->post_title; ?></a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </li>
-
-                    <li class="menu-item-has-children"><a href="<?= get_template_directory_uri() ?>/labs">Labs</a>
-
+                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/labs">Labs</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
-                                    <li><a href="#">VR Lab</a></li>
-                                    <li><a href="#">Lama Lab</a></li>
-                                    <li><a href="#">GDMC Lab</a></li>
-                                    <li><a href="#">AiDAPT Lab</a></li>
+                                    <?php foreach($labs as $lab): ?>
+                                        <li><a href="<?php echo get_term_link($lab); ?>"><?php echo $lab->name; ?></a></li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
                     </li>
-
-
                 </ul>
             </div>
         </div>
@@ -386,9 +283,9 @@
                                         <span>Bachelor</span>
                                     </div>
                                     <ul>
-                                        <li><a href="#">Bachelor 1</a></li>
-                                        <li><a href="#">Bachelor 2</a></li>
-                                        <li><a href="#">Bachelor 3</a></li>
+                                        <?php foreach($bachelor as $course): ?>
+                                            <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </li>
@@ -419,10 +316,9 @@
                                         <span>Master</span>
                                     </div>
                                     <ul>
-                                        <li><a href="#">Architecture</a></li>
-                                        <li><a href="#">Building Technology</a></li>
-                                        <li><a href="#">Urbanism</a></li>
-                                        <li><a href="#">Landscape Architecture</a></li>
+                                        <?php foreach($master as $course): ?>
+                                            <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </li>
@@ -453,16 +349,13 @@
                                         <span>Other</span>
                                     </div>
                                     <ul>
-                                        <li><a href="#">Something Else</a></li>
-                                        <li><a href="#">Something Else</a></li>
-                                        <li><a href="#">Something Else</a></li>
+                                        <?php foreach($other as $course): ?>
+                                            <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">View all</a></li>
-
                         </ul>
-
                     </div>
                 </li>
                 <li class="menu-item-has-children">
@@ -485,213 +378,42 @@
                         </div>
 
                         <ul>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Computer Aided Design</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                            <?php foreach($categories as $category): ?>
+                                <li class="menu-item-has-children">
+                                    <div class="menu-item-has-children__title">
+                                        <a href="#"><?php echo $category['category']->name; ?></a>
+                                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
-                                        <span>Subjects</span>
                                     </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
+                                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                                        <div class="menu-item-has-children__title title-prev title-start">
+                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                            <span>Subjects</span>
                                         </div>
-                                        <span>Computer Aided Design</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">2 Dimensional</a></li>
-                                        <li><a href="#">3 Dimensional</a></li>
-                                        <li><a href="#">Documenting</a></li>
-                                        <li><a href="#">Obtaining Data</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Visualization</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
+                                        <div class="menu-item-has-children__title title-prev">
+                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                            <span><?php echo $category['category']->name; ?></span>
                                         </div>
-                                        <span>Subjects</span>
+                                        <ul>
+                                            <?php foreach($category['subcategories'] as $subcategory): ?>
+                                                <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                            <?php endforeach; ?>
+                                        </ul>
                                     </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Visualization</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">2 Dimensional</a></li>
-                                        <li><a href="#">3 Dimensional</a></li>
-                                        <li><a href="#">Documenting</a></li>
-                                        <li><a href="#">Obtaining Data</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Physical Modeling</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Subjects</span>
-                                    </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Physical Modeling</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">2 Dimensional</a></li>
-                                        <li><a href="#">3 Dimensional</a></li>
-                                        <li><a href="#">Documenting</a></li>
-                                        <li><a href="#">Obtaining Data</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Programming</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Subjects</span>
-                                    </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Programming</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">2 Dimensional</a></li>
-                                        <li><a href="#">3 Dimensional</a></li>
-                                        <li><a href="#">Documenting</a></li>
-                                        <li><a href="#">Obtaining Data</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Simulation</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Subjects</span>
-                                    </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Simulation</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">2 Dimensional</a></li>
-                                        <li><a href="#">3 Dimensional</a></li>
-                                        <li><a href="#">Documenting</a></li>
-                                        <li><a href="#">Obtaining Data</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Web Design</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Subjects</span>
-                                    </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Web Design</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">2 Dimensional</a></li>
-                                        <li><a href="#">3 Dimensional</a></li>
-                                        <li><a href="#">Documenting</a></li>
-                                        <li><a href="#">Obtaining Data</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
                 </li>
                 <li class="menu-item-has-children">
@@ -713,23 +435,10 @@
                             <span>Software</span>
                         </div>
                         <ul>
-                            <li><a href="#">AutoCAD</a></li>
-                            <li><a href="#">(Autodesk) BIM360</a></li>
-                            <li><a href="#">Dreamweaver</a></li>
-                            <li><a href="#">Grasshopper</a></li>
-                            <li><a href="#">Grasshopper Optimization Plugins</a></li>
-                            <li><a href="#">Honeybee</a></li>
-                            <li><a href="#">Illustrator</a></li>
-                            <li><a href="#">InDesign</a></li>
-                            <li><a href="#">Karamba 3D</a></li>
-                            <li><a href="#">Maya</a></li>
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">Premiere</a></li>
-                            <li><a href="#">Processing</a></li>
-                            <li><a href="#">QGIS</a></li>
-                            <li><a href="#">Revit Architecture</a></li>
+                            <?php foreach($softwares as $software): ?>
+                                <li><a href="<?php echo get_permalink($software->ID); ?>"><?php echo $software->post_title; ?></a></li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
                 </li>
                 <li class="menu-item-has-children">
@@ -751,10 +460,9 @@
                             <span>Labs</span>
                         </div>
                         <ul>
-                            <li><a href="#">VR Lab</a></li>
-                            <li><a href="#">Lama Lab</a></li>
-                            <li><a href="#">GDMC Lab</a></li>
-                            <li><a href="#">AiDAPT Lab</a></li>
+                            <?php foreach($labs as $lab): ?>
+                                <li><a href="<?php echo get_term_link($lab); ?>"><?php echo $lab->name; ?></a></li>
+                            <?php endforeach; ?>
                         </ul>
 
                     </div>
