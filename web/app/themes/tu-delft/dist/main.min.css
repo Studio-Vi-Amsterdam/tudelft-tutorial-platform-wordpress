@@ -915,6 +915,9 @@ ol {
 .field {
   position: relative;
 }
+.field.error {
+  border: 1px solid red;
+}
 .field input,
 .field textarea {
   outline: none;
@@ -937,6 +940,9 @@ ol {
   resize: none;
   overflow-y: auto;
   min-height: 320px;
+}
+.field textarea.error {
+  border: 1px solid red;
 }
 .field label {
   display: block;

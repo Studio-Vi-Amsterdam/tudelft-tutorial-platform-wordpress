@@ -1,5 +1,9 @@
 .field {
 	position: relative;
+
+	&.error {
+		border: 1px solid red;
+	}
 	input,
 	textarea {
 		outline: none;
@@ -27,6 +31,10 @@
 		resize: none;
 		overflow-y: auto;
 		min-height: 320px;
+
+		&.error {
+			border: 1px solid red;
+		}
 	}
 	label {
 		display: block;

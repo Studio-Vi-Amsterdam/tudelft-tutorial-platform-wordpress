@@ -24,6 +24,9 @@ class Tu_Delft {
 
     public function __construct() {
         add_action( 'init', [ $this, 'load' ], 1 );
+        
+        add_action( 'wp_ajax_submit_feedback', [ $this, 'submit_feedback' ] );
+        add_action( 'wp_ajax_nopriv_submit_feedback', [ $this, 'submit_feedback' ] );
     }
 
     /**
@@ -93,6 +96,33 @@ class Tu_Delft {
         new Software();
         new Course();
         new Lab();
+    }
+
+    /**
+     * Submit feedback
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function submit_feedback(): void {
+        
+        $feedback_about = sanitize_text_field( $_POST['feedback_about'] );
+        $feedback_message = sanitize_text_field( $_POST['message'] );
+
+        $email = get_bloginfo('admin_email');
+
+        $subject = 'Feedback about ' . $feedback_about;
+
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+
+        $message = '<html><body>';
+        $message .= '<p>Feedback about ' . $feedback_about . '</p>';
+        $message .= '<p>Message: ' . $feedback_message . '</p>';
+        $message .= '</body></html>';
+
+        wp_mail( $email, $subject, $message, $headers );
+
     }
 
 }
