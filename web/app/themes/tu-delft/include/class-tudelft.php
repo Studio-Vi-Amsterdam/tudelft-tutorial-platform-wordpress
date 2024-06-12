@@ -24,6 +24,9 @@ class Tu_Delft {
 
     public function __construct() {
         add_action( 'init', [ $this, 'load' ], 1 );
+
+        add_theme_support( 'menus' );
+        add_action( 'init', [ $this, 'menus' ] );
         
         add_action( 'wp_ajax_submit_feedback', [ $this, 'submit_feedback' ] );
         add_action( 'wp_ajax_nopriv_submit_feedback', [ $this, 'submit_feedback' ] );
@@ -39,6 +42,22 @@ class Tu_Delft {
     public function load(): void {
         $this->load_classes();
         $this->init_classes();
+    }
+
+    /**
+     * Register menus
+     * 
+     * @return void
+     * 
+     * @since 1.0.0
+     */
+    public function menus(): void {
+
+        register_nav_menus( [
+            'footer-info' => __( 'Footer Info', 'magen' ),
+            'footer1' => __( 'Footer 1', 'magen' ),
+            'footer2' => __( 'Footer 2', 'magen' ),
+        ] );
     }
 
     /**
