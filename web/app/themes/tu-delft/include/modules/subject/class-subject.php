@@ -23,6 +23,7 @@ class Subject extends Abstract_Cpt {
     const REWRITE = [];
     const TAXONOMY = [
         [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'category', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
