@@ -2,11 +2,17 @@
 <section class="hero" >
     <div class="hero__container container md:flex items-end justify-between">
         <div class="hero__content">
-            <h1>Labs</h1>
-            <p>Find hands-on manuals and important information related to the use of the different labs at TU Delft.</p>
+            <h1><?php the_field('title', get_the_ID()); ?></h1>
+            <p><?php the_field('content', get_the_ID()); ?></p>
         </div>
-        <figure class="hero__image">
-            <img width="288" height="224" src="<?= $theme_url ?>/src/img/hero-labs.svg" alt="image">
-        </figure>
+        <?php 
+            $image = get_field('image', get_the_ID());
+
+            if ( $image ) : 
+        ?>
+            <figure class="hero__image">
+                <img width="288" height="224" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+            </figure>
+        <?php endif; ?>
     </div>
 </section>

@@ -38,7 +38,7 @@
     $softwares = Software::get_all_softwares();
 
     // labs
-    $labs = Lab::get_lab_types(6);
+    $labs = Lab::get_header_lab_types(6);
 ?>
 
 

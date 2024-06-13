@@ -1,9 +1,9 @@
 {
-    "key": "group_666b758523b9f",
-    "title": "Subjects Page",
+    "key": "group_666b82ec340a7",
+    "title": "Labs Page",
     "fields": [
         {
-            "key": "field_666b758533148",
+            "key": "field_666b82ec3f96d",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -23,7 +23,7 @@
             "append": ""
         },
         {
-            "key": "field_666b75853318d",
+            "key": "field_666b82ec3f9b1",
             "label": "Content",
             "name": "content",
             "aria-label": "",
@@ -43,7 +43,7 @@
             "new_lines": ""
         },
         {
-            "key": "field_666b7585331d1",
+            "key": "field_666b82ec3f9f2",
             "label": "Image",
             "name": "image",
             "aria-label": "",
@@ -68,12 +68,12 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_666b758533213",
-            "label": "Categories",
-            "name": "categories",
+            "key": "field_666b82ec3fa36",
+            "label": "Lab Types",
+            "name": "lab_types",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Select which Subjects are shown. If empty, all are shown",
+            "instructions": "Select which Lab types are shown. If empty, all are shown",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -81,7 +81,7 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "category",
+            "taxonomy": "lab-type",
             "add_term": 0,
             "save_terms": 0,
             "load_terms": 0,
@@ -98,7 +98,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "templates\/template-subjects.php"
+                "value": "templates\/template-labs.php"
             }
         ]
     ],
@@ -111,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718318516
+    "modified": 1718321900
 }

@@ -1,6 +1,5 @@
 <?php
 
-use TuDelft\Theme\Modules\Course\Course;
 use TuDelft\Theme\Modules\Subject\Subject;
 
     $theme_url = get_template_directory_uri();
