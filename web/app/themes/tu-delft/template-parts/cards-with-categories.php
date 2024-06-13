@@ -69,6 +69,5 @@ use TuDelft\Theme\Modules\Course\Course;
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
-        
     </div>
 </section>

@@ -3,6 +3,7 @@
 namespace TuDelft\Theme\Modules\Subject;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
+use WP_Query;
 
 /**
  * Class Subject
@@ -75,5 +76,82 @@ class Subject extends Abstract_Cpt {
         }
         
         return $grouped_categories;
+    }
+
+    /**
+     * Get sub levels of a specific category
+     * 
+     * @param array $categories
+     * 
+     * @return array
+     * 
+     * @since 1.0.0
+     */
+    public static function get_sub_categories( array $categories ): array {
+
+        $all_categories = self::get_categories();
+
+        // filter out ids of categories
+        $categories = array_filter( $all_categories, function( $level ) use ( $categories ) {
+            return in_array( $level['category']->term_id, $categories );
+        } );
+
+        return array_values( $categories );
+    }
+
+    /**
+     * Get subjects that are part of a specific category
+     * 
+     * @since 1.0.0
+     * 
+     * @param string $category
+     * 
+     * @return array
+     */
+    public static function get_subjects_by_category( array $category, int $amount = 5, bool $inclusive = true ): array {
+        
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => $amount,
+            'orderby' => 'title',
+            'order' => 'ASC',
+            'tax_query' => [
+                [
+                    'taxonomy' => 'category',
+                    'field' => 'slug',
+                    'terms' => $category,
+                    'operator' => $inclusive ? 'IN' : 'NOT IN',
+                ],
+            ],
+        ];
+
+        $query = new WP_Query( $args );
+
+        return $query->posts;
+    }
+
+    /**
+     * Get subjects grouped by category
+     * 
+     * @since 1.0.0
+     * 
+     * @return array
+     * 
+     */
+    public static function get_subjects_grouped_by_category(): array {
+
+        $categories = self::get_categories();
+
+        $subjects = [];
+
+        foreach ( $categories as $level ) {
+            
+            // we only need them matched to children
+            foreach ( $level['subcategories'] as $subcategory ) {
+                $subjects[ $subcategory->name ] = self::get_subjects_by_category( [ $subcategory->slug ] );
+            }
+        }
+
+        return $subjects;
     }
 }
