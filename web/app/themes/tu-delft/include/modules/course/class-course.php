@@ -40,6 +40,68 @@ class Course extends Abstract_Cpt {
     }
 
     /**
+     * Get all academic levels
+     * 
+     * @since 1.0.0
+     * 
+     * @return array
+     */
+    public static function get_academic_levels(): array {
+
+        $categories = get_terms( [
+            'taxonomy' => 'academic-level',
+            'hide_empty' => false,
+            'exclude' => '1',
+        ] );
+
+        // order by parents first, so children can be grouped
+        usort( $categories, function( $a, $b ) {
+            return $a->parent - $b->parent;
+        } );
+
+        // group categories by parent
+        $grouped_categories = [];
+
+        foreach ( $categories as $category ) {
+            if ( $category->parent === 0 ) {
+                $grouped_categories[] = [
+                    'category' => $category,
+                    'subcategories' => [],
+                ];
+            } else {
+                foreach ( $grouped_categories as $key => $grouped_category ) {
+                    if ( $grouped_category['category']->term_id === $category->parent ) {
+                        $grouped_categories[ $key ]['subcategories'][] = $category;
+                    }
+                }
+            }
+        }
+        
+        return $grouped_categories;
+    }
+
+    /**
+     * Get sub levels of a specific academic levels
+     * 
+     * @param array $academic_levels
+     * 
+     * @return array
+     * 
+     * @since 1.0.0
+     */
+    public static function get_sub_academic_levels( array $academic_levels ): array {
+
+        $all_academic_levels = self::get_academic_levels();
+
+        // filter out ids of academic levels
+        $academic_levels = array_filter( $all_academic_levels, function( $level ) use ( $academic_levels ) {
+            return in_array( $level['category']->term_id, $academic_levels );
+        } );
+
+        return array_values( $academic_levels );
+    }
+
+    /**
      * Get courses that are part of a specific academic level
      * 
      * @since 1.0.0
@@ -68,5 +130,30 @@ class Course extends Abstract_Cpt {
         $query = new WP_Query( $args );
 
         return $query->posts;
+    }
+
+    /**
+     * Get courses grouped by academic level
+     * 
+     * @since 1.0.0
+     * 
+     * @return array
+     * 
+     */
+    public static function get_courses_grouped_by_academic_level(): array {
+
+        $academic_levels = self::get_academic_levels();
+
+        $courses = [];
+
+        foreach ( $academic_levels as $level ) {
+            
+            // we only need them matched to children
+            foreach ( $level['subcategories'] as $subcategory ) {
+                $courses[ $subcategory->name ] = self::get_courses_by_academic_level( [ $subcategory->slug ] );
+            }
+        }
+
+        return $courses;
     }
 }
