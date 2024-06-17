@@ -56,6 +56,34 @@
             "bidirectional_target": []
         },
         {
+            "key": "field_667002f0284dd",
+            "label": "Course",
+            "name": "course",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "course"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_65ca8e0485903",
             "label": "Primary Subject",
             "name": "primary_subject",
@@ -170,5 +198,5 @@
     "active": true,
     "description": "Fields related to tutorials",
     "show_in_rest": 0,
-    "modified": 1717772773
+    "modified": 1718616836
 }
