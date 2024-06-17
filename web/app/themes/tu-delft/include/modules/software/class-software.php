@@ -4,6 +4,7 @@ namespace TuDelft\Theme\Modules\Software;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
 use WP_Query;
+
 /**
  * Class Software
  *
@@ -73,5 +74,65 @@ class Software extends Abstract_Cpt {
         $matrix = array_chunk($softwares, $per_column);
 
         return $matrix;
+    }
+
+    /**
+     * Get all chapters that belong to this software.
+     * 
+     * @param int $software_id
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_chapters_belonging_to( int $software_id ) : array|bool {
+        $chapters = get_field( 'chapters', $software_id );
+
+        // If this software does not have any chapters, return false.
+        if ( empty( $chapters ) ) {
+            return [];
+        }
+        
+        
+        $chapters = array_map( function( $chapter_id ) {
+            
+            $chapter_post = get_post( $chapter_id );
+            
+            return [
+                'id' => $chapter_post->ID,
+                'title' => get_the_title( $chapter_post->ID ),
+                'permalink' => get_permalink( $chapter_post->ID ),
+                'content' => apply_filters( 'the_content', $chapter_post->post_content ),
+            ];
+        }, $chapters );
+
+        return $chapters;
+    }
+
+    /**
+     * Get all software versions that belong to this software.
+     * 
+     * @param int $software_id
+     * 
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_software_versions( int $software_id ) : array|bool {
+        $software_verison = get_the_terms( $software_id, 'software-version' );
+
+        // If this software does not have any versions, return false.
+        if ( empty( $software_verison ) ) {
+            return false;
+        }
+        
+        $software_verison = array_map( function( $version ) {
+            return [
+                'id' => $version->term_id,
+                'name' => $version->name,
+                'slug' => $version->slug,
+            ];
+        }, $software_verison );
+
+        return $software_verison;
     }
 }

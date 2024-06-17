@@ -156,4 +156,91 @@ class Course extends Abstract_Cpt {
 
         return $courses;
     }
+
+    /**
+     * Get all chapters that belong to this course.
+     * 
+     * @param int $course_id
+     * @return array
+     * 
+     * @since 1.0.0
+     */
+    public static function get_chapters_belonging_to( int $course_id ) : array {
+        $chapters = get_field( 'chapters', $course_id );
+
+        // If this course does not have any chapters, return false.
+        if ( empty( $chapters ) ) {
+            return [];
+        }
+        
+        
+        $chapters = array_map( function( $chapter_id ) {
+            
+            $chapter_post = get_post( $chapter_id );
+            
+            return [
+                'id' => $chapter_post->ID,
+                'title' => get_the_title( $chapter_post->ID ),
+                'permalink' => get_permalink( $chapter_post->ID ),
+                'content' => apply_filters( 'the_content', $chapter_post->post_content ),
+            ];
+        }, $chapters );
+
+        return $chapters;
+    }
+    
+    /**
+     * Get all keywords that belong to this course.
+     * 
+     * @param int $course_id
+     * 
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_keywords( int $course_id ) : array|bool {
+        $keywords = get_the_terms( $course_id, 'keywords' );
+
+        // If this course does not have any keywords, return false.
+        if ( empty( $keywords ) ) {
+            return false;
+        }
+
+        $keywords = array_map( function( $keyword ) {
+            return [
+                'id' => $keyword->term_id,
+                'name' => $keyword->name,
+                'slug' => $keyword->slug,
+            ];
+        }, $keywords );
+
+        return $keywords;
+    }
+    /**
+     * Get all academic levels that belong to this course.
+     * 
+     * @param int $course_id
+     * 
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_single_course_academic_levels( int $course_id ) : array|bool {
+        $academic_level = get_the_terms( $course_id, 'academic-level' );
+
+        // If this course does not have any keywords, return false.
+        if ( empty( $academic_level ) ) {
+            return false;
+        }
+
+        $academic_level = array_map( function( $level ) {
+            return [
+                'id' => $level->term_id,
+                'name' => $level->name,
+                'slug' => $level->slug,
+            ];
+        }, $academic_level );
+
+        return $academic_level;
+    }
 }

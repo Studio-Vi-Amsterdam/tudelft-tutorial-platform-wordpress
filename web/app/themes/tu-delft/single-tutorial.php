@@ -9,6 +9,8 @@ $chapters = Tutorial::get_chapters_belonging_to( get_the_ID() );
 $last_updated_array = Chapter::get_last_updated_chapter( $chapters );
 $theme_url = get_template_directory_uri();
 
+$software = Tutorial::get_primary_software( get_the_ID() );
+
 ?>
 
 <?php get_header(); ?>
@@ -78,6 +80,22 @@ $theme_url = get_template_directory_uri();
         <div class="tutorial__nav information">
             <h4>Information</h4>
             <table>
+                 <tr>
+                    <td>Primary Software Used</td>
+                    <td><?php echo $software['name'] ?? 'N/A'; ?></td>
+                </tr>
+                 <tr>
+                    <td>Software Version</td>
+                    <td><?php echo $software['version'] ?? 'N/A'; ?></td>
+                </tr>
+                <tr>
+                    <td>Primary Subject</td>
+                    <td><?php echo Tutorial::get_primary_subject( get_the_ID() ); ?></td>
+                </tr>
+                <tr>
+                    <td>Secondary Subject</td>
+                    <td><?php echo Tutorial::get_secondary_subject( get_the_ID() ); ?></td>
+                </tr>
                 <tr>
                     <td>Course</td>
                     <td>Course</td>

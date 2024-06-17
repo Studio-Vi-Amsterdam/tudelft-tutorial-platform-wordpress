@@ -3,7 +3,6 @@
 namespace TuDelft\Theme\Modules\Tutorial;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
-
 /**
  * Class Tutorial
  *
@@ -50,7 +49,7 @@ class Tutorial extends Abstract_Cpt {
 
         // If this tutorial does not have any chapters, return false.
         if ( empty( $chapters ) ) {
-            return false;
+            return [];
         }
         
         
@@ -95,5 +94,63 @@ class Tutorial extends Abstract_Cpt {
         }, $keywords );
 
         return $keywords;
+    }
+
+    /**
+     * For given ID, get name of pirmary software used
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return array
+     * 
+     * @since 1.0.0
+     */
+    public static function get_primary_software( int $tutorial_id ) : array {
+        $software_id =  get_field( 'primary_software', $tutorial_id );
+        $software_name = get_the_title( $software_id );
+        
+        // get taxonomy software_version for software
+        $software_version = get_the_terms( $software_id, 'software-version' );
+        $software_version = $software_version[0]->name;
+
+        return [
+            'name' => $software_name,
+            'version' => $software_version,
+        ];
+    }
+
+    /**
+     * Get subject that tutorial belongs to
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    public static function get_primary_subject( int $tutorial_id ) : string {
+        $subject_id = get_field( 'primary_subject', $tutorial_id );
+        $subject_name = get_the_title( $subject_id );
+
+        return $subject_name;
+    }
+
+    /**
+     * Get secondary subjects that tutorial belongs to
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     */
+    public static function get_secondary_subject( int $tutorial_id ) : string {
+        $secondary_subject_id = get_field( 'secondary_subject', $tutorial_id );
+
+        if ( empty( $secondary_subject_id ) ) {
+            return '';
+        }
+
+        $subject_name = get_the_title( $secondary_subject_id );
+
+        return $subject_name;
     }
 }

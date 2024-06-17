@@ -154,4 +154,108 @@ class Subject extends Abstract_Cpt {
 
         return $subjects;
     }
+
+    /**
+     * Get all chapters that belong to this subject.
+     * 
+     * @param int $subject_id
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_chapters_belonging_to( int $subject_id ) : array|bool {
+        $chapters = get_field( 'chapters', $subject_id );
+
+        // If this subject does not have any chapters, return false.
+        if ( empty( $chapters ) ) {
+            return [];
+        }
+        
+        
+        $chapters = array_map( function( $chapter_id ) {
+            
+            $chapter_post = get_post( $chapter_id );
+            
+            return [
+                'id' => $chapter_post->ID,
+                'title' => get_the_title( $chapter_post->ID ),
+                'permalink' => get_permalink( $chapter_post->ID ),
+                'content' => apply_filters( 'the_content', $chapter_post->post_content ),
+            ];
+        }, $chapters );
+
+        return $chapters;
+    }
+
+    /**
+     * Get all primary categories that belong to this subject.
+     * 
+     * @param int $subject_id
+     * 
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_subject_primary_category( int $subject_id ) : array|bool {
+        $primary_category = get_categories([
+            'taxonomy' => 'category',
+            'object_ids' => $subject_id,
+            'orderby' => 'term_id',
+            'order' => 'ASC',
+            'parent' => 0,
+        ]);
+
+        // If this subject does not have any category, return false.
+        if ( empty( $primary_category ) ) {
+            return false;
+        }
+        
+        $primary_category = array_map( function( $category ) {
+            return [
+                'id' => $category->term_id,
+                'name' => $category->name,
+                'slug' => $category->slug,
+            ];
+        }, $primary_category );
+
+        return $primary_category;
+    }
+
+    /**
+     * Get subcategories of a specific subject
+     * 
+     * @param int $subject_id
+     * 
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_subject_subcategories( int $subject_id ) : array|bool {
+        $subcategory = get_categories([
+            'taxonomy' => 'category',
+            'object_ids' => $subject_id,
+            'orderby' => 'term_id',
+            'order' => 'ASC'
+        ]);
+
+        // If this subject does not have any category, return false.
+        if ( empty( $subcategory ) ) {
+            return false;
+        }
+
+        // filter out the parent category
+        $subcategory = array_filter( $subcategory, function( $category ) {
+            return $category->parent !== 0;
+        } );
+        
+        $subcategory = array_map( function( $category ) {
+            return [
+                'id' => $category->term_id,
+                'name' => $category->name,
+                'slug' => $category->slug,
+            ];
+        }, $subcategory );
+
+        return $subcategory;
+    }
 }

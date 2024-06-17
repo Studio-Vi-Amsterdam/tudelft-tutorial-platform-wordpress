@@ -49,7 +49,7 @@ class Chapter extends Abstract_Cpt {
 
         // If this chapter does not belong to any post, return false.
         if ( empty( $belongs_to ) ) {
-            return false;
+            return [];
         }
 
         $parent_chapters = get_field( 'chapters', $belongs_to->ID );

@@ -170,4 +170,64 @@ class Lab extends Abstract_Cpt {
 
         return $subjects;
     }
+
+    /**
+     * Get all chapters that belong to this course.
+     * 
+     * @param int $lab_id
+     * @return array
+     * 
+     * @since 1.0.0
+     */
+    public static function get_chapters_belonging_to( int $lab_id ) : array {
+        $chapters = get_field( 'chapters', $lab_id );
+
+        // If this course does not have any chapters, return false.
+        if ( empty( $chapters ) ) {
+            return [];
+        }
+        
+        
+        $chapters = array_map( function( $chapter_id ) {
+            
+            $chapter_post = get_post( $chapter_id );
+            
+            return [
+                'id' => $chapter_post->ID,
+                'title' => get_the_title( $chapter_post->ID ),
+                'permalink' => get_permalink( $chapter_post->ID ),
+                'content' => apply_filters( 'the_content', $chapter_post->post_content ),
+            ];
+        }, $chapters );
+
+        return $chapters;
+    }
+
+    /**
+     * Get all lab types that belong to this lab.
+     * 
+     * @param int $lab_id
+     * 
+     * @return array|bool
+     * 
+     * @since 1.0.0
+     */
+    public static function get_single_lab_types( int $lab_id ) : array|bool {
+        $lab_type = get_the_terms( $lab_id, 'lab-type' );
+
+        // If this course does not have any lab_type, return false.
+        if ( empty( $lab_type ) ) {
+            return false;
+        }
+
+        $lab_type = array_map( function( $type ) {
+            return [
+                'id' => $type->term_id,
+                'name' => $type->name,
+                'slug' => $type->slug,
+            ];
+        }, $lab_type );
+
+        return $lab_type;
+    }
 }
