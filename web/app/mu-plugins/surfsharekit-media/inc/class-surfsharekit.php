@@ -36,6 +36,13 @@ namespace TuDelft\SurfShareKit\Inc;
     private static $upload_media_endpoint = '/api/repoitemupload/v1/upload/';
 
     /**
+     * Create repo item endpoint
+     * 
+     * @var string
+     */
+    private static $create_repo_item_endpoint = '/api/repoitemupload/v1/create/';
+
+    /**
      * Items per page
      * 
      * @var int
@@ -100,11 +107,11 @@ namespace TuDelft\SurfShareKit\Inc;
      * 
      * @param array $data
      * 
-     * @return array
+     * @return mixed
      * 
      * @since 1.0.0
      */
-    public static function upload_media( array $data ): array {
+    public static function upload_media( array $data, string $title ): mixed {
         
         /**
          * Data example:
@@ -135,8 +142,47 @@ namespace TuDelft\SurfShareKit\Inc;
         $payload .= "\r\n";
         $payload .= '--' . $boundary . '--';
 
+        // "data": {
+        //     "attributes": {
+        //         "url": "https://api.surfsharekit.nl/api/v1/files/repoItemFiles/e06523b3-60c4-4fe3-b9cd-9afefd072975",
+        //         "title": null,
+        //         "permissions": {
+        //             "canView": true
+        //         }
+        //     },
+        //     "type": "repoItemFile",
+        //     "id": "e06523b3-60c4-4fe3-b9cd-9afefd072975"
+        // }
+        $upload_file_data =  self::execute_api_request( self::$upload_media_endpoint, 'POST', $payload, [ 'content-type' => 'multipart/form-data; boundary=' . $boundary, ] );
 
-        return self::execute_api_request( self::$upload_media_endpoint, 'POST', $payload, [ 'content-type' => 'multipart/form-data; boundary=' . $boundary, ] );
+        if ( empty( $upload_file_data['data'] ) ) {
+            return [];
+        }
+        
+        $repo_upload_data = self::create_repo_item([
+            "type" => "LearningObject",
+            "title" => $title,
+            "subtitle" => "",
+            "summary" => "",
+            "owner" => "6bfd7354-895b-4f17-b96f-78abbf515bd9",
+            "institute" => "6bfd7354-895b-4f17-b96f-78abbf515bd9",
+            "files" => array(
+                array(
+                    "fileId" => $upload_file_data['data']['id'],
+                    "title" => $title,
+                    "access" => "openaccess"
+                )
+            ),
+            "persons" => array(
+                "5704040b-daf6-4abf-90ba-12a632b4c8ce"
+            )
+        ]);
+
+        if ( $repo_upload_data['response']['code'] !== 201 ) {
+            return [];
+        }
+
+        return json_decode( $repo_upload_data['body'] );
     }
 
 
@@ -193,6 +239,38 @@ namespace TuDelft\SurfShareKit\Inc;
         return $data;
     }
 
+    /**
+     * Create Repo Item
+     * 
+     * @param array $data
+     * 
+     * @return mixed
+     * 
+     * @since 1.0.0
+     */
+    public static function create_repo_item( array $data ): mixed {
+        $api_key = SURF_SHAREKIT_API_KEY ? : '';
+
+        if ( empty( $api_key ) ) {
+            return [];
+        }
+
+        $url = self::$api_url . self::$create_repo_item_endpoint;
+
+        $headers = [
+            'Authorization' => 'Bearer ' . $api_key,
+            'Content-Type' => 'application/vnd.api+json',
+        ];
+
+        $response = wp_remote_request( $url, [
+            'method' => 'POST',
+            'body' => json_encode( $data ),
+            'headers' => $headers,
+        ] );
+
+        return $response;
+    }
+    
     /**
      * Does next URL exist
      * 
