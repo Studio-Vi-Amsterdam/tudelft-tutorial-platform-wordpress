@@ -29,7 +29,7 @@
                 <h6>Tutorials</h6>
                 <?php
                     wp_nav_menu( [
-                        'theme_location' => 'footer2',
+                        'theme_location' => 'footer1',
                         'container' => 'div',
                         'container_class' => 'footer-menu',
                         'menu_class' => '',
@@ -40,7 +40,7 @@
                 <h6>About</h6>
                 <?php
                     wp_nav_menu( [
-                        'theme_location' => 'footer1',
+                        'theme_location' => 'footer2',
                         'container' => 'div',
                         'container_class' => 'footer-menu',
                         'menu_class' => '',

@@ -41,13 +41,11 @@ use TuDelft\Theme\Modules\Course\Course;
                                 <?php 
                                     // loop through grouped courses and display by subcategory
                                     foreach ( $grouped_courses[$subcategory->name] as $course ) : 
-
-                                        $image = get_field('featured_image', $course->ID);
                                 ?>
                                     <a href="<?php the_permalink($course->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
                                             <figure class="card-with-image__image">
-                                                <img width="208" height="280" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                                <img width="208" height="280" src="<?php the_field('featured_image', $course->ID) ?>" alt="">
                                             </figure>
                                             <div class="card-with-image__content">
                                                 <h3>COURSE <?php the_field('course_code', $course->ID); ?></h3>
