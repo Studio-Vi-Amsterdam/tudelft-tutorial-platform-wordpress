@@ -69,14 +69,14 @@
             <div class="cards-with-categories__content <?php echo $key === 'chapter_0' ? 'active' : ''; ?>" data-category-content="<?php echo $key ?>" data-pages>
                 <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
                     <?php foreach ($group_softwares as $software): ?>
-                        <a href="#" class="software-link" data-card>
+                        <a href="<?php the_permalink($software->ID); ?>" class="software-link" data-card>
                             <div class="software-link__wrapper">
                                 <div class="software-link__row  flex items-start">
                                     <h6>
                                         <?php echo $software->post_title ?>
                                     </h6>
                                     <figure class="software-link__icon">
-                                        <img width="44" height="40" src="<?php echo $theme_url ?>/src/img/icons/btn-a.svg" alt="image">
+                                        <img width="44" height="40" src="<?php the_field('featured_image', $software->ID) ?>" alt="">
                                     </figure>
                                 </div>
                                 <div class="arrow">
