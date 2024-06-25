@@ -39,7 +39,7 @@
     $labs = Lab::get_lab_types();
 
     function generate_url($path, $param) {
-        return get_home_url() . $path . '?' . http_build_query($param);
+        return get_home_url() . $path . '/?' . http_build_query($param);
     }
 
 ?>
