@@ -1,8 +1,9 @@
-<?php $theme_url = get_template_directory_uri() ?>
 <?php 
+    use TuDelft\Theme\Modules\Software\Software;
+    $theme_url = get_template_directory_uri();
 
     // TODO: filtering currently follows initial filter groups, but this needs to be changed as content repeats a lot. JavaScript filtering way needs to be changed
-    $softwares = $args['softwares'];
+    $softwares = Software::get_all_softwares();
 
     $filter_groups = [
         'chapter_0' => 'All',
@@ -68,15 +69,18 @@
         <?php foreach ($final_group_softwares as $key => $group_softwares): ?>
             <div class="cards-with-categories__content <?php echo $key === 'chapter_0' ? 'active' : ''; ?>" data-category-content="<?php echo $key ?>" data-pages>
                 <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                    <?php foreach ($group_softwares as $software): ?>
-                        <a href="#" class="software-link" data-card>
+                    <?php 
+                        foreach ($group_softwares as $software):
+                            $image = get_field('featured_image', $software->ID) ?: $theme_url . '/src/img/icons/btn-a.svg';
+                    ?>
+                        <a href="<?php echo get_permalink($software->ID) ?>" class="software-link" data-card>
                             <div class="software-link__wrapper">
                                 <div class="software-link__row  flex items-start">
                                     <h6>
                                         <?php echo $software->post_title ?>
                                     </h6>
                                     <figure class="software-link__icon">
-                                        <img width="44" height="40" src="<?php echo $theme_url ?>/src/img/icons/btn-a.svg" alt="image">
+                                        <img width="44" height="40" src="<?php echo $image; ?>" alt="<?php echo $software->post_title ?> icon">
                                     </figure>
                                 </div>
                                 <div class="arrow">
