@@ -16,7 +16,7 @@
             </a>
             <div class="footer__copyright">
                 <span><?php echo date('Y'); ?> All rights reserved</span>
-                <a href="<?php echo get_privacy_policy_url(); ?>">Privacy Policy</a>
+                <a href="https://www.tudelft.nl/en/privacy-statement/">Privacy Policy</a>
             </div>
         </div>
         <div class="footer__info">
