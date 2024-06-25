@@ -26,9 +26,7 @@
     use TuDelft\Theme\Modules\Lab\Lab;
 
     //courses
-    $bachelor = Course::get_courses_by_academic_level(['bachelor'], 5);
-    $master = Course::get_courses_by_academic_level(['master'], 5);
-    $other = Course::get_courses_by_academic_level(['bachelor', 'master'], 5, false);
+    $academic_levels = Course::get_academic_levels();
 
     //subjects
     $categories = Subject::get_categories();
@@ -38,7 +36,8 @@
     $softwares = Software::get_all_softwares();
 
     // labs
-    $labs = Lab::get_header_lab_types(6);
+    $labs = Lab::get_lab_types();
+
 ?>
 
 
@@ -78,60 +77,30 @@
         <div class="header__menu">
             <div class="header__nav">
                 <ul>
-                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/courses">Courses</a>
+                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/subjects">Courses</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Bachelor
-                                            <div class="menu-item-has-children__trigger">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                        </a>
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <?php foreach($bachelor as $course): ?>
-                                                    <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Master
-                                        <div class="menu-item-has-children__trigger">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <?php foreach($master as $course): ?>
-                                                    <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Other
+                                    <?php foreach ($academic_levels as $category): ?>
+                                        <li class="menu-item-has-children">
+                                            <a href="#"><?php echo $category['category']->name; ?>
+                                                <div class="menu-item-has-children__trigger">
+                                                    <svg width="20" height="20">
+                                                        <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </div>
+                                            </a>
 
-                                        <div class="menu-item-has-children__trigger">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                        <div class="header__submenu">
-                                            <ul>
-                                                <?php foreach($other as $course): ?>
-                                                    <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                            <div class="header__submenu">
+                                                <ul>
+                                                    <?php foreach ($category['subcategories'] as $subcategory): ?>
+                                                        <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
@@ -184,7 +153,23 @@
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
                                     <?php foreach($labs as $lab): ?>
-                                        <li><a href="<?php echo get_term_link($lab); ?>"><?php echo $lab->name; ?></a></li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#"><?php echo $lab['category']->name; ?>
+                                                <div class="menu-item-has-children__trigger">
+                                                    <svg width="20" height="20">
+                                                        <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </div>
+                                            </a>
+
+                                            <div class="header__submenu">
+                                                <ul>
+                                                    <?php foreach ($lab['subcategories'] as $subcategory): ?>
+                                                        <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+                                        </li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -256,105 +241,41 @@
                         </div>
 
                         <ul>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Bachelor</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                            <?php foreach($academic_levels as $category): ?>
+                                <li class="menu-item-has-children">
+                                    <div class="menu-item-has-children__title">
+                                        <a href="#"><?php echo $category['category']->name; ?></a>
+                                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
-                                        <span>Courses</span>
                                     </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
+                                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                                        <div class="menu-item-has-children__title title-prev title-start">
+                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                            <span>Courses</span>
                                         </div>
-                                        <span>Bachelor</span>
-                                    </div>
-                                    <ul>
-                                        <?php foreach($bachelor as $course): ?>
-                                            <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Master</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
+                                        <div class="menu-item-has-children__title title-prev">
+                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                            <span><?php echo $category['category']->name; ?></span>
                                         </div>
-                                        <span>Courses</span>
+                                        <ul>
+                                            <?php foreach($category['subcategories'] as $subcategory): ?>
+                                                <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                            <?php endforeach; ?>
+                                        </ul>
                                     </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Master</span>
-                                    </div>
-                                    <ul>
-                                        <?php foreach($master as $course): ?>
-                                            <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <div class="menu-item-has-children__title">
-                                    <a href="#">Other</a>
-                                    <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                        <svg width="20" height="20">
-                                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="menu-item-has-children__submenu" data-scrollbar>
-                                    <div class="menu-item-has-children__title title-prev title-start">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Courses</span>
-                                    </div>
-                                    <div class="menu-item-has-children__title title-prev">
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <span>Other</span>
-                                    </div>
-                                    <ul>
-                                        <?php foreach($other as $course): ?>
-                                            <li><a href="<?php echo get_permalink($course->ID); ?>"><?php echo $course->post_title; ?></a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-                            </li>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </li>
@@ -459,12 +380,44 @@
                             </div>
                             <span>Labs</span>
                         </div>
+
                         <ul>
                             <?php foreach($labs as $lab): ?>
-                                <li><a href="<?php echo get_term_link($lab); ?>"><?php echo $lab->name; ?></a></li>
+                                <li class="menu-item-has-children">
+                                    <div class="menu-item-has-children__title">
+                                        <a href="#"><?php echo $lab['category']->name; ?></a>
+                                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
+                                            <svg width="20" height="20">
+                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                                        <div class="menu-item-has-children__title title-prev title-start">
+                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                            <span>Labs</span>
+                                        </div>
+                                        <div class="menu-item-has-children__title title-prev">
+                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
+                                                <svg width="20" height="20">
+                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </div>
+                                            <span><?php echo $lab['category']->name; ?></span>
+                                        </div>
+                                        <ul>
+                                            <?php foreach ($lab['subcategories'] as $subcategory): ?>
+                                                <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </li>
                             <?php endforeach; ?>
                         </ul>
-
                     </div>
                 </li>
             </ul>

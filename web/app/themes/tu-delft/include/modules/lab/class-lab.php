@@ -38,23 +38,6 @@ class Lab extends Abstract_Cpt {
     }
 
     /**
-     * Get lab types
-     * 
-     * @since 1.0.0
-     * 
-     * @return array
-     */
-    public static function get_header_lab_types(int $per_page = 6): array {
-        $lab_types = get_terms( [
-            'taxonomy' => 'lab-type',
-            'hide_empty' => false,
-            'posts_per_page' => $per_page,
-        ] );
-
-        return $lab_types;
-    }
-
-    /**
      * Get all lab types
      * 
      * @since 1.0.0
