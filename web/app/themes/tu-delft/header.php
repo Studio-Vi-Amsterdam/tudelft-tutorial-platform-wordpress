@@ -72,7 +72,7 @@
                     d="M3 6h18M3 12h18M3 18h18" />
             </svg>
         </div>
-        <a href="#" class="header__logo" aria-label="home-page">
+        <a href="<?php echo get_home_url(); ?>" class="header__logo" aria-label="home-page">
             <img width="300" height="74" src="<?= get_template_directory_uri() ?>/src/img/logo.svg" alt="logo">
         </a>
         <div class="header__menu">
