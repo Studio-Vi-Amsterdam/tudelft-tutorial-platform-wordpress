@@ -38,6 +38,10 @@
     // labs
     $labs = Lab::get_lab_types();
 
+    function generate_url($path, $param) {
+        return get_home_url() . $path . '?' . http_build_query($param);
+    }
+
 ?>
 
 
@@ -77,14 +81,15 @@
         <div class="header__menu">
             <div class="header__nav">
                 <ul>
-                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/subjects">Courses</a>
+                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/courses">Courses</a>
                         <div class="header__fader"></div>
                         <div class="header__submenu">
                             <div class="menu-item-has-children__wrapper">
                                 <ul>
                                     <?php foreach ($academic_levels as $category): ?>
                                         <li class="menu-item-has-children">
-                                            <a href="#"><?php echo $category['category']->name; ?>
+                                            <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug]); ?>">
+                                                <?php echo $category['category']->name; ?>
                                                 <div class="menu-item-has-children__trigger">
                                                     <svg width="20" height="20">
                                                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -95,7 +100,11 @@
                                             <div class="header__submenu">
                                                 <ul>
                                                     <?php foreach ($category['subcategories'] as $subcategory): ?>
-                                                        <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                        <li>
+                                                            <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
+                                                                <?php echo $subcategory->name; ?>
+                                                            </a>
+                                                        </li>
                                                     <?php endforeach; ?>
                                                 </ul>
                                             </div>
@@ -112,7 +121,8 @@
                                 <ul>
                                     <?php foreach ($categories as $category): ?>
                                         <li class="menu-item-has-children">
-                                            <a href="#"><?php echo $category['category']->name; ?>
+                                            <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug]); ?>">
+                                                <?php echo $category['category']->name; ?>
                                                 <div class="menu-item-has-children__trigger">
                                                     <svg width="20" height="20">
                                                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -123,7 +133,11 @@
                                             <div class="header__submenu">
                                                 <ul>
                                                     <?php foreach ($category['subcategories'] as $subcategory): ?>
-                                                        <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                        <li>
+                                                            <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
+                                                                <?php echo $subcategory->name; ?>
+                                                            </a>
+                                                        </li>
                                                     <?php endforeach; ?>
                                                 </ul>
                                             </div>
@@ -154,7 +168,8 @@
                                 <ul>
                                     <?php foreach($labs as $lab): ?>
                                         <li class="menu-item-has-children">
-                                            <a href="#"><?php echo $lab['category']->name; ?>
+                                            <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug]); ?>">
+                                                <?php echo $lab['category']->name; ?>
                                                 <div class="menu-item-has-children__trigger">
                                                     <svg width="20" height="20">
                                                         <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -165,7 +180,11 @@
                                             <div class="header__submenu">
                                                 <ul>
                                                     <?php foreach ($lab['subcategories'] as $subcategory): ?>
-                                                        <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                        <li>
+                                                            <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
+                                                                <?php echo $subcategory->name; ?>
+                                                            </a>
+                                                        </li>
                                                     <?php endforeach; ?>
                                                 </ul>
                                             </div>
@@ -244,7 +263,9 @@
                             <?php foreach($academic_levels as $category): ?>
                                 <li class="menu-item-has-children">
                                     <div class="menu-item-has-children__title">
-                                        <a href="#"><?php echo $category['category']->name; ?></a>
+                                        <a href="#">
+                                            <?php echo $category['category']->name; ?>
+                                        </a>
                                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -270,7 +291,11 @@
                                         </div>
                                         <ul>
                                             <?php foreach($category['subcategories'] as $subcategory): ?>
-                                                <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                <li>
+                                                    <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
+                                                        <?php echo $subcategory->name; ?>
+                                                    </a>
+                                                </li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </div>
@@ -328,7 +353,11 @@
                                         </div>
                                         <ul>
                                             <?php foreach($category['subcategories'] as $subcategory): ?>
-                                                <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                <li>
+                                                    <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">    
+                                                        <?php echo $subcategory->name; ?>
+                                                    </a>
+                                                </li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </div>
@@ -411,7 +440,11 @@
                                         </div>
                                         <ul>
                                             <?php foreach ($lab['subcategories'] as $subcategory): ?>
-                                                <li><a href="<?php echo get_term_link($subcategory); ?>"><?php echo $subcategory->name; ?></a></li>
+                                                <li>
+                                                    <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
+                                                        <?php echo $subcategory->name; ?>
+                                                    </a>
+                                                </li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </div>
