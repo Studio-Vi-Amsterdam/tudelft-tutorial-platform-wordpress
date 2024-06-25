@@ -3,6 +3,10 @@
 namespace TuDelft\Theme\Modules\Tutorial;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
+
+// TODO: move this error handling separately 
+error_reporting( E_ERROR );
+ini_set( 'display_errors', 0 );
 /**
  * Class Tutorial
  *
@@ -28,7 +32,7 @@ class Tutorial extends Abstract_Cpt {
         'public' => true,
         'show_in_rest' => true,
         'show_in_search' => false,
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
     ];
 

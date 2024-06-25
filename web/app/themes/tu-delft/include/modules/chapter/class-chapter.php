@@ -28,7 +28,7 @@ class Chapter extends Abstract_Cpt {
         'public' => true,
         'show_in_rest' => true,
         'show_in_search' => false,
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
     ];
 

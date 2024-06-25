@@ -69,7 +69,7 @@ abstract class Abstract_Cpt {
             'menu_icon' => $this->post_icon,
             'show_in_rest' => $this->extra_settings['show_in_rest'] ?? true,
             'show_in_search' => $this->extra_settings['show_in_search'] ?? true,
-            'has_archive' => $this->extra_settings['has_archive'] ?? true,
+            'has_archive' => $this->extra_settings['has_archive'] ?? false,
             'rewrite' => $this->rewrite,
         ] );
     }
