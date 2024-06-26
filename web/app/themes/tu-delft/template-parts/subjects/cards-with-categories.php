@@ -41,19 +41,18 @@ use TuDelft\Theme\Modules\Subject\Subject;
                             <div class="accordion__content-wrapper grid lg:grid-cols-2">
                                 <?php 
                                     // loop through grouped subjects and display by subcategory
-                                    foreach ( $grouped_subjects[$subcategory->name] as $course ) : 
+                                    foreach ( $grouped_subjects[$subcategory->name] as $subject ) : 
 
-                                        $image = get_field('featured_image', $course->ID);
+                                        $image = get_field('featured_image', $subject->ID);
                                 ?>
-                                    <a href="<?php the_permalink($course->ID); ?>" class="card-with-image">
+                                    <a href="<?php the_permalink($subject->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
                                             <figure class="card-with-image__image">
-                                                <img width="208" height="280" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                                <img width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
                                             </figure>
                                             <div class="card-with-image__content">
-                                                <h3>COURSE <?php the_field('course_code', $course->ID); ?></h3>
-                                                <h4><?php echo $course->post_title; ?></h4>
-                                                <p><?php echo get_field('description', $course->ID); ?></p>
+                                                <h4><?php echo $subject->post_title; ?></h4>
+                                                <?php echo wp_trim_words(get_field('description', $subject->ID), 20); ?>
                                                 <div class="arrow">
                                                     <svg width="14" height="22">
                                                         <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>

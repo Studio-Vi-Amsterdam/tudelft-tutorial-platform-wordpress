@@ -9,7 +9,7 @@
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -37,7 +37,7 @@
             "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -56,7 +56,7 @@
             "bidirectional_target": []
         },
         {
-            "key": "field_667002f0284dd",
+            "key": "field_6670028a64307",
             "label": "Course",
             "name": "course",
             "aria-label": "",
@@ -90,7 +90,7 @@
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -146,7 +146,7 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -162,18 +162,18 @@
         {
             "key": "field_664a186e4a6a4",
             "label": "Faculty",
-            "name": "faculty",
+            "name": "Faculty",
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "Bouwkunde",
+            "default_value": "BK",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -198,5 +198,5 @@
     "active": true,
     "description": "Fields related to tutorials",
     "show_in_rest": 0,
-    "modified": 1718616836
+    "modified": 1719436729
 }

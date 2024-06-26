@@ -42,15 +42,17 @@ use TuDelft\Theme\Modules\Lab\Lab;
                                 <?php 
                                     // loop through grouped subjects and display by subcategory
                                     foreach ( $grouped_subjects[$subcategory->name] as $course ) : 
+
+                                        $image = get_field('featured_image', $course->ID);
                                 ?>
                                     <a href="<?php the_permalink($course->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
                                             <figure class="card-with-image__image">
-                                                <img  width="208" height="280" src="<?php the_field('featured_image', $course->ID) ?>" alt="">
+                                                <img  width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
                                             </figure>
                                             <div class="card-with-image__content">
                                                 <h4><?php echo $course->post_title; ?></h4>
-                                                <p><?php echo get_field('description', $course->ID); ?></p>
+                                                <?php echo wp_trim_words(get_field('description', $course->ID), 20); ?>
                                                 <div class="arrow">
                                                     <svg width="14" height="22">
                                                         <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
