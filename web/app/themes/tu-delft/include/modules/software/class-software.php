@@ -23,6 +23,7 @@ class Software extends Abstract_Cpt {
     const POST_ICON = 'dashicons-desktop';
     const REWRITE = [];
     const TAXONOMY = [
+        [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'software-version', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
