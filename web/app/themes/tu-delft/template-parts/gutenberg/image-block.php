@@ -5,7 +5,6 @@
  */
 
 $image = get_field('tu-delft-image_image');
-
 ?>
 
 <div class="tutorial__content image">
