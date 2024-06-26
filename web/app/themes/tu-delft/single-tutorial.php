@@ -96,10 +96,10 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                     <td>Secondary Subject</td>
                     <td><?php echo Tutorial::get_secondary_subject( get_the_ID() ); ?></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Course</td>
                     <td>Course</td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Last updated</td>
                     <td><?php echo $last_updated_array['date'] ?? 'N/A' ?></td>
@@ -149,7 +149,7 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                     <td>Faculty</td>
                     <td>
                         <ul>
-                            <li><a href="#"><?php echo get_field('faculty', get_the_ID() ) ?: 'BK'; ?></a></li>
+                            <li><a href="#"><?php echo get_field('faculty', get_the_ID() ) ?: 'Bouwkunde'; ?></a></li>
                         </ul>
                     </td>
                 </tr>

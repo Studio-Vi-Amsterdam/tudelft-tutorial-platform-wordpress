@@ -29,11 +29,11 @@
                             <?php
                                 $image = get_field('featured_image', $element->ID) ?: $theme_url . '/src/img/card-with-image/2d.jpg';
                             ?>
-                            <img  width="208" height="280" src="<?php echo $image; ?>" alt="image">
+                            <img  width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
                         </figure>
                         <div class="card-with-image__content">
                             <h4><?php echo get_the_title($element->ID); ?></h4>
-                            <p><?php the_field('description', $element->ID) ?></p>
+                            <?php echp wp_trim_words(get_field('description', $element->ID), 20) ?>
                             <div class="arrow">
                                 <svg width="14" height="22">
                                     <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
