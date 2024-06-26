@@ -87,7 +87,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
+            "return_format": "array",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -145,5 +145,5 @@
     "active": true,
     "description": "Fields that are shown on Tutorials, Subjects, Courses and Softwares",
     "show_in_rest": 0,
-    "modified": 1719435702
+    "modified": 1719437407
 }

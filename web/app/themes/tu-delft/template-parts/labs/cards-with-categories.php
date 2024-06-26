@@ -52,7 +52,7 @@ use TuDelft\Theme\Modules\Lab\Lab;
                                             </figure>
                                             <div class="card-with-image__content">
                                                 <h4><?php echo $course->post_title; ?></h4>
-                                                <?php echo wp_trim_words(get_field('description', $course->ID), 20); ?>
+                                                <p><?php echo wp_trim_words(get_field('description', $course->ID), 20); ?></p>
                                                 <div class="arrow">
                                                     <svg width="14" height="22">
                                                         <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>

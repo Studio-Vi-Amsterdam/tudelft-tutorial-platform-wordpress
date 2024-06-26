@@ -52,7 +52,7 @@ use TuDelft\Theme\Modules\Course\Course;
                                             <div class="card-with-image__content">
                                                 <h3>COURSE <?php the_field('course_code', $course->ID); ?></h3>
                                                 <h4><?php echo $course->post_title; ?></h4>
-                                                <?php echo wp_trim_words(get_field('description', $course->ID), 20); ?>
+                                                <p><?php echo wp_trim_words(get_field('description', $course->ID), 20); ?></p>
                                                 <div class="arrow">
                                                     <svg width="14" height="22">
                                                         <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>

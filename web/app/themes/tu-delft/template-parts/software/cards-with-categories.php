@@ -71,7 +71,7 @@
                 <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
                     <?php 
                         foreach ($group_softwares as $software):
-                            $image = get_field('featured_image', $software->ID) ?: $theme_url . '/src/img/icons/btn-a.svg';
+                            $image = get_field('featured_image', $software->ID);
                     ?>
                         <a href="<?php echo get_permalink($software->ID) ?>" class="software-link" data-card>
                             <div class="software-link__wrapper">
@@ -79,9 +79,11 @@
                                     <h6>
                                         <?php echo $software->post_title ?>
                                     </h6>
+                                    <?php if( $image ) : ?>
                                     <figure class="software-link__icon">
-                                        <img width="44" height="40" src="<?php echo $image; ?>" alt="<?php echo $software->post_title ?> icon">
+                                        <img width="44" height="40" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $software->post_title ?> icon">
                                     </figure>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="arrow">
                                     <svg width="14" height="22">

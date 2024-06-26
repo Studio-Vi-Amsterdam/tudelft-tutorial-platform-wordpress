@@ -27,13 +27,13 @@
                     <div class="card-with-image__wrapper sm:flex">
                         <figure class="card-with-image__image">
                             <?php
-                                $image = get_field('featured_image', $element->ID) ?: $theme_url . '/src/img/card-with-image/2d.jpg';
+                                $image = get_field('featured_image', $element->ID);
                             ?>
-                            <img  width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
+                            <img width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
                         </figure>
                         <div class="card-with-image__content">
                             <h4><?php echo get_the_title($element->ID); ?></h4>
-                            <?php echp wp_trim_words(get_field('description', $element->ID), 20) ?>
+                            <p><?php echo wp_trim_words(get_field('description', $element->ID), 20); ?></p>
                             <div class="arrow">
                                 <svg width="14" height="22">
                                     <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
