@@ -97,7 +97,28 @@
                         </a>
                     <?php endforeach; ?>
                 </div>
+                <div class="cards-with-categories__pagination pagination flex items-center justify-center">
+                    <a href="#" class="pagination__button pagination__button--prev flex items-center justify-center">
+                        <svg width="20" height="20">
+                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                        </svg>
+
+                    </a>
+                    <div class="pagination__list">
+                        <div class="pagination__bg"></div>
+                        <ul class="flex items-center justify-center">
+
+                        </ul>
+                    </div>
+                    <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
+                        <svg width="20" height="20">
+                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                        </svg>
+
+                    </a>
+                </div>
             </div>
         <?php endforeach; ?>
+        
     </div>
 </section>
