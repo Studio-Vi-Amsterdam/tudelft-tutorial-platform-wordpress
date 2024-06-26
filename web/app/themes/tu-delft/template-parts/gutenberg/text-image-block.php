@@ -14,7 +14,7 @@ $image = get_field('tu-delft-text-image_image');
             <figure>
                 <img data-image-src="<?php echo $image['url']; ?>" width="<?php echo $image['sizes']['large-width']; ?>" height="<?php echo $image['sizes']['large-height']; ?>" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                 <figcaption>
-                    <?php echo $image['caption']; ?>
+                    <?php echo get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']; ?>
                 </figcaption>
             </figure>
         </div>

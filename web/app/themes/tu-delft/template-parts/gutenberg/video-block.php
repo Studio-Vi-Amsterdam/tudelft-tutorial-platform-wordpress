@@ -20,7 +20,7 @@ $theme_url = get_template_directory_uri();
             </div>
         </div>
         <figcaption>
-            Image From: Murphy, K. P. (2021). Figure 14.4. In Machine Learning: A Probabilistic Perspective. textbook, MIT Press.
+            <?php echo get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']; ?>
         </figcaption>
     </figure>
 </div>
