@@ -192,3 +192,11 @@ add_theme_support(
 
 if (function_exists('add_image_size')) {
 }
+
+// Register query vars
+function add_query_vars_filter( $vars ){
+  $vars[] = "category";
+  $vars[] = "subcategory";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );

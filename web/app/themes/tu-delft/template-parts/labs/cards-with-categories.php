@@ -6,6 +6,9 @@ use TuDelft\Theme\Modules\Lab\Lab;
     
     $categories = get_field('lab-type', get_the_ID());
 
+    $selectedCategory = get_query_var('category');
+    $selectedSubCategory = get_query_var('subcategory');
+
     if ( empty($categories) ) {
         $categories = Lab::get_lab_types();
     } else {
@@ -19,7 +22,7 @@ use TuDelft\Theme\Modules\Lab\Lab;
     <div class="cards-with-categories__categories categories" data-scrollbar>
         <div class="categories__wrapper flex">
             <?php foreach ( $categories as $key => $category ) :  ?>
-                <div class="categories__item <?php echo $key === 0 ? 'categories__item--active transition' : '' ?>" data-category-target="chapter-<?php echo $key; ?>">
+                <div class="categories__item <?php echo (((!empty($selectedCategory) && $selectedCategory === $category['category']->slug) || (empty($selectedCategory) && $key === 0)) ? 'categories__item--active transition' : ''); ?>" data-category-target="chapter-<?php echo $key; ?>">
                     <a href="#"><?= $category['category']->name; ?>
                         <span class="categories__bg"></span>
                         <span class="categories__text"><span><?= $category['category']->name; ?></span></span>
@@ -30,10 +33,10 @@ use TuDelft\Theme\Modules\Lab\Lab;
     </div>
     <div class="cards-with-categories__wrapper">
         <?php foreach ( $categories as $key => $category ) :  ?>
-            <div class="cards-with-categories__content <?php echo $key === 0 ? 'active' : ''; ?>" data-category-content="chapter-<?php echo $key; ?>">
+            <div class="cards-with-categories__content <?php echo (((!empty($selectedCategory) && $selectedCategory === $category['category']->slug) || (empty($selectedCategory) && $key === 0)) ? 'active' : ''); ?>" data-category-content="chapter-<?php echo $key; ?>">
                 <?php foreach ( $category['subcategories'] as $subcategory ) : ?>
                     <div class="cards-with-categories__item accordion">
-                        <div class="accordion__head flex items-center justify-between">
+                        <div class="accordion__head flex items-center justify-between <?php echo $selectedSubCategory.' '; echo $subcategory->slug.' '; echo ((!empty($selectedSubCategory) && $selectedSubCategory === $subcategory->slug) ? 'opened' : ''); ?>">
                             <h2><?php echo $subcategory->name; ?></h2>
                             <button aria-label="open accordion"></button>
                         </div>
