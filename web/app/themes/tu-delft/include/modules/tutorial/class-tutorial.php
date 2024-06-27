@@ -21,7 +21,7 @@ ini_set( 'display_errors', 0 );
 class Tutorial extends Abstract_Cpt {
 
     const POST_TYPE = 'tutorial';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-welcome-learn-more';
     const REWRITE = [];
     const TAXONOMY = [

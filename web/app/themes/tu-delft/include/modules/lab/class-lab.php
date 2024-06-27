@@ -19,7 +19,7 @@ use WP_Query;
 class Lab extends Abstract_Cpt {
 
     const POST_TYPE = 'lab';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-color-picker';
     const REWRITE = [];
     const TAXONOMY = [

@@ -18,7 +18,7 @@ use TuDelft\Theme\Abstract\Abstract_Cpt;
 class Chapter extends Abstract_Cpt {
 
     const POST_TYPE = 'chapter';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-media-document';
     const REWRITE = [];
     const TAXONOMY = [

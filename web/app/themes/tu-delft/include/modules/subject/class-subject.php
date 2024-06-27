@@ -19,7 +19,7 @@ use WP_Query;
 class Subject extends Abstract_Cpt {
 
     const POST_TYPE = 'subject';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-book';
     const REWRITE = [];
     const TAXONOMY = [

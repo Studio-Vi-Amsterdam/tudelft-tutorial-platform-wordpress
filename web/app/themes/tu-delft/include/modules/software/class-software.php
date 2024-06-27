@@ -19,7 +19,7 @@ use WP_Query;
 class Software extends Abstract_Cpt {
 
     const POST_TYPE = 'software';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-desktop';
     const REWRITE = [];
     const TAXONOMY = [
