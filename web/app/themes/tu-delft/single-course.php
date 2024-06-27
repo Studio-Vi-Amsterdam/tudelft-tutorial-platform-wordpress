@@ -78,16 +78,18 @@ $theme_url = get_template_directory_uri();
         <div class="tutorial__nav information">
             <h4>Information</h4>
             <table>
-                <tr>
-                    <td>Course Code</td>
-                    <td><?php the_field('course_code'); ?></td>
-                </tr>
+                <?php if ($code = get_field('course_code')) : ?>
+                    <tr>
+                        <td>Course Code</td>
+                        <td><?php echo $code; ?></td>
+                    </tr>
+                <?php endif; ?>
                 <tr>
                     <td>Last updated</td>
                     <td><?php echo $last_updated_array['date'] ?? 'N/A' ?></td>
                 </tr>
-                <tr>
-                    <?php if ( $keywords = Course::get_keywords( get_the_ID() ) ) : ?>
+                <?php if ( $keywords = Course::get_keywords( get_the_ID() ) ) : ?>
+                    <tr>
                         <td>Keywords</td>
                         <td>
                             <ul>
@@ -100,10 +102,10 @@ $theme_url = get_template_directory_uri();
                                 ?>
                             </ul>
                         </td>
-                    <?php endif; ?>
-                </tr>
-                <tr>
-                    <?php if ( $levels = Course::get_single_course_academic_levels( get_the_ID() ) ) : ?>
+                    </tr>
+                <?php endif; ?>
+                <?php if ( $levels = Course::get_single_course_academic_levels( get_the_ID() ) ) : ?>
+                    <tr>
                         <td>Study</td>
                         <td>
                             <ul>
@@ -116,8 +118,8 @@ $theme_url = get_template_directory_uri();
                                 ?>
                             </ul>
                         </td>
-                    <?php endif; ?>
-                </tr>
+                    </tr>
+                <?php endif; ?>
             </table>
         </div>
         <div class="tutorial__nav responsible">

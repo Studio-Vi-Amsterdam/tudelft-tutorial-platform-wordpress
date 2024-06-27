@@ -82,8 +82,8 @@ $parent_category_id = 0;
                     <td>Last updated</td>
                     <td><?php echo $last_updated_array['date'] ?? 'N/A' ?></td>
                 </tr>
-                <tr>
-                    <?php if ( $lab_types = Lab::get_single_lab_types( get_the_ID() ) ) : ?>
+                <?php if ( $lab_types = Lab::get_single_lab_types( get_the_ID() ) ) : ?>
+                    <tr>
                         <td>Primary Category</td>
                         <td>
                             <ul>
@@ -96,8 +96,8 @@ $parent_category_id = 0;
                                 ?>
                             </ul>
                         </td>
-                    <?php endif; ?>
-                </tr>
+                    </tr>
+                <?php endif; ?>
             </table>
         </div>
         <div class="tutorial__nav responsible">

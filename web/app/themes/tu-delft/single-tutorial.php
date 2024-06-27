@@ -80,32 +80,36 @@ $software = Tutorial::get_primary_software( get_the_ID() );
         <div class="tutorial__nav information">
             <h4>Information</h4>
             <table>
-                 <tr>
-                    <td>Primary Software Used</td>
-                    <td><?php echo $software['name'] ?? 'N/A'; ?></td>
-                </tr>
-                 <tr>
-                    <td>Software Version</td>
-                    <td><?php echo $software['version'] ?? 'N/A'; ?></td>
-                </tr>
-                <tr>
-                    <td>Primary Subject</td>
-                    <td><?php echo Tutorial::get_primary_subject( get_the_ID() ); ?></td>
-                </tr>
-                <tr>
-                    <td>Secondary Subject</td>
-                    <td><?php echo Tutorial::get_secondary_subject( get_the_ID() ); ?></td>
-                </tr>
-                <!-- <tr>
-                    <td>Course</td>
-                    <td>Course</td>
-                </tr> -->
+                <?php if ( $software['name'] ) : ?>
+                    <tr>
+                        <td>Primary Software Used</td>
+                        <td><?php echo $software['name'] ?? 'N/A'; ?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if ( $software['version'] ) : ?>
+                    <tr>
+                        <td>Software Version</td>
+                        <td><?php echo $software['version'] ?? 'N/A'; ?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if ( $primary_subject = Tutorial::get_primary_subject( get_the_ID() ) ) : ?>
+                    <tr>
+                        <td>Primary Subject</td>
+                        <td><?php echo $primary_subject; ?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if ( $secondary_subject = Tutorial::get_secondary_subject( get_the_ID() ) ) : ?>
+                    <tr>
+                        <td>Secondary Subject</td>
+                        <td><?php echo $secondary_subject; ?></td>
+                    </tr>
+                <?php endif; ?>
                 <tr>
                     <td>Last updated</td>
                     <td><?php echo $last_updated_array['date'] ?? 'N/A' ?></td>
                 </tr>
-                <tr>
-                    <?php if ( $keywords = Tutorial::get_keywords( get_the_ID() ) ) : ?>
+                <?php if ( $keywords = Tutorial::get_keywords( get_the_ID() ) ) : ?>
+                    <tr>  
                         <td>Keywords</td>
                         <td>
                             <ul>
@@ -118,8 +122,8 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                                 ?>
                             </ul>
                         </td>
-                    <?php endif; ?>
-                </tr>
+                    </tr>
+                <?php endif; ?>
             </table>
         </div>
         <div class="tutorial__nav responsible">

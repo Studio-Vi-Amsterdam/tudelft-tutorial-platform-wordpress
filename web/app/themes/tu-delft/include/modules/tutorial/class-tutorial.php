@@ -134,6 +134,10 @@ class Tutorial extends Abstract_Cpt {
      */
     public static function get_primary_subject( int $tutorial_id ) : string {
         $subject_id = get_field( 'primary_subject', $tutorial_id );
+        
+        if ( empty( $subject_id ) ) {
+            return '';
+        }
         $subject_name = get_the_title( $subject_id );
 
         return $subject_name;

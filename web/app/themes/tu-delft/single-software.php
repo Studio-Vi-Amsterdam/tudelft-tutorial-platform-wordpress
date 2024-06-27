@@ -82,8 +82,8 @@ $theme_url = get_template_directory_uri();
                     <td>Last updated</td>
                     <td><?php echo $last_updated_array['date'] ?? 'N/A' ?></td>
                 </tr>
-                <tr>
-                    <?php if ( $versions = Software::get_software_versions( get_the_ID() ) ) : ?>
+                <?php if ( $versions = Software::get_software_versions( get_the_ID() ) ) : ?>
+                    <tr>
                         <td>Software Versions</td>
                         <td>
                             <ul>
@@ -96,8 +96,8 @@ $theme_url = get_template_directory_uri();
                                 ?>
                             </ul>
                         </td>
-                    <?php endif; ?>
-                </tr>
+                    </tr>
+                <?php endif; ?>
             </table>
         </div>
         <div class="tutorial__nav responsible">
