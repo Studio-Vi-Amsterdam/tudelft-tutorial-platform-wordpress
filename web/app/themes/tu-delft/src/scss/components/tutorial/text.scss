@@ -9,6 +9,10 @@
         margin-top: 0;
     }
 
+    &.two-column__item--text {
+        margin-top: 0;
+    }
+
 
     h1 {
         @extend .h1;
@@ -75,4 +79,8 @@
     .btn {
         margin-top: 2.4rem;
     }
+    a:not(.link-box) {
+        color: $secondary;
+        text-decoration: underline;
+    };
 }
