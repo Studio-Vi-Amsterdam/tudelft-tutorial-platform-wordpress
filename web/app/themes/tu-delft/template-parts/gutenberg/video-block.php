@@ -22,7 +22,7 @@ $placeholder = get_the_post_thumbnail_url($video['ID'], 'large');
             </div>
         </div>
         <figcaption>
-            <?php echo $video['caption']; ?>
+            <?php echo get_post_meta( $video['ID'], 'title', true ) ? : $video['alt']; ?>
         </figcaption>
     </figure>
 </div>
