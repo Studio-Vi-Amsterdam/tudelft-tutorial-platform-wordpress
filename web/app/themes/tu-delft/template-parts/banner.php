@@ -2,7 +2,7 @@
 <section class="banner">
     <div class="banner__wrapper md:flex items-start justify-between">
         <figure class="banner__bg">
-            <img  width="1224" height="272" src="<?= $theme_url ?>/src/img/banner.jpg" alt="image">
+            <img width="1224" height="272" src="<?= $theme_url ?>/src/img/home-banner.jpeg" alt="Digipedia">
         </figure>
         <div class="banner__title">
             <h1>
