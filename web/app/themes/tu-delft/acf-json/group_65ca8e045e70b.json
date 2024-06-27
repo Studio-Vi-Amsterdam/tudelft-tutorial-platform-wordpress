@@ -173,7 +173,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "BK",
+            "default_value": "Bouwkunde",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -198,5 +198,5 @@
     "active": true,
     "description": "Fields related to tutorials",
     "show_in_rest": 0,
-    "modified": 1719436729
+    "modified": 1719472337
 }
