@@ -9,9 +9,9 @@ $video = get_field('tu-delft-text-video_video');
 $placeholder = get_the_post_thumbnail_url($video['ID'], 'large');
 ?>
 <div class="text-video-block-wrapper video" data-video-src="<?php echo $video['url']; ?>">
-    <?php
-        get_template_part('template-parts/gutenberg/chapter-subtitle');
-    ?>
+    <?php if ( $title = get_field('tu-delft-text-video_title') ) : ?>
+        <h4><?php echo $title; ?></h4>
+    <?php endif; ?>
     <div class="two-blocks-wrapper">
         <div class="text-wrapper">
             <?php the_field('tu-delft-text-video_content'); ?>

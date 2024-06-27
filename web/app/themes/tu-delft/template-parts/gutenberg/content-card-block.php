@@ -4,9 +4,9 @@
  */
 ?>
 <div class="tutorial__content text">
-    <?php
-        get_template_part('template-parts/gutenberg/chapter-subtitle');
-    ?>
+    <?php if ( $title = get_field('tu-delft-content-card_title') ) : ?>
+        <h4><?php echo $title; ?></h4>
+    <?php endif; ?> 
     <div class="grid-links grid lg:grid-cols-2 ">
         <?php 
             foreach(get_field('tu-delft-content-card_content_card_row') as $content_card):
