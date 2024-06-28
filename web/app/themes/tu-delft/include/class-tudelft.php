@@ -30,6 +30,8 @@ class Tu_Delft {
         
         add_action( 'wp_ajax_submit_feedback', [ $this, 'submit_feedback' ] );
         add_action( 'wp_ajax_nopriv_submit_feedback', [ $this, 'submit_feedback' ] );
+
+        add_action( 'template_redirect', [ $this, 'logout_user' ] );
     }
 
     /**
@@ -144,4 +146,21 @@ class Tu_Delft {
 
     }
 
+    /**
+     * Logout user
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function logout_user(): void {
+        // check is user trying to reach /logout
+        $path = $_SERVER['REQUEST_URI'] ?? $_SERVER['REQUEST_URL'] ?? '';
+
+        if ( strpos($path, 'logout') !== false) {
+            wp_logout();
+            wp_redirect( home_url() );
+            exit;
+        }
+    }
 }
