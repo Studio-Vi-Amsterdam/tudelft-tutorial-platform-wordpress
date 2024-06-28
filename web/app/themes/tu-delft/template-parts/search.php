@@ -186,7 +186,7 @@
             </div>
         <?php endforeach; ?>
      </div>
-     <!-- <div class="search__pagination pagination flex items-center justify-center">
+     <div class="search__pagination pagination flex items-center justify-center">
         <a href="#" class="pagination__button pagination__button--prev flex items-center justify-center">
             <svg width="20" height="20">
                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -205,6 +205,6 @@
             </svg>
             
         </a>
-     </div> -->
+     </div>
      </div>
 </section>
