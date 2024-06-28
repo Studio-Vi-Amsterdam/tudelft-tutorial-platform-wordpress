@@ -3,6 +3,7 @@
 namespace TuDelft\Theme\Modules\Tutorial;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
+use WP_Query;
 
 // TODO: move this error handling separately 
 error_reporting( E_ERROR );
@@ -160,5 +161,33 @@ class Tutorial extends Abstract_Cpt {
         $subject_name = get_the_title( $secondary_subject_id );
 
         return $subject_name;
+    }
+
+    /**
+     * Search through tutorials by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_tutorials( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
     }
 }

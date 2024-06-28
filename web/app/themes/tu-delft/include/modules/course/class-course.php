@@ -243,4 +243,33 @@ class Course extends Abstract_Cpt {
 
         return $academic_level;
     }
+
+    /**
+     * Search through courses by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_courses( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
+    }
+    
 }

@@ -23,6 +23,7 @@ class Lab extends Abstract_Cpt {
     const POST_ICON = 'dashicons-color-picker';
     const REWRITE = [];
     const TAXONOMY = [
+        [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'lab-type', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
@@ -185,6 +186,28 @@ class Lab extends Abstract_Cpt {
         return $chapters;
     }
 
+    /** 
+     * Get lab keywords
+     */
+    public static function get_keywords( int $lab_id ) : array|bool {
+        $keywords = get_the_terms( $lab_id, 'keywords' );
+
+        // If this tutorial does not have any keywords, return false.
+        if ( empty( $keywords ) ) {
+            return false;
+        }
+
+        $keywords = array_map( function( $keyword ) {
+            return [
+                'id' => $keyword->term_id,
+                'name' => $keyword->name,
+                'slug' => $keyword->slug,
+            ];
+        }, $keywords );
+
+        return $keywords;
+    }
+
     /**
      * Get all lab types that belong to this lab.
      * 
@@ -211,5 +234,33 @@ class Lab extends Abstract_Cpt {
         }, $lab_type );
 
         return $lab_type;
+    }
+
+    /**
+     * Search through labs by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_labs( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
     }
 }

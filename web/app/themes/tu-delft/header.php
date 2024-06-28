@@ -221,7 +221,9 @@
                                 d="M23.123 24.137a.784.784 0 001.08 0 .718.718 0 000-1.042l-1.08 1.042zm-6.27-6.046l6.27 6.046 1.08-1.042-6.27-6.045-1.08 1.04z" />
                         </svg>
                     </button>
-                    <input type="text" placeholder="Search">
+                    <form id="search-form" action="<?php echo get_home_url(); ?>/search" method="get">
+                        <input type="text" placeholder="Search" id="global-search" name="term">
+                    </form>
                 </div>
             </div>
             <a href="#" class="header__account header__icon" aria-label="account">

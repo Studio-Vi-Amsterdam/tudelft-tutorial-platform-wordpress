@@ -258,4 +258,60 @@ class Subject extends Abstract_Cpt {
 
         return $subcategory;
     }
+
+    /** 
+     * Get subject keywords
+     * 
+     * @since 1.0.0
+     * 
+     * @param int $subject_id
+     * 
+     * @return array|bool
+     */
+    public static function get_keywords( int $subject_id ) : array|bool {
+        $keywords = get_the_terms( $subject_id, 'keywords' );
+
+        // If this tutorial does not have any keywords, return false.
+        if ( empty( $keywords ) ) {
+            return false;
+        }
+
+        $keywords = array_map( function( $keyword ) {
+            return [
+                'id' => $keyword->term_id,
+                'name' => $keyword->name,
+                'slug' => $keyword->slug,
+            ];
+        }, $keywords );
+
+        return $keywords;
+    }
+
+    /**
+     * Search through subjects by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_subjects( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
+    }
 }

@@ -20,6 +20,7 @@ import { openFilter } from "./components/filters";
 import { textareaScrollBar } from "./components/textarea-scrollbar";
 import ModalImageWindow from "./components/ModalWindow/ModalImageWindow";
 import { submitFeedback } from "./components/submit-feedback";
+import { headerSearch } from "./components/search";
 
 
 export function runAfterDomLoad() {
@@ -94,6 +95,7 @@ export function runAfterDomLoad() {
                         initPagination()
                         openFilter()
                         textareaScrollBar()
+                        headerSearch()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 
                     }, timeout);
