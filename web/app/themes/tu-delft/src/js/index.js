@@ -20,6 +20,8 @@ import { openFilter } from "./components/filters";
 import { textareaScrollBar } from "./components/textarea-scrollbar";
 import ModalImageWindow from "./components/ModalWindow/ModalImageWindow";
 import { submitFeedback } from "./components/submit-feedback";
+import { copyLink } from "./components/copy-link";
+import { zoomImage } from "./components/zoom-image";
 
 
 export function runAfterDomLoad() {
@@ -94,6 +96,8 @@ export function runAfterDomLoad() {
                         initPagination()
                         openFilter()
                         textareaScrollBar()
+                        copyLink()
+                        zoomImage()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 
                     }, timeout);

@@ -29,8 +29,69 @@
         @extend .h6;
         line-height: 1.2;
         font-weight: 700;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
         @media(min-width: $tabletSmallP1) {
             padding-top: 4rem;
+        }
+        &:hover {
+            span {
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+        span {
+            display: inline-block;
+            position: relative;
+            padding-left: 4.4rem;
+            margin-left: 2rem;
+            font-size: 1.2rem;
+            color: #67676b00;
+            transition: 170ms linear;
+            font-weight: normal;
+            &:before {
+                position: absolute;
+                content: '';
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.9026 6.91925L16.1561 6.70653C17.4985 5.58017 19.4998 5.75526 20.6261 7.09761V7.09761C21.7525 8.43996 21.5774 10.4412 20.235 11.5676L13.7536 17.0062C12.4113 18.1326 10.41 17.9575 9.28361 16.6151V16.6151C8.15724 15.2728 8.33233 13.2715 9.67468 12.1451L12.7985 9.52394' stroke='%2300A6D6'/%3E%3Cpath d='M10.9848 15.2817L14.3536 12.3998C15.6825 11.263 15.8475 9.26785 14.7234 7.92818V7.92818C13.5917 6.57944 11.5809 6.40351 10.2321 7.53524L3.76226 12.9641C2.41991 14.0905 2.24482 16.0918 3.37119 17.4341V17.4341C4.49755 18.7765 6.49884 18.9515 7.84119 17.8252L8.18781 17.5343' stroke='%2300A6D6'/%3E%3C/svg%3E%0A");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                opacity: 0;
+                transition: 170ms linear;
+            }
+            &:after{
+                position: absolute;
+                content: '';
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 13L11 17.5L19 6' stroke='%2367676B' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");                    background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                opacity: 0;
+                transition: 170ms linear;
+            }
+        }
+        &.copied {
+            span {
+                color: #67676B;
+                &::before{
+                    opacity: 0;
+                }
+                &:after{
+                    opacity: 1;
+                }
+
+            }
         }
     }
 

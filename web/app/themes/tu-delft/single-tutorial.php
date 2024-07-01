@@ -162,7 +162,7 @@ $software = Tutorial::get_primary_software( get_the_ID() );
         <div class="tutorial__item" data-tab-content="chapter-0">
             <div class="tutorial__content text intro">
                 <h2><?php the_title(); ?> 0/<?php echo count( $chapters ); ?></h2>
-                <h3><?php the_title(); ?></h3>
+                <h3><?php the_title(); ?> <span>link copied</span></h3>
                 <?php echo get_field('description'); ?>
             </div>
             <div class="tutorial__content text">
@@ -401,7 +401,7 @@ $software = Tutorial::get_primary_software( get_the_ID() );
         <div class="tutorial__item" data-tab-content="chapter-<?= ($key+1) ?>">
             <div class="tutorial__content text">
                 <h2><?php echo $chapter['title']; ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
-                <h3><?php echo $chapter['title']; ?></h3>
+                <h3><?php echo $chapter['title']; ?> <span>link copied</span></h3>
             </div>
             <?php echo $chapter['content']; ?>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">
