@@ -70,8 +70,8 @@ class Software extends Abstract_Cpt {
         $amount = count($softwares);
 
         $per_column = ceil($amount / $columns);
-
-        $matrix = array_chunk($softwares, $per_column);
+        
+        $matrix = array_chunk($softwares, $per_column > 1 ? $per_column : 1);
 
         return $matrix;
     }

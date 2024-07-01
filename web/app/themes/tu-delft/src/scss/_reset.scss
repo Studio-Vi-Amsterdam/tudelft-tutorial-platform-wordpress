@@ -110,11 +110,6 @@ body, html {
       flex-direction: column;
     }
   }
-  ::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-  }
-
   .hide-scrollbar {
     & >  .scrollbar-track-y {
       display: none !important;
