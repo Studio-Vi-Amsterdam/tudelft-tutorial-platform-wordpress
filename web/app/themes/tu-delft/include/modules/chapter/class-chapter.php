@@ -117,11 +117,17 @@ class Chapter extends Abstract_Cpt {
             }
         }
 
+        $date = the_modified_date( 'F j, Y', $last_updated_chapter, "", "", false );
+
+        // TODO: Investigate why it returns array in string
+        $date = str_replace( 'Array', '', $date );
+
+
         return [
             'id' => $last_updated_chapter,
             'title' => get_the_title( $last_updated_chapter ),
             'url' => get_permalink( $last_updated_chapter ),
-            'date' => $last_updated_chapter ? get_the_modified_date( 'F j, Y', $last_updated_chapter ) : false,
+            'date' => $date ?: false,
             'content' => get_the_content( $last_updated_chapter )
         ];
 
