@@ -148,7 +148,7 @@ class Subject extends Abstract_Cpt {
             
             // we only need them matched to children
             foreach ( $level['subcategories'] as $subcategory ) {
-                $subjects[ $subcategory->name ] = self::get_subjects_by_category( [ $subcategory->slug ] );
+                $subjects[ $subcategory->name ] = self::get_subjects_by_category( [ $subcategory->slug ], -1 );
             }
         }
 
