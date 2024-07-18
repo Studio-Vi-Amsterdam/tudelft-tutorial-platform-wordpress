@@ -87,7 +87,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "array",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -127,6 +127,13 @@
                 "operator": "==",
                 "value": "course"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "lab"
+            }
         ]
     ],
     "menu_order": 0,
@@ -138,5 +145,5 @@
     "active": true,
     "description": "Fields that are shown on Tutorials, Subjects, Courses and Softwares",
     "show_in_rest": 0,
-    "modified": 1717154545
+    "modified": 1719437407
 }

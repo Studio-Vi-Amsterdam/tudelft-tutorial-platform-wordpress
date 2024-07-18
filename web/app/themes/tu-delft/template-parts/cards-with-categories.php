@@ -6,6 +6,9 @@ use TuDelft\Theme\Modules\Course\Course;
     
     $categories = get_field('academic_levels', get_the_ID());
 
+    $selectedCategory = get_query_var('category');
+    $selectedSubCategory = get_query_var('subcategory');
+
     if ( empty($categories) ) {
         $categories = Course::get_academic_levels();
     } else {
@@ -18,7 +21,7 @@ use TuDelft\Theme\Modules\Course\Course;
     <div class="cards-with-categories__categories categories" data-scrollbar>
         <div class="categories__wrapper flex">
             <?php foreach ( $categories as $key => $category ) :  ?>
-                <div class="categories__item <?php echo $key === 0 ? 'categories__item--active transition' : '' ?>" data-category-target="chapter-<?php echo $key; ?>">
+                <div class="categories__item <?php echo (((!empty($selectedCategory) && $selectedCategory === $category['category']->slug) || (empty($selectedCategory) && $key === 0)) ? 'categories__item--active transition' : ''); ?>" data-category-target="chapter-<?php echo $key; ?>">
                     <a href="#"><?= $category['category']->name; ?>
                         <span class="categories__bg"></span>
                         <span class="categories__text"><span><?= $category['category']->name; ?></span></span>
@@ -29,10 +32,10 @@ use TuDelft\Theme\Modules\Course\Course;
     </div>
     <div class="cards-with-categories__wrapper">
         <?php foreach ( $categories as $key => $category ) :  ?>
-            <div class="cards-with-categories__content <?php echo $key === 0 ? 'active' : ''; ?>" data-category-content="chapter-<?php echo $key; ?>">
+            <div class="cards-with-categories__content <?php echo (((!empty($selectedCategory) && $selectedCategory === $category['category']->slug) || (empty($selectedCategory) && $key === 0)) ? 'active' : ''); ?>" data-category-content="chapter-<?php echo $key; ?>">
                 <?php foreach ( $category['subcategories'] as $subcategory ) : ?>
                     <div class="cards-with-categories__item accordion">
-                        <div class="accordion__head flex items-center justify-between">
+                        <div class="accordion__head flex items-center justify-between <?php echo $selectedSubCategory.' '; echo $subcategory->slug.' '; echo ((!empty($selectedSubCategory) && $selectedSubCategory === $subcategory->slug) ? 'opened' : ''); ?>">
                             <h2><?php echo $subcategory->name; ?></h2>
                             <button aria-label="open accordion"></button>
                         </div>
@@ -41,16 +44,18 @@ use TuDelft\Theme\Modules\Course\Course;
                                 <?php 
                                     // loop through grouped courses and display by subcategory
                                     foreach ( $grouped_courses[$subcategory->name] as $course ) : 
+
+                                        $image = get_field('featured_image', $course->ID);
                                 ?>
                                     <a href="<?php the_permalink($course->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
                                             <figure class="card-with-image__image">
-                                                <img  width="208" height="280" src="<?= $theme_url ?>/src/img/card-with-image/card1.jpg" alt="image">
+                                                <img width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
                                             </figure>
                                             <div class="card-with-image__content">
                                                 <h3>COURSE <?php the_field('course_code', $course->ID); ?></h3>
                                                 <h4><?php echo $course->post_title; ?></h4>
-                                                <p><?php echo get_field('description', $course->ID); ?></p>
+                                                <p><?php echo wp_trim_words(get_field('description', $course->ID), 20); ?></p>
                                                 <div class="arrow">
                                                     <svg width="14" height="22">
                                                         <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>

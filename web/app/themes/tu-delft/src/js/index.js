@@ -22,6 +22,7 @@ import ModalImageWindow from "./components/ModalWindow/ModalImageWindow";
 import { submitFeedback } from "./components/submit-feedback";
 import { copyLink } from "./components/copy-link";
 import { zoomImage } from "./components/zoom-image";
+import { headerSearch } from "./components/search";
 
 
 export function runAfterDomLoad() {
@@ -98,6 +99,7 @@ export function runAfterDomLoad() {
                         textareaScrollBar()
                         copyLink()
                         zoomImage()
+                        headerSearch()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 
                     }, timeout);

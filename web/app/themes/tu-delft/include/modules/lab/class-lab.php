@@ -19,39 +19,23 @@ use WP_Query;
 class Lab extends Abstract_Cpt {
 
     const POST_TYPE = 'lab';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-color-picker';
     const REWRITE = [];
     const TAXONOMY = [
+        [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'lab-type', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
         'show_in_rest' => true,
         'show_in_search' => false,
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
     ];
 
     public function __construct() {
         parent::__construct( self::POST_TYPE, self::POST_SUPPORTS, self::POST_ICON, self::REWRITE, self::TAXONOMY, self::EXTRA_SETTINGS );
-    }
-
-    /**
-     * Get lab types
-     * 
-     * @since 1.0.0
-     * 
-     * @return array
-     */
-    public static function get_header_lab_types(int $per_page = 6): array {
-        $lab_types = get_terms( [
-            'taxonomy' => 'lab-type',
-            'hide_empty' => false,
-            'posts_per_page' => $per_page,
-        ] );
-
-        return $lab_types;
     }
 
     /**
@@ -202,6 +186,28 @@ class Lab extends Abstract_Cpt {
         return $chapters;
     }
 
+    /** 
+     * Get lab keywords
+     */
+    public static function get_keywords( int $lab_id ) : array|bool {
+        $keywords = get_the_terms( $lab_id, 'keywords' );
+
+        // If this tutorial does not have any keywords, return false.
+        if ( empty( $keywords ) ) {
+            return false;
+        }
+
+        $keywords = array_map( function( $keyword ) {
+            return [
+                'id' => $keyword->term_id,
+                'name' => $keyword->name,
+                'slug' => $keyword->slug,
+            ];
+        }, $keywords );
+
+        return $keywords;
+    }
+
     /**
      * Get all lab types that belong to this lab.
      * 
@@ -228,5 +234,33 @@ class Lab extends Abstract_Cpt {
         }, $lab_type );
 
         return $lab_type;
+    }
+
+    /**
+     * Search through labs by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_labs( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
     }
 }

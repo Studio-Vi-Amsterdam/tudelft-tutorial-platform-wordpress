@@ -13,6 +13,10 @@ $ext = pathinfo($file['url'], PATHINFO_EXTENSION);
 $theme_url = get_template_directory_uri();
 ?>
 
+<?php if ( $title = get_field('tu-delft-download_title') ) : ?>
+    <h4><?php echo $title; ?></h4>
+<?php endif; ?>
+
 <a href="<?php echo $file['url']; ?>" class="tutorial__content download" download>
     <div class="download__wrapper">
         <div class="download__icon">

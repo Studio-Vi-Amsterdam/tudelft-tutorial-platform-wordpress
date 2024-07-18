@@ -3,6 +3,11 @@
 namespace TuDelft\Theme\Modules\Tutorial;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
+use WP_Query;
+
+// TODO: move this error handling separately 
+error_reporting( E_ERROR );
+ini_set( 'display_errors', 0 );
 /**
  * Class Tutorial
  *
@@ -17,7 +22,7 @@ use TuDelft\Theme\Abstract\Abstract_Cpt;
 class Tutorial extends Abstract_Cpt {
 
     const POST_TYPE = 'tutorial';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-welcome-learn-more';
     const REWRITE = [];
     const TAXONOMY = [
@@ -28,7 +33,7 @@ class Tutorial extends Abstract_Cpt {
         'public' => true,
         'show_in_rest' => true,
         'show_in_search' => false,
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
     ];
 
@@ -130,6 +135,10 @@ class Tutorial extends Abstract_Cpt {
      */
     public static function get_primary_subject( int $tutorial_id ) : string {
         $subject_id = get_field( 'primary_subject', $tutorial_id );
+        
+        if ( empty( $subject_id ) ) {
+            return '';
+        }
         $subject_name = get_the_title( $subject_id );
 
         return $subject_name;
@@ -152,5 +161,33 @@ class Tutorial extends Abstract_Cpt {
         $subject_name = get_the_title( $secondary_subject_id );
 
         return $subject_name;
+    }
+
+    /**
+     * Search through tutorials by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_tutorials( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
     }
 }

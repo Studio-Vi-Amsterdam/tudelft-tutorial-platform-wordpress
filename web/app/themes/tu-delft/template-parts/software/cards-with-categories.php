@@ -1,8 +1,9 @@
-<?php $theme_url = get_template_directory_uri() ?>
 <?php 
+    use TuDelft\Theme\Modules\Software\Software;
+    $theme_url = get_template_directory_uri();
 
     // TODO: filtering currently follows initial filter groups, but this needs to be changed as content repeats a lot. JavaScript filtering way needs to be changed
-    $softwares = $args['softwares'];
+    $softwares = Software::get_all_softwares();
 
     $filter_groups = [
         'chapter_0' => 'All',
@@ -68,16 +69,21 @@
         <?php foreach ($final_group_softwares as $key => $group_softwares): ?>
             <div class="cards-with-categories__content <?php echo $key === 'chapter_0' ? 'active' : ''; ?>" data-category-content="<?php echo $key ?>" data-pages>
                 <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
-                    <?php foreach ($group_softwares as $software): ?>
-                        <a href="#" class="software-link" data-card>
+                    <?php 
+                        foreach ($group_softwares as $software):
+                            $image = get_field('featured_image', $software->ID);
+                    ?>
+                        <a href="<?php echo get_permalink($software->ID) ?>" class="software-link" data-card>
                             <div class="software-link__wrapper">
                                 <div class="software-link__row  flex items-start">
                                     <h6>
                                         <?php echo $software->post_title ?>
                                     </h6>
+                                    <?php if( $image ) : ?>
                                     <figure class="software-link__icon">
-                                        <img width="44" height="40" src="<?php echo $theme_url ?>/src/img/icons/btn-a.svg" alt="image">
+                                        <img width="44" height="40" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $software->post_title ?> icon">
                                     </figure>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="arrow">
                                     <svg width="14" height="22">
@@ -91,7 +97,28 @@
                         </a>
                     <?php endforeach; ?>
                 </div>
+                <div class="cards-with-categories__pagination pagination flex items-center justify-center">
+                    <a href="#" class="pagination__button pagination__button--prev flex items-center justify-center">
+                        <svg width="20" height="20">
+                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                        </svg>
+
+                    </a>
+                    <div class="pagination__list">
+                        <div class="pagination__bg"></div>
+                        <ul class="flex items-center justify-center">
+
+                        </ul>
+                    </div>
+                    <a href="#" class="pagination__button pagination__button--next flex items-center justify-center">
+                        <svg width="20" height="20">
+                            <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
+                        </svg>
+
+                    </a>
+                </div>
             </div>
         <?php endforeach; ?>
+        
     </div>
 </section>

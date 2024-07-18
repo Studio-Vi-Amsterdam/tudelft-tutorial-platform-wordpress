@@ -16,7 +16,7 @@
             </a>
             <div class="footer__copyright">
                 <span><?php echo date('Y'); ?> All rights reserved</span>
-                <a href="<?php echo get_privacy_policy_url(); ?>">Privacy Policy</a>
+                <a href="https://www.tudelft.nl/en/privacy-statement/">Privacy Policy</a>
             </div>
         </div>
         <div class="footer__info">
@@ -29,7 +29,7 @@
                 <h6>Tutorials</h6>
                 <?php
                     wp_nav_menu( [
-                        'theme_location' => 'footer2',
+                        'theme_location' => 'footer1',
                         'container' => 'div',
                         'container_class' => 'footer-menu',
                         'menu_class' => '',
@@ -40,7 +40,7 @@
                 <h6>About</h6>
                 <?php
                     wp_nav_menu( [
-                        'theme_location' => 'footer1',
+                        'theme_location' => 'footer2',
                         'container' => 'div',
                         'container_class' => 'footer-menu',
                         'menu_class' => '',

@@ -82,8 +82,8 @@ $parent_category_id = 0;
                     <td>Last updated</td>
                     <td><?php echo $last_updated_array['date'] ?? 'N/A' ?></td>
                 </tr>
-                <tr>
-                    <?php if ( $category = Subject::get_subject_primary_category( get_the_ID() ) ) : ?>
+                <?php if ( $category = Subject::get_subject_primary_category( get_the_ID() ) ) : ?>
+                    <tr>
                         <td>Primary Category</td>
                         <td>
                             <ul>
@@ -97,18 +97,20 @@ $parent_category_id = 0;
                                 ?>
                             </ul>
                         </td>
-                    <?php endif; ?>
-                </tr>
-                <tr>
-                    <td>Secondary Category</td>
-                    <td>
-                        <ul>
-                            <?php foreach (Subject::get_subject_subcategories( get_the_ID(), $parent_category_id ) as $subcategory) : ?>
-                                <li><a href="#"><?php echo $subcategory['name']; ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </td>
-                </tr>
+                    </tr>
+                <?php endif; ?>
+                <?php if ( $secondary_subject = Subject::get_subject_subcategories( get_the_ID(), $parent_category_id ) ) : ?>
+                    <tr>
+                        <td>Secondary Category</td>
+                        <td>
+                            <ul>
+                                <?php foreach ($secondary_subject as $subcategory) : ?>
+                                    <li><a href="#"><?php echo $subcategory['name']; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </td>
+                    </tr>
+                <?php endif; ?>
             </table>
         </div>
         <div class="tutorial__nav responsible">
@@ -118,7 +120,7 @@ $parent_category_id = 0;
                     <td>Faculty</td>
                     <td>
                         <ul>
-                            <li><a href="#"><?php echo get_field('faculty', get_the_ID() ) ?: 'BK'; ?></a></li>
+                            <li><a href="#"><?php echo get_field('faculty', get_the_ID() ) ?: 'Bouwkunde'; ?></a></li>
                         </ul>
                     </td>
                 </tr>

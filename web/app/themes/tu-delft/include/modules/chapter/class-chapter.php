@@ -18,7 +18,7 @@ use TuDelft\Theme\Abstract\Abstract_Cpt;
 class Chapter extends Abstract_Cpt {
 
     const POST_TYPE = 'chapter';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-media-document';
     const REWRITE = [];
     const TAXONOMY = [
@@ -28,7 +28,7 @@ class Chapter extends Abstract_Cpt {
         'public' => true,
         'show_in_rest' => true,
         'show_in_search' => false,
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
     ];
 
@@ -117,11 +117,17 @@ class Chapter extends Abstract_Cpt {
             }
         }
 
+        $date = the_modified_date( 'F j, Y', $last_updated_chapter, "", "", false );
+
+        // TODO: Investigate why it returns array in string
+        $date = str_replace( 'Array', '', $date );
+
+
         return [
             'id' => $last_updated_chapter,
             'title' => get_the_title( $last_updated_chapter ),
             'url' => get_permalink( $last_updated_chapter ),
-            'date' => $last_updated_chapter ? get_the_modified_date( 'F j, Y', $last_updated_chapter ) : false,
+            'date' => $date ?: false,
             'content' => get_the_content( $last_updated_chapter )
         ];
 

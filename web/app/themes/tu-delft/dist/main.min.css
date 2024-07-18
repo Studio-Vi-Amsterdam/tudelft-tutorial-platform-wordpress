@@ -800,7 +800,7 @@ ol {
   width: 48%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
 }
 
@@ -2341,6 +2341,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 4px;
   overflow: hidden;
   min-height: 100%;
+  width: 100%;
 }
 .card-with-image__image {
   height: 50vw;
@@ -2930,6 +2931,9 @@ body::-webkit-scrollbar-thumb {
 .text:first-child {
   margin-top: 0;
 }
+.text.two-column__item--text {
+  margin-top: 0;
+}
 .text h1 + p {
   margin-top: 3.2rem;
 }
@@ -3042,6 +3046,10 @@ body::-webkit-scrollbar-thumb {
 }
 .text .btn {
   margin-top: 2.4rem;
+}
+.text a:not(.link-box) {
+  color: #00A6D6;
+  text-decoration: underline;
 }
 
 .download {

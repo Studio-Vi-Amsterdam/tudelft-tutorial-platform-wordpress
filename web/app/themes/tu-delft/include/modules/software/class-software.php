@@ -19,17 +19,18 @@ use WP_Query;
 class Software extends Abstract_Cpt {
 
     const POST_TYPE = 'software';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-desktop';
     const REWRITE = [];
     const TAXONOMY = [
+        [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'software-version', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
         'show_in_rest' => true,
         'show_in_search' => false,
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
     ];
 
@@ -134,5 +135,61 @@ class Software extends Abstract_Cpt {
         }, $software_verison );
 
         return $software_verison;
+    }
+
+    /** 
+     * Get software keywords
+     * 
+     * @since 1.0.0
+     * 
+     * @param int $software_id
+     * 
+     * @return array|bool
+     */
+    public static function get_keywords( int $software_id ) : array|bool {
+        $keywords = get_the_terms( $software_id, 'keywords' );
+
+        // If this tutorial does not have any keywords, return false.
+        if ( empty( $keywords ) ) {
+            return false;
+        }
+
+        $keywords = array_map( function( $keyword ) {
+            return [
+                'id' => $keyword->term_id,
+                'name' => $keyword->name,
+                'slug' => $keyword->slug,
+            ];
+        }, $keywords );
+
+        return $keywords;
+    }
+
+    /**
+     * Search through softwares by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_softwares( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
     }
 }
