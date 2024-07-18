@@ -166,8 +166,229 @@ $software = Tutorial::get_primary_software( get_the_ID() );
         <div class="tutorial__item" data-tab-content="chapter-0">
             <div class="tutorial__content text intro">
                 <h2><?php the_title(); ?> 0/<?php echo count( $chapters ); ?></h2>
-                <h3><?php the_title(); ?></h3>
+                <h3><?php the_title(); ?> <span>link copied</span></h3>
                 <?php echo get_field('description'); ?>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="table-box table-box--not-fill-title flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="table-box table-box--with-summary-price flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                            <div></div>
+                            <div>36,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="table-box table-box--gray-mode table-box--with-summary-price flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                            <div></div>
+                            <div>36,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial__content text">
+                <h4>Subchapter Title</h4>
+                <div class="table-box table-box--not-fill-title table-box--with-summary-price flex">
+                    <div class="table-box__left-side">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>Type</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="table-box__body">
+                        <div class="table-box__row">
+                            <div>Text Category</div>
+                            <div>Text Category</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text </div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div>text</div>
+                            <div>text</div>
+                            <div>9,00</div>
+                        </div>
+                        <div class="table-box__row">
+                            <div></div>
+                            <div></div>
+                            <div>36,00</div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
             <?php the_content() ?>
             <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
@@ -184,7 +405,7 @@ $software = Tutorial::get_primary_software( get_the_ID() );
         <div class="tutorial__item" data-tab-content="chapter-<?= ($key+1) ?>">
             <div class="tutorial__content text">
                 <h2><?php echo $chapter['title']; ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
-                <h3><?php echo $chapter['title']; ?></h3>
+                <h3><?php echo $chapter['title']; ?> <span>link copied</span></h3>
             </div>
             <?php echo $chapter['content']; ?>
             <div class="tutorial__content tutorial__btns btns flex items-center justify-between">

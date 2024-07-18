@@ -82,6 +82,8 @@
         overflow:hidden;
         clip-path:polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
         transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
+        height: 100%;
+        width: 100%;
 
     }
 
@@ -90,11 +92,20 @@
         display: inline-block;
         position: relative;
         max-height: 100%;
+        width: 100%;
+        @media (min-width: $tabletSmallP1) {
+            height: 100%;
+            width: unset;
+        }
         img {
             max-width: 100%;
-            width: auto;
+            width: 100%;
             object-fit: contain;
             max-height: calc(100vh - 6.8rem);
+            @media (min-width: $tabletSmallP1) {
+                height: 100%;
+                width: auto;
+            }
             @media (min-width: $tabletP1) {
                 max-height: calc(100vh - 8rem);
             }
