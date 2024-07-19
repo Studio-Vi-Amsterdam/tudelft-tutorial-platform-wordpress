@@ -104,19 +104,25 @@ $theme_url = get_template_directory_uri();
                         </td>
                     </tr>
                 <?php endif; ?>
-                <?php if ( $levels = Course::get_single_course_academic_levels( get_the_ID() ) ) : ?>
+                <tr>
+                    <td>Study</td>
+                    <td>
+                        <?php 
+                            echo Course::get_academic_level_name_by_id( 
+                                get_field('study', get_the_ID() ) 
+                            );
+                        ?>
+                    </td>
+                </tr>
+                <?php if ( $secondary_study = get_field('secondary_study', get_the_ID() )  ) : ?>
                     <tr>
-                        <td>Study</td>
+                        <td>Secondary study</td>
                         <td>
-                            <ul>
-                                <?php
-                                    foreach ( $levels as $level ) : 
-                                ?>
-                                        <li><a href="#"><?php echo $level['name']; ?></a></li>
-                                <?php
-                                    endforeach; 
-                                ?>
-                            </ul>
+                            <?php 
+                                echo Course::get_academic_level_name_by_id( 
+                                    $secondary_study 
+                                );
+                            ?>
                         </td>
                     </tr>
                 <?php endif; ?>

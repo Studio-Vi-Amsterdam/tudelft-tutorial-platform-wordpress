@@ -245,6 +245,21 @@ class Course extends Abstract_Cpt {
     }
 
     /**
+     * Get academic level by id
+     * 
+     * @param int $id
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    public static function get_academic_level_name_by_id( int $id ): string {
+        $object =  get_term_by( 'id', $id, 'academic-level' );
+
+        return $object ? $object->name : 'N/A';
+    }
+
+    /**
      * Search through courses by title
      * 
      * @param string $search
