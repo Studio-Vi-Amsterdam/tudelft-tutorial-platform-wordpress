@@ -132,6 +132,9 @@
     }
     ul, ol {
         margin-top: 2.4rem;
+        &:first-child {
+            margin-top: 0;
+        }
     }
     .grid-links {
         gap: 2.4rem;
@@ -144,4 +147,10 @@
         color: $secondary;
         text-decoration: underline;
     };
+    strong,b {
+        font-weight: 700;
+    }
+    em,i {
+        font-style: italic;
+    }
 }

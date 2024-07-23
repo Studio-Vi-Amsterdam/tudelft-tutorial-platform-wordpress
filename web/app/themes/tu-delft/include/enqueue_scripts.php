@@ -12,6 +12,7 @@ function enqueue_scripts() {
     // styles
     wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/tailwind.css', array());
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array());
+    wp_enqueue_style( 'style-prims', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-tomorrow.min.css', 'all' );
     wp_enqueue_style( 'mincss', get_template_directory_uri() . '/dist/main.min.css',  array(), filemtime( $style_path ), 'all');
 
     // remove old jquery
@@ -19,6 +20,7 @@ function enqueue_scripts() {
 
     // add latest jquery
     wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.7.0.min.js', false, null, true );
+    wp_enqueue_script( 'prims-js', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js', false, null, true );
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'lazy-load', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js', array('jquery'), null, true );
     wp_enqueue_script( 'slick_css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), null, true );

@@ -238,3 +238,23 @@ html {
 	  padding: unset;
 	}
   }
+  strong,b {
+	  font-weight: 700;
+  }
+  em,i {
+	  font-style: italic;
+  }
+
+  pre {
+	font-size: 1.6rem;
+	background-color: #F5F2F0 !important;
+	color: #000000 !important;
+	width: 100%;
+	margin-top: 2.4rem !important;
+	code {
+		color: #000000 !important;
+	}
+	.punctuation {
+		color: $black !important;
+	}
+  }

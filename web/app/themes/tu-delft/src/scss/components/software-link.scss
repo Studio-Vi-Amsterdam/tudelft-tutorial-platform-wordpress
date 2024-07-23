@@ -89,12 +89,16 @@
     }
     &:hover {
         &:before {
-            opacity: 1;
-            transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, .0s opacity;
+            @media(min-width: $mobileP1) {
+                opacity: 1;
+                transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, .0s opacity;
+            }
         }
         .software-link__wrapper {
-            top: -10px;
-            left: -10px;
+            @media(min-width: $mobileP1) {
+                top: -10px;
+                left: -10px;
+            }
         }
         .arrow {
             @media(min-width: $mobileP1) {
