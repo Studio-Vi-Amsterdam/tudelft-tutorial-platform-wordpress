@@ -16,8 +16,6 @@ $theme_url = get_template_directory_uri();
         </svg>
     </div>
     <div class="infobox__content">
-        <p>
-            <?php the_field('tu-delft-info-box_content'); ?>
-        </p>
+        <?php the_field('tu-delft-info-box_content'); ?>
     </div>
 </div>
