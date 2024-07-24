@@ -158,7 +158,17 @@ namespace TuDelft\SurfShareKit\Inc;
         if ( empty( $upload_file_data['data'] ) ) {
             return [];
         }
-        
+        return $upload_file_data['data']['id'];
+    }
+
+    /**
+     * Generate repo item
+     * 
+     * @param array $data
+     * @param string $title
+     * @param array $uuid
+     */
+    public static function generate_repo_item( array $data, string $title, array $uuid ): mixed {
         $repo_upload_data = self::create_repo_item([
             "type" => "LearningObject",
             "title" => $title,
@@ -166,16 +176,8 @@ namespace TuDelft\SurfShareKit\Inc;
             "summary" => "",
             "owner" => "6bfd7354-895b-4f17-b96f-78abbf515bd9",
             "institute" => "6bfd7354-895b-4f17-b96f-78abbf515bd9",
-            "files" => array(
-                array(
-                    "fileId" => $upload_file_data['data']['id'],
-                    "title" => $title,
-                    "access" => "openaccess"
-                )
-            ),
-            "persons" => array(
-                "5704040b-daf6-4abf-90ba-12a632b4c8ce"
-            )
+            "files" => $data,
+            "persons" => $uuid,
         ]);
 
         if ( $repo_upload_data['response']['code'] !== 201 ) {
