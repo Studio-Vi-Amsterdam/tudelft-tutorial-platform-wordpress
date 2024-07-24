@@ -43,8 +43,8 @@ export function runAfterDomLoad() {
             transitions: [
                 {
                     leave: async (data) => {
-                        $('.modal-window--active').removeClass('.modal-window--active')
-                        $('.modal-window__item--active').removeClass('.modal-window__item--active')
+                        $('.modal-window--active').removeClass('modal-window--active')
+                        $('.modal-window__item--active').removeClass('modal-window__item--active')
                         $('.tutorial__main').removeClass('transition')
                         $('.preloader').removeClass('loaded').addClass('reloaded')
                         $('.fixed-navigation').removeClass('animated')
