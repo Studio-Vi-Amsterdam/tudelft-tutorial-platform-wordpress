@@ -3196,6 +3196,10 @@ body::-webkit-scrollbar-thumb {
     margin-top: 1.6rem;
   }
 }
+.image span {
+  display: block;
+  overflow: hidden;
+}
 .image img {
   width: 100%;
 }
