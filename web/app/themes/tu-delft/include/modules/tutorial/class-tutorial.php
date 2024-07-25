@@ -125,6 +125,22 @@ class Tutorial extends Abstract_Cpt {
     }
 
     /**
+     * Get course by tutorial ID
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    public static function get_course( int $tutorial_id ) : string {
+        $course_id = get_field( 'course', $tutorial_id );
+        $course_name = get_the_title( $course_id );
+
+        return $course_name;
+    }
+
+    /**
      * Get subject that tutorial belongs to
      * 
      * @param int $tutorial_id
@@ -161,6 +177,21 @@ class Tutorial extends Abstract_Cpt {
         $subject_name = get_the_title( $secondary_subject_id );
 
         return $subject_name;
+    }
+
+    /**
+     * Get level of tutorial
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    public static function get_level( int $tutorial_id ) : string {
+        $level = get_field( 'level', $tutorial_id );
+
+        return ucfirst( $level );
     }
 
     /**

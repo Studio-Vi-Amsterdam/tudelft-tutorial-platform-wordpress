@@ -92,6 +92,12 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                         <td><?php echo $software['version'] ?? 'N/A'; ?></td>
                     </tr>
                 <?php endif; ?>
+                <?php if ( $course = Tutorial::get_course( get_the_ID() ) ) : ?>
+                    <tr>
+                        <td>Course</td>
+                        <td><?php echo $course; ?></td>
+                    </tr>
+                <?php endif; ?>
                 <?php if ( $primary_subject = Tutorial::get_primary_subject( get_the_ID() ) ) : ?>
                     <tr>
                         <td>Primary Subject</td>
@@ -102,6 +108,12 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                     <tr>
                         <td>Secondary Subject</td>
                         <td><?php echo $secondary_subject; ?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if ( $level = Tutorial::get_level( get_the_ID() ) ) : ?>
+                    <tr>
+                        <td>Level</td>
+                        <td><?php echo $level; ?></td>
                     </tr>
                 <?php endif; ?>
                 <tr>
@@ -391,6 +403,14 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                 </div>
             </div>
             <?php the_content() ?>
+
+            <div class="tutorial__content text">
+                <h4 id="useful-link-title">
+                    <?php echo get_field('useful_link_title'); ?>
+                </h4>
+
+            </div>
+
             <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
                 <a href="#" class="btn" data-next>
                     <span>Start</span>
