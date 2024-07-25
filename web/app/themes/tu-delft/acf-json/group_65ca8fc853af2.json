@@ -23,6 +23,17 @@
             "delay": 0
         },
         {
+            "key": "field_65ca8ff08bw9ajeawiej",
+            "label": "Useful Links Title",
+            "name": "useful_links_title",
+            "aria-label": "",
+            "type": "text",
+            "default_value": "Useful Links",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
             "key": "field_65ca8ff08b109",
             "label": "Useful Links",
             "name": "useful_links",
