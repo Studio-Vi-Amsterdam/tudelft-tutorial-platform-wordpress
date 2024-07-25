@@ -23,11 +23,7 @@ $image = get_field('tu-delft-image-text_image');
             </figure>
         </div>
         <div class="two-column__item two-column__item--text text">
-            <p>
-                <small>
-                    <?php the_field('tu-delft-image-text_content'); ?>
-                </small>
-            </p>
+						<?php the_field('tu-delft-image-text_content'); ?>
         </div>
     </div>
 </div>
