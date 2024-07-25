@@ -171,7 +171,14 @@ $theme_url = get_template_directory_uri();
                 <h3><?php the_title(); ?></h3>
                 <?php echo get_field('description'); ?>
             </div>
-            <?php the_content() ?>
+            <?php the_content(); ?>
+            <!-- Useful links -->
+            <div class="tutorial__content text">
+                <h5 id="useful-link-title">
+                    <?php echo get_field('useful_links_title') ?: 'Useful links'; ?>
+                </h5>
+                <?php the_field('useful_links'); ?>
+            </div>
             <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
                 <a href="#" class="btn" data-next>
                     <span>Start</span>

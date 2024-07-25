@@ -181,13 +181,13 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                 <h3><?php the_title(); ?> <span>link copied</span></h3>
                 <?php echo get_field('description'); ?>
             </div>
-            <?php the_content() ?>
-
+            <?php the_content(); ?>
+            <!-- Useful links -->
             <div class="tutorial__content text">
-                <h4 id="useful-link-title">
-                    <?php echo get_field('useful_link_title'); ?>
-                </h4>
-
+                <h5 id="useful-link-title">
+                    <?php echo get_field('useful_links_title') ?: 'Useful links'; ?>
+                </h5>
+                <?php the_field('useful_links'); ?>
             </div>
 
             <div class="tutorial__content tutorial__btns tutorial__btns--end btns flex items-center justify-end">
