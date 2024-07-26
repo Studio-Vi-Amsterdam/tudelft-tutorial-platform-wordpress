@@ -67,7 +67,7 @@
     </div>
     <div class="cards-with-categories__wrapper">
         <?php foreach ($final_group_softwares as $key => $group_softwares): ?>
-            <div class="cards-with-categories__content <?php echo $key === 'chapter_0' ? 'active' : ''; ?>" data-category-content="<?php echo $key ?>" data-pages>
+            <div class="cards-with-categories__content <?php echo $key === 'chapter_0' ? 'active' : ''; ?>" data-category-content="<?php echo $key ?>" data-pages="21">
                 <div class="grid-links grid-links--three-columns grid lg:grid-cols-2">
                     <?php 
                         foreach ($group_softwares as $software):
