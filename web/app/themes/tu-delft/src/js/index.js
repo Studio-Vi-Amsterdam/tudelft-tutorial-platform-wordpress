@@ -79,9 +79,10 @@ export function runAfterDomLoad() {
                     firstItem.addClass('opened')
                     firstItem.next('.accordion__content').css('overflow', 'unset').css('pointer-events', 'all')
                     setTimeout(() => {
-                        $('body').removeClass('preload')
+												let hash = $(location).attr('hash')
+												$('body').removeClass('preload')
                         tabOfContent()
-                        smoothScroll()
+                        const bodyScrollBar = smoothScroll()
                         initMenu()
                         tutorials()
                         showSearchBar()
@@ -97,7 +98,13 @@ export function runAfterDomLoad() {
                         headerSearch()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 												codeBlock()
-                    }, timeout);
+												setTimeout(() => {
+													if($(`${hash}`).length > 0) {
+														let anchor = $(`${hash}`)
+														bodyScrollBar.scrollTo(0, anchor.offset().top - 100 , 1000)
+													}
+												}, 1200)
+										}, timeout);
                 }
             }]
         })
