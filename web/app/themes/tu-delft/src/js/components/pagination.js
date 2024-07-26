@@ -8,10 +8,10 @@ export function initPagination() {
         const prevButton = $('.pagination__button--prev', parent)
         const listItems = $('[data-card]', parent)
         const bg = $('.pagination__bg', parent)
-        const paginationLimit = 6;
+        const paginationLimit = parent.attr('data-pages');
         const pageCount = Math.ceil(listItems.length / paginationLimit);
         let currentPage = 1;
-        if(pageCount === 1) {
+        if(pageCount <= 1) {
             pagination.addClass('hidden')
         }
 

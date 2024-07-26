@@ -672,16 +672,48 @@ em, i {
 
 pre {
   font-size: 1.6rem;
-  background-color: #F5F2F0 !important;
-  color: #000000 !important;
   width: 100%;
   margin-top: 2.4rem !important;
 }
+pre table td {
+  color: inherit;
+  border: inherit;
+}
+pre table {
+  border: inherit;
+}
+pre .hljs-ln-n {
+  padding-right: 5px;
+}
+pre .hljs-ln-line {
+  padding-left: 5px !important;
+}
 pre code {
-  color: #000000 !important;
+  background: rgba(245, 242, 240, 0.431372549) !important;
 }
 pre .punctuation {
   color: #000000 !important;
+}
+
+/* for block of numbers */
+.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #CCC;
+  vertical-align: top;
+  padding-right: 5px;
+  /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+  padding-left: 10px;
 }
 
 .padding, .footer__container, .hero__container, .header__container, section, header, footer {

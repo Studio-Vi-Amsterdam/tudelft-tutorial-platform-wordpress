@@ -144,7 +144,7 @@
             </div>
         </div> -->
      </div>
-     <div class="search__content" data-pages>
+     <div class="search__content" data-pages="6">
 
      <div class="search__wrapper">
         <?php foreach ($combined as $item) : ?>

@@ -2,6 +2,7 @@
 import "slick-carousel";
 import 'slick-carousel/slick/slick.scss';
 import barba from '@barba/core';
+import 'highlight.js/styles/atom-one-dark.css';
 import ModalContentWindow from "./components/ModalWindow/ModalContentWindow";
 import ModalWindow from "./components/ModalWindow/ModalWindow";
 import ModalVideoWindow from "./components/ModalWindow/ModalVideoWindow";
@@ -19,10 +20,11 @@ import { initPagination } from "./components/pagination";
 import { openFilter } from "./components/filters";
 import { textareaScrollBar } from "./components/textarea-scrollbar";
 import ModalImageWindow from "./components/ModalWindow/ModalImageWindow";
-import { submitFeedback } from "./components/submit-feedback";
+import {destroySubmitFeedback, submitFeedback} from "./components/submit-feedback";
 import { copyLink } from "./components/copy-link";
 import { zoomImage } from "./components/zoom-image";
 import { headerSearch } from "./components/search";
+import { codeBlock } from "./components/code-block";
 
 
 export function runAfterDomLoad() {
@@ -68,17 +70,8 @@ export function runAfterDomLoad() {
             ],
             views: [{
                 namespace: 'page',
-                beforeEnter(e) {
-                    const cf_selector = "div.wpcf7 > form";
-                    const cf_forms = $(e.next.container).find(cf_selector);
-                    if (cf_forms.length > 0) {
-                        $(cf_selector).each(function () {
-                            var $form = $(this);
-                            setTimeout(() => {
-                                wpcf7.init($form[0]);
-                            }, 1000);
-                        });
-                    }
+                beforeEnter() {
+									destroySubmitFeedback()
                 },
                 afterEnter() {
                     pagePreloader()
@@ -86,16 +79,17 @@ export function runAfterDomLoad() {
                     firstItem.addClass('opened')
                     firstItem.next('.accordion__content').css('overflow', 'unset').css('pointer-events', 'all')
                     setTimeout(() => {
-                        $('body').removeClass('preload')
+												let hash = $(location).attr('hash')
+												$('body').removeClass('preload')
                         tabOfContent()
-                        smoothScroll()
+                        const bodyScrollBar = smoothScroll()
                         initMenu()
                         tutorials()
                         showSearchBar()
                         changeCategory()
                         accordion()
                         openDropdown()
-                        submitFeedback();
+                        submitFeedback()
                         initPagination()
                         openFilter()
                         textareaScrollBar()
@@ -103,8 +97,14 @@ export function runAfterDomLoad() {
                         zoomImage()
                         headerSearch()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
-
-                    }, timeout);
+												codeBlock()
+												setTimeout(() => {
+													if($(`${hash}`).length > 0) {
+														let anchor = $(`${hash}`)
+														bodyScrollBar.scrollTo(0, anchor.offset().top - 100 , 1000)
+													}
+												}, 1200)
+										}, timeout);
                 }
             }]
         })
