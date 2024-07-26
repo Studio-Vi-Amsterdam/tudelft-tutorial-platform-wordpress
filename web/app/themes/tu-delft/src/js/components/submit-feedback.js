@@ -40,4 +40,7 @@ export const submitFeedback = () => {
             },
         });
     });
-};
+}
+export const destroySubmitFeedback = () => {
+	jQuery(document).off('submit', '#feedback-form')
+}

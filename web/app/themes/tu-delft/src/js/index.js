@@ -20,7 +20,7 @@ import { initPagination } from "./components/pagination";
 import { openFilter } from "./components/filters";
 import { textareaScrollBar } from "./components/textarea-scrollbar";
 import ModalImageWindow from "./components/ModalWindow/ModalImageWindow";
-import { submitFeedback } from "./components/submit-feedback";
+import {destroySubmitFeedback, submitFeedback} from "./components/submit-feedback";
 import { copyLink } from "./components/copy-link";
 import { zoomImage } from "./components/zoom-image";
 import { headerSearch } from "./components/search";
@@ -70,17 +70,8 @@ export function runAfterDomLoad() {
             ],
             views: [{
                 namespace: 'page',
-                beforeEnter(e) {
-                    const cf_selector = "div.wpcf7 > form";
-                    const cf_forms = $(e.next.container).find(cf_selector);
-                    if (cf_forms.length > 0) {
-                        $(cf_selector).each(function () {
-                            var $form = $(this);
-                            setTimeout(() => {
-                                wpcf7.init($form[0]);
-                            }, 1000);
-                        });
-                    }
+                beforeEnter() {
+									destroySubmitFeedback()
                 },
                 afterEnter() {
                     pagePreloader()
@@ -97,7 +88,7 @@ export function runAfterDomLoad() {
                         changeCategory()
                         accordion()
                         openDropdown()
-                        submitFeedback();
+                        submitFeedback()
                         initPagination()
                         openFilter()
                         textareaScrollBar()
