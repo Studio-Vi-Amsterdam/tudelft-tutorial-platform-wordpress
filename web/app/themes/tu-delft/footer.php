@@ -75,7 +75,6 @@
     </div>
 
 <?php wp_footer(); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
 </body>
 
 </html>
