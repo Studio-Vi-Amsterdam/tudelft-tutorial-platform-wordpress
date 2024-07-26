@@ -22,11 +22,13 @@ export function tabOfContent() {
                         }
                         const link = document.createElement('A');
                         link.setAttribute('href', '#' + currentHeading.getAttribute('id'));
-    
-                        if(currentHeading.textContent.length > 25) {
-                            link.appendChild(document.createTextNode(currentHeading.textContent.slice(0,25) + '...'))
+												const headingText = currentHeading.textContent
+												headingText.replace(/\s/g, '')
+
+                        if(headingText > 25) {
+													link.appendChild(document.createTextNode(headingText.slice(0,25) + '...'))
                         }   else {
-                            link.appendChild(document.createTextNode(currentHeading.textContent))
+													link.appendChild(document.createTextNode(headingText))
                         } 
                         
                         liNode.appendChild(link);
