@@ -2,6 +2,7 @@
 import "slick-carousel";
 import 'slick-carousel/slick/slick.scss';
 import barba from '@barba/core';
+import 'highlight.js/styles/atom-one-dark.css';
 import ModalContentWindow from "./components/ModalWindow/ModalContentWindow";
 import ModalWindow from "./components/ModalWindow/ModalWindow";
 import ModalVideoWindow from "./components/ModalWindow/ModalVideoWindow";
@@ -23,6 +24,7 @@ import { submitFeedback } from "./components/submit-feedback";
 import { copyLink } from "./components/copy-link";
 import { zoomImage } from "./components/zoom-image";
 import { headerSearch } from "./components/search";
+import { codeBlock } from "./components/code-block";
 
 
 export function runAfterDomLoad() {
@@ -103,7 +105,7 @@ export function runAfterDomLoad() {
                         zoomImage()
                         headerSearch()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
-
+												codeBlock()
                     }, timeout);
                 }
             }]
