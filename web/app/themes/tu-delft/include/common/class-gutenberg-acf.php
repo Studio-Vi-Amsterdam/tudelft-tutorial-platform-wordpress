@@ -756,7 +756,7 @@ class Gutenberg_ACF {
                     'class' => '',
                     'id' => '',
                 ),
-                'layout' => 'table',
+                'layout' => 'block',
                 'pagination' => 0,
                 'min' => 0,
                 'max' => 0,
@@ -786,6 +786,27 @@ class Gutenberg_ACF {
                         'parent_repeater' => 'tu-delft-content-card_content_card_row_key',
                     ),
                     array(
+                        'key' => 'tu-delft-content-card_card_is_custom_link_key',
+                        'label' => 'Is Custom Link',
+                        'name' => 'tu-delft-content-card_card_is_custom_link',
+                        'aria-label' => '',
+                        'type' => 'true_false',
+                        'instructions' => 'Check if you want to use custom link',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'message' => '',
+                        'ui' => 1,
+                        'ui_on_text' => 'Custom',
+                        'ui_off_text' => 'Internal',
+                        'parent_repeater' => 'tu-delft-content-card_content_card_row_key',
+                    ),
+                    array(
                         'key' => 'tu-delft-content-card_card_link_key',
                         'label' => 'Card Link',
                         'name' => 'tu-delft-content-card_card_link',
@@ -793,7 +814,15 @@ class Gutenberg_ACF {
                         'type' => 'post_object',
                         'instructions' => '',
                         'required' => 0,
-                        'conditional_logic' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'tu-delft-content-card_card_is_custom_link_key',
+                                    'operator' => '==',
+                                    'value' => '0',
+                                ),
+                            ),
+                        ),
                         'wrapper' => array(
                             'width' => '',
                             'class' => '',
@@ -817,6 +846,34 @@ class Gutenberg_ACF {
                         'ui' => 1,
                         'bidirectional_target' => array(
                         ),
+                        'parent_repeater' => 'tu-delft-content-card_content_card_row_key',
+                    ),
+                    array(
+                        'key' => 'tu-delft-content-card_card_custom_link_key',
+                        'label' => 'Custom Link',
+                        'name' => 'tu-delft-content-card_card_custom_link',
+                        'aria-label' => '',
+                        'type' => 'url',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'tu-delft-content-card_card_is_custom_link_key',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
                         'parent_repeater' => 'tu-delft-content-card_content_card_row_key',
                     ),
                 ),
