@@ -12,7 +12,13 @@ $image = get_field('tu-delft-text-image_image');
     <div class="two-column two-column--reversed flex flex-col sm:flex-row items-start justify-between">
         <div class="two-column__item two-column__item--image image">
             <figure>
-                <img data-image-src="<?php echo $image['url']; ?>" width="<?php echo $image['sizes']['large-width']; ?>" height="<?php echo $image['sizes']['large-height']; ?>" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                <img
+                    class="<?php echo !get_field('tu-delft-text-image_has_image_zoom') ? 'disable-zoom' : ''; ?>"
+                    data-image-src="<?php echo $image['url']; ?>" 
+                    width="<?php echo $image['sizes']['large-width']; ?>" 
+                    height="<?php echo $image['sizes']['large-height']; ?>" 
+                    src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"
+                >
                 <figcaption>
                     <?php echo get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']; ?>
                 </figcaption>
