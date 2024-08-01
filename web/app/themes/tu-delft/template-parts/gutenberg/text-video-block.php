@@ -6,7 +6,7 @@
 
 $theme_url = get_template_directory_uri();
 $video = get_field('tu-delft-text-video_video');
-$placeholder = get_the_post_thumbnail_url($video['ID'], 'large');
+$placeholder = get_field('tu-delft-text-video_thumbnail');
 ?>
 <div class="text-video-block-wrapper video" data-video-src="<?php echo $video['url']; ?>">
     <?php if ( $title = get_field('tu-delft-text-video_title') ) : ?>

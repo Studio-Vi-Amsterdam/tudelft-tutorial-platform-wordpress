@@ -365,6 +365,25 @@ class Gutenberg_ACF {
 				'max_size' => '',
 				'mime_types' => 'mp4,mpeg,webm',
 			),
+            array(
+                // thumbnail
+                'key' => 'tu-delft-video_thumbnail_key',
+                'label' => 'Thumbnail',
+                'name' => 'tu-delft-video_thumbnail',
+                'aria-label' => '',
+                'type' => 'image',
+                'instructions' => 'Select an image from Media Library',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+                'library' => 'all',
+            )
 		),
 		'location' => array(
 			array(
@@ -447,6 +466,24 @@ class Gutenberg_ACF {
                 'min_size' => '',
                 'max_size' => '',
                 'mime_types' => 'mp4,mpeg,webm',
+            ),
+            array(
+                'key' => 'tu-delft-text-video_thumbnail_key',
+                'label' => 'Thumbnail',
+                'name' => 'tu-delft-text-video_thumbnail',
+                'aria-label' => '',
+                'type' => 'image',
+                'instructions' => 'Select an image from Media Library',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+                'library' => 'all',
             ),
         ),
         'location' => array(
@@ -531,6 +568,24 @@ class Gutenberg_ACF {
                 'media_upload' => 1,
                 'delay' => 0,
             ),
+            array(
+                'key' => 'tu-delft-video-text_thumbnail_key',
+                'label' => 'Thumbnail',
+                'name' => 'tu-delft-video-text_thumbnail',
+                'aria-label' => '',
+                'type' => 'image',
+                'instructions' => 'Select an image from Media Library',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+                'library' => 'all',
+            )
         ),
         'location' => array(
             array(
