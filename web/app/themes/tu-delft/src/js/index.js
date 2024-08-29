@@ -51,6 +51,7 @@ export function runAfterDomLoad() {
                         $('.preloader').removeClass('loaded').addClass('reloaded')
                         $('.fixed-navigation').removeClass('animated')
                         $('body').addClass('reloaded').removeClass('loaded')
+                        document.querySelector('.modal-video-item__wr-iframe iframe').setAttribute('src', '')
                         setTimeout(() => {
                             $('body').removeClass('reloaded')
                         }, 430);
