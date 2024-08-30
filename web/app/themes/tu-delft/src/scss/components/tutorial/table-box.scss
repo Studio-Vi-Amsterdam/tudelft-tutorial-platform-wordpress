@@ -227,3 +227,171 @@
         }
     }
 }
+.table {
+    overflow-x: auto;
+    width: 300px; 
+    padding-bottom:1px;
+    margin-top: 400px;
+    display: flex;
+    padding-left: 10.4rem;
+    margin-top: 2.4rem;
+    width: calc(100vw - 2.4rem);
+    @extend .p1;
+    @media(min-width: $mobileP1) {
+        margin-left: 0;
+        padding-left: 18.4rem;
+        width: 100%;
+    }
+    table {
+        width: 100%;
+        overflow: hidden;
+        border: none;
+    }
+    tr {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        &:has(td:nth-child(2)) {
+            grid-template-columns: repeat(1,1fr);
+        }
+        &:has(td:nth-child(3)) {
+            grid-template-columns: repeat(2,1fr);
+        }
+        &:has(td:nth-child(4)) {
+            grid-template-columns: repeat(3,1fr);
+        }
+        &:has(td:nth-child(5)) {
+            grid-template-columns: repeat(4,1fr);
+        }
+        &:has(td:nth-child(6)) {
+            grid-template-columns: repeat(5,1fr);
+        }
+        &:has(td:nth-child(7)) {
+            grid-template-columns: repeat(6,1fr);
+        }
+        &:has(td:nth-child(8)) {
+            grid-template-columns: repeat(7,1fr);
+        }
+        &:has(td:nth-child(9)) {
+            grid-template-columns: repeat(8,1fr);
+        }
+        &:has(td:nth-child(10)) {
+            grid-template-columns: repeat(9,1fr);
+        }
+        &:has(td:nth-child(11)) {
+            grid-template-columns: repeat(10,1fr);
+        }
+        &:has(td:nth-child(12)) {
+            grid-template-columns: repeat(11,1fr);
+        }
+        &:first-child {
+            margin-bottom: .8rem;
+            td {
+                background-color: #E0F5FE;
+                color: #67676B;
+                min-height: unset;
+                padding: .8rem;
+                @media(min-width: $tabletSmallP1) {
+                    padding: 1.6rem;
+                }
+                &:first-child {
+                    border: none;
+                    background-color: #E0F5FE;
+                    color: #67676B;
+                    border-radius: 4px 0 0px 4px;
+                }
+                &:last-child {
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+        }
+        &:not(:first-child) {
+            td {
+                border-top: 1px solid #E5E5E5;
+            }
+        }
+        &:last-child {
+            td {
+                border-bottom: none !important;
+                &:first-child {
+                    border-radius: 0 0 0 4px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            td {
+                border-top: none !important;
+                &:first-child {
+                    border-radius: 4px 0 0 0 ;
+                }
+            }
+
+        }
+        td {
+            min-width: 16rem;
+            border: none;
+            width: 100%;
+            min-height: 6.4rem;
+            padding: .8rem;
+            @media(min-width: $tabletSmallP1) {
+               min-height: 8rem;
+               min-width: 20rem;
+               padding: 1.6rem;
+            }
+            &:first-child {
+                position: absolute;
+                min-width: 10.4rem;
+                max-width: 10.4rem;
+                left: 0rem;
+                position:absolute; 
+                top:auto;
+                color: #67676B;
+                padding: .8rem;
+                background-color: #FAFAFA;
+                border: none;
+                border-top: 1px solid #E5E5E5;
+                border-right: 4px solid #E0F5FE;
+                z-index: 2;
+                @media(min-width: $tabletSmallP1) {
+                    padding: 1.6rem;
+                }
+                @media(min-width: $mobileP1) {
+                    min-width: 18.4rem;
+                    max-width: 18.4rem;
+                    left: 0;
+                }
+            }
+            &:last-child {
+                text-align: end;
+            }
+        }
+    }
+
+    &--not-fill-title {
+        tr {
+            td {
+                &:first-child {
+                    background-color: white;
+                    border-right: none;
+                }
+            }
+        }
+    }
+    &--summary {
+        tr {
+            &:last-child {
+                td {
+                    border-top: 4px solid #E0F5FE;
+                    @media(min-width: $mobileP1) {
+                        padding-top: 2.4rem;
+                    }
+                    &:first-child {
+                        border-top: 4px solid #E0F5FE;
+                        background-color: white;
+                        border-right: none;
+                    }
+                }
+            }
+
+        }
+    }
+}

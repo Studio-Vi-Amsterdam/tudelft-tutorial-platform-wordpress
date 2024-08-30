@@ -1,6 +1,6 @@
 .code-block {
     background-color: #F5F2F0;
-    padding: 1.2rem;
+    padding: 1.2rem 1.2rem 1.2rem 0;
     box-sizing: border-box;
     color: #999999;
     border-radius: 4px;
@@ -12,6 +12,10 @@
     pre {
         font-size: 1.2rem;
         line-height: 1.8;
+        margin-top: 0 !important;
+    }
+    code {
+        padding: 0 !important;
     }
 
         .pink {
@@ -24,5 +28,15 @@
             color: #9A6E3A;
             background-color: #FAF9F8;
         }
-    
+    .hljs-ln-numbers {
+        width: 50px !important;
+        text-align: end;
+    }
+    table td {
+        border: none !important;
+        &:last-child {
+            width: calc(100% - 50px);
+            padding-left: 30px !important;
+        }
+    }
 }

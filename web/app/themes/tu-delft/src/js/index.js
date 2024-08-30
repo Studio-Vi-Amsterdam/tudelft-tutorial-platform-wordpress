@@ -25,6 +25,7 @@ import { copyLink } from "./components/copy-link";
 import { zoomImage } from "./components/zoom-image";
 import { headerSearch } from "./components/search";
 import { codeBlock } from "./components/code-block";
+import { tableHeightRow } from "./components/table-height-row";
 
 
 export function runAfterDomLoad() {
@@ -97,6 +98,7 @@ export function runAfterDomLoad() {
                         copyLink()
                         zoomImage()
                         headerSearch()
+                        tableHeightRow()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 												codeBlock()
 												setTimeout(() => {

@@ -343,6 +343,156 @@
                 </p>
             </div>
             <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table">
+        <table>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+    <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table table--summary">
+        <table>
+            <tr>
+                <td>Text Category </td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text Text Category Text Category Text Category Text Category Text Category v Text Category</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type Type Type Type Type Type Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>9,00</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+    <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table table--not-fill-title">
+        <table>
+            <tr>
+                <td>Text Category </td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text Text Category Text Category Text Category Text Category Text Category v Text Category</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type Type Type Type Type Type Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+    <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table table--summary table--not-fill-title">
+        <table>
+            <tr>
+                <td>Text Category </td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text Text Category Text Category Text Category Text Category Text Category v Text Category</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type Type Type Type Type Type Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>39</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+            <div class="tutorial__content text">
                 <h4>Subchapter Title</h4>
                 <div class="two-column flex flex-col sm:flex-row items-start justify-between">
                     <div class="two-column__item two-column__item--image image">
