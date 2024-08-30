@@ -346,10 +346,9 @@
                 top:auto;
                 color: #67676B;
                 padding: .8rem;
-                background-color: #FAFAFA;
+                background-color: $white;
                 border: none;
                 border-top: 1px solid #E5E5E5;
-                border-right: 4px solid #E0F5FE;
                 z-index: 2;
                 @media(min-width: $tabletSmallP1) {
                     padding: 1.6rem;
@@ -366,12 +365,12 @@
         }
     }
 
-    &--not-fill-title {
+    &--fill-title {
         tr {
             td {
                 &:first-child {
-                    background-color: white;
-                    border-right: none;
+                    background-color: #FAFAFA;
+                    border-right: 4px solid #E0F5FE;
                 }
             }
         }

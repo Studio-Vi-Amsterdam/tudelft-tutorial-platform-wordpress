@@ -5,7 +5,13 @@
 ?>
 <?php $theme_url = get_template_directory_uri() ?>
 <?php get_header(); ?>
-
+<?php
+/*
+    Template Name: Tutorial Page
+*/
+?>
+<?php $theme_url = get_template_directory_uri() ?>
+<?php get_header(); ?>
 <section class="tutorial">
     <div class="tutorial__container md:flex md:justify-between">
     <div class="tutorial__mobile-nav flex justify-between">
@@ -424,7 +430,7 @@
     </div>
     <div class="tutorial__content text">
         <h4>Table with top row</h4>
-        <div class="table table--not-fill-title">
+        <div class="table table--fill-title">
         <table>
             <tr>
                 <td>Text Category </td>
@@ -456,7 +462,7 @@
     </div>
     <div class="tutorial__content text">
         <h4>Table with top row</h4>
-        <div class="table table--summary table--not-fill-title">
+        <div class="table table--summary table--fill-title">
         <table>
             <tr>
                 <td>Text Category </td>
@@ -1011,7 +1017,3 @@
     </div>
     </div>
 </section>
-
-
-
-<?php get_footer(); ?>

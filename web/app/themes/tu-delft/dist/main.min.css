@@ -4051,10 +4051,9 @@ body::-webkit-scrollbar-thumb {
   top: auto;
   color: #67676B;
   padding: 0.8rem;
-  background-color: #FAFAFA;
+  background-color: #ffffff;
   border: none;
   border-top: 1px solid #E5E5E5;
-  border-right: 4px solid #E0F5FE;
   z-index: 2;
 }
 @media (min-width: 768px) {
@@ -4072,9 +4071,9 @@ body::-webkit-scrollbar-thumb {
 .table tr td:last-child {
   text-align: end;
 }
-.table--not-fill-title tr td:first-child {
-  background-color: white;
-  border-right: none;
+.table--fill-title tr td:first-child {
+  background-color: #FAFAFA;
+  border-right: 4px solid #E0F5FE;
 }
 .table--summary tr:last-child td {
   border-top: 4px solid #E0F5FE;
