@@ -5,7 +5,13 @@
 ?>
 <?php $theme_url = get_template_directory_uri() ?>
 <?php get_header(); ?>
-
+<?php
+/*
+    Template Name: Tutorial Page
+*/
+?>
+<?php $theme_url = get_template_directory_uri() ?>
+<?php get_header(); ?>
 <section class="tutorial">
     <div class="tutorial__container md:flex md:justify-between">
     <div class="tutorial__mobile-nav flex justify-between">
@@ -342,6 +348,156 @@
                     </small>
                 </p>
             </div>
+            <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table">
+        <table>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+                <td>Text Category Text Category Text Category Text Category Text Category Text Category</td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+    <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table table--summary">
+        <table>
+            <tr>
+                <td>Text Category </td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text Text Category Text Category Text Category Text Category Text Category v Text Category</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type Type Type Type Type Type Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>9,00</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+    <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table table--fill-title">
+        <table>
+            <tr>
+                <td>Text Category </td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text Text Category Text Category Text Category Text Category Text Category v Text Category</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type Type Type Type Type Type Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+    <div class="tutorial__content text">
+        <h4>Table with top row</h4>
+        <div class="table table--summary table--fill-title">
+        <table>
+            <tr>
+                <td>Text Category </td>
+                <td>Text Category</td>
+                <td>Text Category</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text Text Category Text Category Text Category Text Category Text Category v Text Category</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type Type Type Type Type Type Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>text</td>
+                <td>text</td>
+                <td>9,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>39</td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
             <div class="tutorial__content text">
                 <h4>Subchapter Title</h4>
                 <div class="two-column flex flex-col sm:flex-row items-start justify-between">
@@ -861,7 +1017,3 @@
     </div>
     </div>
 </section>
-
-
-
-<?php get_footer(); ?>

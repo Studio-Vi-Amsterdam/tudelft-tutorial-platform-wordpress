@@ -25,6 +25,7 @@ import { copyLink } from "./components/copy-link";
 import { zoomImage } from "./components/zoom-image";
 import { headerSearch } from "./components/search";
 import { codeBlock } from "./components/code-block";
+import { tableHeightRow } from "./components/table-height-row";
 
 
 export function runAfterDomLoad() {
@@ -51,6 +52,7 @@ export function runAfterDomLoad() {
                         $('.preloader').removeClass('loaded').addClass('reloaded')
                         $('.fixed-navigation').removeClass('animated')
                         $('body').addClass('reloaded').removeClass('loaded')
+                        document.querySelector('.modal-video-item__wr-iframe iframe').setAttribute('src', '')
                         setTimeout(() => {
                             $('body').removeClass('reloaded')
                         }, 430);
@@ -96,6 +98,7 @@ export function runAfterDomLoad() {
                         copyLink()
                         zoomImage()
                         headerSearch()
+                        tableHeightRow()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 												codeBlock()
 												setTimeout(() => {
