@@ -195,7 +195,7 @@ $software = Tutorial::get_primary_software( get_the_ID() );
         ?>
         <div class="tutorial__item" data-tab-content="chapter-<?= ($key+1) ?>">
             <div class="tutorial__content text">
-                <h2><?php echo $chapter['title']; ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
+                <h2><?php the_title(); ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
                 <h3><?php echo $chapter['title']; ?> <span>link copied</span></h3>
             </div>
             <?php echo $chapter['content']; ?>

@@ -40,7 +40,7 @@ use TuDelft\Theme\Modules\Lab\Lab;
                             <h2><?php echo $subcategory->name; ?></h2>
                             <button aria-label="open accordion"></button>
                         </div>
-                        <div class="accordion__content">
+                        <div class="accordion__content" style="<?php echo ((!empty($selectedSubCategory) && $selectedSubCategory === $subcategory->slug) ? 'overflow: unset; pointer-events: all;' : ''); ?>">
                             <div class="accordion__content-wrapper grid lg:grid-cols-2">
                                 <?php 
                                     // loop through grouped subjects and display by subcategory

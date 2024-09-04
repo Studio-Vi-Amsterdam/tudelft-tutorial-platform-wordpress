@@ -150,7 +150,7 @@
         <?php foreach ($combined as $item) : ?>
             <div class="search-link" data-card>
                 <div class="search-link__row">
-                    <a href="#" class="search-link__col">
+                    <a href="<?php echo $item['permalink']; ?>" class="search-link__col">
                         <h2><?php echo $item['title']; ?></h2>
                     </a>
                     <div class="search-link__col">
@@ -174,7 +174,7 @@
                     </div>
                 </div>
                 <div class="search-link__arrow">
-                    <a href="#" class="arrow">
+                    <a href="<?php echo $item['permalink']; ?>" class="arrow">
                         <svg width="14" height="22">
                             <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
                         </svg>
