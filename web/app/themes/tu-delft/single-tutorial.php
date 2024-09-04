@@ -9,6 +9,8 @@ $chapters = Tutorial::get_chapters_belonging_to( get_the_ID() );
 $last_updated_array = Chapter::get_last_updated_chapter( $chapters );
 $theme_url = get_template_directory_uri();
 
+$tutorial_title = get_the_title();
+
 $software = Tutorial::get_primary_software( get_the_ID() );
 
 ?>
@@ -195,7 +197,7 @@ $software = Tutorial::get_primary_software( get_the_ID() );
         ?>
         <div class="tutorial__item" data-tab-content="chapter-<?= ($key+1) ?>">
             <div class="tutorial__content text">
-                <h2><?php the_title(); ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
+                <h2><?php echo $tutorial_title; ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
                 <h3><?php echo $chapter['title']; ?> <span>link copied</span></h3>
             </div>
             <?php echo $chapter['content']; ?>
