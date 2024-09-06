@@ -28,6 +28,7 @@ class Tutorial extends Abstract_Cpt {
     const TAXONOMY = [
         [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'teachers', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'category', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
