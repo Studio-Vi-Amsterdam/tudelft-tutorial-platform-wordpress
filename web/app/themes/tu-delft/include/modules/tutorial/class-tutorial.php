@@ -29,6 +29,7 @@ class Tutorial extends Abstract_Cpt {
         [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'teachers', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'category', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'defined-terms', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
