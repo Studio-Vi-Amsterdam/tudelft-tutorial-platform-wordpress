@@ -108,6 +108,10 @@ body, html {
   display: flex;
   flex-direction: column;
 }
+#scroll-container .scrollbar-track-x {
+  display: none !important;
+  opacity: 0 !important;
+}
 
 .hide-scrollbar > .scrollbar-track-y {
   display: none !important;
@@ -3733,10 +3737,19 @@ body::-webkit-scrollbar-thumb {
 }
 .code-block table td {
   border: none !important;
+  width: unset;
 }
 .code-block table td:last-child {
   width: calc(100% - 50px);
   padding-left: 30px !important;
+}
+
+pre table td:first-child {
+  width: unset;
+}
+
+pre table td:last-child {
+  width: 100%;
 }
 
 .table-box {

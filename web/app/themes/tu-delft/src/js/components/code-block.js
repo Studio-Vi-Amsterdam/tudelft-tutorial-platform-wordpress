@@ -8,6 +8,9 @@ export async function highlightLineNumbersLoad() {
 }
 
 export function codeBlock() {
+	document.querySelectorAll('pre code').forEach((block) => {
+		block.innerHTML = block.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+	})
 	highlightJSLoad().then(() => {
 		window.hljs = hljs
 		hljs.highlightAll()
