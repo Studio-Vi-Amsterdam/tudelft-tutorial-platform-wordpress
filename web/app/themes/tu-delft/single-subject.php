@@ -9,6 +9,8 @@ $chapters = Subject::get_chapters_belonging_to( get_the_ID() );
 $last_updated_array = Chapter::get_last_updated_chapter( $chapters );
 $theme_url = get_template_directory_uri();
 $parent_category_id = 0;
+
+$subject_title = get_the_title();
 ?>
 
 <?php get_header(); ?>
@@ -150,7 +152,7 @@ $parent_category_id = 0;
         ?>
         <div class="tutorial__item" data-tab-content="chapter-<?= ($key+1) ?>">
             <div class="tutorial__content text">
-                <h2><?php echo $chapter['title']; ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
+                <h2><?php echo $subject_title; ?> <?= ($key + 1) ?>/<?php echo count( $chapters ); ?></h2>
                 <h3><?php echo $chapter['title']; ?></h3>
             </div>
             <?php echo $chapter['content']; ?>

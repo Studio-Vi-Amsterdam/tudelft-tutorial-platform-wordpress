@@ -3,6 +3,31 @@
     "title": "Subjects",
     "fields": [
         {
+            "key": "field_66daba2fdc28c",
+            "label": "Category",
+            "name": "category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_667eba37a9da6",
             "label": "Secondary Category",
             "name": "secondary_category",

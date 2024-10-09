@@ -35,11 +35,11 @@ use TuDelft\Theme\Modules\Course\Course;
             <div class="cards-with-categories__content <?php echo (((!empty($selectedCategory) && $selectedCategory === $category['category']->slug) || (empty($selectedCategory) && $key === 0)) ? 'active' : ''); ?>" data-category-content="chapter-<?php echo $key; ?>">
                 <?php foreach ( $category['subcategories'] as $subcategory ) : ?>
                     <div class="cards-with-categories__item accordion">
-                        <div class="accordion__head flex items-center justify-between <?php echo $selectedSubCategory.' '; echo $subcategory->slug.' '; echo ((!empty($selectedSubCategory) && $selectedSubCategory === $subcategory->slug) ? 'opened' : ''); ?>">
+                        <div class="accordion__head flex items-center justify-between <?php echo ((!empty($selectedSubCategory) && $selectedSubCategory === $subcategory->slug) ? 'opened' : ''); ?>">
                             <h2><?php echo $subcategory->name; ?></h2>
                             <button aria-label="open accordion"></button>
                         </div>
-                        <div class="accordion__content">
+                        <div class="accordion__content" style="<?php echo ((!empty($selectedSubCategory) && $selectedSubCategory === $subcategory->slug) ? 'overflow: unset; pointer-events: all;' : ''); ?>">
                             <div class="accordion__content-wrapper grid lg:grid-cols-2">
                                 <?php 
                                     // loop through grouped courses and display by subcategory

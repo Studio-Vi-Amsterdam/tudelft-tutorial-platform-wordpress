@@ -25,6 +25,7 @@ class Software extends Abstract_Cpt {
     const TAXONOMY = [
         [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'software-version', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'defined-terms', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
