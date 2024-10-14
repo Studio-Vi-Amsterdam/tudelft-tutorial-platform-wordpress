@@ -4007,10 +4007,9 @@ pre table td:last-child {
   margin-bottom: 0.8rem;
 }
 .table tr:first-child td {
-  background-color: #E0F5FE;
-  color: #67676B;
   min-height: unset;
   padding: 0.8rem;
+  border-bottom: 1px solid #E5E5E5;
 }
 @media (min-width: 768px) {
   .table tr:first-child td {
@@ -4019,8 +4018,9 @@ pre table td:last-child {
 }
 .table tr:first-child td:first-child {
   border: none;
-  background-color: #E0F5FE;
-  color: #67676B;
+  border-bottom: 1px solid #E5E5E5;
+  background-color: #ffffff;
+  color: #404040;
   border-radius: 4px 0 0px 4px;
 }
 .table tr:first-child td:last-child {
@@ -4087,6 +4087,27 @@ pre table td:last-child {
 .table--fill-title tr td:first-child {
   background-color: #FAFAFA;
   border-right: 4px solid #E0F5FE;
+}
+.table--fill-header tr:first-child td {
+  background-color: #E0F5FE;
+  color: #67676B;
+  min-height: unset;
+  padding: 0.8rem;
+  border-bottom: none;
+}
+@media (min-width: 768px) {
+  .table--fill-header tr:first-child td {
+    padding: 1.6rem;
+  }
+}
+.table--fill-header tr:first-child td:first-child {
+  border: none;
+  background-color: #E0F5FE;
+  color: #67676B;
+  border-radius: 4px 0 0px 4px;
+}
+.table--fill-header tr:first-child td:last-child {
+  border-radius: 0 4px 4px 0;
 }
 .table--summary tr:last-child td {
   border-top: 4px solid #E0F5FE;
