@@ -157,7 +157,7 @@ class Tutorial extends Abstract_Cpt {
         if ( empty( $subject_id ) ) {
             return '';
         }
-        $subject_name = get_the_title( $subject_id );
+        $subject_name = get_term( $subject_id )->name;
 
         return $subject_name;
     }
@@ -176,7 +176,7 @@ class Tutorial extends Abstract_Cpt {
             return '';
         }
 
-        $subject_name = get_the_title( $secondary_subject_id );
+        $subject_name = get_term( $secondary_subject_id )->name;
 
         return $subject_name;
     }
