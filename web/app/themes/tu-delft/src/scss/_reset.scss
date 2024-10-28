@@ -109,6 +109,11 @@ body, html {
       display: flex;
       flex-direction: column;
     }
+    .scrollbar-track-x {
+      display: none !important;
+      opacity: 0 !important;
+
+    }
   }
   .hide-scrollbar {
     & >  .scrollbar-track-y {

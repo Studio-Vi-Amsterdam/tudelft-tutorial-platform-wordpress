@@ -34,9 +34,17 @@
     }
     table td {
         border: none !important;
+        width: unset;
         &:last-child {
             width: calc(100% - 50px);
             padding-left: 30px !important;
         }
     }
+}
+
+pre table td:first-child {
+    width: unset;
+}
+pre table td:last-child {
+    width: 100%;
 }
