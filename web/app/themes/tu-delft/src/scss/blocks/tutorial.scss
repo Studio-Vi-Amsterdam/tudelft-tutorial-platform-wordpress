@@ -189,6 +189,16 @@
         &:not(:first-of-type) {
             margin-top: 5.6rem;
         }
+        h4 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            span {
+                font-size: 12px;
+            }
+        }
     }
 
     // .tutorial__main

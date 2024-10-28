@@ -26,6 +26,7 @@ import { zoomImage } from "./components/zoom-image";
 import { headerSearch } from "./components/search";
 import { codeBlock } from "./components/code-block";
 import { tableHeightRow } from "./components/table-height-row";
+import { readingTime } from "./components/reading-time";
 
 
 export function runAfterDomLoad() {
@@ -99,6 +100,7 @@ export function runAfterDomLoad() {
                         zoomImage()
                         headerSearch()
                         tableHeightRow()
+                        readingTime()
                         new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 												codeBlock()
 												setTimeout(() => {

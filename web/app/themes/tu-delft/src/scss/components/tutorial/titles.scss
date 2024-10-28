@@ -94,7 +94,9 @@
         color: $black;
         position: relative;
         display: flex;
-        align-items: baseline;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
         padding: .8rem 1rem;
         cursor: pointer;
         transition: .17s linear;
@@ -112,6 +114,13 @@
             display: block;
             margin-right: 1.1rem;
             transition: .17s linear;
+        }
+        span {
+            flex-grow: 1;
+            text-align: end;
+            display: block;
+            margin-left: 10px;
+            font-size: 12px;
         }
     }
 
