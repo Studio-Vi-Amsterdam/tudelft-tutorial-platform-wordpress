@@ -3867,7 +3867,6 @@ pre table td:last-child {
   }
 }
 .table-box__body .table-box__row div:last-child {
-  text-align: end;
   padding-right: 1.6rem;
 }
 .table-box__body .table-box__row:not(:nth-child(2), :first-child) div {
@@ -4102,9 +4101,6 @@ pre table td:last-child {
     max-width: 18.4rem;
     left: 0;
   }
-}
-.table tr td:last-child {
-  text-align: end;
 }
 .table--fill-title tr td:first-child {
   background-color: #FAFAFA;
