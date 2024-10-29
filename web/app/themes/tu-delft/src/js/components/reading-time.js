@@ -11,15 +11,18 @@ export function readingTime() {
                     const wpm = 225;
                     const words = text.trim().split(/\s+/).length;
                     const time = Math.ceil(words / wpm);
-                    chapterTime += time;
                     const wrapper = document.querySelector(`[data-tab-target="${data}"]`).nextElementSibling
                     if( wrapper.querySelector(`li`) && wrapper.querySelectorAll(`li`)[index]) {
                         wrapper.querySelectorAll(`li`)[index].innerHTML += `<span>${time} min</span>`
+                    chapterTime += time;
                     }
 
                 }
 
             })
+            if(chapterTime === 0) {
+                chapterTime = 1
+            }
             document.querySelector(`[data-tab-target="${data}"]`).innerHTML += `<span>${chapterTime} min</span>`
             summaryTime += chapterTime;
         });
