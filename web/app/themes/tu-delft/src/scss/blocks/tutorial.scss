@@ -197,6 +197,21 @@
             column-gap: 10px;
             span {
                 font-size: 12px;
+                display: flex;
+                padding-right:8px;
+                align-items: center;
+                gap: .4rem;
+                font-weight: 700;
+                &:before {
+                    display: block;
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.22253 4.8901V8.77899H11.1114M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100% auto;
+                }
             }
         }
     }
