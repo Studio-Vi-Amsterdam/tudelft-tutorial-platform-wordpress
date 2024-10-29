@@ -2784,7 +2784,8 @@ body::-webkit-scrollbar-thumb {
   color: #000000;
   position: relative;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 0.8rem 1rem;
   cursor: pointer;
   transition: 0.17s linear;
@@ -2818,6 +2819,16 @@ body::-webkit-scrollbar-thumb {
   margin-right: 1.1rem;
   transition: 0.17s linear;
 }
+.titles__head span {
+  flex-grow: 1;
+  text-align: end;
+  display: block;
+  margin-left: 10px;
+  font-size: 12px;
+  color: #67676B;
+  font-weight: 500;
+  white-space: nowrap;
+}
 .titles__body {
   margin-left: 2.8rem;
   display: grid;
@@ -2831,6 +2842,17 @@ body::-webkit-scrollbar-thumb {
 .titles__body ul li {
   padding: 0.4rem 0.8rem 0.8rem;
   box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.titles__body ul li span {
+  font-size: 12px;
+  display: block;
+  color: #67676B;
+  white-space: nowrap;
+  line-height: 2.1rem;
 }
 .titles__body ul a {
   color: #000000;
@@ -4503,6 +4525,31 @@ pre table td:last-child {
 }
 .tutorial__nav:not(:first-of-type) {
   margin-top: 5.6rem;
+}
+.tutorial__nav h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+.tutorial__nav h4 span {
+  font-size: 12px;
+  display: flex;
+  padding-right: 8px;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+}
+.tutorial__nav h4 span:before {
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.22253 4.8901V8.77899H11.1114M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
 }
 .tutorial__main {
   position: relative;
