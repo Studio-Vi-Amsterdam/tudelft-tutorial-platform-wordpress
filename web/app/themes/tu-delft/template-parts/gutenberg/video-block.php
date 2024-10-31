@@ -7,8 +7,9 @@
 $theme_url = get_template_directory_uri();
 $video = get_field('tu-delft-video_video');
 $placeholder = get_field('tu-delft-video_thumbnail');
+$subtitles = get_field('tu-delft-video_subtitles');
 ?>
-<div class="tutorial__content video" data-video-src="<?php echo $video['url']; ?>">
+<div class="tutorial__content video" data-test="<?php echo $subtitles; ?>" data-video-subtitles="<?php echo $subtitles['url']; ?>" data-video-src="<?php echo $video['url']; ?>">
     <?php if ( $title = get_field('tu-delft-video_title') ) : ?>
         <h4><?php echo $title; ?></h4>
     <?php endif; ?>
