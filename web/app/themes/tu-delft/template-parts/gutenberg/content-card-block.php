@@ -12,13 +12,16 @@ $theme_url = get_template_directory_uri();
         <?php 
             foreach(get_field('tu-delft-content-card_content_card_row') as $content_card):
                 $card_link = '';
+								$card_title = '';
                 if ( $content_card['tu-delft-content-card_card_is_custom_link'] ) {
                     $card_link = $content_card['tu-delft-content-card_card_custom_link'];
+										$card_title = $content_card['tu-delft-content-card_card_title'];
                 }
                 else {
                     $card_link_obj = $content_card['tu-delft-content-card_card_link'];
                     if ( !empty($card_link_obj) ) {
                         $card_link = get_permalink($card_link_obj->ID);
+												$card_title = $card_link_obj->post_title;
                     }
                 }
                 if ( empty($card_link) ) {
@@ -28,7 +31,7 @@ $theme_url = get_template_directory_uri();
             <a class="link-box" href="<?php echo $card_link; ?>">
                 <div class="link-box__wrapper  flex items-center">
                     <h6>
-                        <?php echo $content_card['tu-delft-content-card_card_title'] ? $content_card['tu-delft-content-card_card_title'] : $content_card['tu-delft-content-card_card_link']->post_title; ?>
+                        <?= $card_title; ?>
                     </h6>
                     <div class="arrow">
                         <svg width="9" height="14">
