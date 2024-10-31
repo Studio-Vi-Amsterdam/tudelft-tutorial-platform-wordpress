@@ -5362,7 +5362,7 @@ pre table td:last-child {
   position: relative;
   min-width: calc(100vw - 4.8rem);
   pointer-events: none;
-  aspect-ratio: 2/1;
+  aspect-ratio: 16/9;
   overflow: hidden;
   clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
   transition: 0.5s all cubic-bezier(0.15, 0, 0, 1);
@@ -5372,7 +5372,7 @@ pre table td:last-child {
     min-width: calc(1224px - 4.8rem);
   }
 }
-.modal-video-item__wr-iframe iframe {
+.modal-video-item__wr-iframe iframe, .modal-video-item__wr-iframe video {
   position: absolute;
   top: 0;
   left: 0;

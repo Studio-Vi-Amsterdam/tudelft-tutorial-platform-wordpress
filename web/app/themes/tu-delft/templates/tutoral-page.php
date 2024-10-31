@@ -203,7 +203,7 @@
                     </figcaption>
                 </figure>
             </div>
-            <div class="tutorial__content video" data-video-src="https://www.youtube.com/embed/sjkrrmBnpGE">
+            <div class="tutorial__content video" data-video-subtitles="https://s3-us-west-2.amazonaws.com/s.cdpn.io/191332/subtitles.vtt" data-video-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/191332/tina.mp4">
                 <figure class="video__wrapper">
                     <div class="video__preload">
                         <img width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">

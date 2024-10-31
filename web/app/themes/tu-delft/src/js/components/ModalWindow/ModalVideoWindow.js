@@ -19,23 +19,30 @@ export default class ModalVideoWindow extends ModalWindowBase {
 
   callModalVideoHandler(target) {
     const dataVideoSrc = target.dataset.videoSrc
-    const dataImageSrc = target.dataset.imageSrc
-    if(dataVideoSrc) {
-      const url = new URL(dataVideoSrc);
-      url.searchParams.set('autoplay', '1');
-      this.$modalVideo.querySelector('iframe')
-        .setAttribute('src', url)
-        this.$modalVideo.classList.add('show-video')
+    const dataVideoSubtitle = target.dataset.videoSubtitles
+    const type = dataVideoSrc.split('.')[dataVideoSrc.split('.').length - 1]
+    if(dataVideoSrc && dataVideoSubtitle) {
+      this.$modalVideo.querySelector('.modal-video-item__wr-iframe').innerHTML += `
+      <video id="video" crossorigin="anonymous" loop autoplay controls>
+                <source src='${dataVideoSrc}' type='video/${type}'>
+                <track id="track" src="${dataVideoSubtitle}" kind="subtitles" srclang="en" label="Nightmare" default />
+                </video>
+                `
 
+    } else if(dataVideoSrc){
+      this.$modalVideo.querySelector('.modal-video-item__wr-iframe').innerHTML += `
+      <video id="video" crossorigin="anonymous" loop autoplay controls>
+                <source src='${dataVideoSrc}' type='video/${type}'>
+                </video>
+                `
     }
+    this.$modalVideo.classList.add('show-video')
     this.openModal(this.constants.MODAL_VIDEO_ID)
   }
 
   closeModal(event) {
     setTimeout(() => {
-      this.$modal.querySelector(`#${this.constants.MODAL_VIDEO_ID}`)
-        .querySelector('iframe')
-        .setAttribute('src', '')
+      document.querySelector('.modal-video-item__wr-iframe video').remove()
       this.$modalVideo.classList.remove('show-video')
     }, 500);
     super.closeModal(event)
