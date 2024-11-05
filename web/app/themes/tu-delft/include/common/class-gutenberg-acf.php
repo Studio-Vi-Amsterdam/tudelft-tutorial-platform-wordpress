@@ -1295,9 +1295,9 @@ class Gutenberg_ACF {
                 'placeholder' => '',
             ),
             array(
-                'key' => 'tu-delft-video-url_video_url_key',
+                'key' => 'tu-delft-video-url_url_key',
                 'label' => 'Video URL',
-                'name' => 'tu-delft-video-url_video_url',
+                'name' => 'tu-delft-video-url_url',
                 'aria-label' => '',
                 'type' => 'url',
                 'instructions' => '',
