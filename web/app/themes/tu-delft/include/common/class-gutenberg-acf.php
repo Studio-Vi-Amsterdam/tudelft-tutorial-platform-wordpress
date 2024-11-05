@@ -1272,6 +1272,86 @@ class Gutenberg_ACF {
         'show_in_rest' => 0,
     ];
 
+    private const VIDEO_URL_BLOCK = [
+        'key' => 'group_gtcac99045995',
+        'title' => 'Video URL Block',
+        'fields' => array(
+            array(
+                'key' => 'tu-delft-video-url_title_key',
+                'label' => 'Title',
+                'name' => 'tu-delft-video-url_title',
+                'aria-label' => '',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'maxlength' => '',
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'tu-delft-video-url_video_url_key',
+                'label' => 'Video URL',
+                'name' => 'tu-delft-video-url_video_url',
+                'aria-label' => '',
+                'type' => 'url',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+
+            ),
+            array(
+                // thumbnail
+                'key' => 'tu-delft-video-url_thumbnail_key',
+                'label' => 'Thumbnail',
+                'name' => 'tu-delft-video-url_thumbnail',
+                'aria-label' => '',
+                'type' => 'image',
+                'instructions' => 'Select an image from Media Library',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+                'library' => 'all',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/tu-delft-video-url',
+                ),
+            ),
+        ),
+        'menu_order' => 1,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => 'TU Delft Gutenberg Video URL Block',
+        'show_in_rest' => 0,
+    ];
+
     /**
      * Map block slug to block array
      * 
@@ -1295,6 +1375,7 @@ class Gutenberg_ACF {
             'content_card_block' => self::CONTENT_CARD_BLOCK,
             'quiz_block' => self::QUIZ_BLOCK,
             'h5p_block' => self::H5P_BLOCK,
+            'video_url_block' => self::VIDEO_URL_BLOCK,
             // Add new blocks here
         ];
         
