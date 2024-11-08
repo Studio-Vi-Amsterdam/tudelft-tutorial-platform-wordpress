@@ -24,6 +24,14 @@ class Tu_Delft {
 
     public function __construct() {
         add_action( 'init', [ $this, 'load' ], 1 );
+
+        add_theme_support( 'menus' );
+        add_action( 'init', [ $this, 'menus' ] );
+        add_action('init', [ $this, 'register_custom_post_status' ] );
+        add_action( 'wp_ajax_submit_feedback', [ $this, 'submit_feedback' ] );
+        add_action( 'wp_ajax_nopriv_submit_feedback', [ $this, 'submit_feedback' ] );
+
+        add_action( 'template_redirect', [ $this, 'logout_user' ] );
     }
 
     /**
@@ -36,6 +44,40 @@ class Tu_Delft {
     public function load(): void {
         $this->load_classes();
         $this->init_classes();
+    }
+
+    /**
+     * Register menus
+     * 
+     * @return void
+     * 
+     * @since 1.0.0
+     */
+    public function menus(): void {
+
+        register_nav_menus( [
+            'footer-info' => __( 'Footer Info', 'magen' ),
+            'footer1' => __( 'Footer 1', 'magen' ),
+            'footer2' => __( 'Footer 2', 'magen' ),
+        ] );
+    }
+
+    /**
+     * Register custom post status
+     * 
+     * @since 2.0.0
+     * 
+     * @return void
+     */
+    public function register_custom_post_status(): void {
+        register_post_status( 'archived', array(
+            'label'                     => _x( 'Archived', 'post' ),
+            'label_count'               => _n_noop( 'Archived <span class="count">(%s)</span>', 'Archived <span class="count">(%s)</span>' ),
+            'public'                    => true,
+            'exclude_from_search'       => false,
+            'show_in_admin_all_list'    => true,
+            'show_in_admin_status_list' => true
+        ) );
     }
 
     /**
@@ -95,4 +137,48 @@ class Tu_Delft {
         new Lab();
     }
 
+    /**
+     * Submit feedback
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function submit_feedback(): void {
+        
+        $feedback_about = sanitize_text_field( $_POST['feedback_about'] );
+        $feedback_message = sanitize_text_field( $_POST['message'] );
+
+        $email = get_bloginfo('admin_email');
+
+        $subject = 'Feedback about ' . $feedback_about;
+
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+
+        $message = '<html><body>';
+        $message .= '<p>Feedback about ' . $feedback_about . '</p>';
+        $message .= '<p>Message: ' . $feedback_message . '</p>';
+        $message .= '</body></html>';
+
+        wp_mail( $email, $subject, $message, $headers );
+
+    }
+
+    /**
+     * Logout user
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function logout_user(): void {
+        // check is user trying to reach /logout
+        $path = $_SERVER['REQUEST_URI'] ?? $_SERVER['REQUEST_URL'] ?? '';
+
+        if ( strpos($path, 'logout') !== false) {
+            wp_logout();
+            wp_redirect( home_url() );
+            exit;
+        }
+    }
 }

@@ -21,7 +21,6 @@ export function tutorials() {
             addActiveTab('chapter-0')
         }
         if (document.querySelector('.tutorial')) {
-            $('.titles__item').eq(0).addClass('titles__item--opened')
             $('.titles__head').on('click', function (e) {
                 $(this).parent().addClass('titles__item--opened')
                 $('.titles__head').not(this).parent().removeClass('titles__item--opened')

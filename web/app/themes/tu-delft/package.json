@@ -42,6 +42,8 @@
     "@barba/core": "^2.9.7",
     "bootstrap-4-grid": "^3.4.0",
     "gsap": "^3.6.1",
+    "highlight.js": "^11.10.0",
+    "highlightjs-line-numbers.js": "^2.8.0",
     "lottie-web": "^5.7.11",
     "slick-carousel": "^1.8.1",
     "smooth-scrollbar": "^8.8.4",

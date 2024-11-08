@@ -30,7 +30,8 @@ namespace TuDelft\Theme\Common;
         'video_text_block',
         'text_video_block',
         'quiz_block',
-        // 'h5p_block',
+        'h5p_block',
+        'video_url_block',
     ];
 
     public function __construct() {
@@ -39,7 +40,14 @@ namespace TuDelft\Theme\Common;
             foreach(self::BLOCKS as $block) {
                 // check does method exist
                 if (method_exists($this, "register_{$block}")) {
+
+                    // Register block for ACF
                     add_action('acf/init', [ $this, "register_{$block}" ]);
+
+                    // Register ACF blocks for Gutenberg
+                    add_action('acf/include_fields', function() use ($block){
+                        Gutenberg_ACF::register_blocks($block);
+                    } );
                 }
             }
         }
@@ -359,6 +367,62 @@ namespace TuDelft\Theme\Common;
             'category' => 'widgets',
             'icon' => 'editor-ul',
             'keywords' => ['Quiz', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
+    }
+
+    /**
+     * Register H5P Block
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function register_h5p_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/h5p',
+            'title' => __('H5P Block'),
+            'description'   => __('H5P Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/h5p-block.php',
+            'category' => 'widgets',
+            'icon' => 'html',
+            'keywords' => ['H5P', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
+    }
+
+    /**
+     * Register Video URL Block
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function register_video_url_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/video-url',
+            'title' => __('Video URL Block'),
+            'description'   => __('Video URL Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/video-url-block.php',
+            'category' => 'widgets',
+            'icon' => 'format-video',
+            'keywords' => ['Video URL', 'Content'],
             'mode' => 'edit',
             'example'  => [
                 'attributes' => [

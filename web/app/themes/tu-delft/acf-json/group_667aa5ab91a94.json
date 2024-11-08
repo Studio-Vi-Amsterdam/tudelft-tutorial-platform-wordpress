@@ -1,13 +1,53 @@
 {
-    "key": "group_65cbfc5778484",
-    "title": "Download Block",
+    "key": "group_667aa5ab91a94",
+    "title": "Software Page",
     "fields": [
         {
-            "key": "tu-delft-download_file",
-            "label": "File",
-            "name": "tu-delft-download_file",
+            "key": "field_667aa5ab22557",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
-            "type": "file",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_667aa5d122558",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_667aa5dc22559",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -18,68 +58,33 @@
             },
             "return_format": "array",
             "library": "all",
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "tu-delft-download_title",
-            "label": "Title",
-            "name": "tu-delft-download_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "tu-delft-download_description",
-            "label": "Description",
-            "name": "tu-delft-download_description",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf\/tu-delft-download"
+                "value": "templates\/template-software.php"
             }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "TU Delft Gutenberg Download Block",
+    "description": "",
     "show_in_rest": 0,
-    "modified": 1710175165
+    "modified": 1719313941
 }

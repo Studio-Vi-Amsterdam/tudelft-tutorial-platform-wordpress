@@ -3,7 +3,11 @@
 namespace TuDelft\Theme\Modules\Tutorial;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
+use WP_Query;
 
+// TODO: move this error handling separately 
+error_reporting( E_ERROR );
+ini_set( 'display_errors', 0 );
 /**
  * Class Tutorial
  *
@@ -18,18 +22,20 @@ use TuDelft\Theme\Abstract\Abstract_Cpt;
 class Tutorial extends Abstract_Cpt {
 
     const POST_TYPE = 'tutorial';
-    const POST_SUPPORTS = [ 'title', 'editor', 'revisions' ];
+    const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'author' ];
     const POST_ICON = 'dashicons-welcome-learn-more';
     const REWRITE = [];
     const TAXONOMY = [
         [ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
         [ 'name' => 'teachers', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'category', 'rewrite' => [ 'slug' => '.' ] ],
+        [ 'name' => 'defined-terms', 'rewrite' => [ 'slug' => '.' ] ],
     ];
     const EXTRA_SETTINGS = [
         'public' => true,
         'show_in_rest' => true,
         'show_in_search' => false,
-        'has_archive' => true,
+        'has_archive' => false,
         'publicly_queryable' => true,
     ];
 
@@ -50,7 +56,7 @@ class Tutorial extends Abstract_Cpt {
 
         // If this tutorial does not have any chapters, return false.
         if ( empty( $chapters ) ) {
-            return false;
+            return [];
         }
         
         
@@ -95,5 +101,126 @@ class Tutorial extends Abstract_Cpt {
         }, $keywords );
 
         return $keywords;
+    }
+
+    /**
+     * For given ID, get name of pirmary software used
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return array
+     * 
+     * @since 1.0.0
+     */
+    public static function get_primary_software( int $tutorial_id ) : array {
+        $software_id =  get_field( 'primary_software', $tutorial_id );
+        $software_name = get_the_title( $software_id );
+        
+        // get taxonomy software_version for software
+        $software_version = get_the_terms( $software_id, 'software-version' );
+        $software_version = $software_version[0]->name;
+
+        return [
+            'name' => $software_name,
+            'version' => $software_version,
+        ];
+    }
+
+    /**
+     * Get course by tutorial ID
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    public static function get_course( int $tutorial_id ) : string {
+        $course_id = get_field( 'course', $tutorial_id );
+        $course_name = get_the_title( $course_id );
+
+        return $course_name;
+    }
+
+    /**
+     * Get subject that tutorial belongs to
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    public static function get_primary_subject( int $tutorial_id ) : string {
+        $subject_id = get_field( 'primary_subject', $tutorial_id );
+        
+        if ( empty( $subject_id ) ) {
+            return '';
+        }
+        $subject_name = get_term( $subject_id )->name;
+
+        return $subject_name;
+    }
+
+    /**
+     * Get secondary subjects that tutorial belongs to
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     */
+    public static function get_secondary_subject( int $tutorial_id ) : string {
+        $secondary_subject_id = get_field( 'secondary_subject', $tutorial_id );
+
+        if ( empty( $secondary_subject_id ) ) {
+            return '';
+        }
+
+        $subject_name = get_term( $secondary_subject_id )->name;
+
+        return $subject_name;
+    }
+
+    /**
+     * Get level of tutorial
+     * 
+     * @param int $tutorial_id
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    public static function get_level( int $tutorial_id ) : string {
+        $level = get_field( 'level', $tutorial_id );
+
+        return ucfirst( $level );
+    }
+
+    /**
+     * Search through tutorials by title
+     * 
+     * @param string $search
+     * 
+     * @return array
+     */
+    public static function search_tutorials( string $search ): array {
+        $args = [
+            'post_type' => self::POST_TYPE,
+            'posts_per_page' => -1,
+            's' => $search,
+        ];
+
+        $query = new WP_Query( $args );
+
+        return array_map( function( $lab ) {
+            return [
+                'id' => $lab->ID,
+                'type' => self::POST_TYPE,
+                'title' => $lab->post_title,
+                'permalink' => get_permalink( $lab->ID ),
+                'content' => get_field( 'description', $lab->ID ),
+                'keywords' => self::get_keywords( $lab->ID ),
+            ];
+        }, $query->posts ?? [] );
     }
 }

@@ -1,11 +1,11 @@
 {
-    "key": "group_6653afa5b5b94",
-    "title": "Quizk Block",
+    "key": "group_6668d7cb6e286",
+    "title": "Feedback data",
     "fields": [
         {
-            "key": "field_6653afa55610d",
-            "label": "Question",
-            "name": "question",
+            "key": "field_6668d7cb03b65",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -23,9 +23,29 @@
             "append": ""
         },
         {
-            "key": "field_6653afd35610e",
-            "label": "Answers",
-            "name": "answers",
+            "key": "field_6668d7d903b66",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6668d80d03b68",
+            "label": "Feedback Options",
+            "name": "feedback_options",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -36,18 +56,18 @@
                 "class": "",
                 "id": ""
             },
+            "layout": "table",
+            "pagination": 0,
             "min": 0,
             "max": 0,
             "collapsed": "",
             "button_label": "Add Row",
-            "layout": "table",
-            "pagination": 0,
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6653afdf5610f",
-                    "label": "test",
-                    "name": "test",
+                    "key": "field_6668d99879fe5",
+                    "label": "Value",
+                    "name": "value",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -63,28 +83,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6653afd35610e"
-                },
-                {
-                    "key": "field_6653afe556110",
-                    "label": "Is correct",
-                    "name": "is_correct",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "parent_repeater": "field_6653afd35610e"
+                    "parent_repeater": "field_6668d80d03b68"
                 }
             ]
         }
@@ -92,9 +91,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf\/tu-delft-quiz"
+                "value": "templates\/template-feedback.php"
             }
         ]
     ],
@@ -105,7 +104,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "TU Delft Gutenberg Content for Quiz Block",
+    "description": "",
     "show_in_rest": 0,
-    "modified": 1716763428
+    "modified": 1718150681
 }

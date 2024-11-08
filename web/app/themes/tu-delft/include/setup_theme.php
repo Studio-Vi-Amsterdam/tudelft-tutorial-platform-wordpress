@@ -104,6 +104,7 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 // Custom image sizes
 add_image_size( 'figure_1600', 1600, 9999 );
+add_image_size( 'card_image', 624, 840, true );
 
 
 /*
@@ -191,3 +192,11 @@ add_theme_support(
 
 if (function_exists('add_image_size')) {
 }
+
+// Register query vars
+function add_query_vars_filter( $vars ){
+  $vars[] = "category";
+  $vars[] = "subcategory";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );

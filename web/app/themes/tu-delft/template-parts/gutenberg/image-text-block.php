@@ -7,24 +7,28 @@
 $image = get_field('tu-delft-image-text_image');
 ?>
 <div class="tutorial__content text">
-    <?php
-        get_template_part('template-parts/gutenberg/chapter-subtitle');
-    ?>
+    <?php if ( $title = get_field('tu-delft-image-text_title') ) : ?>
+        <h4><?php echo $title; ?></h4>
+    <?php endif; ?>
     <div class="two-column flex flex-col sm:flex-row items-start justify-between">
         <div class="two-column__item two-column__item--image image">
             <figure>
-                <img data-image-src="<?php echo $image['url']; ?>" width="<?php echo $image['sizes']['large-width']; ?>" height="<?php echo $image['sizes']['large-height']; ?>" src="<?php echo $image['url']; ?>" alt="<?php $image['alt']; ?>">
+                <span>
+                <img 
+                    class="<?php echo !get_field('tu-delft-image-text_has_image_zoom') ? 'disable-zoom' : ''; ?>"
+                    data-image-src="<?php echo $image['url']; ?>" 
+                    width="<?php echo $image['sizes']['large-width']; ?>" 
+                    height="<?php echo $image['sizes']['large-height']; ?>" 
+                    src="<?php echo $image['url']; ?>" alt="<?php $image['alt']; ?>"
+                >
+                </span>
                 <figcaption>
-                    <?php echo $image['caption']; ?>
+                    <?php echo get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']; ?>
                 </figcaption>
             </figure>
         </div>
         <div class="two-column__item two-column__item--text text">
-            <p>
-                <small>
-                    <?php the_field('tu-delft-image-text_content'); ?>
-                </small>
-            </p>
+						<?php the_field('tu-delft-image-text_content'); ?>
         </div>
     </div>
 </div>

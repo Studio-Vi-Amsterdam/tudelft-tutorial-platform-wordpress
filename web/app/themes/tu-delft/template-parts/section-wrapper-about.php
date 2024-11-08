@@ -3,38 +3,60 @@
     <div class="section-wrapper__text">
         <div class="text">
             <h2>DIGIPEDIA</h2>
-            <h3>About us</h3>
-            <p>
-            Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
+            <h3><?php the_field('title', get_the_ID()); ?></h3>
+            <p><?php the_field('intro, get_the_ID()'); ?></p>
+        </div>
+        <?php 
+            $image = get_field('image', get_the_ID());
+            if ($image) : 
+        ?>
+                <div class="image">
+                    <figure>
+                        <img 
+                            data-image-src="<?php echo $image['url']; ?>" 
+                            width="808" 
+                            height="454" 
+                            src="<?php echo $image['url']; ?>" 
+                            alt="<?php echo $image['alt']; ?>"
+                        />
+                        <?php
+                            $caption = get_field('caption', get_the_ID());
+                            if ($caption) :
+                        ?>
+                            <figcaption><?php echo $caption; ?></figcaption>
+                        <?php endif; ?>
+                    </figure>
+                </div>
+        <?php endif; ?>
+        <?php 
+            if (have_rows('sections', get_the_ID())) :
+                while (have_rows('sections', get_the_ID())) : 
+                    the_row();
+                    $title = get_sub_field('section_title');
+                    $content = get_sub_field('section_content');
+                    $has_cta = get_sub_field('has_cta');
+
+                    if ($has_cta) {
+                        $cta_label = get_sub_field('cta_label');
+                        $cta_link = get_sub_field('cta_link');
+                    }
+        ?>
+                <div class="text">
+                    <h4><?php echo $title; ?></h4>
+                    <p>
+                        <small>
+                            <?php echo $content; ?>
+                        </small>
                     </p>
-        </div>
-        <div class="image">
-            <figure>
-                <img data-image-src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" width="808" height="454" src="<?= $theme_url ?>/src/img/tutorial/img-1.jpg" alt="image">
-                <figcaption>
-                Image From: Murphy, K. P. (2021). Figure 14.4. In Machine Learning: A Probabilistic Perspective. textbook, MIT Press.
-                </figcaption>
-            </figure>
-        </div>
-        <div class="text">
-            <h4>Title Text</h4>
-            <p>
-                <small>
-                Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
-                </small>
-            </p>
-        </div>
-        <div class="text">
-            <h4>Give Feedback</h4>
-            <p>
-                <small>
-                Lorem ipsum dolor sit amet consectetur. Sed dui risus et habitasse consectetur leo. Ac placerat aliquam nulla suspendisse semper. Auctor egestas aliquet adipiscing eget. At purus ornare volutpat sed in habitasse ligula. Diam ipsum facilisi morbi dapibus nullam tortor vestibulum interdum. Ac est gravida id sit aliquam diam vulputate scelerisque massa.
-                </small>
-            </p>
-            <a href="#" class="btn btn--full-width-onmobile" data-prev>
-                <span>Give feedback</span>
-                <span>Give feedback</span>
-            </a>
-        </div>
+                    <?php if ($has_cta) : ?>
+                        <a href="<?php echo $cta_link; ?>" class="btn btn--full-width-onmobile">
+                            <span><?php echo $cta_label; ?></span>
+                            <span><?php echo $cta_label; ?></span>
+                        </a>
+                    <?php endif; ?>
+        <?php
+                endwhile;
+            endif;
+        ?>
     </div>
 </section>

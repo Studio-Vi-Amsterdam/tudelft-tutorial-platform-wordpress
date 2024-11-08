@@ -9,6 +9,9 @@ main-rtl.css
 # Node artifact files
 node_modules/
 
+#vscode specific settings
+.vscode/
+
 # Compiled Java class files
 *.class
 

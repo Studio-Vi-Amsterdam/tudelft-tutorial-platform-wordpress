@@ -77,11 +77,5 @@ export function smoothScroll() {
 		}
 	});
 
-	let hash = $(location).attr('hash');
-	if($(`${hash}`).length > 0) {
-		let anchor = $(`${hash}`)
-		bodyScrollBar.scrollTo(0, anchor.offset().top + pagePosition - 100, 1000);
-
-	}
-
+	return bodyScrollBar
 }

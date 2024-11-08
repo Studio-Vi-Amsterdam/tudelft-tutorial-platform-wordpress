@@ -15,8 +15,8 @@
                 <img width="300" height="117" src="<?= get_template_directory_uri() ?>/src/img/logo-footer.svg" alt="logo">
             </a>
             <div class="footer__copyright">
-                <span>2024 All rights reserved</span>
-                <a href="#">privacy policy</a>
+                <span><?php echo date('Y'); ?> All rights reserved</span>
+                <a href="https://www.tudelft.nl/en/privacy-statement/">Privacy Policy</a>
             </div>
         </div>
         <div class="footer__info">
@@ -27,19 +27,25 @@
         <div class="footer__lists flex">
             <div class="footer__list">
                 <h6>Tutorials</h6>
-                <ul>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Subjects</a></li>
-                    <li><a href="#">Software</a></li>
-                    <li><a href="#">Labs</a></li>
-                </ul>
+                <?php
+                    wp_nav_menu( [
+                        'theme_location' => 'footer1',
+                        'container' => 'div',
+                        'container_class' => 'footer-menu',
+                        'menu_class' => '',
+                    ] );
+                ?>
             </div>
             <div class="footer__list">
                 <h6>About</h6>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Feedback</a></li>
-                </ul>
+                <?php
+                    wp_nav_menu( [
+                        'theme_location' => 'footer2',
+                        'container' => 'div',
+                        'container_class' => 'footer-menu',
+                        'menu_class' => '',
+                    ] );
+                ?>
             </div>
         </div>
     </div>
@@ -52,9 +58,7 @@
         <div class="modal-window__fader"></div>
             <div class="modal-video-item__wr-iframe">
                 <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
-                <iframe src="" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                
             </div>
         </div>
         <div id="modal-image" class="modal-window__item modal-window__video modal-video-item">
@@ -69,7 +73,6 @@
     </div>
 
 <?php wp_footer(); ?>
-
 </body>
 
 </html>
