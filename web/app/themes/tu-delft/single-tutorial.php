@@ -84,13 +84,13 @@ $software = Tutorial::get_primary_software( get_the_ID() );
             <table>
                 <?php if ( $software['name'] ) : ?>
                     <tr>
-                        <td>Primary Software Used</td>
+                        <td>Primary software used</td>
                         <td><?php echo $software['name'] ?? 'N/A'; ?></td>
                     </tr>
                 <?php endif; ?>
                 <?php if ( $software['version'] ) : ?>
                     <tr>
-                        <td>Software Version</td>
+                        <td>Software version</td>
                         <td><?php echo $software['version'] ?? 'N/A'; ?></td>
                     </tr>
                 <?php endif; ?>
@@ -102,13 +102,13 @@ $software = Tutorial::get_primary_software( get_the_ID() );
                 <?php endif; ?>
                 <?php if ( $primary_subject = Tutorial::get_primary_subject( get_the_ID() ) ) : ?>
                     <tr>
-                        <td>Primary Subject</td>
+                        <td>Primary subject</td>
                         <td><?php echo $primary_subject; ?></td>
                     </tr>
                 <?php endif; ?>
                 <?php if ( $secondary_subject = Tutorial::get_secondary_subject( get_the_ID() ) ) : ?>
                     <tr>
-                        <td>Secondary Subject</td>
+                        <td>Secondary subject</td>
                         <td><?php echo $secondary_subject; ?></td>
                     </tr>
                 <?php endif; ?>
