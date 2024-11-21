@@ -86,7 +86,7 @@ $lab_title = get_the_title();
                 </tr>
                 <?php if ( $lab_types = Lab::get_single_lab_types( get_the_ID() ) ) : ?>
                     <tr>
-                        <td>Primary Category</td>
+                        <td>Primary category</td>
                         <td>
                             <ul>
                                 <?php

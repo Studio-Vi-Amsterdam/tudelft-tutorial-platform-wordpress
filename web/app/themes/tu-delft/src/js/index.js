@@ -28,7 +28,7 @@ import { codeBlock } from "./components/code-block";
 import { tableHeightRow } from "./components/table-height-row";
 import { readingTime } from "./components/reading-time";
 
-
+let modalInstance = null
 export function runAfterDomLoad() {
     $(window).on('load', function () {
         $('.tutorial__main').removeClass('transition')
@@ -104,7 +104,9 @@ export function runAfterDomLoad() {
                         headerSearch()
                         tableHeightRow()
                         readingTime()
-                        new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
+												if(!modalInstance) {
+													modalInstance = new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
+												}
 												codeBlock()
 												setTimeout(() => {
 													if($(`${hash}`).length > 0) {

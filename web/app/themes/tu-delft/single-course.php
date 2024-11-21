@@ -107,7 +107,7 @@ $course_title = get_the_title();
                     </tr>
                 <?php endif; ?>
                 <tr>
-                    <td>Study</td>
+                    <td>Primary study</td>
                     <td>
                         <?php 
                             echo Course::get_academic_level_name_by_id( 

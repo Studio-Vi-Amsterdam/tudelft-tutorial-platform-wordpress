@@ -86,7 +86,7 @@ $subject_title = get_the_title();
                 </tr>
                 <?php if ( $category = Subject::get_subject_primary_category( get_the_ID() ) ) : ?>
                     <tr>
-                        <td>Primary Category</td>
+                        <td>Primary category</td>
                         <td>
                             <ul>
                                 <?php
@@ -103,7 +103,7 @@ $subject_title = get_the_title();
                 <?php endif; ?>
                 <?php if ( $secondary_subject = Subject::get_subject_subcategories( get_the_ID(), $parent_category_id ) ) : ?>
                     <tr>
-                        <td>Secondary Category</td>
+                        <td>Secondary category</td>
                         <td>
                             <ul>
                                 <?php foreach ($secondary_subject as $subcategory) : ?>
