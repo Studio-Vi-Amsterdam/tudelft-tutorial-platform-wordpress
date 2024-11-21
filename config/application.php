@@ -101,6 +101,10 @@ if (env('DATABASE_URL')) {
     Config::define('DB_HOST', isset($dsn->port) ? "{$dsn->host}:{$dsn->port}" : $dsn->host);
 }
 
+if (env('TEACHER_DASHBOARD_URL')) {
+    Config::define('TEACHER_DASHBOARD_URL', env('TEACHER_DASHBOARD_URL'));
+}
+
 /**
  * Authentication Unique Keys and Salts
  */
