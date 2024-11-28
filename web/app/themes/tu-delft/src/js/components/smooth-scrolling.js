@@ -13,7 +13,6 @@ export function smoothScroll() {
 	Scrollbar.initAll()
 	bodyScrollBar.addListener((status) => {
 		if (status.offset.x !== 0) {
-		  // Set horizontal offset to 0 to prevent horizontal movement
 		  bodyScrollBar.setPosition(0, status.offset.y);
 		}
 	  });
