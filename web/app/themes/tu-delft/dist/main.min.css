@@ -2785,7 +2785,6 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   padding: 0.8rem 1rem;
   cursor: pointer;
   transition: 0.17s linear;
@@ -4526,7 +4525,6 @@ pre table td:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   column-gap: 10px;
 }
 .tutorial__nav h4 span {
@@ -4536,6 +4534,7 @@ pre table td:last-child {
   align-items: center;
   gap: 0.4rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 .tutorial__nav h4 span:before {
   display: block;

@@ -14,8 +14,8 @@ export function readingTime() {
                     const wrapper = document.querySelector(`[data-tab-target="${data}"]`).nextElementSibling
                     if( wrapper.querySelector(`li`) && wrapper.querySelectorAll(`li`)[index]) {
                         wrapper.querySelectorAll(`li`)[index].innerHTML += `<span>${time} min</span>`
-                    chapterTime += time;
                     }
+                    chapterTime += time;
 
                 }
 

@@ -9,8 +9,14 @@ export function smoothScroll() {
 	const tutorialNavFader = $('.tutorial__fader')
 	tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
 	const scroller = document.querySelector('#scroll-container');
-	const bodyScrollBar = Scrollbar.init(scroller, { damping: 0.1, delegateTo: document, alwaysShowTracks: false, });
+	const bodyScrollBar = Scrollbar.init(scroller, { damping: 0.1, delegateTo: document, alwaysShowTracks: false });
 	Scrollbar.initAll()
+	bodyScrollBar.addListener((status) => {
+		if (status.offset.x !== 0) {
+		  // Set horizontal offset to 0 to prevent horizontal movement
+		  bodyScrollBar.setPosition(0, status.offset.y);
+		}
+	  });
 	if($(window).innerWidth() >= 767) {
 		footer.css('height', $('.footer__container').outerHeight() + 'px')
 		$('.footer__container').css('top',pagePosition + $(window).innerHeight() - $('.footer__container').outerHeight() + 'px' )
