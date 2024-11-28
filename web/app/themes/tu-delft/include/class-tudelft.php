@@ -27,7 +27,7 @@ class Tu_Delft {
 
         add_theme_support( 'menus' );
         add_action( 'init', [ $this, 'menus' ] );
-        
+        add_action('init', [ $this, 'register_custom_post_status' ] );
         add_action( 'wp_ajax_submit_feedback', [ $this, 'submit_feedback' ] );
         add_action( 'wp_ajax_nopriv_submit_feedback', [ $this, 'submit_feedback' ] );
 
@@ -60,6 +60,24 @@ class Tu_Delft {
             'footer1' => __( 'Footer 1', 'magen' ),
             'footer2' => __( 'Footer 2', 'magen' ),
         ] );
+    }
+
+    /**
+     * Register custom post status
+     * 
+     * @since 2.0.0
+     * 
+     * @return void
+     */
+    public function register_custom_post_status(): void {
+        register_post_status( 'archived', array(
+            'label'                     => _x( 'Archived', 'post' ),
+            'label_count'               => _n_noop( 'Archived <span class="count">(%s)</span>', 'Archived <span class="count">(%s)</span>' ),
+            'public'                    => true,
+            'exclude_from_search'       => false,
+            'show_in_admin_all_list'    => true,
+            'show_in_admin_status_list' => true
+        ) );
     }
 
     /**

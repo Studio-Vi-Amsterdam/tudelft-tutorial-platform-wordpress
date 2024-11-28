@@ -86,7 +86,7 @@ $software_title = get_the_title();
                 </tr>
                 <?php if ( $versions = Software::get_software_versions( get_the_ID() ) ) : ?>
                     <tr>
-                        <td>Software Versions</td>
+                        <td>Software versions</td>
                         <td>
                             <ul>
                                 <?php

@@ -31,6 +31,7 @@ namespace TuDelft\Theme\Common;
         'text_video_block',
         'quiz_block',
         'h5p_block',
+        'video_url_block',
     ];
 
     public function __construct() {
@@ -394,6 +395,34 @@ namespace TuDelft\Theme\Common;
             'category' => 'widgets',
             'icon' => 'html',
             'keywords' => ['H5P', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
+    }
+
+    /**
+     * Register Video URL Block
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function register_video_url_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/video-url',
+            'title' => __('Video URL Block'),
+            'description'   => __('Video URL Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/video-url-block.php',
+            'category' => 'widgets',
+            'icon' => 'format-video',
+            'keywords' => ['Video URL', 'Content'],
             'mode' => 'edit',
             'example'  => [
                 'attributes' => [
