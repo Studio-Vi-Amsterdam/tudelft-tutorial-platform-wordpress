@@ -52,7 +52,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>DigiPedia - Tu Delft</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
@@ -65,6 +65,16 @@
 
     gtag('config', 'G-2Z1B8SEERW');
     </script>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DigiPedia - Tu Delft">
+    <meta property="og:image" content="https://digipedia.tudelft.nl/app/uploads/2024/11/LogoDesign-01.jpg">
+    <meta property="og:description" content="Your gateway to mastering computational methods, techniques, and tools at your own pace.">
+    <link rel="icon" type="image/png" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="DigiPedia" />
+    <link rel="manifest" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/site.webmanifest" />
     <?php wp_head(); ?>
 </head>
 

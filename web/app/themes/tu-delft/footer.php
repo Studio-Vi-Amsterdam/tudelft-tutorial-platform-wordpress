@@ -15,14 +15,13 @@
                 <img width="300" height="117" src="<?= get_template_directory_uri() ?>/src/img/logo-footer.svg" alt="logo">
             </a>
             <div class="footer__copyright">
-                <span><?php echo date('Y'); ?> All rights reserved</span>
+                <span><?php echo date('Y'); ?> Published under the <a href="https://digipedia.tudelft.nl/copyright-and-open-licences/" target="_blank">MIT licence</a>.</span>
                 <a href="https://www.tudelft.nl/en/privacy-statement/">Privacy Policy</a>
             </div>
         </div>
         <div class="footer__info">
             <h5>DigiPedia</h5>
-            <p>Your gateway to mastering cutting-edge tools and technologies at your own pace, propelling your
-                skills to new heights</p>
+            <p>Your gateway to mastering cutting-edge tools and technologies through open educational resources at your own pace, propelling your skills to new heights.</p>
         </div>
         <div class="footer__lists flex">
             <div class="footer__list">
