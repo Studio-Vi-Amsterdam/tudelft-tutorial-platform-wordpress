@@ -31,7 +31,7 @@ export function readingTime() {
 						const wrapper = document.querySelector(
 							`[data-tab-target="${data}"]`,
 						)?.nextElementSibling;
-						if (wrapper) {
+						if (wrapper && time !== 0) {
 							const listItems = wrapper.querySelectorAll("li");
 							listItems.forEach((li) => {
 								const linkHref = li.querySelector("a").getAttribute("href");
