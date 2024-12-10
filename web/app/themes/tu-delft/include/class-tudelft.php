@@ -149,7 +149,7 @@ class Tu_Delft {
         $feedback_about = sanitize_text_field( $_POST['feedback_about'] );
         $feedback_message = sanitize_text_field( $_POST['message'] );
 
-        $email = get_bloginfo('admin_email');
+        $email = "digipedia@tudelft.nl";
 
         $subject = 'Feedback about ' . $feedback_about;
 
