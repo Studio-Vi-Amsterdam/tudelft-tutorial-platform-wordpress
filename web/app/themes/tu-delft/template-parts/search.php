@@ -9,6 +9,7 @@
 
     $search = $_GET['term'];
     $search = sanitize_text_field( $search );
+    $search = htmlspecialchars( $search );
 
     if ( !empty( $search ) ) {
         $tutorials = Tutorial::search_tutorials( $search );
@@ -35,7 +36,7 @@
                 </svg>
             </button>
             <form id="search-form" action="<?php echo get_home_url(); ?>/search" method="get">
-                <input type="text" placeholder="architecture" value="<?php echo $_GET['term']; ?>" name="term">
+                <input type="text" placeholder="architecture" value="<?php echo $search; ?>" name="term">
             </form>
         </form>
      </div>

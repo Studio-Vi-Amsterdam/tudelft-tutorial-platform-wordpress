@@ -7,7 +7,13 @@ use TuDelft\Theme\Modules\Course\Course;
     $categories = get_field('academic_levels', get_the_ID());
 
     $selectedCategory = get_query_var('category');
+    $selectedCategory = sanitize_text_field($selectedCategory);
+    $selectedCategory = htmlspecialchars($selectedCategory);
+
     $selectedSubCategory = get_query_var('subcategory');
+    $selectedSubCategory = sanitize_text_field($selectedSubCategory);
+    $selectedSubCategory = htmlspecialchars($selectedSubCategory);
+
 
     if ( empty($categories) ) {
         $categories = Course::get_academic_levels();

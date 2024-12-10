@@ -7,7 +7,12 @@ use TuDelft\Theme\Modules\Subject\Subject;
     $categories = get_field('categories', get_the_ID());
 
     $selectedCategory = get_query_var('category');
+    $selectedCategory = sanitize_text_field($selectedCategory);
+    $selectedCategory = htmlspecialchars($selectedCategory);
+
     $selectedSubCategory = get_query_var('subcategory');
+    $selectedSubCategory = sanitize_text_field($selectedSubCategory);
+    $selectedSubCategory = htmlspecialchars($selectedSubCategory);
 
     if ( empty($categories) ) {
         $categories = Subject::get_categories();
