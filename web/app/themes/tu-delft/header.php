@@ -263,7 +263,7 @@
             <ul>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Courses</a>
+                        <a href="<?php echo get_home_url();?>/courses">Courses</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -284,7 +284,7 @@
                             <?php foreach($academic_levels as $category): ?>
                                 <li class="menu-item-has-children">
                                     <div class="menu-item-has-children__title">
-                                        <a href="#">
+                                        <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug]); ?>">
                                             <?php echo $category['category']->name; ?>
                                         </a>
                                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
@@ -327,7 +327,7 @@
                 </li>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Subjects</a>
+                        <a href="<?php echo get_home_url();?>/subjects">Subjects</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -348,7 +348,9 @@
                             <?php foreach($categories as $category): ?>
                                 <li class="menu-item-has-children">
                                     <div class="menu-item-has-children__title">
-                                        <a href="#"><?php echo $category['category']->name; ?></a>
+                                        <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug]); ?>">
+                                            <?php echo $category['category']->name; ?>
+                                        </a>
                                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -389,7 +391,7 @@
                 </li>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Software</a>
+                        <a href="<?php echo get_home_url();?>/software">Software</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -414,7 +416,7 @@
                 </li>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Labs</a>
+                        <a href="<?php echo get_home_url();?>/labs">Labs</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
@@ -435,7 +437,9 @@
                             <?php foreach($labs as $lab): ?>
                                 <li class="menu-item-has-children">
                                     <div class="menu-item-has-children__title">
-                                        <a href="#"><?php echo $lab['category']->name; ?></a>
+                                        <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug]); ?>">
+                                            <?php echo $lab['category']->name; ?>
+                                        </a>
                                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
