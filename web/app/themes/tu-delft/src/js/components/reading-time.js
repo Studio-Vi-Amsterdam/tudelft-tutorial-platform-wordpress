@@ -28,19 +28,19 @@ export function readingTime() {
 							time = Math.ceil(words / wpm);
 						}
 
-						const wrapper = document.querySelector(
-							`[data-tab-target="${data}"]`,
-						)?.nextElementSibling;
-						if (wrapper && time !== 0) {
-							const listItems = wrapper.querySelectorAll("li");
-							listItems.forEach((li) => {
-								const linkHref = li.querySelector("a").getAttribute("href");
-								const linkId = linkHref.split("#")[1];
-								if (linkId === id) {
-									li.innerHTML += `<span>${time} min</span>`;
-								}
-							});
-						}
+						// const wrapper = document.querySelector(
+						// 	`[data-tab-target="${data}"]`,
+						// )?.nextElementSibling;
+						// if (wrapper && time !== 0) {
+						// 	const listItems = wrapper.querySelectorAll("li");
+						// 	listItems.forEach((li) => {
+						// 		const linkHref = li.querySelector("a").getAttribute("href");
+						// 		const linkId = linkHref.split("#")[1];
+						// 		if (linkId === id) {
+						// 			li.innerHTML += `<span>${time} min</span>`;
+						// 		}
+						// 	});
+						// }
 
 						chapterTime += time;
 					}
