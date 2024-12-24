@@ -32,6 +32,7 @@ class Tu_Delft {
         add_action( 'wp_ajax_nopriv_submit_feedback', [ $this, 'submit_feedback' ] );
 
         add_action( 'template_redirect', [ $this, 'logout_user' ] );
+        add_action( 'template_redirect', [ $this, 'redirect_archived_posts' ] );
     }
 
     /**
@@ -179,6 +180,28 @@ class Tu_Delft {
             wp_logout();
             wp_redirect( home_url() );
             exit;
+        }
+    }
+
+    /**
+     * Redirect archived posts
+     * 
+     * @since 3.1.0
+     * 
+     * @return void
+     */
+    public function redirect_archived_posts(): void {
+        if ( is_single() ) {
+            $post = get_post();
+            if ( $post->post_status === 'archived' ) {
+                // get post meta latest_post_url_
+                $latest_post_url = get_post_meta( $post->ID, 'redirect_to_url', true );
+
+                if ( $latest_post_url ) {
+                    wp_redirect( $latest_post_url );
+                    exit;
+                }
+            }
         }
     }
 }
