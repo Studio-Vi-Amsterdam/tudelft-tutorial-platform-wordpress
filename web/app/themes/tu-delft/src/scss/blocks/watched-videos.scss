@@ -1,0 +1,72 @@
+.watched-videos {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-top: 6.4rem;
+
+    // .watched-videos__title
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+        h2 {
+            font-family: $primary-font;
+            color: $secondary;
+            letter-spacing: -0.24px;
+            line-height: 1.33;
+            @include adaptiveProperty('font-size', 28, 24);
+
+            @media (min-width: $tabletSmallP1) {
+                letter-spacing: -0.28px;
+                line-height: 1.42;
+            }
+        }
+
+        a, a:visited {
+            display: none;
+            padding: 0 1.6rem;
+            background-color: transparent;
+            color: $secondary;
+            border-color: $secondary;
+            min-height: 4.2rem;
+
+            @media (min-width: $tabletSmallP1) {
+                display: flex;
+            }
+
+            &:hover {
+                color: $white;
+                background-color: $secondary;
+            }
+        }
+    }
+
+    // .watched-videos__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        @media (min-width: $mobileP1) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.6rem 2.4rem;   
+        }
+
+        @media (min-width: $tabletSmallP1) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (min-width: $tabletLargeP1) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (min-width: $deskLargeP1) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+}
