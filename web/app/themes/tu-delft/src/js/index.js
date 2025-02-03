@@ -27,6 +27,7 @@ import { headerSearch } from "./components/search";
 import { codeBlock } from "./components/code-block";
 import { tableHeightRow } from "./components/table-height-row";
 import { readingTime } from "./components/reading-time";
+import { bookmarkButtons } from "./components/bookmark-buttons";
 
 let modalInstance = null
 export function runAfterDomLoad() {
@@ -104,6 +105,7 @@ export function runAfterDomLoad() {
                         headerSearch()
                         tableHeightRow()
                         readingTime()
+                        bookmarkButtons()
 												if(!modalInstance) {
 													modalInstance = new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 												}

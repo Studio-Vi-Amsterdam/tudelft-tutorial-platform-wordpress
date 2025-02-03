@@ -80,5 +80,16 @@
             transform: translate(-50%,-50%);
         }
 
+        // .video__play--secondary
+
+        &--secondary {
+            min-width: 2.614rem;
+            min-height: 2.614rem;
+            max-width: 2.614rem;
+            max-height: 2.614rem;
+            padding: 0;
+            background-color: $navy;
+            border: 1px solid $white;
+        }
     }
 }
