@@ -3,11 +3,10 @@ export const bookmarkButtons = async () => {
 
     if (bookmarkedButtons) {
         bookmarkedButtons.forEach(bookmarkedButton => {
-            bookmarkedButton.addEventListener("click", () => {
+            bookmarkedButton.addEventListener("click", (e) => {
                 const dataAttr = bookmarkedButton.dataset.bookmarked
-                const post = bookmarkedButton.parentElement?.parentElement?.parentElement?.parentElement
+                const post = bookmarkedButton.closest('article')
                 const postId = parseInt(post?.dataset?.id) ?? null
-                console.log('postID', postId)
                 if (dataAttr === "true") {
                     bookmarkedButton.setAttribute("data-bookmarked", "false")
                     const promise1 = new Promise((resolve, reject) => {
