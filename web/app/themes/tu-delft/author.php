@@ -13,7 +13,7 @@ get_header();
         <div class="my-bookmarks__content">
             <article class="bookmark-item" data-id="2201">
                 <figure class="bookmark-item__img">
-                    <img src="/web/app/themes/tu-delft/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
+                    <img src="<?= get_template_directory_uri(); ?>/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
                 </figure>
                 <div class="bookmark-item__content">
                     <div class="bookmark-item__header">
@@ -46,7 +46,7 @@ get_header();
             </article>
             <article class="bookmark-item" data-id="2202">
                 <figure class="bookmark-item__img">
-                    <img src="/web/app/themes/tu-delft/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
+                    <img src="<?= get_template_directory_uri(); ?>/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
                 </figure>
                 <div class="bookmark-item__content">
                     <div class="bookmark-item__header">
@@ -79,7 +79,7 @@ get_header();
             </article>
             <article class="bookmark-item" data-id="2203">
                 <figure class="bookmark-item__img">
-                    <img src="/web/app/themes/tu-delft/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
+                    <img src="<?= get_template_directory_uri(); ?>/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
                 </figure>
                 <div class="bookmark-item__content">
                     <div class="bookmark-item__header">
@@ -112,7 +112,7 @@ get_header();
             </article>
             <article class="bookmark-item" data-id="2204">
                 <figure class="bookmark-item__img">
-                    <img src="/web/app/themes/tu-delft/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
+                    <img src="<?= get_template_directory_uri(); ?>/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
                 </figure>
                 <div class="bookmark-item__content">
                     <div class="bookmark-item__header">
@@ -145,7 +145,7 @@ get_header();
             </article>
             <article class="bookmark-item" data-id="2205">
                 <figure class="bookmark-item__img">
-                    <img src="/web/app/themes/tu-delft/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
+                    <img src="<?= get_template_directory_uri(); ?>/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
                 </figure>
                 <div class="bookmark-item__content">
                     <div class="bookmark-item__header">
@@ -178,7 +178,7 @@ get_header();
             </article>
             <article class="bookmark-item" data-id="2206">
                 <figure class="bookmark-item__img">
-                    <img src="/web/app/themes/tu-delft/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
+                    <img src="<?= get_template_directory_uri(); ?>/src/img/bookmarks/bookmark-image.jpg" alt="bookmark image">
                 </figure>
                 <div class="bookmark-item__content">
                     <div class="bookmark-item__header">
@@ -227,7 +227,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -256,7 +256,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -285,7 +285,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -314,7 +314,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -343,7 +343,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -372,7 +372,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -401,7 +401,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -430,7 +430,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -459,7 +459,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
@@ -488,7 +488,7 @@ get_header();
                             <img fetchpriority="high" decoding="async" width="808" height="454" src="https://alt.viamsterdam.dev/tudelft-tutorials-staging/app/themes/tu-delft/src/img/tutorial/img-1.jpg" alt="">
                             <div class="video__play video__play--secondary">
                                 <svg width="35" height="42">
-                                    <use href="/web/app/themes/tu-delft/src/sprite.svg#play-video"></use>
+                                    <use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
                                 </svg>
                             </div>
                         </div>
