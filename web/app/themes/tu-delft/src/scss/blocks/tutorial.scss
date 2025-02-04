@@ -300,18 +300,6 @@
                 margin-top: 4rem;
             }
         }
-        h2 {
-            @include adaptiveProperty('font-size', 16, 16);
-            font-weight: 700;
-            line-height: 1.5;
-            color: $secondary;
-            font-family: $primary-font;
-    
-            &+h3 {
-                margin-top: 1.6rem;
-            }
-
-        }
         h3 {
             @extend .h1;
             display: flex;
@@ -455,6 +443,93 @@
     
                 }
             }
+        }
+    }
+
+    // .tutorial__top
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+            @include adaptiveProperty('font-size', 16, 16);
+            font-weight: 700;
+            line-height: 1.5;
+            color: $secondary;
+            font-family: $primary-font;
+    
+            &+h3 {
+                margin-top: 1.6rem;
+            }
+        }
+    }
+
+    &__bookmark-desktop button,
+    &__bookmark-mobile button {
+        display: flex;
+        flex-direction: row;
+        gap: 0.8rem;
+        align-items: center;
+        border: 1px solid $secondary;
+        border-radius: 0.4rem;
+        padding: 0.8rem 1.6rem;
+        transition: 0.2s all;
+
+        p {
+            color: $secondary !important;
+            font-size: 1.6rem !important;
+            line-height: 1.5 !important;
+            font-family: $primary-font;
+        }
+        
+        span {
+            display: none;
+        }
+
+        svg {
+            path {
+                transition: 0.2s all;
+            }
+        }
+
+        &[data-bookmarked='true'] {
+            background-color: $skyBlue;
+            svg {
+                path {
+                    //  fill="#00A6D6"
+                    fill: $secondary;
+                }
+            }
+
+            p {
+                span {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    // .tutorial__bookmark-desktop
+
+    &__bookmark-desktop {
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.8rem;
+
+        @media (min-width: $tabletSmallP1) {
+            display: flex;
+        }
+    }
+
+    // .tutorial__bookmark-mobile
+
+    &__bookmark-mobile {
+        @media (min-width: $tabletSmallP1) {
+            display: none;
         }
     }
 

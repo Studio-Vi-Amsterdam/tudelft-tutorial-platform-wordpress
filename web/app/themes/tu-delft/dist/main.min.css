@@ -5107,30 +5107,6 @@ pre table td:last-child {
     margin-top: 4rem;
   }
 }
-.tutorial__content h2 {
-  font-weight: 700;
-  line-height: 1.5;
-  color: #00A6D6;
-  font-family: "Arial", "Verdana", sans-serif;
-}
-@media (max-width: 375px) {
-  .tutorial__content h2 {
-    font-size: 1.6rem;
-  }
-}
-@media (min-width: 376px) and (max-width: 1440px) {
-  .tutorial__content h2 {
-    font-size: calc(1.6rem + 0 * ((100vw - 375px) / (1440 - 375)));
-  }
-}
-@media (min-width: 1441px) {
-  .tutorial__content h2 {
-    font-size: 1.6rem;
-  }
-}
-.tutorial__content h2 + h3 {
-  margin-top: 1.6rem;
-}
 .tutorial__content h3 {
   display: flex;
   align-items: center;
@@ -5261,6 +5237,83 @@ pre table td:last-child {
 }
 .tutorial__content h4.copied span:after {
   opacity: 1;
+}
+.tutorial__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.tutorial__top h2 {
+  font-weight: 700;
+  line-height: 1.5;
+  color: #00A6D6;
+  font-family: "Arial", "Verdana", sans-serif;
+}
+@media (max-width: 375px) {
+  .tutorial__top h2 {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 376px) and (max-width: 1440px) {
+  .tutorial__top h2 {
+    font-size: calc(1.6rem + 0 * ((100vw - 375px) / (1440 - 375)));
+  }
+}
+@media (min-width: 1441px) {
+  .tutorial__top h2 {
+    font-size: 1.6rem;
+  }
+}
+.tutorial__top h2 + h3 {
+  margin-top: 1.6rem;
+}
+.tutorial__bookmark-desktop button, .tutorial__bookmark-mobile button {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: center;
+  border: 1px solid #00A6D6;
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.6rem;
+  transition: 0.2s all;
+}
+.tutorial__bookmark-desktop button p, .tutorial__bookmark-mobile button p {
+  color: #00A6D6 !important;
+  font-size: 1.6rem !important;
+  line-height: 1.5 !important;
+  font-family: "Arial", "Verdana", sans-serif;
+}
+.tutorial__bookmark-desktop button span, .tutorial__bookmark-mobile button span {
+  display: none;
+}
+.tutorial__bookmark-desktop button svg path, .tutorial__bookmark-mobile button svg path {
+  transition: 0.2s all;
+}
+.tutorial__bookmark-desktop button[data-bookmarked=true], .tutorial__bookmark-mobile button[data-bookmarked=true] {
+  background-color: #B9EEFE;
+}
+.tutorial__bookmark-desktop button[data-bookmarked=true] svg path, .tutorial__bookmark-mobile button[data-bookmarked=true] svg path {
+  fill: #00A6D6;
+}
+.tutorial__bookmark-desktop button[data-bookmarked=true] p span, .tutorial__bookmark-mobile button[data-bookmarked=true] p span {
+  display: inline-block;
+}
+.tutorial__bookmark-desktop {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+@media (min-width: 768px) {
+  .tutorial__bookmark-desktop {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  .tutorial__bookmark-mobile {
+    display: none;
+  }
 }
 .tutorial__btns {
   width: 100%;
