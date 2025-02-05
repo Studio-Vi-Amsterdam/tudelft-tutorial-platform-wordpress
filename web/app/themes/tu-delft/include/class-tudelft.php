@@ -198,7 +198,7 @@ class Tu_Delft {
                 $latest_post_url = get_post_meta( $post->ID, 'redirect_to_url', true );
 
                 if ( $latest_post_url ) {
-                    wp_redirect( $latest_post_url );
+                    wp_redirect( $latest_post_url , 301);
                     exit;
                 }
             }
