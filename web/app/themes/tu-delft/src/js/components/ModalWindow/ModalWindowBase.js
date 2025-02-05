@@ -38,6 +38,8 @@ export default class ModalWindowBase {
 
   openModal(currentModalId) {
     // console.log('open')
+    console.log("currentModalId", currentModalId);
+    
     this.$modal.classList.add(this.constants.MODAL_ACTIVE_CLASS)
     this.$modal.querySelector(`#${currentModalId}`)
         .classList

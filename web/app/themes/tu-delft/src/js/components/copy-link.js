@@ -28,7 +28,7 @@ export function copyLink() {
 		}, 2000);
 	});
 
-	$(".tutorial__item h3").on("click", function () {
+	$(".tutorialLinkCopySelector").on("click", function () {
 		window.location.hash = ''
 		let $url = window.location.href;
 		$("body").append($temp);

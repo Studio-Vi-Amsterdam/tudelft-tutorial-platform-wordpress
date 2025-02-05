@@ -28,6 +28,7 @@ import { codeBlock } from "./components/code-block";
 import { tableHeightRow } from "./components/table-height-row";
 import { readingTime } from "./components/reading-time";
 import { bookmarkButtons } from "./components/bookmark-buttons";
+import { initArticleContextMenu } from "./components/articleContextMenu";
 
 let modalInstance = null
 export function runAfterDomLoad() {
@@ -106,6 +107,7 @@ export function runAfterDomLoad() {
                         tableHeightRow()
                         readingTime()
                         bookmarkButtons()
+                        initArticleContextMenu()
 												if(!modalInstance) {
 													modalInstance = new ModalWindow(ModalVideoWindow, ModalImageWindow, ModalContentWindow)
 												}
