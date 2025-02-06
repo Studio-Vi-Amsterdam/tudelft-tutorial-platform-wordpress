@@ -7,9 +7,31 @@ export const bookmarkButtons = async () => {
             bookmarkedButton.addEventListener("click", (e) => {
                 const dataAttr = bookmarkedButton.dataset.bookmarked
                 if (dataAttr === "true") {
-                    bookmarkedButton.setAttribute("data-bookmarked", "false")
+                    // ajax request to remove bookmark
+                    $.ajax({
+                        url: ajax_url,
+                        type: 'POST',
+                        data: {
+                            action: 'remove_bookmark',
+                            post_id: bookmarkedButton.dataset.postid
+                        },
+                        success: function (response) {
+                            bookmarkedButton.setAttribute("data-bookmarked", "false")
+                        }
+                    });
                 } else {
-                    bookmarkedButton.setAttribute("data-bookmarked", "true")
+                    // ajax request to add bookmark
+                    $.ajax({
+                        url: ajax_url,
+                        type: 'POST',
+                        data: {
+                            action: 'add_bookmark',
+                            post_id: bookmarkedButton.dataset.postid
+                        },
+                        success: function (response) {
+                            bookmarkedButton.setAttribute("data-bookmarked", "true")
+                        }
+                    });
                 }
             })
         })
@@ -22,23 +44,39 @@ export const bookmarkButtons = async () => {
             bookmarkedButton.addEventListener("click", (e) => {
                 const dataAttr = bookmarkedButton.dataset.bookmarked
                 const post = bookmarkedButton.closest('article')
-                const postId = parseInt(post?.dataset?.id) ?? null
+                const postId = parseInt(bookmarkedButton.dataset?.postid) ?? null
+                console.log(post?.dataset?.postid);
+                const self = this
                 if (dataAttr === "true") {
-                    bookmarkedButton.setAttribute("data-bookmarked", "false")
-                    const promise1 = new Promise((resolve, reject) => {
-                        setTimeout(() => {
-                          if (resolve) {
-                            post.remove()
-                          }
-
-                        // immitation of request
-                        }, 1500);
-                      });
+                    $.ajax({
+                        url: ajax_url,
+                        type: 'POST',
+                        data: {
+                            action: 'remove_bookmark',
+                            post_id: postId
+                        },
+                        success: function (response) {
+                            bookmarkedButton.setAttribute("data-bookmarked", "false")
+                            // Uncomment to remove the post from the DOM
+                            // $(post).remove()
+                        }
+                    });
 
                 } else {
-                    bookmarkedButton.setAttribute("data-bookmarked", "true")
+                    $.ajax({
+                        url: ajax_url,
+                        type: 'POST',
+                        data: {
+                            action: 'add_bookmark',
+                            post_id: postId
+                        },
+                        success: function (response) {
+                            bookmarkedButton.setAttribute("data-bookmarked", "true")
+                        }
+                    });
                 }
             })
         });
     }
 }
+

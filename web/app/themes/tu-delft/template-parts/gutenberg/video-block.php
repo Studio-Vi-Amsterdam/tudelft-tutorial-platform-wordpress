@@ -8,8 +8,14 @@ $theme_url = get_template_directory_uri();
 $video = get_field('tu-delft-video_video');
 $placeholder = get_field('tu-delft-video_thumbnail');
 $subtitles = get_field('tu-delft-video_subtitles');
+
+echo "<pre>";
+var_dump(get_field('tu-delft-video_title', get_the_ID()));
+echo "</pre>";
+
+$page_id = get_the_ID();
 ?>
-<div class="tutorial__content video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>">
+<div class="tutorial__content video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>" data-videoid="<?php echo $video['ID']; ?>" data-pageid="<?php echo $page_id; ?>">
     <?php if ( $title = get_field('tu-delft-video_title') ) : ?>
         <h4><?php echo $title; ?></h4>
     <?php endif; ?>

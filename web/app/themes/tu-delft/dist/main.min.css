@@ -2764,7 +2764,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
   }
 }
-.bookmark-item__buttons button {
+.bookmark-item__buttons button, .bookmark-item__buttons a {
   width: 2.4rem;
   height: 2.4rem;
   display: flex;
@@ -2773,17 +2773,17 @@ body::-webkit-scrollbar-thumb {
   background-color: #ffffff;
   border-radius: 0.4rem;
 }
-.bookmark-item__buttons button svg {
+.bookmark-item__buttons button svg, .bookmark-item__buttons a svg {
   transition: 0.2s all;
 }
-.bookmark-item__buttons button svg path {
+.bookmark-item__buttons button svg path, .bookmark-item__buttons a svg path {
   transition: 0.2s all;
 }
-.bookmark-item__buttons button[data-bookmarked=true] svg path {
+.bookmark-item__buttons button[data-bookmarked=true] svg path, .bookmark-item__buttons a[data-bookmarked=true] svg path {
   transition: 0.2s all;
   fill: #000000;
 }
-.bookmark-item__buttons button:hover svg {
+.bookmark-item__buttons button:hover svg, .bookmark-item__buttons a:hover svg {
   transition: 0.2s all;
   transform: scale(0.9);
 }
