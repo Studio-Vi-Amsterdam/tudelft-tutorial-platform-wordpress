@@ -9,9 +9,6 @@ $video = get_field('tu-delft-video_video');
 $placeholder = get_field('tu-delft-video_thumbnail');
 $subtitles = get_field('tu-delft-video_subtitles');
 
-echo "<pre>";
-var_dump(get_field('tu-delft-video_title', get_the_ID()));
-echo "</pre>";
 
 $page_id = get_the_ID();
 ?>
