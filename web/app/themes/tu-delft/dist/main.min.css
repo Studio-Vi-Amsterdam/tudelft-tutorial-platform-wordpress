@@ -153,6 +153,10 @@ body.opacity main {
   background-size: cover;
 }
 
+.error {
+  color: orangered;
+}
+
 html {
   font-size: 62.5%;
   color: #000000;
@@ -6250,12 +6254,8 @@ pre table td:last-child {
   visibility: visible;
 }
 
-.modal-suggestion {
-  transition: 0.2s all;
-}
 .modal-suggestion .modal-window__fader {
   z-index: 0;
-  transition: 0.2s all;
   background-color: rgba(0, 0, 0, 0.3);
 }
 .modal-suggestion__inner, .modal-suggestion__second {
@@ -6269,13 +6269,11 @@ pre table td:last-child {
   flex-direction: column;
   gap: 2.4rem;
   opacity: 1;
-  visibility: 1;
+  visibility: visible;
   pointer-events: all;
-  transition: 0.2s all;
 }
 .modal-suggestion__inner--hidden {
   display: none;
-  transition: 0.2s all;
 }
 .modal-suggestion__title {
   display: flex;
@@ -6393,6 +6391,7 @@ pre table td:last-child {
   background-color: #0C2340;
   overflow: hidden;
   display: flex;
+  text-transform: uppercase;
   align-items: center;
   justify-content: center;
   border-radius: 36rem;
@@ -6404,6 +6403,7 @@ pre table td:last-child {
   line-height: 1.5rem;
 }
 .modal-suggestion__buttons {
+  margin-top: 2.4rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -6475,7 +6475,6 @@ pre table td:last-child {
   }
 }
 .modal-suggestion__second--hidden {
-  transition: 0.2s all;
   display: none;
 }
 

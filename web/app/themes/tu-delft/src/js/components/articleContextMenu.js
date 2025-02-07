@@ -12,29 +12,40 @@ export const initArticleContextMenu = async () => {
                 }
             })
         })
-
     }
-
 
     const suggestionModal = document.querySelector('.modal-suggestion__inner');
     const secondSuggestionModal = document.querySelector('.modal-suggestion__second')
+
     if (suggestionModal && secondSuggestionModal) {
-        const submitButton = suggestionModal.querySelector('.modal-suggestion__submit-button');
-        
-        if (submitButton) {
-            submitButton.addEventListener('click', () => {
-                const userSuggestionMsg = suggestionModal.querySelector('#user-suggestion-field')?.value
-                submitButton.setAttribute("disabled", "true");
+        const form = $('[data-suggestion-form]')
+        const error = $('[data-error]')
+				const submitButton = form.find('button[type="submit"]')
+				form.on('submit', function (e) {
+					e.preventDefault()
 
-                // instead of request now
-                setTimeout(() => {
-                    submitButton.removeAttribute("disabled");
-                    suggestionModal.classList.add("modal-suggestion__inner--hidden");
-                    secondSuggestionModal.classList.remove("modal-suggestion__second--hidden")
-
-                }, 500)
-
-            })
-        }
+					const comment = $('input[name="comment"]').val()
+					const postID = $('input[name="post-id"]').val()
+					if(comment) {
+						error.text('').addClass('hidden')
+						submitButton.attr("disabled", "true")
+						$.ajax({
+							url: `/wp-json/tutorial-platform/v1/community/post/${postID}/comments`,
+							type: 'POST',
+							data: {
+								content: comment
+							},
+							success: function (response) {
+								submitButton.attr("disabled", false)
+								suggestionModal.classList.add("modal-suggestion__inner--hidden");
+								secondSuggestionModal.classList.remove("modal-suggestion__second--hidden")
+							},
+							error: function (err) {
+								error.text(err.responseJSON.message).removeClass('hidden')
+								submitButton.attr("disabled", false)
+							}
+						})
+					}
+				})
     }
 }

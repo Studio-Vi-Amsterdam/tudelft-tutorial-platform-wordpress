@@ -1,3 +1,7 @@
+<?php
+$user = wp_get_current_user();
+$name = $user->display_name;
+?>
 <footer class="footer flex flex-col justify-end">
     <div class="footer__container flex flex-col lg:flex-row lg:justify-between">
         <div class="footer__vector">
@@ -80,24 +84,30 @@
                 </button>
             </div>
             <div class="modal-suggestion__text">
-                <p>Write your feedback on [chapter: Computer aided design]. </p>
+                <p>Write your feedback on <span data-chapter-title><?= get_the_title(); ?></span>.</p>
                 <small>If you're providing a specific feedback to a part of the tutorial, mention which part (text, image, or video) that you have specific feedback for."</small>
             </div>
-            <fieldset class="modal-suggestion__field">
-                <div class="modal-suggestion__author">
-                    <p>AB</p>
-                </div>
-                <div class="field">
-                    <input type="text" placeholder="Write your feedback" name="user-suggestion-field" id="user-suggestion-field" />
-                </div>
-            </fieldset>
-            <fieldset class="modal-suggestion__buttons">
-                <button type="button" aria-label="close modal window" class="modal-window__close-icon btn">Cancel</button>
-                <button type="button" class="btn modal-suggestion__submit-button">
-                    <p>Send</p>
-                    <div class="modal-suggestion__loader"></div>
-                </button>
-            </fieldset>
+						<form data-suggestion-form class="block">
+							<fieldset class="modal-suggestion__field">
+								<div class="modal-suggestion__author">
+									<p><?= $name[0]; ?></p>
+								</div>
+								<div class="field">
+									<input type="hidden" name="chapter-title">
+									<input type="hidden" name="post-id" value="<?= get_the_ID(); ?>">
+									<input type="text" placeholder="Write your feedback" required minlength="3" name="comment" id="user-suggestion-field" />
+								</div>
+							</fieldset>
+							<p class="error hidden" data-error></p>
+
+							<fieldset class="modal-suggestion__buttons">
+								<button type="button" aria-label="close modal window" class="modal-window__close-icon btn">Cancel</button>
+								<button type="submit" class="btn modal-suggestion__submit-button">
+									<p>Send</p>
+									<div class="modal-suggestion__loader"></div>
+								</button>
+							</fieldset>
+						</form>
         </div>
         <div class="modal-suggestion__second modal-suggestion__second--hidden">
         <div class="modal-suggestion__title">

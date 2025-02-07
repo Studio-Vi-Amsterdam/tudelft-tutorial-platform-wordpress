@@ -147,13 +147,15 @@ $lab_title = get_the_title();
                                         <path d="M10.9887 15.2759L14.3575 12.394C15.6864 11.2572 15.8514 9.26199 14.7273 7.92232V7.92232C13.5956 6.57358 11.5848 6.39765 10.236 7.52938L3.76617 12.9582C2.42382 14.0846 2.24873 16.0859 3.37509 17.4282V17.4282C4.50146 18.7706 6.50275 18.9457 7.8451 17.8193L8.19172 17.5285" stroke="#67676B" />
                                     </svg>
                                 </button>
-                                <button class="tutorial__button" data-modal-id='modal-suggestion'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 13.3223 4.32083 14.5697 4.88889 15.6686L4 20L8.33138 19.1111C9.43025 19.6792 10.6777 20 12 20Z" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M12 9.33594V14.6693" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M9.32812 12H14.6615" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
+																<?php if(is_user_logged_in()): ?>
+																	<button class="tutorial__button" data-modal-id='modal-suggestion'>
+																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																					<path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 13.3223 4.32083 14.5697 4.88889 15.6686L4 20L8.33138 19.1111C9.43025 19.6792 10.6777 20 12 20Z" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
+																					<path d="M12 9.33594V14.6693" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
+																					<path d="M9.32812 12H14.6615" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
+																			</svg>
+																	</button>
+																<?php endif; ?>
                             </div>
                         </div>
                     </div>
