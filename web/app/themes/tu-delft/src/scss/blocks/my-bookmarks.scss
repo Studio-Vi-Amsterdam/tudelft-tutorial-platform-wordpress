@@ -87,3 +87,14 @@
 
         
 }
+
+.user-profile {
+	.view-all {
+		margin: 20px auto;
+		max-width: 90px;
+		width: 100%;
+		&.hidden {
+			display: none;
+		}
+	}
+}

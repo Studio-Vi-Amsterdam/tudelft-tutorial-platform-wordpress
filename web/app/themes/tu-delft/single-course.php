@@ -174,24 +174,28 @@ $course_title = get_the_title();
                 <div class="tutorial__content text intro">
                     <div class="tutorial__top">
                         <h2><?php the_title(); ?> 0/<?php echo count($chapters); ?></h2>
-                        <div class="tutorial__bookmark-desktop">
-                            <button class="setBookmarked" data-bookmarked="<?php echo Student::is_bookmarked( get_the_ID() ) ? 'true' : 'false'; ?>" data-postId="<?php echo get_the_ID(); ?>">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M16 3H8C6.89543 3 6 3.89543 6 5V21L12 18L18 21V5C18 3.89543 17.1046 3 16 3Z" stroke="#00A6D6" />
-                                </svg>
-                                <p>Bookmark<span>ed</span></p>
-                            </button>
-                        </div>
+												<?php if(is_user_logged_in()): ?>
+													<div class="tutorial__bookmark-desktop">
+															<button class="setBookmarked" data-bookmarked="<?php echo Student::is_bookmarked( get_the_ID() ) ? 'true' : 'false'; ?>" data-postId="<?php echo get_the_ID(); ?>">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																			<path d="M16 3H8C6.89543 3 6 3.89543 6 5V21L12 18L18 21V5C18 3.89543 17.1046 3 16 3Z" stroke="#00A6D6" />
+																	</svg>
+																	<p>Bookmark<span>ed</span></p>
+															</button>
+													</div>
+												<?php endif; ?>
                     </div>
                     <h3><?php the_title(); ?></h3>
-                    <div class="tutorial__bookmark-mobile">
-                        <button class="setBookmarked" data-bookmarked="<?php echo Student::is_bookmarked( get_the_ID() ) ? 'true' : 'false'; ?>" data-postId="<?php echo get_the_ID(); ?>">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M16 3H8C6.89543 3 6 3.89543 6 5V21L12 18L18 21V5C18 3.89543 17.1046 3 16 3Z" />
-                            </svg>
-                            <p>Bookmark<span>ed</span></p>
-                        </button>
-                    </div>
+										<?php if(is_user_logged_in()): ?>
+											<div class="tutorial__bookmark-mobile">
+													<button class="setBookmarked" data-bookmarked="<?php echo Student::is_bookmarked( get_the_ID() ) ? 'true' : 'false'; ?>" data-postId="<?php echo get_the_ID(); ?>">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																	<path d="M16 3H8C6.89543 3 6 3.89543 6 5V21L12 18L18 21V5C18 3.89543 17.1046 3 16 3Z" />
+															</svg>
+															<p>Bookmark<span>ed</span></p>
+													</button>
+											</div>
+										<?php endif; ?>
                     <?php echo get_field('description'); ?>
                 </div>
                 <?php the_content(); ?>
