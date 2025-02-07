@@ -18,7 +18,14 @@ export default class ModalVideoWindow extends ModalWindowBase {
   }
 
   callModalVideoHandler(target) {
+    const placeholderUrl = jQuery(target)
+			.children("figure")
+			.children(".video__preload")
+			.children("img")
+			.attr("src");
     const dataVideoSrc = target.dataset.videoSrc
+    const dataVideoId = target.dataset.videoid;
+    const dataPageId = target.dataset.pageid;
     const dataVideoSubtitle = target.dataset.videoSubtitles
     const type = dataVideoSrc.split('.')[dataVideoSrc.split('.').length - 1]
     if(dataVideoSrc && dataVideoSubtitle) {
@@ -38,6 +45,22 @@ export default class ModalVideoWindow extends ModalWindowBase {
     }
     this.$modalVideo.classList.add('show-video')
     this.openModal(this.constants.MODAL_VIDEO_ID)
+
+    console.log(placeholderUrl);
+    $.ajax({
+			url: ajax_url,
+			type: "POST",
+			data: {
+				action: "add_watched_video",
+				pageId: dataPageId,
+				videoId: dataVideoId,
+				pageUrl: window.location.href,
+				placeholderUrl: placeholderUrl,
+			},
+			success: function (response) {
+				console.log(response);
+			},
+		});
   }
 
   closeModal(event) {

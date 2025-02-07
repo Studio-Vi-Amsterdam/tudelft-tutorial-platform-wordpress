@@ -55,6 +55,7 @@ $name = $user->display_name;
 
 </div>
 </main>
+
 <div id="modal-window" class="modal-window">
     <div id="modal-video" class="modal-window__item modal-window__video modal-video-item">
         <div class="modal-window__fader"></div>
@@ -72,7 +73,7 @@ $name = $user->display_name;
             </div>
         </div>
     </div>
-    <div id="modal-suggestion" class="modal-suggestion">
+    <div id="modal-suggestion" class="modal-window__item modal-suggestion">
         <div class="modal-window__fader"></div>
         <div class="modal-suggestion__inner">
             <div class="modal-suggestion__title">

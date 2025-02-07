@@ -42,6 +42,7 @@
         return get_home_url() . $path . '/?' . http_build_query($param);
     }
 
+		$userID = get_current_user_id();
 ?>
 
 
@@ -248,7 +249,7 @@
                     </form>
                 </div>
             </div>
-            <a href="#" class="header__account header__icon" aria-label="account">
+            <a href="<?= $userID ? get_author_posts_url($userID) : wp_login_url(); ?>" class="header__account header__icon" aria-label="account">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25">
                     <circle cx="11.842" cy="6.316" r="5.566" stroke="#000" stroke-width="1.5" />
                     <path stroke="#000" stroke-linecap="round" stroke-width="1.5"

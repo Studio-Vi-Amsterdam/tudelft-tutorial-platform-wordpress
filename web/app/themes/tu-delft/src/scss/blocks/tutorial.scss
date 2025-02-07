@@ -666,6 +666,7 @@
     // .tutorial__bookmark-mobile
 
     &__bookmark-mobile {
+			margin-top: 20px;
         @media (min-width: $tabletSmallP1) {
             display: none;
         }
