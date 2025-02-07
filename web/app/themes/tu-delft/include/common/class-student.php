@@ -120,7 +120,19 @@ class Student {
 
         $return_array = self::organize_bookmarks( $user_id );
 
-        wp_send_json_success( array_slice( $return_array, $page * 8, 8 ) );
+				$res = array_slice( $return_array, $page * 6, 6 );
+
+				ob_start();
+					foreach ($res as $bookmark) :
+						if (empty($bookmark['id'])) {
+							continue;
+						}
+						get_template_part('template-parts/items/bookmark', false, ['bookmark' => $bookmark]);
+
+					endforeach;
+				$html = ob_get_clean();
+
+				wp_send_json_success( ['html' => $html] );
     }
 
     /**
@@ -133,8 +145,11 @@ class Student {
      */
     public static function get_bookmarks(): array {
         $user_id = get_current_user_id();
-        $return_array = self::organize_bookmarks( $user_id );
-        return array_slice( $return_array, 0, 8 );
+				$return_array = self::organize_bookmarks( $user_id );
+        return [
+					'countItems' => count($return_array),
+					'items' => array_slice( $return_array, 0, 6 )
+				];
     }
 
     /**
@@ -238,8 +253,19 @@ class Student {
 
         $return_data = self::organize_watched_videos( $user_id );
 
-        wp_send_json_success( array_slice( $return_data, $page * 10, 10 ) );
-    }
+				$res = array_slice( $return_data, $page * 10, 10 );
+				ob_start();
+				foreach ($res as $video) :
+					if (empty($video['video_url'])) {
+						continue;
+					}
+					get_template_part('template-parts/items/watched-video', false, ['video' => $video]);
+
+				endforeach;
+				$html = ob_get_clean();
+
+				wp_send_json_success( ['html' => $html] );
+		}
 
     /**
      * Get all watched videos for student.
@@ -251,9 +277,11 @@ class Student {
     public static function get_watched_videos(): array {
         $user_id = get_current_user_id();
 
-        $return_data = self::organize_watched_videos( $user_id );
-        
-        return array_slice( $return_data, 0, 10 );
+				$return_array = self::organize_watched_videos( $user_id );
+				return [
+					'countItems' => count($return_array),
+					'items' => array_slice( $return_array, 0, 10 )
+				];
     }
 
     /**

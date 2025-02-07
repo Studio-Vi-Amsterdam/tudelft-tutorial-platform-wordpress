@@ -2728,6 +2728,7 @@ body::-webkit-scrollbar-thumb {
 }
 .bookmark-item__content {
   padding: 1.75rem 1.4rem;
+  width: 100%;
   background-color: #EFF1F3;
 }
 @media (min-width: 768px) {
@@ -2738,6 +2739,7 @@ body::-webkit-scrollbar-thumb {
 .bookmark-item__header {
   display: flex;
   flex-direction: row;
+  text-transform: capitalize;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.6rem;
@@ -2996,6 +2998,15 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
+.user-profile .view-all {
+  margin: 20px auto;
+  max-width: 90px;
+  width: 100%;
+}
+.user-profile .view-all.hidden {
+  display: none;
+}
+
 .watched-video-item {
   width: 100%;
   background-color: #EFF1F3;
@@ -3178,6 +3189,27 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 1600px) {
   .watched-videos__content {
     grid-template-columns: repeat(5, 1fr);
+  }
+}
+.watched-videos__no-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem 0;
+}
+@media (max-width: 375px) {
+  .watched-videos__no-content span {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 376px) and (max-width: 1440px) {
+  .watched-videos__no-content span {
+    font-size: calc(1.8rem + 2 * ((100vw - 375px) / (1440 - 375)));
+  }
+}
+@media (min-width: 1441px) {
+  .watched-videos__no-content span {
+    font-size: 2rem;
   }
 }
 
