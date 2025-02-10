@@ -30,7 +30,7 @@ export const initArticleContextMenu = async () => {
 						error.text('').addClass('hidden')
 						submitButton.attr("disabled", "true")
 						$.ajax({
-							url: `/wp-json/tutorial-platform/v1/community/post/${postID}/comments`,
+							url: `${customjs_ajax_object.home_url}/wp-json/tutorial-platform/v1/community/post/${postID}/comments`,
 							type: 'POST',
 							data: {
 								content: comment
@@ -39,6 +39,11 @@ export const initArticleContextMenu = async () => {
 								submitButton.attr("disabled", false)
 								suggestionModal.classList.add("modal-suggestion__inner--hidden");
 								secondSuggestionModal.classList.remove("modal-suggestion__second--hidden")
+								setTimeout(() => {
+									form.trigger('reset')
+									suggestionModal.classList.remove("modal-suggestion__inner--hidden");
+									secondSuggestionModal.classList.add("modal-suggestion__second--hidden")
+								}, 8000)
 							},
 							error: function (err) {
 								error.text(err.responseJSON.message).removeClass('hidden')
