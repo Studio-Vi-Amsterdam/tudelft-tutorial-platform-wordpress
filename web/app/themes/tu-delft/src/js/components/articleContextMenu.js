@@ -30,20 +30,27 @@ export const initArticleContextMenu = async () => {
 						error.text('').addClass('hidden')
 						submitButton.attr("disabled", "true")
 						$.ajax({
-							url: `${customjs_ajax_object.home_url}/wp-json/tutorial-platform/v1/community/post/${postID}/comments`,
+							url: ajax_url,
 							type: 'POST',
 							data: {
-								content: comment
+								action: 'add_comment',
+								content: comment,
+								postID: postID,
 							},
 							success: function (response) {
-								submitButton.attr("disabled", false)
-								suggestionModal.classList.add("modal-suggestion__inner--hidden");
-								secondSuggestionModal.classList.remove("modal-suggestion__second--hidden")
-								setTimeout(() => {
-									form.trigger('reset')
-									suggestionModal.classList.remove("modal-suggestion__inner--hidden");
-									secondSuggestionModal.classList.add("modal-suggestion__second--hidden")
-								}, 8000)
+								if(response.success) {
+									submitButton.attr("disabled", false)
+									suggestionModal.classList.add("modal-suggestion__inner--hidden");
+									secondSuggestionModal.classList.remove("modal-suggestion__second--hidden")
+									setTimeout(() => {
+										form.trigger('reset')
+										suggestionModal.classList.remove("modal-suggestion__inner--hidden");
+										secondSuggestionModal.classList.add("modal-suggestion__second--hidden")
+									}, 8000)
+								} else {
+									error.text(response.data.message).removeClass('hidden')
+									submitButton.attr("disabled", false)
+								}
 							},
 							error: function (err) {
 								error.text(err.responseJSON.message).removeClass('hidden')
