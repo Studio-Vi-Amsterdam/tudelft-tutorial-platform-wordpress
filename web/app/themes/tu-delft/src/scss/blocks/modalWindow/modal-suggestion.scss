@@ -1,6 +1,14 @@
 .modal-suggestion {
     $self: &;
 
+    &.modal-window__item--active {
+        .modal-suggestion__content {
+            pointer-events: all;
+            opacity: 1;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+    }
+
     .modal-window__fader {
         z-index: 0;
         background-color: rgba($color: $black, $alpha: .3);
@@ -143,6 +151,14 @@
                 transition: 0.2s all;
             }
         }
+    }
+
+    &__content {
+        position: relative;
+        pointer-events: none;
+        overflow:hidden;
+        clip-path:polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+        transition:  .5s all cubic-bezier(0.15, 0.00, 0.00, 1.00);
     }
 
     &__loader {

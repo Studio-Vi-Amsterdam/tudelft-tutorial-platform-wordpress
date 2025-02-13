@@ -35,9 +35,11 @@ export function copyLink() {
 		$temp.val($url).select();
 		document.execCommand("copy");
 		$temp.remove();
-		$(this).addClass("copied");
+		$(this).prop('disabled', true)
+		$(this).find(".copy-checked")?.addClass('copy-checked--active')
 		setTimeout(() => {
-			$(this).removeClass("copied");
+			$(this).find(".copy-checked").removeClass('copy-checked--active')
+			$(this).prop('disabled', false)
 		}, 2000);
 	});
 }

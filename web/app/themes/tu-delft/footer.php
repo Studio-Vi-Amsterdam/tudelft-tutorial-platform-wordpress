@@ -54,6 +54,7 @@ $name = $user->display_name;
 </footer>
 
 </div>
+
 </main>
 
 <div id="modal-window" class="modal-window">
@@ -75,54 +76,56 @@ $name = $user->display_name;
     </div>
     <div id="modal-suggestion" class="modal-window__item modal-suggestion">
         <div class="modal-window__fader"></div>
-        <div class="modal-suggestion__inner">
-            <div class="modal-suggestion__title">
-                <h2>Write your feedback.</h2>
-                <button type="button" aria-label="close modal window" class="modal-window__close-icon">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1.23438L13 13.2344M1 13.2344L13 1.23438" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+        <div class="modal-suggestion__content">
+            <div class="modal-suggestion__inner">
+                <div class="modal-suggestion__title">
+                    <h2>Write your feedback.</h2>
+                    <button type="button" aria-label="close modal window" class="modal-window__close-icon">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.23438L13 13.2344M1 13.2344L13 1.23438" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-suggestion__text">
+                    <p>Write your feedback on <span data-chapter-title><?= get_the_title(); ?></span>.</p>
+                    <small>If you're providing a specific feedback to a part of the tutorial, mention which part (text, image, or video) that you have specific feedback for."</small>
+                </div>
+                <form data-suggestion-form class="block">
+                    <fieldset class="modal-suggestion__field">
+                        <div class="modal-suggestion__author">
+                            <p><?= $name[0]; ?></p>
+                        </div>
+                        <div class="field">
+                            <input type="hidden" name="chapter-title">
+                            <input type="hidden" name="post-id" value="<?= get_the_ID(); ?>">
+                            <input type="text" placeholder="Write your feedback" required minlength="3" name="comment" id="user-suggestion-field" />
+                        </div>
+                    </fieldset>
+                    <p class="error hidden" data-error></p>
+                    <fieldset class="modal-suggestion__buttons">
+                        <button type="button" aria-label="close modal window" class="modal-window__close-icon btn">Cancel</button>
+                        <button type="submit" class="btn modal-suggestion__submit-button">
+                            <p>Send</p>
+                            <div class="modal-suggestion__loader"></div>
+                        </button>
+                    </fieldset>
+                </form>
             </div>
-            <div class="modal-suggestion__text">
-                <p>Write your feedback on <span data-chapter-title><?= get_the_title(); ?></span>.</p>
-                <small>If you're providing a specific feedback to a part of the tutorial, mention which part (text, image, or video) that you have specific feedback for."</small>
+            <div class="modal-suggestion__second modal-suggestion__second--hidden">
+                <div class="modal-suggestion__title">
+                    <h2>Thank your for your feedback.</h2>
+                    <button type="button" aria-label="close modal window" class="modal-window__close-icon">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.23438L13 13.2344M1 13.2344L13 1.23438" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-suggestion__text">
+                    <p>Your feedback has been submitted successfully and is now awaiting review. We appreciate your input and will ensure it aligns with our guidelines before it’s published.</p>
+                </div>
             </div>
-						<form data-suggestion-form class="block">
-							<fieldset class="modal-suggestion__field">
-								<div class="modal-suggestion__author">
-									<p><?= $name[0]; ?></p>
-								</div>
-								<div class="field">
-									<input type="hidden" name="chapter-title">
-									<input type="hidden" name="post-id" value="<?= get_the_ID(); ?>">
-									<input type="text" placeholder="Write your feedback" required minlength="3" name="comment" id="user-suggestion-field" />
-								</div>
-							</fieldset>
-							<p class="error hidden" data-error></p>
+        </div>
 
-							<fieldset class="modal-suggestion__buttons">
-								<button type="button" aria-label="close modal window" class="modal-window__close-icon btn">Cancel</button>
-								<button type="submit" class="btn modal-suggestion__submit-button">
-									<p>Send</p>
-									<div class="modal-suggestion__loader"></div>
-								</button>
-							</fieldset>
-						</form>
-        </div>
-        <div class="modal-suggestion__second modal-suggestion__second--hidden">
-        <div class="modal-suggestion__title">
-                <h2>Thank your for your feedback.</h2>
-                <button type="button" aria-label="close modal window" class="modal-window__close-icon">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1.23438L13 13.2344M1 13.2344L13 1.23438" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-suggestion__text">
-                <p>Your feedback has been submitted successfully and is now awaiting review. We appreciate your input and will ensure it aligns with our guidelines before it’s published.</p>
-            </div>
-        </div>
     </div>
 </div>
 
