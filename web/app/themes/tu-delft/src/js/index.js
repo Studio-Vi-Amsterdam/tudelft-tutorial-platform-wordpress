@@ -27,7 +27,9 @@ import { headerSearch } from "./components/search";
 import { codeBlock } from "./components/code-block";
 import { tableHeightRow } from "./components/table-height-row";
 import { readingTime } from "./components/reading-time";
+import { initArticleContextMenu } from "./components/articleContextMenu";
 import {bookmarkButtons, ViewMoreBookmarks, ViewMoreVideos} from "./components/bookmark-buttons";
+import { initSuggestionModal } from "./components/ModalWindow/ModalSuggestions";
 
 let modalInstance = null
 export function runAfterDomLoad() {
@@ -106,6 +108,8 @@ export function runAfterDomLoad() {
                         tableHeightRow()
                         readingTime()
                         bookmarkButtons()
+                        initArticleContextMenu()
+                        initSuggestionModal()
 												ViewMoreBookmarks()
 												ViewMoreVideos()
 												if(!modalInstance) {

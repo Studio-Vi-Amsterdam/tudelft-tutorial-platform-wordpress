@@ -35,6 +35,7 @@ function enqueue_scripts() {
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'ajax_nonce' => wp_create_nonce( "secure_nonce_name" ),
             'site_url' => get_site_url(),
+            'home_url' => get_home_url(),
             'theme_url' => get_template_directory_uri()
         )
     );
