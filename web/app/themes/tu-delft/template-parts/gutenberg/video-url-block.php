@@ -8,6 +8,7 @@
 $theme_url = get_template_directory_uri();
 $video = get_field('tu-delft-video-url_url');
 $placeholder = get_field('tu-delft-video-url_thumbnail');
+$subtitle = get_field('tu-delft-video-url_subtitle') ?: '';
 
 ?>
 

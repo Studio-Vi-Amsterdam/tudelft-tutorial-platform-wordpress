@@ -6,6 +6,7 @@
 
 $file = get_field('tu-delft-download_file');
 $title = get_field('tu-delft-download_title') ?: $file['title'];
+$subtitle = get_field('tu-delft-download_subtitle') ?: '';
 $description = get_field('tu-delft-download_description') ?: $file['mime_type'];
 $filesize = filesize( get_attached_file( $file['id'] ) );
 $filesize = size_format($filesize);
