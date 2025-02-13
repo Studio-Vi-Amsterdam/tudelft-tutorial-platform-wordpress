@@ -54,33 +54,14 @@ $name = $user->display_name;
 </footer>
 
 </div>
-
-</main>
-
-<div id="modal-window" class="modal-window">
-    <div id="modal-video" class="modal-window__item modal-window__video modal-video-item">
-        <div class="modal-window__fader"></div>
-        <div class="modal-video-item__wr-iframe">
-            <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
-
-        </div>
-    </div>
-    <div id="modal-image" class="modal-window__item modal-window__video modal-video-item">
-        <div class="modal-window__fader"></div>
-        <div class="modal-video-item__wr-image">
-            <div class="modal-video-item__image">
-                <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
-                <img src="" alt="image">
-            </div>
-        </div>
-    </div>
+<div id="modal-window-suggestion" class="modal-window-suggestion">
     <div id="modal-suggestion" class="modal-window__item modal-suggestion">
         <div class="modal-window__fader"></div>
         <div class="modal-suggestion__content">
             <div class="modal-suggestion__inner">
                 <div class="modal-suggestion__title">
                     <h2>Write your feedback.</h2>
-                    <button type="button" aria-label="close modal window" class="modal-window__close-icon">
+                    <button type="button" class="modal-window__close-icon">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1.23438L13 13.2344M1 13.2344L13 1.23438" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -127,6 +108,27 @@ $name = $user->display_name;
         </div>
 
     </div>
+</div>
+</main>
+
+<div id="modal-window" class="modal-window">
+    <div id="modal-video" class="modal-window__item modal-window__video modal-video-item">
+        <div class="modal-window__fader"></div>
+        <div class="modal-video-item__wr-iframe">
+            <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
+
+        </div>
+    </div>
+    <div id="modal-image" class="modal-window__item modal-window__video modal-video-item">
+        <div class="modal-window__fader"></div>
+        <div class="modal-video-item__wr-image">
+            <div class="modal-video-item__image">
+                <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
+                <img src="" alt="image">
+            </div>
+        </div>
+    </div>
+    
 </div>
 
 <?php wp_footer(); ?>

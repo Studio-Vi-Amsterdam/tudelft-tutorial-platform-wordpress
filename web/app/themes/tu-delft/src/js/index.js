@@ -29,6 +29,7 @@ import { tableHeightRow } from "./components/table-height-row";
 import { readingTime } from "./components/reading-time";
 import { initArticleContextMenu } from "./components/articleContextMenu";
 import {bookmarkButtons, ViewMoreBookmarks, ViewMoreVideos} from "./components/bookmark-buttons";
+import { initSuggestionModal } from "./components/ModalWindow/ModalSuggestions";
 
 let modalInstance = null
 export function runAfterDomLoad() {
@@ -108,6 +109,7 @@ export function runAfterDomLoad() {
                         readingTime()
                         bookmarkButtons()
                         initArticleContextMenu()
+                        initSuggestionModal()
 												ViewMoreBookmarks()
 												ViewMoreVideos()
 												if(!modalInstance) {

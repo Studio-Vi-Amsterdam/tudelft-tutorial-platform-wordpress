@@ -222,7 +222,7 @@ $software = Tutorial::get_primary_software(get_the_ID());
 
                                 </button>
                                 <?php if (is_user_logged_in()): ?>
-                                    <button class="tutorial__button" data-modal-id='modal-suggestion'>
+                                    <button class="tutorial__button" data-suggestion-modal-id='modal-suggestion'>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 13.3223 4.32083 14.5697 4.88889 15.6686L4 20L8.33138 19.1111C9.43025 19.6792 10.6777 20 12 20Z" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
                                             <path d="M12 9.33594V14.6693" stroke="#67676B" stroke-linecap="round" stroke-linejoin="round" />
