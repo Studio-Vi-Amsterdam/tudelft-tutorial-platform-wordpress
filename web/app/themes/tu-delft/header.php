@@ -42,7 +42,7 @@
         return get_home_url() . $path . '/?' . http_build_query($param);
     }
 
-		$userID = get_current_user_id();
+	$userID = get_current_user_id();
 ?>
 
 
@@ -485,9 +485,9 @@
             </ul>
         </div>
         <div class="nav__btn">
-            <a href="#" class="btn">
-                <span>Log in</span>
-                <span>Log in</span>
+            <a href="<?= $userID ? get_author_posts_url($userID) : wp_login_url(); ?>" class="btn">
+                <span><?= $userID ? 'View dashboard' : 'Log in'; ?></span>
+                <span><?= $userID ? 'View dashboard' : 'Log in'; ?></span>
             </a>
         </div>
     </nav>
