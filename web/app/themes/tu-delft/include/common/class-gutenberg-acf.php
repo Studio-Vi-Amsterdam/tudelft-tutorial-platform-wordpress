@@ -755,7 +755,7 @@ class Gutenberg_ACF {
                 'append' => '',
             ),
             array(
-                'key' => 'tu-delft-download_subtitle_key',
+                'key' => 'tu-delft-download_subchapter_title_key',
                 'label' => 'Subtitle',
                 'name' => 'tu-delft-download_subtitle',
                 'aria-label' => '',
@@ -1295,7 +1295,7 @@ class Gutenberg_ACF {
                 'placeholder' => '',
             ),
             array(
-                'key' => 'tu-delft-video-url_subtitle_key',
+                'key' => 'tu-delft-video-url_subchapter_title_key',
                 'label' => 'Subtitle',
                 'name' => 'tu-delft-video-url_subtitle',
                 'aria-label' => '',
