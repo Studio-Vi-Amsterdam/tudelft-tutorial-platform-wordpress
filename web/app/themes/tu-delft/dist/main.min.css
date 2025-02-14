@@ -4682,7 +4682,7 @@ pre table td:last-child {
 }
 @media (min-width: 768px) {
   .quiz p {
-    padding: 1.6rem 0;
+    padding: 0 0 1.6rem 0;
   }
 }
 .quiz__item {
@@ -5140,7 +5140,7 @@ pre table td:last-child {
 }
 @media (min-width: 1024px) {
   .tutorial__content:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 2.4rem;
   }
 }
 .tutorial__content h3 {
