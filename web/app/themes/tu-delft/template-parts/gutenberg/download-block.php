@@ -13,17 +13,21 @@ $filesize = size_format($filesize);
 $ext = pathinfo($file['url'], PATHINFO_EXTENSION);
 $theme_url = get_template_directory_uri();
 ?>
-
-<a href="<?php echo $file['url']; ?>" class="tutorial__content download" download>
-    <div class="download__wrapper">
-        <div class="download__icon">
-            <svg width="24" height="24">
-                <use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
-            </svg>
-        </div>
-    </div>
-    <div class="download__inner">
-        <h5>Download <?php echo $title; ?></h5>
-        <h6><?php echo $description; ?> (<?php echo strtoupper($ext); ?>, <?php echo $filesize; ?>)</h6>
-    </div>
-</a>
+<div class="tutorial__content">
+	<?php if($subtitle): ?>
+		<h4><?= $subtitle ?></h4>
+	<?php endif; ?>
+	<a href="<?php echo $file['url']; ?>" class="tutorial__content download" download>
+			<div class="download__wrapper">
+					<div class="download__icon">
+							<svg width="24" height="24">
+									<use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
+							</svg>
+					</div>
+			</div>
+			<div class="download__inner">
+					<h5>Download <?php echo $title; ?></h5>
+					<h6><?php echo $description; ?> (<?php echo strtoupper($ext); ?>, <?php echo $filesize; ?>)</h6>
+			</div>
+	</a>
+</div>
