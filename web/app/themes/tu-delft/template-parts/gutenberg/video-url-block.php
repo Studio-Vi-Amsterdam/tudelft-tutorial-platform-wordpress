@@ -15,5 +15,7 @@ $subtitle = get_field('tu-delft-video-url_subtitle') ?: '';
         <?php if ( $title = get_field('tu-delft-video-url_title') ) : ?>
                 <h4><?php echo $title; ?></h4>
         <?php endif; ?> 
-        <iframe src="<?php echo $video; ?>" width="100%" height="500px" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="tutorial__content">
+                <iframe src="<?php echo $video; ?>" width="100%" height="500px" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
 </div>
