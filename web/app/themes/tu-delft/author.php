@@ -11,6 +11,7 @@ $maxPageBookmarks = round($bookmarks['countItems'] / 6, 0,PHP_ROUND_HALF_UP) - 1
 $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
 ?>
 <div class="tutorial user-profile">
+    <?php print_r($bookmarks) ?>
     <section class="user-greetings">
         <h1>Hello <?= $user->display_name; ?></h1>
     </section>

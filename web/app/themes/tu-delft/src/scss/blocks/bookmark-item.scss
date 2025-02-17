@@ -27,6 +27,8 @@
 
     &__content {
         padding: 1.75rem 1.4rem;
+        display: flex;
+        flex-direction: column;
         @media (min-width: $tabletSmallP1) {
             padding: 1.2rem 1.9rem;
         }
@@ -106,6 +108,9 @@
     // .bookmark-item__main
 
     &__main {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
         a {
             transition: 0.2s all;
             &:hover {
