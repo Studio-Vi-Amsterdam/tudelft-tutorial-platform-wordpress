@@ -9,7 +9,7 @@ $video = get_field('tu-delft-text-video_video');
 $placeholder = get_field('tu-delft-text-video_thumbnail');
 $subtitles = get_field('tu-delft-video_subtitles');
 ?>
-<div class="text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>">
+<div class="tutorial__content text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>">
     <?php if ( $title = get_field('tu-delft-text-video_title') ) : ?>
         <h4><?php echo $title; ?></h4>
     <?php endif; ?>
