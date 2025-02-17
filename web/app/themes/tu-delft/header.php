@@ -82,7 +82,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body data-barba="wrapper" class="opacity">
+<body data-barba="wrapper" class="opacity" data-authorized=<?= is_user_logged_in(); ?>>
     <div class="preloader">
         <div class="preloader__yellow"></div>
         <div class="preloader__blue"></div>
