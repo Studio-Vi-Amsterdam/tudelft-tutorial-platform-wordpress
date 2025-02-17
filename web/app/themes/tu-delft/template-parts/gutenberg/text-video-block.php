@@ -11,7 +11,10 @@ $subtitles = get_field('tu-delft-video_subtitles');
 ?>
 <div class="tutorial__content text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>">
     <?php if ( $title = get_field('tu-delft-text-video_title') ) : ?>
-        <h4><?php echo $title; ?></h4>
+        <div class="tutorial__subchapter-title">
+            <h4><?php echo $title; ?></h4>
+            <?= get_template_part('template-parts/user-menu') ?>
+        </div>
     <?php endif; ?>
     <div class="tutorial__content two-blocks-wrapper">
         <div class="text-wrapper">

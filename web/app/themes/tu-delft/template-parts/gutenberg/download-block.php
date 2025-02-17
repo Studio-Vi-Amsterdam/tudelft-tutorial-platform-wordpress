@@ -15,7 +15,10 @@ $theme_url = get_template_directory_uri();
 ?>
 <div class="tutorial__content">
 	<?php if($subtitle): ?>
-		<h4><?= $subtitle ?></h4>
+		<div class="tutorial__subchapter-title">
+			<h4><?= $subtitle ?></h4>
+            <?= get_template_part('template-parts/user-menu') ?>
+        </div>
 	<?php endif; ?>
 	<a href="<?php echo $file['url']; ?>" class="tutorial__content download" download>
 			<div class="download__wrapper">

@@ -1,9 +1,9 @@
 export function copyLink() {
 	const $temp = $("<input>")
 
-	$(".tutorial__item h4").each((i, el) => {
+	/* $(".tutorial__item h4").each((i, el) => {
 		$(el).html($(el).html() + '<span>link copied</span>')
-	})
+	}) */
 
 
 	$(".tutorial__item h4").on("click", function () {
