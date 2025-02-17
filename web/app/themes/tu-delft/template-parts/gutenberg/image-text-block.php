@@ -8,10 +8,14 @@ $image = get_field('tu-delft-image-text_image');
 ?>
 <div class="tutorial__content text">
     <?php if ( $title = get_field('tu-delft-image-text_title') ) : ?>
-        <div class="tutorial__subchapter-title">
+        <?php if (is_user_logged_in()): ?>
+            <div class="tutorial__subchapter-title">
+                <h4><?php echo $title; ?></h4>
+                <?= get_template_part('template-parts/user-menu') ?>
+            </div>
+        <?php else: ?>
             <h4><?php echo $title; ?></h4>
-            <?= get_template_part('template-parts/user-menu') ?>
-        </div>
+        <?php endif; ?>
     <?php endif; ?>
     <div class="two-column flex flex-col sm:flex-row items-start justify-between">
         <div class="two-column__item two-column__item--image image">
