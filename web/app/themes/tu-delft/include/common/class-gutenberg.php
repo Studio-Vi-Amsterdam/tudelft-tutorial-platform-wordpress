@@ -27,6 +27,7 @@ namespace TuDelft\Theme\Common;
         'content_card_block',
         'image_text_block',
         'text_image_block',
+        'double_image_block',
         'video_text_block',
         'text_video_block',
         'quiz_block',
