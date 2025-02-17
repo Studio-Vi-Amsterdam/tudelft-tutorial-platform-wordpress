@@ -27,13 +27,11 @@ $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
 								get_template_part('template-parts/items/bookmark', false, ['bookmark' => $bookmark]);
 
              endforeach;
-
-             echo $bookmarks['countItems'];
 						?>
 
 						<?php if($bookmarks['countItems'] === 0): ?>
 							<div class="my-bookmarks__no-content">
-									<span>Your bookmarks empty!</span>
+									<span>You have not bookmarked any pages yet</span>
 							</div>
 						<?php endif; ?>
         </div>
@@ -64,7 +62,7 @@ $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
 
 				<?php if($videos['countItems'] === 0): ?>
 					<div class="watched-videos__no-content">
-						<span>Your watched videos empty!</span>
+						<span>You have not watched any videos yet.</span>
 					</div>
 				<?php endif; ?>
     </section>
