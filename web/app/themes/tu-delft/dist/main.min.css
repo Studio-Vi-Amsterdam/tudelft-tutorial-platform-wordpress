@@ -5414,6 +5414,23 @@ pre table td:last-child {
     margin-top: 3.4rem;
   }
 }
+.tutorial__subchapter-title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  gap: 1.6rem;
+  padding-top: 2.4rem;
+}
+@media (min-width: 768px) {
+  .tutorial__subchapter-title {
+    padding-top: 4rem;
+  }
+}
+.tutorial__subchapter-title h4 {
+  cursor: default;
+  padding: 0;
+}
 .tutorial__menu-trigger {
   border: 1px solid #E5E5E5;
   background-color: #FAFAFA;

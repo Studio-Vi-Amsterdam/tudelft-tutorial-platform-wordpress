@@ -8,7 +8,10 @@ $h5p = get_field('tu-delft-h5p_source');
 ?>
 <div class="tutorial__content">
     <?php if ( $title = get_field('tu-delft-h5p_title') ) : ?>
-        <h4><?php echo $title; ?></h4>
+        <div class="tutorial__subchapter-title">
+            <h4><?php echo $title; ?></h4>
+            <?= get_template_part('template-parts/user-menu') ?>
+        </div>
     <?php endif; ?>
     <div class="h5p-block">
         <?php 

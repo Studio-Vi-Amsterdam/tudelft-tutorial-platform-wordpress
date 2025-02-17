@@ -12,12 +12,15 @@ $subtitles = get_field('tu-delft-video_subtitles');
 
 $page_id = get_the_ID();
 ?>
-<div class="tutorial__content video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>" data-videoid="<?php echo $video['ID']; ?>" data-pageid="<?php echo $page_id; ?>">
+<div class="tutorial__content video" data-video-subtitles="<?php echo $subtitles; ?>" data-videoid="<?php echo $video['ID']; ?>" data-pageid="<?php echo $page_id; ?>">
     <?php if ( $title = get_field('tu-delft-video_title') ) : ?>
-        <h4><?php echo $title; ?></h4>
+        <div class="tutorial__subchapter-title">
+            <h4><?php echo $title; ?></h4>
+            <?= get_template_part('template-parts/user-menu') ?>
+        </div>
     <?php endif; ?>
     <div class="tutorial__content">
-        <figure class="video__wrapper">
+        <figure class="video__wrapper" data-video-src="<?php echo $video['url']; ?>">
             <div class="video__preload">
                 <img width="808" height="454" src="<?php echo ($placeholder ? $placeholder : $theme_url . '/src/img/tutorial/img-1.jpg') ?>" alt="">
                 <div class="video__play">

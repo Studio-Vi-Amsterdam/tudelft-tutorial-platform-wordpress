@@ -579,6 +579,24 @@
             margin-top: 3.4rem;
         }
     }
+
+    &__subchapter-title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        gap: 1.6rem;
+        padding-top: 2.4rem;
+
+        @media (min-width: $tabletSmallP1) {
+            padding-top: 4rem;
+        }
+
+        h4 {
+            cursor: default;
+            padding: 0;
+        }
+    }
     
     // .tutorial__menu-trigger
 

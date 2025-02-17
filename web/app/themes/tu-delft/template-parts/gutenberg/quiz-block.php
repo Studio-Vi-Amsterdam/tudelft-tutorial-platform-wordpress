@@ -8,7 +8,10 @@
 ?>
 <div class="tutorial__content">
     <?php if ( $title = get_field('tu-delft-quiz_title') ) : ?>
-        <h4><?php echo $title; ?></h4>
+        <div class="tutorial__subchapter-title">
+            <h4><?php echo $title; ?></h4>
+            <?= get_template_part('template-parts/user-menu') ?>
+        </div>
     <?php endif; ?>
     <div class="tutorial__content text">
         <?php
