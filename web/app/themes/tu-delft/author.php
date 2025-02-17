@@ -27,6 +27,8 @@ $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
 								get_template_part('template-parts/items/bookmark', false, ['bookmark' => $bookmark]);
 
              endforeach;
+
+             echo $bookmarks['countItems'];
 						?>
 
 						<?php if($bookmarks['countItems'] === 0): ?>
