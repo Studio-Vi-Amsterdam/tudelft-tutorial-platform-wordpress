@@ -10,7 +10,7 @@ $video = get_field('tu-delft-video-text_video');
 $placeholder = get_field('tu-delft-video-text_thumbnail');
 $subtitles = get_field('tu-delft-video_subtitles');
 ?>
-<div class="text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>" data-video-src="<?php echo $video['url']; ?>">
+<div class="tutorial__content text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>" data-video-src="<?php echo $video['url']; ?>">
     <?php if ($title = get_field('tu-delft-video-text_title')) : ?>
         <?php if (is_user_logged_in()): ?>
             <div class="tutorial__subchapter-title">
@@ -21,7 +21,7 @@ $subtitles = get_field('tu-delft-video_subtitles');
             <h4><?php echo $title; ?></h4>
         <?php endif; ?>
     <?php endif; ?>
-    <div class="two-blocks-wrapper">
+    <div class="tutorial__content two-blocks-wrapper">
         <div class="video-wrapper">
             <figure class="video__wrapper">
                 <div class="video__preload">

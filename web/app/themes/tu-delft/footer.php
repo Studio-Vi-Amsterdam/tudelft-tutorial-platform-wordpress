@@ -68,8 +68,8 @@ $name = $user->display_name;
                     </button>
                 </div>
                 <div class="modal-suggestion__text">
-                    <p>Write your feedback on <span data-chapter-title><?= get_the_title(); ?></span>.</p>
-                    <small>If you're providing a specific feedback to a part of the tutorial, mention which part (text, image, or video) that you have specific feedback for."</small>
+                    <p>Write your feedback on "<span data-chapter-title><?= get_the_title(); ?></span>"".</p>
+                    <small>If you're providing a specific feedback to a part of the chapter, mention which part (text, image, or video) that you have specific feedback for."</small>
                 </div>
                 <form data-suggestion-form class="block">
                     <fieldset class="modal-suggestion__field">

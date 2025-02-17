@@ -29,9 +29,9 @@ $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
              endforeach;
 						?>
 
-						<?php if($bookmarks['countItems'] === 0): ?>
+						<?php if(empty($bookmarks['countItems']) || $bookmarks['countItems'] === 0): ?>
 							<div class="my-bookmarks__no-content">
-									<span>Your bookmarks empty!</span>
+									<span>You have not bookmarked any pages yet</span>
 							</div>
 						<?php endif; ?>
         </div>
@@ -60,9 +60,9 @@ $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
 					<button class="btn view-all" data-max-page="<?= $maxPageBookmarks; ?>" data-view-more-videos="0">View More</button>
 				<?php endif; ?>
 
-				<?php if($videos['countItems'] === 0): ?>
+				<?php if(empty($videos['countItems']) || $videos['countItems'] === 0): ?>
 					<div class="watched-videos__no-content">
-						<span>Your watched videos empty!</span>
+						<span>You have not watched any videos yet.</span>
 					</div>
 				<?php endif; ?>
     </section>
