@@ -188,7 +188,7 @@ class Gutenberg_ACF {
     ];
 
     private const DOUBLE_IMAGE_BLOCK = [
-        'key' => 'group_65cc428550f8a',
+        'key' => 'group_67b3970587bc3',
         'title' => 'Double Image Block',
         'fields' => array(
             array(
@@ -1517,6 +1517,7 @@ class Gutenberg_ACF {
             'text_block' => self::TEXT_BLOCK,
             'text_image_block' => self::TEXT_IMAGE_BLOCK,
             'image_text_block' => self::IMAGE_TEXT_BLOCK,
+            'double_image_block' => self::DOUBLE_IMAGE_BLOCK,
             'image_block' => self::IMAGE_BLOCK,
             'video_block' => self::VIDEO_BLOCK,
             'text_video_block' => self::TEXT_VIDEO_BLOCK,
