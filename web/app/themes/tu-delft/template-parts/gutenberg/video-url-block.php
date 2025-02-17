@@ -15,7 +15,10 @@ $subtitle = get_field('tu-delft-video-url_subtitle') ?: '';
 <div class="tutorial__content">
         
 				<?php if ($subtitle) : ?>
-					<h4><?= $subtitle; ?></h4>
+					<div class="tutorial__subchapter-title">
+						<h4><?= $subtitle; ?></h4>
+            			<?= get_template_part('template-parts/user-menu') ?>
+        			</div>
 				<?php endif; ?>
 				<?php if ($title) : ?>
 						<h5><?= $title; ?></h5>
