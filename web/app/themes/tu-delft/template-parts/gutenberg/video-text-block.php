@@ -13,7 +13,7 @@ $subtitles = get_field('tu-delft-video_subtitles');
     <?php if ( $title = get_field('tu-delft-video-text_title') ) : ?>
         <h4><?php echo $title; ?></h4>
     <?php endif; ?>
-    <div class="two-blocks-wrapper">
+    <div class="tutorial__content two-blocks-wrapper">
         <div class="video-wrapper">
             <figure class="video__wrapper">
                 <div class="video__preload">
