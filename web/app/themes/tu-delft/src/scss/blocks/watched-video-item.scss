@@ -3,10 +3,14 @@
     background-color: $light;
     border-radius: 0.4rem;
     padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+
 
     // .watched-video-item__video
 
     &__video {
+        aspect-ratio: 326/191;
         overflow: hidden;
         border-radius: 0.2rem;
     }
@@ -32,6 +36,9 @@
 
     &__title {
         transition: 0.2s all;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
         &:hover {
             transition: 0.2s all;
             h3 {
