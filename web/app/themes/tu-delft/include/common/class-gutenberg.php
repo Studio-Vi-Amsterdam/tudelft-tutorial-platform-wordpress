@@ -296,6 +296,34 @@ namespace TuDelft\Theme\Common;
     }
 
     /**
+     * Register Double Image Block
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function register_double_image_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/double-image',
+            'title' => __('Double Image Block'),
+            'description'   => __('Double-Image Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/double-image-block.php',
+            'category' => 'widgets',
+            'icon' => 'columns',
+            'keywords' => ['Double', 'Image', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
+    }
+
+    /**
      * Register Video Text Block
      * 
      * @since 1.0.0
