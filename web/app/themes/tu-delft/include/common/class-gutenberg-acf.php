@@ -282,7 +282,7 @@ class Gutenberg_ACF {
             array(
                 'key' => 'tu-delft-double-image-right_has_image_zoom_key',
                 'label' => 'Has Image Zoom (image right)',
-                'name' => 'tu-delft-double-image-left_has_image_zoom',
+                'name' => 'tu-delft-double-image-right_has_image_zoom',
                 'aria-label' => '',
                 'type' => 'true_false',
                 'instructions' => 'Check if you want to enable image zoom',
