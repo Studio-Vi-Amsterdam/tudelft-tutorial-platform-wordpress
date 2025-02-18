@@ -14,7 +14,7 @@ $subtitles = get_field('tu-delft-video_subtitles');
         <?php if (is_user_logged_in()): ?>
             <div class="tutorial__subchapter-title">
                 <h4><?php echo $title; ?></h4>
-                <?= get_template_part('template-parts/user-menu') ?>
+                <?= get_template_part('template-parts/subchapter-title-menu') ?>
             </div>
         <?php else: ?>
             <h4><?php echo $title; ?></h4>

@@ -19,7 +19,7 @@ $theme_url = get_template_directory_uri();
 		<?php if (is_user_logged_in()): ?>
 			<div class="tutorial__subchapter-title">
 				<h4><?= $subtitle ?></h4>
-				<?= get_template_part('template-parts/user-menu') ?>
+				<?= get_template_part('template-parts/subchapter-title-menu') ?>
 			</div>
 		<?php else: ?>
 			<h4><?= $subtitle ?></h4>
