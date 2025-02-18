@@ -56,8 +56,6 @@ export function initLenis() {
     requestAnimationFrame(raf);
   
  
-    console.log('Lenis initialized:', lenis);
-    console.log('HTML classes:', document.documentElement.classList);
   
     return lenis;
   }
