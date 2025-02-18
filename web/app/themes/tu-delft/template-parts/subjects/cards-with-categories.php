@@ -24,7 +24,7 @@ use TuDelft\Theme\Modules\Subject\Subject;
 ?>
 
 <section class="cards-with-categories">
-    <div class="cards-with-categories__categories categories" data-scrollbar>
+    <div class="cards-with-categories__categories categories" data-lenis-prevent>
         <div class="categories__wrapper flex">
             <?php foreach ( $categories as $key => $category ) :  ?>
                 <div class="categories__item <?php echo (((!empty($selectedCategory) && $selectedCategory === $category['category']->slug) || (empty($selectedCategory) && $key === 0)) ? 'categories__item--active transition' : ''); ?>" data-category-target="chapter-<?php echo $key; ?>">

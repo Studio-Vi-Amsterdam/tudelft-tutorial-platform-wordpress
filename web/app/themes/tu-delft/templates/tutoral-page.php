@@ -43,7 +43,7 @@
                 <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1.234l12 12m-12 0l12-12" />
             </svg>
         </div>
-        <div class="tutorial__aside-wrapper" data-scrollbar>
+        <div class="tutorial__aside-wrapper" data-lenis-prevent>
         <div class="tutorial__nav titles">
             <h4>Content Page Title</h4>
 

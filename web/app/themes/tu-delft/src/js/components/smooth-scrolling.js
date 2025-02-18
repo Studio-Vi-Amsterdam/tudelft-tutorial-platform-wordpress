@@ -1,86 +1,120 @@
-import Scrollbar from "smooth-scrollbar";
-export function smoothScroll() {
-	let pagePosition = 0
-	const footer = $('.footer')
-	const tutorialAside = $('.tutorial__aside')
-	const tutorialNav = $('.tutorial__mobile-nav')
-	const filter = $('.filter__content')
-	const filterFader = $('.filter__fader')
-	const tutorialNavFader = $('.tutorial__fader')
-	tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
-	const scroller = document.querySelector('#scroll-container');
-	const bodyScrollBar = Scrollbar.init(scroller, { damping: 0.1, delegateTo: document, alwaysShowTracks: false });
-	Scrollbar.initAll()
-	bodyScrollBar.addListener((status) => {
-		if (status.offset.x !== 0) {
-		  bodyScrollBar.setPosition(0, status.offset.y);
+
+
+export function smoothScroll(lenis) {
+	let pagePosition = 0;
+	const footer = $(".footer");
+	const tutorialAside = $(".tutorial__aside");
+	const tutorialNav = $(".tutorial__mobile-nav");
+	const filter = $(".filter__content");
+	const filterFader = $(".filter__fader");
+	const tutorialNavFader = $(".tutorial__fader");
+
+	lenis.start();
+	lenis.scrollTo(0);
+
+	lenis.on("scroll", ({ scroll }) => {
+		pagePosition = scroll;
+
+		const windowWidth = $(window).innerWidth();
+		const windowHeight = $(window).innerHeight();
+
+		if (windowWidth >= 767) {
+			footer.css("height", $(".footer__container").outerHeight() + "px");
+			$(".footer__container").css(
+				"top",
+				pagePosition +
+					windowHeight -
+					$(".footer__container").outerHeight() +
+					"px",
+			);
 		}
-	  });
-	if($(window).innerWidth() >= 767) {
-		footer.css('height', $('.footer__container').outerHeight() + 'px')
-		$('.footer__container').css('top',pagePosition + $(window).innerHeight() - $('.footer__container').outerHeight() + 'px' )
-	}
-	if($(window).innerWidth() < 768) {
-		tutorialAside.css('top', pagePosition + $(window).innerHeight() - $('.tutorial__aside-height').outerHeight())
-		filter.css('top', pagePosition + $(window).innerHeight())
-	}
-	if($(window).innerWidth() >= 1024) {
-		$('.search-bar__field').css('width', $(window).innerWidth() - $('.search-bar__field').offset().left + 'px')
-	}
-	bodyScrollBar.addListener(({ offset }) => {
-		if($('.tutorial--active').length > 0 || $('.header--opened').length > 0 || $('.filter--opened').length) {
-			bodyScrollBar.scrollTo(0, pagePosition, 0);
-			scroller.classList.add('hide-scrollbar')
+
+		if (windowWidth < 768) {
+			tutorialAside.css(
+				"top",
+				pagePosition +
+					windowHeight -
+					$(".tutorial__aside-height").outerHeight(),
+			);
+			filter.css("top", pagePosition + windowHeight);
+		}
+
+		$(".header").css("top", pagePosition);
+		$(".nav").css("top", pagePosition);
+
+		if (pagePosition + windowHeight >= $(".disabled-horizontal-scroll").height() - 100) {
+			tutorialNav.addClass("hidden");
 		} else {
-			pagePosition = offset.y
-			if(scroller.classList.contains('hide-scrollbar')) {
-				scroller.classList.remove('hide-scrollbar')
-			}
-		}
-		$('.header').css('top', pagePosition)
-		$('.nav').css('top', pagePosition)
-		if(pagePosition + $(window).innerHeight() >= $('.scroll-content').height() - 100) {
-            tutorialNav.addClass('hidden')
-
-        } else {
-            tutorialNav.removeClass('hidden')
-        }
-		if($(window).innerWidth() < 768 && pagePosition + $(window).innerHeight() < $('.scroll-content').outerHeight()) {
-			filterFader.css('top', pagePosition)
-			filter.css('top', pagePosition + $(window).innerHeight())
-			tutorialNav.css('top', pagePosition + $(window).innerHeight() - tutorialNav.outerHeight())
-			tutorialNavFader.css('top', pagePosition)
-			tutorialAside.css('top', pagePosition + $(window).innerHeight() - $('.tutorial__aside-height').outerHeight())
-		}
-		if($(window).innerWidth() < 768 && pagePosition + $(window).innerHeight()  >= $('.scroll-content').outerHeight() - filter.outerHeight() - $(window).innerHeight()) {
-			filterFader.css('display', 'none')
-			filter.css('display', 'none')
-		} else if($(window).innerWidth() < 768 && pagePosition + $(window).innerHeight()  <  $('.scroll-content').outerHeight() - filter.outerHeight() - $(window).innerHeight()){
-			filterFader.css('display', 'block')
-			filter.css('display', 'flex')
-
-		}
-		if($(window).innerWidth() >= 767) {
-			$('.footer__container').css('top',pagePosition + $(window).innerHeight() - $('.footer__container').outerHeight() + 'px' )
+			tutorialNav.removeClass("hidden");
 		}
 
+		if (
+			windowWidth < 768 &&
+			pagePosition + windowHeight < $(".disabled-horizontal-scroll").outerHeight()
+		) {
+			filterFader.css("top", pagePosition);
+			filter.css("top", pagePosition + windowHeight);
+			tutorialNav.css(
+				"top",
+				pagePosition + windowHeight - tutorialNav.outerHeight(),
+			);
+			tutorialNavFader.css("top", pagePosition);
+			tutorialAside.css(
+				"top",
+				pagePosition +
+					windowHeight -
+					$(".tutorial__aside-height").outerHeight(),
+			);
+		}
+
+		if (
+			windowWidth < 768 &&
+			pagePosition + windowHeight >=
+				$(".disabled-horizontal-scroll").outerHeight() - filter.outerHeight() - windowHeight
+		) {
+			filterFader.css("display", "none");
+			filter.css("display", "none");
+		} else if (
+			windowWidth < 768 &&
+			pagePosition + windowHeight <
+				$(".disabled-horizontal-scroll").outerHeight() - filter.outerHeight() - windowHeight
+		) {
+			filterFader.css("display", "block");
+			filter.css("display", "flex");
+		}
+
+		if (windowWidth >= 767) {
+			$(".footer__container").css(
+				"top",
+				pagePosition +
+					windowHeight -
+					$(".footer__container").outerHeight() +
+					"px",
+			);
+		}
 	});
 
-	bodyScrollBar.setPosition(0, 0);
+	// Set initial scroll position
+	lenis.scrollTo(0, { immediate: true });
 
-	$('[data-next], [data-prev]').on('click', function() {
-		bodyScrollBar.scrollTo(0, 0, 0);
-	})
-
-	$('a[href*=\\#]').on('click', function () {
-		let anchor 
-		if($(this).attr('href') !== '#' && $(this).attr('href').length > 1) {
-			anchor = $(`#${$(this).attr('href').split('#')[1]}`)
-		}
-		if (anchor && anchor.length > 0) {
-			bodyScrollBar.scrollTo(0, anchor.offset().top + pagePosition - 100, 1000);
-		}
+	$("[data-next], [data-prev]").on("click", function () {
+		lenis.scrollTo(0, { immediate: true });
 	});
 
-	return bodyScrollBar
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener("click", function (e) {
+				if (this.getAttribute("href") && this.getAttribute("href") !== "#") {
+					e.preventDefault();
+					const scrollToOptions = {
+						offset: -100,
+					};
+					lenis.scrollTo(this.getAttribute("href"), scrollToOptions, {
+						duration: 1,
+					});
+				}
+			});
+		});
+	
+
+	return lenis;
 }
