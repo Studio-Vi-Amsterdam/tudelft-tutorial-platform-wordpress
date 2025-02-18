@@ -37,9 +37,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="field field--textarea" data-scrollbar>
+                <div class="field field--textarea" data-lenis-prevent>
                     <label for="message">Message</label>
-                    <textarea id="message" placeholder="Message" data-scrollbar></textarea>
+                    <textarea id="message" placeholder="Message" data-lenis-prevent></textarea>
                     <span data-text></span>
                 </div>
                 <button class="btn" type="submit">

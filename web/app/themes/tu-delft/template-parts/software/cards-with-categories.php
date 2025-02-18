@@ -53,7 +53,7 @@
     }
 ?>
 <section class="cards-with-categories">
-    <div class="cards-with-categories__categories categories" data-scrollbar>
+    <div class="cards-with-categories__categories categories" data-lenis-prevent>
         <div class="categories__wrapper flex">
             <?php foreach ($filter_groups as $key => $filter_group): ?>
                 <div class="categories__item <?php echo $key === 'chapter_0' ? 'categories__item--active' : '' ?>" data-category-target="<?php echo $key ?>">
