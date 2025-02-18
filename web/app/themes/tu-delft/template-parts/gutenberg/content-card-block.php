@@ -6,10 +6,14 @@ $theme_url = get_template_directory_uri();
 ?>
 <div class="tutorial__content text">
     <?php if ( $title = get_field('tu-delft-content-card_title') ) : ?>
-        <div class="tutorial__subchapter-title">
+        <?php if (is_user_logged_in()): ?>
+            <div class="tutorial__subchapter-title">
+                <h4><?php echo $title; ?></h4>
+                <?= get_template_part('template-parts/subchapter-title-menu') ?>
+            </div>
+        <?php else: ?>
             <h4><?php echo $title; ?></h4>
-            <?= get_template_part('template-parts/user-menu') ?>
-        </div>
+        <?php endif; ?>
     <?php endif; ?> 
     <div class="grid-links grid lg:grid-cols-2 ">
         <?php 

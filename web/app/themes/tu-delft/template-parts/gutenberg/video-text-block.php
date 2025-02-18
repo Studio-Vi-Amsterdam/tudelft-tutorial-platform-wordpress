@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Block Name: Video Text Block
  * 
@@ -9,12 +10,16 @@ $video = get_field('tu-delft-video-text_video');
 $placeholder = get_field('tu-delft-video-text_thumbnail');
 $subtitles = get_field('tu-delft-video_subtitles');
 ?>
-<div class="tutorial__content text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>">
-    <?php if ( $title = get_field('tu-delft-video-text_title') ) : ?>
-        <div class="tutorial__subchapter-title">
+<div class="tutorial__content text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>" data-video-src="<?php echo $video['url']; ?>">
+    <?php if ($title = get_field('tu-delft-video-text_title')) : ?>
+        <?php if (is_user_logged_in()): ?>
+            <div class="tutorial__subchapter-title">
+                <h4><?php echo $title; ?></h4>
+                <?= get_template_part('template-parts/subchapter-title-menu') ?>
+            </div>
+        <?php else: ?>
             <h4><?php echo $title; ?></h4>
-            <?= get_template_part('template-parts/user-menu') ?>
-        </div>
+        <?php endif; ?>
     <?php endif; ?>
     <div class="tutorial__content two-blocks-wrapper">
         <div class="video-wrapper">
@@ -28,11 +33,12 @@ $subtitles = get_field('tu-delft-video_subtitles');
                     </div>
                 </div>
                 <figcaption>
-                    <?php echo get_post_meta( $video['ID'], 'title', true ) ? : $video['alt']; ?>
+                    <?php echo get_post_meta($video['ID'], 'title', true) ?: $video['alt']; ?>
                 </figcaption>
             </figure>
             <!-- <video controls>
-                <source src="<?php // the_field('tu-delft-video-text_video'); ?>" type="video/mp4">
+                <source src="<?php // the_field('tu-delft-video-text_video'); 
+                                ?>" type="video/mp4">
                 Your browser does not support the video tag.
             </video> -->
         </div>
