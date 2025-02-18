@@ -1,4 +1,4 @@
-
+import Lenis from "lenis";
 
 export function smoothScroll(lenis) {
 	let pagePosition = 0;
