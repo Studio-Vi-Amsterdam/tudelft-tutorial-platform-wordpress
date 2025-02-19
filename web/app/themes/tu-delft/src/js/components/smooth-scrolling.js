@@ -95,7 +95,7 @@ export function smoothScroll(lenis) {
 	});
 
 	document.querySelector('.header__account').addEventListener('click', function(e) {
-		window.location.href = e.target.dataset.href
+		window.location.href = e.currentTarget.dataset.href
 		
 	})
 
