@@ -165,25 +165,27 @@ export function runAfterDomLoad() {
 								);
 							}
 							codeBlock();
-							const urlParams = new URLSearchParams(window.location.search);
-							const videoParam = urlParams.get("video");
+							setTimeout(() => {
+								const urlParams = new URLSearchParams(window.location.search);
+								const videoParam = urlParams.get("video");
 
-							document
-								.querySelectorAll("iframe, [data-video-src]")
-								.forEach((item) => {
-									const videoSrc = item.dataset.videoSrc;
-									const scrollValue = item.src; 
+								document
+									.querySelectorAll("iframe, [data-video-src]")
+									.forEach((item) => {
+										const videoSrc = item.dataset.videoSrc;
+										const scrollValue = item.src;
 
-									if (
-										(videoSrc && videoSrc.includes(videoParam)) ||
-										(scrollValue && scrollValue.includes(videoParam))
-									) {
-										lenis.scrollTo(item, {
-											offset: -100, 
-											duration: 1, 
-										});
-									}
-								});
+										if (
+											(videoSrc && videoSrc.includes(videoParam)) ||
+											(scrollValue && scrollValue.includes(videoParam))
+										) {
+											lenis.scrollTo(item, {
+												offset: -100,
+												duration: 1,
+											});
+										}
+									});
+							}, 1200);
 
 							setTimeout(() => {
 								if ($(`${hash}`).length > 0) {
