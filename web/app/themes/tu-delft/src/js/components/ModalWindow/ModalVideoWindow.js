@@ -19,7 +19,6 @@ export default class ModalVideoWindow extends ModalWindowBase {
 
 	callModalVideoHandler(target) {
 		const placeholderUrl = jQuery(target)
-			.children("figure")
 			.children(".video__preload")
 			.children("img")
 			.attr("src");
