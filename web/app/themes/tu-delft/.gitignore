@@ -55,3 +55,6 @@ Thumbs.db
 # Lock files
 *.lock
 *-lock.json
+
+# SQL file
+local.sql
