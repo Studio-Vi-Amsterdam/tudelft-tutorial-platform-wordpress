@@ -131,7 +131,7 @@
         @extend .p2;
         color: $txt-gray;
         @media(min-width: $tabletSmallP1) {
-            margin-top: 2.4rem;
+            margin-top: 0;
         }
     }
     ul, ol {
