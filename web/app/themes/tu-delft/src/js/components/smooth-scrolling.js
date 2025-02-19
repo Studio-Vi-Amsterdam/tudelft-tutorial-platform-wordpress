@@ -94,6 +94,11 @@ export function smoothScroll(lenis) {
 		}
 	});
 
+	document.querySelector('.header__account').addEventListener('click', function(e) {
+		window.location.href = e.target.dataset.href
+		
+	})
+
 	// Set initial scroll position
 	lenis.scrollTo(0, { immediate: true });
 
