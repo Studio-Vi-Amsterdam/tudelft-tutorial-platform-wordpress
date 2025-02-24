@@ -763,7 +763,8 @@
     // .tutorial__bookmark-mobile
 
     &__bookmark-mobile {
-			margin-top: 20px;
+			margin-top: 2.4rem;
+            margin-bottom: 2.4rem;
         @media (min-width: $tabletSmallP1) {
             display: none;
         }

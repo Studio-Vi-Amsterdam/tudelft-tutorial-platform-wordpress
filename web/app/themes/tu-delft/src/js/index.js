@@ -38,31 +38,30 @@ import {
 	ViewMoreVideos,
 } from "./components/bookmark-buttons";
 import { initSuggestionModal } from "./components/ModalWindow/ModalSuggestions";
+import { initAnchorLink } from "./components/anchor-link";
 
 let modalInstance = null;
 export function initLenis() {
-    const lenis = new Lenis({
-      smoothWheel: true, 
-      smoothTouch: true, 
-      duration: 1.2, 
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-  
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-  
-    requestAnimationFrame(raf);
-  
- 
-  
-    return lenis;
-  }
+	const lenis = new Lenis({
+		smoothWheel: true,
+		smoothTouch: true,
+		duration: 1.2,
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
+
+	return lenis;
+}
 export function runAfterDomLoad() {
 	$(window).on("load", function () {
-        let lenis;
-        
+		let lenis;
+
 		$(".tutorial__main").removeClass("transition");
 		let timeout = 430;
 		$(".preloader").removeClass("loaded").addClass("reloaded");
@@ -95,9 +94,9 @@ export function runAfterDomLoad() {
 								.querySelector(".modal-video-item__wr-iframe video")
 								.remove();
 						}
-                        if (typeof lenis === "object") {
-                          lenis.destroy();
-                        }
+						if (typeof lenis === "object") {
+							lenis.destroy();
+						}
 						setTimeout(() => {
 							$("body").removeClass("reloaded");
 						}, 430);
@@ -130,9 +129,8 @@ export function runAfterDomLoad() {
 							.css("overflow", "unset")
 							.css("pointer-events", "all");
 
-                            lenis = initLenis();
-                            
-                        
+						lenis = initLenis();
+
 						setTimeout(() => {
 							let hash = $(location).attr("hash");
 							$("body").removeClass("preload");
@@ -158,6 +156,7 @@ export function runAfterDomLoad() {
 							initSuggestionModal();
 							ViewMoreBookmarks();
 							ViewMoreVideos();
+							initAnchorLink();
 							if (!modalInstance) {
 								modalInstance = new ModalWindow(
 									ModalVideoWindow,
@@ -167,9 +166,31 @@ export function runAfterDomLoad() {
 							}
 							codeBlock();
 							setTimeout(() => {
+								const urlParams = new URLSearchParams(window.location.search);
+								const videoParam = urlParams.get("video");
+
+								document
+									.querySelectorAll("iframe, [data-video-src]")
+									.forEach((item) => {
+										const videoSrc = item.dataset.videoSrc;
+										const scrollValue = item.src;
+
+										if (
+											(videoSrc && videoSrc.includes(videoParam)) ||
+											(scrollValue && scrollValue.includes(videoParam))
+										) {
+											lenis.scrollTo(item, {
+												offset: -100,
+												duration: 1,
+											});
+										}
+									});
+							}, 1200);
+
+							setTimeout(() => {
 								if ($(`${hash}`).length > 0) {
 									let anchor = $(`${hash}`);
-									lenis.scrollTo(0, anchor.offset().top - 100, 1000);
+									lenis.scrollTo(anchor, { offset: -100, duration: 1 });
 								}
 							}, 1200);
 						}, timeout);
