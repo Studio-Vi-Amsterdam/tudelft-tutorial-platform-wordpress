@@ -185,6 +185,11 @@ class Student {
             ];
         }
 
+        // order by published_at
+        usort( $return_array, function( $a, $b ) {
+            return strtotime( $b['published_at'] ) <=> strtotime( $a['published_at'] );
+        } );
+
         return $return_array;
     }
 
@@ -315,11 +320,21 @@ class Student {
 
         $return_data = [];
 
+        $removed_due_no_page = [];
+
         foreach ($watched_videos as $video) {
             $post = get_post( $video['page_id'] );
 
             // convert date to "time ago" format
             $time_ago = human_time_diff( $video['watched_at'], current_time( 'timestamp' ) ) . ' ago';
+
+            $post_type = $post->post_type;
+            $post_status = $post->post_status;
+
+            if ($post_type === '' || $post_status !== 'publish') {
+                $removed_due_no_page[] = $video['video_id'];
+                continue;
+            }
 
             $return_data[] = [
                 'video_name' => get_post_meta( $video['video_id'], 'title', true ) ? : $post->post_title,
@@ -327,9 +342,23 @@ class Student {
                 'video_thumbnail' => $video['placeholder_url'] ? : get_home_url() . '/app/themes/tu-delft/src/img/tutorial/img-1.jpg',
                 'type' => $post->post_type,
                 'watched_at' => $time_ago,
+                'watched_at_timestamp' => $video['watched_at'],
                 'page_url' => $video['page_url'],
             ];
         }
+
+        if ( ! empty( $removed_due_no_page ) ) {
+            $watched_videos = array_filter( $watched_videos, function( $video ) use ( $removed_due_no_page ) {
+                return ! in_array( $video['video_id'], $removed_due_no_page );
+            } );
+
+            update_user_meta( $user_id, 'watched_videos', $watched_videos );
+        }
+
+        // order by watched_at_timestamp
+        usort( $return_data, function( $a, $b ) {
+            return $b['watched_at_timestamp'] <=> $a['watched_at_timestamp'];
+        } );
 
         return $return_data;
     }

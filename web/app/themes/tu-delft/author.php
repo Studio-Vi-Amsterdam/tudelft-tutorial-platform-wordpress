@@ -20,7 +20,7 @@ $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
         </div>
         <div class="my-bookmarks__content" data-bookmakrs>
             <?php
-            foreach ($bookmarks as $bookmark) :
+            foreach ($bookmarks['items'] as $bookmark) :
                 if (empty($bookmark['id'])) {
                     continue;
                 }
@@ -47,7 +47,7 @@ $maxPageVideos = round($videos['countItems'] / 10, 0,PHP_ROUND_HALF_UP) - 1;
 
         <div class="watched-videos__content" data-wathced-videos>
             <?php
-            foreach ($videos as $video) :
+            foreach ($videos['items'] as $video) :
                 if (empty($video['video_url'])) {
                     continue;
                 }
