@@ -7,9 +7,31 @@
 
 $theme_url = get_template_directory_uri();
 $video = get_field('tu-delft-video-url_url');
+$subtitle = get_field('tu-delft-video-url_subtitle');
+$title = get_field('tu-delft-video-url_title');
 $placeholder = get_field('tu-delft-video-url_thumbnail');
-
+$subtitle = get_field('tu-delft-video-url_subtitle') ?: '';
 ?>
+<div class="tutorial__content">
 
-
-<iframe src="<?php echo $video; ?>" width="100%" height="500px" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+	<?php if ($subtitle): ?>
+		<?php if (is_user_logged_in()): ?>
+			<div class="tutorial__subchapter-title">
+				<h4><?= $subtitle ?></h4>
+				<?= get_template_part('template-parts/subchapter-title-menu') ?>
+			</div>
+		<?php else: ?>
+			<h4><?= $subtitle ?></h4>
+		<?php endif; ?>
+	<?php endif; ?>
+	<div class="tutorial__content">
+		<figure>
+			<iframe src="<?php echo $video; ?>" width="100%" height="500px" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+		</figure>
+		<?php if ($title) : ?>
+			<figcaption>
+				<?= $title; ?>
+			</figcaption>
+		<?php endif; ?>
+	</div>
+</div>

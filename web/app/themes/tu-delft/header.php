@@ -42,6 +42,7 @@
         return get_home_url() . $path . '/?' . http_build_query($param);
     }
 
+	$userID = get_current_user_id();
 ?>
 
 
@@ -52,11 +53,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>DigiPedia - Tu Delft</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+    <?php if(is_user_logged_in()): ?>
+			<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <?php endif; ?>
+		<!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Z1B8SEERW"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -65,10 +69,20 @@
 
     gtag('config', 'G-2Z1B8SEERW');
     </script>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DigiPedia - Tu Delft">
+    <meta property="og:image" content="https://digipedia.tudelft.nl/app/uploads/2024/11/LogoDesign-01.jpg">
+    <meta property="og:description" content="Your gateway to mastering computational methods, techniques, and tools at your own pace.">
+    <link rel="icon" type="image/png" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="DigiPedia" />
+    <link rel="manifest" href="https://digipedia.tudelft.nl/app/themes/tu-delft/src/img/favicons/site.webmanifest" />
     <?php wp_head(); ?>
 </head>
 
-<body data-barba="wrapper" class="opacity">
+<body data-barba="wrapper" class="opacity" data-authorized=<?= is_user_logged_in(); ?>>
     <div class="preloader">
         <div class="preloader__yellow"></div>
         <div class="preloader__blue"></div>
@@ -235,13 +249,13 @@
                     </form>
                 </div>
             </div>
-            <a href="#" class="header__account header__icon" aria-label="account">
+            <div data-href="<?= $userID ? get_author_posts_url($userID) : wp_login_url(); ?>" class="header__account header__icon" aria-label="account">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25">
                     <circle cx="11.842" cy="6.316" r="5.566" stroke="#000" stroke-width="1.5" />
                     <path stroke="#000" stroke-linecap="round" stroke-width="1.5"
                         d="M3 24v-3a6 6 0 016-6h5a6 6 0 016 6v3" />
                 </svg>
-            </a>
+            </div>
             <div class="header__close header__icon js-menu-close">
             </div>
         </div>
@@ -253,14 +267,14 @@
             <ul>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Courses</a>
+                        <a href="<?php echo get_home_url();?>/courses">Courses</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -274,7 +288,7 @@
                             <?php foreach($academic_levels as $category): ?>
                                 <li class="menu-item-has-children">
                                     <div class="menu-item-has-children__title">
-                                        <a href="#">
+                                        <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug]); ?>">
                                             <?php echo $category['category']->name; ?>
                                         </a>
                                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
@@ -283,7 +297,7 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
                                         <div class="menu-item-has-children__title title-prev title-start">
                                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                                 <svg width="20" height="20">
@@ -317,14 +331,14 @@
                 </li>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Subjects</a>
+                        <a href="<?php echo get_home_url();?>/subjects">Subjects</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -338,14 +352,16 @@
                             <?php foreach($categories as $category): ?>
                                 <li class="menu-item-has-children">
                                     <div class="menu-item-has-children__title">
-                                        <a href="#"><?php echo $category['category']->name; ?></a>
+                                        <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug]); ?>">
+                                            <?php echo $category['category']->name; ?>
+                                        </a>
                                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
                                         <div class="menu-item-has-children__title title-prev title-start">
                                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                                 <svg width="20" height="20">
@@ -379,14 +395,14 @@
                 </li>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Software</a>
+                        <a href="<?php echo get_home_url();?>/software">Software</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -404,14 +420,14 @@
                 </li>
                 <li class="menu-item-has-children">
                     <div class="menu-item-has-children__title">
-                        <a href="#">Labs</a>
+                        <a href="<?php echo get_home_url();?>/labs">Labs</a>
                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                             <svg width="20" height="20">
                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                             </svg>
                         </div>
                     </div>
-                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
                         <div class="menu-item-has-children__title title-prev">
                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                 <svg width="20" height="20">
@@ -425,14 +441,16 @@
                             <?php foreach($labs as $lab): ?>
                                 <li class="menu-item-has-children">
                                     <div class="menu-item-has-children__title">
-                                        <a href="#"><?php echo $lab['category']->name; ?></a>
+                                        <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug]); ?>">
+                                            <?php echo $lab['category']->name; ?>
+                                        </a>
                                         <div class="menu-item-has-children__trigger menu-item-has-children__next">
                                             <svg width="20" height="20">
                                                 <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="menu-item-has-children__submenu" data-scrollbar>
+                                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
                                         <div class="menu-item-has-children__title title-prev title-start">
                                             <div class="menu-item-has-children__trigger menu-item-has-children__prev">
                                                 <svg width="20" height="20">
@@ -467,9 +485,9 @@
             </ul>
         </div>
         <div class="nav__btn">
-            <a href="#" class="btn">
-                <span>Log in</span>
-                <span>Log in</span>
+            <a href="<?= $userID ? get_author_posts_url($userID) : wp_login_url(); ?>" class="btn">
+                <span><?= $userID ? 'View dashboard' : 'Log in'; ?></span>
+                <span><?= $userID ? 'View dashboard' : 'Log in'; ?></span>
             </a>
         </div>
     </nav>

@@ -27,6 +27,7 @@ namespace TuDelft\Theme\Common;
         'content_card_block',
         'image_text_block',
         'text_image_block',
+        'double_image_block',
         'video_text_block',
         'text_video_block',
         'quiz_block',
@@ -283,6 +284,34 @@ namespace TuDelft\Theme\Common;
             'category' => 'widgets',
             'icon' => 'align-pull-right',
             'keywords' => ['Text', 'Image', 'Content'],
+            'mode' => 'edit',
+            'example'  => [
+                'attributes' => [
+                    'mode' => 'preview',
+                    'data' => [
+                        'is_preview'    => true
+                    ]
+                ]
+            ]
+        ]);
+    }
+
+    /**
+     * Register Double Image Block
+     * 
+     * @since 1.0.0
+     * 
+     * @return void
+     */
+    public function register_double_image_block(): void {
+        acf_register_block_type([
+            'name' => 'tu-delft/double-image',
+            'title' => __('Double Image Block'),
+            'description'   => __('Double-Image Block for TU-Delft'),
+            'render_template' => 'template-parts/gutenberg/double-image-block.php',
+            'category' => 'widgets',
+            'icon' => 'columns',
+            'keywords' => ['Double', 'Image', 'Content'],
             'mode' => 'edit',
             'example'  => [
                 'attributes' => [

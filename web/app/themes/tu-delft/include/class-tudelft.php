@@ -2,6 +2,7 @@
 
 namespace TuDelft\Theme;
 use TuDelft\Theme\Common\Gutenberg;
+use TuDelft\Theme\Common\Student;
 use TuDelft\Theme\Modules\Chapter\Chapter;
 use TuDelft\Theme\Modules\Tutorial\Tutorial;
 use TuDelft\Theme\Modules\Subject\Subject;
@@ -32,6 +33,7 @@ class Tu_Delft {
         add_action( 'wp_ajax_nopriv_submit_feedback', [ $this, 'submit_feedback' ] );
 
         add_action( 'template_redirect', [ $this, 'logout_user' ] );
+        add_action( 'template_redirect', [ $this, 'redirect_archived_posts' ] );
     }
 
     /**
@@ -135,6 +137,7 @@ class Tu_Delft {
         new Software();
         new Course();
         new Lab();
+        new Student();
     }
 
     /**
@@ -149,7 +152,7 @@ class Tu_Delft {
         $feedback_about = sanitize_text_field( $_POST['feedback_about'] );
         $feedback_message = sanitize_text_field( $_POST['message'] );
 
-        $email = get_bloginfo('admin_email');
+        $email = "digipedia@tudelft.nl";
 
         $subject = 'Feedback about ' . $feedback_about;
 
@@ -179,6 +182,28 @@ class Tu_Delft {
             wp_logout();
             wp_redirect( home_url() );
             exit;
+        }
+    }
+
+    /**
+     * Redirect archived posts
+     * 
+     * @since 3.1.0
+     * 
+     * @return void
+     */
+    public function redirect_archived_posts(): void {
+        if ( is_single() ) {
+            $post = get_post();
+            if ( $post->post_status === 'archived' ) {
+                // get post meta latest_post_url_
+                $latest_post_url = get_post_meta( $post->ID, 'redirect_to_url', true );
+
+                if ( $latest_post_url ) {
+                    wp_redirect( $latest_post_url , 301);
+                    exit;
+                }
+            }
         }
     }
 }

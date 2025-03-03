@@ -7,7 +7,14 @@ $image = get_field('tu-delft-text-image_image');
 ?>
 <div class="tutorial__content text">
     <?php if ( $title = get_field('tu-delft-text-image_title') ) : ?>
-        <h4><?php echo $title; ?></h4>
+        <?php if (is_user_logged_in()): ?>
+            <div class="tutorial__subchapter-title">
+                <h4><?php echo $title; ?></h4>
+                <?= get_template_part('template-parts/subchapter-title-menu') ?>
+            </div>
+        <?php else: ?>
+            <h4><?php echo $title; ?></h4>
+        <?php endif; ?>
     <?php endif; ?>
     <div class="two-column two-column--reversed flex flex-col sm:flex-row items-start justify-between">
         <div class="two-column__item two-column__item--image image">

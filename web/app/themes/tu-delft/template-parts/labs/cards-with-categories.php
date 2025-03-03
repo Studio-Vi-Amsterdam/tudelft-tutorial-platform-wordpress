@@ -7,7 +7,12 @@ use TuDelft\Theme\Modules\Lab\Lab;
     $categories = get_field('lab-type', get_the_ID());
 
     $selectedCategory = get_query_var('category');
+    $selectedCategory = sanitize_text_field($selectedCategory);
+    $selectedCategory = htmlspecialchars($selectedCategory);
+
     $selectedSubCategory = get_query_var('subcategory');
+    $selectedSubCategory = sanitize_text_field($selectedSubCategory);
+    $selectedSubCategory = htmlspecialchars($selectedSubCategory);
 
     if ( empty($categories) ) {
         $categories = Lab::get_lab_types();
@@ -19,7 +24,7 @@ use TuDelft\Theme\Modules\Lab\Lab;
 ?>
 
 <section class="cards-with-categories">
-    <div class="cards-with-categories__categories categories" data-scrollbar>
+    <div class="cards-with-categories__categories categories" data-lenis-prevent>
         <div class="categories__wrapper flex">
             <?php foreach ( $categories as $key => $category ) :  ?>
                 <div class="categories__item <?php echo (((!empty($selectedCategory) && $selectedCategory === $category['category']->slug) || (empty($selectedCategory) && $key === 0)) ? 'categories__item--active transition' : ''); ?>" data-category-target="chapter-<?php echo $key; ?>">

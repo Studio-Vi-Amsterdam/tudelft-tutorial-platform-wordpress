@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Block Name: Download Block
  * 
@@ -6,23 +7,36 @@
 
 $file = get_field('tu-delft-download_file');
 $title = get_field('tu-delft-download_title') ?: $file['title'];
+$subtitle = get_field('tu-delft-download_subtitle') ?: '';
 $description = get_field('tu-delft-download_description') ?: $file['mime_type'];
-$filesize = filesize( get_attached_file( $file['id'] ) );
+$filesize = filesize(get_attached_file($file['id']));
 $filesize = size_format($filesize);
 $ext = pathinfo($file['url'], PATHINFO_EXTENSION);
 $theme_url = get_template_directory_uri();
 ?>
+<div class="tutorial__content">
+	<?php if ($subtitle): ?>
+		<?php if (is_user_logged_in()): ?>
+			<div class="tutorial__subchapter-title">
+				<h4><?= $subtitle ?></h4>
+				<?= get_template_part('template-parts/subchapter-title-menu') ?>
+			</div>
+		<?php else: ?>
+			<h4><?= $subtitle ?></h4>
+		<?php endif; ?>
+	<?php endif; ?>
 
-<a href="<?php echo $file['url']; ?>" class="tutorial__content download" download>
-    <div class="download__wrapper">
-        <div class="download__icon">
-            <svg width="24" height="24">
-                <use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
-            </svg>
-        </div>
-    </div>
-    <div class="download__inner">
-        <h5>Download <?php echo $title; ?></h5>
-        <h6><?php echo $description; ?> (<?php echo strtoupper($ext); ?>, <?php echo $filesize; ?>)</h6>
-    </div>
-</a>
+	<a href="<?php echo $file['url']; ?>" class="tutorial__content download" download>
+		<div class="download__wrapper">
+			<div class="download__icon">
+				<svg width="24" height="24">
+					<use href="<?= $theme_url ?>/src/sprite.svg#download-icon"></use>
+				</svg>
+			</div>
+		</div>
+		<div class="download__inner">
+			<h5>Download <?php echo $title; ?></h5>
+			<h6><?php echo $description; ?> (<?php echo strtoupper($ext); ?>, <?php echo $filesize; ?>)</h6>
+		</div>
+	</a>
+</div>
