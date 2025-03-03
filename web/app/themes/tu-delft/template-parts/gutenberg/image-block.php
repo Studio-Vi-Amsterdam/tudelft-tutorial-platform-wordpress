@@ -25,7 +25,7 @@ $image = get_field('tu-delft-image_image');
                 height="<?php echo $image['sizes'][ 'large-height' ]; ?>" 
                 data-image-src="<?php echo $image['url']; ?>" 
                 src="<?php echo $image['url']; ?>" 
-                alt="<?php echo $image['alt']; ?>"
+                alt="<?php echo htmlspecialchars($image['alt']); ?>"
             >
             <figcaption>
                 <?php echo htmlspecialchars(get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']); ?>

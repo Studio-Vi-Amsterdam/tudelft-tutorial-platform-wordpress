@@ -17,13 +17,13 @@
                             width="808" 
                             height="454" 
                             src="<?php echo $image['url']; ?>" 
-                            alt="<?php echo $image['alt']; ?>"
+                            alt="<?php echo htmlspecialchars($image['alt']); ?>"
                         />
                         <?php
                             $caption = get_field('caption', get_the_ID());
                             if ($caption) :
                         ?>
-                            <figcaption><?php echo $caption; ?></figcaption>
+                            <figcaption><?php echo htmlspecialchars($caption); ?></figcaption>
                         <?php endif; ?>
                     </figure>
                 </div>

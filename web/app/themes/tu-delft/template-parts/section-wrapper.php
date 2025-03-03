@@ -12,7 +12,7 @@
                                 <?php
                                     $image = get_sub_field('image');
                                 ?>
-                                <img  width="204" height="160" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                <img  width="204" height="160" src="<?php echo $image['url']; ?>" alt="<?php echo htmlspecialchars($image['alt']); ?>">
                             </figure>
                             <div class="card-with-image__content">
                                 <h4><?php the_sub_field('title'); ?></h4>

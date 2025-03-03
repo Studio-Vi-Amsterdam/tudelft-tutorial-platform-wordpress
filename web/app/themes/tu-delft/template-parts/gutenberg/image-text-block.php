@@ -26,7 +26,7 @@ $image = get_field('tu-delft-image-text_image');
                     data-image-src="<?php echo $image['url']; ?>" 
                     width="<?php echo $image['sizes']['large-width']; ?>" 
                     height="<?php echo $image['sizes']['large-height']; ?>" 
-                    src="<?php echo $image['url']; ?>" alt="<?php $image['alt']; ?>"
+                    src="<?php echo $image['url']; ?>" alt="<?php echo htmlspecialchars($image['alt']); ?>"
                 >
                 </span>
                 <figcaption>
