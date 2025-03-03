@@ -37,7 +37,7 @@ $page_id = get_the_ID();
                     </div>
                 </div>
                 <figcaption>
-                    <?php echo get_post_meta( $video['ID'], 'title', true ) ? : $video['alt']; ?>
+                    <?php echo htmlspecialchars(get_post_meta( $video['ID'], 'title', true ) ? : $video['alt']); ?>
                 </figcaption>
             </figure>
             <!-- <video controls>

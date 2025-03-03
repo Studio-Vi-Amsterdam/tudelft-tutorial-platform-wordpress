@@ -28,7 +28,7 @@ $image = get_field('tu-delft-image_image');
                 alt="<?php echo $image['alt']; ?>"
             >
             <figcaption>
-                <?php echo get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']; ?>
+                <?php echo htmlspecialchars(get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']); ?>
             </figcaption>
         </figure>
     </div>

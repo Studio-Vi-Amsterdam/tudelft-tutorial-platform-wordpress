@@ -30,7 +30,7 @@ $subtitle = get_field('tu-delft-video-url_subtitle') ?: '';
 		</figure>
 		<?php if ($title) : ?>
 			<figcaption>
-				<?= $title; ?>
+				<?= htmlspecialchars($title); ?>
 			</figcaption>
 		<?php endif; ?>
 	</div>
