@@ -60,6 +60,9 @@ export function copyLink() {
 	$(".tutorialLinkCopySelector").on("click", function () {
 		window.location.hash = "";
 		let $url = window.location.href;
+		if ($(this).closest('h3, h4').hasAttribute('id')) {
+			$url += "#" + $(this).closest('h3, h4').attr("id");
+		}
 		$("body").append($temp);
 		$temp.val($url).select();
 		document.execCommand("copy");
