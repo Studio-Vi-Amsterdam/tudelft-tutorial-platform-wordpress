@@ -44,7 +44,7 @@
                                     >
                                     <label id="quest<?php echo $i + 1; ?>">
                                         <small>Answer <?php echo $answer_labels[$i]; ?></small>
-                                        <?php echo $answer['tu-delft-quiz_answer']; ?>
+                                        <?php echo htmlspecialchars($answer['tu-delft-quiz_answer']); ?>
                                     </label>
                                 </div>
                             <?php endforeach; ?>
