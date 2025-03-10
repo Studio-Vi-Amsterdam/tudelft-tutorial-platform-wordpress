@@ -9,7 +9,8 @@
             'post_type' => 'tutorial',
             'posts_per_page' => 2,
             'orderby' => 'date',
-            'order' => 'DESC'
+            'order' => 'DESC',
+            'post_status' => 'publish'
         );
 
         $tutorials_query = new WP_Query($args);
