@@ -60,18 +60,19 @@ export function copyLink() {
 	$(".tutorialLinkCopySelector").on("click", function () {
 		window.location.hash = "";
 		let $url = window.location.href;
-		if ($(this).closest('h3, h4').hasAttribute('id')) {
-			$url += "#" + $(this).closest('h3, h4').attr("id");
+		const thisEl = $(this);
+		if (thisEl.closest('h3, h4').is('[id]')) {
+			$url += "#" + thisEl.closest('h3, h4').attr("id");
 		}
 		$("body").append($temp);
 		$temp.val($url).select();
 		document.execCommand("copy");
 		$temp.remove();
-		$(this).prop("disabled", true);
-		$(this).find(".copy-checked")?.addClass("copy-checked--active");
+		thisEl.prop("disabled", true);
+		thisEl.find(".copy-checked")?.addClass("copy-checked--active");
 		setTimeout(() => {
-			$(this).find(".copy-checked").removeClass("copy-checked--active");
-			$(this).prop("disabled", false);
+			thisEl.find(".copy-checked").removeClass("copy-checked--active");
+			thisEl.prop("disabled", false);
 		}, 2000);
 	});
 }
