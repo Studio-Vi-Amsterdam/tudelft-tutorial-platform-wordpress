@@ -226,14 +226,10 @@ $software = Tutorial::get_primary_software(get_the_ID());
                 <div class="tutorial__item" data-tab-content="chapter-<?= ($key + 1) ?>">
                     <div class="tutorial__content text">
                         <h2><?php echo $tutorial_title; ?> <?= ($key + 1) ?>/<?php echo count($chapters); ?></h2>
-                        <?php if (is_user_logged_in()): ?>
-                            <div class="tutorial__chapter-title">
-                                <h3><?php echo $chapter['title']; ?></h3>
-                                <?= get_template_part('template-parts/user-menu') ?>
-                            </div>
-                        <?php else: ?>
+                        <div class="tutorial__chapter-title">
                             <h3><?php echo $chapter['title']; ?></h3>
-                        <?php endif; ?>
+                            <?= get_template_part('template-parts/user-menu') ?>
+                        </div>
                     </div>
                     <?php echo $chapter['content']; ?>
 
