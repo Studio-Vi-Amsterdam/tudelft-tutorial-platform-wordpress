@@ -197,9 +197,7 @@ $software = Tutorial::get_primary_software(get_the_ID());
                     </div>
                     <div class="tutorial__title">
                         <h3><?php the_title(); ?></h3>
-                        <?php if (is_user_logged_in()): ?>
-                            <?= get_template_part('template-parts/user-menu') ?>
-                        <?php endif; ?>
+                        <?= get_template_part('template-parts/user-menu') ?>
                     </div>
                     <?php if (is_user_logged_in()): ?>
                         <div class="tutorial__bookmark-mobile">
