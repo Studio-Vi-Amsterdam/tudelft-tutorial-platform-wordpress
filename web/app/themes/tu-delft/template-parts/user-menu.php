@@ -1,4 +1,4 @@
-<div class="tutorial__menu">
+<div class="tutorial__menu  <?php if (!is_user_logged_in()): ?>tutorial__menu--small<?php endif; ?>">    
     <button class="tutorial__menu-trigger" data-opened="false">
         <span></span>
     </button>
