@@ -34,7 +34,7 @@ export function copyLink() {
 		// 	}, 2000);
 		// });
 
-		$(".tutorial__item h4").on("click", function () {
+		$(".tutorial__item h4, .tutorial__item h3").on("click", function () {
 			let $url = window.location.href;
 			if (window.location.hash.length) {
 				window.location.hash = "";
@@ -43,7 +43,7 @@ export function copyLink() {
 			}
 			if (window.location.hash.length) {
 				$url = $url.substring(0, $url.indexOf("#"));
-			} else {
+			} else if ($(this).attr("id")) {
 				$url += "#" + $(this).attr("id");
 			}
 			$("body").append($temp);
