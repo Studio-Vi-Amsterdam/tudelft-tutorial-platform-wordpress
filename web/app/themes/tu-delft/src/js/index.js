@@ -121,6 +121,7 @@ export function runAfterDomLoad() {
 						destroySubmitFeedback();
 					},
 					afterEnter() {
+						let hash = location.hash;
 						pagePreloader();
 						const firstItem = $(".accordion__head").first();
 						firstItem.addClass("opened");
@@ -132,7 +133,6 @@ export function runAfterDomLoad() {
 						lenis = initLenis();
 
 						setTimeout(() => {
-							let hash = $(location).attr("hash");
 							$("body").removeClass("preload");
 							tabOfContent();
 							smoothScroll(lenis);
@@ -190,7 +190,7 @@ export function runAfterDomLoad() {
 							setTimeout(() => {
 								if ($(`${hash}`).length > 0) {
 									let anchor = $(`${hash}`);
-									lenis.scrollTo(anchor, { offset: -100, duration: 1 });
+									lenis.scrollTo(anchor[0], { offset: -100, duration: 1 });
 								}
 							}, 1200);
 						}, timeout);

@@ -57,12 +57,16 @@ export function copyLink() {
 		});
 	}
 
-	$(".tutorialLinkCopySelector").on("click", function () {
+	$(".tutorialLinkCopySelector").on("click", function (e) {
+		e.preventDefault();
 		window.location.hash = "";
 		let $url = window.location.href;
 		const thisEl = $(this);
 		if (thisEl.closest('h3, h4').is('[id]')) {
 			$url += "#" + thisEl.closest('h3, h4').attr("id");
+		}
+		if(thisEl.closest('.tutorial__subchapter-title')) {
+			$url += "#" + thisEl.closest('.tutorial__subchapter-title').find("h3, h4").attr('id')
 		}
 		$("body").append($temp);
 		$temp.val($url).select();
