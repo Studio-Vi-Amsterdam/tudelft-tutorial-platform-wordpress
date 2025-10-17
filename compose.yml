@@ -9,7 +9,7 @@ services:
       - ./phpcs.xml:/var/www/html/phpcs.xml:ro
       - ./wp-cli.yml:/var/www/html/wp-cli.yml:ro
       - ./.env:/var/www/html/.env:ro
-      - wp_uploads:/var/www/html/wp-content/uploads
+      - ./wp-content/uploads:/var/www/html/web/wp-content/uploads
       - ./docker/supervisord/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     env_file:
       - .env
@@ -31,9 +31,15 @@ services:
     networks:
       - web
 
+  adminer:
+    image: adminer
+    ports:
+      - 9090:8080
+    networks:
+      - web
+
 volumes:
   db_data:
-  wp_uploads:
 
 networks:
   web:
