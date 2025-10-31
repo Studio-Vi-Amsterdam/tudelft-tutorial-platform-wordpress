@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY ./web /var/www/html/web
+COPY ./config /var/www/html/config
+COPY .htaccess wp-cli.yml phpcs.xml /var/www/html/
 
 # Get dependencies from composer step
 COPY --from=phpbuilder /app/vendor /var/www/html/vendor
@@ -28,7 +30,7 @@ COPY --from=phpbuilder /app/vendor /var/www/html/vendor
 COPY --from=nodebuilder /app/dist /var/www/html/web/app/themes/tu-delft/build
 
 # TODO: remove this step once this file is produced by node build step
-COPY assets/tailwind.css?ver=6.5.3 /var/www/html/web/app/themes/tu-delft/build/tailwind.css?ver=6.5.3
+COPY assets/tailwind.css /var/www/html/web/app/themes/tu-delft/build/tailwind.css?ver=6.5.3
 
 # Nginx
 RUN rm /etc/nginx/sites-enabled/default
