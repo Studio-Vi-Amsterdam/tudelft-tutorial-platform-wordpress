@@ -41,7 +41,5 @@ jobs:
         run: docker pull ${{ secrets.HARBOR_REGISTRY }}/${{ secrets.HARBOR_PROJECT }}/${{ github.event.repository.name }}:$TAG
 
       - name: Start container
-        env:
-          IMAGE_TAG: $TAG
         run: 
-          docker compose -f ${{ secrets.REPO_ASSETS_PATH }}/docker-compose.yml --env-file ${{ secrets.REPO_ASSETS_PATH }}/.env up ${{ vars.CONTAINER_NAME }} -d --remove-orphans
+          IMAGE_TAG=$TAG docker compose -f ${{ secrets.REPO_ASSETS_PATH }}/docker-compose.yml --env-file ${{ secrets.REPO_ASSETS_PATH }}/.env up ${{ vars.CONTAINER_NAME }} -d --remove-orphans
