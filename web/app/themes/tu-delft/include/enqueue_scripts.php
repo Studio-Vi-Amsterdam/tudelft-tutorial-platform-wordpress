@@ -3,25 +3,27 @@
  * Enqueue scripts and styles.
  */
 function enqueue_scripts() {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'classic-theme-styles' );
+		wp_dequeue_style( 'global-styles' );
 
     // set path variables for file timestamps
     $js_path = get_template_directory().'/dist/main.min.js';
     $vendors_js_path = get_template_directory().'/dist/vendors.min.js';
-    $style_path = get_stylesheet_directory().'/dist/main.min.css';
+    $style_path = get_template_directory().'/dist/main.min.css';
 
     // styles
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/tailwind.css', array());
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array());
+    wp_enqueue_style( 'tailwindcss', get_template_directory_uri() . '/dist/tailwind.css', array());
     wp_enqueue_style( 'mincss', get_template_directory_uri() . '/dist/main.min.css',  array(), filemtime( $style_path ), 'all');
 
     // remove old jquery
     wp_deregister_script( 'jquery' );
 
     // add latest jquery
-    wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.7.0.min.js', false, null, true );
+    wp_register_script( 'jquery', 'https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js', false, null, true );
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'lazy-load', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js', array('jquery'), null, true );
-    wp_enqueue_script( 'slick_css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), null, true );
+    wp_enqueue_script( 'lazy-load', 'https://cdn.jsdelivr.net/npm/jquery-lazy@1.7.9/jquery.lazy.min.js', array('jquery'), null, true );
+    wp_enqueue_script( 'slick_css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), null, true );
 
     // custom js
     wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/main.min.js', array('jquery'), filemtime( $js_path ) , true);
@@ -58,3 +60,17 @@ function remove_jquery_migrate( $scripts ) {
     } 
 }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+
+add_filter('script_loader_tag', 'add_defer_attribute' , 10, 3);
+function add_defer_attribute($tag, $handle, $src) {
+	if ( 'jquery' === $handle || 'wp-i18n' === $handle || 'wp-hooks' === $handle) {
+		return $tag;
+	}
+
+	if(!is_admin()){
+		return str_replace( ' src', ' defer src', $tag );
+	}
+
+	return $tag;
+}
