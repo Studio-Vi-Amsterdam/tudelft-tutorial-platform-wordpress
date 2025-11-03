@@ -13,20 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        env:
-          NODE_ENV: production
-        run: npm run build
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
