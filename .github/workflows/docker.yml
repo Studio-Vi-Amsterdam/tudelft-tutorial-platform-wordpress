@@ -50,4 +50,4 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer $GH_TOKEN" \
             https://api.github.com/repos/${{ github.repository }}/dispatches \
-            -d '{"event_type":"deploy-'$ENVIRONMENT'","client_payload":{"sha":"'${{ github.sha }}'"}}'
+            -d '{"event_type":"deploy-'$ENVIRONMENT'","client_payload":{"tag":"'${{ github.sha }}'"}}'
