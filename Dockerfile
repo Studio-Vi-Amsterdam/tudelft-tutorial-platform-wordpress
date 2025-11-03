@@ -30,7 +30,7 @@ COPY --from=phpbuilder /app/vendor /var/www/html/vendor
 COPY --from=nodebuilder /app/dist /var/www/html/web/app/themes/tu-delft/build
 
 # TODO: remove this step once this file is produced by node build step
-COPY assets/tailwind.css /var/www/html/web/app/themes/tu-delft/build/tailwind.css?ver=6.5.3
+COPY assets/tailwind.css /var/www/html/web/app/themes/tu-delft/build/tailwind.css
 
 # Nginx
 RUN rm /etc/nginx/sites-enabled/default

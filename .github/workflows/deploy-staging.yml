@@ -41,9 +41,8 @@ jobs:
         run: docker pull ${{ secrets.HARBOR_REGISTRY }}/${{ secrets.HARBOR_PROJECT }}/${{ github.event.repository.name }}:$SHA
 
       - name: Start container
+        env:
+          IMAGE_TAG: $SHA
+        working-directory: $USER/platform-wordpress/
         run: 
-          if [ -n "$(docker ps -aq -f name=${{ vars.CONTAINER_NAME }})" ]; then
-            docker stop ${{ vars.CONTAINER_NAME }} || true
-            docker rm ${{ vars.CONTAINER_NAME }} || true
-          fi
-          docker run -d --name ${{ vars.CONTAINER_NAME }} --restart unless-stopped -p 8080:80 ${{ secrets.HARBOR_REGISTRY }}/${{ secrets.HARBOR_PROJECT }}/${{ github.event.repository.name }}:$SHA
+          docker compose up platform-wordpress -d --remove-orphans
