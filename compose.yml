@@ -1,0 +1,45 @@
+services:
+
+  platform:
+    image: tudelft/tutorial-platform-wordpress:latest
+    volumes:
+      - ./web/:/var/www/html/web
+      - ./config/:/var/www/html/config
+      - ./.htaccess:/var/www/html/.htaccess:ro
+      - ./phpcs.xml:/var/www/html/phpcs.xml:ro
+      - ./wp-cli.yml:/var/www/html/wp-cli.yml:ro
+      - ./.env:/var/www/html/.env:ro
+      - ./wp-content/uploads:/var/www/html/web/wp-content/uploads
+      - ./docker/supervisord/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
+    env_file:
+      - .env
+    ports:
+      - 8000:80
+    networks:
+      - web
+    
+  db:
+    image: mysql:8
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sql/local.sql:/docker-entrypoint-initdb.d/local.sql
+    networks:
+      - web
+
+  adminer:
+    image: adminer
+    ports:
+      - 9090:8080
+    networks:
+      - web
+
+volumes:
+  db_data:
+
+networks:
+  web:

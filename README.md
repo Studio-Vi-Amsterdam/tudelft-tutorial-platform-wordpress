@@ -61,3 +61,29 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 - Read the [Roots Blog](https://roots.io/blog/)
 - Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
 
+
+## Docker 
+
+### Image
+The image can be built with `docker build . -t tudelft/tutorial-platform-wordpress:latest`.
+
+As you can see in the Dockerfile, there's a multistage build that compose the whole:
+- a base `composer` image to fetch PHP depencencies
+- a base `node` image to build the theme
+- finally, a PHP + NGINX image assemble the final image. NGINX and PHP fpm are executed as separate processes, managed by `Supervisord`.
+
+> Note: The current build is designed to be independent, allowing for scalable deployments. You can still remove NGINX, delegating it to a separate container.
+
+### Compose stack
+Root folder holds a `compose.yml` file that aims to provide a local setup. You need some resources before starting it:
+
+1. a dump for MySQL, to be placed in `./sql/local.sql`
+2. an `.env` file with all necessary variables filled. You can find a template in `.env.example`.
+3. (optional) you might have to restore a backup of the `wp-content` folder if you want to be able to see the loaded images, otherwise you'll get some empty spaces.
+
+Then, you can start the whole stack with `docker compose up` and visit the platform on http://localhost:8000.
+
+You'll get:
+- a container with the custom WP instance
+- a MySql instance
+- an Adminer instance, useful to browse the DB content.
