@@ -5,13 +5,12 @@
             <h1><?php the_field('title', get_the_ID()); ?></h1>
             <p><?php the_field('content', get_the_ID()); ?></p>
         </div>
-        <?php 
+        <?php
             $image = get_field('image', get_the_ID());
-
-            if ( $image ) : 
+            if ( $image ) :
         ?>
             <figure class="hero__image">
-                <img width="288" height="224" src="<?php echo $image['url']; ?>" alt="<?php echo htmlspecialchars($image['alt']); ?>">
+								<?= wp_get_attachment_image($image['ID'], [288, 224]); ?>
             </figure>
         <?php endif; ?>
     </div>

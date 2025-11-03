@@ -8,14 +8,25 @@ $name = $user->display_name;
             <picture>
                 <source media="(max-width: 1023px)" srcset="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-2.svg">
                 <source media="(min-width: 1024px)" srcset="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-1.svg">
-                <img width="300" height="67" src="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-1.svg"
-                    alt="vector">
+                <img
+									width="300"
+									height="67"
+									class="lazy"
+									data-src="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-1.svg"
+									alt="vector"
+								>
             </picture>
-
         </div>
+
         <div class="footer__wrapper">
             <a href="#" class="footer__logo">
-                <img width="300" height="117" src="<?= get_template_directory_uri() ?>/src/img/logo-footer.svg" alt="logo">
+                <img
+									class="lazy"
+									width="300"
+									height="117"
+									data-src="<?= get_template_directory_uri() ?>/src/img/logo-footer.svg"
+									alt="Logo"
+								>
             </a>
             <div class="footer__copyright">
                 <span><?php echo date('Y'); ?> Published under the <a href="https://digipedia.tudelft.nl/copyright-and-open-licences/" target="_blank">MIT licence</a>.</span>

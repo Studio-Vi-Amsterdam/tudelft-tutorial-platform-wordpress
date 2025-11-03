@@ -200,3 +200,27 @@ function add_query_vars_filter( $vars ){
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
+
+function alter_att_attributes_wpse_102079($attr) {
+	if(!is_admin()){
+		if($attr['class'] && !str_contains($attr['class'], 'skip-lazy')){
+			$attr['data-src'] = $attr['src'];
+
+			if (isset($attr['srcset'])) {
+				$attr['data-srcset'] = $attr['srcset'];
+				$attr['srcset'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+			}
+
+			if (isset($attr['sizes'])) {
+				$attr['data-sizes'] = $attr['sizes'];
+			}
+
+			$attr['class'] = $attr['class'] . ' lazy';
+
+			$attr['src'] = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+		}
+	}
+
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'alter_att_attributes_wpse_102079');

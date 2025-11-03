@@ -19,14 +19,16 @@ $image = get_field('tu-delft-image_image');
     <?php endif; ?>
     <div class="tutorial__content">
         <figure>
-            <img
-                class="<?php echo !get_field('tu-delft-image_has_image_zoom') ? 'disable-zoom' : ''; ?>"
-                width="<?php echo $image['sizes'][ 'large-width' ]; ?>" 
-                height="<?php echo $image['sizes'][ 'large-height' ]; ?>" 
-                data-image-src="<?php echo $image['url']; ?>" 
-                src="<?php echo $image['url']; ?>" 
-                alt="<?php echo htmlspecialchars($image['alt']); ?>"
-            >
+						<?= wp_get_attachment_image(
+							$image['ID'],
+							[800, 440],
+							false,
+							[
+								'class' => !get_field('tu-delft-image_has_image_zoom') ? 'disable-zoom' : '',
+								'data-image-src' => $image['url']
+							]
+						);
+						?>
             <figcaption>
                 <?php echo htmlspecialchars(get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']); ?>
             </figcaption>

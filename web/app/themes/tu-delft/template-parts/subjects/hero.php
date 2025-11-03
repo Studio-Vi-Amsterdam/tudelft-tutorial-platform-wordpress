@@ -11,7 +11,7 @@
             if ( $image ) : 
         ?>
             <figure class="hero__image">
-                <img width="288" height="224" src="<?php echo $image['url']; ?>" alt="<?php echo htmlspecialchars($image['alt']); ?>">
+							<?= wp_get_attachment_image($image['ID'], [288, 224]); ?>
             </figure>
         <?php endif; ?>
     </div>

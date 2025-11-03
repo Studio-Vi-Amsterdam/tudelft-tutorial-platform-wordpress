@@ -11,9 +11,10 @@ function enqueue_scripts() {
     $js_path = get_template_directory().'/dist/main.min.js';
     $vendors_js_path = get_template_directory().'/dist/vendors.min.js';
     $style_path = get_template_directory().'/dist/main.min.css';
+    $tailwind_path = get_template_directory().'/dist/tailwind.css';
 
     // styles
-    wp_enqueue_style( 'tailwindcss', get_template_directory_uri() . '/dist/tailwind.css', array());
+    wp_enqueue_style( 'tailwindcss', get_template_directory_uri() . '/dist/tailwind.css', array(), filemtime( $tailwind_path ));
     wp_enqueue_style( 'mincss', get_template_directory_uri() . '/dist/main.min.css',  array(), filemtime( $style_path ), 'all');
 
     // remove old jquery

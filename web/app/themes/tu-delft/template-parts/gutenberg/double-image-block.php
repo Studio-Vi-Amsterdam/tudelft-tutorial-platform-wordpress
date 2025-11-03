@@ -16,13 +16,16 @@ $imageRight = get_field('tu-delft-double-image_image-right');
     <div class="two-column two-column--double-image flex flex-col sm:flex-row items-start justify-between">
         <div class="two-column__item two-column__item--image image">
             <figure>
-                <img
-                    class="<?php echo !get_field('tu-delft-double-image-left_has_image_zoom') ? 'disable-zoom' : ''; ?>"
-                    data-image-src="<?php echo $imageLeft['url']; ?>" 
-                    width="<?php echo $imageLeft['sizes']['large-width']; ?>" 
-                    height="<?php echo $imageLeft['sizes']['large-height']; ?>" 
-                    src="<?php echo $imageLeft['url']; ?>" alt="<?php echo $imageLeft['alt']; ?>"
-                >
+							<?= wp_get_attachment_image(
+								$imageLeft['ID'],
+								[400, 300],
+								false,
+								[
+									'class' => !get_field('tu-delft-double-image-left_has_image_zoom') ? 'disable-zoom' : '',
+									'data-image-src' => $imageLeft['url']
+								]
+							);
+							?>
                 <figcaption>
                     <?php echo htmlspecialchars(get_post_meta( $imageLeft['ID'], 'title', true ) ? : $imageLeft['alt']); ?>
                 </figcaption>
@@ -30,13 +33,16 @@ $imageRight = get_field('tu-delft-double-image_image-right');
         </div>
         <div class="two-column__item two-column__item--image image">
             <figure>
-                <img
-                    class="<?php echo !get_field('tu-delft-double-image-right_has_image_zoom') ? 'disable-zoom' : ''; ?>"
-                    data-image-src="<?php echo $imageRight['url']; ?>" 
-                    width="<?php echo $imageRight['sizes']['large-width']; ?>" 
-                    height="<?php echo $imageRight['sizes']['large-height']; ?>" 
-                    src="<?php echo $imageRight['url']; ?>" alt="<?php echo $imageRight['alt']; ?>"
-                >
+							<?= wp_get_attachment_image(
+								$imageRight['ID'],
+								[400, 300],
+								false,
+								[
+									'class' => !get_field('tu-delft-double-image-right_has_image_zoom') ? 'disable-zoom' : '',
+									'data-image-src' => $imageRight['url']
+								]
+							);
+							?>
                 <figcaption>
                     <?php echo htmlspecialchars(get_post_meta( $imageRight['ID'], 'title', true ) ? : $imageRight['alt']); ?>
                 </figcaption>

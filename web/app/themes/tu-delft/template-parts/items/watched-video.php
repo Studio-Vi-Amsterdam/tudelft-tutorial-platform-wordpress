@@ -5,9 +5,11 @@ $video = $args['video'];
 	<div class="watched-video-item__video video-wrapper">
 		<figure class="video__wrapper" data-video-src="<?php echo $video['video_url']; ?>">
 			<div class="video__preload">
-				<?php if($video['video_thumbnail']): ?>
-					<img fetchpriority="high" decoding="async" width="808" height="454" src="<?= $video['video_thumbnail']; ?>" alt="<?php echo $video['video_name']; ?>">
-				<?php endif; ?>
+				<?php if($video['video_thumbnail']):
+					$attachment_id = attachment_url_to_postid( $video['video_thumbnail'] );
+					echo wp_get_attachment_image($attachment_id, [330, 200]);
+				endif; ?>
+
 				<div class="video__play video__play--secondary">
 					<svg width="35" height="42">
 						<use href="<?= get_template_directory_uri(); ?>/src/sprite.svg#play-video"></use>
