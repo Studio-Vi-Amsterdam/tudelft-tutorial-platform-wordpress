@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - staging
+      - development
 
 jobs:
   build-and-push:
@@ -59,6 +60,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
             ENVIRONMENT=$(if [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then echo "staging"; elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then echo "production"; else echo "Unknown"; fi)
+            ENVIRONMENT=staging
             echo "Calling deploy-$ENVIRONMENT action."
             curl -X POST \
             -H "Accept: application/vnd.github+json" \
