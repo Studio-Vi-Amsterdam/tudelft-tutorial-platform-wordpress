@@ -1,5 +1,6 @@
 .footer {
     margin-top: 2.4rem;
+		overflow: hidden;
     @media(min-width: $tabletP1) {
         gap: 10rem;
         margin-top: 4rem;
@@ -10,13 +11,15 @@
         padding-top: 4rem;
         padding-bottom: 4.8rem;
         @extend .padding;
+				padding-right: 0;
+				padding-left: 0;
+
         @media (min-width:$tabletSmallP1) {
-            position: absolute;
             width: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            
+						position: relative;
+            transform: translateY(-100%);
         }
+
         @media(min-width: $tabletP1) {
             padding-top: 8rem;
             padding-bottom: 5.2rem;

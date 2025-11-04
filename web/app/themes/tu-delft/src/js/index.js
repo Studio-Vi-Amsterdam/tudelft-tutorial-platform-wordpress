@@ -69,6 +69,7 @@ export function runAfterDomLoad() {
 
 		setTimeout(() => {
 			$(".preloader").addClass("loaded");
+
 			$("body")
 				.removeClass("reloaded")
 				.addClass("loaded")
@@ -93,14 +94,17 @@ export function runAfterDomLoad() {
 						$(".preloader").removeClass("loaded").addClass("reloaded");
 						$(".fixed-navigation").removeClass("animated");
 						$("body").addClass("reloaded").removeClass("loaded");
+
 						if (document.querySelector(".modal-video-item__wr-iframe video")) {
 							document
 								.querySelector(".modal-video-item__wr-iframe video")
 								.remove();
 						}
+
 						if (typeof lenis === "object") {
 							lenis.destroy();
 						}
+
 						setTimeout(() => {
 							$("body").removeClass("reloaded");
 						}, 430);
@@ -108,13 +112,16 @@ export function runAfterDomLoad() {
 					},
 					enter: (data) => {
 						timeout = 0;
+
 						setTimeout(() => {
 							$("body").removeClass("reloaded").addClass("loaded");
 							$(".preloader").addClass("loaded").removeClass("reloaded");
 						}, 120);
+
 						setTimeout(() => {
 							$(".preloader").removeClass("loaded");
 						}, 750);
+
 					},
 				},
 			],

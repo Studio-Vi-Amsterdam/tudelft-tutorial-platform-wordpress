@@ -9,8 +9,8 @@ $name = $user->display_name;
                 <source media="(max-width: 1023px)" srcset="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-2.svg">
                 <source media="(min-width: 1024px)" srcset="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-1.svg">
                 <img
-									width="300"
-									height="67"
+									width="1400"
+									height="300"
 									class="lazy"
 									data-src="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-1.svg"
 									alt="vector"
