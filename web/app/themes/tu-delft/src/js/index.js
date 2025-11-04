@@ -1,6 +1,4 @@
 // libs
-import "slick-carousel";
-import "slick-carousel/slick/slick.scss";
 import barba from "@barba/core";
 import Lenis from "lenis";
 import "highlight.js/styles/atom-one-dark.css";
