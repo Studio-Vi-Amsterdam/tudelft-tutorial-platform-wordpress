@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ca0101a12f1f41375887564d75d0549",
+    "content-hash": "10000378f6d390cff5c7a6d74ba67f09",
     "packages": [
         {
             "name": "composer/installers",
@@ -570,20 +570,20 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.5.3",
+            "version": "6.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
-                "reference": "41ff6e23ccbc3a1691406d69fe8c211a225514e2"
+                "reference": "29e4eb49b2f4c591e39d4eb6705a27cf1ea40e45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wordpress/zipball/41ff6e23ccbc3a1691406d69fe8c211a225514e2",
-                "reference": "41ff6e23ccbc3a1691406d69fe8c211a225514e2",
+                "url": "https://api.github.com/repos/roots/wordpress/zipball/29e4eb49b2f4c591e39d4eb6705a27cf1ea40e45",
+                "reference": "29e4eb49b2f4c591e39d4eb6705a27cf1ea40e45",
                 "shasum": ""
             },
             "require": {
-                "roots/wordpress-core-installer": "^1.0.0",
+                "roots/wordpress-core-installer": "^3.0",
                 "roots/wordpress-no-content": "self.version"
             },
             "type": "metapackage",
@@ -601,7 +601,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.5.3"
+                "source": "https://github.com/roots/wordpress/tree/6.8.3"
             },
             "funding": [
                 {
@@ -609,25 +609,25 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-01T16:54:37+00:00"
+            "time": "2025-05-23T18:54:22+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
-            "version": "1.100.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress-core-installer.git",
-                "reference": "73f8488e5178c5d54234b919f823a9095e2b1847"
+                "reference": "714d2e2a9e523f6e7bde4810d5a04aedf0ec217f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wordpress-core-installer/zipball/73f8488e5178c5d54234b919f823a9095e2b1847",
-                "reference": "73f8488e5178c5d54234b919f823a9095e2b1847",
+                "url": "https://api.github.com/repos/roots/wordpress-core-installer/zipball/714d2e2a9e523f6e7bde4810d5a04aedf0ec217f",
+                "reference": "714d2e2a9e523f6e7bde4810d5a04aedf0ec217f",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
-                "php": ">=5.6.0"
+                "php": ">=7.2.24"
             },
             "conflict": {
                 "composer/installers": "<1.0.6"
@@ -637,7 +637,7 @@
             },
             "require-dev": {
                 "composer/composer": "^1.0 || ^2.0",
-                "phpunit/phpunit": ">=5.7.27"
+                "phpunit/phpunit": "^8.5"
             },
             "type": "composer-plugin",
             "extra": {
@@ -662,44 +662,41 @@
                     "email": "team@roots.io"
                 }
             ],
-            "description": "A custom installer to handle deploying WordPress with composer",
+            "description": "A Composer custom installer to handle installing WordPress as a dependency",
             "keywords": [
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress-core-installer/issues",
-                "source": "https://github.com/roots/wordpress-core-installer/tree/master"
+                "source": "https://github.com/roots/wordpress-core-installer/tree/3.0.0"
             },
             "funding": [
                 {
                     "url": "https://github.com/roots",
                     "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
                 }
             ],
-            "time": "2020-08-20T00:27:30+00:00"
+            "time": "2025-05-23T18:47:25+00:00"
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.5.3",
+            "version": "6.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.5.3"
+                "reference": "6.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.5.3-no-content.zip",
-                "shasum": "adeffdc339d34eab4209e88b17966d8917e36e91"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.8.3-no-content.zip",
+                "reference": "6.8.3",
+                "shasum": "2c34ba506afd8061d96cde50b2c92f109c10d2c8"
             },
             "require": {
-                "php": ">= 7.0.0"
+                "php": ">= 7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.5.3"
+                "wordpress/core-implementation": "6.8.3"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -750,7 +747,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-05-07T16:02:20+00:00"
+            "time": "2025-09-30T18:16:31+00:00"
         },
         {
             "name": "roots/wp-config",
@@ -800,16 +797,16 @@
         },
         {
             "name": "roots/wp-password-bcrypt",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wp-password-bcrypt.git",
-                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26"
+                "reference": "bd26ab98aa646d88ce98c76e365d16259c5227a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
-                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
+                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/bd26ab98aa646d88ce98c76e365d16259c5227a2",
+                "reference": "bd26ab98aa646d88ce98c76e365d16259c5227a2",
                 "shasum": ""
             },
             "require": {
@@ -863,20 +860,16 @@
             "support": {
                 "forum": "https://discourse.roots.io/",
                 "issues": "https://github.com/roots/wp-password-bcrypt/issues",
-                "source": "https://github.com/roots/wp-password-bcrypt/tree/1.1.0"
+                "source": "https://github.com/roots/wp-password-bcrypt/tree/1.2.0"
             },
             "funding": [
                 {
                     "url": "https://github.com/roots",
                     "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
                 }
             ],
             "abandoned": "roots/wp-password-bcrypt",
-            "time": "2021-10-31T01:18:58+00:00"
+            "time": "2024-09-10T23:11:22+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1216,15 +1209,15 @@
         },
         {
             "name": "wpackagist-plugin/acf-content-analysis-for-yoast-seo",
-            "version": "3.1",
+            "version": "3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/acf-content-analysis-for-yoast-seo/",
-                "reference": "tags/3.1"
+                "reference": "tags/3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/acf-content-analysis-for-yoast-seo.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/acf-content-analysis-for-yoast-seo.3.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1252,15 +1245,15 @@
         },
         {
             "name": "wpackagist-plugin/svg-support",
-            "version": "2.5.5",
+            "version": "2.5.14",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.5.5"
+                "reference": "tags/2.5.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.5.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.5.14.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1288,15 +1281,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "21.9",
+            "version": "26.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/21.9"
+                "reference": "tags/26.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
