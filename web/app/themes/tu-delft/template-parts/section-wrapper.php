@@ -12,8 +12,8 @@
                                 <?php
                                     $image = get_sub_field('image');
                                 ?>
-                                <img  width="204" height="160" src="<?php echo $image['url']; ?>" alt="<?php echo htmlspecialchars($image['alt']); ?>">
-                            </figure>
+															<?= wp_get_attachment_image($image['ID'], [204, 160]); ?>
+														</figure>
                             <div class="card-with-image__content">
                                 <h4><?php the_sub_field('title'); ?></h4>
                                 <p>

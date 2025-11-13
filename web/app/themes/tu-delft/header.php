@@ -89,7 +89,7 @@
 
     <main id="scroll-container" data-barba="container" data-barba-namespace="page">
       <div class="disabled-horizontal-scroll">
-    <header class="header flex justify-center">
+    <header class="header !fixed flex justify-center">
         <div class="header__container flex justify-between items-center">
         <div class="header__trigger header__icon js-menu-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

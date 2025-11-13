@@ -18,5 +18,6 @@ require_once ('include/theme_functions.php');
 require_once ('include/headers.php');
 require_once ('include/class-tudelft.php');
 require_once ('include/add_comment.php');
+require_once ('include/lock_admin_panel.php');
 
 new Tu_Delft();

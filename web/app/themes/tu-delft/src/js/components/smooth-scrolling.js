@@ -19,14 +19,15 @@ export function smoothScroll(lenis) {
 		const windowHeight = $(window).innerHeight();
 
 		if (windowWidth >= 767) {
-			footer.css("height", $(".footer__container").outerHeight() + "px");
-			$(".footer__container").css(
-				"top",
-				pagePosition +
-					windowHeight -
-					$(".footer__container").outerHeight() +
-					"px",
-			);
+			const offsetTop = footer.offset().top
+			const container = $(".footer__container")
+			const value = pagePosition + windowHeight - offsetTop - container.outerHeight()
+			if ( value <= 0 ) {
+				container.css(
+					"transform",
+					`translateY(${value + "px"})`
+				);
+			}
 		}
 
 		if (windowWidth < 768) {
@@ -39,7 +40,7 @@ export function smoothScroll(lenis) {
 			filter.css("top", pagePosition + windowHeight);
 		}
 
-		$(".header").css("top", pagePosition);
+		// $(".header").css("top", pagePosition);
 		$(".nav").css("top", pagePosition);
 
 		if (pagePosition + windowHeight >= $(".disabled-horizontal-scroll").height() - 100) {
@@ -81,16 +82,6 @@ export function smoothScroll(lenis) {
 		) {
 			filterFader.css("display", "block");
 			filter.css("display", "flex");
-		}
-
-		if (windowWidth >= 767) {
-			$(".footer__container").css(
-				"top",
-				pagePosition +
-					windowHeight -
-					$(".footer__container").outerHeight() +
-					"px",
-			);
 		}
 	});
 

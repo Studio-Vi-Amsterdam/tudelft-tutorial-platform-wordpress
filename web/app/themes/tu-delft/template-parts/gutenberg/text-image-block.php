@@ -19,13 +19,16 @@ $image = get_field('tu-delft-text-image_image');
     <div class="two-column two-column--reversed flex flex-col sm:flex-row items-start justify-between">
         <div class="two-column__item two-column__item--image image">
             <figure>
-                <img
-                    class="<?php echo !get_field('tu-delft-text-image_has_image_zoom') ? 'disable-zoom' : ''; ?>"
-                    data-image-src="<?php echo $image['url']; ?>" 
-                    width="<?php echo $image['sizes']['large-width']; ?>" 
-                    height="<?php echo $image['sizes']['large-height']; ?>" 
-                    src="<?php echo $image['url']; ?>" alt="<?php echo htmlspecialchars($image['alt']); ?>"
-                >
+								<?= wp_get_attachment_image(
+									$image['ID'],
+									[400, 230],
+									false,
+									[
+										'class' => !get_field('tu-delft-text-image_has_image_zoom') ? 'disable-zoom' : '',
+										'data-image-src' => $image['url']
+									]
+								);
+								?>
                 <figcaption>
                     <?php echo htmlspecialchars(get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']); ?>
                 </figcaption>

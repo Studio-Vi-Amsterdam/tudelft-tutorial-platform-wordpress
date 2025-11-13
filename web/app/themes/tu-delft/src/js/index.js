@@ -1,6 +1,4 @@
 // libs
-import "slick-carousel";
-import "slick-carousel/slick/slick.scss";
 import barba from "@barba/core";
 import Lenis from "lenis";
 import "highlight.js/styles/atom-one-dark.css";
@@ -39,6 +37,7 @@ import {
 } from "./components/bookmark-buttons";
 import { initSuggestionModal } from "./components/ModalWindow/ModalSuggestions";
 import { initAnchorLink } from "./components/anchor-link";
+import {lazyLoad} from "./components/lazy";
 
 let modalInstance = null;
 export function initLenis() {
@@ -58,23 +57,27 @@ export function initLenis() {
 
 	return lenis;
 }
+
 export function runAfterDomLoad() {
 	$(window).on("load", function () {
 		let lenis;
-
 		$(".tutorial__main").removeClass("transition");
 		let timeout = 430;
 		$(".preloader").removeClass("loaded").addClass("reloaded");
+
 		setTimeout(() => {
 			$(".preloader").addClass("loaded");
+
 			$("body")
 				.removeClass("reloaded")
 				.addClass("loaded")
 				.removeClass("opacity");
 		}, 1000);
+
 		setTimeout(() => {
 			$(".preloader").removeClass("loaded").removeClass("reloaded");
 		}, 1620);
+
 		barba.init({
 			timeout: 430,
 			debug: true,
@@ -89,14 +92,17 @@ export function runAfterDomLoad() {
 						$(".preloader").removeClass("loaded").addClass("reloaded");
 						$(".fixed-navigation").removeClass("animated");
 						$("body").addClass("reloaded").removeClass("loaded");
+
 						if (document.querySelector(".modal-video-item__wr-iframe video")) {
 							document
 								.querySelector(".modal-video-item__wr-iframe video")
 								.remove();
 						}
+
 						if (typeof lenis === "object") {
 							lenis.destroy();
 						}
+
 						setTimeout(() => {
 							$("body").removeClass("reloaded");
 						}, 430);
@@ -104,13 +110,16 @@ export function runAfterDomLoad() {
 					},
 					enter: (data) => {
 						timeout = 0;
+
 						setTimeout(() => {
 							$("body").removeClass("reloaded").addClass("loaded");
 							$(".preloader").addClass("loaded").removeClass("reloaded");
 						}, 120);
+
 						setTimeout(() => {
 							$(".preloader").removeClass("loaded");
 						}, 750);
+
 					},
 				},
 			],
@@ -134,6 +143,7 @@ export function runAfterDomLoad() {
 
 						setTimeout(() => {
 							$("body").removeClass("preload");
+							lazyLoad()
 							tabOfContent();
 							smoothScroll(lenis);
 							initMenu();
@@ -157,6 +167,7 @@ export function runAfterDomLoad() {
 							ViewMoreBookmarks();
 							ViewMoreVideos();
 							initAnchorLink();
+
 							if (!modalInstance) {
 								modalInstance = new ModalWindow(
 									ModalVideoWindow,
@@ -164,7 +175,9 @@ export function runAfterDomLoad() {
 									ModalContentWindow,
 								);
 							}
+
 							codeBlock();
+
 							setTimeout(() => {
 								const urlParams = new URLSearchParams(window.location.search);
 								const videoParam = urlParams.get("video");
@@ -193,6 +206,7 @@ export function runAfterDomLoad() {
 									lenis.scrollTo(anchor[0], { offset: -100, duration: 1 });
 								}
 							}, 1200);
+
 						}, timeout);
 					},
 				},

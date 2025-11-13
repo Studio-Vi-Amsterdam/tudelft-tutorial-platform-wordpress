@@ -9,8 +9,6 @@ $theme_url = get_template_directory_uri();
 $video = get_field('tu-delft-video_video');
 $placeholder = get_field('tu-delft-video_thumbnail');
 $subtitles = get_field('tu-delft-video_subtitles');
-
-
 $page_id = get_the_ID();
 ?>
 <div class="tutorial__content video" data-video-subtitles="<?php echo $subtitles; ?>" data-videoid="<?php echo $video['ID']; ?>" data-pageid="<?php echo $page_id; ?>">
@@ -27,7 +25,19 @@ $page_id = get_the_ID();
     <div class="tutorial__content">
         <figure class="video__wrapper" data-video-src="<?php echo $video['url']; ?>" data-video-subtitles="<?php echo $subtitles; ?>" data-videoid="<?php echo $video['ID']; ?>" data-pageid="<?php echo $page_id; ?>">
             <div class="video__preload">
-                <img width="808" height="454" src="<?php echo ($placeholder ? $placeholder : $theme_url . '/src/img/tutorial/img-1.jpg') ?>" alt="">
+								<?php if($placeholder):
+									$attachment_id = attachment_url_to_postid( $placeholder );
+									echo wp_get_attachment_image($attachment_id, [800, 454]);
+								?>
+								<?php else: ?>
+									<img
+										width="808"
+										class="lazy"
+										height="454"
+										data-src="<?= $theme_url . '/src/img/tutorial/img-1.jpg'; ?>"
+										alt="Preview image"
+									>
+								<?php endif; ?>
                 <div class="video__play">
                     <svg width="35" height="42">
                         <use href="<?= $theme_url ?>/src/sprite.svg#play-video"></use>

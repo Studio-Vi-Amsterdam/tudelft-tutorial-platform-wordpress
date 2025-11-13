@@ -123,7 +123,7 @@ input, textarea, button {
   body {
     main {
       position: relative;
-      top: 480px;
+      //top: 480px;
     }
     &.loaded {
       main {
@@ -133,7 +133,7 @@ input, textarea, button {
     }
     &.reloaded {
       main {
-        top: -280px;
+        //top: -280px;
         transition: 630ms cubic-bezier(0.15, 0.00, 0.00, 1.00);
         pointer-events: none;
       }

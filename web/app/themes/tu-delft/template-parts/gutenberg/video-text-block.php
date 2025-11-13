@@ -27,8 +27,21 @@ $page_id = get_the_ID();
         <div class="video-wrapper">
             <figure class="video__wrapper" data-video-src="<?php echo $video['url']; ?>" data-video-subtitles="<?php echo $subtitles; ?>" data-videoid="<?php echo $video['ID']; ?>" data-pageid="<?php echo $page_id; ?>">
                 <div class="video__preload">
-                    <img width="808" height="454" src="<?php echo ($placeholder ? $placeholder : $theme_url . '/src/img/tutorial/img-1.jpg') ?>" alt="">
-                    <div class="video__play">
+										<?php if($placeholder):
+											$attachment_id = attachment_url_to_postid( $placeholder );
+											echo wp_get_attachment_image($attachment_id, [400, 215]);
+											?>
+										<?php else: ?>
+											<img
+												width="400"
+												class="lazy"
+												height="215"
+												data-src="<?= $theme_url . '/src/img/tutorial/img-1.jpg'; ?>"
+												alt="Preview image"
+											>
+										<?php endif; ?>
+
+										<div class="video__play">
                         <svg width="35" height="42">
                             <use href="<?= $theme_url ?>/src/sprite.svg#play-video"></use>
                         </svg>

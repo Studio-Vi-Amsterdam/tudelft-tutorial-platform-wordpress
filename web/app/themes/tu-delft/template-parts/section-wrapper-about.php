@@ -12,13 +12,7 @@
         ?>
                 <div class="image">
                     <figure>
-                        <img 
-                            data-image-src="<?php echo $image['url']; ?>" 
-                            width="808" 
-                            height="454" 
-                            src="<?php echo $image['url']; ?>" 
-                            alt="<?php echo htmlspecialchars($image['alt']); ?>"
-                        />
+												<?= wp_get_attachment_image($image['ID'], [808, 454]); ?>
                         <?php
                             $caption = get_field('caption', get_the_ID());
                             if ($caption) :

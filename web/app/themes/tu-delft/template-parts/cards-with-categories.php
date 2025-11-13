@@ -56,8 +56,8 @@ use TuDelft\Theme\Modules\Course\Course;
                                     <a href="<?php the_permalink($course->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
                                             <figure class="card-with-image__image">
-                                                <img width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
-                                            </figure>
+																								<?= wp_get_attachment_image($image['ID'], [208, 280]); ?>
+																						</figure>
                                             <div class="card-with-image__content">
                                                 <h3>COURSE <?php the_field('course_code', $course->ID); ?></h3>
                                                 <h4><?php echo $course->post_title; ?></h4>

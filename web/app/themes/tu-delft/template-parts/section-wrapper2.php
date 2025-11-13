@@ -30,7 +30,7 @@
                             <?php
                                 $image = get_field('featured_image', $element->ID);
                             ?>
-                            <img width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
+														<?= wp_get_attachment_image($image['ID'], [204, 160]); ?>
                         </figure>
                         <div class="card-with-image__content">
                             <h4><?php echo get_the_title($element->ID); ?></h4>
