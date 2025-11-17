@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Studio-Vi-Amsterdam/tudelft-tutorial-platform-plugin
+          ref: development
           path: ./web/app/plugins/
           token: ${{ secrets.PLUGIN_GH_PAT }}
 
