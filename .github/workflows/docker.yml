@@ -3,6 +3,7 @@ name: Build and Push Docker image
 on:
   push:
     branches:
+      - feat/ci-fixes
       - staging
       - development
 
@@ -13,13 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Clone plugin
-        uses: actions/checkout@v4
-        with:
-          repository: Studio-Vi-Amsterdam/tudelft-tutorial-platform-plugin
-          ref: development
-          path: ./web/app/plugins/
-          token: ${{ secrets.PLUGIN_GH_PAT }}
+      # - name: Clone plugin
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: Studio-Vi-Amsterdam/tudelft-tutorial-platform-plugin
+      #     ref: development
+      #     path: ./web/app/plugins/
+      #     token: ${{ secrets.PLUGIN_GH_PAT }}
 
       - name: Dump auth.json
         run: echo "${{ secrets.COMPOSER_AUTH_SECRET }}" > $(pwd)/auth.json && ls 
