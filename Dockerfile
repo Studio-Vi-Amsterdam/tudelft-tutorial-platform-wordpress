@@ -3,7 +3,7 @@ FROM composer:2.8 AS phpbuilder
 WORKDIR /app
 COPY composer.json composer.lock ./
 RUN --mount=type=secret,id=composer_secret,env=COMPOSER_AUTH composer install --no-interaction --no-progress --ignore-platform-reqs
-COPY ./web/app/plugins/tudelft-tutorial-platform-plugin /app/web/app/tudelft-tutorial-platform-plugin/
+COPY web/app/plugins/tudelft-tutorial-platform-plugin /app/web/app/tudelft-tutorial-platform-plugin/
 
 FROM node:20-alpine AS nodebuilder
 
