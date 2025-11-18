@@ -43,7 +43,7 @@ jobs:
           build-args: |
             NODE_ENV=production
           secrets: |
-            "composer_secret"=${{ secrets.COMPOSER_AUTH_SECRET}}
+            "composer_secret=${{ secrets.COMPOSER_AUTH_SECRET}}"
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.source=${{ github.event.repository.name }}
