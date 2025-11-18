@@ -45,6 +45,8 @@ jobs:
             ${{ secrets.HARBOR_REGISTRY }}/${{ secrets.HARBOR_PROJECT }}/${{ github.event.repository.name }}:latest
           build-args: |
             NODE_ENV=production
+          secrets: |
+            "composer_secret"=${{ secrets.COMPOSER_AUTH_SECRET}}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.source=${{ github.event.repository.name }}

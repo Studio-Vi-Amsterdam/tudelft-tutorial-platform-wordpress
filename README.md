@@ -65,7 +65,15 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 ## Docker 
 
 ### Image
-The image can be built with `docker build . -t tudelft/tutorial-platform-wordpress:latest`.
+The image can be built with the following command:
+
+```
+docker build . \ 
+  --secret id=composer_secret,src=auth.json \
+  -t tudelft/tutorial-platform-wordpress:latest
+```
+
+where `auth.json` holds your Composer credentials.
 
 As you can see in the Dockerfile, there's a multistage build that compose the whole:
 - a base `composer` image to fetch PHP depencencies
