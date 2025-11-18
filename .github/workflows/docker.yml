@@ -22,17 +22,6 @@ jobs:
           path: ./web/app/plugins/tudelft-tutorial-platform-plugin/
           token: ${{ secrets.PLUGIN_GH_PAT }}
 
-      - name: Check fs
-        run: |
-          echo "===== Root ====="
-          ls -lh
-          echo "===== ./web/ ====="
-          ls -lh web/
-          echo "===== ./web/app/ ====="
-          ls -lh web/app/
-          echo "===== ./web/app/plugins ====="
-          ls -lh web/app/plugins/
-
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
