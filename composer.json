@@ -55,7 +55,6 @@
     "roots/multisite-url-fixer": "1.*",
     "wpengine/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/daggerhart-openid-connect-generic":"3.*",
-    "wpackagist-plugin/wordfence":"8.1.2",
     "wpackagist-plugin/webp-converter-for-media":"6.3.1"
   },
   "require-dev": {
