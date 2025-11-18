@@ -19,7 +19,7 @@ jobs:
         with:
           repository: Studio-Vi-Amsterdam/tudelft-tutorial-platform-plugin
           ref: development
-          path: ./web/app/plugins/tudelft-tutorial-platform-plugin/
+          path: ./web/app/mu-plugins/tudelft-tutorial-platform-plugin/
           token: ${{ secrets.PLUGIN_GH_PAT }}
 
       - name: Set up Docker Buildx
