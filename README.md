@@ -65,6 +65,8 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 ## Docker 
 
 ### Image
+Be sure to have cloned the plugin repo in the `web/app/plugins/tudelft-tutorial-platform-plugin` folder.
+
 The image can be built with the following command:
 
 ```
