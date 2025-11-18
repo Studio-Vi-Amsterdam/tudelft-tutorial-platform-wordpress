@@ -14,16 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # - name: Clone plugin
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: Studio-Vi-Amsterdam/tudelft-tutorial-platform-plugin
-      #     ref: development
-      #     path: ./web/app/plugins/
-      #     token: ${{ secrets.PLUGIN_GH_PAT }}
-
-      - name: Dump auth.json
-        run: echo "${{ secrets.COMPOSER_AUTH_SECRET }}" > $(pwd)/auth.json && ls 
+      - name: Clone plugin
+        uses: actions/checkout@v4
+        with:
+          repository: Studio-Vi-Amsterdam/tudelft-tutorial-platform-plugin
+          ref: development
+          path: ./web/app/plugins/
+          token: ${{ secrets.PLUGIN_GH_PAT }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
