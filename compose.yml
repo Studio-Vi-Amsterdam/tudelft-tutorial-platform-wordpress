@@ -1,10 +1,12 @@
 services:
 
   platform:
-    image: tudelft/tutorial-platform-wordpress:latest
+    image: registry.tudelft.nl/digipedia/tudelft-tutorial-platform-wordpress:${IMAGE_TAG}
+    restart: unless-stopped
+    container_name: platform-wordpress
     volumes:
-      - ./.env:/var/www/html/.env:ro
-      - ./wp-content/uploads:/var/www/html/web/wp-content/uploads
+      - .plugin-env:/var/www/html/web/app/mu-plugins/tudelft-tutorial-platform-plugin/.env
+      - ./wp-content/uploads:/var/www/html/web/app/uploads
     env_file:
       - .env
     ports:
@@ -14,6 +16,7 @@ services:
     
   db:
     image: mysql:8
+    restart: unless-stopped
     environment:
       - MYSQL_DATABASE=${DB_NAME}
       - MYSQL_USER=${DB_USER}

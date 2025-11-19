@@ -61,6 +61,25 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 - Read the [Roots Blog](https://roots.io/blog/)
 - Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
 
+## Current Architecture
+
+The stack is composed as follows:
+<img src="./assets/scheme.svg"/>
+
+- Apache handles inbound traffic, acting as a reverse proxy
+  - HTTP requests are forwarded to 443
+  - HTTPS request are TLS terminated and forwarded to NGINX
+  - certificates are locally installed
+- NGINX listens on its internal 80 port, managing the WordPress instance
+- The MySQL instance is in support of WordPress, not exposed to the host machine.
+
+### Configuration
+
+- Apache is consuming the `/etc/apache2/sites-available/reverse-proxy.conf` file.
+- NGINX configuration is under `./docker/nginx/default.conf`
+- MySQL usually restores a dump when intialized, then needs its env file to setup credentials.
+
+See also the `compose.yml` file for a more detailed view.
 
 ## Docker 
 
