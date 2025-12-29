@@ -3,9 +3,12 @@
     z-index: 2;
     padding-top: 4rem;
     padding-bottom: 4rem;
+
     @media(min-width: $tabletSmallP1) {
-    padding-bottom: 8rem;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
     }
+
     &:before {
         position: absolute;
         content: '';
@@ -18,100 +21,144 @@
         z-index: -1;
     }
 
-		// .communities-cards__container
+    // .communities-cards__container
 
-		&__container {
-		}
+    &__container {}
 
-		// .communities-cards__grid
+    // .communities-cards__grid
 
-		&__grid {
-            display: grid;
-            gap: 4rem 2.4rem;
-    @media(min-width: $mobileP1) {
-            grid-template-columns: repeat(2,1fr);
+    &__grid {
+        display: grid;
+        gap: 4rem 2.4rem;
+
+        @media(min-width: $mobileP1) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media(min-width: $tabletSmallP1) {
+            grid-template-columns: repeat(6, 1fr);
+        }
     }
-    @media(min-width: $tabletSmallP1) {
-            grid-template-columns: repeat(6,1fr);
-    }
-		}
 
-		// .communities-cards__item
+    // .communities-cards__item
 
-		&__item {
-    @media(min-width: $tabletSmallP1) {
+    &__item {
+        @media(min-width: $tabletSmallP1) {
             grid-column: span 2;
+        }
+
+        &:nth-child(6n + 1),
+        &:nth-child(6n + 2),
+        &:nth-child(6n + 6),
+        &:nth-child(6n + 7) {
+            @media(min-width: $tabletSmallP1) {
+                grid-column: span 3;
+
+                .communities-cards__poster {
+                    aspect-ratio: 600/240;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            @media(min-width: $mobileP1) {
+                grid-column: span 2;
+            }
+
+            @media(min-width: $tabletSmallP1) {
+                grid-column: span 3;
+            }
+
+        }
+
+        p {
+            width: 100%;
+            opacity: .5;
+
+            @media(min-width: $tabletSmallP1) {
+                max-width: 40rem;
+            }
+        }
+
+        h2 {
+            @include adaptiveProperty('font-size', 40, 36);
+            line-height: 1.1;
+            letter-spacing: -.01em;
+            font-weight: normal;
+        }
     }
+
+    // .communities-cards__card
+
+    &__card {
+        display: block;
+
+        &:hover {
+            .communities-cards__poster img {
+                transform: scale(1.05);
+            }
+        }
+
+        h3 {
+            margin-top: 2.4rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.3;
+            font-family: $secondary-font;
+        }
+    }
+
+    // .communities-cards__poster
+
+    &__poster {
+        width: 100%;
+        aspect-ratio: 391/240;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .2s all;
+        }
+    }
+
+    // .communities-cards__load
+
+    &__load {
+        margin-top: 4rem;
+    }
+
+    &--equal-size {
+        .communities-cards__item {
+            @media(min-width: $tabletSmallP1) {
+                grid-column: span 2;
+            }
+
             &:nth-child(6n + 1),
             &:nth-child(6n + 2),
             &:nth-child(6n + 6),
             &:nth-child(6n + 7) {
-    @media(min-width: $tabletSmallP1) {
-                grid-column: span 3;
-                .communities-cards__poster {
-                    aspect-ratio: 600/240;
+                @media(min-width: $tabletSmallP1) {
+                    grid-column: span 2;
+
+                    .communities-cards__poster {
+                        aspect-ratio: 391/240;
+                    }
                 }
-    }
             }
+
             &:nth-child(1) {
-    @media(min-width: $mobileP1) {
-                grid-column: span 2;
-    }
-    @media(min-width: $tabletSmallP1) {
-                grid-column: span 3;
-    }
-
-            }
-            p {
-                width: 100%;
-                opacity: .5;
-    @media(min-width: $tabletSmallP1) {
-                max-width: 40rem;
-    }
-            }
-            h2 {
-                @include adaptiveProperty('font-size', 40, 36);
-                line-height: 1.1;
-                letter-spacing: -.01em;
-            }
-		}
-
-		// .communities-cards__card
-
-		&__card {
-            display: block;
-            &:hover {
-                .communities-cards__poster img {
-                    transform: scale(1.05);
+                @media(min-width: $mobileP1) {
+                    grid-column: span 2;
                 }
+
+                @media(min-width: $tabletSmallP1) {
+                    grid-column: span 2;
+                }
+
             }
-            h3 {
-                margin-top: 2.4rem;
-                font-size: 1.8rem;
-                font-weight: 500;
-                line-height: 1.3;
-                font-family: $secondary-font;
-            }
-		}
 
-		// .communities-cards__poster
-
-		&__poster {
-            width: 100%;
-            aspect-ratio: 391/240;
-            overflow: hidden;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: .2s all;
-            }
-		}
-
-		// .communities-cards__load
-
-		&__load {
-            margin-top: 4rem;
-		}
+        }
+    }
 }
-

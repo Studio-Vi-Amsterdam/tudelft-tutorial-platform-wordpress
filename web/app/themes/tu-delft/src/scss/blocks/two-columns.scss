@@ -1,5 +1,5 @@
 .two-columns {
-    padding-block: 4rem;
+    padding-top: 4rem;
     position: relative;
     z-index: 2;
     &:before {
@@ -27,6 +27,7 @@
                 @include adaptiveProperty('font-size', 40, 36);
                 line-height: 1.1;
                 letter-spacing: -.01em;
+                font-weight: normal;
             }
 		}
 
