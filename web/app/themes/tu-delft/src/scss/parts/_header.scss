@@ -172,6 +172,35 @@
         }
 
         &>ul {
+            &:has(> li:nth-child(3)) {
+            &>li {
+                &.menu-item-has-children {
+                        .header__submenu {
+                            @media(min-width: $tabletP1) and (max-width: $tabletLarge) {
+                                transform: translate(-0%, -100%);
+                            }
+                        }
+                    &:hover {
+                        .header__submenu {
+                            @media(min-width: $tabletP1) and (max-width: $tabletLarge) {
+                                transform: translate(-0%, 0%);
+                            }
+                        }
+                    & > .header__fader {
+
+                        &:hover {
+
+                            &+.header__submenu {
+                                transform: translate(-0%,-100%);
+                            }
+                        }
+                    }
+                    }
+
+                }
+            }
+
+            }
             &>li {
                 &>a {
                     display: flex;

@@ -572,10 +572,10 @@
     </div>
 </nav> -->
 <section class="faculties-hero">
-    <div class="faculties-hero__container container">
+    <div class="faculties-hero__container">
         <div class="faculties-hero__banner">
             <figure class="faculties-hero__poster">
-                <img src="<?= get_template_directory_uri() ?>/src/img/new-home.jpg" alt="image">
+                <img width="1228" height="658" src="<?= get_template_directory_uri() ?>/src/img/new-home.jpg" alt="image">
             </figure>
             <div class="faculties-hero__content">
                 <div class="faculties-hero__subtitle">DigiPedia</div>
@@ -585,10 +585,209 @@
             </div>
         </div>
         <div class="faculties-hero__buttons">
-            
+            <a href="#" class="faculties-hero__btn">
+                Communities
+                <div class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="faculties-hero__btn">
+                Faculties
+
+                <div class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                </div>
+            </a>
         </div>
     </div>
 </section>
-
+<section class="two-columns">
+    <div class="two-columns__container ">
+        <div class="two-columns__title">
+            <h2>About Digipedia</h2>
+        </div>
+        <div class="two-columns__flex">
+            <div class="two-columns__item">
+                <p>Digipedia is your gateway to mastering cutting-edge tools and technologies at your own pace, propelling your skills to new heights. It brings together knowledge from across the academic landscape, connecting institutions, faculties, and communities to support blended learning and innovation.
+                </p>
+                <p>
+                    Together, these three navigational layers make Digipedia a dynamic space where learning, research, and innovation come together.
+                </p>
+            </div>
+            <div class="two-columns__item">
+                <ul>
+                    <li>
+                        <mark>Universities:</mark> 
+                        Institutions that provide the foundation, strategy, and infrastructure for education and research.
+                    </li>
+                    <li>
+                        <mark>Faculties: </mark> 
+                        Specialized divisions within universities, focused on distinct disciplines and academic programs.
+                    </li>
+                    <li>
+                        <mark>Communities: </mark> 
+                        Cross-disciplinary networks that connect students, researchers, and professionals to share knowledge and collaborate.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="two-columns__btn">
+            <a href="#" class="btn">
+                <span>Read more</span>
+                <span>Read more</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="communities-cards">
+    <div class="communities-cards__container ">
+        <div class="communities-cards__grid">
+            <div class="communities-cards__item">
+                <h2>The heart of thriving communities</h2>
+                <p>Welcome to the TU Delft learning experience, where you can explore innovative tools and technologies at your own pace, enhancing your skills and knowledge across various faculties and tutorials.</p>
+            </div>
+            <div class="communities-cards__item">
+                 <a href="#" class="communities-cards__card">
+                    <figure class="communities-cards__poster">
+                        <img width="599" height="240" src="<?= get_template_directory_uri() ?>/src/img/communities/card1.jpg" alt="image">
+                    </figure>
+                    <h3>Material Movement</h3>
+                 </a>       
+            </div>
+            <div class="communities-cards__item">
+                 <a href="#" class="communities-cards__card">
+                    <figure class="communities-cards__poster">
+                        <img width="599" height="240" src="<?= get_template_directory_uri() ?>/src/img/communities/card2.jpg" alt="image">
+                    </figure>
+                    <h3>Digital Heat Hub Initiative</h3>
+                 </a>       
+            </div>
+            <div class="communities-cards__item">
+                 <a href="#" class="communities-cards__card">
+                    <figure class="communities-cards__poster">
+                        <img width="599" height="240" src="<?= get_template_directory_uri() ?>/src/img/communities/card3.jpg" alt="image">
+                    </figure>
+                    <h3>Makers</h3>
+                 </a>       
+            </div>
+            <div class="communities-cards__item">
+                 <a href="#" class="communities-cards__card">
+                    <figure class="communities-cards__poster">
+                        <img width="599" height="240" src="<?= get_template_directory_uri() ?>/src/img/communities/card4.jpg" alt="image">
+                    </figure>
+                    <h3>Additive Manufacturing</h3>
+                 </a>       
+            </div>
+            <div class="communities-cards__item">
+                 <a href="#" class="communities-cards__card">
+                    <figure class="communities-cards__poster">
+                        <img width="599" height="240" src="<?= get_template_directory_uri() ?>/src/img/communities/card5.jpg" alt="image">
+                    </figure>
+                    <h3>Circular Built Environment</h3>
+                 </a>       
+            </div>
+            <div class="communities-cards__item">
+                 <a href="#" class="communities-cards__card">
+                    <figure class="communities-cards__poster">
+                        <img width="599" height="240" src="<?= get_template_directory_uri() ?>/src/img/communities/card6.jpg" alt="image">
+                    </figure>
+                    <h3>Material Movement</h3>
+                 </a>       
+            </div>
+        </div>
+        <div class="communities-cards__load">
+            <a href="#" class="btn">
+                <span>See all</span>
+                <span>See all</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="grid-cards">
+    <div class="grid-cards__container">
+        <div class="grid-cards__grid">
+            <a href="#" class="card-with-image">
+                <div class="card-with-image__wrapper sm:flex">
+                    <figure class="card-with-image__image">
+                        <img width="208" height="280" src="https://digipedia.tudelft.nl/app/uploads/2024/11/WV2_CoursePage_01_visualisatie-voorbeeld.png" alt="">
+                    </figure>
+                    <div class="card-with-image__content">
+                        <h3>COURSE BKB1WV2</h3>
+                        <h4>BKB1WV2 - Vorm en overdracht</h4>
+                        <p>De BKB1WV2 geeft een introductie in het modelleren en visualiseren in de digitale omgeving. De opgedane kennis en vaardigheid vormt…</p>
+                        <div class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="grid-cards__title">
+                <h2>A deep dive into our faculties</h2>
+                <p>Welcome to the TU Delft faculties, where you can discover cutting-edge tools and technologies tailored to enhance your skills and knowledge in diverse areas of study.</p>
+            </div>
+            <a href="#" class="card-with-image">
+                <div class="card-with-image__wrapper sm:flex">
+                    <figure class="card-with-image__image">
+                        <img width="208" height="280" src="https://digipedia.tudelft.nl/app/uploads/2024/11/WV2_CoursePage_01_visualisatie-voorbeeld.png" alt="">
+                    </figure>
+                    <div class="card-with-image__content">
+                        <h3>COURSE BKB1WV2</h3>
+                        <h4>BKB1WV2 - Vorm en overdracht</h4>
+                        <p>De BKB1WV2 geeft een introductie in het modelleren en visualiseren in de digitale omgeving. De opgedane kennis en vaardigheid vormt…</p>
+                        <div class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="card-with-image">
+                <div class="card-with-image__wrapper sm:flex">
+                    <figure class="card-with-image__image">
+                        <img width="208" height="280" src="https://digipedia.tudelft.nl/app/uploads/2024/11/WV2_CoursePage_01_visualisatie-voorbeeld.png" alt="">
+                    </figure>
+                    <div class="card-with-image__content">
+                        <h3>COURSE BKB1WV2</h3>
+                        <h4>BKB1WV2 - Vorm en overdracht</h4>
+                        <p>De BKB1WV2 geeft een introductie in het modelleren en visualiseren in de digitale omgeving. De opgedane kennis en vaardigheid vormt…</p>
+                        <div class="arrow">
+                    <svg width="14" height="22">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#arrow-large"></use>
+                    </svg>
+                    <svg width="38" height="3">
+                        <use href="<?= $theme_url ?>/src/sprite.svg#line"></use>
+                    </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="grid-cards__load">
+            <a href="#" class="btn">
+                <span>See all</span>
+                <span>See all</span>
+            </a>
+        </div>
+    </div>
+</section>
 
 <?php get_footer(); ?>
