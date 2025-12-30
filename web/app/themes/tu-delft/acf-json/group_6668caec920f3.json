@@ -298,7 +298,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": "",
+                    "post_type": [
+                        "communities"
+                    ],
                     "post_status": "",
                     "taxonomy": "",
                     "filters": [
@@ -306,7 +308,7 @@
                         "post_type",
                         "taxonomy"
                     ],
-                    "return_format": "object",
+                    "return_format": "id",
                     "min": "",
                     "max": "",
                     "allow_in_bindings": 0,
@@ -405,7 +407,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": "",
+                    "post_type": [
+                        "faculties"
+                    ],
                     "post_status": "",
                     "taxonomy": "",
                     "filters": [
@@ -413,7 +417,7 @@
                         "post_type",
                         "taxonomy"
                     ],
-                    "return_format": "object",
+                    "return_format": "id",
                     "min": "",
                     "max": "",
                     "allow_in_bindings": 0,
@@ -460,5 +464,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1767001320
+    "modified": 1767099222
 }
