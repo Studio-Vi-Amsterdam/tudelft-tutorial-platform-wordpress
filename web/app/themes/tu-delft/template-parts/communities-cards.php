@@ -1,12 +1,13 @@
 <?php
 $data = $args['data'] ?? false;
+$class = $args['class'] ?? '';
 if(!$data) return;
 $title = $data['title'];
 $description = $data['description'];
 $communities = $data['communities'];
 $button = $data['button'];
 ?>
-<section class="communities-cards">
+<section class="communities-cards <?= $class; ?>">
 	<div class="communities-cards__container ">
 		<div class="communities-cards__grid">
 			<?php if($title || $description): ?>
