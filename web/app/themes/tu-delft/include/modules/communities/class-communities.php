@@ -24,7 +24,7 @@ class Communities extends Abstract_Cpt {
 	const POST_ICON = 'dashicons-admin-comments';
 	const REWRITE = [];
 	const TAXONOMY = [
-		[ 'name' => 'Categories', 'slug' => 'community-category', 'rewrite' => [ 'slug' => '.' ] ],
+		[ 'name' => 'Categories', 'slug' => 'community-category', 'rewrite' => [ 'slug' => 'communities' ] ],
 	];
 	const EXTRA_SETTINGS = [
 		'public' => true,

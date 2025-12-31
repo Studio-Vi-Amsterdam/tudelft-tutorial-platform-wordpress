@@ -3,6 +3,7 @@ $data = $args['data'];
 $class = $args['class'];
 $title = $data['title'];
 $description = $data['description'];
+$imgId = $data['img'];
 $breadcrumbs = $data['breadcrumbs'];
 ?>
 <section class="hero-overview <?= $class; ?>">
@@ -22,6 +23,12 @@ $breadcrumbs = $data['breadcrumbs'];
 					<p><?= $description; ?></p>
 				<?php endif; ?>
 			</div>
+
+			<?php if($imgId): ?>
+				<figure class="hero-overview__image">
+					<?= wp_get_attachment_image($imgId, [1228, 658]); ?>
+				</figure>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>
