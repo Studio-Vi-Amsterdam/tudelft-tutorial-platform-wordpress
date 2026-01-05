@@ -24,6 +24,10 @@ get_template_part('template-parts/hero-overview', false,
 			'description' => get_field('description'),
 			'breadcrumbs' => [
 				[
+					'title' => 'Home',
+					'url' => get_home_url(),
+				],
+				[
 					'title' => get_the_title(),
 				]
 			]
