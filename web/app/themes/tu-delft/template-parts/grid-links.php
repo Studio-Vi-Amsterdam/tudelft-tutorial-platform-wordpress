@@ -1,4 +1,5 @@
 <?php
+use \TuDelft\Theme\Modules\Communities\Communities;
 $data = $args['data'];
 $title = $data['title'];
 $items = $data['items'];
@@ -6,10 +7,7 @@ $terms = [];
 $params = $args['params'];
 if (!$items) {
 	$ID = get_the_ID();
-	$terms = get_the_terms($ID, 'community-category');
-	$terms = array_filter($terms, function ($term) {
-		return $term->parent === 0;
-	});
+	$terms = Communities::get_parent_categories_by_community($ID);
 }
 ?>
 <section class="section-wrapper">

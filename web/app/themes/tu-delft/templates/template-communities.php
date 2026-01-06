@@ -2,16 +2,9 @@
 /*
     Template Name: Communities Template
 */
+use \TuDelft\Theme\Modules\Communities\Communities;
 
-
-$communities = get_posts(
-	[
-		'post_type' => 'communities',
-		'numberposts' => -1,
-		'post_status' => 'publish',
-		'fields' => 'ids'
-	]
-);
+$communities = Communities::get_all_communities();
 
 $knowledgeHubs = get_field('knowledge_hubs');
 

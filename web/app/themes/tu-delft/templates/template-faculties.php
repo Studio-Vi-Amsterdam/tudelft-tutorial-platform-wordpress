@@ -2,17 +2,9 @@
 /*
     Template Name: Faculties Template
 */
+use \TuDelft\Theme\Modules\Faculties\Faculties;
 
-
-$communities = get_posts(
-	[
-		'post_type' => 'faculties',
-		'numberposts' => -1,
-		'post_status' => 'publish',
-		'fields' => 'ids'
-	]
-);
-
+$faculties = Faculties::get_all_faculties();
 $knowledgeHubs = get_field('knowledge_hubs');
 
 get_header();
@@ -39,7 +31,7 @@ get_template_part('template-parts/hero-overview', false,
 get_template_part('template-parts/communities-cards', false,
 	[
 		'data' => [
-			'communities' => $communities,
+			'communities' => $faculties,
 		],
 		'class' => 'communities-cards--equal-size'
 	]

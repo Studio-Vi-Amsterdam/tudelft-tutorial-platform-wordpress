@@ -1,4 +1,5 @@
 <?php
+use \TuDelft\Theme\Modules\Communities\Communities;
 get_header();
 
 $community_slug = get_query_var('community');
@@ -31,12 +32,7 @@ get_template_part('template-parts/hero-overview', false,
 	]
 );
 
-$subcategories = get_terms(
-	[
-		'taxonomy' => 'community-category',
-		'parent' => $term->term_id
-	]
-);
+$subcategories = Communities::get_child_categories_by_parent_term_id($term->term_id);
 
 get_template_part('template-parts/community/cards-with-categories', false, [
 	'subcategories' => $subcategories,

@@ -129,6 +129,42 @@ class Communities extends Abstract_Cpt {
 		return $q->posts;
 	}
 
+	public static function get_all_communities()
+	{
+		$args = [
+			'post_type' => 'communities',
+			'numberposts' => -1,
+			'post_status' => 'publish',
+			'fields' => 'ids',
+		];
+		return get_posts($args);
+	}
+
+	public static function get_parent_categories_by_community($community_id): array
+	{
+		$terms = get_the_terms($community_id, 'community-category');
+
+		if (is_wp_error($terms) || empty($terms)) {
+			$terms = [];
+		}
+
+		$terms = array_filter($terms, function ($term) {
+			return (int) $term->parent === 0;
+		});
+
+		return $terms;
+	}
+
+	public static function get_child_categories_by_parent_term_id($parent_term_id): array
+	{
+		return get_terms(
+			[
+				'taxonomy' => 'community-category',
+				'parent' => $parent_term_id
+			]
+		);
+	}
+
 	private function force_404(): void {
 		global $wp_query;
 		$wp_query->set_404();
