@@ -20,29 +20,21 @@
                                                                         
 -->
 <?php
-    use TuDelft\Theme\Modules\Course\Course;
-    use TuDelft\Theme\Modules\Software\Software;
-    use TuDelft\Theme\Modules\Subject\Subject;
-    use TuDelft\Theme\Modules\Lab\Lab;
+		use \TuDelft\Theme\Modules\Faculties\Faculties;
+		use \TuDelft\Theme\Modules\Course\Course;
+		use \TuDelft\Theme\Modules\Lab\Lab;
+		use \TuDelft\Theme\Modules\Communities\Communities;
 
-    //courses
-    $academic_levels = Course::get_academic_levels();
-
-    //subjects
-    $categories = Subject::get_categories();
-
-    // software matrix
-    $softwares_matrix = Software::get_softwares_matrix(3);
-    $softwares = Software::get_all_softwares();
-
-    // labs
-    $labs = Lab::get_lab_types();
+		$faculties = Faculties::get_all_faculties();
+		$communities = Communities::get_all_communities();
 
     function generate_url($path, $param) {
         return get_home_url() . $path . '/?' . http_build_query($param);
     }
 
-	$userID = get_current_user_id();
+		$userID = get_current_user_id();
+
+  	$homeUrl = get_home_url();
 ?>
 
 
@@ -91,398 +83,590 @@
       <div class="disabled-horizontal-scroll">
     <header class="header !fixed flex justify-center">
         <div class="header__container flex justify-between items-center">
-        <div class="header__trigger header__icon js-menu-toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M3 6h18M3 12h18M3 18h18" />
-            </svg>
-        </div>
-        <a href="<?php echo get_home_url(); ?>" class="header__logo" aria-label="home-page">
-            <img width="300" height="74" src="<?= get_template_directory_uri() ?>/src/img/logo.svg" alt="logo">
-        </a>
-        <div class="header__menu">
-            <div class="header__nav">
-                <ul>
-                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/courses">Courses</a>
-                        <div class="header__fader"></div>
-                        <div class="header__submenu">
-                            <div class="menu-item-has-children__wrapper">
-                                <ul>
-                                    <?php foreach ($academic_levels as $category): ?>
-                                        <li class="menu-item-has-children">
-                                            <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug]); ?>">
-                                                <?php echo $category['category']->name; ?>
-                                                <div class="menu-item-has-children__trigger">
-                                                    <svg width="20" height="20">
-                                                        <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                    </svg>
-                                                </div>
-                                            </a>
+					<div class="header__trigger header__icon js-menu-toggle">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+									<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+											d="M3 6h18M3 12h18M3 18h18" />
+							</svg>
+					</div>
+					<a href="<?= $homeUrl; ?>" class="header__logo" aria-label="home-page">
+							<img width="300" height="74" src="<?= get_template_directory_uri() ?>/src/img/logo.svg" alt="logo">
+					</a>
 
-                                            <div class="header__submenu">
-                                                <ul>
-                                                    <?php foreach ($category['subcategories'] as $subcategory): ?>
-                                                        <li>
-                                                            <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
-                                                                <?php echo $subcategory->name; ?>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/subjects">Subjects</a>
-                        <div class="header__fader"></div>
-                        <div class="header__submenu">
-                            <div class="menu-item-has-children__wrapper">
-                                <ul>
-                                    <?php foreach ($categories as $category): ?>
-                                        <li class="menu-item-has-children">
-                                            <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug]); ?>">
-                                                <?php echo $category['category']->name; ?>
-                                                <div class="menu-item-has-children__trigger">
-                                                    <svg width="20" height="20">
-                                                        <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                    </svg>
-                                                </div>
-                                            </a>
+					<div class="header__menu">
+							<div class="header__nav">
+									<ul>
 
-                                            <div class="header__submenu">
-                                                <ul>
-                                                    <?php foreach ($category['subcategories'] as $subcategory): ?>
-                                                        <li>
-                                                            <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
-                                                                <?php echo $subcategory->name; ?>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/software">Software</a>
-                        <div class="header__fader"></div>
-                        <div class="header__submenu header__submenu--flex">
-                            <div class="menu-item-has-children__wrapper ">
-                                <?php foreach($softwares_matrix as $column): ?>
-                                    <ul>
-                                        <?php foreach($column as $software): ?>
-                                            <li><a href="<?php echo get_permalink($software->ID); ?>"><?php echo $software->post_title; ?></a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="menu-item-has-children"><a href="<?php echo get_home_url();?>/labs">Labs</a>
-                        <div class="header__fader"></div>
-                        <div class="header__submenu">
-                            <div class="menu-item-has-children__wrapper">
-                                <ul>
-                                    <?php foreach($labs as $lab): ?>
-                                        <li class="menu-item-has-children">
-                                            <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug]); ?>">
-                                                <?php echo $lab['category']->name; ?>
-                                                <div class="menu-item-has-children__trigger">
-                                                    <svg width="20" height="20">
-                                                        <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                    </svg>
-                                                </div>
-                                            </a>
+										<li class="<?= !empty($faculties) ? 'menu-item-has-children' : '' ?>">
+											<a
+												href="<?= $homeUrl; ?>/faculties"
+											>
+												Faculties
+											</a>
+											<div class="header__fader"></div>
+											<?php if(!empty($faculties)): ?>
+												<div class="header__submenu">
+													<div class="menu-item-has-children__wrapper">
+														<ul>
+															<?php foreach ($faculties as $faculty):
+																$facultyUrl = get_the_permalink($faculty);
+																$gridLinksData = get_field('single-communities__cards', $faculty);
+																if(!$gridLinksData['items']) {
+																	$gridLinksData['items'] = get_field('faculties_cards', 'options')['items'];
+																}
+																if(!$gridLinksData['title']) {
+																	$gridLinksData['title'] = get_field('faculties_cards', 'options')['title'];
+																}
+															?>
+																<li class="<?= !empty($gridLinksData['items']) ? 'menu-item-has-children' : '' ?>">
+																	<a href="<?= $facultyUrl; ?>">
+																		<?= get_the_title($faculty); ?>
 
-                                            <div class="header__submenu">
-                                                <ul>
-                                                    <?php foreach ($lab['subcategories'] as $subcategory): ?>
-                                                        <li>
-                                                            <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
-                                                                <?php echo $subcategory->name; ?>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="header__wrapper flex items-center justify-center">
-            <div class="header__search search-bar" data-search>
-                <div class="search-bar__wrapper">
-                    <div data-open-search> </div>
-                    <button class="search-bar__btn" aria-label="search-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
-                            <path stroke="#000" stroke-width="1.5"
-                                d="M19.64 10.832c0 4.99-4.202 9.082-9.445 9.082-5.242 0-9.445-4.091-9.445-9.082 0-4.99 4.203-9.082 9.445-9.082 5.243 0 9.446 4.092 9.446 9.082z" />
-                            <path fill="#000"
-                                d="M23.123 24.137a.784.784 0 001.08 0 .718.718 0 000-1.042l-1.08 1.042zm-6.27-6.046l6.27 6.046 1.08-1.042-6.27-6.045-1.08 1.04z" />
-                        </svg>
-                    </button>
-                    <div class="search-bar__close" data-close-search>
-                    </div>
-                </div>
-                <div class="search-bar__field flex items-center">
-                    <button class="search-bar__btn" aria-label="search-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
-                            <path stroke="#000" stroke-width="1.5"
-                                d="M19.64 10.832c0 4.99-4.202 9.082-9.445 9.082-5.242 0-9.445-4.091-9.445-9.082 0-4.99 4.203-9.082 9.445-9.082 5.243 0 9.446 4.092 9.446 9.082z" />
-                            <path fill="#000"
-                                d="M23.123 24.137a.784.784 0 001.08 0 .718.718 0 000-1.042l-1.08 1.042zm-6.27-6.046l6.27 6.046 1.08-1.042-6.27-6.045-1.08 1.04z" />
-                        </svg>
-                    </button>
-                    <form id="search-form" action="<?php echo get_home_url(); ?>/search" method="get">
-                        <input type="text" placeholder="Search" id="global-search" name="term">
-                    </form>
-                </div>
-            </div>
-            <div data-href="<?= $userID ? get_author_posts_url($userID) : wp_login_url(); ?>" class="header__account header__icon" aria-label="account">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25">
-                    <circle cx="11.842" cy="6.316" r="5.566" stroke="#000" stroke-width="1.5" />
-                    <path stroke="#000" stroke-linecap="round" stroke-width="1.5"
-                        d="M3 24v-3a6 6 0 016-6h5a6 6 0 016 6v3" />
-                </svg>
-            </div>
-            <div class="header__close header__icon js-menu-close">
-            </div>
-        </div>
+																		<?php if(!empty($gridLinksData['items'])): ?>
+																			<div class="menu-item-has-children__trigger">
+																				<svg width="20" height="20">
+																					<use
+																						href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																					</use>
+																				</svg>
+																			</div>
+																		<?php endif; ?>
+																	</a>
+																	<?php if(!empty($gridLinksData['items'])): ?>
+																		<div class="header__submenu">
+																			<ul>
+																				<?php foreach ($gridLinksData['items'] as $item):
+																					$url = $item['url']['url'];
+																					$facultySlug = get_post_field('post_name', $faculty);
+																					$isCourse = str_contains($url, 'courses');
+																					$isLabs = str_contains($url, 'labs');
+																					$terms = [];
+																					if($isCourse) {
+																						$terms = Course::get_academic_levels();
+																					}
+																					if($isLabs) {
+																						$terms = Lab::get_lab_types();
+																					}
+																				?>
+																					<li class="<?= !empty($terms) ? 'menu-item-has-children' : '' ?>">
+																						<a
+																							href="<?= $url; ?>?faculty=<?= $facultySlug; ?>"
+																						>
+																							<?= $item['title']; ?>
+
+																							<?php if(!empty($terms)): ?>
+																								<div class="menu-item-has-children__trigger">
+																									<svg width="20" height="20">
+																										<use
+																											href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																										</use>
+																									</svg>
+																								</div>
+																							<?php endif; ?>
+																						</a>
+
+																						<?php if(!empty($terms)): ?>
+																							<div class="header__submenu">
+																								<ul>
+																									<?php foreach ($terms as $term): ?>
+																										<li>
+																											<a
+																												href="<?= $url; ?>?faculty=<?= $facultySlug; ?>&category=<?= $term['category']->slug; ?>"
+																											>
+																												<?= $term['category']->name; ?>
+																											</a>
+																										</li>
+																									<?php endforeach; ?>
+																								</ul>
+																							</div>
+																						<?php endif; ?>
+
+																					</li>
+																				<?php endforeach; ?>
+																			</ul>
+																		</div>
+																	<?php endif; ?>
+																</li>
+															<?php endforeach; ?>
+														</ul>
+													</div>
+												</div>
+											<?php endif; ?>
+										</li>
+
+										<li class="<?= !empty($communities) ? 'menu-item-has-children' : ''; ?>">
+											<a
+												href="<?= $homeUrl; ?>/communities">
+												Communities
+											</a>
+											<div class="header__fader"></div>
+
+											<?php if(!empty($communities)): ?>
+												<div class="header__submenu">
+													<div class="menu-item-has-children__wrapper">
+														<ul>
+															<?php foreach ($communities as $community):
+																$url = get_the_permalink($community);
+																$parentCats = Communities::get_parent_categories_by_community($community);
+															?>
+																<li class="<?= !empty($parentCats) ? 'menu-item-has-children' : '' ?>">
+																	<a href="<?= $url; ?>">
+
+																		<?= get_the_title($community); ?>
+
+																		<?php if (!empty($parentCats)): ?>
+																			<div class="menu-item-has-children__trigger">
+																				<svg width="20" height="20">
+																					<use
+																						href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																					</use>
+																				</svg>
+																			</div>
+																		<?php endif; ?>
+																	</a>
+
+																	<?php if(!empty($parentCats)): ?>
+																		<div class="header__submenu">
+																			<ul>
+																				<?php foreach ($parentCats as $parentCat):
+																					$subcategories = Communities::get_child_categories_by_parent_term_id($parentCat->term_id);
+																					$parentUrl = $url . $parentCat->slug
+																				?>
+																					<li class="<?= !empty($subcategories)? 'menu-item-has-children' : ''; ?>">
+																						<a
+																							href="<?= $parentUrl; ?>"
+																						>
+																							<?= $parentCat->name; ?>
+
+																							<?php if (!empty($subcategories)): ?>
+																								<div class="menu-item-has-children__trigger">
+																									<svg width="20" height="20">
+																										<use
+																											href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																										</use>
+																									</svg>
+																								</div>
+																							<?php endif; ?>
+																						</a>
+
+																						<?php if(!empty($subcategories)): ?>
+																							<div class="header__submenu">
+																								<ul>
+																									<?php foreach ($subcategories as $subcategory): ?>
+																										<li>
+																											<a
+																												href="<?= $parentUrl; ?>?subcategory=<?= $subcategory->slug; ?>"
+																											>
+																												<?= $subcategory->name; ?>
+																											</a>
+																										</li>
+																									<?php endforeach; ?>
+																								</ul>
+																							</div>
+																						<?php endif; ?>
+																					</li>
+																				<?php endforeach; ?>
+																			</ul>
+																		</div>
+																	<?php endif; ?>
+																</li>
+															<?php endforeach; ?>
+														</ul>
+													</div>
+												</div>
+											<?php endif; ?>
+										</li>
+									</ul>
+							</div>
+					</div>
+
+					<div class="header__wrapper flex items-center justify-center">
+							<div class="header__search search-bar" data-search>
+									<div class="search-bar__wrapper">
+											<div data-open-search> </div>
+											<button class="search-bar__btn" aria-label="search-button">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
+															<path stroke="#000" stroke-width="1.5"
+																	d="M19.64 10.832c0 4.99-4.202 9.082-9.445 9.082-5.242 0-9.445-4.091-9.445-9.082 0-4.99 4.203-9.082 9.445-9.082 5.243 0 9.446 4.092 9.446 9.082z" />
+															<path fill="#000"
+																	d="M23.123 24.137a.784.784 0 001.08 0 .718.718 0 000-1.042l-1.08 1.042zm-6.27-6.046l6.27 6.046 1.08-1.042-6.27-6.045-1.08 1.04z" />
+													</svg>
+											</button>
+											<div class="search-bar__close" data-close-search>
+											</div>
+									</div>
+									<div class="search-bar__field flex items-center">
+											<button class="search-bar__btn" aria-label="search-button">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
+															<path stroke="#000" stroke-width="1.5"
+																	d="M19.64 10.832c0 4.99-4.202 9.082-9.445 9.082-5.242 0-9.445-4.091-9.445-9.082 0-4.99 4.203-9.082 9.445-9.082 5.243 0 9.446 4.092 9.446 9.082z" />
+															<path fill="#000"
+																	d="M23.123 24.137a.784.784 0 001.08 0 .718.718 0 000-1.042l-1.08 1.042zm-6.27-6.046l6.27 6.046 1.08-1.042-6.27-6.045-1.08 1.04z" />
+													</svg>
+											</button>
+											<form id="search-form" action="<?= $homeUrl; ?>/search" method="get">
+													<input type="text" placeholder="Search" id="global-search" name="term">
+											</form>
+									</div>
+							</div>
+							<div data-href="<?= $userID ? get_author_posts_url($userID) : wp_login_url(); ?>" class="header__account header__icon" aria-label="account">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 25">
+											<circle cx="11.842" cy="6.316" r="5.566" stroke="#000" stroke-width="1.5" />
+											<path stroke="#000" stroke-linecap="round" stroke-width="1.5"
+													d="M3 24v-3a6 6 0 016-6h5a6 6 0 016 6v3" />
+									</svg>
+							</div>
+							<div class="header__close header__icon js-menu-close">
+							</div>
+					</div>
         </div>
     </header>
 
     <nav class="nav flex flex-col">
         <div class="nav__inner">
             <ul>
-                <li class="menu-item-has-children">
-                    <div class="menu-item-has-children__title">
-                        <a href="<?php echo get_home_url();?>/courses">Courses</a>
-                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                            <svg width="20" height="20">
-                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
-                        <div class="menu-item-has-children__title title-prev">
-                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                <svg width="20" height="20">
-                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                </svg>
-                            </div>
-                            <span>Courses</span>
-                        </div>
+							<?php if(!empty($faculties)): ?>
+								<li class="menu-item-has-children">
+									<div class="menu-item-has-children__title">
+										<a href="<?= $homeUrl; ?>/faculties">
+											Faculties
+										</a>
 
-                        <ul>
-                            <?php foreach($academic_levels as $category): ?>
-                                <li class="menu-item-has-children">
-                                    <div class="menu-item-has-children__title">
-                                        <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug]); ?>">
-                                            <?php echo $category['category']->name; ?>
-                                        </a>
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
-                                        <div class="menu-item-has-children__title title-prev title-start">
-                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                            <span>Courses</span>
-                                        </div>
-                                        <div class="menu-item-has-children__title title-prev">
-                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                            <span><?php echo $category['category']->name; ?></span>
-                                        </div>
-                                        <ul>
-                                            <?php foreach($category['subcategories'] as $subcategory): ?>
-                                                <li>
-                                                    <a href="<?php echo generate_url('/courses', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
-                                                        <?php echo $subcategory->name; ?>
-                                                    </a>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item-has-children">
-                    <div class="menu-item-has-children__title">
-                        <a href="<?php echo get_home_url();?>/subjects">Subjects</a>
-                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                            <svg width="20" height="20">
-                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
-                        <div class="menu-item-has-children__title title-prev">
-                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                <svg width="20" height="20">
-                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                </svg>
-                            </div>
-                            <span>Subjects</span>
-                        </div>
+										<div class="menu-item-has-children__trigger menu-item-has-children__next">
+											<svg width="20" height="20">
+												<use
+													href="<?= THEME_URL ?>/src/sprite.svg#arrow-right">
+												</use>
+											</svg>
+										</div>
+									</div>
 
-                        <ul>
-                            <?php foreach($categories as $category): ?>
-                                <li class="menu-item-has-children">
-                                    <div class="menu-item-has-children__title">
-                                        <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug]); ?>">
-                                            <?php echo $category['category']->name; ?>
-                                        </a>
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
-                                        <div class="menu-item-has-children__title title-prev title-start">
-                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                            <span>Subjects</span>
-                                        </div>
-                                        <div class="menu-item-has-children__title title-prev">
-                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                            <span><?php echo $category['category']->name; ?></span>
-                                        </div>
-                                        <ul>
-                                            <?php foreach($category['subcategories'] as $subcategory): ?>
-                                                <li>
-                                                    <a href="<?php echo generate_url('/subjects', ['category' => $category['category']->slug, 'subcategory' => $subcategory->slug]); ?>">    
-                                                        <?php echo $subcategory->name; ?>
-                                                    </a>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item-has-children">
-                    <div class="menu-item-has-children__title">
-                        <a href="<?php echo get_home_url();?>/software">Software</a>
-                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                            <svg width="20" height="20">
-                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
-                        <div class="menu-item-has-children__title title-prev">
-                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                <svg width="20" height="20">
-                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                </svg>
-                            </div>
-                            <span>Software</span>
-                        </div>
-                        <ul>
-                            <?php foreach($softwares as $software): ?>
-                                <li><a href="<?php echo get_permalink($software->ID); ?>"><?php echo $software->post_title; ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item-has-children">
-                    <div class="menu-item-has-children__title">
-                        <a href="<?php echo get_home_url();?>/labs">Labs</a>
-                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                            <svg width="20" height="20">
-                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
-                        <div class="menu-item-has-children__title title-prev">
-                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                <svg width="20" height="20">
-                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                </svg>
-                            </div>
-                            <span>Labs</span>
-                        </div>
+									<div class="menu-item-has-children__submenu">
+										<div class="menu-item-has-children__title title-prev">
+											<div class="menu-item-has-children__trigger menu-item-has-children__prev">
+												<svg width="20" height="20">
+													<use
+														href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+													</use>
+												</svg>
+											</div>
+											<span>Faculties</span>
+										</div>
 
-                        <ul>
-                            <?php foreach($labs as $lab): ?>
-                                <li class="menu-item-has-children">
-                                    <div class="menu-item-has-children__title">
-                                        <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug]); ?>">
-                                            <?php echo $lab['category']->name; ?>
-                                        </a>
-                                        <div class="menu-item-has-children__trigger menu-item-has-children__next">
-                                            <svg width="20" height="20">
-                                                <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="menu-item-has-children__submenu" data-lenis-prevent>
-                                        <div class="menu-item-has-children__title title-prev title-start">
-                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                            <span>Labs</span>
-                                        </div>
-                                        <div class="menu-item-has-children__title title-prev">
-                                            <div class="menu-item-has-children__trigger menu-item-has-children__prev">
-                                                <svg width="20" height="20">
-                                                    <use href="<?= get_template_directory_uri() ?>/src/sprite.svg#arrow-right"></use>
-                                                </svg>
-                                            </div>
-                                            <span><?php echo $lab['category']->name; ?></span>
-                                        </div>
-                                        <ul>
-                                            <?php foreach ($lab['subcategories'] as $subcategory): ?>
-                                                <li>
-                                                    <a href="<?php echo generate_url('/labs', ['category' => $lab['category']->slug, 'subcategory' => $subcategory->slug]); ?>">
-                                                        <?php echo $subcategory->name; ?>
-                                                    </a>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </li>
+										<ul>
+											<?php foreach ($faculties as $faculty):
+												$facultyUrl = get_the_permalink($faculty);
+												$gridLinksData = get_field('single-communities__cards', $faculty);
+												$facultyTitle = get_the_title($faculty);
+												if(!$gridLinksData['items']) {
+													$gridLinksData['items'] = get_field('faculties_cards', 'options')['items'];
+												}
+												if(!$gridLinksData['title']) {
+													$gridLinksData['title'] = get_field('faculties_cards', 'options')['title'];
+												}
+											?>
+												<li class="<?= !empty($gridLinksData['items']) ? 'menu-item-has-children' : '' ?>">
+													<div class="menu-item-has-children__title">
+														<a href="<?= $facultyUrl; ?>">
+															<?= $facultyTitle; ?>
+														</a>
+
+														<?php if(!empty($gridLinksData['items'])): ?>
+															<div class="menu-item-has-children__trigger menu-item-has-children__next">
+																<svg width="20" height="20">
+																	<use
+																		href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																	</use>
+																</svg>
+															</div>
+														<?php endif; ?>
+													</div>
+
+													<?php if(!empty($gridLinksData['items'])): ?>
+
+														<div class="menu-item-has-children__submenu" data-lenis-prevent>
+															<div class="menu-item-has-children__title title-prev title-start">
+																<div
+																	class="menu-item-has-children__trigger menu-item-has-children__prev">
+																	<svg width="20" height="20">
+																		<use
+																			href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																		</use>
+																	</svg>
+																</div>
+																<span>Faculties</span>
+															</div>
+
+															<div class="menu-item-has-children__title title-prev">
+																<div
+																	class="menu-item-has-children__trigger menu-item-has-children__prev">
+																	<svg width="20" height="20">
+																		<use
+																			href="<?= THEME_URL ?>/src/sprite.svg#arrow-right">
+																		</use>
+																	</svg>
+																</div>
+																<span><?= $facultyTitle; ?></span>
+															</div>
+
+															<ul>
+																<?php foreach ($gridLinksData['items'] as $item):
+																		$itemUrl = $item['url']['url'];
+																		$facultySlug = get_post_field('post_name', $faculty);
+																		$isCourse = str_contains($itemUrl, 'courses');
+																		$isLabs = str_contains($itemUrl, 'labs');
+																		$terms = [];
+																		if($isCourse) {
+																			$terms = Course::get_academic_levels();
+																		}
+																		if($isLabs) {
+																			$terms = Lab::get_lab_types();
+																		}
+																?>
+																	<li class="menu-item-has-children">
+																		<div class="menu-item-has-children__title">
+																			<a href="<?= $itemUrl . '?faculty=' . $facultySlug ?>">
+																				<?= $item['title']; ?>
+																			</a>
+																			<?php if(!empty($terms)): ?>
+																				<div class="menu-item-has-children__trigger menu-item-has-children__next">
+																					<svg width="20" height="20">
+																						<use
+																							href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																						</use>
+																					</svg>
+																				</div>
+																			<?php endif; ?>
+																		</div>
+
+																		<?php if(!empty($terms)): ?>
+																			<div class="menu-item-has-children__submenu" data-lenis-prevent>
+																				<div class="menu-item-has-children__title title-prev title-start">
+																					<div
+																						class="menu-item-has-children__trigger menu-item-has-children__prev">
+																						<svg width="20" height="20">
+																							<use
+																								href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																							</use>
+																						</svg>
+																					</div>
+																					<span>Communities</span>
+																				</div>
+
+																				<div class="menu-item-has-children__title title-prev">
+																					<div
+																						class="menu-item-has-children__trigger menu-item-has-children__prev">
+																						<svg width="20" height="20">
+																							<use
+																								href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																							</use>
+																						</svg>
+																					</div>
+																					<span><?= $facultyTitle; ?></span>
+																				</div>
+
+																				<div class="menu-item-has-children__title title-prev">
+																					<div
+																						class="menu-item-has-children__trigger menu-item-has-children__prev">
+																						<svg width="20" height="20">
+																							<use
+																								href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																							</use>
+																						</svg>
+																					</div>
+																					<span><?= $item['title']; ?></span>
+																				</div>
+
+																				<ul>
+																					<?php foreach ($terms as $term): ?>
+																						<li>
+																							<a
+																								href="<?= $itemUrl; ?>?faculty=<?= $facultySlug; ?>&category=<?= $term['category']->slug; ?>">
+																								<?= $term['category']->name; ?>
+																							</a>
+																						</li>
+																					<?php endforeach; ?>
+																				</ul>
+																			</div>
+																		<?php endif; ?>
+																	</li>
+																<?php endforeach; ?>
+															</ul>
+														</div>
+
+													<?php endif; ?>
+												</li>
+											<?php endforeach; ?>
+										</ul>
+									</div>
+								</li>
+							<?php endif; ?>
+
+							<?php if(!empty($communities)): ?>
+								<li class="menu-item-has-children">
+									<div class="menu-item-has-children__title">
+										<a href="<?= $homeUrl; ?>/communities">
+											Communities
+										</a>
+
+										<div class="menu-item-has-children__trigger menu-item-has-children__next">
+											<svg width="20" height="20">
+												<use
+													href="<?= THEME_URL ?>/src/sprite.svg#arrow-right">
+												</use>
+											</svg>
+										</div>
+									</div>
+
+									<div class="menu-item-has-children__submenu">
+										<div class="menu-item-has-children__title title-prev">
+											<div class="menu-item-has-children__trigger menu-item-has-children__prev">
+												<svg width="20" height="20">
+													<use
+														href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+													</use>
+												</svg>
+											</div>
+											<span>Communities</span>
+										</div>
+
+										<ul>
+											<?php foreach ($communities as $community):
+												$url = get_the_permalink($community);
+												$communityTitle = get_the_title($community);
+												$parentCats = Communities::get_parent_categories_by_community($community);
+												?>
+												<li class="<?= !empty($parentCats) ? 'menu-item-has-children' : '' ?>">
+													<div class="menu-item-has-children__title">
+														<a href="<?= $url; ?>">
+															<?= $communityTitle; ?>
+														</a>
+
+														<?php if(!empty($parentCats)): ?>
+															<div class="menu-item-has-children__trigger menu-item-has-children__next">
+																<svg width="20" height="20">
+																	<use
+																		href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																	</use>
+																</svg>
+															</div>
+														<?php endif; ?>
+													</div>
+
+													<?php if(!empty($parentCats)): ?>
+														<div class="menu-item-has-children__submenu" data-lenis-prevent>
+															<div class="menu-item-has-children__title title-prev title-start">
+																<div
+																	class="menu-item-has-children__trigger menu-item-has-children__prev">
+																	<svg width="20" height="20">
+																		<use
+																			href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																		</use>
+																	</svg>
+																</div>
+																<span>Communities</span>
+															</div>
+
+															<div class="menu-item-has-children__title title-prev">
+																<div
+																	class="menu-item-has-children__trigger menu-item-has-children__prev">
+																	<svg width="20" height="20">
+																		<use
+																			href="<?= THEME_URL ?>/src/sprite.svg#arrow-right">
+																		</use>
+																	</svg>
+																</div>
+																<span><?= $communityTitle; ?></span>
+															</div>
+
+															<ul>
+
+																<?php foreach ($parentCats as $parentCat):
+																	$subcategories = Communities::get_child_categories_by_parent_term_id($parentCat->term_id);
+																	$parentUrl = $url . $parentCat->slug
+																?>
+																	<li class="menu-item-has-children">
+																		<div class="menu-item-has-children__title">
+																			<a href="<?= $parentUrl; ?>">
+																				<?= $parentCat->name; ?>
+																			</a>
+																			<?php if(!empty($subcategories)): ?>
+																				<div class="menu-item-has-children__trigger menu-item-has-children__next">
+																					<svg width="20" height="20">
+																						<use
+																							href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																						</use>
+																					</svg>
+																				</div>
+																			<?php endif; ?>
+																		</div>
+
+																		<?php if(!empty($subcategories)): ?>
+																			<div class="menu-item-has-children__submenu" data-lenis-prevent>
+																				<div class="menu-item-has-children__title title-prev title-start">
+																					<div
+																						class="menu-item-has-children__trigger menu-item-has-children__prev">
+																						<svg width="20" height="20">
+																							<use
+																								href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																							</use>
+																						</svg>
+																					</div>
+																					<span>Communities</span>
+																				</div>
+
+																				<div class="menu-item-has-children__title title-prev">
+																					<div
+																						class="menu-item-has-children__trigger menu-item-has-children__prev">
+																						<svg width="20" height="20">
+																							<use
+																								href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																							</use>
+																						</svg>
+																					</div>
+																					<span><?= $communityTitle; ?></span>
+																				</div>
+
+																				<div class="menu-item-has-children__title title-prev">
+																					<div
+																						class="menu-item-has-children__trigger menu-item-has-children__prev">
+																						<svg width="20" height="20">
+																							<use
+																								href="<?= THEME_URL; ?>/src/sprite.svg#arrow-right">
+																							</use>
+																						</svg>
+																					</div>
+																					<span><?= $parentCat->name; ?></span>
+																				</div>
+
+																				<?php if($subcategories): ?>
+																				<ul>
+																					<?php foreach ($subcategories as $subcategory): ?>
+																						<li>
+																							<a
+																								href="<?= $parentUrl; ?>?subcategory=<?= $subcategory->slug; ?>">
+																								<?= $subcategory->name; ?>
+																							</a>
+																						</li>
+																					<?php endforeach; ?>
+																				</ul>
+																				<?php endif; ?>
+																			</div>
+																		<?php endif; ?>
+																	</li>
+																<?php endforeach; ?>
+															</ul>
+														</div>
+													<?php endif; ?>
+												</li>
+											<?php endforeach; ?>
+										</ul>
+									</div>
+								</li>
+							<?php endif; ?>
             </ul>
         </div>
+
         <div class="nav__btn">
             <a href="<?= $userID ? get_author_posts_url($userID) : wp_login_url(); ?>" class="btn">
                 <span><?= $userID ? 'View dashboard' : 'Log in'; ?></span>
@@ -490,4 +674,3 @@
             </a>
         </div>
     </nav>
-

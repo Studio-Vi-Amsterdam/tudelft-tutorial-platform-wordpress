@@ -41,7 +41,7 @@
                         min-width: 28.8rem;
                         max-width: 28.8rem;
                         width: 100%;
-                        margin-left: 3.2rem;
+                        margin-left: 2.4rem;
                         
                     }
 
@@ -60,7 +60,7 @@
                 min-width: 28.8rem;
                 max-width: 28.8rem;
                 width: 100%;
-                margin-left: 3.2rem;
+                margin-left: 2.4rem;
                 margin-bottom: 0;
                 
             }
@@ -93,9 +93,7 @@
                     border-radius: .4rem;
                     display: block;
                     transition: .17s linear;
-                    @media(max-width: $mobile) {
                         font-size: 1.4rem;
-                    }
                 }
                 &:hover {
                     a {
