@@ -6,6 +6,13 @@ $ID = get_the_ID();
 $title = get_the_title($ID);
 $gridLinksData = get_field('single-communities__cards', $ID);
 
+if(!$gridLinksData['items']) {
+	$gridLinksData['items'] = get_field('faculties_cards', 'options')['items'];
+}
+if(!$gridLinksData['title']) {
+	$gridLinksData['title'] = get_field('faculties_cards', 'options')['title'];
+}
+
 $breadcrumbs = [
 	[
 		'title' => 'Our Faculties',

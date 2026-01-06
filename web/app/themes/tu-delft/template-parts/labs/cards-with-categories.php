@@ -6,6 +6,13 @@ use TuDelft\Theme\Modules\Lab\Lab;
     
     $categories = get_field('lab-type', get_the_ID());
 
+    $faculty = $_GET['faculty'];
+		$faculty_id = '';
+		if($faculty) {
+			$faculty_post = $faculty ? get_page_by_path($faculty, OBJECT, 'faculties') : '';
+			$faculty_id = $faculty_post ? (int) $faculty_post->ID : '';
+		}
+
     $selectedCategory = get_query_var('category');
     $selectedCategory = sanitize_text_field($selectedCategory);
     $selectedCategory = htmlspecialchars($selectedCategory);
@@ -20,7 +27,7 @@ use TuDelft\Theme\Modules\Lab\Lab;
         $categories = Lab::get_sub_categories( $categories );
     }
 
-    $grouped_subjects = Lab::get_labs_grouped_by_lab_type( $categories );
+    $grouped_subjects = Lab::get_labs_grouped_by_lab_type( $faculty_id );
 ?>
 
 <section class="cards-with-categories">
@@ -49,14 +56,13 @@ use TuDelft\Theme\Modules\Lab\Lab;
                             <div class="accordion__content-wrapper grid lg:grid-cols-2">
                                 <?php 
                                     // loop through grouped subjects and display by subcategory
-                                    foreach ( $grouped_subjects[$subcategory->name] as $course ) : 
-
+                                    foreach ( $grouped_subjects[$subcategory->name] as $course ):
                                         $image = get_field('featured_image', $course->ID);
                                 ?>
                                     <a href="<?php the_permalink($course->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
                                             <figure class="card-with-image__image">
-												<?= wp_get_attachment_image($image['ID'], [208, 280]); ?>
+																								<?= wp_get_attachment_image($image['ID'], [208, 280]); ?>
                                             </figure>
                                             <div class="card-with-image__content">
                                                 <h4><?php echo $course->post_title; ?></h4>

@@ -6,6 +6,15 @@ use TuDelft\Theme\Modules\Course\Course;
     
     $categories = get_field('academic_levels', get_the_ID());
 
+		$faculty = $_GET['faculty'];
+
+		$faculty_id = '';
+
+		if($faculty) {
+			$faculty_post = $faculty ? get_page_by_path($faculty, OBJECT, 'faculties') : '';
+			$faculty_id = $faculty_post ? (int) $faculty_post->ID : '';
+		}
+
     $selectedCategory = get_query_var('category');
     $selectedCategory = sanitize_text_field($selectedCategory);
     $selectedCategory = htmlspecialchars($selectedCategory);
@@ -21,7 +30,7 @@ use TuDelft\Theme\Modules\Course\Course;
         $categories = Course::get_sub_academic_levels( $categories );
     }
 
-    $grouped_courses = Course::get_courses_grouped_by_academic_level( $categories );
+    $grouped_courses = Course::get_courses_grouped_by_academic_level( $faculty_id );
 ?>
 <section class="cards-with-categories">
     <div class="cards-with-categories__categories categories" data-lenis-prevent>
