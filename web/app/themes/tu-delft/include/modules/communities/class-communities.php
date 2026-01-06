@@ -106,7 +106,7 @@ class Communities extends Abstract_Cpt {
 	public static function get_communities_materials($community_id, $community_term_id): array
 	{
 		$q = new WP_Query( [
-			'post_type'      => ['tutorial', 'lab', 'course'],
+			'post_type'      => 'tutorial',
 			'post_status'    => 'publish',
 			'posts_per_page' => -1,
 			'orderby'        => 'date',
