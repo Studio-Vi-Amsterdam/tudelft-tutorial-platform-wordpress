@@ -10,12 +10,12 @@ export function initMenu() {
 
   $('.menu-item-has-children__wrapper .menu-item-has-children').on('mousemove', function() {
     setTimeout(() => {
-      $(this).parent().addClass("hover-effect");
+      $header.addClass("hover-effect");
     }, 100);
   })
   $('.menu-item-has-children__wrapper').on('mouseleave', function() {
     setTimeout(() => {
-      $(this).children().removeClass("hover-effect");
+      $header.removeClass("hover-effect");
     }, 500);
   })
 

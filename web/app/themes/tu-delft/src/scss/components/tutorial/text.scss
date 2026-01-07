@@ -100,7 +100,7 @@
     }
 
     p {
-        color: #67676B;
+        color: $black;
         @extend  .p1;
         display: block;
         & + p {
@@ -129,11 +129,9 @@
     &.intro p {
         margin-top: 0;
         @extend .p2;
-        font-weight: 700;
-        color: $black;
-        letter-spacing: -.01em;
+        color: $txt-gray;
         @media(min-width: $tabletSmallP1) {
-            margin-top: 3.2rem;
+            margin-top: 0;
         }
     }
     ul, ol {
@@ -158,24 +156,5 @@
     }
     em,i {
         font-style: italic;
-    }
-    &.intro {
-        .btn {
-            padding: 1.2rem 2.4rem;
-            margin-top: 4rem;
-            color: $white;
-            gap: .8rem;
-            text-decoration: none;
-            & + p {
-                font-size: 1.4rem;
-                color: $black;
-                margin-top: 1.2rem;
-            }
-        }
-    }
-    &.text-large {
-        p {
-            @extend .p2;
-        }
     }
 }

@@ -1,6 +1,6 @@
 .responsible {
     border-top: 2px solid $border-gray;
-    padding-top: 2.4rem;
+    padding-top: 1.6rem;
 
     ul {
         @extend .reset-list;
@@ -8,10 +8,8 @@
         display: flex;
         flex-wrap: wrap;
         gap: .8rem;
-        li {
-            font-size: 1.4rem;
-        }
-        li:not(.responsible__item){
+
+        li{
             &:not(:last-of-type){
                 &:after{
                     content: ',';
@@ -22,29 +20,6 @@
                     position: unset;
                 }
             }
-        }
-    }
-
-    //.responsible__item
-    &__item {
-        &:not(:last-of-type):after {
-            display: none;
-        }
-        span,a {
-            display: flex;
-            gap: .4rem;
-            color: rgba(0,0,0,0.3);
-            text-decoration: underline;
-            font-size: 1rem;
-            line-height: 2;
-            img,svg {
-                width: 1.4rem;
-                height: 2rem;
-                object-fit: contain;
-            }
-        }
-        & + .responsible__item {
-            margin-top: 1.6rem;
         }
     }
 
@@ -79,13 +54,5 @@
         @include adaptiveProperty('font-size', 16, 16);
         font-weight: 700;
         margin-bottom: 2.4rem;
-        span {
-            display: none;
-        }
-    }
-    &.tutorial__nav {
-        h4 span {
-            display: none;
-        }
     }
 }

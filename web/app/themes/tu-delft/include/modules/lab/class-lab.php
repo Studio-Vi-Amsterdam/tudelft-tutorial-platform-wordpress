@@ -109,7 +109,8 @@ class Lab extends Abstract_Cpt {
      * 
      * @return array
      */
-    public static function get_labs_by_lab_type( array|string $lab_type, int $amount = 5, bool $inclusive = true, string $faculty = '' ): array {
+    public static function get_labs_by_lab_type( array|string $lab_type, int $amount = 5, bool $inclusive = true ): array {
+        
         $args = [
             'post_type' => self::POST_TYPE,
             'posts_per_page' => $amount,
@@ -125,16 +126,6 @@ class Lab extends Abstract_Cpt {
             ],
         ];
 
-				if ($faculty) {
-					$args['meta_query'] = [
-						[
-							'key'     => 'faculty',
-							'value'   => '"' . $faculty . '"',
-							'compare' => 'LIKE',
-						]
-					];
-				}
-
         $query = new WP_Query( $args );
 
         return $query->posts;
@@ -148,7 +139,7 @@ class Lab extends Abstract_Cpt {
      * @return array
      * 
      */
-    public static function get_labs_grouped_by_lab_type($faculty): array {
+    public static function get_labs_grouped_by_lab_type(): array {
 
         $lab_types = self::get_lab_types();
 
@@ -157,7 +148,7 @@ class Lab extends Abstract_Cpt {
         foreach ( $lab_types as $level ) {
             // we only need them matched to children
             foreach ( $level['subcategories'] as $subcategory ) {
-                $subjects[ $subcategory->name ] = self::get_labs_by_lab_type( $subcategory->slug, -1, true, $faculty );
+                $subjects[ $subcategory->name ] = self::get_labs_by_lab_type( $subcategory->slug );
             }
         }
 

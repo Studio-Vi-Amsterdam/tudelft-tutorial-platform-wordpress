@@ -56,9 +56,6 @@
         white-space: nowrap;
         @extend .p1;
         font-family: $secondary-font;
-        span {
-            font-family: $secondary-font;
-        }
         a {
             padding: 8px 24px;
             box-sizing: border-box;
@@ -72,7 +69,6 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
-            font-family: $secondary-font;
 
         }
         &.next {

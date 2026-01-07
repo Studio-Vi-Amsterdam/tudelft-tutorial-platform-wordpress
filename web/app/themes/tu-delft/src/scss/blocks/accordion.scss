@@ -1,6 +1,6 @@
 .accordion {
     padding: 1.2rem 0;
-    border-top: 1px solid #E5E5E5;
+    border-top: 4px solid #E5E5E5;
     @media(min-width: $mobileP1) {
         padding: 1.6rem 0;
     }
@@ -8,7 +8,7 @@
         border-top: none;
         padding: 0 0 1.6rem;
         @media(min-width: $mobileP1) {
-            border-top: 1px solid #E5E5E5;
+            border-top: 4px solid #E5E5E5;
             padding: 1.6rem 0;
         }
         .accordion__head {
@@ -58,10 +58,7 @@
             }
         }
         h2 {
-            @extend .h6;
-            font-weight: 700;
-            line-height: 1.4;
-            letter-spacing: -.02em;
+            @extend .h4;
             font-family: $primary-font;
         }
         &.opened {
