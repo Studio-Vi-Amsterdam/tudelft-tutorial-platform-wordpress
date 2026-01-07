@@ -15,7 +15,9 @@
                 border-radius: .4rem;
                 display: block;
                 transition: .17s linear;
-                font-size: 1.4rem;
+                @media(max-width: $mobile) {
+                    font-size: 1.4rem;
+                }
             }
             &:hover {
                 a {
@@ -49,11 +51,6 @@
 
             &:last-of-type {
                 color: $black;
-            }
-            & > mark,& > a {
-                color: $secondary;
-                text-decoration: underline;
-                background-color: transparent;
             }
         }
     }

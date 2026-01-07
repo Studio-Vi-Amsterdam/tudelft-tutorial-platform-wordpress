@@ -111,7 +111,8 @@ class Course extends Abstract_Cpt {
      * 
      * @return array
      */
-    public static function get_courses_by_academic_level( array $academic_level, int $amount = 5, bool $inclusive = true, string $faculty = '' ): array {
+    public static function get_courses_by_academic_level( array $academic_level, int $amount = 5, bool $inclusive = true ): array {
+        
         $args = [
             'post_type' => self::POST_TYPE,
             'posts_per_page' => $amount,
@@ -127,16 +128,6 @@ class Course extends Abstract_Cpt {
             ],
         ];
 
-				if ($faculty) {
-					$args['meta_query'] = [
-						[
-							'key'     => 'faculty',
-							'value'   => '"' . $faculty . '"',
-							'compare' => 'LIKE',
-						]
-					];
-				}
-
         $query = new WP_Query( $args );
 
         return $query->posts;
@@ -150,7 +141,7 @@ class Course extends Abstract_Cpt {
      * @return array
      * 
      */
-    public static function get_courses_grouped_by_academic_level($faculty): array {
+    public static function get_courses_grouped_by_academic_level(): array {
 
         $academic_levels = self::get_academic_levels();
 
@@ -160,7 +151,7 @@ class Course extends Abstract_Cpt {
             
             // we only need them matched to children
             foreach ( $level['subcategories'] as $subcategory ) {
-                $courses[ $subcategory->name ] = self::get_courses_by_academic_level( [ $subcategory->slug ], -1, true, $faculty );
+                $courses[ $subcategory->name ] = self::get_courses_by_academic_level( [ $subcategory->slug ] );
             }
         }
 

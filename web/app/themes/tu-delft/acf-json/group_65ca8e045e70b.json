@@ -172,59 +172,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_695bbd32d6a2b",
-            "label": "Community",
-            "name": "community",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "communities"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_695bbd5bd6a2c",
-            "label": "Community category",
-            "name": "community_category",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "community-category",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "checkbox",
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional_target": []
         }
     ],
     "location": [
@@ -245,6 +192,5 @@
     "active": true,
     "description": "Fields related to tutorials",
     "show_in_rest": 0,
-    "display_title": "",
-    "modified": 1767622840
+    "modified": 1719472337
 }

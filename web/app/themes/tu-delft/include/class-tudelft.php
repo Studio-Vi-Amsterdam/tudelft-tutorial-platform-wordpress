@@ -4,8 +4,6 @@ namespace TuDelft\Theme;
 use TuDelft\Theme\Common\Gutenberg;
 use TuDelft\Theme\Common\Student;
 use TuDelft\Theme\Modules\Chapter\Chapter;
-use TuDelft\Theme\Modules\Communities\Communities;
-use TuDelft\Theme\Modules\Faculties\Faculties;
 use TuDelft\Theme\Modules\Tutorial\Tutorial;
 use TuDelft\Theme\Modules\Subject\Subject;
 use TuDelft\Theme\Modules\Software\Software;
@@ -140,8 +138,6 @@ class Tu_Delft {
         new Course();
         new Lab();
         new Student();
-        new Communities();
-        new Faculties();
     }
 
     /**

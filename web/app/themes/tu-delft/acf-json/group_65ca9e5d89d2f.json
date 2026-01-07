@@ -77,27 +77,20 @@
             "label": "Faculty",
             "name": "faculty",
             "aria-label": "",
-            "type": "post_object",
+            "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "faculties"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 1,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "default_value": "Bouwkunde",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -118,6 +111,5 @@
     "active": true,
     "description": "Fields related to courses",
     "show_in_rest": 0,
-    "display_title": "",
-    "modified": 1767690228
+    "modified": 1719473680
 }

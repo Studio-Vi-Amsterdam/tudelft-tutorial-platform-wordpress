@@ -16,20 +16,18 @@ namespace TuDelft\Theme\Abstract;
 abstract class Abstract_Cpt {
 
     protected string $post_type;
-    protected string $post_plural;
     protected array $cpt_supported_data = [];
     protected string $post_icon;
     protected array $rewrite = [];
     protected array $taxonomies = [];
     protected array $extra_settings = [];
 
-    public function __construct( string $post_type, array $cpt_supported_data = [], string $post_icon = '', array $rewrite = [], array $taxonomies = [], array $extra_settings = [], string $post_plural = '' ) {
+    public function __construct( string $post_type, array $cpt_supported_data = [], string $post_icon = '', array $rewrite = [], array $taxonomies = [], array $extra_settings = [] ) {
 
         // set class properties
         $this->post_type = $post_type;
         $this->cpt_supported_data = $cpt_supported_data;
         $this->post_icon = $post_icon;
-        $this->post_plural = $post_plural;
         $this->rewrite = $rewrite;
         $this->extra_settings = $extra_settings;
 
@@ -51,18 +49,13 @@ abstract class Abstract_Cpt {
      */
     public function register_custom_post_type(): void {
         $slug = $this->post_type;
-			  $name = str_replace( '-', ' ', $slug );
-			  $name = ucwords( $name );
-
-			  $plural = $name;
-
-				if($this->post_plural) {
-					$plural = $this->post_plural;
-				}
+        $name = str_replace( '-', ' ', $slug );
+        // capitalize first letter of each word
+        $name = ucwords( $name );
 
         register_post_type( $slug, [
             'labels' => [
-                'name' => __( "{$plural}", 'digitale-gruendung' ),
+                'name' => __( "{$name}s", 'digitale-gruendung' ),
                 'singular_name' => __( "{$name}", 'digitale-gruendung' ),
                 'add_new' => __( "Add New", 'digitale-gruendung' ),
                 'add_new_item' => __( "Add New {$name}", 'digitale-gruendung' ),
@@ -92,12 +85,8 @@ abstract class Abstract_Cpt {
 
         foreach ( $this->taxonomies as $taxonomy ) {
             $slug = $taxonomy['name'];
-
-						if ($taxonomy['slug']) {
-							$slug = $taxonomy['slug'];
-						}
             
-            $name = str_replace( '-', ' ', $taxonomy['name'] );
+            $name = str_replace( '-', ' ', $slug );
             // capitalize first letter of each word
             $name = ucwords( $name );
             
@@ -127,7 +116,6 @@ abstract class Abstract_Cpt {
                     'hierarchical' => true,
                     'show_ui' => true,
                     'query_var' => true,
-                    'show_in_rest' => true,
                     'rewrite' => $rewrite,
                     'public' => true,
                 ] );
