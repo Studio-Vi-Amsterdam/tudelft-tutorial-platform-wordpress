@@ -11,11 +11,30 @@ on:
 
 jobs:
   deploy:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event.client_payload.branch == 'staging'
     environment: 
       name: Staging
       url: https://staging.digipedia.tudelft.nl
     runs-on: staging
     steps:
+      - name: "Guard: staging only"
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual run on ref: ${{ github.ref }}"
+            if [ "${{ github.ref }}" != "refs/heads/staging" ]; then
+              echo "This workflow may only be run on the staging branch."
+              exit 1
+            fi
+          else
+            echo "Dispatch payload branch: ${{ github.event.client_payload.branch }}"
+            if [ "${{ github.event.client_payload.branch }}" != "staging" ]; then
+              echo "repository_dispatch must include client_payload.branch=staging to proceed."
+              exit 1
+            fi
+          fi
+          
       - name: Resolve image to deploy
         id: resolve
         run: |
