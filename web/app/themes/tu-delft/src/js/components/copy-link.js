@@ -79,4 +79,17 @@ export function copyLink() {
 			thisEl.prop("disabled", false);
 		}, 2000);
 	});
+	$('.citation__box').on('click', function () {
+  const text = $(this).data('copy');
+
+  const $input = $('<input>');
+  $('body').append($input);
+  $input.val(text).select();
+  document.execCommand('copy');
+  $input.remove();
+
+  $(this).addClass('copied');
+  setTimeout(() => $(this).removeClass('copied'), 1500);
+});
+
 }

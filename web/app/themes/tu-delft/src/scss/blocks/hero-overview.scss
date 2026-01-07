@@ -1,0 +1,133 @@
+.hero-overview {
+    padding-top: 6.8rem;
+    position: relative;
+    z-index: 2;
+
+    @media(min-width: $tabletP1) {
+        padding-top: 8rem;
+    }
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background-color: $white;
+        z-index: -1;
+    }
+
+    &+.cards-with-categories {
+        padding-top: 4rem;
+    }
+
+    // .hero-overview__container
+
+    &__container {}
+
+    // .hero-overview__flex
+
+    &__flex {
+        flex-direction: column;
+        display: flex;
+        padding: 4rem 0;
+        gap: 4rem;
+
+        @media(min-width: $tabletSmallP1) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8rem 0;
+            gap: 2rem;
+        }
+    }
+
+    // .hero-overview__text
+
+    &__text {
+        width: 100%;
+
+        @media(min-width: $tabletSmallP1) {
+            max-width: 60rem;
+        }
+
+        h1 {
+            letter-spacing: -.01em;
+            font-weight: normal;
+
+            mark {
+                background-color: transparent;
+                color: $secondary;
+                font-family: inherit;
+            }
+        }
+
+        p {
+            font-size: 1.8rem;
+        }
+
+    }
+
+    // .hero-overview__image
+
+    &__image {
+        width: auto;
+        margin: 0 auto;
+
+        @media(min-width: $tabletSmallP1) {
+            max-width: 74rem;
+            margin: 0;
+        }
+
+        img,
+        svg {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    //.hero-overview--small-gap
+    &--small-gap {
+        .hero-overview__flex {
+            padding: 4rem 0;
+        }
+    }
+
+    //.hero-overview--large-gap
+    &--large-gap {
+        .hero-overview__flex {
+            @media(min-width: $tabletSmallP1) {
+                padding: 12rem 0 8rem;
+            }
+        }
+    }
+
+    //.hero-overview--large-width-text
+    &--large-width-text {
+        .hero-overview__text {
+            @media(min-width: $tabletSmallP1) {
+                max-width: 74.5rem;
+            }
+        }
+    }
+
+    //.hero-overview--image-to-bord
+    &--image-to-bord {
+        .hero-overview__flex {
+            padding: 0;
+        }
+
+        .hero-overview__text {
+            padding: 2rem 0;
+        }
+
+        .hero-overview__image {
+            @media(min-width: $tabletSmallP1) {
+                margin-right: -8vw;
+            }
+        }
+    }
+}

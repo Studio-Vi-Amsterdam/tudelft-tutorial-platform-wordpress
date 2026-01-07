@@ -1,5 +1,15 @@
-<?php $theme_url = get_template_directory_uri() ?>
+<?php
+$theme_url = get_template_directory_uri();
+$breadcrumbs = $args['breadcrumbs'] ?? false;
+?>
 <section class="hero hero--center-image-onmobile" >
+		<div class="hero__container container">
+			<?php
+				if ($breadcrumbs) {
+					get_template_part('template-parts/breadcrumbs', false, ['items' => $breadcrumbs]);
+				}
+			?>
+		</div>
     <div class="hero__container container md:flex items-end justify-between">
         <div class="hero__content">
             <h1><?php the_field('title', get_the_ID()); ?></h1>
