@@ -116,3 +116,37 @@ You'll get:
 - a container with the custom WP instance
 - a MySql instance
 - an Adminer instance, useful to browse the DB content.
+
+
+## Deploy
+
+To set up a new machine or a new environment, follow these steps:
+1. add a new self-hosted GitHub runner on the machine
+  - remember to execute `./svc.sh` to install the service.
+  - in the environement page, be sure to have set:
+    - `REPO_ASSET_PATH`: (secret) path to the `platform-wordpress` folder. (e.g. `/home/user/platform-wordpress`)
+    - `CONTAINER_NAME`: `platform` 
+2. create a new folder `platform-wordpress` and put there:
+  - the `compose.yml` file
+  - the `.env` file
+  - a `plugin.env` file
+3. under the `platform-wordpress` you also need to:
+  - create a `sql` folder, and copy the init scripts for MariaDB
+  - create a `wp-content` folder, and copy the uploads
+
+This is an example of the folder structure
+
+```
+.
+├── docker-compose.yml
+├── .env
+├── plugin-env
+├── sql
+│   ├── local.sql
+└── wp-content
+    ├── 2024
+    ├── 2025
+    └── uploads
+```
+
+Once you have filled envs with secrets and the runner is active, the machine is ready to receive deploy notifications.

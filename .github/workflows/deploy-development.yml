@@ -1,8 +1,8 @@
-name: Deploy to Staging
+name: Deploy to Development
 
 on:
   repository_dispatch:
-    types: [ deploy-staging ]
+    types: [ deploy-development ]
   workflow_dispatch:
     inputs:
       tag:
@@ -12,9 +12,9 @@ on:
 jobs:
   deploy:
     environment: 
-      name: Staging
-      url: https://staging.digipedia.tudelft.nl
-    runs-on: staging
+      name: Development
+      url: https://dev.digipedia.tudelft.nl
+    runs-on: development
     steps:
       - name: Resolve image to deploy
         id: resolve
