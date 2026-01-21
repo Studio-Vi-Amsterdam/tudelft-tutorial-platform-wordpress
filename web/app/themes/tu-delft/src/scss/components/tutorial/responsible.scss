@@ -23,6 +23,18 @@
                 }
             }
         }
+
+				&.colored-list {
+					gap: 16px;
+					li:after{
+						content: '';
+						display: none !important;
+					}
+					a {
+						text-decoration: underline;
+						color: $secondary;
+					}
+				}
     }
 
     //.responsible__item
