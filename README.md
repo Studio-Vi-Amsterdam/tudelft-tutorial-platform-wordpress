@@ -181,3 +181,12 @@ This is an example of the folder structure
 Once you have filled envs with secrets and the runner is active, the machine is ready to receive deploy notifications.
 
 You may then define a new runner, if needed. Use the ones defined under `.github/workflows/` to get an idea.
+
+
+#### 5. First boot
+
+After successfully deployed the container, head over <HOSTNAME>/wp-admin, login, and activate the ACF plugin.
+
+Visit the homepage to assure that everything works as expected.
+
+> This is fundamental to render the website.
