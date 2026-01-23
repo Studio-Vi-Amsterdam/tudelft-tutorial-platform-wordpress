@@ -3,7 +3,7 @@
     @extend .p1;
     padding-right: 2.4rem;
     margin-right: 2.4rem;
-    border-right: 1px solid #B9EEFE;
+    border-right: 1px solid $skyBlue;
     &:last-child {
         padding-right: 0;
         margin-right: 0;
@@ -19,20 +19,20 @@
     &:hover {
         .filter__head {
             @media(min-width: $tabletSmallP1) {
-                background-color: #E0F5FE;
+                background-color: $light-blue;
             }
         }
     }
     &--opened {
         .filter__head {
             @media(min-width: $tabletSmallP1) {
-                background-color: #EFF1F3;
+                background-color: $light;
             }
         }
         &:hover {
             .filter__head {
                 @media(min-width: $tabletSmallP1) {
-                    background-color: #EFF1F3;
+                    background-color: $light;
                 }
             }
         }
@@ -52,7 +52,7 @@
     }
     //.filter__fader
     &__fader {
-        background-color: #0C234066;
+        background-color: rgba($navy, 0.4);
         position: fixed;
         top: 0;
         left: 0;
@@ -94,7 +94,7 @@
         min-width: 18.4rem;
         padding: 0 1.6rem;
         border-radius: 4px;
-        background-color: #EFF1F3;
+        background-color: $light;
         overflow: hidden;
         z-index: 32;
 
@@ -156,7 +156,7 @@
             @extend .reset-list;
             padding-top: .8rem;
             li {
-                color: #67676B;
+                color: $primary;
                 white-space: nowrap;
                 transition:  .17s linear;
                 & + li {
@@ -179,7 +179,7 @@
     //.fiter__top
     &__top {
         padding-bottom: 1.6rem;
-        border-bottom: 2px solid #E5E5E5;
+        border-bottom: 2px solid $border-gray;
         @media(min-width: $tabletSmallP1) {
             display: none;
         }
@@ -222,7 +222,7 @@
             display: block;
             padding-left: 4rem;
             @extend .p1;
-            color: #67676B;
+            color: $primary;
             transition:  .17s linear;
             cursor: pointer;
             &:hover {
@@ -237,7 +237,7 @@
                 width: 2.4rem;
                 height: 2.4rem;
                 border-radius: 4px;
-                border: 1px solid #96969B;
+                border: 1px solid $gray;
                 transition: .17s linear;
             }
             &:after {

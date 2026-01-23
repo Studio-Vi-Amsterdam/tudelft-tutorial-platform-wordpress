@@ -4,7 +4,7 @@
     margin-top: 2.4rem;
     border-top: 2px solid transparent;
     & + & {
-        border-top: 2px solid #E5E5E5;
+        border-top: 2px solid $border-gray;
     }
     // .search-link__row
 
@@ -74,11 +74,11 @@
         h3 {
             @extend .p1;
             font-family: $secondary-font;
-            color: #96969B;
+            color: $gray;
             font-weight: normal;
         }
         p {
-            color: #67676B;
+            color: $primary;
         }
         ul {
             @extend .reset-list;
@@ -99,7 +99,7 @@
                 }
                 &:hover {
                     a {
-                        background-color: #00A6D6;
+                        background-color: $secondary;
                         color: $white;
                     }
                 }

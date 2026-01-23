@@ -58,7 +58,7 @@
             }
             & + p:not(:first-child) {
                 margin-top: 2.4rem;
-                color: #67676B;
+                color: $primary;
                 @media(min-width: $tabletP1) {
                     margin-top: 4rem;
                 }
