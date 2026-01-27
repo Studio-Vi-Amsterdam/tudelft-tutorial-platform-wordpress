@@ -10,7 +10,7 @@ if($faculty) {
 	$title = 'from Faculty ' . get_the_title($faculty_id);
 	$meta_query = [
 		[
-			'key'     => 'faculties',
+			'key'     => 'faculty',
 			'value'   => '"' . $faculty_id . '"',
 			'compare' => 'LIKE',
 		]
