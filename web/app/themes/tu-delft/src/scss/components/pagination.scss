@@ -50,9 +50,11 @@
                 @extend .p2;
                 margin: 0 4px;
                 text-align: center;
+								border-radius: 4px;
                 transition:  .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
                 &.active {
                     color: $white;
+										background-color: $secondary;
                 }
                 button {
                     width: 4.8rem;
