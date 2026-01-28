@@ -24,7 +24,9 @@ class Resources extends Abstract_Cpt {
 	const POST_SUPPORTS = [ 'title', 'editor', 'revisions', 'excerpt', 'author', 'thumbnail' ];
 	const POST_ICON = 'dashicons-media-document';
 	const REWRITE = [];
-	const TAXONOMY = [];
+	const TAXONOMY = [
+		[ 'name' => 'keywords', 'rewrite' => [ 'slug' => '.' ] ],
+	];
 	const EXTRA_SETTINGS = [
 		'public' => true,
 		'show_in_rest' => true,
@@ -55,6 +57,25 @@ class Resources extends Abstract_Cpt {
 		}
 
 		return new WP_Query($args);
+	}
+
+	public static function get_keywords(int $resource_id )
+	{
+		$keywords = get_the_terms($resource_id, 'keywords');
+
+		if ( empty( $keywords ) ) {
+			return false;
+		}
+
+		$keywords = array_map( function( $keyword ) {
+			return [
+				'id' => $keyword->term_id,
+				'name' => $keyword->name,
+				'slug' => $keyword->slug,
+			];
+		}, $keywords );
+
+		return $keywords;
 	}
 
 	public static function ajax_paginate(): void {
