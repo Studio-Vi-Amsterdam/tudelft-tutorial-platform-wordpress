@@ -169,3 +169,26 @@
         }
     }
 }
+
+.resource-item {
+	.file-url{
+		font-size: 12px;
+		text-decoration: underline;
+		color: #00A6D6;
+	}
+	.authors {
+		font-size: 14px;
+	}
+	.resource-content {
+		font-size: 14px;
+	}
+}
+
+.resource-archive {
+	h1 {
+		mark {
+			background-color: transparent;
+			color: rgba(0,0,0,.3);
+		}
+	}
+}

@@ -21,10 +21,11 @@ $resources = Resources::get_resources(1, $per_page, $meta_query);
 $max_num_pages = $resources->max_num_pages;
 ?>
 
-<section class="py-20">
-	<h1>All Resources <?= $title; ?></h1>
+<section class="search resource-archive">
+	<h1>All Resources <mark><?= $title; ?></mark></h1>
+
 	<div id="archive-resources"
-			 class=""
+			 class="search__wrapper"
 			 data-archive="resources_paginate"
 			 data-page="1"
 			 data-meta-query='<?= json_encode($meta_query); ?>'

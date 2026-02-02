@@ -39,6 +39,7 @@
 
     //.responsible__item
     &__item {
+				width: 100%;
         &:not(:last-of-type):after {
             display: none;
         }
