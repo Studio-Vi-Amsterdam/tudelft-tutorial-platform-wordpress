@@ -1,9 +1,10 @@
 <?php
 $faculties = $args['items'] ?? false;
+$title = $args['title'] ?? 'Faculties';
 if(!$faculties) return
 ?>
 <tr>
-	<td>Faculties</td>
+	<td><?= $title; ?></td>
 	<td>
 		<ul class="colored-list">
 			<?php foreach ($faculties as $faculty): ?>

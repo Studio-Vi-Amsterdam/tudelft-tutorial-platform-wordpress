@@ -975,6 +975,7 @@
                         <div class="tutorial__title">
                             <h3>Parametric Dataset Generation in Grasshopper 2</h3>
                         </div>
+
                         <p>A step-by-step workflow for generating, validating, and publishing research-ready datasets (PDF)</p>
                      <!-- New component btn -->
                         <a href="#" class="btn">
@@ -993,6 +994,7 @@
                         </a>
                         <p>8.4 MB • v1.0</p>
                     </div>
+
                      <!-- New component text-large -->
                     <div class="tutorial__content text text-large">
                         <h4 id="h01">Abstract<span>link copied</span></h4>
@@ -1004,10 +1006,10 @@
                         <div class="citation__box" data-copy="https://doi.org/10.0000/digipedia.oer.pdf.2026.001">
                             <p>van Dijk, L., & Chen, R. (2026). Parametric Dataset Generation in Grasshopper 2… (Version 1.0) [PDF]. DigiPedia, TU Delft. https://doi.org/10.0000/digipedia.oer.pdf.2026.001</p>
                             <button class="citation__copy">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 8V7C8 5.89543 8.89543 5 10 5H17C18.1046 5 19 5.89543 19 7V14C19 15.1046 18.1046 16 17 16H16" stroke="black"/>
-                            <rect x="5" y="8" width="11" height="11" rx="2" stroke="black"/>
-                            </svg>
+															<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M8 8V7C8 5.89543 8.89543 5 10 5H17C18.1046 5 19 5.89543 19 7V14C19 15.1046 18.1046 16 17 16H16" stroke="black"/>
+															<rect x="5" y="8" width="11" height="11" rx="2" stroke="black"/>
+															</svg>
                             </button>
 
                         </div>

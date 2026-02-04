@@ -9,7 +9,8 @@
         gap: .8rem;
 
         li {
-            a {
+						font-size: 14px;
+            a:not(.simple-link){
                 padding: .4rem .8rem;
                 background-color: $light-blue;
                 border-radius: .4rem;
@@ -18,12 +19,16 @@
                 font-size: 1.4rem;
             }
             &:hover {
-                a {
+                a:not(.simple-link) {
                     background-color: $secondary;
                     color: $white;
                 }
             }
         }
+				.simple-link {
+					text-decoration: underline;
+					color: #00A6D6;
+				}
     }
 
     table {
