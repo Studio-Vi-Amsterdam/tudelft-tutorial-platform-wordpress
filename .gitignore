@@ -6,6 +6,7 @@ web/app/mu-plugins/*
 !web/app/mu-plugins/surfsharekit-media/
 web/app/themes/twentytwentyfour/
 web/app/upgrade
+web/app/updraft
 web/app/uploads/*
 web/app/uploads-webpc/*
 web/app/wflogs/*

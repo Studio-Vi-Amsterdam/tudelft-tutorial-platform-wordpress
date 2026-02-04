@@ -6,7 +6,7 @@
     z-index: 2;
     @media (min-width:$mobileP1) {
         padding-top: 16rem;
-        padding-bottom: 12rem;
+        padding-bottom: 8rem;
         
     }
     &:before {
@@ -48,6 +48,9 @@
         @media (min-width:$mobileP1) {
             margin-top: 5.6rem;
             
+        }
+        &:first-child {
+            margin-top: 0;
         }
     }
 
