@@ -38,6 +38,7 @@ import {
 import { initSuggestionModal } from "./components/ModalWindow/ModalSuggestions";
 import { initAnchorLink } from "./components/anchor-link";
 import {lazyLoad} from "./components/lazy";
+import {initAjaxPagination} from "./components/ajax-pagination";
 
 let modalInstance = null;
 export function initLenis() {
@@ -154,6 +155,7 @@ export function runAfterDomLoad() {
 							openDropdown();
 							submitFeedback();
 							initPagination();
+							initAjaxPagination();
 							openFilter();
 							textareaScrollBar();
 							copyLink();
