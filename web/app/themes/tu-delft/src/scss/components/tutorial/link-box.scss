@@ -9,7 +9,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #00A6D6;
+        background-color: $secondary;
         border-radius: 4px;
         z-index: -1;
         opacity: 0;
@@ -29,7 +29,7 @@
         border-radius: 4px;
         padding: 1.2rem 1rem 1.2rem 1.6rem;
         box-sizing: border-box;
-        background-color: #EFF1F3;
+        background-color: $light;
         min-height: 10rem;
         position: relative;
         top: 0;

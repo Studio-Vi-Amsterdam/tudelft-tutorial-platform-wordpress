@@ -9,10 +9,10 @@
         span {
             display: inline-block;
             @extend .p-small;
-            color: #67676B;
+            color: $primary;
             line-height: 2;
-            border: 1px solid #96969B;
-            background-color: #EFF1F3;
+            border: 1px solid $gray;
+            background-color: $light;
             border-radius: 2px;
             padding: 0 4px 2px 4px;
             box-sizing: border-box;

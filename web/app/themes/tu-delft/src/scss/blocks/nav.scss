@@ -128,7 +128,7 @@
         }
 
         .title-prev {
-            border-bottom: 1px solid #E5E5E5;
+            border-bottom: 1px solid $border-gray;
             gap: 0;
 
             &:not(:first-of-type) {

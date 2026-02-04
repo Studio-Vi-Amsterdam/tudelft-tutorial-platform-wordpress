@@ -29,7 +29,7 @@
 
     h4 {
         padding-top: 2.4rem;
-        color: #00A6D6;
+        color: $secondary;
         @extend .h6;
         line-height: 1.2;
         font-weight: 700;
@@ -52,7 +52,7 @@
             padding-left: 4.4rem;
             margin-left: 2rem;
             font-size: 1.2rem;
-            color: #67676b00;
+            color: rgba($primary, 0);
             transition: 170ms linear;
             font-weight: normal;
             &:before {
@@ -87,7 +87,7 @@
         }
         &.copied {
             span {
-                color: #67676B;
+                color: $primary;
                 &::before{
                     opacity: 0;
                 }
@@ -120,7 +120,7 @@
                 left: 0;
                 width: calc(100% + 4px);
                 height: 100%;
-                background-color: #B9EEFE;
+                background-color: $skyBlue;
                 z-index: -1;
                 transform: skew(-15deg, 0deg);
             }
