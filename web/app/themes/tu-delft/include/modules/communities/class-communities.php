@@ -114,9 +114,8 @@ class Communities extends Abstract_Cpt {
 			'meta_query' => [
 				[
 					'key'     => 'community',
-					'value'   => $community_id,
-					'compare' => '=',
-					'type'    => 'NUMERIC',
+					'value'   => '"' . $community_id . '"',
+					'compare' => 'LIKE',
 				],
 				[
 					'key'     => 'community_category',

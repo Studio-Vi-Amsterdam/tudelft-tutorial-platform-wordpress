@@ -5,7 +5,6 @@ $subcategories = $args['subcategories'] ?? false;
 $community_id = $args['community_id'] ?? false;
 $term_id = $args['term_id'] ?? false;
 $selectedSubCategory = get_query_var('subcategory');
-$communitiesItems = Communities::get_communities_materials($community_id, $term_id);
 ?>
 <section class="cards-with-categories">
 	<?php if($subcategories): ?>
