@@ -20,7 +20,7 @@
             }
             &:hover {
                 a:not(.simple-link) {
-                    background-color: #00A6D6;
+                    background-color: $secondary;
                     color: $white;
                 }
             }
@@ -49,7 +49,7 @@
             @include adaptiveProperty('font-size', 14, 14);
 
             &:first-of-type {
-                color: #96969B;
+                color: $gray;
             }
 
             &:last-of-type {

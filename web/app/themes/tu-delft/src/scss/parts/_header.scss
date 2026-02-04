@@ -45,7 +45,7 @@
         transform: translateX(-50%);
         width: 100vw;
         height: 100vh;
-        background-color: rgba(#0C2340, .2);
+        background-color: rgba($navy, 0.2);
         opacity: 0;
         visibility: hidden;
         transition: .17s linear;
@@ -487,12 +487,11 @@
                     width: 100%;
                     border-radius: .4rem;
                     overflow: hidden;
+                    background-color: $light-blue;
 
                     &:hover {
-
                         background-color: #E0F5FE;
                     }
-
                 }
             }
 
@@ -512,8 +511,8 @@
                 }
 
                 &:hover {
-                    &>a {
-                        background-color: #E0F5FE;
+                    & > a {
+                        background-color: $light-blue;
                     }
                 }
 
@@ -526,7 +525,7 @@
 
                         &:hover {
 
-                            background-color: #E0F5FE;
+                            background-color: $light-blue;
                         }
                     }
                 }

@@ -9,7 +9,7 @@
         justify-content: center;
         padding: 16px 24px;
         width: 72px;
-        background-color: #00A6D6;
+        background-color: $secondary;
     }
     .download-info {
         display: flex;
@@ -19,13 +19,13 @@
         padding: 16px 24px;
         color: black;
         width: 264px;
-        background-color: #00A6D633;
+        background-color: rgba($secondary, 0.2);
         font-size: 14px;
         .text-wrapper {
             display: flex;
             flex-direction: column;
             .info {
-                color: #666666;
+                color: $txt-gray;
             }
         }
     }

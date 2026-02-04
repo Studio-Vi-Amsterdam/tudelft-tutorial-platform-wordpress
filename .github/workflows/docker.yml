@@ -3,7 +3,6 @@ name: Build and Push Docker image
 on:
   push:
     branches:
-      - feat/ci-fixes
       - staging
       - development
 
@@ -55,8 +54,17 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            ENVIRONMENT=$(if [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then echo "staging"; elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then echo "production"; else echo "Unknown"; fi)
-            ENVIRONMENT=staging
+            ENVIRONMENT="Unknown"
+            if [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then 
+              ENVIRONMENT="staging"
+            elif [[ "${{ github.ref }}" == "refs/heads/development" ]]; then 
+              ENVIRONMENT="development"
+            elif [[ "${{ github.ref }}" == "refs/heads/production" ]]; then 
+              ENVIRONMENT="production"
+            else 
+              ENVIRONMENT="Unknown"
+            fi
+
             echo "Calling deploy-$ENVIRONMENT action."
             curl -X POST \
             -H "Accept: application/vnd.github+json" \

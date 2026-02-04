@@ -15,7 +15,7 @@
     figcaption {
         display: block;
         margin-top: .6rem;
-        color: #67676B;
+        color: $primary;
         @extend .p-small;
         @media(min-width: $tabletSmallP1) {
             margin-top: 1.6rem;
