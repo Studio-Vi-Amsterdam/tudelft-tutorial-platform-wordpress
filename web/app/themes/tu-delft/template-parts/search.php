@@ -4,6 +4,9 @@
     use TuDelft\Theme\Modules\Software\Software;
     use TuDelft\Theme\Modules\Subject\Subject;
     use TuDelft\Theme\Modules\Course\Course;
+    use TuDelft\Theme\Modules\Faculties\Faculties;
+    use TuDelft\Theme\Modules\Communities\Communities;
+    use WP_Query;
 
     $theme_url = get_template_directory_uri();
 
@@ -17,8 +20,28 @@
         $subjects = Subject::search_subjects( $search );
         $software = Software::search_softwares( $search );
         $labs = Lab::search_labs( $search );
+        $faculties = Faculties::search_faculties( $search );
+        $communities = Communities::search_communities( $search );
 
-        $combined = array_merge( $tutorials, $courses, $subjects, $software, $labs );
+        // Search through WordPress pages
+        $pages_query = new WP_Query([
+            'post_type' => 'page',
+            'posts_per_page' => -1,
+            's' => $search,
+        ]);
+
+        $pages = array_map( function( $page ) {
+            return [
+                'id' => $page->ID,
+                'type' => 'page',
+                'title' => $page->post_title,
+                'permalink' => get_permalink( $page->ID ),
+                'content' => get_the_excerpt( $page->ID ),
+                'keywords' => [],
+            ];
+        }, $pages_query->posts ?? [] );
+
+        $combined = array_merge( $tutorials, $courses, $subjects, $software, $labs, $faculties, $communities, $pages );
     }
     else {
         $combined = [];

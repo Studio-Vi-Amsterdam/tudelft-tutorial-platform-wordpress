@@ -3,6 +3,7 @@
 namespace TuDelft\Theme\Modules\Faculties;
 
 use TuDelft\Theme\Abstract\Abstract_Cpt;
+use WP_Query;
 
 /**
  * Class Faculties
@@ -45,5 +46,33 @@ class Faculties extends Abstract_Cpt {
 			'fields' => 'ids',
 		];
 		return get_posts($args);
+	}
+
+	/**
+	 * Search through faculties by title
+	 *
+	 * @param string $search
+	 *
+	 * @return array
+	 */
+	public static function search_faculties( string $search ): array {
+		$args = [
+			'post_type' => self::POST_TYPE,
+			'posts_per_page' => -1,
+			's' => $search,
+		];
+
+		$query = new WP_Query( $args );
+
+		return array_map( function( $faculty ) {
+			return [
+				'id' => $faculty->ID,
+				'type' => self::POST_TYPE,
+				'title' => $faculty->post_title,
+				'permalink' => get_permalink( $faculty->ID ),
+				'content' => get_the_excerpt( $faculty->ID ),
+				'keywords' => [],
+			];
+		}, $query->posts ?? [] );
 	}
 }

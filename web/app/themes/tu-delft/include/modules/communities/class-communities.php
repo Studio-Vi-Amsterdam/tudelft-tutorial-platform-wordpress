@@ -164,6 +164,34 @@ class Communities extends Abstract_Cpt {
 		);
 	}
 
+	/**
+	 * Search through communities by title
+	 *
+	 * @param string $search
+	 *
+	 * @return array
+	 */
+	public static function search_communities( string $search ): array {
+		$args = [
+			'post_type' => self::POST_TYPE,
+			'posts_per_page' => -1,
+			's' => $search,
+		];
+
+		$query = new WP_Query( $args );
+
+		return array_map( function( $community ) {
+			return [
+				'id' => $community->ID,
+				'type' => self::POST_TYPE,
+				'title' => $community->post_title,
+				'permalink' => get_permalink( $community->ID ),
+				'content' => get_the_excerpt( $community->ID ),
+				'keywords' => [],
+			];
+		}, $query->posts ?? [] );
+	}
+
 	private function force_404(): void {
 		global $wp_query;
 		$wp_query->set_404();
