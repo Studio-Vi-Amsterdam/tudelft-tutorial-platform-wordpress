@@ -70,7 +70,7 @@ export function runAfterDomLoad() {
 		}, 1620)
 
 		barba.init({
-			timeout: 430,
+			timeout: 10000,
 			debug: true,
 			transitions: [
 				{
