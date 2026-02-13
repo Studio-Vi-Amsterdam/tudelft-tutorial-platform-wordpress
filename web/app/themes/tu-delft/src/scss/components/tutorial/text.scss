@@ -100,7 +100,7 @@
     }
 
     p {
-        color: #67676B;
+        color: $primary;
         @extend  .p1;
         display: block;
         & + p {

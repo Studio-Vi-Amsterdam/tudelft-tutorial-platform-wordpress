@@ -147,7 +147,7 @@
             -webkit-line-clamp: 2;
             max-height: 3.6rem;
             color: $primary;
-            font-family: $tertinary-font;
+            font-family: $primary-font;
 
             @media (min-width: $tabletLargeP1) {
                 -webkit-line-clamp: 3;
@@ -173,7 +173,7 @@
             margin-top: 1.6rem;
             @include adaptiveProperty('font-size', 10, 10);
             line-height: 1.8rem;
-            font-family: $tertinary-font;
+            font-family: $primary-font;
         }
 
         span {

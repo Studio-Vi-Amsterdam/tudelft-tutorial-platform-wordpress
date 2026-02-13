@@ -54,7 +54,7 @@
             }
             }
             p {
-                color: #67676B;
+                color: $primary;
                 @extend .h6;
             }
             ul {
@@ -62,7 +62,7 @@
                 list-style: none;
                 li {
                     padding-left: 0;
-                    color: #67676B;
+                    color: $primary;
                     &:before,
                     &:after {
                         display: none;
