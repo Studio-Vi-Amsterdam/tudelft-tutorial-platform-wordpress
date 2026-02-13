@@ -152,6 +152,11 @@
     a:not(.link-box) {
         color: $secondary;
         text-decoration: underline;
+        @media(min-width: $tabletSmallP1) {
+            &:hover {
+                color: $light-blue;
+            };
+        }
     };
     strong,b {
         font-weight: 700;
