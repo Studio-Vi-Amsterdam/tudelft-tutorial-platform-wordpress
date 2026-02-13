@@ -55,7 +55,13 @@
 		}
 		p {
 			color: $primary;
-			@extend .h6;
+			@extend .p1;
+			mark {
+				color: $secondary;
+				display: inline-block;
+				font-weight: 700;
+				background-color: transparent;
+			}
 		}
 		ul {
 			margin-top: 0;

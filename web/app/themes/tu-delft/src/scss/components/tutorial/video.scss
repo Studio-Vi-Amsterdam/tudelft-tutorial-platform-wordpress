@@ -38,6 +38,7 @@
 	&__preload {
 		position: relative;
 		cursor: pointer;
+		z-index: 5;
 		&:before {
 			position: absolute;
 			content: '';

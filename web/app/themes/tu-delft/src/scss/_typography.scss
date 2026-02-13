@@ -26,6 +26,8 @@ h2,
 
 h3,
 .h3 {
+	@include adaptiveProperty('font-size', 32, 28);
+	line-height: 1.5;
 }
 
 h4,

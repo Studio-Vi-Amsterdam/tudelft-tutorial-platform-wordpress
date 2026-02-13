@@ -298,7 +298,7 @@
 			}
 		}
 		h3 {
-			@extend .h1;
+			@extend .h3;
 			display: flex;
 			align-items: center;
 			cursor: pointer;
@@ -378,7 +378,6 @@
 			display: flex;
 			align-items: center;
 			cursor: pointer;
-			border-top: 2px solid #e5e5e5;
 			&:hover {
 				span {
 					&:before {
@@ -480,6 +479,7 @@
 			font-size: 1.6rem !important;
 			line-height: 1.5 !important;
 			font-family: $primary-font;
+			margin-top: 0 !important;
 		}
 
 		span {
@@ -542,6 +542,9 @@
 						stroke: $secondary;
 						fill: $secondary;
 					}
+				}
+				p {
+					margin-top: 0 !important
 				}
 			}
 		}
