@@ -6,271 +6,257 @@ html {
 	* {
 		font-family: $primary-font;
 	}
-  }
-  
-  h1,
-  .h1 {
+}
+
+h1,
+.h1 {
 	@include adaptiveProperty('font-size', 44, 36);
 	line-height: 1.15;
 	font-family: $secondary-font;
 	font-weight: 300;
-  }
-  
-  h2,
-  .h2 {
+}
+
+h2,
+.h2 {
 	@include adaptiveProperty('font-size', 44, 36);
 	line-height: 1.15;
 	font-family: $secondary-font;
 	font-weight: 300;
-  }
-  
-  h3,
-  .h3 {}
-  
-  h4,
-  .h4 {
+}
+
+h3,
+.h3 {
+}
+
+h4,
+.h4 {
 	@include adaptiveProperty('font-size', 28, 24);
 	line-height: 1.5;
+}
 
-  }
-  
-  h5,
-  .h5 {
+h5,
+.h5 {
 	@include adaptiveProperty('font-size', 24, 20);
 	line-height: 1.2;
 	font-family: $secondary-font;
 	font-weight: 700;
 }
-  
-  h6,
-  .h6 {
+
+h6,
+.h6 {
 	@include adaptiveProperty('font-size', 20, 20);
 	line-height: 1.2;
-  }
-  
-  p,
-  .p1 {
+}
+
+p,
+.p1 {
 	@include adaptiveProperty('font-size', 16, 16);
 	line-height: 1.5;
-  }
-  
-  .p2 {
+}
+
+.p2 {
 	@include adaptiveProperty('font-size', 20, 18);
 	line-height: 1.55;
-  
-	@media(min-width: $tabletP1) {
-	  line-height: 1.6;
-	}
-  }
 
-  .p-small {
+	@media (min-width: $tabletP1) {
+		line-height: 1.6;
+	}
+}
+
+.p-small {
 	@include adaptiveProperty('font-size', 14, 14);
 	line-height: 1.45;
+}
 
-  }
-  
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-top: 1.2rem;
-  
-	@media(min-width: $tabletSmallP1) {
-	  margin-top: 3.4rem;
+
+	@media (min-width: $tabletSmallP1) {
+		margin-top: 3.4rem;
 	}
-  
-  
-	&+p,
-	&+ul,
-	&+ol {
-	  margin-top: 1.6rem;
-  
-	  @media(min-width: $tabletP1) {
-		margin-top: 2.4rem;
-	  }
-  
+
+	& + p,
+	& + ul,
+	& + ol {
+		margin-top: 1.6rem;
+
+		@media (min-width: $tabletP1) {
+			margin-top: 2.4rem;
+		}
 	}
-  }
-  
-  p+p {
+}
+
+p + p {
 	margin-top: 2.4rem;
-  
-	@media(min-width: $tabletSmallP1) {
-	  margin-top: 3.2rem;
+
+	@media (min-width: $tabletSmallP1) {
+		margin-top: 3.2rem;
 	}
-  
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol,
-  li,
-  p {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p {
 	&:first-child {
-	  margin-top: 0;
+		margin-top: 0;
 	}
-  
+
 	&:last-child {
-	  margin-bottom: 0;
+		margin-bottom: 0;
 	}
-  }
-  
-  
-  table {
-	border: 1px solid #DDDDDD;
+}
+
+table {
+	border: 1px solid #dddddd;
 	max-width: 100rem;
 	width: 100%;
-  
-  
+
 	th {
-	  text-align: left;
-	  @extend .p1;
-	  font-weight: 700;
-	  padding: 2rem;
-	  text-transform: uppercase;
-  
+		text-align: left;
+		@extend .p1;
+		font-weight: 700;
+		padding: 2rem;
+		text-transform: uppercase;
 	}
-  
+
 	td {
-	  border: 1px solid #DDDDDD;
-	  color: #404040;
-	  @extend .p1;
-	  padding: 2rem;
-	  width: 42%;
-  
-  
-	  &:last-child {
-		width: 58%;
-	  }
-  
-  
+		border: 1px solid #dddddd;
+		color: #404040;
+		@extend .p1;
+		padding: 2rem;
+		width: 42%;
+
+		&:last-child {
+			width: 58%;
+		}
 	}
-  }
-  
-  ul,
-  ol {
+}
+
+ul,
+ol {
 	list-style: none;
 	margin: 0;
-  
+
 	li {
-	  @extend .p1;
-  
-	  &+li {
-		margin-top: .6rem;
-  
-	  }
+		@extend .p1;
+
+		& + li {
+			margin-top: 0.6rem;
+		}
 	}
-  }
-  
-  ul {
+}
+
+ul {
 	li {
-	  position: relative;
-	  padding-left: 1.6rem;
-  
-	  @media(min-width: $tabletP1) {
-		padding-left: 2rem;
-	  }
-  
-  
-	  &:after {
-		content: '';
-		width: .6rem;
-		height: .6rem;
-		background-color: $secondary;
-		border-radius: 50%;
-		position: absolute;
-		left: 0;
-		top: .9rem;
-  
-		@media(min-width: $tabletSmallP1) {
-		  top: 1.1rem;
+		position: relative;
+		padding-left: 1.6rem;
+
+		@media (min-width: $tabletP1) {
+			padding-left: 2rem;
 		}
-  
-		@media(min-width: $deskLargeP1) {
-		  top: 1.2rem;
+
+		&:after {
+			content: '';
+			width: 0.6rem;
+			height: 0.6rem;
+			background-color: $secondary;
+			border-radius: 50%;
+			position: absolute;
+			left: 0;
+			top: 0.9rem;
+
+			@media (min-width: $tabletSmallP1) {
+				top: 1.1rem;
+			}
+
+			@media (min-width: $deskLargeP1) {
+				top: 1.2rem;
+			}
 		}
-  
-	  }
 	}
-  }
-  
-  ol {
+}
+
+ol {
 	list-style-type: decimal;
 	margin-left: 1.6rem;
-  
-	@media(min-width: $tabletP1) {
-	  margin-left: 2rem;
+
+	@media (min-width: $tabletP1) {
+		margin-left: 2rem;
 	}
-  
-  }
-  
-  
-  .reset-list {
+}
+
+.reset-list {
 	list-style-type: none;
 	padding: unset;
 	margin: unset;
-  
+
 	li {
-	  padding: unset;
-	  margin: unset;
-  
-	  &:after {
-		display: none;
-	  }
+		padding: unset;
+		margin: unset;
+
+		&:after {
+			display: none;
+		}
 	}
-  }
-  
-  .reset-table {
+}
+
+.reset-table {
 	border: unset;
 	max-width: unset;
-  
+
 	th,
 	td {
-	  max-width: unset;
-	  width: unset;
-	  border: unset;
-	  padding: unset;
+		max-width: unset;
+		width: unset;
+		border: unset;
+		padding: unset;
 	}
-  }
-  strong,b {
-	  font-weight: 700;
-  }
-  em,i {
-	  font-style: italic;
-  }
+}
+strong,
+b {
+	font-weight: 700;
+}
+em,
+i {
+	font-style: italic;
+}
 
-  pre {
+pre {
 	font-size: 1.6rem;
 	width: 100%;
 	margin-top: 2.4rem !important;
-		table td{
-			color: inherit;
-			border: inherit;
-		}
-		table{
-			border: inherit;
-		}
-		.hljs-ln-n{
-			padding-right: 5px;
-		}
-		.hljs-ln-line{
-			padding-left: 5px !important;
-		}
-		code{
-			background: #f5f2f06e !important;
-		}
+	table td {
+		color: inherit;
+		border: inherit;
+	}
+	table {
+		border: inherit;
+	}
+	.hljs-ln-n {
+		padding-right: 5px;
+	}
+	.hljs-ln-line {
+		padding-left: 5px !important;
+	}
+	code {
+		background: #f5f2f06e !important;
+	}
 	.punctuation {
 		color: $black !important;
 	}
-  }
+}
 
 /* for block of numbers */
 .hljs-ln-numbers {
@@ -283,7 +269,7 @@ html {
 
 	text-align: center;
 	color: #ccc;
-	border-right: 1px solid #CCC;
+	border-right: 1px solid #ccc;
 	vertical-align: top;
 	padding-right: 5px;
 

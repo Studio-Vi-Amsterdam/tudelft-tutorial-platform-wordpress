@@ -1,163 +1,161 @@
 .titles {
-    $self: &;
-    border-top: 2px solid $border-gray;
-    padding-top: 1.6rem;
+	$self: &;
+	border-top: 2px solid $border-gray;
+	padding-top: 1.6rem;
 
-    ul {
-        @extend .reset-list;
+	ul {
+		@extend .reset-list;
+	}
 
+	h4 {
+		@include adaptiveProperty('font-size', 16, 16);
+		font-weight: 700;
+		margin-bottom: 2.4rem;
+	}
 
-    }
+	// .titles__item
 
-    h4 {
-        @include adaptiveProperty('font-size', 16, 16);
-        font-weight: 700;
-        margin-bottom: 2.4rem;
-    }
+	&__item {
+		box-sizing: border-box;
+		border-radius: 0.4rem;
+		display: block;
+		transition: 0.17s background linear;
 
-    // .titles__item
+		&:hover {
+			background-color: $secondary;
+			transition: 0.17s background linear;
 
-    &__item {
-        box-sizing: border-box;
-        border-radius: .4rem;
-        display: block;
-        transition: .17s background linear;
-        
-        &:hover {
-            background-color: $secondary;
-            transition: .17s background linear;
-            
+			#{$self}__head {
+				color: $white;
 
-            #{$self}__head {
-                color: $white;
+				&:before {
+					border-color: transparent transparent transparent $white;
+				}
+			}
+			a {
+				color: $white;
+			}
+		}
 
-                &:before {
-                    border-color: transparent transparent transparent $white;
-                }
-            }
-            a{
-                color: $white;
-            }
-        }
+		&:not(:first-of-type) {
+			margin-top: 1.2rem;
+		}
 
-        &:not(:first-of-type) {
-            margin-top: 1.2rem;
-        }
+		// .titles__item--opened
+		&--opened {
+			border-radius: 0.4rem;
+			background-color: $light-blue;
+			transition: 0.5s background linear;
 
-        // .titles__item--opened
-        &--opened {
-            border-radius: .4rem;
-            background-color: $light-blue ;
-            transition: .5s background linear;
+			#{$self}__head {
+				text-shadow:
+					0 0 0.8px $black,
+					0 0 0.5px $black;
+				letter-spacing: 0.02em;
+				color: $black;
 
-            #{$self}__head {
-                text-shadow: 0 0 .8px $black, 0 0 .5px $black;
-                letter-spacing: .02em;
-                color: $black ;
+				&:before {
+					transform: rotate(90deg);
+					border-color: transparent transparent transparent $black;
+				}
+			}
+			#{$self}__body {
+				grid-template-rows: 1fr;
+			}
 
-                &:before {
-                    transform: rotate(90deg);
-                    border-color: transparent transparent transparent $black ;
-                }
-            }
-            #{$self}__body {
-                grid-template-rows: 1fr;
-            }
+			a {
+				color: $black;
+			}
 
-            a{
-                color: $black;
-            }
+			&:hover {
+				background-color: $light-blue;
 
-            &:hover {
-                background-color: $light-blue;
-                
-    
-                #{$self}__head {
-                    color: $black ;
-    
-                    &:before {
-                        border-color: transparent transparent transparent $black;
-                    }
-                }
-                a{
-                    color: $black;
-                }
-            }
-        }
-    }
+				#{$self}__head {
+					color: $black;
 
-    // .titles__head
+					&:before {
+						border-color: transparent transparent transparent $black;
+					}
+				}
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
 
-    &__head {
-        @include adaptiveProperty('font-size', 14, 14);
-        line-height: 1.42;
-        color: $black;
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding: .8rem 1rem;
-        cursor: pointer;
-        transition: .17s linear;
-        border-radius: .4rem;
-        overflow: hidden;
+	// .titles__head
 
-        &:before {
-            content: '';
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 4px 0 4px 4px;
-            border-color: transparent transparent transparent #000000;
-            transform: rotate(0deg);
-            display: block;
-            margin-right: 1.1rem;
-            transition: .17s linear;
-        }
-        span {
-            flex-grow: 1;
-            text-align: end;
-            display: block;
-            margin-left: 10px;
-            font-size: 12px;
-            color: $primary;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-    }
+	&__head {
+		@include adaptiveProperty('font-size', 14, 14);
+		line-height: 1.42;
+		color: $black;
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: 0.8rem 1rem;
+		cursor: pointer;
+		transition: 0.17s linear;
+		border-radius: 0.4rem;
+		overflow: hidden;
 
-    // .titles__body
+		&:before {
+			content: '';
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 4px 0 4px 4px;
+			border-color: transparent transparent transparent #000000;
+			transform: rotate(0deg);
+			display: block;
+			margin-right: 1.1rem;
+			transition: 0.17s linear;
+		}
+		span {
+			flex-grow: 1;
+			text-align: end;
+			display: block;
+			margin-left: 10px;
+			font-size: 12px;
+			color: $primary;
+			font-weight: 500;
+			white-space: nowrap;
+		}
+	}
 
-    &__body {
-        margin-left: 2.8rem;
-        display: grid;
-        grid-template-rows: 0fr;
-        overflow: hidden;
-        transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00);
+	// .titles__body
 
-        ul {
-            min-height: 0;
-            li {
-                padding: .4rem .8rem .8rem;
-                box-sizing: border-box;
-                display: flex;
-                align-items: flex-start;
-                justify-content: space-between;
-                gap: .6rem;
+	&__body {
+		margin-left: 2.8rem;
+		display: grid;
+		grid-template-rows: 0fr;
+		overflow: hidden;
+		transition: 0.5s cubic-bezier(0.15, 0, 0, 1);
 
-            span {
-                font-size: 12px;
-                display: block;
-                color: $primary;
-                white-space: nowrap;
-                line-height: 2.1rem;
-            }
-            }
+		ul {
+			min-height: 0;
+			li {
+				padding: 0.4rem 0.8rem 0.8rem;
+				box-sizing: border-box;
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-between;
+				gap: 0.6rem;
 
-            a {
-                @include adaptiveProperty('font-size', 14, 14);
-                color: $black ;
-                transition: .17s linear;
-            }
-        }
-    }
+				span {
+					font-size: 12px;
+					display: block;
+					color: $primary;
+					white-space: nowrap;
+					line-height: 2.1rem;
+				}
+			}
+
+			a {
+				@include adaptiveProperty('font-size', 14, 14);
+				color: $black;
+				transition: 0.17s linear;
+			}
+		}
+	}
 }

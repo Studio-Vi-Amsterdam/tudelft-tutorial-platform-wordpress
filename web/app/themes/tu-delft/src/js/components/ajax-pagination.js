@@ -37,7 +37,6 @@ export const initAjaxPagination = () => {
 		}
 	}
 
-
 	parent.on('click', '.pagination-number button:not(.active)', function (e) {
 		e.preventDefault()
 		const pageIndex = Number($(this).attr('data-page')) || 1

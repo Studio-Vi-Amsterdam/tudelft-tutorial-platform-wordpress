@@ -1,12 +1,11 @@
 .btns {
+	.btn {
+		&--prev {
+			margin: 0 auto 0 0;
+		}
 
-    .btn{
-        &--prev{
-            margin: 0 auto 0 0;
-        }
-
-        &--next{
-            margin: 0 0 0 auto;
-        }
-    }
+		&--next {
+			margin: 0 0 0 auto;
+		}
+	}
 }

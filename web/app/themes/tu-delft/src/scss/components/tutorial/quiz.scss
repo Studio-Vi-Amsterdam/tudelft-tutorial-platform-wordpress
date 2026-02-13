@@ -1,70 +1,72 @@
 .quiz {
-    margin-top: 2.4rem;
-    &:not(:last-child) {
-        margin-bottom: 2.4rem;
-    }
-    p {
-        @media(min-width: $tabletSmallP1) {
-            padding: 0 0 1.6rem 0;
-        }
-    }
+	margin-top: 2.4rem;
+	&:not(:last-child) {
+		margin-bottom: 2.4rem;
+	}
+	p {
+		@media (min-width: $tabletSmallP1) {
+			padding: 0 0 1.6rem 0;
+		}
+	}
 
-    // .quiz__wrapper
+	// .quiz__wrapper
 
-    &__wrapper {
-    }
+	&__wrapper {
+	}
 
-    // .quiz__item
+	// .quiz__item
 
-    &__item {
-        margin-top: 1.6rem;
-        cursor: pointer;
-        position: relative;
-        input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            -webkit-appearance: none;
-            appearance: none;
-            opacity: 0;
-            cursor: pointer;
-            &:checked{
-                & + label {
-                    background-color: #E5F5F1;
-                    border-color: #009B77;
-                }
-            }
-            &[data-valid="invalid"]:checked{
-                & + label {
-                    background-color: transparent;
-                    border-color: #EC4242;
-                }
-            }
-        }
-        label {
-            cursor: pointer;
-            display: block;
-            transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            padding: 1.6rem;
-            box-sizing: border-box;
-            border-radius: 4px;
-            border: 1px solid $gray;
-            @media(min-width: $tabletSmallP1) {
-                &:hover {
-                    border: 1px solid #000;
-                }
-            }
-            @extend .p1;
-            small {
-                display: block;
-                font-size: 1.2rem;
-                line-height: 1.6;
-                color: $primary;
-                margin-bottom: 4px;
-            }
+	&__item {
+		margin-top: 1.6rem;
+		cursor: pointer;
+		position: relative;
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-appearance: none;
+			appearance: none;
+			opacity: 0;
+			cursor: pointer;
+			&:checked {
+				& + label {
+					background-color: #e5f5f1;
+					border-color: #009b77;
+				}
+			}
+			&[data-valid='invalid']:checked {
+				& + label {
+					background-color: transparent;
+					border-color: #ec4242;
+				}
+			}
 
-        }
-    }
+			@media (min-width: $tabletSmallP1) {
+				&:hover {
+					& + label {
+						border-color: #000;
+					}
+				}
+			}
+		}
+		label {
+			cursor: pointer;
+			display: block;
+			transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			padding: 1.6rem;
+			box-sizing: border-box;
+			border-radius: 4px;
+			border: 1px solid #96969b;
+			@extend .p1;
+			small {
+				display: block;
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #67676b;
+				margin-bottom: 4px;
+			}
+		}
+	}
 }

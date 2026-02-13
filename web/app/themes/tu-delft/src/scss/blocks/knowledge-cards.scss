@@ -1,35 +1,36 @@
 .knowledge-cards {
-	padding-top: .8rem;
+	padding-top: 0.8rem;
 	padding-bottom: 4rem;
-    position: relative;
-    z-index: 2;
+	position: relative;
+	z-index: 2;
 
-    &:before {
-        position: absolute;
-        content: '';
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        height: 100%;
-        background-color: $white;
-        z-index: -1;
-    }
+	&:before {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100vw;
+		height: 100%;
+		background-color: $white;
+		z-index: -1;
+	}
 	// .knowledge-cards__container
 
-	&__container {}
+	&__container {
+	}
 
 	// .knowledge-cards__title
 
 	&__title {
 		margin-bottom: 3.2rem;
-        @media(min-width: $tabletSmallP1) {
-		margin-bottom: 4.8rem;
-        }
+		@media (min-width: $tabletSmallP1) {
+			margin-bottom: 4.8rem;
+		}
 
 		h2 {
 			@extend .h4;
-			letter-spacing: -.02em;
+			letter-spacing: -0.02em;
 			font-weight: 700;
 			font-family: $primary-font;
 		}
@@ -41,16 +42,16 @@
 		display: grid;
 		gap: 1.6rem;
 
-        @media(min-width: $tabletSmallP1) {
-		grid-template-columns: 1fr 1fr;
-        }
+		@media (min-width: $tabletSmallP1) {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 
 	// .knowledge-cards__card
 
 	&__card {
 		display: block;
-		border-radius: .4rem;
+		border-radius: 0.4rem;
 		position: relative;
 		background-color: $secondary;
 		padding: 3.2rem;
@@ -58,28 +59,30 @@
 		color: $white;
 		top: 0;
 		left: 0;
-			transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, .0s .5s opacity;
+		transition:
+			0.5s cubic-bezier(0.15, 0, 0, 1) all,
+			0s 0.5s opacity;
 
 		&:hover {
-			@media(min-width: $mobileP1) {
+			@media (min-width: $mobileP1) {
 				top: -10px;
 				left: -10px;
 			}
 
 			&:before {
-				@media(min-width: $mobileP1) {
+				@media (min-width: $mobileP1) {
 					top: 10px;
 					left: 10px;
 					opacity: 1;
-					transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, .0s opacity;
+					transition:
+						0.5s cubic-bezier(0.15, 0, 0, 1) all,
+						0s opacity;
 				}
 			}
 
-
 			.arrow {
-				@media(min-width: $mobileP1) {
-
-					@media(min-width: $mobileP1) {
+				@media (min-width: $mobileP1) {
+					@media (min-width: $mobileP1) {
 						min-width: 4rem;
 						max-width: 4rem;
 						width: 4rem;
@@ -88,13 +91,13 @@
 
 				svg {
 					&:first-child {
-						@media(min-width: $mobileP1) {
+						@media (min-width: $mobileP1) {
 							right: 0px;
 						}
 					}
 
 					&:last-child {
-						@media(min-width: $mobileP1) {
+						@media (min-width: $mobileP1) {
 							width: 4rem;
 						}
 					}
@@ -114,7 +117,7 @@
 		}
 
 		p {
-			color: #FAFAFA;
+			color: #fafafa;
 			margin-top: 1.6rem;
 		}
 
@@ -131,7 +134,9 @@
 			border-radius: 4px;
 			z-index: -1;
 			opacity: 0;
-			transition: .5s cubic-bezier(0.15, 0.00, 0.00, 1.00) all, .0s .5s opacity;
+			transition:
+				0.5s cubic-bezier(0.15, 0, 0, 1) all,
+				0s 0.5s opacity;
 		}
 
 		.arrow {
@@ -142,7 +147,7 @@
 			overflow: hidden;
 			filter: brightness(0) invert(1);
 
-			@media(min-width: $mobileP1) {
+			@media (min-width: $mobileP1) {
 				min-width: 3.4rem;
 				max-width: 3.4rem;
 				width: 3.4rem;
@@ -155,7 +160,7 @@
 				min-width: 3rem;
 				height: auto;
 
-				@media(min-width: $mobileP1) {
+				@media (min-width: $mobileP1) {
 					min-width: 4rem;
 				}
 
@@ -165,7 +170,7 @@
 					width: 1rem;
 					transform: translateY(-50%);
 
-					@media(min-width: $mobileP1) {
+					@media (min-width: $mobileP1) {
 						width: 1.2rem;
 					}
 				}
@@ -176,12 +181,12 @@
 	// .knowledge-cards__card--blue-bg
 
 	&__card--blue-bg {
-		background-color: #0C2340;
+		background-color: #0c2340;
 	}
 
 	// .knowledge-cards__card--green-bg
 
 	&__card--green-bg {
-		background-color: #6CC24A;
+		background-color: #6cc24a;
 	}
 }

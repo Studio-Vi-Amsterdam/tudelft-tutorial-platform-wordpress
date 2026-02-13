@@ -28,27 +28,26 @@ $mobileSmallP1: calc($mobileSmall / 1px) + 1px;
 $adaptivePropertyMaxViewport: $containerMaxWidth;
 $adaptivePropertyMinViewport: 375;
 
-
 // Colors
 
 // base
 $white: #ffffff;
-$gray: #96969B;
+$gray: #96969b;
 $black: #000000;
-$transparent: rgba(0, 0, 0, .0);
+$transparent: rgba(0, 0, 0, 0);
 
-$primary: #67676B;
-$secondary: #00A6D6;
-$light: #EFF1F3;
-$border-gray: #E5E5E5;
-$light-blue: #E0F5FE;
+$primary: #67676b;
+$secondary: #00a6d6;
+$light: #eff1f3;
+$border-gray: #e5e5e5;
+$light-blue: #e0f5fe;
 
-$cornYellowSecondary: #FFB81C;
-$cornYellowTertinary: #FFF1D2;
-$navy: #0C2340;
-$skyBlue: #B9EEFE;
-$bgSeasalt: #FAFAFA;
+$cornYellowSecondary: #ffb81c;
+$cornYellowTertinary: #fff1d2;
+$navy: #0c2340;
+$skyBlue: #b9eefe;
+$bgSeasalt: #fafafa;
 
 // Fonts
-$primary-font: 'Arial', 'Verdana', sans-serif ;
+$primary-font: 'Arial', 'Verdana', sans-serif;
 $secondary-font: 'Roboto Slab', 'Times New Roman', serif;

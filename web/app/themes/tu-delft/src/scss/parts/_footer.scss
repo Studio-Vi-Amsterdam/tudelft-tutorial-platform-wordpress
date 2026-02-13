@@ -1,180 +1,175 @@
 .footer {
-    margin-top: 2.4rem;
-    position: relative;
-    @media(min-width: $tabletP1) {
-        gap: 10rem;
-        margin-top: 4rem;
-    }
+	margin-top: 2.4rem;
+	position: relative;
+	@media (min-width: $tabletP1) {
+		gap: 10rem;
+		margin-top: 4rem;
+	}
 
-    //.footer__container
-    &__container {
-        padding-top: 4rem;
-        padding-bottom: 4.8rem;
-        @extend .padding;
-				padding-right: 0;
-				padding-left: 0;
+	//.footer__container
+	&__container {
+		padding-top: 4rem;
+		padding-bottom: 4.8rem;
+		@extend .padding;
+		padding-right: 0;
+		padding-left: 0;
 
-        @media (min-width:$tabletSmallP1) {
-            width: 100%;
-						position: relative;
-            transform: translateY(-100%);
-        }
+		@media (min-width: $tabletSmallP1) {
+			width: 100%;
+			position: relative;
+			transform: translateY(-100%);
+		}
 
-        @media(min-width: $tabletP1) {
-            padding-top: 8rem;
-            padding-bottom: 5.2rem;
-            gap: 10rem;
-        }
+		@media (min-width: $tabletP1) {
+			padding-top: 8rem;
+			padding-bottom: 5.2rem;
+			gap: 10rem;
+		}
+	}
 
-    }
+	// .footer__vector
 
+	&__vector {
+		position: absolute;
+		width: 100vw;
+		height: 100%;
+		top: 0%;
+		transform: translateX(-50%);
+		left: 50%;
+		background-color: $light;
 
-    // .footer__vector
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: left bottom;
+		}
+	}
 
-    &__vector {
-        position: absolute;
-        width: 100vw;
-        height: 100%;
-        top: 0%;
-        transform: translateX(-50%);
-        left: 50%;
-        background-color: $light;
+	// .footer__wrapper
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: left bottom;
-        }
-    }
+	&__wrapper {
+		position: relative;
+		z-index: 1;
+		flex-shrink: 0;
 
-    // .footer__wrapper
+		@media (max-width: $tablet) {
+			order: 3;
+			margin-top: 5.6rem;
+		}
 
-    &__wrapper {
-        position: relative;
-        z-index: 1;
-        flex-shrink: 0;
+		@media (min-width: $tabletP1) {
+			margin-top: auto;
+		}
+	}
 
-        @media(max-width: $tablet) {
-            order: 3;
-            margin-top: 5.6rem;
-        }
+	// .footer__logo
 
-        @media(min-width: $tabletP1) {
-            margin-top: auto;
-        }
-    }
+	&__logo {
+		display: block;
+		max-width: 10.2rem;
+		width: 100%;
+		margin-bottom: 3.2rem;
 
-    // .footer__logo
+		@media (min-width: $tabletP1) {
+			max-width: 18.5rem;
+			margin-bottom: 4rem;
+		}
 
-    &__logo {
-        display: block;
-        max-width: 10.2rem;
-        width: 100%;
-        margin-bottom: 3.2rem;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
 
-        @media(min-width: $tabletP1) {
-            max-width: 18.5rem;
-            margin-bottom: 4rem;
-        }
+	// .footer__copyright
 
+	&__copyright {
+		@include adaptiveProperty('font-size', 12, 12);
+		color: $black;
+		display: flex;
+		gap: 1.6rem;
+	}
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-    }
+	// .footer__info
 
-    // .footer__copyright
+	&__info {
+		position: relative;
+		z-index: 1;
+		@media (min-width: $tabletP1) {
+			width: 50%;
+		}
+		h5 {
+			@extend .h6;
+			font-weight: 700;
 
-    &__copyright {
-        @include adaptiveProperty('font-size', 12, 12);
-        color: $black;
-        display: flex;
-        gap: 1.6rem;
-    }
+			& + p {
+				margin-top: 1.6rem;
+			}
+		}
+		p {
+			max-width: 60rem;
+			@media (min-width: $tabletP1) {
+				max-width: 31.2rem;
+			}
+		}
+	}
 
-    // .footer__info
+	// .footer__lists
 
-    &__info {
-        position: relative;
-        z-index: 1;
-        @media(min-width: $tabletP1) {
-            width: 50%;
-        }
-        h5 {
-            @extend .h6;
-            font-weight: 700;
+	&__lists {
+		position: relative;
+		z-index: 1;
+		gap: 0.8rem;
+		margin-top: 5.6rem;
 
-            &+p {
-                margin-top: 1.6rem;
-            }
-        }
-        p {
-            max-width: 60rem;
-            @media(min-width: $tabletP1) {
-                max-width: 31.2rem;
-            }
-        }
-    }
+		@media (min-width: $tabletP1) {
+			gap: 2.4rem;
+			margin-top: 0;
+			max-width: 32rem;
+			width: 100%;
+		}
 
-    // .footer__lists
+		@media (min-width: $tabletLargeP1) {
+			max-width: 40rem;
+		}
+	}
 
-    &__lists {
-        position: relative;
-        z-index: 1;
-        gap: .8rem;
-        margin-top: 5.6rem;
+	// .footer__list
 
-        @media(min-width: $tabletP1) {
-            gap: 2.4rem;
-            margin-top: 0;
-            max-width: 32rem;
-            width: 100%;
-        }
+	&__list {
+		width: 50%;
 
-        @media(min-width: $tabletLargeP1) {
-            max-width: 40rem;
-        }
+		h6 {
+			@include adaptiveProperty('font-size', 16, 16);
+			font-weight: 700;
 
-    }
+			& + ul {
+				margin-top: 2.4rem;
 
-    // .footer__list
+				@media (min-width: $tabletP1) {
+					margin-top: 1.6rem;
+				}
+			}
+		}
 
-    &__list {
-        width: 50%;
+		ul {
+			@extend .reset-list;
 
-        h6 {
-            @include adaptiveProperty('font-size', 16, 16);
-            font-weight: 700;
+			li {
+				&:not(:first-of-type) {
+					margin-top: 2.4rem;
 
-            &+ul {
-                margin-top: 2.4rem;
+					@media (min-width: $tabletP1) {
+						margin-top: 1.6rem;
+					}
+				}
+			}
+		}
+	}
 
-                @media(min-width: $tabletP1) {
-                    margin-top: 1.6rem;
-                }
-
-            }
-        }
-
-        ul {
-            @extend .reset-list;
-
-            li {
-                &:not(:first-of-type) {
-                    margin-top: 2.4rem;
-
-                    @media(min-width: $tabletP1) {
-                        margin-top: 1.6rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .footer-menu {
-        margin-top: 1.6rem;
-    }
+	.footer-menu {
+		margin-top: 1.6rem;
+	}
 }

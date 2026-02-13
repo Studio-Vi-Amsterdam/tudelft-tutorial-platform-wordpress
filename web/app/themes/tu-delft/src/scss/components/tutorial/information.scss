@@ -1,71 +1,72 @@
 .information {
-    border-top: 2px solid $border-gray;
-    padding-top: 1.6rem;
+	border-top: 2px solid $border-gray;
+	padding-top: 1.6rem;
 
-    ul {
-        @extend .reset-list;
-        display: flex;
-        flex-wrap: wrap;
-        gap: .8rem;
+	ul {
+		@extend .reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
 
-        li {
-						font-size: 14px;
-            a:not(.simple-link){
-                padding: .4rem .8rem;
-                background-color: $light-blue;
-                border-radius: .4rem;
-                display: block;
-                transition: .17s linear;
-                font-size: 1.4rem;
-            }
-            &:hover {
-                a:not(.simple-link) {
-                    background-color: $secondary;
-                    color: $white;
-                }
-            }
-        }
-				.simple-link {
-					text-decoration: underline;
-					color: $secondary;
+		li {
+			font-size: 14px;
+			a:not(.simple-link) {
+				padding: 0.4rem 0.8rem;
+				background-color: $light-blue;
+				border-radius: 0.4rem;
+				display: block;
+				transition: 0.17s linear;
+				font-size: 1.4rem;
+			}
+			&:hover {
+				a:not(.simple-link) {
+					background-color: $secondary;
+					color: $white;
 				}
-    }
+			}
+		}
+		.simple-link {
+			text-decoration: underline;
+			color: $secondary;
+		}
+	}
 
-    table {
-        @extend .reset-table;
+	table {
+		@extend .reset-table;
 
-        tr {
-            align-items: baseline;
-            display: grid;
-            grid-template-columns: 2fr 4fr;
-            gap: 1.6rem;
+		tr {
+			align-items: baseline;
+			display: grid;
+			grid-template-columns: 2fr 4fr;
+			gap: 1.6rem;
 
-            &:not(:first-of-type) {
-                margin-top: 2.4rem;
-            }
-        }
+			&:not(:first-of-type) {
+				margin-top: 2.4rem;
+			}
+		}
 
-        td {
-            @include adaptiveProperty('font-size', 14, 14);
+		td {
+			@include adaptiveProperty('font-size', 14, 14);
 
-            &:first-of-type {
-                color: $gray;
-            }
+			&:first-of-type {
+				color: $gray;
+			}
 
-            &:last-of-type {
-                color: $black;
-            }
-            & > mark,& > a {
-                color: $secondary;
-                text-decoration: underline;
-                background-color: transparent;
-            }
-        }
-    }
+			&:last-of-type {
+				color: $black;
+			}
+			& > mark,
+			& > a {
+				color: $secondary;
+				text-decoration: underline;
+				background-color: transparent;
+			}
+		}
+	}
 
-    h4 {
-        @include adaptiveProperty('font-size', 16, 16);
-        font-weight: 700;
-        margin-bottom: 2.4rem;
-    }
+	h4 {
+		@include adaptiveProperty('font-size', 16, 16);
+		font-weight: 700;
+		margin-bottom: 2.4rem;
+	}
 }

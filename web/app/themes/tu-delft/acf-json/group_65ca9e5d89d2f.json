@@ -1,123 +1,121 @@
 {
-    "key": "group_65ca9e5d89d2f",
-    "title": "Course",
-    "fields": [
-        {
-            "key": "field_65ca9e5d28359",
-            "label": "Course Code",
-            "name": "course_code",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_664a138f1f130",
-            "label": "Study",
-            "name": "study",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "academic-level",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "select",
-            "allow_null": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_667d16008533e",
-            "label": "Secondary Study",
-            "name": "secondary_study",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "academic-level",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "select",
-            "allow_null": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_664a16ae1f131",
-            "label": "Faculty",
-            "name": "faculty",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "faculties"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 1,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "course"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "Fields related to courses",
-    "show_in_rest": 0,
-    "display_title": "",
-    "modified": 1767690228
+	"key": "group_65ca9e5d89d2f",
+	"title": "Course",
+	"fields": [
+		{
+			"key": "field_65ca9e5d28359",
+			"label": "Course Code",
+			"name": "course_code",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 1,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_664a138f1f130",
+			"label": "Study",
+			"name": "study",
+			"aria-label": "",
+			"type": "taxonomy",
+			"instructions": "",
+			"required": 1,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"taxonomy": "academic-level",
+			"add_term": 1,
+			"save_terms": 0,
+			"load_terms": 0,
+			"return_format": "id",
+			"field_type": "select",
+			"allow_null": 0,
+			"bidirectional": 0,
+			"multiple": 0,
+			"bidirectional_target": []
+		},
+		{
+			"key": "field_667d16008533e",
+			"label": "Secondary Study",
+			"name": "secondary_study",
+			"aria-label": "",
+			"type": "taxonomy",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"taxonomy": "academic-level",
+			"add_term": 1,
+			"save_terms": 0,
+			"load_terms": 0,
+			"return_format": "id",
+			"field_type": "select",
+			"allow_null": 0,
+			"bidirectional": 0,
+			"multiple": 0,
+			"bidirectional_target": []
+		},
+		{
+			"key": "field_664a16ae1f131",
+			"label": "Faculty",
+			"name": "faculty",
+			"aria-label": "",
+			"type": "post_object",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"post_type": ["faculties"],
+			"post_status": "",
+			"taxonomy": "",
+			"return_format": "id",
+			"multiple": 1,
+			"allow_null": 0,
+			"allow_in_bindings": 0,
+			"bidirectional": 0,
+			"ui": 1,
+			"bidirectional_target": []
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "course"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "Fields related to courses",
+	"show_in_rest": 0,
+	"display_title": "",
+	"modified": 1767690228
 }
