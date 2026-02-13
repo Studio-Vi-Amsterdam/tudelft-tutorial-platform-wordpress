@@ -29,6 +29,7 @@ h3,
 	@include adaptiveProperty('font-size', 32, 28);
 	font-family: $secondary-font;
 	line-height: 1.5;
+	font-weight: 300;
 }
 
 h4,
