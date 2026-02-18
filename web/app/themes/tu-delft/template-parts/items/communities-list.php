@@ -2,10 +2,10 @@
 $communities = $args['items'] ?? false;
 if(!$communities) return
 ?>
-<tr>
+<tr class="information">
 	<td>Communities</td>
 	<td>
-		<ul class="colored-list">
+		<ul>
 			<?php foreach ($communities as $community): ?>
 				<li>
 					<a href="<?= get_the_permalink($community) ?>">
