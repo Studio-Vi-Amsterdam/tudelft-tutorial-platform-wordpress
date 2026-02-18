@@ -10,6 +10,9 @@
 
 		li {
 			font-size: 14px;
+			&:after {
+				display: none !important;
+			}
 			a:not(.simple-link) {
 				padding: 0.4rem 0.8rem;
 				background-color: $light-blue;
@@ -70,3 +73,9 @@
 		margin-bottom: 2.4rem;
 	}
 }
+
+tr.information {
+	border: 0;
+	padding: 0;
+}
+

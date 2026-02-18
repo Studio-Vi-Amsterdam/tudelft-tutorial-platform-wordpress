@@ -3,10 +3,10 @@ $faculties = $args['items'] ?? false;
 $title = $args['title'] ?? 'Faculties';
 if(!$faculties) return
 ?>
-<tr>
+<tr class="information">
 	<td><?= $title; ?></td>
 	<td>
-		<ul class="colored-list">
+		<ul>
 			<?php foreach ($faculties as $faculty): ?>
 				<li>
 					<a href="<?= get_the_permalink($faculty) ?>">
