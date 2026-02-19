@@ -34,7 +34,7 @@ $file = get_field('resource__pdf', $ID);
 			<?php endif; ?>
 
 			<p class="mt-2 resource-content">
-				<?= get_field('resource__content', $ID)['subtitle']; ?>
+				<?= wp_trim_words(get_field('resource__content', $ID)['abstract'], 25, '...'); ?>
 			</p>
 		</div>
 	</div>
