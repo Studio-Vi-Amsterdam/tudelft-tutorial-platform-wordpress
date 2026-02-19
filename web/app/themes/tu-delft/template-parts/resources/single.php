@@ -9,6 +9,7 @@ $license = get_field('resource__license', $ID);
 $pdf = get_field('resource__pdf', $ID);
 $doi = get_field('resource__doi', $ID);
 $keywords = Resources::get_keywords($ID);
+$domain_to_remove = 'https://orcid.org/';
 ?>
 <section class="tutorial resource-page">
 	<div class="tutorial__container md:flex md:justify-between">
@@ -31,11 +32,11 @@ $keywords = Resources::get_keywords($ID);
 									<td>
 										<ul>
 											<?php foreach ($authors as $author):
-												$id = $author['orcid_id'];
-												?>
+												$orcid_id = $author['orcid_id'];
+											?>
 												<li class="responsible__item">
 														<?= $author['author']; ?>
-														<?php if($id['title']): ?>
+														<?php if($orcid_id): ?>
 															<span class="relative block">
 																<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 																	<g clip-path="url(#clip0_5268_43135)">
@@ -50,10 +51,8 @@ $keywords = Resources::get_keywords($ID);
 																	</clipPath>
 																	</defs>
 																</svg>
-																<?= $id['title']; ?>
-																<?php if($id['url'] && $id['url'] !== '#'): ?>
-																	<a class="absolute opacity-0 top-0 left-0 w-full h-full" href="<?= $id['url']; ?>" target="_blank"><?= $id['title']; ?></a>
-																<?php endif; ?>
+																<?= str_replace($domain_to_remove, "", $orcid_id); ?>
+																<a class="absolute opacity-0 top-0 left-0 w-full h-full" href="<?= $orcid_id; ?>" target="_blank"><?= $orcid_id; ?></a>
 															</span>
 														<?php endif; ?>
 												</li>
@@ -71,12 +70,12 @@ $keywords = Resources::get_keywords($ID);
 									<td>
 										<ul>
 											<?php foreach ($editors as $editor):
-												$id = $editor['orcid_id'];
-												?>
+												$orcid_id = $editor['orcid_id'];
+											?>
 												<li class="responsible__item">
-														<?= $editor['author']; ?>
-														<?php if($id['title']): ?>
-															<span class="relative block">
+													<?= $editor['author']; ?>
+													<?php if($orcid_id): ?>
+														<span class="relative block">
 																<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 																	<g clip-path="url(#clip0_5268_43135)">
 																	<path d="M14 7C14 10.8664 10.8664 14 7 14C3.13359 14 0 10.8664 0 7C0 3.13359 3.13359 0 7 0C10.8664 0 14 3.13359 14 7Z" fill="#A6CE39"/>
@@ -90,12 +89,10 @@ $keywords = Resources::get_keywords($ID);
 																	</clipPath>
 																	</defs>
 																</svg>
-																<?= $id['title']; ?>
-																<?php if($id['url'] && $id['url'] !== '#'): ?>
-																	<a class="absolute opacity-0 top-0 left-0 w-full h-full" href="<?= $id['url']; ?>" target="_blank"><?= $id['title']; ?></a>
-																<?php endif; ?>
+																<?= str_replace($domain_to_remove, "", $orcid_id); ?>
+																<a class="absolute opacity-0 top-0 left-0 w-full h-full" href="<?= $orcid_id; ?>" target="_blank"><?= $orcid_id; ?></a>
 															</span>
-														<?php endif; ?>
+													<?php endif; ?>
 												</li>
 											<?php endforeach; ?>
 										</ul>
@@ -178,14 +175,10 @@ $keywords = Resources::get_keywords($ID);
 									<td>
 										<ul class="colored-list">
 											<li>
-												<?php if($doi['url'] && $doi['url'] !== '#'): ?>
-													<a href="<?= $doi['url']; ?>" class="simple-link" target="_blank">
-														<?= $doi['title']; ?>
+												<?php if($doi): ?>
+													<a href="<?= $doi; ?>" class="simple-link" target="_blank">
+														<?= str_replace('https://doi.org/', "", $doi); ?>
 													</a>
-												<?php else: ?>
-													<span>
-														<?= $doi['title']; ?>
-													</span>
 												<?php endif; ?>
 											</li>
 										</ul>

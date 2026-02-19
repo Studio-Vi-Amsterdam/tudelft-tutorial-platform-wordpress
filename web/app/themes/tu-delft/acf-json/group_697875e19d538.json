@@ -1,382 +1,396 @@
 {
-	"key": "group_697875e19d538",
-	"title": "Resources fields",
-	"fields": [
-		{
-			"key": "field_6978a15e59e18",
-			"label": "Faculties",
-			"name": "faculty",
-			"aria-label": "",
-			"type": "post_object",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"post_type": ["faculties"],
-			"post_status": "",
-			"taxonomy": "",
-			"return_format": "id",
-			"multiple": 1,
-			"allow_null": 0,
-			"allow_in_bindings": 0,
-			"bidirectional": 0,
-			"ui": 1,
-			"bidirectional_target": []
-		},
-		{
-			"key": "field_697875e2f4314",
-			"label": "Authors",
-			"name": "resource__authors",
-			"aria-label": "",
-			"type": "repeater",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "50",
-				"class": "",
-				"id": ""
-			},
-			"layout": "table",
-			"pagination": 0,
-			"min": 0,
-			"max": 0,
-			"collapsed": "",
-			"button_label": "Add Row",
-			"rows_per_page": 20,
-			"sub_fields": [
-				{
-					"key": "field_69787628f4315",
-					"label": "Author",
-					"name": "author",
-					"aria-label": "",
-					"type": "text",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"default_value": "",
-					"maxlength": "",
-					"allow_in_bindings": 0,
-					"placeholder": "",
-					"prepend": "",
-					"append": "",
-					"parent_repeater": "field_697875e2f4314"
-				},
-				{
-					"key": "field_6978782c5020e",
-					"label": "ORCID ID",
-					"name": "orcid_id",
-					"aria-label": "",
-					"type": "link",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"return_format": "array",
-					"allow_in_bindings": 0,
-					"parent_repeater": "field_697875e2f4314"
-				}
-			]
-		},
-		{
-			"key": "field_6978783f5020f",
-			"label": "Editors",
-			"name": "resource__editors",
-			"aria-label": "",
-			"type": "repeater",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "50",
-				"class": "",
-				"id": ""
-			},
-			"layout": "table",
-			"pagination": 0,
-			"min": 0,
-			"max": 0,
-			"collapsed": "",
-			"button_label": "Add Row",
-			"rows_per_page": 20,
-			"sub_fields": [
-				{
-					"key": "field_6978783f50210",
-					"label": "Author",
-					"name": "author",
-					"aria-label": "",
-					"type": "text",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"default_value": "",
-					"maxlength": "",
-					"allow_in_bindings": 0,
-					"placeholder": "",
-					"prepend": "",
-					"append": "",
-					"parent_repeater": "field_6978783f5020f"
-				},
-				{
-					"key": "field_6978783f50211",
-					"label": "ORCID ID",
-					"name": "orcid_id",
-					"aria-label": "",
-					"type": "link",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"return_format": "array",
-					"allow_in_bindings": 0,
-					"parent_repeater": "field_6978783f5020f"
-				}
-			]
-		},
-		{
-			"key": "field_6978763af4316",
-			"label": "PDF",
-			"name": "resource__pdf",
-			"aria-label": "",
-			"type": "file",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"return_format": "array",
-			"library": "all",
-			"min_size": "",
-			"max_size": "",
-			"mime_types": "",
-			"allow_in_bindings": 0
-		},
-		{
-			"key": "field_6978babfe70eb",
-			"label": "Publisher",
-			"name": "resource__publisher",
-			"aria-label": "",
-			"type": "text",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"default_value": "",
-			"maxlength": "",
-			"allow_in_bindings": 0,
-			"placeholder": "",
-			"prepend": "",
-			"append": ""
-		},
-		{
-			"key": "field_6978bae6e70ec",
-			"label": "License",
-			"name": "resource__license",
-			"aria-label": "",
-			"type": "text",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"default_value": "",
-			"maxlength": "",
-			"allow_in_bindings": 0,
-			"placeholder": "",
-			"prepend": "",
-			"append": ""
-		},
-		{
-			"key": "field_6978bb0ce70ed",
-			"label": "Doi",
-			"name": "resource__doi",
-			"aria-label": "",
-			"type": "link",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"return_format": "array",
-			"allow_in_bindings": 0
-		},
-		{
-			"key": "field_6978a58e6305d",
-			"label": "Content",
-			"name": "resource__content",
-			"aria-label": "",
-			"type": "group",
-			"instructions": "",
-			"required": 0,
-			"conditional_logic": 0,
-			"wrapper": {
-				"width": "",
-				"class": "",
-				"id": ""
-			},
-			"layout": "block",
-			"sub_fields": [
-				{
-					"key": "field_6978a659016f4",
-					"label": "Subtitle",
-					"name": "subtitle",
-					"aria-label": "",
-					"type": "text",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"default_value": "",
-					"maxlength": "",
-					"allow_in_bindings": 0,
-					"placeholder": "",
-					"prepend": "",
-					"append": ""
-				},
-				{
-					"key": "field_6978ba72e70e7",
-					"label": "Publication date",
-					"name": "publication_date",
-					"aria-label": "",
-					"type": "text",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"default_value": "",
-					"maxlength": "",
-					"allow_in_bindings": 0,
-					"placeholder": "",
-					"prepend": "",
-					"append": ""
-				},
-				{
-					"key": "field_6978ba84e70e8",
-					"label": "Abstract",
-					"name": "abstract",
-					"aria-label": "",
-					"type": "wysiwyg",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"default_value": "",
-					"allow_in_bindings": 0,
-					"tabs": "all",
-					"toolbar": "full",
-					"media_upload": 1,
-					"delay": 0
-				},
-				{
-					"key": "field_6978ba95e70e9",
-					"label": "Recommended Citation",
-					"name": "recommended_citation",
-					"aria-label": "",
-					"type": "wysiwyg",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"default_value": "",
-					"allow_in_bindings": 0,
-					"tabs": "all",
-					"toolbar": "full",
-					"media_upload": 1,
-					"delay": 0
-				},
-				{
-					"key": "field_6978baa1e70ea",
-					"label": "References",
-					"name": "references",
-					"aria-label": "",
-					"type": "wysiwyg",
-					"instructions": "",
-					"required": 0,
-					"conditional_logic": 0,
-					"wrapper": {
-						"width": "",
-						"class": "",
-						"id": ""
-					},
-					"default_value": "",
-					"allow_in_bindings": 0,
-					"tabs": "all",
-					"toolbar": "full",
-					"media_upload": 1,
-					"delay": 0
-				}
-			]
-		}
-	],
-	"location": [
-		[
-			{
-				"param": "post_type",
-				"operator": "==",
-				"value": "resources"
-			}
-		]
-	],
-	"menu_order": 0,
-	"position": "normal",
-	"style": "default",
-	"label_placement": "top",
-	"instruction_placement": "label",
-	"hide_on_screen": "",
-	"active": true,
-	"description": "Fields related to resources",
-	"show_in_rest": 0,
-	"display_title": "",
-	"modified": 1769524627
+    "key": "group_697875e19d538",
+    "title": "Resources fields",
+    "fields": [
+        {
+            "key": "field_6978a15e59e18",
+            "label": "Faculties",
+            "name": "faculty",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "faculties"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_697875e2f4314",
+            "label": "Authors",
+            "name": "resource__authors",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_69787628f4315",
+                    "label": "Author",
+                    "name": "author",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_697875e2f4314"
+                },
+                {
+                    "key": "field_6978782c5020e",
+                    "label": "ORCID ID",
+                    "name": "orcid_id",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_697875e2f4314"
+                }
+            ]
+        },
+        {
+            "key": "field_6978783f5020f",
+            "label": "Editors",
+            "name": "resource__editors",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6978783f50210",
+                    "label": "Author",
+                    "name": "author",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6978783f5020f"
+                },
+                {
+                    "key": "field_6978783f50211",
+                    "label": "ORCID ID",
+                    "name": "orcid_id",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6978783f5020f"
+                }
+            ]
+        },
+        {
+            "key": "field_6978763af4316",
+            "label": "PDF",
+            "name": "resource__pdf",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6978babfe70eb",
+            "label": "Publisher",
+            "name": "resource__publisher",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6978bae6e70ec",
+            "label": "License",
+            "name": "resource__license",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6978bb0ce70ed",
+            "label": "Doi",
+            "name": "resource__doi",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6978a58e6305d",
+            "label": "Content",
+            "name": "resource__content",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6978a659016f4",
+                    "label": "Subtitle",
+                    "name": "subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6978ba72e70e7",
+                    "label": "Publication date",
+                    "name": "publication_date",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6978ba84e70e8",
+                    "label": "Abstract",
+                    "name": "abstract",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_6978ba95e70e9",
+                    "label": "Recommended Citation",
+                    "name": "recommended_citation",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_6978baa1e70ea",
+                    "label": "References",
+                    "name": "references",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resources"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields related to resources",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1771494426
 }
