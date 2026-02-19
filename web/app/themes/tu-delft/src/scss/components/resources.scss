@@ -1,0 +1,29 @@
+.resource-page {
+	@media (max-width: $tabletSmall) {
+		.tutorial__container {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+		.tutorial__aside{
+			position: static;
+			height: auto;
+			transform: none;
+			margin-top: 40px;
+		}
+		.tutorial__aside-height {
+			padding: 0;
+		}
+		.tutorial__close {
+			display: none;
+		}
+	}
+	ul.authors {
+		gap: 0;
+	}
+	.text.intro .btn:hover {
+		color: $white;
+	}
+	.tutorial__content {
+		border-top: 2px solid $border-gray;
+	}
+}
