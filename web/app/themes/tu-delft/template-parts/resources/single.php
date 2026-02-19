@@ -30,7 +30,7 @@ $domain_to_remove = 'https://orcid.org/';
 								<tr>
 									<td>Author(s)</td>
 									<td>
-										<ul>
+										<ul class="authors">
 											<?php foreach ($authors as $author):
 												$orcid_id = $author['orcid_id'];
 											?>
@@ -64,11 +64,11 @@ $domain_to_remove = 'https://orcid.org/';
 						<?php endif; ?>
 
 						<?php if ($editors): ?>
-							<table class="mt-6">
+							<table class="mt-10">
 								<tr>
 									<td>Editor(s)</td>
 									<td>
-										<ul>
+										<ul class="authors">
 											<?php foreach ($editors as $editor):
 												$orcid_id = $editor['orcid_id'];
 											?>
@@ -101,7 +101,7 @@ $domain_to_remove = 'https://orcid.org/';
 							</table>
 						<?php endif; ?>
 
-						<table class="mt-6">
+						<table class="mt-10">
 							<?php
 								$faculties = get_field('faculty', get_the_ID());
 								get_template_part('template-parts/items/faculties-list', false, ['items' => $faculties, 'title' => 'Affiliation']);
@@ -110,7 +110,7 @@ $domain_to_remove = 'https://orcid.org/';
 
 
 						<?php if ($publisher): ?>
-							<table class="mt-6">
+							<table class="mt-10">
 								<tr>
 									<td>Publisher</td>
 									<td>
@@ -205,6 +205,10 @@ $domain_to_remove = 'https://orcid.org/';
 
 					<?php if ($pdf): ?>
 							<a href="<?= $pdf['url']; ?>" target="_blank" rel="noreferrer" class="btn">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7 21C5.89543 21 5 20.1046 5 19V3H14L19 8V19C19 20.1046 18.1046 21 17 21H7Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M13 3V9H19" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+								</svg>
 								Download PDF
 							</a>
 							<p class="!font-normal"><?= round($pdf['filesize'] / 1024 / 1024, 2); ?>MB • <?= $pdf['filename'] ?></p>
