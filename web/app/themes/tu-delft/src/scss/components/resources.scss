@@ -23,7 +23,10 @@
 	.text.intro .btn:hover {
 		color: $white;
 	}
-	.tutorial__content {
+	.tutorial__content:not(:nth-child(1)) {
 		border-top: 2px solid $border-gray;
+	}
+	.text.intro p {
+		margin-top: 3.2rem;
 	}
 }
