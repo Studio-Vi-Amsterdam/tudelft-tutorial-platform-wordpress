@@ -9,7 +9,8 @@ html {
 }
 
 h1,
-.h1 {
+.h1,
+h1 mark {
 	@include adaptiveProperty('font-size', 44, 36);
 	line-height: 1.15;
 	font-family: $secondary-font;

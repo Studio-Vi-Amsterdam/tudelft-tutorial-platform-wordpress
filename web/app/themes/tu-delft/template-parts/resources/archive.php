@@ -7,7 +7,7 @@ $faculty_id = $faculty_post ? (int) $faculty_post->ID : '';
 $title = '';
 $meta_query = [];
 if($faculty) {
-	$title = 'from Faculty ' . get_the_title($faculty_id);
+	$title = get_the_title($faculty_id);
 	$meta_query = [
 		[
 			'key'     => 'faculty',
