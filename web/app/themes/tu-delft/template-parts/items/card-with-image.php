@@ -8,9 +8,13 @@ $img = get_post_thumbnail_id($ID);
 ?>
 <a href="<?= $url; ?>" class="card-with-image">
 	<div class="card-with-image__wrapper sm:flex">
+		<?php
+			if ( $img ) :
+		?>
 		<figure class="card-with-image__image">
 			<?= wp_get_attachment_image($img, [208, 280]); ?>
 		</figure>
+		<?php endif; ?>
 
 		<div class="card-with-image__content">
 			<h4><?= $title; ?></h4>

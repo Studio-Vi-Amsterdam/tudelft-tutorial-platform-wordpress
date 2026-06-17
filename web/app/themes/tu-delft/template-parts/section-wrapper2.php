@@ -26,12 +26,14 @@
             <?php foreach ($display_elements as $element) : ?>
                 <a href="<?php the_permalink($element->ID) ?>" class="card-with-image">
                     <div class="card-with-image__wrapper sm:flex">
+                        <?php
+                            $image = get_field('featured_image', $element->ID);
+                            if ( $image ) :
+                        ?>
                         <figure class="card-with-image__image">
-                            <?php
-                                $image = get_field('featured_image', $element->ID);
-                            ?>
-														<?= wp_get_attachment_image($image['ID'], [204, 160]); ?>
+                            <?= wp_get_attachment_image($image['ID'], [204, 160]); ?>
                         </figure>
+                        <?php endif; ?>
                         <div class="card-with-image__content">
                             <h4><?php echo get_the_title($element->ID); ?></h4>
                             <p><?php echo wp_trim_words(get_field('description', $element->ID), 20); ?></p>

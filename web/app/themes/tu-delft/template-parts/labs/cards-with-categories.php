@@ -61,9 +61,13 @@ use TuDelft\Theme\Modules\Lab\Lab;
                                 ?>
                                     <a href="<?php the_permalink($course->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
+                                            <?php
+                                                if ( $image ) :
+                                            ?>
                                             <figure class="card-with-image__image">
-																								<?= wp_get_attachment_image($image['ID'], [208, 280]); ?>
+                                                <?= wp_get_attachment_image($image['ID'], [208, 280]); ?>
                                             </figure>
+                                            <?php endif; ?>
                                             <div class="card-with-image__content">
                                                 <h4><?php echo $course->post_title; ?></h4>
                                                 <p><?php echo wp_trim_words(get_field('description', $course->ID), 20); ?></p>
