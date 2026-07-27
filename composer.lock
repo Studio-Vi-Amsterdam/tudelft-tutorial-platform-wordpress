@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05d29b2cc940fb7205c9455b96f64360",
+    "content-hash": "aad8bfb84b89ab40ce9bbb2633f98e29",
     "packages": [
         {
             "name": "composer/installers",
@@ -1269,6 +1269,61 @@
                 "wpackagist-plugin/advanced-custom-fields": "self.version"
             },
             "type": "wordpress-plugin"
+        },
+        {
+            "name": "yoast/duplicate-post",
+            "version": "4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Yoast-dist/duplicate-post.git",
+                "reference": "db85005366144846cac3b07632488a6da92876f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Yoast-dist/duplicate-post/zipball/db85005366144846cac3b07632488a6da92876f5",
+                "reference": "db85005366144846cac3b07632488a6da92876f5",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.12.0 || ^2.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "yoast/wp-test-utils": "^1.2.1",
+                "yoast/yoastcs": "^3.3.0"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Enrico Battocchi & Team Yoast",
+                    "email": "support@yoast.com",
+                    "homepage": "https://yoast.com"
+                }
+            ],
+            "description": "The go-to tool for cloning posts and pages, including the powerful Rewrite & Republish feature.",
+            "homepage": "https://wordpress.org/plugins/duplicate-post/",
+            "keywords": [
+                "clone",
+                "copy",
+                "post",
+                "wordpress"
+            ],
+            "support": {
+                "forum": "https://wordpress.org/support/plugin/duplicate-post",
+                "issues": "https://github.com/Yoast/duplicate-post/issues",
+                "security": "https://yoast.com/security-program/",
+                "source": "https://github.com/Yoast/duplicate-post"
+            },
+            "time": "2026-03-09T10:26:52+00:00"
         }
     ],
     "packages-dev": [
@@ -2192,6 +2247,6 @@
     "platform": {
         "php": ">=8.0"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
