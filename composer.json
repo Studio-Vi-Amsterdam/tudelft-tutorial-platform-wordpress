@@ -53,7 +53,8 @@
     "wpackagist-plugin/svg-support": "2.5.5",
     "humanmade/asset-manager-framework": "^0.13.5",
     "roots/multisite-url-fixer": "^1.1",
-    "wpengine/advanced-custom-fields-pro": "^6.3"
+    "wpengine/advanced-custom-fields-pro": "^6.3",
+    "yoast/duplicate-post": "^4.6"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
