@@ -4,7 +4,7 @@
 	Add custom block category
 =====================
 */
-add_filter('block_categories', function ($categories, $post) {
+add_filter('block_categories_all', function ($categories, $block_editor_context) {
     $arr = array_merge(
         array(
             array(
