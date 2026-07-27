@@ -57,7 +57,8 @@
     "wpackagist-plugin/daggerhart-openid-connect-generic":"3.*",
     "wpackagist-plugin/wordfence":"8.1.2",
     "wpackagist-plugin/webp-converter-for-media":"6.3.1",
-    "wpackagist-plugin/updraftplus":"1.25.9"
+    "wpackagist-plugin/updraftplus":"1.25.9",
+    "yoast/duplicate-post": "^4.6"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
