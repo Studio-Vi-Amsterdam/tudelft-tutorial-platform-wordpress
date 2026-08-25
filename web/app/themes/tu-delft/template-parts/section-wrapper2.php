@@ -29,7 +29,9 @@
                             <?php
                                 $image = get_field('featured_image', $element->ID);
                             ?>
-                            <img width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="">
+														<?php if($image): ?>
+															<img width="208" height="280" src="<?php echo $image['sizes']['card_image']; ?>" alt="Thumbnail">
+														<?php endif; ?>
                         </figure>
                         <div class="card-with-image__content">
                             <h4><?php echo get_the_title($element->ID); ?></h4>
