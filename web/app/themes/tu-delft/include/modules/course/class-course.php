@@ -111,7 +111,7 @@ class Course extends Abstract_Cpt {
      * 
      * @return array
      */
-    public static function get_courses_by_academic_level( array $academic_level, int $amount = 5, bool $inclusive = true ): array {
+    public static function get_courses_by_academic_level( array $academic_level, int $amount = 20, bool $inclusive = true ): array {
         
         $args = [
             'post_type' => self::POST_TYPE,
