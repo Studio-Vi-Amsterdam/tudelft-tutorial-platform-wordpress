@@ -14,6 +14,8 @@ $name = $user->display_name;
 									class="lazy"
 									data-src="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-1.svg"
 									alt="vector"
+									loading="lazy"
+									decoding="async"
 								>
             </picture>
         </div>
@@ -26,6 +28,8 @@ $name = $user->display_name;
 									height="117"
 									data-src="<?= get_template_directory_uri() ?>/src/img/logo-footer.svg"
 									alt="Logo"
+									loading="lazy"
+									decoding="async"
 								>
             </a>
             <div class="footer__copyright">
@@ -135,7 +139,7 @@ $name = $user->display_name;
         <div class="modal-video-item__wr-image">
             <div class="modal-video-item__image">
                 <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
-                <img src="" alt="image">
+                <img src="" alt="image" loading="lazy" decoding="async">
             </div>
         </div>
     </div>
