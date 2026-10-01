@@ -15,11 +15,11 @@ use TuDelft\Theme\Modules\Lab\Lab;
 
     $selectedCategory = get_query_var('category');
     $selectedCategory = sanitize_text_field($selectedCategory);
-    $selectedCategory = htmlspecialchars($selectedCategory);
+    $selectedCategory = htmlspecialchars($selectedCategory, ENT_COMPAT | ENT_HTML401);
 
     $selectedSubCategory = get_query_var('subcategory');
     $selectedSubCategory = sanitize_text_field($selectedSubCategory);
-    $selectedSubCategory = htmlspecialchars($selectedSubCategory);
+    $selectedSubCategory = htmlspecialchars($selectedSubCategory, ENT_COMPAT | ENT_HTML401);
 
     if ( empty($categories) ) {
         $categories = Lab::get_lab_types();

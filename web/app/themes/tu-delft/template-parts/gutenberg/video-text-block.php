@@ -48,7 +48,7 @@ $page_id = get_the_ID();
                     </div>
                 </div>
                 <figcaption>
-                    <?php echo htmlspecialchars(get_post_meta($video['ID'], 'title', true) ?: $video['alt']); ?>
+                    <?php echo htmlspecialchars(get_post_meta($video['ID'], 'title', true) ?: $video['alt'], ENT_COMPAT | ENT_HTML401); ?>
                 </figcaption>
             </figure>
             <!-- <video controls>
