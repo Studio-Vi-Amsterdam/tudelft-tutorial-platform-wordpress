@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Clone plugin
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: Studio-Vi-Amsterdam/tudelft-tutorial-platform-plugin
           ref: development
