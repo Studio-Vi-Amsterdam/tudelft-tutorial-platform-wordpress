@@ -12,7 +12,7 @@
 
     $search = $_GET['term'];
     $search = sanitize_text_field( $search );
-    $search = htmlspecialchars( $search );
+    $search = htmlspecialchars( $search, ENT_COMPAT | ENT_HTML401 );
 
     if ( !empty( $search ) ) {
         $tutorials = Tutorial::search_tutorials( $search );
