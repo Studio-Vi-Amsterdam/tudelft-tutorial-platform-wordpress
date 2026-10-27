@@ -10,7 +10,7 @@ WORKDIR /app
 COPY web/app/themes/tu-delft /app/
 RUN npm install && npm run build
 
-FROM php:8.2-fpm-bullseye
+FROM php:8.2.35-fpm-bookworm
 
 # TODO: prune unnecessary deps
 RUN apt-get update && apt-get install -y \
