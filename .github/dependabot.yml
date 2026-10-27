@@ -1,0 +1,48 @@
+version: 2
+
+registries:
+  acf:
+    type: composer-repository
+    url: https://connect.advancedcustomfields.com
+    username: ${{ secrets.ACF_COMPOSER_USERNAME }}
+    password: ${{ secrets.ACF_COMPOSER_PASSWORD }}
+
+updates:
+  # Base images in the Dockerfile (php, composer, node)
+  - package-ecosystem: docker
+    directory: /
+    target-branch: development
+    schedule:
+      interval: weekly
+    ignore:
+      # Stay on PHP 8.2 patch releases; minor upgrades are done deliberately
+      - dependency-name: php
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+
+  - package-ecosystem: composer
+    directory: /
+    target-branch: development
+    registries:
+      - acf
+    schedule:
+      interval: weekly
+    groups:
+      composer:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: npm
+    directory: /web/app/themes/tu-delft
+    target-branch: development
+    schedule:
+      interval: weekly
+    groups:
+      theme:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: development
+    schedule:
+      interval: weekly
