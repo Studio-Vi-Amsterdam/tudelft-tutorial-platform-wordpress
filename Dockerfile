@@ -10,14 +10,28 @@ WORKDIR /app
 COPY web/app/themes/tu-delft /app/
 RUN npm install && npm run build
 
-FROM php:8.2.35-fpm-bookworm
+FROM php:8.2.35-fpm-alpine
 
-# TODO: prune unnecessary deps
-RUN apt-get update && apt-get install -y \
-    nginx supervisor libpng-dev libjpeg-dev libfreetype6-dev libzip-dev zip unzip \
+# Changes weekly in CI so cached layers pick up Alpine security updates
+ARG APK_CACHE_BUST
+
+# Build deps are removed after compiling; only the shared libs the extensions link against stay.
+RUN apk upgrade --no-cache \
+    && apk add --no-cache nginx supervisor zip unzip \
+    && apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
+        freetype-dev libjpeg-turbo-dev libpng-dev libzip-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd mysqli zip opcache \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && runDeps="$(scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
+        | tr ',' '\n' | sort -u \
+        | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }')" \
+    && apk add --no-cache --virtual .php-ext-rundeps $runDeps \
+    && apk del --no-network .build-deps
+
+# Keep www-data on uid/gid 33 (Debian's) so existing uploads volumes stay writable
+RUN deluser www-data \
+    && addgroup -g 33 -S www-data \
+    && adduser -u 33 -S -D -H -G www-data -h /var/www www-data
 
 COPY ./web /var/www/html/web
 COPY ./config /var/www/html/config
@@ -34,8 +48,7 @@ COPY --from=nodebuilder /app/dist /var/www/html/web/app/themes/tu-delft/dist
 COPY assets/tailwind.css /var/www/html/web/app/themes/tu-delft/dist/tailwind.css
 
 # Nginx
-RUN rm /etc/nginx/sites-enabled/default
-COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY docker/nginx/default.conf /etc/nginx/http.d/default.conf
 
 # Supervisord config
 COPY docker/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
