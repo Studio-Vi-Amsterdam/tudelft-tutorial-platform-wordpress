@@ -30,7 +30,7 @@ $image = get_field('tu-delft-text-image_image');
 								);
 								?>
                 <figcaption>
-                    <?php echo htmlspecialchars(get_post_meta( $image['ID'], 'title', true ) ? : $image['alt']); ?>
+                    <?php echo htmlspecialchars(get_post_meta( $image['ID'], 'title', true ) ? : $image['alt'], ENT_COMPAT | ENT_HTML401); ?>
                 </figcaption>
             </figure>
         </div>

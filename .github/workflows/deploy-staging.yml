@@ -61,4 +61,4 @@ jobs:
 
       - name: Start container
         run: 
-          IMAGE_TAG=$TAG docker compose -f ${{ secrets.REPO_ASSETS_PATH }}/docker-compose.yml --env-file ${{ secrets.REPO_ASSETS_PATH }}/.env up ${{ vars.CONTAINER_NAME }} -d --remove-orphans
+          IMAGE_TAG=$TAG DOCKER_UID=$(id -u) DOCKER_GID=$(id -g) docker compose -f ${{ secrets.REPO_ASSETS_PATH }}/docker-compose.yml --env-file ${{ secrets.REPO_ASSETS_PATH }}/.env up ${{ vars.CONTAINER_NAME }} -d --remove-orphans

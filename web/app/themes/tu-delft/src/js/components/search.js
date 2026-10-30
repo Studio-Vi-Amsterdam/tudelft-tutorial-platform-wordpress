@@ -1,3 +1,1 @@
-export function headerSearch() {
-    
-}
+export function headerSearch() {}

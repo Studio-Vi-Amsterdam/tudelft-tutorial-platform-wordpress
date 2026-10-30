@@ -5,6 +5,8 @@
 	Add JS Variables
 =====================
 */
+
+define('THEME_URL', get_template_directory_uri());
 function javascript_variables(){ ?>
     <script type="text/javascript">
         var main_url = '<?php echo get_site_url(); ?>';

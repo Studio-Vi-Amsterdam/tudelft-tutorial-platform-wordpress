@@ -1,5 +1,5 @@
-import "./scss/index.scss";
+import './scss/index.scss'
 
-import { runAfterDomLoad } from './js';
+import { runAfterDomLoad } from './js'
 
-document.addEventListener('DOMContentLoaded', runAfterDomLoad);
+document.addEventListener('DOMContentLoaded', runAfterDomLoad)

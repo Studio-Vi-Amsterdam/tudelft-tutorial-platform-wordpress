@@ -156,14 +156,16 @@ $course_title = get_the_title();
                                     </td>
                                 </tr>
                             <?php endif; ?>
-                            <tr>
-                                <td>Faculty</td>
-                                <td>
-                                    <ul>
-                                        <li><a href="#"><?php echo get_field('faculty', get_the_ID()) ?: 'BK'; ?></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
+
+														<?php
+															$faculties = get_field('faculty', get_the_ID());
+															get_template_part('template-parts/items/faculties-list', false, ['items' => $faculties]);
+														?>
+
+														<?php
+															$communities = get_field('community', get_the_ID());
+															get_template_part('template-parts/items/communities-list', false, ['items' => $communities]);
+														?>
                         </table>
                     </div>
                 </div>

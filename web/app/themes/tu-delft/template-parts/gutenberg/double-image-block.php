@@ -27,7 +27,7 @@ $imageRight = get_field('tu-delft-double-image_image-right');
 							);
 							?>
                 <figcaption>
-                    <?php echo htmlspecialchars(get_post_meta( $imageLeft['ID'], 'title', true ) ? : $imageLeft['alt']); ?>
+                    <?php echo htmlspecialchars(get_post_meta( $imageLeft['ID'], 'title', true ) ? : $imageLeft['alt'], ENT_COMPAT | ENT_HTML401); ?>
                 </figcaption>
             </figure>
         </div>
@@ -44,7 +44,7 @@ $imageRight = get_field('tu-delft-double-image_image-right');
 							);
 							?>
                 <figcaption>
-                    <?php echo htmlspecialchars(get_post_meta( $imageRight['ID'], 'title', true ) ? : $imageRight['alt']); ?>
+                    <?php echo htmlspecialchars(get_post_meta( $imageRight['ID'], 'title', true ) ? : $imageRight['alt'], ENT_COMPAT | ENT_HTML401); ?>
                 </figcaption>
             </figure>
         </div>

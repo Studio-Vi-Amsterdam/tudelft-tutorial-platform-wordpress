@@ -8,12 +8,14 @@
                 <?php while( have_rows('cards_section_cards', get_the_ID()) ): the_row(); ?>
                     <a href="<?= the_sub_field('link') ?>" class="card-with-image card-with-image--reverse card-with-image--not-full-image">
                         <div class="card-with-image__wrapper sm:flex">
+                            <?php
+                                $image = get_sub_field('image');
+                                if ( $image ) :
+                            ?>
                             <figure class="card-with-image__image">
-                                <?php
-                                    $image = get_sub_field('image');
-                                ?>
-															<?= wp_get_attachment_image($image['ID'], [204, 160]); ?>
-														</figure>
+                                <?= wp_get_attachment_image($image['ID'], [204, 160]); ?>
+                            </figure>
+                            <?php endif; ?>
                             <div class="card-with-image__content">
                                 <h4><?php the_sub_field('title'); ?></h4>
                                 <p>

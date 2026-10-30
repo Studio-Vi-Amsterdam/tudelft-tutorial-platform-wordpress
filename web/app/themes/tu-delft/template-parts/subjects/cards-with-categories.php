@@ -8,11 +8,11 @@ use TuDelft\Theme\Modules\Subject\Subject;
 
     $selectedCategory = get_query_var('category');
     $selectedCategory = sanitize_text_field($selectedCategory);
-    $selectedCategory = htmlspecialchars($selectedCategory);
+    $selectedCategory = htmlspecialchars($selectedCategory, ENT_COMPAT | ENT_HTML401);
 
     $selectedSubCategory = get_query_var('subcategory');
     $selectedSubCategory = sanitize_text_field($selectedSubCategory);
-    $selectedSubCategory = htmlspecialchars($selectedSubCategory);
+    $selectedSubCategory = htmlspecialchars($selectedSubCategory, ENT_COMPAT | ENT_HTML401);
 
     if ( empty($categories) ) {
         $categories = Subject::get_categories();
@@ -55,9 +55,13 @@ use TuDelft\Theme\Modules\Subject\Subject;
                                 ?>
                                     <a href="<?php the_permalink($subject->ID); ?>" class="card-with-image">
                                         <div class="card-with-image__wrapper sm:flex">
+                                            <?php 
+                                                if ( $image ) :
+                                            ?>
                                             <figure class="card-with-image__image">
-																							<?= wp_get_attachment_image($image['ID'], [208, 280]); ?>
+                                                <?= wp_get_attachment_image($image['ID'], [208, 280]); ?>
                                             </figure>
+                                            <?php endif; ?>
                                             <div class="card-with-image__content">
                                                 <h4><?php echo $subject->post_title; ?></h4>
                                                 <p><?php echo wp_trim_words(get_field('description', $subject->ID), 20); ?></p>
