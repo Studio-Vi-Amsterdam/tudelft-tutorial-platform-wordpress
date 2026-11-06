@@ -9,6 +9,8 @@ on:
         description: 'Image tag to deploy (either `latest` or commit SHA)'
         required: true
 
+permissions: {}
+
 jobs:
   deploy:
     environment: 

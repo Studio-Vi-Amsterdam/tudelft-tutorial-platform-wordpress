@@ -5,6 +5,10 @@ on:
     - cron: '0 1 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write # ZAP files its report as an issue
+
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
