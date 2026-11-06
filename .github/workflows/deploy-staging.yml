@@ -9,6 +9,8 @@ on:
         description: 'Image tag to deploy (either `latest` or commit SHA)'
         required: true
 
+permissions: {}
+
 jobs:
   deploy:
     # if: |
@@ -50,7 +52,7 @@ jobs:
           echo "Deployed tag will be $TAG"
 
       - name: Log in to Harbor
-        uses: docker/login-action@v2
+        uses: docker/login-action@v4
         with:
           registry: ${{ secrets.HARBOR_REGISTRY }}
           username: ${{ secrets.HARBOR_USERNAME }}
@@ -61,4 +63,4 @@ jobs:
 
       - name: Start container
         run: 
-          IMAGE_TAG=$TAG docker compose -f ${{ secrets.REPO_ASSETS_PATH }}/docker-compose.yml --env-file ${{ secrets.REPO_ASSETS_PATH }}/.env up ${{ vars.CONTAINER_NAME }} -d --remove-orphans
+          IMAGE_TAG=$TAG DOCKER_UID=$(id -u) DOCKER_GID=$(id -g) docker compose -f ${{ secrets.REPO_ASSETS_PATH }}/docker-compose.yml --env-file ${{ secrets.REPO_ASSETS_PATH }}/.env up ${{ vars.CONTAINER_NAME }} -d --remove-orphans

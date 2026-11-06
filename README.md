@@ -116,3 +116,77 @@ You'll get:
 - a container with the custom WP instance
 - a MySql instance
 - an Adminer instance, useful to browse the DB content.
+
+
+## Machine setup and deploy
+
+To set up a new machine or a new environment, you need to:
+1. setup the machine
+2. install the GH runner
+3. prepare the environment for the application
+
+### Setting up the machine
+In this step we'll install Docker and Apache2.
+
+**Requirements**:
+- SSL cert and key
+
+#### 1. Install Docker
+1. install Docker as stated on the official guide
+2. add the current user to the `docker` group with `usermod -aG $USER docker`, you might need to logout and login
+3. verify that `docker run hello-world` work without sudo
+
+#### 2. Install Apache
+1. install the following packages `apache2`, `apache2.2-common`
+2. enable the required modules: `sudo a2enmod proxy proxy_http proxy_balancer lbmethod_byrequests ssl rewrite headers`
+3. write the config file `/etc/apache2/sites-available/reverse-proxy.conf`, using the template provided in `./apache/reverse-proxy.conf`. Remember to fix the placeholders with your values.
+4. enable and start apache with `sudo systemctl enable apache2` and `sudo systemctl start apache2`
+5. check the service status with `sudo systemctl status apache2` to spot any errors
+6. enable the site with `sudo a2ensite reverse-proxy.conf`
+
+#### 3. Install the GitHub runner
+1. To add a new self-hosted GitHub runner open the **Settings** page of the repository and follow the instructions available on (Sidebar) Actions > Runners > "New self-hosted runner".
+  - after launching `./run.sh` and verified that everything is ok, kill the process with CTRL+C.
+  - install the runner as a service executing `./svc.sh install $USER`, then start it with `./svc.sh start`
+  - if everything went ok you should see the new runner in the repo settings.
+  - add a tag to identify the runner. This tag will be used by the deployment action to pick the right machine.
+2. if needed, head over the **Environment** section (sidebar) and create a new environment.
+  - in the page, be sure to have set:
+    - `REPO_ASSET_PATH`: (secret) path to the `platform-wordpress` folder. (e.g. `/home/user/platform-wordpress`)
+    - `CONTAINER_NAME`: `platform` 
+
+#### 4. Project folder
+1. on the machine, create a new folder `platform-wordpress` and put there:
+  - the `compose.yml` file
+  - the `.env` file
+  - a `plugin.env` file
+2. under the `platform-wordpress` you also need to:
+  - create a `sql` folder, and copy the init scripts for MariaDB
+  - create a `wp-content` folder, and copy the uploads
+
+This is an example of the folder structure
+```
+.
+├── docker-compose.yml
+├── .env
+├── plugin-env
+├── sql
+│   ├── local.sql
+└── wp-content
+    ├── 2024
+    ├── 2025
+    └── uploads
+```
+
+Once you have filled envs with secrets and the runner is active, the machine is ready to receive deploy notifications.
+
+You may then define a new runner, if needed. Use the ones defined under `.github/workflows/` to get an idea.
+
+
+#### 5. First boot
+
+After successfully deployed the container, head over <HOSTNAME>/wp-admin, login, and activate the ACF plugin.
+
+Visit the homepage to assure that everything works as expected.
+
+> This is fundamental to render the website.

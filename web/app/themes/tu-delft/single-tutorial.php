@@ -143,39 +143,41 @@ $software = Tutorial::get_primary_software(get_the_ID());
                             <?php endif; ?>
                         </table>
                     </div>
-                    <div class="tutorial__nav responsible">
-                        <h4>Responsible</h4>
-                        <table>
-                            <?php
-                            if ($teachers = get_the_terms(get_the_ID(), 'teachers')) :
-                            ?>
-                                <tr>
-                                    <td>Teacher<?php echo sizeof($teachers) > 1 ? 's' : ''; ?></td>
-                                    <td>
-                                        <ul>
-                                            <li>
-                                                <?php
-                                                foreach ($teachers as $i => $teacher) :
-                                                ?>
-                                                    <a href="#"><?php echo $teacher->name; ?></a>
-                                                    <?php if ($i < sizeof($teachers) - 1) : ?>
-                                                        ,
-                                                    <?php endif; ?>
-                                                <?php endforeach; ?>
-                                        </ul>
-                                    </td>
-                                </tr>
-                            <?php endif; ?>
-                            <tr>
-                                <td>Faculty</td>
-                                <td>
-                                    <ul>
-                                        <li><a href="#"><?php echo get_field('faculty', get_the_ID()) ?: 'Bouwkunde'; ?></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+									<div class="tutorial__nav responsible">
+											<h4>Responsible</h4>
+											<table>
+													<?php
+													if ($teachers = get_the_terms(get_the_ID(), 'teachers')) :
+													?>
+															<tr>
+																	<td>Teacher<?php echo sizeof($teachers) > 1 ? 's' : ''; ?></td>
+																	<td>
+																			<ul>
+																					<li>
+																							<?php
+																							foreach ($teachers as $i => $teacher) :
+																							?>
+																									<a href="#"><?php echo $teacher->name; ?></a>
+																									<?php if ($i < sizeof($teachers) - 1) : ?>
+																											,
+																									<?php endif; ?>
+																							<?php endforeach; ?>
+																			</ul>
+																	</td>
+															</tr>
+													<?php endif; ?>
+
+												<?php
+													$faculties = get_field('faculty', get_the_ID());
+													get_template_part('template-parts/items/faculties-list', false, ['items' => $faculties]);
+												?>
+
+												<?php
+													$communities = get_field('community', get_the_ID());
+													get_template_part('template-parts/items/communities-list', false, ['items' => $communities]);
+												?>
+											</table>
+									</div>
                 </div>
             </div>
         </div>

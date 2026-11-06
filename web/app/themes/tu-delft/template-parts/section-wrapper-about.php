@@ -17,7 +17,7 @@
                             $caption = get_field('caption', get_the_ID());
                             if ($caption) :
                         ?>
-                            <figcaption><?php echo htmlspecialchars($caption); ?></figcaption>
+                            <figcaption><?php echo htmlspecialchars($caption, ENT_COMPAT | ENT_HTML401); ?></figcaption>
                         <?php endif; ?>
                     </figure>
                 </div>

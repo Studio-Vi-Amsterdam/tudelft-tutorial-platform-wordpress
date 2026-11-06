@@ -14,6 +14,8 @@ $name = $user->display_name;
 									class="lazy"
 									data-src="<?= get_template_directory_uri() ?>/src/img/vector/footer-vector-1.svg"
 									alt="vector"
+									loading="lazy"
+									decoding="async"
 								>
             </picture>
         </div>
@@ -26,6 +28,8 @@ $name = $user->display_name;
 									height="117"
 									data-src="<?= get_template_directory_uri() ?>/src/img/logo-footer.svg"
 									alt="Logo"
+									loading="lazy"
+									decoding="async"
 								>
             </a>
             <div class="footer__copyright">
@@ -72,7 +76,7 @@ $name = $user->display_name;
             <div class="modal-suggestion__inner">
                 <div class="modal-suggestion__title">
                     <h2>Write your feedback.</h2>
-                    <button type="button" class="modal-window__close-icon">
+                    <button type="button" aria-label="close modal window" class="modal-window__close-icon">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1.23438L13 13.2344M1 13.2344L13 1.23438" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -135,7 +139,7 @@ $name = $user->display_name;
         <div class="modal-video-item__wr-image">
             <div class="modal-video-item__image">
                 <button aria-label="close modal window" class="modal-video-item__close modal-window__close-icon"></button>
-                <img src="" alt="image">
+                <img src="" alt="image" loading="lazy" decoding="async">
             </div>
         </div>
     </div>

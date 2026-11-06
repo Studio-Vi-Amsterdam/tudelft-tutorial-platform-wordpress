@@ -11,7 +11,7 @@ $subtitles = get_field('tu-delft-video_subtitles');
 
 $page_id = get_the_ID();
 ?>
-<div class="tutorial__content text-video-block-wrapper video" data-video-subtitles="<?php echo $subtitles; ?>"  data-video-src="<?php echo $video['url']; ?>">
+<div class="tutorial__content text-video-block-wrapper video">
     <?php if ( $title = get_field('tu-delft-text-video_title') ) : ?>
         <?php if (is_user_logged_in()): ?>
             <div class="tutorial__subchapter-title">
@@ -52,7 +52,7 @@ $page_id = get_the_ID();
                 </div>
 
                 <figcaption>
-                    <?php echo htmlspecialchars(get_post_meta( $video['ID'], 'title', true ) ? : $video['alt']); ?>
+                    <?php echo htmlspecialchars(get_post_meta( $video['ID'], 'title', true ) ? : $video['alt'], ENT_COMPAT | ENT_HTML401); ?>
                 </figcaption>
             </figure>
             <!-- <video controls>

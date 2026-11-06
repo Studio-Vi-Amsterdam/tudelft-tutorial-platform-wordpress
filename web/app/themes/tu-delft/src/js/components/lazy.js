@@ -1,8 +1,8 @@
 export function lazyLoad() {
 	jQuery(function ($) {
-		$("img.lazy").lazy({
+		$('img.lazy').lazy({
 			threshold: 300,
-			visibleOnly: true
-		});
+			visibleOnly: true,
+		})
 	})
 }

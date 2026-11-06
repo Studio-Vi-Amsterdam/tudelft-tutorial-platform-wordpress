@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9163391a3d2d5095eafecedf4d35532",
+    "content-hash": "c4d5a6bf7c46764c8692094dbafbe7e4",
     "packages": [
         {
             "name": "composer/installers",
@@ -1348,6 +1348,61 @@
                 "wpengine/advanced-custom-fields": "self.version"
             },
             "type": "wordpress-plugin"
+        },
+        {
+            "name": "yoast/duplicate-post",
+            "version": "4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Yoast-dist/duplicate-post.git",
+                "reference": "db85005366144846cac3b07632488a6da92876f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Yoast-dist/duplicate-post/zipball/db85005366144846cac3b07632488a6da92876f5",
+                "reference": "db85005366144846cac3b07632488a6da92876f5",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.12.0 || ^2.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "yoast/wp-test-utils": "^1.2.1",
+                "yoast/yoastcs": "^3.3.0"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Enrico Battocchi & Team Yoast",
+                    "email": "support@yoast.com",
+                    "homepage": "https://yoast.com"
+                }
+            ],
+            "description": "The go-to tool for cloning posts and pages, including the powerful Rewrite & Republish feature.",
+            "homepage": "https://wordpress.org/plugins/duplicate-post/",
+            "keywords": [
+                "clone",
+                "copy",
+                "post",
+                "wordpress"
+            ],
+            "support": {
+                "forum": "https://wordpress.org/support/plugin/duplicate-post",
+                "issues": "https://github.com/Yoast/duplicate-post/issues",
+                "security": "https://yoast.com/security-program/",
+                "source": "https://github.com/Yoast/duplicate-post"
+            },
+            "time": "2026-03-09T10:26:52+00:00"
         }
     ],
     "packages-dev": [
@@ -2346,16 +2401,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.13.5",
+            "version": "3.13.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "0ca86845ce43291e8f5692c7356fccf3bcf02bf4"
+                "reference": "4c378e1a528ea066890fc2397cbdd2f94eb2fc91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/0ca86845ce43291e8f5692c7356fccf3bcf02bf4",
-                "reference": "0ca86845ce43291e8f5692c7356fccf3bcf02bf4",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/4c378e1a528ea066890fc2397cbdd2f94eb2fc91",
+                "reference": "4c378e1a528ea066890fc2397cbdd2f94eb2fc91",
                 "shasum": ""
             },
             "require": {
@@ -2421,7 +2476,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-11-04T16:30:35+00:00"
+            "time": "2026-08-06T00:17:32+00:00"
         }
     ],
     "aliases": [],
@@ -2435,5 +2490,5 @@
         "php": ">=8.0"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
