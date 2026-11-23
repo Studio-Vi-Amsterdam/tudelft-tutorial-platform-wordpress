@@ -10,7 +10,7 @@ WORKDIR /app
 COPY web/app/themes/tu-delft /app/
 RUN npm install && npm run build
 
-FROM php:8.2.35-fpm-alpine
+FROM php:8.2.36-fpm-alpine
 
 # Changes weekly in CI so cached layers pick up Alpine security updates
 ARG APK_CACHE_BUST
