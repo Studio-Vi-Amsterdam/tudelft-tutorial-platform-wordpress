@@ -4,13 +4,13 @@ WORKDIR /app
 COPY composer.json composer.lock ./
 RUN --mount=type=secret,id=composer_secret,env=COMPOSER_AUTH composer install --no-interaction --no-progress --ignore-platform-reqs
 COPY web/app/mu-plugins/tudelft-tutorial-platform-plugin .
-FROM node:20-alpine AS nodebuilder
+FROM node:24-alpine AS nodebuilder
 
 WORKDIR /app
 COPY web/app/themes/tu-delft /app/
 RUN npm install && npm run build
 
-FROM php:8.2.35-fpm-alpine
+FROM php:8.2.36-fpm-alpine
 
 # Changes weekly in CI so cached layers pick up Alpine security updates
 ARG APK_CACHE_BUST
@@ -49,6 +49,9 @@ COPY assets/tailwind.css /var/www/html/web/app/themes/tu-delft/dist/tailwind.css
 
 # Nginx
 COPY docker/nginx/default.conf /etc/nginx/http.d/default.conf
+
+# PHP hardening (hide version, disable upload progress)
+COPY docker/php/security.ini /usr/local/etc/php/conf.d/security.ini
 
 # Supervisord config
 COPY docker/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
