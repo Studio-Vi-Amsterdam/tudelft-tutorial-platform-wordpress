@@ -237,11 +237,98 @@ name, e-mail address and **mobile number**. This goes in the Topdesk request.
 
 ---
 
+## Rapid7 remediation plans of 24 November 2026
+
+Six servers were scanned: WordPress and teacher dashboard for staging/production
+of both platforms.
+
+| Server | Runs | Repo |
+|---|---|---|
+| `staging.digipedia.tudelft.nl` | WordPress | `tudelft-tutorial-platform-wordpress` |
+| `staging.dashboard.digipedia.tudelft.nl` | Teacher dashboard | `tudelft-tutorial-platform-teachers-dashboard` |
+| `staging-neba-learn-01`, `neba-learn-01` | WordPress | `neba-platform-wordpress` |
+| `staging-dashboard-neba-learn-01`, `dashboard-neba-learn-01` | Teacher dashboard | `neba-teacher-dashboard` (also targeted by the TU Delft dashboard repo's `deploy-neba-*` workflows) |
+
+### Fixed in the repos (deploy a fresh image to apply)
+
+| Finding | Fix |
+|---|---|
+| PHP CVE-2026-126714 (phpAfterShell) | Image `php:8.2.35` → `8.2.36`; `expose_php = Off`; `session.upload_progress.enabled = 0` |
+| HTTP OPTIONS method enabled | Apache vhost templates refuse `OPTIONS` (WordPress still allows CORS preflights for the dashboard). Copy into `/etc/apache2/sites-available/` |
+| "2 HTTP services" on WordPress/dashboard hosts | Container ports bound to `127.0.0.1` (`8000` WordPress, `8080` dashboard, `9090` Adminer) |
+
+The dashboard containers are started by `docker run` in the deploy workflows, so
+the next deploy applies the loopback binding. For WordPress, edit the server's
+`docker-compose.yml` as described in [section 0](#bind-containers-to-loopback).
+
+### Node.js (all six servers): host software, not the app
+
+No Node.js runs in production: the WordPress images are PHP and the dashboards
+are static files served by Caddy. The scanner finds Node binaries **on the host**.
+Find them:
+
+```bash
+sudo find / -xdev \( -name node -o -name nodejs \) -type f -perm -u+x 2>/dev/null \
+  | while read -r f; do echo "$f  $("$f" --version 2>/dev/null)"; done
+```
+
+Usual sources and fixes:
+
+| Path | Source | Fix |
+|---|---|---|
+| `…/actions-runner/externals/node*` | GitHub Actions self-hosted runner bundles its own Node | Update the runner to the latest release; delete old `bin.2.*` and `externals.2.*` folders left behind by self-updates (stop the service first) |
+| `/usr/bin/node` | Ubuntu `nodejs` package (18.x on 24.04, end-of-life) | `sudo apt purge nodejs` if nothing on the host needs it |
+| `~/.vscode-server`, `~/.cursor-server` | VS Code / Cursor Remote-SSH | Delete the folder; avoid Remote-SSH on servers |
+| `~/.nvm/versions/node/*` | nvm | Remove old versions or uninstall nvm |
+| `/var/lib/docker/overlay2/…` | Old images or stopped containers | `docker system prune -a` (removes all unused images) |
+
+If the latest runner release still bundles a Node older than 24.22.1, the finding
+remains until GitHub ships an update. Report it to the faculty ISO as known and
+pending, with the runner version.
+
+### Apache HTTPD 2.4.58 (all six servers)
+
+Ubuntu 24.04 keeps the upstream version number `2.4.58` and backports security
+fixes (package `2.4.58-1ubuntu8.N`), so the version alone does not mean it is
+vulnerable.
+
+```bash
+sudo apt update && sudo apt full-upgrade -y && sudo systemctl restart apache2
+dpkg -l apache2 | tail -1
+zcat /usr/share/doc/apache2/changelog.Debian.gz | grep -E 'CVE-2026-(106023|119618|42528|46729|47360|48005|56153)'
+```
+
+- CVEs in the changelog: fixed. If the next scan still reports them, it is a
+  false positive based on the version number. Ask the faculty ISO for an
+  exception and link the Ubuntu CVE tracker pages
+  (`https://ubuntu.com/security/CVE-2026-…`).
+- CVEs not yet in the changelog: check the Ubuntu tracker. If Ubuntu has not
+  published a fix, either wait, or install a current Apache from the
+  `ppa:ondrej/apache2` PPA (third-party; agree with the ISO first).
+
+Also make sure `ServerTokens Prod` / `ServerSignature Off` / `TraceEnable Off`
+are set (see [Apache hardening](#apache-hardening)).
+
+### Verify after deploying
+
+```bash
+curl -sI https://<server> | grep -iE '^(server|x-powered-by):'   # "Apache", no X-Powered-By
+curl -s -o /dev/null -w '%{http_code}\n' -X OPTIONS https://<server>/   # 403
+docker exec platform-wordpress php -v                               # 8.2.36
+sudo ss -tlnp | grep -E ':(8000|8080|9090)'                         # 127.0.0.1 only
+```
+
+> PHP 8.2 security support ends **31 December 2026**. After that, B5 (no EOL
+> software) fails again. Plan the move to `php:8.4-fpm-alpine` and test plugins
+> before then.
+
+---
+
 ## Submitting the request
 
 Checklist per server:
 
-- [ ] Only 80/443 public, 21047 for the scanner only; 8000/9090 on loopback
+- [ ] Only 80/443 public, 21047 for the scanner only; 8000/8080/9090 on loopback
 - [ ] OS fully updated and rebooted; fresh image deployed
 - [ ] Apache: TLS 1.2/1.3 only, `ServerTokens Prod`
 - [ ] No EOL software (OS, PHP, MySQL, WordPress plugins)
