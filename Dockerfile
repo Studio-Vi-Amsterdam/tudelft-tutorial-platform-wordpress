@@ -1,4 +1,4 @@
-FROM composer:2.8 AS phpbuilder
+FROM composer:2.10 AS phpbuilder
 
 WORKDIR /app
 COPY composer.json composer.lock ./
